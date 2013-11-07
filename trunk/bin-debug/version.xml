@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--swf: (x left right)只能使用其中一个 (y top bottom)只能使用其中一个  如果同时使用，左边优先级最高
+	w，h 还没使用百分比
+-->
+<data>
+	<version value="1.0" url="bgv1.1.swf"/>
+	<extends>
+		<swf url="" x="0" y="0" left="" right="" top="" bottom="" w="" h=""/>
+	</extends>
+</data>
