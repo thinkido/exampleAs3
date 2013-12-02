@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+	<menu name="官网" type="url" link="http://www.thinkido.com"/>
+	<menu name="外包" type="url" link="http://www.thinkido.com"/>
+	<menu name="加入" type="url" link="http://www.thinkido.com"/>
+	<menu name="分享" type="url" link="http://www.thinkido.com"/>
+	<menu name="更多" type="event" link="Window.Event_More"/>
+</data>
