@@ -163,7 +163,12 @@ package com.thinkido.example
 		 */		
 		private function getVersion():void
 		{
-			var str:String = BrowerManager.instance.isNet?(prefixStr + "version.xml"): "version.xml";
+			var str:String ;
+			try{
+				str = BrowerManager.instance.isNet?(prefixStr + "version.xml"): "version.xml" ;
+			}catch(e:*){
+				str = "version.xml" ;
+			}
 			var urlLoader:URLLoader = new URLLoader();
 			var req:URLRequest = new URLRequest(str);
 			urlLoader.addEventListener(Event.COMPLETE,loadVerComplate);
