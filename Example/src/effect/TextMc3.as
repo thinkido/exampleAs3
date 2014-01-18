@@ -165,9 +165,9 @@
 			addChild(text_mc);
 			addChild(testObj_mc);
 			this.mouseEnabled = false;
-			textString = "Think.i.do";
+			textString = "by Think.i.do";
 			text_Color = 16681763;
-			text_Size = 100;
+			text_Size = 60;
 			textGlowColor = 0xFF0000;
 			textGlowBlur = 16;
 			textGlowStrength = 2;
@@ -210,6 +210,7 @@
 			sparkParticleSpringingAreaLowerLimit = 7;
 			sparkParticleSpringingAreaHigherLimit = 10;
 			textEffectTextFormat = new TextFormat(text_mc.defaultTextFormat.font, text_Size, text_Color, false, false, false, null, null, "center");
+			trace( text_mc.defaultTextFormat.font );
 			formatMyText(this.text_mc, textString);
 			textContainerSprite = new Sprite();
 			textContainerSprite.addChild(this.text_mc);
