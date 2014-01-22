@@ -30,7 +30,7 @@ package
 			LayerManager.init() ;
 			
 			window = new GWindow() ;
-			window.title = "关卡" ;
+			window.title = "情商测试系统" ;
 			window.setSize(600,400);
 			window.move(100,100);
 			LayerManager.windowLayer.addChild(window);
@@ -42,7 +42,7 @@ package
 		
 		private function onclose(event:WindowEvent):void
 		{
-			removeChild(window);
+			window.parent.removeChild(window);
 			
 		}
 	}
