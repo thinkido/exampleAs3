@@ -1,6 +1,6 @@
 package
 {
-	import app.answer.manager.LayerManager;
+	import app.answer.manager.layer.LayerManager;
 	
 	import com.thinkido.example.Application;
 	import com.thinkido.framework.common.Global;

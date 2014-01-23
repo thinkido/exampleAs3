@@ -1,7 +1,9 @@
-package app.answer.modules
+package app.answer.modules.answer
 {
 	public class AnswerPanel
 	{
+		
+		
 		public function AnswerPanel()
 		{
 		}

@@ -1,7 +1,7 @@
-﻿package app.answer.manager
+﻿package app.answer.manager.layer
 {
-	import app.answer.manager.LayerManager;
-	import app.answer.manager.View;
+	import app.answer.manager.layer.LayerManager;
+	import app.answer.manager.layer.View;
 	
 	import com.thinkido.framework.common.Global;
 	
