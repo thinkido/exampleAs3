@@ -112,7 +112,7 @@ package lm.components.window
 			this._miniBtn.x = this.width - this._closeBtn.width - this._miniBtn.width - 40;
 			this._miniBtn.y = 8;
 			
-			this._contentSprite.y = 30;
+			this._contentSprite.y = 0;
 			
 			this._title.x = (this.width - this._title.width) / 2;
 			this._title.y = 4;

@@ -17,7 +17,7 @@ package style.btnStyle
 		public function ButtonRedStyle()
 		{
 			this._scaleRect = new Rectangle(36, 6, 4, 12);
-			this._textFormat = new TextFormat(null, 12, 0xafc3a5);
+			this._textFormat = new TextFormat("宋体", 12, 0xafc3a5);
 			this._textFormatDisable = new TextFormat(null, 12, 0xFFFF66,true);
 			return;
 		}

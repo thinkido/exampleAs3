@@ -40,7 +40,10 @@
             var swfVersionStr = "${version_major}.${version_minor}.${version_revision}";
             // To use express install, set to playerProductInstall.swf, otherwise the empty string. 
             var xiSwfUrlStr = "${expressInstallSwf}";
-            var flashvars = {};
+            var flashvars = {
+           		baseDir : "http://192.168.1.6/answer/" 
+							
+							};
             var params = {};
             params.quality = "high";
             params.bgcolor = "${bgcolor}";
