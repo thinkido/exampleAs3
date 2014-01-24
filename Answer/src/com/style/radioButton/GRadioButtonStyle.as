@@ -16,7 +16,7 @@ package com.style.radioButton
 		
 		public function GRadioButtonStyle()
 		{
-			textFormat = new TextFormat(null ,12, 0xffeba5,null,null,null,null,null,null,5);
+			textFormat = new TextFormat(null ,14, 0xffeba5);
 			return;
 		}
 		

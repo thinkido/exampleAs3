@@ -147,22 +147,23 @@ package app.answer.modules.answer.view
 
 			autoCheck = CompCreateFactory.createGCheckBox(15,102);
 			autoCheck.width = 120;
-			autoCheck.label ="自动切换";
+			autoCheck.label ="  自动切换";
 			autoCheck.styleName = "GCheckBox" ;
 			this.addChild(autoCheck);
 			autoCheck.validateNow();
 
 			showAnswerCheck = CompCreateFactory.createGCheckBox(15,125);
 			showAnswerCheck.width = 120;
-			showAnswerCheck.label ="查看答案";
+			showAnswerCheck.label ="  查看答案";
 			showAnswerCheck.styleName = "GCheckBox" ;
 			this.addChild(showAnswerCheck);
 
 			notSureCheck = CompCreateFactory.createGCheckBox(173,285);
-			notSureCheck.width = 300;
-			notSureCheck.label ='标记为"不确定",可以复查';
 			notSureCheck.styleName = "GCheckBox" ;
+			notSureCheck.label ='  标记为"不确定",可以复查';
 			this.addChild(notSureCheck);
+			notSureCheck.width = 300;
+			notSureCheck.textField.width = 300 ;
 			notSureCheck.validateNow();
 
 			aRadio = new GRadioButton();

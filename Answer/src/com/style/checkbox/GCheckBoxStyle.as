@@ -15,8 +15,8 @@
 		
 		public function GCheckBoxStyle()
         {
-			textFormat = new TextFormat(null ,12, 0xffeba5,null,null,null,null,null,null,5);
-			_disTextFormat = new TextFormat(null, 12, 0x000000 );
+			textFormat = new TextFormat(null ,14, 0xffeba5,null,null,null,null,null,null);
+			_disTextFormat = new TextFormat(null, 14, 0x000000 );
 			return;
         }
 
