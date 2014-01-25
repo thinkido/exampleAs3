@@ -2,15 +2,16 @@ package app.answer.common.vo
 {
 	public class QuestionVo
 	{
-		private var id:int = 0 ;
-		private var title:String ="" ;
-		private var type:int = 0 ;
-		private var answer:int = 0 ;
-		private var a:String = "" ;
-		private var b:String = "" ;
-		private var c:String = "" ;
-		private var d:String = "" ;
-		private var dics:String = "" ;
+		public var id:int = 0 ;
+		public var type:int = 0 ;
+		public var point:int = 1 ;
+		public var title:String ="" ;
+		public var answer:String = "" ;
+		public var a:String = "" ;
+		public var b:String = "" ;
+		public var c:String = "" ;
+		public var d:String = "" ;
+		public var desc:String = "" ;
 		
 		/**
 		 *判断题 

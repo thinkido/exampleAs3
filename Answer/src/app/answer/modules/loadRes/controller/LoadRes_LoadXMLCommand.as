@@ -14,6 +14,7 @@ package app.answer.modules.loadRes.controller
 	import com.thinkido.framework.manager.loader.vo.LoadData;
 	
 	import flash.events.Event;
+	import flash.utils.ByteArray;
 	
 	import org.puremvc.as3.multicore.interfaces.*;
 	import org.puremvc.as3.multicore.patterns.command.*;
@@ -47,40 +48,19 @@ package app.answer.modules.loadRes.controller
 		{
 			var ques:String = ResPathManager.getQuestionPath() ;
 			var ld:LoadData = new LoadData(ques,quesLoadCom,null,err,"",ques);
+			ld.userData.type = BulkLoader.TYPE_XML ;
 			configLoader = new BulkLoader("config");
 			LoaderManager.load([ld],configLoader) ;
 		}
 		private function quesLoadCom(evt:Event):void
 		{
-			var data:* = configLoader.getContent(ResPathManager.getQuestionPath())  ;
-			var xml:XML = data as XML ;
-//			QuestionResManager.parseXML(xml);
+			var data:ByteArray = configLoader.getContent(ResPathManager.getQuestionPath())  ;
+			var str:String = data.readUTFBytes(data.length) ;
+			var xml:XML = new XML( str ) ;
+			QuestionResManager.parseXML(xml);
 			this.sendNotification(LoadRes_ApplicationFacade.SHUTDOWN);
 			FacadeManager.startupFacade(PipeEvent.STARTUP_Answer,PipeEvent.SHOW_Answer_PANEL);
 		}
-		
-		/**
-		 *	解析 
-		 * @param key
-		 * @param data
-		 * 
-		 */		
-		private function parse(key:String, data:XML):void
-		{
-			switch(key)
-			{
-				case "question":
-				{
-					QuestionResManager.parseXML(data);
-					break;
-				}
-                default:
-                {
-                    break;
-                }
-            }
-            return;
-        }
 
     }
 }

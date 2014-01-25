@@ -23,7 +23,17 @@ package app.answer.manager
 			for each (var child:XML in childs)
 			{
 				tempVO = new QuestionVo();
-				
+				tempVO.id = child.@id ;
+				tempVO.title = child.@title ;
+				tempVO.a = child.@A ;
+				tempVO.b = child.@B ;
+				tempVO.c = child.@C ;
+				tempVO.d = child.@D ;
+				tempVO.answer = child.@answer ;
+				tempVO.desc = child.@desc ;
+				tempVO.type = child.@type ;
+				tempVO.point = child.@point ;
+					
 				_questionDic[String(child.@id)] = tempVO;
 			}
 		}
