@@ -1,0 +1,347 @@
+package app.answer.modules.answer.view
+{
+	import app.answer.common.vo.QuestionVo;
+	import app.answer.manager.POPWindowManager;
+	import app.answer.manager.QuestionResManager;
+	import app.answer.modules.answer.Answer_ApplicationFacade;
+	import app.answer.modules.answer.model.AnswerModel;
+	import app.answer.modules.answer.model.Answer_MsgSendProxy;
+	
+	import com.thinkido.framework.common.observer.Notification;
+	import com.thinkido.framework.common.timer.vo.TimerData;
+	import com.thinkido.framework.manager.TimerManager;
+	import com.thinkido.framework.utils.ArrayUtil;
+	import com.thinkido.framework.utils.MathUtil;
+	import com.thinkido.framework.utils.StringUtil;
+	import com.thinkido.framework.utils.TFormatter;
+	
+	import flash.events.Event;
+	import flash.events.FocusEvent;
+	import flash.events.MouseEvent;
+	import flash.events.TextEvent;
+	
+	import lm.components.window.WindowEvent;
+	import lm.mui.controls.GRadioButton;
+	
+	import org.puremvc.as3.multicore.interfaces.INotification;
+	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
+
+	public class AnswerMediator extends Mediator
+	{
+
+		private var _msgSenderProxy:Answer_MsgSendProxy;
+		public static const NAME:String = "Answer_AnswerMediator";
+
+		public function AnswerMediator(viewComponent:Object)
+		{
+			super(NAME, viewComponent);
+			initEvt();
+			initUi();
+		}
+		
+		private function initUi():void
+		{
+			panel.tipTxt.visible = false ;
+			
+		}
+		private var td:TimerData ;
+		private function initEvt():void
+		{
+			panel.addEventListener(WindowEvent.CLOSE, closePanel);		
+			panel.preBtn.addEventListener(MouseEvent.CLICK,preClick);
+			panel.nextBtn.addEventListener(MouseEvent.CLICK,nextClick);
+			panel.notSureCheck.addEventListener(MouseEvent.CLICK,notSureClick);
+			panel.aRadio.addEventListener(MouseEvent.CLICK,radioClick);
+			panel.bRadio.addEventListener(MouseEvent.CLICK,radioClick);
+			panel.cRadio.addEventListener(MouseEvent.CLICK,radioClick);
+			panel.dRadio.addEventListener(MouseEvent.CLICK,radioClick);
+			
+			panel.autoCheck.addEventListener(MouseEvent.CLICK,autoCheckClick);
+			panel.showAnswerCheck.addEventListener(MouseEvent.CLICK,showAnswerClick);
+			
+			panel.goBtn.addEventListener(MouseEvent.CLICK,goClick);
+			panel.goInput.addEventListener(Event.CHANGE ,goInputChange);
+			panel.goInput.addEventListener(FocusEvent.FOCUS_IN,focusIn);
+			panel.submitBtn.addEventListener(MouseEvent.CLICK,overTest) ;
+			
+		}
+		
+		protected function focusIn(event:FocusEvent):void
+		{
+			panel.goInput.setSelection(0,panel.goInput.text.length) ;
+		}
+		
+		private function goInputChange(evt:Event):void{
+			if( panel.goInput.text.length == 0 ){
+				return ;
+			}
+			var value:int = int(panel.goInput.text) ;
+			var temp:int = Math.max(1,value) ;
+			panel.goInput.text = Math.min(temp,model.total).toString() ;
+			
+		}
+		
+		/**
+		 * 跳转题目 
+		 * @param event
+		 */		
+		protected function goClick(event:MouseEvent):void
+		{
+			var ind:int = int(panel.goInput.text) ;
+			if( ind <= model.total ){ //在题目库范围内，可以跳转
+				setIndex(ind) ;
+			}else{ //提示不能跳转
+				
+			}
+		}
+		
+		protected function autoCheckClick(event:MouseEvent):void
+		{
+			model.autoJump = panel.autoCheck.selected ;
+			changeJumpTime();
+		}
+		
+		protected function showAnswerClick(event:MouseEvent):void
+		{
+			model.showAnswer = panel.showAnswerCheck.selected ;
+			changeJumpTime();
+			checkAndShow();
+		}
+		
+		protected function radioClick(event:MouseEvent):void
+		{
+			var rad:GRadioButton = event.currentTarget as GRadioButton ;
+//			if( panel.single.selection == rad ){
+//				return ;
+//			}
+			if( rad == panel.aRadio ){
+				model.currVo.selected = "a" ;
+			}
+			else if(rad == panel.bRadio ){
+				model.currVo.selected = "b" ;
+			}
+			else if(rad == panel.cRadio ){
+				model.currVo.selected = "c" ;
+			}
+			else if(rad == panel.dRadio ){
+				model.currVo.selected = "d" ;
+			}
+			changeJumpTime();
+			checkAndShow();
+			if( model.autoJump ){
+				if( jumpTd != null ){
+					TimerManager.deleteTimer(jumpTd) ;
+				}
+				jumpTd = TimerManager.createTimer(model.jumpTime,1,autoJump);
+			}
+			setAnswerData( model.currVo ) ;
+		}
+		private var jumpTd:TimerData ;
+		
+		private function changeJumpTime():void
+		{
+			if( model.showAnswer ){
+				model.jumpTime = model.jumpNeedTime + model.showAnswerNeedTime ;
+			}else{
+				model.jumpTime = model.jumpNeedTime ;
+			}
+		}
+
+
+		private function checkAndShow():void
+		{
+			if( model.showAnswer && model.currVo.selected.length != 0 ){
+					var txt:String = "" ;
+				if( !model.currVo.isRight() ){
+					panel.tipTxt.text = '你答错了，标准答案是'+ model.currVo.answer.toUpperCase() +'。为什么选'+ model.currVo.answer.toUpperCase() +'？'  ;
+				}else{
+					panel.tipTxt.text = '你答对了！'  ;
+				}
+				panel.tipTxt.visible = true ;
+			}
+		}
+
+		
+		private function setAnswerData(currVo:QuestionVo):void
+		{
+			if( model.currVo.isRight() && model.rightArr.indexOf( model.currVo.id ) == -1 ){
+				model.rightArr.push( model.currVo.id );
+			}else if( !model.currVo.isRight() && model.rightArr.indexOf( model.currVo.id ) != -1 ){
+				ArrayUtil.removeObj(model.rightArr,model.currVo.id) ;
+			}
+			calcScore();
+			if( model.currVo.notSure && model.signArr.indexOf( model.currVo.id ) == -1 ){
+				model.signArr.push( model.currVo.id );
+			}else{
+				ArrayUtil.removeObj(model.signArr,model.currVo.id) ;
+			}
+		}
+		/**
+		 * 计算得分 
+		 */		
+		private function calcScore():void
+		{
+			model.score = int( model.rightArr.length / model.total * 100 ) ;
+		}
+		
+		/**
+		 * 自动跳转 
+		 * 只通过点击答案后自动跳转;
+		 */		
+		private function autoJump():void
+		{
+			panel.nextBtn.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+		}
+		
+		protected function notSureClick(event:MouseEvent):void
+		{
+			model.currVo.notSure = panel.notSureCheck.selected ;
+			
+		}
+		
+		private var model:AnswerModel = AnswerModel.getInstance() ;
+		
+		protected function nextClick(event:MouseEvent):void
+		{
+			var vo:QuestionVo = QuestionResManager.getModuleVO(model.currIndex +1 );
+			if( vo == null ){
+				
+				return ;
+			}
+			setIndex(model.currIndex + 1) ;
+		}
+		
+		protected function preClick(event:MouseEvent):void
+		{
+			var vo:QuestionVo = QuestionResManager.getModuleVO(model.currIndex - 1 );
+			if( vo == null ){
+				
+				return ;
+			}
+			setIndex(model.currIndex -1 ) ;
+		}
+		
+		
+		private function timerCount():void
+		{
+			model.showTimeCount -- ;
+			panel.timeTxt.text = "当前时间: " + TFormatter.formatFromSecond( model.showTimeCount ) ;
+			if( model.showTimeCount <=0 ){
+				TimerManager.deleteTimer(td) ;
+				td = null ;
+				overTest();
+			}
+		}
+		
+		private function start():void{
+			if(td != null){
+				TimerManager.deleteTimer(td);
+				td = null ;
+			}
+			model.showTimeCount = model.showTime ;
+			td = TimerManager.createTimer(1000,int.MAX_VALUE,timerCount);
+			model.total =  QuestionResManager.getLength() ;
+			setIndex(model.currIndex) ;
+//			panel.aRadio.selected = true ;
+//			panel.aRadio.selected = false ;
+//			panel.single.selection = panel.bRadio ;
+			
+			
+		}
+
+		private function setIndex(value:int):void{
+			model.currIndex = value ;
+			var vo:QuestionVo = QuestionResManager.getModuleVO(value);
+			setData(vo) ;
+		}
+		private function setData(vo:QuestionVo):void{
+			if( vo == null ){
+				return ;
+			}
+			
+			panel.currTxt.text = '当前：'+ model.currIndex + "/" + model.total ;
+			panel.tipTxt.visible = false ;
+			model.currVo = vo ;
+			panel.notSureCheck.selected = vo.notSure ;
+			
+			panel.titleTxt.text = vo.id + "、"+ vo.title ;
+			
+			panel.aRadio.label = "A." + vo.a ;
+			panel.bRadio.label = "B." + vo.b ;
+			panel.cRadio.label = "C." + vo.c ;
+			panel.dRadio.label = "D." + vo.d ;
+			
+			panel.aRadio.visible = vo.a == ""? false:true ;
+			panel.bRadio.visible = vo.b == ""? false:true ;
+			panel.cRadio.visible = vo.c == ""? false:true ;
+			panel.dRadio.visible = vo.d == ""? false:true ;
+			
+			if( vo.selected.length > 0 ){
+				panel.single.selection = panel[vo.selected + "Radio"] ;
+			}else{
+				panel.single.selection = panel.nullRadio ;
+			}
+			
+			checkAndShow();
+		}
+		
+//		考试结束
+		private function overTest(evt:* = null):void
+		{
+//			计算得分
+//			本地保存数据
+//			错误、标记题目划分 tab
+			facade.sendNotification(Answer_ApplicationFacade.SHOW_SCORE_PANEL,null );
+		}
+		private function closePanel(event:WindowEvent = null):void
+		{
+			POPWindowManager.showModule(Answer_ApplicationFacade.NAME, Answer_ApplicationFacade.SHOW_Answer_PANEL);
+		}
+		
+		protected function get panel() : AnswerPanel
+		{
+			return viewComponent as AnswerPanel;
+		}
+
+		override public function onRegister() : void
+		{
+			return;
+		}
+
+		override public function listNotificationInterests() : Array
+		{
+			return [Answer_ApplicationFacade.SHOW_Answer_PANEL];
+		}
+
+		override public function handleNotification($noti:INotification) : void
+		{
+			switch($noti.getName())
+			{
+				case Answer_ApplicationFacade.SHOW_Answer_PANEL:
+					showPanel();
+					break ;
+				default:
+				{
+					break;
+				}
+			}
+			return;
+		}
+		
+		private function showPanel():void
+		{
+			POPWindowManager.centerWindow(panel, null, Answer_ApplicationFacade.NAME);
+			start() ;
+			
+		}
+		
+		private function get msgSenderProxy() : Answer_MsgSendProxy
+		{
+			if (this._msgSenderProxy == null)
+			{
+				this._msgSenderProxy = facade.retrieveProxy(Answer_MsgSendProxy.NAME) as Answer_MsgSendProxy;
+			}
+			return this._msgSenderProxy;
+		}
+	}
+}

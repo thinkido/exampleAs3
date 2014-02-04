@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questions>
+	<quest id="1" type="1" title="我有能力克服各种困难:" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
+	<quest id="2" type="1" title="我的神经脆弱，稍有刺激就会使我战栗:" A="是的" B="否的" C="不是的" D="" answer="A" desc="" point="1" />
+	<quest id="3" type="1" title="我有能力克服各种困难:3" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
+	<quest id="4" type="1" title="我有能力克服各种困难:4" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
+	<quest id="5" type="1" title="我有能力克服各种困难:5" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
+	<quest id="6" type="1" title="我有能力克服各种困难:6" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
+	<quest id="7" type="1" title="我有能力克服各种困难:7" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
+	
+</questions>
