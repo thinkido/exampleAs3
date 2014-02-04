@@ -20,6 +20,7 @@ package app.answer.modules.answer.view
 	{
 		public var nextBtn:GButton;
 		public var preBtn:GButton;
+		public var eRadio:GRadioButton;
 		public var dRadio:GRadioButton;
 		public var cRadio:GRadioButton;
 		public var bRadio:GRadioButton;
@@ -83,8 +84,8 @@ package app.answer.modules.answer.view
 			titleTxt = CompCreateFactory.createGLabel(164,37,408,89,'1、标题',format);
 			this.addChild(titleTxt);
 
-			format = new TextFormat(null,12, 0xff0000, false, null, null, null, null, 'left');
-			tipTxt = CompCreateFactory.createGLabel(177,250,296,22,'你答错了，标准答案是A。为什么选A？',format);
+			format = new TextFormat(null,12, 0xff0000, false, null, null, null, null, 'right');
+			tipTxt = CompCreateFactory.createGLabel(177,310,400,22,'你答错了，标准答案是A。为什么选A？',format);
 			this.addChild(tipTxt);
 
 
@@ -200,6 +201,13 @@ package app.answer.modules.answer.view
 			dRadio.height = 22;
 			this.addChild(dRadio);
 			
+			eRadio = new GRadioButton();
+			eRadio.x = 173;
+			eRadio.y = 250;
+			eRadio.width = 410;
+			eRadio.height = 22;
+			this.addChild(eRadio);
+			
 			nullRadio = new GRadioButton();
 			nullRadio.x = 173;
 			nullRadio.y = 245;
@@ -229,6 +237,7 @@ package app.answer.modules.answer.view
 			bRadio.styleName = "GRadio";
 			cRadio.styleName = "GRadio";
 			dRadio.styleName = "GRadio";
+			eRadio.styleName = "GRadio";
 			nullRadio.styleName = "GRadio";
 		}
 	}

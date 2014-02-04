@@ -1,11 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<questions>
-	<quest id="1" type="1" title="我有能力克服各种困难:" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
-	<quest id="2" type="1" title="我的神经脆弱，稍有刺激就会使我战栗:" A="是的" B="否的" C="不是的" D="" answer="A" desc="" point="1" />
-	<quest id="3" type="1" title="我有能力克服各种困难:3" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
-	<quest id="4" type="1" title="我有能力克服各种困难:4" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
-	<quest id="5" type="1" title="我有能力克服各种困难:5" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
-	<quest id="6" type="1" title="我有能力克服各种困难:6" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
-	<quest id="7" type="1" title="我有能力克服各种困难:7" A="是的" B="不一定" C="不是的" D="" answer="A" desc="" point="1" />	
-	
+<!--
+	<questions time="600">  time = 总计时，单位秒
+	id 唯一数字，类似身份证
+	type [1|2|3] 1:单选题 2:多选题 3:判断题(可由单选题代替)
+	title 标题
+	A:选项A
+	B:选项B
+	answer 答案 "A:1;B:2" A:选A分数得1分,选择B分数得2分；
+	desc 描述或者是分析；
+-->
+<questions time="600">
+	<quest id="1" type="1" title="我有能力克服各种困难:" A="是的" B="不一定" C="不是的"  D="" answer="A:6;B:3" desc="" />	
+	<quest id="2" type="1" title="如果我能到一个新的环境，我要把生活安排得:" A="和从前相仿" B="不一定" C="和从前不一样" D="" answer="A:6;B:3" desc="" />
+	<quest id="3" type="1" title="一生中，我觉得自已能达到我所预想的目标:" A="是的" B="不一定" C="不是的" D="" answer="A:6;B:3" desc="" />	
+	<quest id="4" type="1" title="不知为什么，有些人总是回避或冷淡我:" A="不是的" B="不一定" C="是的" D="" answer="A:6;B:3" desc="" />	
+	<quest id="5" type="1" title="在大街上，我常常避开我不愿打招呼的人:" A="从未如此" B="偶尔如此" C="有时如此" D="" answer="A:6;B:3" desc="" />	
+	<quest id="6" type="1" title="当我集中精力工作时，假使有人在旁边高谈阔论:" A="我仍能专心工作" B="介于AC之间" C="我不能专心且感到愤怒" D="" answer="A:6;B:3" desc="" />	
+	<quest id="7" type="1" title="我不论到什么地方，都能清楚地辨别方向:" A="是的" B="不一定" C="不是的" D="" answer="A:6;B:3" desc="" />		
+	<quest id="8" type="1" title="我热爱所学的专业和所从事的工作:" A="是的" B="不一定" C="不是的" D="" answer="A:6;B:3" desc="" />		
+	<quest id="9" type="1" title="气候的变化不会影响我的情绪:" A="是的" B="介于AC之间" C="不是的" D="" answer="A:6;B:3" desc="" />		
+	<quest id="10" type="1" title="我从不因流言蜚语而生气:" A="是的" B="介于AC之间" C="不是的" D="" answer="A:5;B:2" desc="" />		
+	<quest id="11" type="1" title="我善于控制自己的面部表情:" A="是的" B="不太确定" C="不是的" D="" answer="A:5;B:2" desc="" />		
+	<quest id="12" type="1" title="在就寝时，我常常:" A="极易入睡" B="介于AC之间" C="不易入睡" D="" answer="A:5;B:2" desc="" />		
+	<quest id="13" type="1" title="有人侵扰我时，我:" A="不露声色" B="介于AC之间" C="大声抗议，以泄己愤" D="" answer="A:5;B:2" desc="" />		
+	<quest id="14" type="1" title="在和人争辨或工作出现失误后，我常常感到震颤，精疲力竭，而不能继续安心工作:" A="不是的" B="介于AC之间" C="是的" D="" answer="A:5;B:2" desc="" />		
+	<quest id="15" type="1" title="我常常被一些无谓的小事困扰:" A="不是的" B="介于AC之间" C="是的" D="" answer="A:5;B:2" desc="" />		
+	<quest id="16" type="1" title="我宁愿住在僻静的郊区，也不愿住在嘈杂的市区:" A="不是的" B="不太确定" C="是的" D="" answer="A:5;B:2" desc="" />		
+	<quest id="17" type="1" title="我被朋友、同事起过绰号、挖苦过:" A="从来没有" B="偶尔有过" C="这是常有的事" D="" answer="A:5;B:2" desc="" />		
+	<quest id="18" type="1" title="有一种食物使我吃后呕吐:" A="没有" B="记不清" C="有" D="" answer="A:5;B:2" desc="" />		
+	<quest id="19" type="1" title="除去看见的世界外，我的心中没有另外的世界:" A="没有" B="记不清" C="有" D="" answer="A:5;B:2" desc="" />		
+	<quest id="20" type="1" title="我会想到若干年后有什么使自己极为不安的事:" A="从来没有想过" B="偶尔想到过" C="经常想到" D="" answer="A:5;B:2" desc="" />		
+	<quest id="21" type="1" title="我常常觉得家庭对自己不好，但是知道他们的确对我好:" A="否" B="说不清楚" C="是" D="" answer="A:5;B:2" desc="" />		
+	<quest id="22" type="1" title="每天我一回家就立刻把门关上:" A="否" B="不清楚" C="是" D="" answer="A:5;B:2" desc="" />		
+	<quest id="23" type="1" title="我坐在小房间里把门关上，但我仍觉得心里不安:" A="否" B="偶尔是" C="是" D="" answer="A:5;B:2" desc="" />		
+	<quest id="24" type="1" title="当一件事需要我作决定时，我常觉得很难:" A="否" B="偶尔是" C="是" D="" answer="A:5;B:2" desc="" />		
+	<quest id="25" type="1" title="我常常用抛硬币、翻纸、抽签之类的游戏来预测凶吉:" A="否" B="偶尔是" C="是" D="" answer="A:5;B:2" desc="" />		
+	<quest id="26" type="1" title="我会想到若干年后有什么使自己极为不安的事:" A="从来没有想过" B="偶尔想到过" C="" D="" answer="A:0;B:5" desc="" />		
+	<quest id="27" type="1" title="在某种心境下,我会因为困惑陷入空想,将工作搁置下来:" A="是" B="否" C="" D="" answer="A:0;B:5" desc="" />		
+	<quest id="28" type="1" title="我的神经脆弱,稍有刺激就会使我战栗:" A="是" B="否" C="" D="" answer="A:0;B:5" desc="" />		
+	<quest id="29" type="1" title="睡梦中,我常常被噩梦惊醒:" A="是" B="否" C="" D="" answer="A:0;B:5" desc="" />		
+	<quest id="30" type="1" title="工作中我愿意挑战艰巨的任务。" A="从不" B="几乎不" C="一半时间" D="大多数时间" E="总是" answer="A:1;B:2;C:3;D:4;E:5" desc="" />		
+	<quest id="31" type="1" title="我常发现别人好的意愿。" A="从不" B="几乎不" C="一半时间" D="大多数时间" E="总是" answer="A:1;B:2;C:3;D:4;E:5" desc="" />		
+	<quest id="32" type="1" title="能听取不同的意见，包括对自己的批评。" A="从不" B="几乎不" C="一半时间" D="大多数时间" E="总是" answer="A:1;B:2;C:3;D:4;E:5" desc="" />		
+	<quest id="33" type="1" title="我时常勉励自己，对未来充满希望。" A="从不" B="几乎不" C="一半时间" D="大多数时间" E="总是" answer="A:1;B:2;C:3;D:4;E:5" desc="" />
+	<analyze part1="90:sdfl" />
+<!--
+测试后如果你的得分在90分以下，说明你的EQ较低，你常常不能控制自己，你极易被自己的情绪所影响。很多时候，你容易被击怒、动火、发脾气，这是非常危险的信号──你的事业可能会毁于你的急躁,对于此,最好的解决办法是能够给不好的东西一个好的解释,保持头脑冷静,使自己心情开朗,正如富兰克林所说:”任何人生气都是有理的,但很少有令人信服的理由。”
+
+如果你的得分在90～129分，说明你的EQ一般，对于一件事，你不同时候的表现可能不一，这与你的意识有关，你比前者更具有EQ意识，但这种意识不是常常都有，因此需要你多加注意、时时提醒。
+
+如果你的得分在130～149分，说明你的EQ较高，你是一个快乐的人，不易恐惧担忧，对于工作你热情投入、敢于负责，你为人更是正义正直、同情关怀，这是你的优点，应该努力保持。
+
+如果你的EQ在150分以上，那你就是个EQ高手，你的情绪智慧不但是你事业的阻碍，更是你事业有成的一个重要前提条件。
+
+-->
 </questions>

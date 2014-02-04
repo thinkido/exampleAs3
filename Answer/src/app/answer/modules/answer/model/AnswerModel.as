@@ -33,7 +33,7 @@ package app.answer.modules.answer.model
 		public var signArr:Array = [];
 		
 		public var jumpTime:Number = 1000;
-		public var jumpNeedTime:Number = 1000;
+		public var jumpNeedTime:Number = 500;
 		public var showAnswerNeedTime:int = 2000 ;
 		
 		protected override function getProperty($name:String):*

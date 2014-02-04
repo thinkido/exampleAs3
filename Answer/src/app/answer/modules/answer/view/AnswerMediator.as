@@ -19,6 +19,7 @@ package app.answer.modules.answer.view
 	import flash.events.FocusEvent;
 	import flash.events.MouseEvent;
 	import flash.events.TextEvent;
+	import flash.utils.Dictionary;
 	
 	import lm.components.window.WindowEvent;
 	import lm.mui.controls.GRadioButton;
@@ -55,6 +56,7 @@ package app.answer.modules.answer.view
 			panel.bRadio.addEventListener(MouseEvent.CLICK,radioClick);
 			panel.cRadio.addEventListener(MouseEvent.CLICK,radioClick);
 			panel.dRadio.addEventListener(MouseEvent.CLICK,radioClick);
+			panel.eRadio.addEventListener(MouseEvent.CLICK,radioClick);
 			
 			panel.autoCheck.addEventListener(MouseEvent.CLICK,autoCheckClick);
 			panel.showAnswerCheck.addEventListener(MouseEvent.CLICK,showAnswerClick);
@@ -126,6 +128,9 @@ package app.answer.modules.answer.view
 			else if(rad == panel.dRadio ){
 				model.currVo.selected = "d" ;
 			}
+			else if(rad == panel.eRadio ){
+				model.currVo.selected = "e" ;
+			}
 			changeJumpTime();
 			checkAndShow();
 			if( model.autoJump ){
@@ -153,7 +158,7 @@ package app.answer.modules.answer.view
 			if( model.showAnswer && model.currVo.selected.length != 0 ){
 					var txt:String = "" ;
 				if( !model.currVo.isRight() ){
-					panel.tipTxt.text = '你答错了，标准答案是'+ model.currVo.answer.toUpperCase() +'。为什么选'+ model.currVo.answer.toUpperCase() +'？'  ;
+					panel.tipTxt.text = '你答错了，标准答案是'+ model.currVo.getAnswer() +'。为什么选'+ model.currVo.getAnswer() +'？'  ;
 				}else{
 					panel.tipTxt.text = '你答对了！'  ;
 				}
@@ -164,9 +169,10 @@ package app.answer.modules.answer.view
 		
 		private function setAnswerData(currVo:QuestionVo):void
 		{
-			if( model.currVo.isRight() && model.rightArr.indexOf( model.currVo.id ) == -1 ){
+			var temp:Boolean = model.currVo.isRight() ;
+			if( temp && model.rightArr.indexOf( model.currVo.id ) == -1 ){
 				model.rightArr.push( model.currVo.id );
-			}else if( !model.currVo.isRight() && model.rightArr.indexOf( model.currVo.id ) != -1 ){
+			}else if( !temp && model.rightArr.indexOf( model.currVo.id ) != -1 ){
 				ArrayUtil.removeObj(model.rightArr,model.currVo.id) ;
 			}
 			calcScore();
@@ -181,7 +187,14 @@ package app.answer.modules.answer.view
 		 */		
 		private function calcScore():void
 		{
-			model.score = int( model.rightArr.length / model.total * 100 ) ;
+			model.score = 0 ;
+			var db:Dictionary = QuestionResManager.getQuestion() ;
+			for each (var vo:QuestionVo in db ) 
+			{
+				if( vo.isRight() ){
+					model.score += vo.getScore() ;
+				}
+			}
 		}
 		
 		/**
@@ -270,11 +283,13 @@ package app.answer.modules.answer.view
 			panel.bRadio.label = "B." + vo.b ;
 			panel.cRadio.label = "C." + vo.c ;
 			panel.dRadio.label = "D." + vo.d ;
+			panel.eRadio.label = "E." + vo.e ;
 			
 			panel.aRadio.visible = vo.a == ""? false:true ;
 			panel.bRadio.visible = vo.b == ""? false:true ;
 			panel.cRadio.visible = vo.c == ""? false:true ;
 			panel.dRadio.visible = vo.d == ""? false:true ;
+			panel.eRadio.visible = vo.e == ""? false:true ;
 			
 			if( vo.selected.length > 0 ){
 				panel.single.selection = panel[vo.selected + "Radio"] ;

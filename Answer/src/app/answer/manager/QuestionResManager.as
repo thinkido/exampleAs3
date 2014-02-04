@@ -1,6 +1,7 @@
 package app.answer.manager
 {
 	import app.answer.common.vo.QuestionVo;
+	import app.answer.modules.answer.model.AnswerModel;
 	
 	import com.thinkido.framework.utils.ArrayUtil;
 	
@@ -24,8 +25,16 @@ package app.answer.manager
 			_questionDic = new Dictionary() ;
 			var childs:XMLList = data.quest ;
 			var tempVO:QuestionVo, file:XMLList, c:XML;
+			var dic:Object ;
+			var temp:String ;
+			var tempArr:Array ;
+			
+			var temp1:String ;
+			var tempArr1:Array ;
+			AnswerModel.getInstance().showTimeCount = data.@time ;
 			for each (var child:XML in childs)
 			{
+				dic = new Dictionary();
 				tempVO = new QuestionVo();
 				tempVO.id = child.@id ;
 				tempVO.title = child.@title ;
@@ -33,10 +42,20 @@ package app.answer.manager
 				tempVO.b = child.@B ;
 				tempVO.c = child.@C ;
 				tempVO.d = child.@D ;
-				tempVO.answer = String(child.@answer).toLocaleLowerCase() ;
+				tempVO.e = child.@E ;
 				tempVO.desc = child.@desc ;
 				tempVO.type = child.@type ;
-				tempVO.point = child.@point ;
+				temp = String(child.@answer).toLocaleLowerCase() ; 
+				dic = {} ;
+				tempArr = temp.split(";") ;
+				for (var i:int = 0; i < tempArr.length; i++) 
+				{
+					tempArr1 = tempArr[i].split(":");
+					if( tempArr1.length > 0 ){
+						dic[tempArr1[0]] = tempArr1[1] ;
+					}
+				}
+				tempVO.answer = dic ;
 				_len += 1 ;	
 				_questionDic[String(child.@id)] = tempVO;
 			}
@@ -58,6 +77,11 @@ package app.answer.manager
 		public static function getModuleVO(id:int):QuestionVo
 		{
 			return _questionDic.hasOwnProperty(id) ? _questionDic[id] : null;
+		}
+		/***/
+		public static function getQuestion():Dictionary
+		{
+			return _questionDic;
 		}
 
 
