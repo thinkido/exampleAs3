@@ -5,7 +5,13 @@ package app.answer.modules.answer.view
 	import app.answer.modules.answer.model.AnswerModel;
 	
 	import com.thinkido.framework.common.timer.vo.TimerData;
+	import com.thinkido.framework.manager.BrowerManager;
 	import com.thinkido.framework.manager.TimerManager;
+	import com.thinkido.framework.utils.StringUtil;
+	
+	import flash.desktop.Clipboard;
+	import flash.desktop.ClipboardFormats;
+	import flash.events.MouseEvent;
 	
 	import lm.components.window.WindowEvent;
 	
@@ -31,7 +37,15 @@ package app.answer.modules.answer.view
 		private var model:AnswerModel = AnswerModel.getInstance() ;
 		private function initEvt():void
 		{
-			panel.addEventListener(WindowEvent.CLOSE, closePanel);		
+			panel.addEventListener(WindowEvent.CLOSE, closePanel);	
+			panel.shareBtn.addEventListener(MouseEvent.CLICK,shareClick);
+		}
+
+		private function shareClick(event:MouseEvent):void
+		{
+			var shareStr:String = "没想到我的情商这么高,居然高达{0}分,我等你来挑战！" ;
+			Clipboard.generalClipboard.setData(ClipboardFormats.TEXT_FORMAT,StringUtil.replacePlaceholder(shareStr,[AnswerModel.getInstance().score]) + "\n" + BrowerManager.instance.url );
+			
 		}
 		
 		private function closePanel(event:WindowEvent = null):void
@@ -93,7 +107,7 @@ package app.answer.modules.answer.view
 		private function start():void
 		{
 			clearTd();
-			td = TimerManager.createTimer(3000,1,autoClose);
+//			td = TimerManager.createTimer(3000,1,autoClose);
 		}
 		
 		private function autoClose():void

@@ -11,9 +11,11 @@ package app.answer
 		public static const STARTUP_SHELL:String = "app.answer.modules.shell.Shell_ApplicationFacade";
 		
 		public static const SHOW_Answer_PANEL:String = "SHOW_ANSWER_PANEL";
+		public static const SHOW_Link_PANEL:String = "SHOW_Link_PANEL";
 		
 		public static const STARTUP_LOADRES:String = "app.answer.modules.loadRes.LoadRes_ApplicationFacade";
 		public static const STARTUP_Answer:String = "app.answer.modules.answer.Answer_ApplicationFacade";
+		public static const STARTUP_MainUi:String = "app.answer.modules.mainui.MainUi_ApplicationFacade";
 		
 		
 		public function PipeEvent()

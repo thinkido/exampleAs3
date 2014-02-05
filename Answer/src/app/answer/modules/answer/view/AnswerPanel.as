@@ -239,6 +239,7 @@ package app.answer.modules.answer.view
 			dRadio.styleName = "GRadio";
 			eRadio.styleName = "GRadio";
 			nullRadio.styleName = "GRadio";
+			titleTxt.wordWrap = true ;
 		}
 	}
 }

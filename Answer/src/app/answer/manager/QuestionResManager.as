@@ -31,7 +31,9 @@ package app.answer.manager
 			
 			var temp1:String ;
 			var tempArr1:Array ;
-			AnswerModel.getInstance().showTimeCount = data.@time ;
+			var model:AnswerModel = AnswerModel.getInstance();
+			model.showTimeCount = data.@time ;
+			model.comment = String(data.@comment).replace(/\\n/g,"\n"); ;
 			for each (var child:XML in childs)
 			{
 				dic = new Dictionary();

@@ -5,6 +5,7 @@ package
 	import app.answer.manager.FacadeManager;
 	import app.answer.manager.layer.LayerManager;
 	import app.answer.modules.answer.view.ScorePanel;
+	import app.answer.modules.mainui.view.LinkPanel;
 	
 	import com.google.analytics.AnalyticsTracker;
 	import com.google.analytics.GATracker;
@@ -19,7 +20,7 @@ package
 	import flash.display.StageScaleMode;
 	import flash.system.Security;
 
-	[SWF(width="1000",height="700")]
+	[SWF(width="800",height="420")]
 	public class Answer extends Application
 	{
 		[Embed(source="../asset/focusTile.png",mimeType="image/png")]
@@ -46,11 +47,10 @@ package
 			GameInstance.stage = stage;
 			
 			tracker = new GATracker( this, "UA-40324677-1", "AS3", false );
-			tracker.trackPageview("/main");
+			tracker.trackPageview("/answer");
 			
 			LayerManager.init() ;
 			
-//			addChild(new ScorePanel());
 			
 			startup() ;
 			

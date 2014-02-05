@@ -3,12 +3,17 @@ package app.answer.modules.answer
 	import app.answer.PipeEvent;
 	import app.answer.manager.POPWindowManager;
 	import app.answer.manager.PipeManager;
+	import app.answer.manager.layer.LayerManager;
 	import app.answer.modules.answer.controller.Answer_StartupCommand;
 	import app.answer.modules.answer.view.AnswerMediator;
 	import app.answer.modules.answer.view.AnswerPanel;
 	
+	import com.greensock.TweenLite;
 	import com.thinkido.framework.common.observer.Notification;
 	import com.thinkido.framework.manager.TimerManager;
+	
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
 	
 	import org.puremvc.as3.multicore.patterns.facade.Facade;
 	
@@ -75,7 +80,17 @@ package app.answer.modules.answer
 			var ui:AnswerPanel = mediator.getViewComponent() as AnswerPanel;
 			if (ui && ui.parent)
 			{
+				var removeWindow:Function = function():void{
+					LayerManager.effectLayer.removeChild(bm);
+				}
 				POPWindowManager.removeSmallWindow(ui, NAME);
+				var bmd:BitmapData = new BitmapData(ui.width,ui.height,true,0x00ffffff);
+				bmd.draw(ui);
+				var bm:Bitmap = new Bitmap(bmd);
+				bm.x = ui.x ;
+				bm.y = ui.y ;
+				LayerManager.effectLayer.addChild(bm);
+				TweenLite.to(bm,0.6,{x:50,y:100,width:bm.width/10,height:bm.height/10,alpha:0.3,onComplete:removeWindow}) ;
 			}
 		}
 	}

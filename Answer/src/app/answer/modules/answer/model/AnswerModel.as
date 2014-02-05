@@ -36,6 +36,8 @@ package app.answer.modules.answer.model
 		public var jumpNeedTime:Number = 500;
 		public var showAnswerNeedTime:int = 2000 ;
 		
+		public var comment:String = "" ;
+		
 		protected override function getProperty($name:String):*
 		{
 			return super.getProperty($name);

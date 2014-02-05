@@ -61,6 +61,7 @@ package app.answer.modules.loadRes.controller
 			QuestionResManager.parseXML(xml);
 			this.sendNotification(LoadRes_ApplicationFacade.SHUTDOWN);
 			FacadeManager.startupFacade(PipeEvent.STARTUP_Answer,PipeEvent.SHOW_Answer_PANEL);
+			FacadeManager.startupFacade(PipeEvent.STARTUP_MainUi,PipeEvent.SHOW_Link_PANEL);
 		}
 
     }
