@@ -102,6 +102,7 @@ package app.answer.modules.answer.view
 			POPWindowManager.centerWindow(panel, null, Answer_ApplicationFacade.NAME);
 			start() ;
 			panel.scoreTxt.text = "总分：" + model.score ;
+			panel.showTxt.htmlText = model.getScoreTxt(model.score) ;
 		}
 		
 		private function start():void

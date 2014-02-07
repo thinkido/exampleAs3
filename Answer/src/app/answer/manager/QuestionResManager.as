@@ -32,8 +32,19 @@ package app.answer.manager
 			var temp1:String ;
 			var tempArr1:Array ;
 			var model:AnswerModel = AnswerModel.getInstance();
-			model.showTimeCount = data.@time ;
+			model.showTime = data.@time ;
 			model.comment = String(data.@comment).replace(/\\n/g,"\n"); ;
+			
+			var obj:Array = [];
+			var temp2:XMLList = data..part ;
+			for each(var key:* in temp2) 
+			{
+//				obj[int(key.@score)] = String(key.@txt) ;
+				obj.push({score:int(key.@score),txt:String(key.@txt)});
+			}
+			
+			model.analyze = obj;
+			model.getScoreTxt(123);
 			for each (var child:XML in childs)
 			{
 				dic = new Dictionary();

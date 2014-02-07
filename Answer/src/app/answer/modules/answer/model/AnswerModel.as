@@ -16,8 +16,13 @@ package app.answer.modules.answer.model
 			}
 			return _inst ;
 		}
-		
+		/**
+		 * 显示计时数字 
+		 */		
 		public var  showTimeCount:int = 600 ;
+		/**
+		 * 总时长 
+		 */		
 		public var showTime:int = 600 ;
 		
 		public var currIndex:int = 1 ;
@@ -38,6 +43,9 @@ package app.answer.modules.answer.model
 		
 		public var comment:String = "" ;
 		
+		public var analyze:Array = [] ;
+		private var errorStr:String = "你简直太强了，超过了系统最高分！你是个Bug";
+		
 		protected override function getProperty($name:String):*
 		{
 			return super.getProperty($name);
@@ -46,6 +54,23 @@ package app.answer.modules.answer.model
 		protected override function setProperty($name:String, $value:*):void
 		{
 			super.setProperty($name,$value);
+		}
+		
+		public function getScoreTxt($score:int):String{
+			var temp:String = "" ;
+			analyze.sortOn("score",Array.NUMERIC|Array.DESCENDING);
+			for each(var item:* in analyze) 
+			{
+				if($score < int(item.score)){
+					temp = item.txt ;
+				}else{
+					break ;
+				}
+			}
+			if(temp.length == 0 ){
+				temp = errorStr ;
+			}
+			return temp;
 		}
 
 

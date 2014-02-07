@@ -48,9 +48,8 @@ package app.answer.modules.answer.view
 			
 			showTxt = CompCreateFactory.createGTextField(10,120,580,200,format);
 			this.addChild(showTxt);
-			var model:AnswerModel = AnswerModel.getInstance();
-			showTxt.htmlText = AnswerModel.getInstance().comment ;
 			showTxt.wordWrap = true ;
+			showTxt.selectable = false ;
 			
 			shareBtn = CompCreateFactory.createGButton(510,350,70,28,'分享');
 			shareBtn.styleName = 'RedButton';
