@@ -61,7 +61,7 @@ package app.answer.modules.answer.model
 			analyze.sortOn("score",Array.NUMERIC|Array.DESCENDING);
 			for each(var item:* in analyze) 
 			{
-				if($score < int(item.score)){
+				if($score <= int(item.score)){
 					temp = item.txt ;
 				}else{
 					break ;
