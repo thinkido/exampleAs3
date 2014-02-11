@@ -35,7 +35,7 @@
 	<quest id="23" type="1" title="我坐在小房间里把门关上，但我仍觉得心里不安:" A="否" B="偶尔是" C="是" D="" answer="A:5;B:2" desc="" />		
 	<quest id="24" type="1" title="当一件事需要我作决定时，我常觉得很难:" A="否" B="偶尔是" C="是" D="" answer="A:5;B:2" desc="" />		
 	<quest id="25" type="1" title="我常常用抛硬币、翻纸、抽签之类的游戏来预测凶吉:" A="否" B="偶尔是" C="是" D="" answer="A:5;B:2" desc="" />		
-	<quest id="26" type="1" title="我会想到若干年后有什么使自己极为不安的事:" A="从来没有想过" B="偶尔想到过" C="" D="" answer="A:0;B:5" desc="" />		
+	<quest id="26" type="1" title="为了工作我早出晚归，早晨起床我常常感到疲惫不堪:" A="从来没有想过" B="偶尔想到过" C="" D="" answer="A:0;B:5" desc="" />		
 	<quest id="27" type="1" title="在某种心境下,我会因为困惑陷入空想,将工作搁置下来:" A="是" B="否" C="" D="" answer="A:0;B:5" desc="" />		
 	<quest id="28" type="1" title="我的神经脆弱,稍有刺激就会使我战栗:" A="是" B="否" C="" D="" answer="A:0;B:5" desc="" />		
 	<quest id="29" type="1" title="睡梦中,我常常被噩梦惊醒:" A="是" B="否" C="" D="" answer="A:0;B:5" desc="" />		
