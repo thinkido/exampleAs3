@@ -219,6 +219,7 @@ package app.answer.modules.answer.view
 			bRadio.group = single ;
 			cRadio.group = single ;
 			dRadio.group = single ;
+			eRadio.group = single ;
 			nullRadio.group = single ;
 
 			preBtn = CompCreateFactory.createGButton(170,335,74,28,'上一题');
