@@ -38,10 +38,16 @@ package app.answer.modules.answer.model
 		public var signArr:Array = [];
 		
 		public var jumpTime:Number = 1000;
-		public var jumpNeedTime:Number = 500;
+		public var jumpNeedTime:Number = 100;
 		public var showAnswerNeedTime:int = 2000 ;
 		
 		public var comment:String = "" ;
+		public var tabArr:Array = [{label:"全部",name:'all'},{label:"正确",name:'right'},{label:"错误",name:'error'}] ;
+		
+		public var allItem:Object = {label:"全部",name:'all',index:0} ;
+		public var notSureItem:Object = {label:"不确定",name:'notSure',index:1} ;
+		public var errorItem:Object = {label:"正确",name:'right',index:2} ;
+		public var rightItem:Object = {label:"错误",name:'error',index:3} ;
 		
 		public var analyze:Array = [] ;
 		private var errorStr:String = "你简直太强了，超过了系统最高分！你是个Bug";

@@ -4,15 +4,18 @@ package app.answer.modules.answer.view
 	
 	import fl.controls.RadioButtonGroup;
 	
+	import flash.display.Sprite;
 	import flash.text.TextFormat;
 	
 	import lm.components.window.GWindow;
 	import lm.mui.CompCreateFactory;
+	import lm.mui.containers.globalVariable.GBoxDirection;
 	import lm.mui.controls.GButton;
 	import lm.mui.controls.GCheckBox;
 	import lm.mui.controls.GImageBitmap;
 	import lm.mui.controls.GLabel;
 	import lm.mui.controls.GRadioButton;
+	import lm.mui.controls.GTabBar;
 	import lm.mui.controls.GTextInput;
 	import lm.mui.core.GlobalClass;
 
@@ -25,6 +28,13 @@ package app.answer.modules.answer.view
 		public var cRadio:GRadioButton;
 		public var bRadio:GRadioButton;
 		public var aRadio:GRadioButton;
+		
+		public var aCheck:GCheckBox;
+		public var bCheck:GCheckBox;
+		public var cCheck:GCheckBox;
+		public var dCheck:GCheckBox;
+		public var eCheck:GCheckBox;
+		
 		public var nullRadio:GRadioButton;
 		public var notSureCheck:GCheckBox;
 		public var showAnswerCheck:GCheckBox;
@@ -48,6 +58,10 @@ package app.answer.modules.answer.view
 		public var GImageBitmap1:GImageBitmap;
 		public var single:RadioButtonGroup;
 		public var submitBtn:GButton ;
+		
+		public var tabBar:GTabBar ;
+		public var radioCon:Sprite;
+		public var checkCon:Sprite;
 
 		public function AnswerPanel()
 		{
@@ -173,40 +187,45 @@ package app.answer.modules.answer.view
 			notSureCheck.textField.width = 300 ;
 			notSureCheck.validateNow();
 
+			radioCon = new Sprite();
+			checkCon = new Sprite();
+			addChild(radioCon);
+			addChild(checkCon);
+			
 			aRadio = new GRadioButton();
 			aRadio.x = 173;
 			aRadio.y = 149;
 			aRadio.width = 410;
 			aRadio.height = 22;
-			this.addChild(aRadio);
+			radioCon.addChild(aRadio);
 
 			bRadio = new GRadioButton();
 			bRadio.x = 173;
 			bRadio.y = 174;
 			bRadio.width = 410;
 			bRadio.height = 22;
-			this.addChild(bRadio);
+			radioCon.addChild(bRadio);
 
 			cRadio = new GRadioButton();
 			cRadio.x = 173;
 			cRadio.y = 199;
 			cRadio.width = 410;
 			cRadio.height = 22;
-			this.addChild(cRadio);
+			radioCon.addChild(cRadio);
 
 			dRadio = new GRadioButton();
 			dRadio.x = 173;
 			dRadio.y = 225;
 			dRadio.width = 410;
 			dRadio.height = 22;
-			this.addChild(dRadio);
+			radioCon.addChild(dRadio);
 			
 			eRadio = new GRadioButton();
 			eRadio.x = 173;
 			eRadio.y = 250;
 			eRadio.width = 410;
 			eRadio.height = 22;
-			this.addChild(eRadio);
+			radioCon.addChild(eRadio);
 			
 			nullRadio = new GRadioButton();
 			nullRadio.x = 173;
@@ -241,6 +260,56 @@ package app.answer.modules.answer.view
 			eRadio.styleName = "GRadio";
 			nullRadio.styleName = "GRadio";
 			titleTxt.wordWrap = true ;
+			
+			var arr:Array = [{label:"全部",name:'all'},{label:"错误",name:'error'}] ;
+//			var arr:Array = [{label:"全部",name:'all'}] ;
+			tabBar = CompCreateFactory.createGTabBar( 160,369,65,27); 
+			tabBar.buttonStyleName = "GTabBarButton" ;
+			tabBar.direction = GBoxDirection.HORIZONTAL;
+			tabBar.dataProvider = arr;
+			this.addChild(tabBar);
+			
+			aCheck = new GCheckBox();
+			aCheck.x = 173;
+			aCheck.y = 149;
+			aCheck.width = 410;
+			aCheck.height = 22;
+			aCheck.styleName = "GCheckBox" ;
+			checkCon.addChild(aCheck);
+			
+			bCheck = new GCheckBox();
+			bCheck.x = 173;
+			bCheck.y = 174;
+			bCheck.width = 410;
+			bCheck.height = 22;
+			bCheck.styleName = "GCheckBox" ;
+			checkCon.addChild(bCheck);
+			
+			cCheck = new GCheckBox();
+			cCheck.x = 173;
+			cCheck.y = 199;
+			cCheck.width = 410;
+			cCheck.height = 22;
+			cCheck.styleName = "GCheckBox" ;
+			checkCon.addChild(cCheck);
+			
+			dCheck = new GCheckBox();
+			dCheck.x = 173;
+			dCheck.y = 225;
+			dCheck.width = 410;
+			dCheck.height = 22;
+			dCheck.styleName = "GCheckBox" ;
+			checkCon.addChild(dCheck);
+			
+			eCheck = new GCheckBox();
+			eCheck.x = 173;
+			eCheck.y = 250;
+			eCheck.width = 410;
+			eCheck.height = 22;
+			eCheck.styleName = "GCheckBox" ;
+			checkCon.addChild(eCheck);
+			
+			checkCon.visible = false ;
 		}
 	}
 }

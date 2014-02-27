@@ -51,9 +51,30 @@ package app.answer.common.vo
 			if( type == SELECT_SINGLE && answer[selected] != undefined ){
 				temp = true ;
 			}
+			else if( type == SELECT_MIUTIPLE ){
+//				多选所有答案一致才算正确
+				var tempArr:Array = [];
+				var tempStr:String ;
+				for (var key:String in answer) 
+				{
+					tempArr.push(key) ;
+				}
+				tempArr.sort();
+				tempStr = tempArr.join("") ;
+				if( selected == tempStr ){
+					temp = true ;
+				}
+			}
 			return temp;
 		}
+		
+		/**
+		 * 可以是临时变量，这里为了减少字符串生成次数。
+		 */
 		private var _answerStr:String = "" ;
+		/**
+		 * @return 获取答案提示字符串
+		 */		
 		public function getAnswer():String{
 			var temp:Array = [] ;
 			if( _answerStr == ""){
@@ -62,14 +83,38 @@ package app.answer.common.vo
 					temp.push(key.toUpperCase()) ;
 				}
 				temp.sort();
-				_answerStr = temp.join("或") ;
+				if( type == SELECT_SINGLE ){
+					_answerStr = temp.join("或") ;
+				}else{
+					_answerStr = temp.join("和") ;
+				}
 			}
 			return _answerStr ;
 		}
+		/**
+		 * @return 获取分数
+		 */		
 		public function getScore():int{
 			var temp:int = 0 ;
 			if( type == SELECT_SINGLE && answer[selected] != undefined ){
 				temp = answer[selected] ;
+			}else if( type == SELECT_MIUTIPLE && selected.length > 0){
+				var score:int = 0 ;
+				var item:String ;
+				var minusScore:int ;  //和第一个正确答案的的分数一致
+				for (var i:int = 0; i < selected.length ; i++) 
+				{
+					item = selected.charAt(i) ;
+					if( answer[item] != undefined ){
+						score += int(answer[item]) ;
+						if( minusScore == 0 ){
+							minusScore = int(answer[item]);
+						}
+					}else{
+						score -= minusScore ;
+					}
+				}
+				temp = Math.max(0,score) ;
 			}
 			return temp ;
 		}

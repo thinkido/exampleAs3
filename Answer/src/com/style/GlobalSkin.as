@@ -1,11 +1,10 @@
 ﻿package com.style
 {
 	import com.style.button.ButtonStyle;
-	import com.style.button.GTabBarButtonStyle;
 	import com.style.button.RedButtonStyle;
 	import com.style.checkbox.GCheckBoxStyle;
 	import com.style.radioButton.GRadioButtonStyle;
-	import com.style.tabBar.GTabBarStyle;
+	import com.style.tabBar.TabButtonStyle;
 	import com.style.textInput.GTextInputStyle;
 	
 	import lm.mui.skins.SkinManager;
@@ -13,7 +12,7 @@
     public class GlobalSkin extends Object
     {
         private static var _componentCss:Object = {GButton:ButtonStyle,RedButton:RedButtonStyle ,
-			GLabel:GLabelStyle, GCheckBox:GCheckBoxStyle ,GRadio:GRadioButtonStyle ,GTableBarButton:GTabBarButtonStyle,
+			GLabel:GLabelStyle, GCheckBox:GCheckBoxStyle ,GRadio:GRadioButtonStyle ,GTabBarButton:TabButtonStyle,
 			GText:GTextInputStyle
 			
 			

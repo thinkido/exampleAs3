@@ -7,22 +7,21 @@ package app.answer.modules.answer.view
 	import app.answer.modules.answer.model.AnswerModel;
 	import app.answer.modules.answer.model.Answer_MsgSendProxy;
 	
-	import com.thinkido.framework.common.observer.Notification;
 	import com.thinkido.framework.common.timer.vo.TimerData;
 	import com.thinkido.framework.manager.TimerManager;
 	import com.thinkido.framework.utils.ArrayUtil;
-	import com.thinkido.framework.utils.MathUtil;
-	import com.thinkido.framework.utils.StringUtil;
 	import com.thinkido.framework.utils.TFormatter;
 	
 	import flash.events.Event;
 	import flash.events.FocusEvent;
 	import flash.events.MouseEvent;
-	import flash.events.TextEvent;
 	import flash.utils.Dictionary;
+	
+	import gear.ui.controls.GCheckBox;
 	
 	import lm.components.window.WindowEvent;
 	import lm.mui.controls.GRadioButton;
+	import lm.mui.events.MuiEvent;
 	
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -58,6 +57,12 @@ package app.answer.modules.answer.view
 			panel.dRadio.addEventListener(MouseEvent.CLICK,radioClick);
 			panel.eRadio.addEventListener(MouseEvent.CLICK,radioClick);
 			
+			panel.aCheck.addEventListener(MouseEvent.CLICK,checkClick);
+			panel.bCheck.addEventListener(MouseEvent.CLICK,checkClick);
+			panel.cCheck.addEventListener(MouseEvent.CLICK,checkClick);
+			panel.dCheck.addEventListener(MouseEvent.CLICK,checkClick);
+			panel.eCheck.addEventListener(MouseEvent.CLICK,checkClick);
+			
 			panel.autoCheck.addEventListener(MouseEvent.CLICK,autoCheckClick);
 			panel.showAnswerCheck.addEventListener(MouseEvent.CLICK,showAnswerClick);
 			
@@ -65,6 +70,15 @@ package app.answer.modules.answer.view
 			panel.goInput.addEventListener(Event.CHANGE ,goInputChange);
 			panel.goInput.addEventListener(FocusEvent.FOCUS_IN,focusIn);
 			panel.submitBtn.addEventListener(MouseEvent.CLICK,overTest) ;
+			
+			panel.tabBar.addEventListener(MuiEvent.GTABBAR_SELECTED_CHANGE, tabBarClick);
+			
+		}
+		
+		private function tabBarClick(evt:MuiEvent):void
+		{
+			var index:int = evt.selectedIndex;
+			panel.tabBar.dataProvider[index].name ;
 			
 		}
 		
@@ -110,6 +124,26 @@ package app.answer.modules.answer.view
 			checkAndShow();
 		}
 		
+		protected function checkClick(event:MouseEvent):void
+		{
+			model.currVo.selected = "" ;
+			if( panel.aCheck.selected ){
+				model.currVo.selected += "a";
+			}
+			if( panel.bCheck.selected ){
+				model.currVo.selected += "b";
+			}
+			if( panel.cCheck.selected ){
+				model.currVo.selected += "c";
+			}
+			if( panel.dCheck.selected ){
+				model.currVo.selected += "d";
+			}
+			if( panel.eCheck.selected ){
+				model.currVo.selected += "e";
+			}
+			setAnswerData( model.currVo ) ;
+		}
 		protected function radioClick(event:MouseEvent):void
 		{
 			var rad:GRadioButton = event.currentTarget as GRadioButton ;
@@ -152,7 +186,10 @@ package app.answer.modules.answer.view
 			}
 		}
 
-
+		/**
+		 * 检查正确性，提示答案 
+		 * 
+		 */
 		private function checkAndShow():void
 		{
 			if( model.showAnswer && model.currVo.selected.length != 0 ){
@@ -191,7 +228,9 @@ package app.answer.modules.answer.view
 			var db:Dictionary = QuestionResManager.getQuestion() ;
 			for each (var vo:QuestionVo in db ) 
 			{
-				if( vo.isRight() ){
+				if( vo.type == QuestionVo.SELECT_SINGLE && vo.isRight() ){
+					model.score += vo.getScore() ;
+				}else{
 					model.score += vo.getScore() ;
 				}
 			}
@@ -255,11 +294,6 @@ package app.answer.modules.answer.view
 			td = TimerManager.createTimer(1000,int.MAX_VALUE,timerCount);
 			model.total =  QuestionResManager.getLength() ;
 			setIndex(model.currIndex) ;
-//			panel.aRadio.selected = true ;
-//			panel.aRadio.selected = false ;
-//			panel.single.selection = panel.bRadio ;
-			
-			
 		}
 
 		private function setIndex(value:int):void{
@@ -279,22 +313,48 @@ package app.answer.modules.answer.view
 			
 			panel.titleTxt.text = vo.id + "、"+ vo.title ;
 			
-			panel.aRadio.label = "A." + vo.a ;
-			panel.bRadio.label = "B." + vo.b ;
-			panel.cRadio.label = "C." + vo.c ;
-			panel.dRadio.label = "D." + vo.d ;
-			panel.eRadio.label = "E." + vo.e ;
-			
-			panel.aRadio.visible = vo.a == ""? false:true ;
-			panel.bRadio.visible = vo.b == ""? false:true ;
-			panel.cRadio.visible = vo.c == ""? false:true ;
-			panel.dRadio.visible = vo.d == ""? false:true ;
-			panel.eRadio.visible = vo.e == ""? false:true ;
-			
-			if( vo.selected.length > 0 ){
-				panel.single.selection = panel[vo.selected + "Radio"] ;
-			}else{
-				panel.single.selection = panel.nullRadio ;
+			if( model.currVo.type == QuestionVo.SELECT_SINGLE  ){
+				panel.checkCon.visible = false ;
+				panel.radioCon.visible = true ;
+				panel.aRadio.label = "A." + vo.a ;
+				panel.bRadio.label = "B." + vo.b ;
+				panel.cRadio.label = "C." + vo.c ;
+				panel.dRadio.label = "D." + vo.d ;
+				panel.eRadio.label = "E." + vo.e ;
+				
+				panel.aRadio.visible = vo.a == ""? false:true ;
+				panel.bRadio.visible = vo.b == ""? false:true ;
+				panel.cRadio.visible = vo.c == ""? false:true ;
+				panel.dRadio.visible = vo.d == ""? false:true ;
+				panel.eRadio.visible = vo.e == ""? false:true ;
+				
+				if( vo.selected.length > 0 ){
+					panel.single.selection = panel[vo.selected + "Radio"] ;
+				}else{
+					panel.single.selection = panel.nullRadio ;
+				}
+			}
+			else if( model.currVo.type == QuestionVo.SELECT_MIUTIPLE  ){
+				panel.checkCon.visible = true ;
+				panel.radioCon.visible = false ;
+				panel.aCheck.label = "A." + vo.a ;
+				panel.bCheck.label = "B." + vo.b ;
+				panel.cCheck.label = "C." + vo.c ;
+				panel.dCheck.label = "D." + vo.d ;
+				panel.eCheck.label = "E." + vo.e ;
+				
+				panel.aCheck.visible = vo.a == ""? false:true ;
+				panel.bCheck.visible = vo.b == ""? false:true ;
+				panel.cCheck.visible = vo.c == ""? false:true ;
+				panel.dCheck.visible = vo.d == ""? false:true ;
+				panel.eCheck.visible = vo.e == ""? false:true ;
+				
+				panel.aCheck.selected = vo.selected.indexOf("a") != -1 ? true : false ;
+				panel.bCheck.selected = vo.selected.indexOf("b") != -1 ? true :false ;
+				panel.cCheck.selected = vo.selected.indexOf("c") != -1 ? true :false ;
+				panel.dCheck.selected = vo.selected.indexOf("d") != -1 ? true :false ;
+				panel.eCheck.selected = vo.selected.indexOf("e") != -1 ? true :false ;
+				
 			}
 			
 			checkAndShow();
