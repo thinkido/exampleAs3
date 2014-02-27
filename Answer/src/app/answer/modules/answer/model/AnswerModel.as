@@ -42,7 +42,7 @@ package app.answer.modules.answer.model
 		public var showAnswerNeedTime:int = 2000 ;
 		
 		public var comment:String = "" ;
-		public var tabArr:Array = [{label:"全部",name:'all'},{label:"正确",name:'right'},{label:"错误",name:'error'}] ;
+		public var tabArr:Array = [{label:"全部",name:'all'},{label:"不确定",name:'notSure',index:1},{label:"正确",name:'right'},{label:"错误",name:'error'}] ;
 		
 		public var allItem:Object = {label:"全部",name:'all',index:0} ;
 		public var notSureItem:Object = {label:"不确定",name:'notSure',index:1} ;

@@ -74,6 +74,7 @@ package app.answer.modules.answer.view
 			
 			panel.tabBar.addEventListener(MuiEvent.GTABBAR_SELECTED_CHANGE, tabBarClick);
 			
+			panel.tabBar.dataProvider = model.tabArr ;
 		}
 		
 		private function tabBarClick(evt:MuiEvent):void
