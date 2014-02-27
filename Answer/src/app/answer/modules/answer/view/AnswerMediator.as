@@ -3,6 +3,7 @@ package app.answer.modules.answer.view
 	import app.answer.common.vo.QuestionVo;
 	import app.answer.manager.POPWindowManager;
 	import app.answer.manager.QuestionResManager;
+	import app.answer.manager.TopTipManager;
 	import app.answer.modules.answer.Answer_ApplicationFacade;
 	import app.answer.modules.answer.model.AnswerModel;
 	import app.answer.modules.answer.model.Answer_MsgSendProxy;
@@ -79,7 +80,7 @@ package app.answer.modules.answer.view
 		{
 			var index:int = evt.selectedIndex;
 			panel.tabBar.dataProvider[index].name ;
-			
+			TopTipManager.getInstance().addSystemMouseTip("功能暂未开发");
 		}
 		
 		protected function focusIn(event:FocusEvent):void
