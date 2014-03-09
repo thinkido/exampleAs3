@@ -15,7 +15,7 @@
 	<quest id="2" type="1" title="如果我能到一个新的环境，我要把生活安排得:" A="和从前相仿" B="不一定" C="和从前不一样" D="" answer="A:6;B:3" desc="" />
 	<quest id="3" type="1" title="一生中，我觉得自已能达到我所预想的目标:" A="是的" B="不一定" C="不是的" D="" answer="A:6;B:3" desc="" />	
 	<quest id="4" type="1" title="不知为什么，有些人总是回避或冷淡我:" A="不是的" B="不一定" C="是的" D="" answer="A:6;B:3" desc="" />	
-	<quest id="5" type="1" title="在大街上，我常常避开我不愿打招呼的人:" A="从未如此" B="偶尔如此" C="有时如此" D="" answer="A:6;B:3" desc="" />	
+	<quest id="5" type="1" title="在大街上，我常常避开我不愿打招呼的人:" A="从未如此" B="偶尔如此" C="经常如此" D="" answer="A:6;B:3" desc="" />	
 	<quest id="6" type="1" title="当我集中精力工作时，假使有人在旁边高谈阔论:" A="我仍能专心工作" B="介于AC之间" C="我不能专心且感到愤怒" D="" answer="A:6;B:3" desc="" />	
 	<quest id="7" type="1" title="我不论到什么地方，都能清楚地辨别方向:" A="是的" B="不一定" C="不是的" D="" answer="A:6;B:3" desc="" />		
 	<quest id="8" type="1" title="我热爱所学的专业和所从事的工作:" A="是的" B="不一定" C="不是的" D="" answer="A:6;B:3" desc="" />		
