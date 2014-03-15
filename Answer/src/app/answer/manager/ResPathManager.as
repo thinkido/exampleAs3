@@ -13,8 +13,8 @@ package app.answer.manager
 		}
 		
 		public static function getQuestionPath():String{
-			
-			return GameConfig.fileBaseFolder + _question ;
+			var temp:String = GameConfig.filePath != "" ? GameConfig.filePath :_question
+			return GameConfig.fileBaseFolder + temp ;
 		}
 		public static function getUIPath():String{
 			

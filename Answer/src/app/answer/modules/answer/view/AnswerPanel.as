@@ -263,7 +263,7 @@ package app.answer.modules.answer.view
 			
 			var arr:Array = [{label:"全部",name:'all'},{label:"错误",name:'error'}] ;
 //			var arr:Array = [{label:"全部",name:'all'}] ;
-			tabBar = CompCreateFactory.createGTabBar( 160,369,65,27); 
+			tabBar = CompCreateFactory.createGTabBar( 160,368,65,27); 
 			tabBar.buttonStyleName = "GTabBarButton" ;
 			tabBar.direction = GBoxDirection.HORIZONTAL;
 			tabBar.dataProvider = arr;

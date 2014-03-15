@@ -46,6 +46,8 @@ package app.answer.modules.shell.controller
 			GameConfig.sceneWidth = GameInstance.stage.stageWidth ;
 			GameConfig.sceneHeight = GameInstance.stage.stageHeight ;
 			GameConfig.fileBaseFolder = GameConfig.flashParameters["baseDir"] || "";
+			GameConfig.filePath = GameConfig.flashParameters["filePath"] || "";
+			
 			if(!BrowerManager.instance.isNet){
 				GameConfig.fileBaseFolder =  "";
 			}

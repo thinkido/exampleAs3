@@ -13,6 +13,7 @@ package
 	import com.thinkido.example.Application;
 	import com.thinkido.framework.common.Global;
 	import com.thinkido.framework.display.RepeatImage;
+	import com.thinkido.framework.manager.BrowerManager;
 	import com.thinkido.framework.manager.MenuManager;
 	import com.thinkido.framework.manager.TimerManager;
 	
@@ -27,7 +28,8 @@ package
 		private var FocusImgClass:Class ;
 		private var focusImg:RepeatImage ;
 		
-		public static const version:String = "1.0.0" ;
+		public static const version:String = "1.0.2" ;
+		private static const website:String = "http://www.thinkido.com";
 		private var tracker:AnalyticsTracker ;
 		
 		public function Answer()
@@ -59,13 +61,17 @@ package
 		private function initMenu() : void
 		{
 			MenuManager.instance.initMenu(this);
-//			MenuManager.instance.addItem("QQ群里提意见bug",addQQGroup);
 			MenuManager.instance.addItem("v"+version);
-			MenuManager.instance.addItem("thinkido.com");
+			MenuManager.instance.addItem("thinkido.com",gotoWebsite);
 			MenuManager.instance.addItem("QQ:5526555");
-			
 			return;
 		}
+		
+		private function gotoWebsite():void
+		{
+			BrowerManager.instance.getUrl(website,"_blank");
+		}
+		
 		private function initStage():void{
 			Security.allowDomain("*");
 			stage.scaleMode = StageScaleMode.NO_SCALE;
@@ -90,6 +96,7 @@ package
 			param.baseDir = obj.baseDir;
 			param.config = obj.config;
 			param.program = obj.program;
+			param.filePath = obj.filePath ;
 			
 			FacadeManager.startupFacade(PipeEvent.STARTUP_SHELL, {parameters:param, decode:null});
 			FacadeManager.startupFacade(PipeEvent.STARTUP_LOADRES,null);

@@ -7,6 +7,7 @@ package app.answer.common
 		public static var sceneWidth:int;
 		public static var sceneHeight:int;
 		public static var fileBaseFolder:String = "" ;
+		public static var filePath:String;
 		public static var program:String;
 		public static var config:String;
 		public static var flashParameters:Object;

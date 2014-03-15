@@ -43,7 +43,7 @@ package app.answer.modules.answer.view
 		private function initUi():void
 		{
 			panel.tipTxt.visible = false ;
-			
+			panel.autoCheck.selected = true ;
 		}
 		private var td:TimerData ;
 		private function initEvt():void

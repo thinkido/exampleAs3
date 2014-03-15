@@ -31,7 +31,7 @@ package app.answer.modules.answer.model
 		
 		public var currVo:QuestionVo ;
 		public var notSure:Boolean = false ;
-		public var autoJump:Boolean = false ;
+		public var autoJump:Boolean = true ;
 		public var showAnswer:Boolean = false ;
 		
 		public var rightArr:Array = [];
