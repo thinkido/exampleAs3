@@ -30,6 +30,8 @@ package
 		
 		public static const version:String = "1.0.2" ;
 		private static const website:String = "http://www.thinkido.com";
+		private static const qqStr:String = "http://wpa.qq.com/msgrd?v=3&uin=5526555&site=qq&menu=yes";
+		
 		private var tracker:AnalyticsTracker ;
 		
 		public function Answer()
@@ -63,8 +65,13 @@ package
 			MenuManager.instance.initMenu(this);
 			MenuManager.instance.addItem("v"+version);
 			MenuManager.instance.addItem("thinkido.com",gotoWebsite);
-			MenuManager.instance.addItem("QQ:5526555");
+			MenuManager.instance.addItem("QQ:5526555",openQQ);
 			return;
+		}
+		
+		private function openQQ():void
+		{
+			BrowerManager.instance.getUrl(qqStr,"_blank");
 		}
 		
 		private function gotoWebsite():void
