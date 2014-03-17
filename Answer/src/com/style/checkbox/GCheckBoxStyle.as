@@ -22,14 +22,14 @@
 
         override public function setStyle(param1:UIComponent) : void
         {
-            param1.setStyle("upIcon", GlobalClass.getBitmap("CheckBox_UpSkin"));
-            param1.setStyle("overIcon", GlobalClass.getBitmap("CheckBox_OverSkin"));
-            param1.setStyle("downIcon", GlobalClass.getBitmap("CheckBox_DownSkin"));
-            param1.setStyle("disabledIcon", GlobalClass.getBitmap("CheckBox_DisabledSkin"));
-            param1.setStyle("selectedUpIcon", GlobalClass.getBitmap("CheckBox_SelectedUpSkin"));
-            param1.setStyle("selectedOverIcon", GlobalClass.getBitmap("CheckBox_SelectedOverSkin"));
-            param1.setStyle("selectedDownIcon", GlobalClass.getBitmap("CheckBox_SelectedDownSkin"));
-            param1.setStyle("selectedDisabledIcon", GlobalClass.getBitmap("CheckBox_SelectedDisableSkin"));
+            param1.setStyle("upIcon", GCheckBox_upIcon );
+            param1.setStyle("overIcon", GCheckBox_upIcon);
+            param1.setStyle("downIcon", GCheckBox_selectedUpIcon );
+            param1.setStyle("disabledIcon", GCheckBox_upIcon );
+            param1.setStyle("selectedUpIcon", GCheckBox_selectedUpIcon);
+            param1.setStyle("selectedOverIcon",GCheckBox_selectedUpIcon);
+            param1.setStyle("selectedDownIcon", GCheckBox_upIcon );
+            param1.setStyle("selectedDisabledIcon", GCheckBox_selectedUpIcon );
 			param1.setStyle("textFormat", textFormat);
 			param1.setStyle("disabledTextFormat", this._disTextFormat);
             param1.setStyle("textPadding", 0);

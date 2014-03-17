@@ -18,8 +18,6 @@ package app.answer.modules.answer.view
 	import flash.events.MouseEvent;
 	import flash.utils.Dictionary;
 	
-	import gear.ui.controls.GCheckBox;
-	
 	import lm.components.window.WindowEvent;
 	import lm.mui.controls.GRadioButton;
 	import lm.mui.events.MuiEvent;

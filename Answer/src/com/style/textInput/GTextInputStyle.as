@@ -21,7 +21,8 @@ package com.style.textInput
         {
             super.setStyle(param1);
             param1.setStyle("textFormat", new TextFormat("宋体", 12, 0xffffff, null, null, null, null, null, TextFormatAlign.CENTER, null, null, 0,null));
-            param1.setStyle("upSkin",GlobalClass.getScaleBitmap("CanvasBg1", new Rectangle(13, 8,344,125)));
+            param1.setStyle("upSkin",GTextInput_borderSkin );
+            param1.setStyle("disabledSkin",GTextInput_disabledSkin );
             param1.setStyle("focusRectSkin", Sprite);
         }
     }

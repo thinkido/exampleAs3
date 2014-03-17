@@ -2,25 +2,24 @@ package lm.components.window
 {
 	import flash.display.Bitmap;
 	import flash.display.DisplayObject;
+	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
-	import flash.geom.Rectangle;
 	import flash.text.TextFormat;
 	
-	import lm.ResouceConst;
 	import lm.mui.CompCreateFactory;
 	import lm.mui.controls.GButton;
 	import lm.mui.controls.GImageBitmap;
 	import lm.mui.controls.GTextFiled;
 	import lm.mui.controls.GUIComponent;
-	import lm.mui.display.ScaleBitmap;
 	import lm.mui.manager.IDragDrop;
 	
 	[Event( name="window_close", type="lm.components.window.WindowEvent")]
 	
 	public class GWindow extends GUIComponent implements IDragDrop
 	{
-		private var _windowBg:ScaleBitmap;
+		private var _windowTitle:MovieClip;
+		private var _windowBg:MovieClip;
 		private var _closeBtn:GButton;
 		private var _miniBtn:GButton;
 		private var _contentSprite:Sprite;
@@ -42,9 +41,18 @@ package lm.components.window
 		override protected function createChildren():void
 		{
 			super.createChildren();
-			_windowBg = ResouceConst.getScaleBitmap("GeneralWindowBG");
-			_windowBg.scale9Grid = new Rectangle(87, 36, 26, 46); 
+			
+//			_windowBg = ResouceConst.getScaleBitmap("GeneralWindowBG");
+//			_windowBg.scale9Grid = new Rectangle(87, 36, 26, 46); 
+			
+			_windowTitle = new GTitleBar_bgSkin() ;
+			super.addChild(this._windowTitle);
+			_windowTitle.height = titie_height + 1 ;
+			_windowBg = new GPanel_bgSkin() ;
 			super.addChild(this._windowBg);
+			_windowBg.y = titie_height ;
+			_windowTitle.mouseEnabled = false;
+			_windowBg.mouseEnabled = false;
 			
 //			titleBitmap = 
 			this._title = new GTextFiled();
@@ -108,7 +116,7 @@ package lm.components.window
 			super.updateSize();
 			
 			this._closeBtn.x = this.width - this._closeBtn.width - Padding_right;
-			this._closeBtn.y = 2;
+			this._closeBtn.y = 1;
 			this._miniBtn.x = this.width - this._closeBtn.width - this._miniBtn.width - 40;
 			this._miniBtn.y = 8;
 			
@@ -118,8 +126,10 @@ package lm.components.window
 			this._title.y = 4;
 			_titleImg.x = (this.width - this._titleImg.width) / 2;
 			_titleImg.y = 3;
+			_windowTitle.width = this.width;
 			_windowBg.width = this.width;
-			_windowBg.height = this.height;
+
+			_windowBg.height = this.height - titie_height ;
 		}
 		
 		public function set isShowCloseBtn(bool:Boolean):void

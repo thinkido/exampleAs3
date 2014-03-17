@@ -22,14 +22,14 @@ package com.style.radioButton
 		
 		override public function setStyle(param1:UIComponent) : void
 		{
-			param1.setStyle("upIcon", GlobalClass.getBitmap("RadioBox2_UpSkin"));
-			param1.setStyle("overIcon", GlobalClass.getBitmap("RadioBox2_OverSkin"));
-			param1.setStyle("downIcon", GlobalClass.getBitmap("RadioBox2_DownSkin"));
-			param1.setStyle("disabledIcon", GlobalClass.getBitmap("RadioBox2_DisabledSkin"));
-			param1.setStyle("selectedUpIcon", GlobalClass.getBitmap("RadioBox2_SelectedUpSkin"));
-			param1.setStyle("selectedOverIcon", GlobalClass.getBitmap("RadioBox2_SelectedOverSkin"));
-			param1.setStyle("selectedDownIcon", GlobalClass.getBitmap("RadioBox2_SelectedDownSkin"));
-			param1.setStyle("selectedDisabledIcon", GlobalClass.getBitmap("RadioBox2_SelectedDisableSkin"));
+			param1.setStyle("upIcon", GRadioButton_upIcon );
+			param1.setStyle("overIcon", GRadioButton_upIcon);
+			param1.setStyle("downIcon", GRadioButton_selectedUpIcon );
+			param1.setStyle("disabledIcon", GRadioButton_disabledIcon );
+			param1.setStyle("selectedUpIcon", GRadioButton_selectedUpIcon );
+			param1.setStyle("selectedOverIcon", GRadioButton_selectedUpIcon );
+			param1.setStyle("selectedDownIcon", GRadioButton_upIcon );
+			param1.setStyle("selectedDisabledIcon", GRadioButton_selectedDisabledIcon );
 			param1.setStyle("textFormat", textFormat);
 			param1.setStyle("textPadding", 0);
 			return;

@@ -4,6 +4,7 @@ package app.answer.modules.mainui.view
 	import app.answer.common.staticdata.SkinClassNameDefine;
 	import app.answer.manager.FacadeManager;
 	
+	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.text.TextFormat;
@@ -15,7 +16,7 @@ package app.answer.modules.mainui.view
 
 	public class LinkPanel extends Sprite
 	{
-		public var GImageBitmap2:GImageBitmap;
+		public var GImageBitmap2:MovieClip;
 		private var format:TextFormat = new TextFormat();;
 		public var eqTxt:GLabel;
 		public var iqTxt:GLabel;
@@ -24,9 +25,7 @@ package app.answer.modules.mainui.view
 		
 		public function LinkPanel()
 		{
-			GImageBitmap2 = new GImageBitmap();
-			GImageBitmap2.bitmapData = GlobalClass.getBitmapData('CanvasBg1');
-			GImageBitmap2.scale9Grid = SkinClassNameDefine.CANVASBG1RECT;
+			GImageBitmap2 = new GTabbedPanel_bgSkin();
 			GImageBitmap2.x = -15;
 			GImageBitmap2.y = 0;
 			GImageBitmap2.width = 100;

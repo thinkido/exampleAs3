@@ -4,6 +4,7 @@ package app.answer.modules.answer.view
 	
 	import fl.controls.RadioButtonGroup;
 	
+	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.text.TextFormat;
 	
@@ -53,8 +54,8 @@ package app.answer.modules.answer.view
 		public var tipTxt:GLabel ;
 		private var format:TextFormat = new TextFormat();;
 		public var titleTxt:GLabel;
-		public var GImageBitmap3:GImageBitmap;
-		public var GImageBitmap2:GImageBitmap;
+		public var GImageBitmap3:MovieClip;
+		public var GImageBitmap2:MovieClip;
 		public var GImageBitmap1:GImageBitmap;
 		public var single:RadioButtonGroup;
 		public var submitBtn:GButton ;
@@ -76,18 +77,14 @@ package app.answer.modules.answer.view
 			height = 403 ;
 			title ="情商测试" ;
 			
-			GImageBitmap2 = new GImageBitmap();
-			GImageBitmap2.bitmapData = GlobalClass.getBitmapData('CanvasBg1');
-			GImageBitmap2.scale9Grid = SkinClassNameDefine.CANVASBG1RECT;
+			GImageBitmap2 = new GTabbedPanel_bgSkin();
 			GImageBitmap2.x = 149;
 			GImageBitmap2.y = 30;
 			GImageBitmap2.width = 443;
 			GImageBitmap2.height = 340;
 			this.addChild(GImageBitmap2);
 
-			GImageBitmap3 = new GImageBitmap();
-			GImageBitmap3.bitmapData = GlobalClass.getBitmapData('CanvasBg1');
-			GImageBitmap3.scale9Grid = SkinClassNameDefine.CANVASBG1RECT;
+			GImageBitmap3 = new GTabbedPanel_bgSkin();
 			GImageBitmap3.x = 7;
 			GImageBitmap3.y = 30;
 			GImageBitmap3.width = 140;
@@ -242,15 +239,15 @@ package app.answer.modules.answer.view
 			nullRadio.group = single ;
 
 			preBtn = CompCreateFactory.createGButton(170,335,74,28,'上一题');
-			preBtn.styleName = 'RedButton';
+			preBtn.styleName = 'GButton';
 			this.addChild(preBtn);
 
 			nextBtn = CompCreateFactory.createGButton(250,335,74,28,'下一题');
-			nextBtn.styleName = 'RedButton';
+			nextBtn.styleName = 'GButton';
 			this.addChild(nextBtn);
 			
 			submitBtn = CompCreateFactory.createGButton(50,355,60,28,'提交');
-			submitBtn.styleName = 'RedButton';
+			submitBtn.styleName = 'GButton';
 			this.addChild(submitBtn);
 			
 			aRadio.styleName = "GRadio";
@@ -263,7 +260,7 @@ package app.answer.modules.answer.view
 			
 			var arr:Array = [{label:"全部",name:'all'},{label:"错误",name:'error'}] ;
 //			var arr:Array = [{label:"全部",name:'all'}] ;
-			tabBar = CompCreateFactory.createGTabBar( 160,368,65,27); 
+			tabBar = CompCreateFactory.createGTabBar( 160,369,65,27); 
 			tabBar.buttonStyleName = "GTabBarButton" ;
 			tabBar.direction = GBoxDirection.HORIZONTAL;
 			tabBar.dataProvider = arr;
