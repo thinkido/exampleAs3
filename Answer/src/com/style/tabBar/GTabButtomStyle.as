@@ -29,7 +29,7 @@
 			param1.setStyle("disabledSkin", GTab_disabledSkin );
 			
 			param1.setStyle("selectedUpSkin", GTabButtom_selectedUpSkin );
-			param1.setStyle("selectedDisabledSkin", GTabButtom_selectedDisabledSkin );
+			param1.setStyle("selectedDisabledSkin", GTabButtom_selectedUpSkin );
 			
 			param1.setStyle("textFormat", this._textFormat);
             param1.setStyle("disabledTextFormat", this._textFormatDisable);

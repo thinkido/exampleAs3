@@ -112,7 +112,7 @@ package app.answer.modules.answer.view
 			GImageBitmap8 = new GImageBitmap();
 			GImageBitmap8.bitmapData = GlobalClass.getBitmapData('LineH');
 			GImageBitmap8.scale9Grid = SkinClassNameDefine.LINEHRECT;
-			GImageBitmap8.x = 151;
+			GImageBitmap8.x = 152;
 			GImageBitmap8.y = 281;
 			GImageBitmap8.width = 439;
 			GImageBitmap8.height = 2;
@@ -123,16 +123,16 @@ package app.answer.modules.answer.view
 			GImageBitmap9.scale9Grid = SkinClassNameDefine.LINEHRECT;
 			GImageBitmap9.x = 8;
 			GImageBitmap9.y = 91;
-			GImageBitmap9.width = 140;
+			GImageBitmap9.width = 138;
 			GImageBitmap9.height = 2;
 			this.addChild(GImageBitmap9);
 
 			GImageBitmap10 = new GImageBitmap();
 			GImageBitmap10.bitmapData = GlobalClass.getBitmapData('LineH');
 			GImageBitmap10.scale9Grid = SkinClassNameDefine.LINEHRECT;
-			GImageBitmap10.x = 4;
+			GImageBitmap10.x = 8;
 			GImageBitmap10.y = 154;
-			GImageBitmap10.width = 140;
+			GImageBitmap10.width = 138;
 			GImageBitmap10.height = 2;
 			this.addChild(GImageBitmap10);
 
