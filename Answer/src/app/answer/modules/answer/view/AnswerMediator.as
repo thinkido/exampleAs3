@@ -143,6 +143,7 @@ package app.answer.modules.answer.view
 				model.currVo.selected += "e";
 			}
 			setAnswerData( model.currVo ) ;
+			changeAnsweredNum() ;
 		}
 		protected function radioClick(event:MouseEvent):void
 		{
@@ -174,8 +175,28 @@ package app.answer.modules.answer.view
 				jumpTd = TimerManager.createTimer(model.jumpTime,1,autoJump);
 			}
 			setAnswerData( model.currVo ) ;
+			changeAnsweredNum() ;
 		}
 		private var jumpTd:TimerData ;
+		
+//		检查改变当前答题进度
+		private function changeAnsweredNum():void{
+			if( model.currVo != null ) {   // 切换题的时候，判断该题是否已经作答，如果已经回答则 答题计数+1，否则-1
+				if( model.currVo.selected.length == 0 ){
+					var temp:int = model.answed.indexOf(model.currVo.id) ;
+					if( temp != -1 ){
+						model.answed.splice(temp,1);
+					}
+				}else{
+					if( model.answed.indexOf(model.currVo.id) == -1 ){
+						model.answed.push(model.currVo.id) ;
+					}
+				}
+			}
+			var frame:int = model.answed.length / model.total * 100 ;
+			panel.answerBar.gotoAndStop(frame);
+			
+		}
 		
 		private function changeJumpTime():void
 		{
@@ -278,11 +299,14 @@ package app.answer.modules.answer.view
 		{
 			model.showTimeCount -- ;
 			panel.timeTxt.text = "当前时间: " + TFormatter.formatFromSecond( model.showTimeCount ) ;
+			var frame:int =  ( model.showTime - model.showTimeCount) / model.showTime *100 ;
+			panel.timeBar.gotoAndStop(frame);
 			if( model.showTimeCount <=0 ){
 				TimerManager.deleteTimer(td) ;
 				td = null ;
 				overTest();
 			}
+			trace(panel.timeBar.width,panel.answerBar.width);
 		}
 		
 		private function start():void{
@@ -367,6 +391,14 @@ package app.answer.modules.answer.view
 //			本地保存数据
 //			错误、标记题目划分 tab
 			facade.sendNotification(Answer_ApplicationFacade.SHOW_SCORE_PANEL,null );
+			dispose();
+		}
+		
+		private function dispose():void
+		{
+			model.answed = [] ;
+			panel.answerBar.gotoAndStop(0);
+			panel.timeBar.gotoAndStop(0);
 		}
 		private function closePanel(event:WindowEvent = null):void
 		{

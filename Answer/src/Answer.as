@@ -21,7 +21,7 @@ package
 	import flash.display.StageScaleMode;
 	import flash.system.Security;
 
-	[SWF(width="800",height="420",backgroundColor="#333333")]
+	[SWF(width="800",height="500",backgroundColor="#333333")]
 	public class Answer extends Application
 	{
 		[Embed(source="../asset/focusTile.png",mimeType="image/png")]

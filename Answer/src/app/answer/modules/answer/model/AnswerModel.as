@@ -25,6 +25,11 @@ package app.answer.modules.answer.model
 		 */		
 		public var showTime:int = 600 ;
 		
+		/**
+		 * 已经回答了的题目 
+		 */		
+		public var answed:Array = [] ;
+		
 		public var currIndex:int = 1 ;
 		public var total:int = 1 ;
 		public var score:int = 0 ;

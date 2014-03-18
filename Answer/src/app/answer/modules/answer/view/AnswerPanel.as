@@ -6,6 +6,7 @@ package app.answer.modules.answer.view
 	
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
+	import flash.filters.ColorMatrixFilter;
 	import flash.text.TextFormat;
 	
 	import lm.components.window.GWindow;
@@ -63,6 +64,11 @@ package app.answer.modules.answer.view
 		public var tabBar:GTabBar ;
 		public var radioCon:Sprite;
 		public var checkCon:Sprite;
+		
+		public var timeBar:MovieClip ;
+		public var answerBar:MovieClip ;
+		public var timeBarTxt:GLabel;
+		public var answerBarTxt:GLabel;
 
 		public function AnswerPanel()
 		{
@@ -307,6 +313,27 @@ package app.answer.modules.answer.view
 			checkCon.addChild(eCheck);
 			
 			checkCon.visible = false ;
+			
+			timeBar = new ProgressBarGreen();
+			timeBar.x = 72 ;
+			timeBar.y = 410 ;
+			timeBar.width = 529;
+			addChild(timeBar);
+			timeBar.gotoAndStop(0);
+			
+			answerBar = new ProgressBarBlue();
+			answerBar.x = 72 ;
+			answerBar.y = 427 ;
+			answerBar.width = 529;
+			addChild(answerBar);
+			answerBar.stop() ;
+			
+			format.size = 12 ;
+			timeBarTxt = CompCreateFactory.createGLabel(9,404,123,22,'时间进度：',format);
+			this.addChild(timeBarTxt);
+			
+			answerBarTxt = CompCreateFactory.createGLabel(9,422,123,22,'题目进度：',format);
+			this.addChild(answerBarTxt);
 		}
 	}
 }
