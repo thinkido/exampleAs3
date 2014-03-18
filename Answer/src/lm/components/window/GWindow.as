@@ -3,6 +3,7 @@ package lm.components.window
 	import flash.display.Bitmap;
 	import flash.display.DisplayObject;
 	import flash.display.MovieClip;
+	import flash.display.Shape;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.text.TextFormat;
@@ -20,6 +21,8 @@ package lm.components.window
 	{
 		private var _windowTitle:MovieClip;
 		private var _windowBg:MovieClip;
+		private var _windowBorder:Shape ;
+		
 		private var _closeBtn:GButton;
 		private var _miniBtn:GButton;
 		private var _contentSprite:Sprite;
@@ -53,6 +56,8 @@ package lm.components.window
 			_windowBg.y = titie_height ;
 			_windowTitle.mouseEnabled = false;
 			_windowBg.mouseEnabled = false;
+			_windowBorder = new Shape();
+			super.addChild(_windowBorder);
 			
 //			titleBitmap = 
 			this._title = new GTextFiled();
@@ -130,6 +135,11 @@ package lm.components.window
 			_windowBg.width = this.width;
 
 			_windowBg.height = this.height - titie_height ;
+			_windowBorder.graphics.clear();
+			_windowBorder.graphics.beginFill(0x808080,0);
+			_windowBorder.graphics.lineStyle(2,0x808080,1);
+			_windowBorder.graphics.drawRoundRect(-1,-1,this.width+2,this.height + 2,3);
+			_windowBorder.graphics.endFill() ;
 		}
 		
 		public function set isShowCloseBtn(bool:Boolean):void
