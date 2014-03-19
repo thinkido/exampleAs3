@@ -68,6 +68,8 @@ package com.thinkido.example
 		private var tileImg:RepeatImage;
 		private var _lightPoint:LightPoint;
 		
+		protected var defaultSkin:Boolean = true ;
+		
 		public function Application()
 		{
 			addEventListener(Event.ADDED_TO_STAGE, addedToStageHandler);
@@ -85,21 +87,23 @@ package com.thinkido.example
 			_top = new Sprite();
 			super.addChild(_top);
 			
-			tileImg = new RepeatImage();
-			
-			var _width:Number = stage.stageWidth ;
-			var _height:Number = stage.stageHeight ;
-			tileImg.setSize(_width,_height);
-			tileImg.bitmapData = (new Tile1()).bitmapData ;
-			_background.addChild(tileImg);
-			
-			_backgroundSwf = new BackgroundSwf() ;
-			_background.addChild(_backgroundSwf);
-			_backgroundSwf.x = _width - 440 ;
-			_backgroundSwf.y = _height - 300 ;
-			_lightPoint = new LightPoint();
-			_lightPoint.setSize(_width,_height);
-			_background.addChild(_lightPoint);
+			if( defaultSkin ){
+				tileImg = new RepeatImage();
+				
+				var _width:Number = stage.stageWidth ;
+				var _height:Number = stage.stageHeight ;
+				tileImg.setSize(_width,_height);
+				tileImg.bitmapData = (new Tile1()).bitmapData ;
+				_background.addChild(tileImg);
+				
+				_backgroundSwf = new BackgroundSwf() ;
+				_background.addChild(_backgroundSwf);
+				_backgroundSwf.x = _width - 440 ;
+				_backgroundSwf.y = _height - 300 ;
+				_lightPoint = new LightPoint();
+				_lightPoint.setSize(_width,_height);
+				_background.addChild(_lightPoint);
+			}
 			
 			var _logo:Bitmap = new LogoClass() ;
 			logo = _logo ;
@@ -151,12 +155,14 @@ package com.thinkido.example
 		}
 		protected function appResize(event:Event):void
 		{
-			var _width:Number = stage.stageWidth ;
-			var _height:Number = stage.stageHeight ;
-			_backgroundSwf.x = _width - 440 ;
-			_backgroundSwf.y = _height - 300 ;
-			_lightPoint.setSize(_width,_height);
-			tileImg.setSize(_width,_height);
+			if(defaultSkin){
+				var _width:Number = stage.stageWidth ;
+				var _height:Number = stage.stageHeight ;
+				_backgroundSwf.x = _width - 440 ;
+				_backgroundSwf.y = _height - 300 ;
+				_lightPoint.setSize(_width,_height);
+				tileImg.setSize(_width,_height);
+			}
 		}
 		/**
 		 * 加载版本文件
