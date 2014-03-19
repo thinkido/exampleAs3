@@ -3,15 +3,18 @@ package app.answer.modules.answer.view
 	import app.answer.common.vo.QuestionVo;
 	import app.answer.manager.POPWindowManager;
 	import app.answer.manager.QuestionResManager;
-	import app.answer.manager.TopTipManager;
 	import app.answer.modules.answer.Answer_ApplicationFacade;
 	import app.answer.modules.answer.model.AnswerModel;
 	import app.answer.modules.answer.model.Answer_MsgSendProxy;
 	
+	import com.greensock.TweenLite;
 	import com.thinkido.framework.common.timer.vo.TimerData;
 	import com.thinkido.framework.manager.TimerManager;
 	import com.thinkido.framework.utils.ArrayUtil;
 	import com.thinkido.framework.utils.TFormatter;
+	
+	import fl.data.DataProvider;
+	import fl.events.ListEvent;
 	
 	import flash.events.Event;
 	import flash.events.FocusEvent;
@@ -69,17 +72,59 @@ package app.answer.modules.answer.view
 			panel.goInput.addEventListener(Event.CHANGE ,goInputChange);
 			panel.goInput.addEventListener(FocusEvent.FOCUS_IN,focusIn);
 			panel.submitBtn.addEventListener(MouseEvent.CLICK,overTest) ;
+			panel.glist.addEventListener(ListEvent.ITEM_CLICK, onItemClick);
 			
 			panel.tabBar.addEventListener(MuiEvent.GTABBAR_SELECTED_CHANGE, tabBarClick);
-			
 			panel.tabBar.dataProvider = model.tabArr ;
+			
+		}
+		
+		private function onItemClick(event:ListEvent):void
+		{
+			var index:int = event.index ;
+			var _data:Object = event.item ;
+			trace(event.index,event.item );
+			setIndex(_data.id);
+			
 		}
 		
 		private function tabBarClick(evt:MuiEvent):void
 		{
-			var index:int = evt.selectedIndex;
+			var index:int = evt.selectedIndex ;
 			panel.tabBar.dataProvider[index].name ;
-			TopTipManager.getInstance().addSystemMouseTip("功能暂未开发");
+//			TopTipManager.getInstance().addSystemMouseTip("功能暂未开发");
+//			trace( "right"+ model.rightArr.join(",") + "sign:" + model.signArr.join(",") );
+			var dataArr:Array = [];
+			var temp:Array = [];
+			if( index == 1 ){
+				temp = model.signArr ;
+			}
+			else if(index == 2){
+				temp = model.rightArr ;
+			}
+			else if(index == 3){
+				temp = [];
+				var dic:Dictionary = QuestionResManager.getQuestion();
+				for each (var item:QuestionVo in dic) 
+				{
+					if( model.rightArr.indexOf(item.id) == -1 ){
+						temp.push(item.id);
+					}
+				}
+			}
+			var obj:Object ;
+			for (var i:int = 0; i < temp.length; i++) 
+			{
+				obj = {id:temp[i],name:temp[i]};
+				dataArr.push(obj);
+			}
+			if( index > 0 ){
+				TweenLite.to(panel.leftCon,0.3,{x:-142});
+				panel.glist.dataProvider = new DataProvider(dataArr);
+			}else{
+				TweenLite.to(panel.leftCon,0.3,{x:0});
+			}
+			
 		}
 		
 		protected function focusIn(event:FocusEvent):void
@@ -234,11 +279,6 @@ package app.answer.modules.answer.view
 				ArrayUtil.removeObj(model.rightArr,model.currVo.id) ;
 			}
 			calcScore();
-			if( model.currVo.notSure && model.signArr.indexOf( model.currVo.id ) == -1 ){
-				model.signArr.push( model.currVo.id );
-			}else{
-				ArrayUtil.removeObj(model.signArr,model.currVo.id) ;
-			}
 		}
 		/**
 		 * 计算得分 
@@ -270,6 +310,13 @@ package app.answer.modules.answer.view
 		{
 			model.currVo.notSure = panel.notSureCheck.selected ;
 			
+			if( model.currVo.notSure && model.signArr.indexOf( model.currVo.id ) == -1 ){
+				model.signArr.push( model.currVo.id );
+				trace(model.currVo.id,"true");
+			}else if(model.signArr.indexOf( model.currVo.id ) != -1 ){
+				ArrayUtil.removeObj(model.signArr,model.currVo.id) ;
+				trace(model.currVo.id,"false");
+			}
 		}
 		
 		private var model:AnswerModel = AnswerModel.getInstance() ;
@@ -306,10 +353,10 @@ package app.answer.modules.answer.view
 				td = null ;
 				overTest();
 			}
-			trace(panel.timeBar.width,panel.answerBar.width);
 		}
 		
 		private function start():void{
+			dispose();   //恢复数据
 			if(td != null){
 				TimerManager.deleteTimer(td);
 				td = null ;
@@ -391,15 +438,29 @@ package app.answer.modules.answer.view
 //			本地保存数据
 //			错误、标记题目划分 tab
 			facade.sendNotification(Answer_ApplicationFacade.SHOW_SCORE_PANEL,null );
-			dispose();
+			
 		}
 		
 		private function dispose():void
 		{
+			//			数据恢复
+			var dic:Dictionary = QuestionResManager.getQuestion();
+			for each (var item:QuestionVo in dic) 
+			{
+				item.selected = "" ;
+			}
 			model.answed = [] ;
 			panel.answerBar.gotoAndStop(0);
 			panel.timeBar.gotoAndStop(0);
+			model.currIndex = 1 ;
+			setIndex(1);
+			model.rightArr = [] ;
+			model.signArr = [] ;
+			panel.single.selection = panel.nullRadio ;
+			model.score = 0 ;
 		}
+		
+		
 		private function closePanel(event:WindowEvent = null):void
 		{
 			POPWindowManager.showModule(Answer_ApplicationFacade.NAME, Answer_ApplicationFacade.SHOW_Answer_PANEL);

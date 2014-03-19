@@ -1,12 +1,17 @@
 package app.answer.modules.answer.view
 {
 	import app.answer.common.staticdata.SkinClassNameDefine;
+	import app.answer.modules.answer.view.components.GroupItem;
+	
+	import com.thinkido.framework.common.vo.StyleData;
+	import com.thinkido.framework.utils.DrawUtil;
 	
 	import fl.controls.RadioButtonGroup;
+	import fl.data.DataProvider;
 	
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
-	import flash.filters.ColorMatrixFilter;
+	import flash.geom.Point;
 	import flash.text.TextFormat;
 	
 	import lm.components.window.GWindow;
@@ -19,6 +24,7 @@ package app.answer.modules.answer.view
 	import lm.mui.controls.GRadioButton;
 	import lm.mui.controls.GTabBar;
 	import lm.mui.controls.GTextInput;
+	import lm.mui.controls.GTileList;
 	import lm.mui.core.GlobalClass;
 
 	public class AnswerPanel extends GWindow
@@ -55,7 +61,7 @@ package app.answer.modules.answer.view
 		public var tipTxt:GLabel ;
 		private var format:TextFormat = new TextFormat();;
 		public var titleTxt:GLabel;
-		public var GImageBitmap3:MovieClip;
+		public var leftBorder:MovieClip;
 		public var GImageBitmap2:MovieClip;
 		public var GImageBitmap1:GImageBitmap;
 		public var single:RadioButtonGroup;
@@ -69,6 +75,14 @@ package app.answer.modules.answer.view
 		public var answerBar:MovieClip ;
 		public var timeBarTxt:GLabel;
 		public var answerBarTxt:GLabel;
+		
+		public var leftCon:Sprite ;
+		public var glist:GTileList ;
+		
+		/**
+		 * 动画用的遮罩 
+		 */		
+		public var leftConMask:Sprite ;
 
 		public function AnswerPanel()
 		{
@@ -90,12 +104,12 @@ package app.answer.modules.answer.view
 			GImageBitmap2.height = 340;
 			this.addChild(GImageBitmap2);
 
-			GImageBitmap3 = new GTabbedPanel_bgSkin();
-			GImageBitmap3.x = 7;
-			GImageBitmap3.y = 30;
-			GImageBitmap3.width = 140;
-			GImageBitmap3.height = 367;
-			this.addChild(GImageBitmap3);
+			leftBorder = new GTabbedPanel_bgSkin();
+			leftBorder.x = 7;
+			leftBorder.y = 30;
+			leftBorder.width = 140;
+			leftBorder.height = 367;
+			this.addChild(leftBorder);
 
 			format = new TextFormat(null,14, 0xffffff, false, null, null, null, null, 'left');
 			titleTxt = CompCreateFactory.createGLabel(164,37,408,89,'1、标题',format);
@@ -123,7 +137,19 @@ package app.answer.modules.answer.view
 			GImageBitmap8.width = 439;
 			GImageBitmap8.height = 2;
 			this.addChild(GImageBitmap8);
+			
+			leftCon = new Sprite();
+			this.addChild(leftCon);
+			
+			leftConMask = new Sprite();
+			DrawUtil.drawRect(leftConMask,new Point(7,30),new Point(147,398),new StyleData(1,0,0,0,0.5));
+			this.addChild(leftConMask);
+			leftCon.mask = leftConMask ;
 
+			format = new TextFormat(null,14, 0xffffff, false, null, null, null, null, 'left');
+			timeTxt = CompCreateFactory.createGLabel(17,36,123,22,'倒计时：',format);
+			leftCon.addChild(timeTxt);
+			
 			GImageBitmap9 = new GImageBitmap();
 			GImageBitmap9.bitmapData = GlobalClass.getBitmapData('LineH');
 			GImageBitmap9.scale9Grid = SkinClassNameDefine.LINEHRECT;
@@ -131,8 +157,8 @@ package app.answer.modules.answer.view
 			GImageBitmap9.y = 91;
 			GImageBitmap9.width = 138;
 			GImageBitmap9.height = 2;
-			this.addChild(GImageBitmap9);
-
+			leftCon.addChild(GImageBitmap9);
+			
 			GImageBitmap10 = new GImageBitmap();
 			GImageBitmap10.bitmapData = GlobalClass.getBitmapData('LineH');
 			GImageBitmap10.scale9Grid = SkinClassNameDefine.LINEHRECT;
@@ -140,11 +166,24 @@ package app.answer.modules.answer.view
 			GImageBitmap10.y = 154;
 			GImageBitmap10.width = 138;
 			GImageBitmap10.height = 2;
-			this.addChild(GImageBitmap10);
-
-			format = new TextFormat(null,14, 0xffffff, false, null, null, null, null, 'left');
-			timeTxt = CompCreateFactory.createGLabel(17,36,123,22,'倒计时：',format);
-			this.addChild(timeTxt);
+			leftCon.addChild(GImageBitmap10);
+			
+			submitBtn = CompCreateFactory.createGButton(50,355,60,28,'提交');
+			submitBtn.styleName = 'GButton';
+			leftCon.addChild(submitBtn);
+			
+			autoCheck = CompCreateFactory.createGCheckBox(15,102);
+			autoCheck.width = 120;
+			autoCheck.label ="  自动切换";
+			autoCheck.styleName = "GCheckBox" ;
+			leftCon.addChild(autoCheck);
+			autoCheck.validateNow();
+			
+			showAnswerCheck = CompCreateFactory.createGCheckBox(15,125);
+			showAnswerCheck.width = 120;
+			showAnswerCheck.label ="  查看答案";
+			showAnswerCheck.styleName = "GCheckBox" ;
+			leftCon.addChild(showAnswerCheck);
 
 			currTxt = CompCreateFactory.createGLabel(468,290,100,22,'当前：1/120',format);
 			this.addChild(currTxt);
@@ -168,19 +207,6 @@ package app.answer.modules.answer.view
 			goBtn = CompCreateFactory.createGButton(541,332,28,28,'Go');
 			goBtn.styleName = 'GButton';
 			this.addChild(goBtn);
-
-			autoCheck = CompCreateFactory.createGCheckBox(15,102);
-			autoCheck.width = 120;
-			autoCheck.label ="  自动切换";
-			autoCheck.styleName = "GCheckBox" ;
-			this.addChild(autoCheck);
-			autoCheck.validateNow();
-
-			showAnswerCheck = CompCreateFactory.createGCheckBox(15,125);
-			showAnswerCheck.width = 120;
-			showAnswerCheck.label ="  查看答案";
-			showAnswerCheck.styleName = "GCheckBox" ;
-			this.addChild(showAnswerCheck);
 
 			notSureCheck = CompCreateFactory.createGCheckBox(173,285);
 			notSureCheck.styleName = "GCheckBox" ;
@@ -251,10 +277,6 @@ package app.answer.modules.answer.view
 			nextBtn = CompCreateFactory.createGButton(250,335,74,28,'下一题');
 			nextBtn.styleName = 'GButton';
 			this.addChild(nextBtn);
-			
-			submitBtn = CompCreateFactory.createGButton(50,355,60,28,'提交');
-			submitBtn.styleName = 'GButton';
-			this.addChild(submitBtn);
 			
 			aRadio.styleName = "GRadio";
 			bRadio.styleName = "GRadio";
@@ -334,6 +356,28 @@ package app.answer.modules.answer.view
 			
 			answerBarTxt = CompCreateFactory.createGLabel(9,422,123,22,'题目进度：',format);
 			this.addChild(answerBarTxt);
+			
+			glist = new GTileList();
+			glist.width = 138 ;
+			glist.height = 366 ;
+			leftCon.addChild(glist) ;
+			glist.x = 150 ;
+			glist.y = 30 ;
+			glist.columnWidth = 30;
+			glist.rowHeight = 30;
+			glist.horizontalGap = 1;
+			glist.verticalGap = 1;
+			glist.horizontalScrollPolicy = "off";
+			glist.verticalScrollPolicy = "on";
+			glist.direction = GBoxDirection.VERTICAL ;
+			glist.styleName = "GTileList" ;
+			glist.setStyle("cellRenderer", GroupItem);
+			
+//			测试代码
+//			this.addChild(glist);
+//			leftCon.visible = false ;
+//			glist.x = 8 ;
+//			glist.dataProvider = new DataProvider([{name:"1n",id:"1"},{name:"2n",id:"2"},{name:"3n",id:"3"},{name:"4n",id:"4"}]);
 		}
 	}
 }

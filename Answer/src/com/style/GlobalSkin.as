@@ -5,8 +5,10 @@
 	import com.style.button.RedButtonStyle;
 	import com.style.checkbox.GCheckBoxStyle;
 	import com.style.radioButton.GRadioButtonStyle;
+	import com.style.scrollBar.ScrollBarStyle;
 	import com.style.tabBar.GTabButtomStyle;
 	import com.style.textInput.GTextInputStyle;
+	import com.style.tileList.GTileListStyle;
 	
 	import lm.mui.skins.SkinManager;
 
@@ -14,7 +16,7 @@
     {
         private static var _componentCss:Object = {Button:ButtonStyle,GButton:GButtonStyle,RedButton:RedButtonStyle ,
 			GLabel:GLabelStyle, GCheckBox:GCheckBoxStyle ,GRadio:GRadioButtonStyle ,GTabBarButton:GTabButtomStyle,
-			GText:GTextInputStyle
+			GText:GTextInputStyle,GTileList:GTileListStyle,GScrollBar:ScrollBarStyle
 			
 			
 			

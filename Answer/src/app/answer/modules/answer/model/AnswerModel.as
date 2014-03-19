@@ -29,6 +29,14 @@ package app.answer.modules.answer.model
 		 * 已经回答了的题目 
 		 */		
 		public var answed:Array = [] ;
+		/**
+		 * 正确的 
+		 */		
+		public var rightArr:Array = [];
+		/**
+		 * 标记的不确定答案的 
+		 */		
+		public var signArr:Array = [];
 		
 		public var currIndex:int = 1 ;
 		public var total:int = 1 ;
@@ -39,14 +47,14 @@ package app.answer.modules.answer.model
 		public var autoJump:Boolean = true ;
 		public var showAnswer:Boolean = false ;
 		
-		public var rightArr:Array = [];
-		public var signArr:Array = [];
-		
 		public var jumpTime:Number = 1000;
 		public var jumpNeedTime:Number = 100;
 		public var showAnswerNeedTime:int = 2000 ;
 		
 		public var comment:String = "" ;
+		/**
+		 * tab选着卡 
+		 */		
 		public var tabArr:Array = [{label:"全部",name:'all'},{label:"不确定",name:'notSure',index:1},{label:"正确",name:'right'},{label:"错误",name:'error'}] ;
 		
 		public var allItem:Object = {label:"全部",name:'all',index:0} ;
@@ -54,6 +62,9 @@ package app.answer.modules.answer.model
 		public var errorItem:Object = {label:"正确",name:'right',index:2} ;
 		public var rightItem:Object = {label:"错误",name:'error',index:3} ;
 		
+		/**
+		 * 根据玩家得分给出相应评价，评价来源xml analyze ; 
+		 */		
 		public var analyze:Array = [] ;
 		private var errorStr:String = "你简直太强了，超过了系统最高分！你是个Bug";
 		
