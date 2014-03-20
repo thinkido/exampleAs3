@@ -54,7 +54,7 @@ package app.answer.modules.answer.view
 			if( panel.parent != null ){
 				panel.parent.removeChild(panel ) ;
 			}
-			facade.sendNotification(Answer_ApplicationFacade.SHOW_Answer_PANEL);
+			facade.sendNotification(Answer_ApplicationFacade.SHOW_Answer_PANEL,true);
 //			POPWindowManager.showModule(Answer_ApplicationFacade.NAME, Answer_ApplicationFacade.SHOW_Answer_PANEL);
 		}
 

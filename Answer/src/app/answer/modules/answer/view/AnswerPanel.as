@@ -16,6 +16,7 @@ package app.answer.modules.answer.view
 	
 	import lm.components.window.GWindow;
 	import lm.mui.CompCreateFactory;
+	import lm.mui.containers.GBox;
 	import lm.mui.containers.globalVariable.GBoxDirection;
 	import lm.mui.controls.GButton;
 	import lm.mui.controls.GCheckBox;
@@ -66,6 +67,8 @@ package app.answer.modules.answer.view
 		public var GImageBitmap1:GImageBitmap;
 		public var single:RadioButtonGroup;
 		public var submitBtn:GButton ;
+		
+		public var reStartBtn:GButton ;
 		
 		public var tabBar:GTabBar ;
 		public var radioCon:Sprite;
@@ -168,9 +171,13 @@ package app.answer.modules.answer.view
 			GImageBitmap10.height = 2;
 			leftCon.addChild(GImageBitmap10);
 			
-			submitBtn = CompCreateFactory.createGButton(50,355,60,28,'提交');
+			submitBtn = CompCreateFactory.createGButton(16,355,60,28,'提交');
 			submitBtn.styleName = 'GButton';
 			leftCon.addChild(submitBtn);
+			
+			reStartBtn = CompCreateFactory.createGButton(80,355,60,28,'重做');
+			reStartBtn.styleName = 'GButton';
+			leftCon.addChild(reStartBtn);
 			
 			autoCheck = CompCreateFactory.createGCheckBox(15,102);
 			autoCheck.width = 120;

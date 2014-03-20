@@ -24,6 +24,10 @@ package app.answer.modules.answer.model
 		 * 总时长 
 		 */		
 		public var showTime:int = 600 ;
+		/**
+		 * 是否做完，做完才能查看正确与错误 
+		 */		
+		public var isDone:Boolean = false ;
 		
 		/**
 		 * 已经回答了的题目 

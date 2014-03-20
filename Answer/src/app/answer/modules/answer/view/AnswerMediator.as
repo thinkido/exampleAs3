@@ -3,6 +3,7 @@ package app.answer.modules.answer.view
 	import app.answer.common.vo.QuestionVo;
 	import app.answer.manager.POPWindowManager;
 	import app.answer.manager.QuestionResManager;
+	import app.answer.manager.TopTipManager;
 	import app.answer.modules.answer.Answer_ApplicationFacade;
 	import app.answer.modules.answer.model.AnswerModel;
 	import app.answer.modules.answer.model.Answer_MsgSendProxy;
@@ -72,11 +73,18 @@ package app.answer.modules.answer.view
 			panel.goInput.addEventListener(Event.CHANGE ,goInputChange);
 			panel.goInput.addEventListener(FocusEvent.FOCUS_IN,focusIn);
 			panel.submitBtn.addEventListener(MouseEvent.CLICK,overTest) ;
+			panel.reStartBtn.addEventListener(MouseEvent.CLICK,restart) ;
 			panel.glist.addEventListener(ListEvent.ITEM_CLICK, onItemClick);
 			
 			panel.tabBar.addEventListener(MuiEvent.GTABBAR_SELECTED_CHANGE, tabBarClick);
 			panel.tabBar.dataProvider = model.tabArr ;
 			
+		}
+		
+		protected function restart(event:MouseEvent):void
+		{
+			dispose() ;
+			changeState(1);
 		}
 		
 		private function onItemClick(event:ListEvent):void
@@ -96,6 +104,10 @@ package app.answer.modules.answer.view
 //			trace( "right"+ model.rightArr.join(",") + "sign:" + model.signArr.join(",") );
 			var dataArr:Array = [];
 			var temp:Array = [];
+			if( index > 1 &&　!model.isDone){   // 没提交答案不能查看正确、错误
+				TopTipManager.getInstance().addSystemMouseTip("请提交后查看结果!");
+				return ;
+			}
 			if( index == 1 ){
 				temp = model.signArr ;
 			}
@@ -164,9 +176,14 @@ package app.answer.modules.answer.view
 		
 		protected function showAnswerClick(event:MouseEvent):void
 		{
-			model.showAnswer = panel.showAnswerCheck.selected ;
-			changeJumpTime();
-			checkAndShow();
+			if( model.isDone ){
+				model.showAnswer = panel.showAnswerCheck.selected ;
+				changeJumpTime();
+				checkAndShow();
+			}else{
+				panel.showAnswerCheck.selected = false ;
+				TopTipManager.getInstance().addSystemMouseTip("不要作弊，请提交后查看结果!");
+			}
 		}
 		
 		protected function checkClick(event:MouseEvent):void
@@ -356,7 +373,6 @@ package app.answer.modules.answer.view
 		}
 		
 		private function start():void{
-			dispose();   //恢复数据
 			if(td != null){
 				TimerManager.deleteTimer(td);
 				td = null ;
@@ -366,6 +382,22 @@ package app.answer.modules.answer.view
 			model.total =  QuestionResManager.getLength() ;
 			setIndex(model.currIndex) ;
 		}
+		/**
+		 * 
+		 * @param value 0:重做 1:刚开始
+		 * 
+		 */
+		private function changeState(value:int):void
+		{
+			if( value == 0 ){
+				panel.reStartBtn.visible = true ;
+				panel.submitBtn.x = 16 ;
+			}else{
+				panel.reStartBtn.visible = false ;
+				panel.submitBtn.x = 50 ;
+			}
+		}
+
 
 		private function setIndex(value:int):void{
 			model.currIndex = value ;
@@ -438,7 +470,9 @@ package app.answer.modules.answer.view
 //			本地保存数据
 //			错误、标记题目划分 tab
 			facade.sendNotification(Answer_ApplicationFacade.SHOW_SCORE_PANEL,null );
-			
+			model.isDone = true ;
+			model.showAnswer = true ;
+			panel.showAnswerCheck.selected = true;
 		}
 		
 		private function dispose():void
@@ -458,6 +492,9 @@ package app.answer.modules.answer.view
 			model.signArr = [] ;
 			panel.single.selection = panel.nullRadio ;
 			model.score = 0 ;
+			model.isDone = false ;
+			model.showAnswer = false ;
+			panel.showAnswerCheck.selected = false ;
 		}
 		
 		
@@ -483,10 +520,11 @@ package app.answer.modules.answer.view
 
 		override public function handleNotification($noti:INotification) : void
 		{
+			var data:Boolean = Boolean($noti.getBody()) ;
 			switch($noti.getName())
 			{
 				case Answer_ApplicationFacade.SHOW_Answer_PANEL:
-					showPanel();
+					showPanel( data );
 					break ;
 				default:
 				{
@@ -496,11 +534,16 @@ package app.answer.modules.answer.view
 			return;
 		}
 		
-		private function showPanel():void
+		private function showPanel(keepData:Boolean = false ):void
 		{
 			POPWindowManager.centerWindow(panel, null, Answer_ApplicationFacade.NAME);
+			if( !keepData ){
+				dispose();
+				changeState(1);
+			}else{
+				changeState(0);
+			}
 			start() ;
-			
 		}
 		
 		private function get msgSenderProxy() : Answer_MsgSendProxy
