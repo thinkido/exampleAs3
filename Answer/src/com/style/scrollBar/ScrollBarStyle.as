@@ -21,14 +21,14 @@
 
         override public function setStyle(param1:UIComponent) : void
         {
-            param1.setStyle("downArrowUpSkin", GSpinner_downArrow_upSkin);
-            param1.setStyle("downArrowOverSkin", GSpinner_downArrow_upSkin);
-            param1.setStyle("downArrowDownSkin", GSpinner_downArrow_upSkin);
-            param1.setStyle("downArrowDisabledSkin", GSpinner_downArrow_upSkin);
-            param1.setStyle("upArrowUpSkin", GSpinner_upArrow_upSkin);
-            param1.setStyle("upArrowOverSkin", GSpinner_upArrow_upSkin);
-            param1.setStyle("upArrowDownSkin", GSpinner_upArrow_upSkin);
-            param1.setStyle("upArrowDisabledSkin", GSpinner_upArrow_upSkin);
+            param1.setStyle("downArrowUpSkin", GScrollBar_downArrow_upSkin);
+            param1.setStyle("downArrowOverSkin", GScrollBar_downArrow_overSkin);
+            param1.setStyle("downArrowDownSkin", GScrollBar_downArrow_downSkin);
+            param1.setStyle("downArrowDisabledSkin", GScrollBar_downArrow_disabledSkin);
+            param1.setStyle("upArrowUpSkin", GScrollBar_upArrow_upSkin);
+            param1.setStyle("upArrowOverSkin", GScrollBar_upArrow_overSkin);
+            param1.setStyle("upArrowDownSkin", GScrollBar_upArrow_downSkin);
+            param1.setStyle("upArrowDisabledSkin", GScrollBar_upArrow_disabledSkin);
             param1.setStyle("trackUpSkin", GScrollBar_trackSkin);
             param1.setStyle("trackOverSkin", GScrollBar_trackSkin);
             param1.setStyle("trackDownSkin", GScrollBar_trackSkin);
