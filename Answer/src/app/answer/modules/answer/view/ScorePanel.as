@@ -11,6 +11,7 @@ package app.answer.modules.answer.view
 	import lm.mui.controls.GImageBitmap;
 	import lm.mui.controls.GLabel;
 	import lm.mui.controls.GTextFiled;
+	import lm.mui.controls.TimeButton;
 	
 	public class ScorePanel extends GWindow
 	{
@@ -20,7 +21,7 @@ package app.answer.modules.answer.view
 		public var GImageBitmap2:GImageBitmap ;
 		private var format:TextFormat = new TextFormat();;
 		public var shareBtn:GButton ;
-
+		public var timeBtn:TimeButton
 		
 		public function ScorePanel()
 		{
@@ -51,10 +52,18 @@ package app.answer.modules.answer.view
 			showTxt.wordWrap = true ;
 			showTxt.selectable = false ;
 			
-			shareBtn = CompCreateFactory.createGButton(510,350,70,28,'分享');
+			shareBtn = CompCreateFactory.createGButton(440,350,70,28,'分享');
 			shareBtn.styleName = 'RedButton';
 			this.addChild(shareBtn);
 			
+			timeBtn = new TimeButton(10);
+			timeBtn.styleName = "RedButton" ;
+			timeBtn.x = 510 ;
+			timeBtn.y = 350 ;
+			timeBtn.width = 85;
+			timeBtn.height = 28 ;
+			timeBtn.label = "查看答案";
+			this.addChild(timeBtn);
 		}
 	}
 }

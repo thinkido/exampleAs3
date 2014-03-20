@@ -85,6 +85,7 @@ package app.answer.modules.answer.view
 		{
 			dispose() ;
 			changeState(1);
+			start();
 		}
 		
 		private function onItemClick(event:ListEvent):void
@@ -378,7 +379,9 @@ package app.answer.modules.answer.view
 				td = null ;
 			}
 			model.showTimeCount = model.showTime ;
-			td = TimerManager.createTimer(1000,int.MAX_VALUE,timerCount);
+			if( !model.isDone ){   //查看答案是不计时
+				td = TimerManager.createTimer(1000,int.MAX_VALUE,timerCount);
+			}
 			model.total =  QuestionResManager.getLength() ;
 			setIndex(model.currIndex) ;
 		}

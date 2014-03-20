@@ -1,6 +1,7 @@
 package app.answer.modules.answer.view
 {
 	import app.answer.manager.POPWindowManager;
+	import app.answer.manager.TopTipManager;
 	import app.answer.modules.answer.Answer_ApplicationFacade;
 	import app.answer.modules.answer.model.AnswerModel;
 	
@@ -11,9 +12,11 @@ package app.answer.modules.answer.view
 	
 	import flash.desktop.Clipboard;
 	import flash.desktop.ClipboardFormats;
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
 	import lm.components.window.WindowEvent;
+	import lm.mui.controls.TimeButton;
 	
 	import org.puremvc.as3.multicore.interfaces.INotification;
 	import org.puremvc.as3.multicore.patterns.mediator.Mediator;
@@ -39,24 +42,40 @@ package app.answer.modules.answer.view
 		{
 			panel.addEventListener(WindowEvent.CLOSE, closePanel);	
 			panel.shareBtn.addEventListener(MouseEvent.CLICK,shareClick);
+			panel.timeBtn.addEventListener(MouseEvent.CLICK,showAnswer);
 		}
-
+		
+		protected function showAnswer(event:MouseEvent):void
+		{
+			dispose();
+			facade.sendNotification(Answer_ApplicationFacade.SHOW_Answer_PANEL,true);
+		}
+		
 		private function shareClick(event:MouseEvent):void
 		{
 			var shareStr:String = "没想到我的情商这么高,居然高达{0}分,我等你来挑战！" ;
 			Clipboard.generalClipboard.setData(ClipboardFormats.TEXT_FORMAT,StringUtil.replacePlaceholder(shareStr,[AnswerModel.getInstance().score]) + "\n" + BrowerManager.instance.url );
-			
+			TopTipManager.getInstance().addSystemMouseTip("已经复制到剪切板！");
+			panel.timeBtn.trigger() ;
 		}
 		
 		private function closePanel(event:WindowEvent = null):void
+		{
+			dispose();
+			facade.sendNotification(Answer_ApplicationFacade.SHOW_Answer_PANEL);
+//			POPWindowManager.showModule(Answer_ApplicationFacade.NAME, Answer_ApplicationFacade.SHOW_Answer_PANEL);
+		}
+
+		private function dispose():void
 		{
 			clearTd();
 			if( panel.parent != null ){
 				panel.parent.removeChild(panel ) ;
 			}
-			facade.sendNotification(Answer_ApplicationFacade.SHOW_Answer_PANEL,true);
-//			POPWindowManager.showModule(Answer_ApplicationFacade.NAME, Answer_ApplicationFacade.SHOW_Answer_PANEL);
+			panel.timeBtn.stop() ;
+			panel.timeBtn.label = "查看答案" ;
 		}
+
 
 		private function clearTd():void
 		{
@@ -103,6 +122,7 @@ package app.answer.modules.answer.view
 			start() ;
 			panel.scoreTxt.text = "总分：" + model.score ;
 			panel.showTxt.htmlText = model.getScoreTxt(model.score) ;
+			panel.timeBtn.enabled = false ;
 		}
 		
 		private function start():void
