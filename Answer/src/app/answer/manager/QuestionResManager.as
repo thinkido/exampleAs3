@@ -33,6 +33,7 @@ package app.answer.manager
 			var tempArr1:Array ;
 			var model:AnswerModel = AnswerModel.getInstance();
 			model.showTime = data.@time ;
+			model.head = data.@head ;
 			model.comment = String(data.@comment).replace(/\\n/g,"\n"); ;
 			
 			var obj:Array = [];

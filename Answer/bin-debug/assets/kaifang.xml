@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<questions time="1800" comment="这是教练技术ta44家人,禄建主要为东纯哥准备的开放性、封闭性话题锻炼与测试题。所以还不了解的开始学习了。">
+<questions head="开放性话题测试" time="1800" comment="这是教练技术ta44家人,禄建主要为东纯哥准备的开放性、封闭性话题锻炼与测试题。所以还不了解的开始学习了。">
 	<quest id="1" type="1" title="再飞姐漂亮吗？" A="开放性" B="封闭性" answer="B:1"/>
 	<quest id="2" type="1" title="再飞姐什么地方好？" A="开放性" B="封闭性" answer="A:1"/>
 	<quest id="3" type="1" title="再飞姐有什么优点？" A="开放性" B="封闭性" answer="A:1"/>

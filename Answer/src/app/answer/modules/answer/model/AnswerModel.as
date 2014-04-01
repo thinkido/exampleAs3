@@ -55,7 +55,14 @@ package app.answer.modules.answer.model
 		public var jumpNeedTime:Number = 100;
 		public var showAnswerNeedTime:int = 2000 ;
 		
+		/**
+		 * 试题描述信息 
+		 */		
 		public var comment:String = "" ;
+		/**
+		 * 标题名，如 情商测试 
+		 */		
+		public var head:String = "" ;
 		/**
 		 * tab选着卡 
 		 */		

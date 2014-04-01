@@ -46,6 +46,7 @@ package app.answer.modules.answer.view
 		{
 			panel.tipTxt.visible = false ;
 			panel.autoCheck.selected = true ;
+			panel.title = model.head ;
 		}
 		private var td:TimerData ;
 		private function initEvt():void
