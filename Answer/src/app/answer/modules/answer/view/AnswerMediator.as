@@ -106,7 +106,7 @@ package app.answer.modules.answer.view
 //			trace( "right"+ model.rightArr.join(",") + "sign:" + model.signArr.join(",") );
 			var dataArr:Array = [];
 			var temp:Array = [];
-			if( index > 1 &&　!model.isDone){   // 没提交答案不能查看正确、错误
+			if( index > 1 && !model.isDone  ){   // 没提交答案不能查看正确、错误
 				TopTipManager.getInstance().addSystemMouseTip("请提交后查看结果!");
 				return ;
 			}

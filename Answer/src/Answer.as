@@ -17,15 +17,22 @@ package
 	import com.thinkido.framework.manager.MenuManager;
 	import com.thinkido.framework.manager.TimerManager;
 	
+	import flash.display.Bitmap;
+	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.system.Security;
+	import flash.utils.setTimeout;
+	
+	import ui.progress.WelcomeProgress;
 
-	[SWF(width="800",height="500",backgroundColor="#333333")]
+	[SWF(width="800",height="500",backgroundColor="#333333",frameRate="30")]
 	public class Answer extends Application
 	{
 		[Embed(source="../asset/focusTile.png",mimeType="image/png")]
 		private var FocusImgClass:Class ;
+		[Embed(source="../asset/TitleWindow_BG.png",mimeType="image/png")]
+		private var TitleWindowClass:Class ;
 		private var focusImg:RepeatImage ;
 		
 		public static const version:String = "1.0.2" ;
@@ -33,6 +40,7 @@ package
 		private static const qqStr:String = "http://wpa.qq.com/msgrd?v=3&uin=5526555&site=qq&menu=yes";
 		
 		private var tracker:AnalyticsTracker ;
+		private var bg:RepeatImage ;
 		
 		public function Answer()
 		{
@@ -41,6 +49,12 @@ package
 		
 		protected override function initApp():void
 		{
+			bg = new RepeatImage() ;
+			bg.bitmapData = Bitmap(new TitleWindowClass()).bitmapData;
+			addChild(bg);
+			bg.width = stage.stageWidth ;
+			bg.height = stage.stageHeight ;
+			
 			var app:com.thinkido.framework.common.Application = new com.thinkido.framework.common.Application();
 			Global.application = app ;
 			addChild(app);
@@ -55,8 +69,24 @@ package
 			
 			LayerManager.init() ;
 			
-			
-			startup() ;
+			startbefore();
+		}
+		
+		private function startbefore():void
+		{
+			var wel:WelcomeProgress = new WelcomeProgress();
+			wel.addEventListener(WelcomeProgress.CARTOON_END,removeWel);
+			addChild(wel) ;
+			wel.start(2,3);
+			setTimeout(doStart,2000);
+			function doStart():void
+			{
+				startup() ;
+			}
+			function removeWel():void
+			{
+				removeChild(wel) ;
+			}
 			
 		}
 		
