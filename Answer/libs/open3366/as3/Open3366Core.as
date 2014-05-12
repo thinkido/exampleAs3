@@ -4,8 +4,13 @@
 	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
 	import flash.events.Event;
+	import flash.net.URLLoader;
+	import flash.net.URLLoaderDataFormat;
 	import flash.net.URLRequest;
+	import flash.system.ApplicationDomain;
+	import flash.system.LoaderContext;
 	import flash.system.Security;
+	import flash.utils.ByteArray;
 	import flash.utils.getTimer;
 	
 	import open3366.as3.*;
@@ -71,10 +76,24 @@
 			{
 			}
 			var sComponentUrl:String = "http://" + sSwfDomain + "/open3366/component/openservice_as3_v3.swf?r="+getTimer();
+			var urlLoader:URLLoader = new URLLoader();
+			urlLoader.addEventListener(Event.COMPLETE,urlLoadCom);
+			urlLoader.dataFormat = URLLoaderDataFormat.BINARY;
+			urlLoader.load(new URLRequest(sComponentUrl));
+			
+			trace(">>>>>>>>>>>>>>>>>>开始加载open366Service组件。gameId="+gameId+",isUseScore="+isUseScore+",pid="+_pid+",bookId="+_bookId+",pkType="+_pkType+",platForm="+_platForm+",sSwfDomain="+sSwfDomain);
+		}
+		
+		protected static function urlLoadCom(event:Event):void
+		{
 			var loader : Loader = new Loader();
 			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onServiceComplete);
-			loader.load(new URLRequest(sComponentUrl));			
-			trace(">>>>>>>>>>>>>>>>>>开始加载open366Service组件。gameId="+gameId+",isUseScore="+isUseScore+",pid="+_pid+",bookId="+_bookId+",pkType="+_pkType+",platForm="+_platForm+",sSwfDomain="+sSwfDomain);
+//			loader.load(new URLRequest(sComponentUrl));	
+			var by:ByteArray = event.currentTarget.data;
+			var _context:LoaderContext = new LoaderContext();
+			_context.applicationDomain = ApplicationDomain.currentDomain;
+			loader.loadBytes(by,_context) ;
+			
 		}
 		
 		private static function onServiceComplete(evt:Event):void
