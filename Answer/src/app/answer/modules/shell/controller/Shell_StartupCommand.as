@@ -47,6 +47,8 @@ package app.answer.modules.shell.controller
 			GameConfig.sceneHeight = GameInstance.stage.stageHeight ;
 			GameConfig.fileBaseFolder = GameConfig.flashParameters["baseDir"] || "";
 			GameConfig.filePath = GameConfig.flashParameters["filePath"] || "";
+			GameConfig.serverUrl = GameConfig.flashParameters["serverUrl"] || "";
+			GameConfig.gameId = GameConfig.flashParameters["gameid"] || "";
 			
 			if(!BrowerManager.instance.isNet){
 				GameConfig.fileBaseFolder =  "";

@@ -24,6 +24,8 @@ package
 	import flash.system.Security;
 	import flash.utils.setTimeout;
 	
+	import open3366.as3.*;
+	
 	import ui.progress.WelcomeProgress;
 
 	[SWF(width="800",height="500",backgroundColor="#333333",frameRate="30")]
@@ -70,8 +72,28 @@ package
 			LayerManager.init() ;
 			
 			startbefore();
+			
+			Security.allowDomain("*");
+			Security.allowInsecureDomain("*");
+			
+//			Open3366Api.addEventListener(Open3366Event.SERVICE_READY, onServiceReady);
+//			Open3366Api.addEventListener(Open3366Event.SERVICE_READY_ERR, onServiceReadyError);
+//			
+//			Open3366Api.initGame("27871", this, true);
 		}
-		
+		//组件初始化时发生的错误
+		private function onServiceReadyError(evt:Open3366Event):void
+		{
+			trace("老版本错误码为:"+ evt.data.result + "一级错误码:" + evt.data.errCode + ",二级错误码:"+ evt.data.errCodeExt + ",错误信息为:" + evt.data.errMsg );
+		}
+		//组件已经就绪
+		private function onServiceReady(evt:Open3366Event):void
+		{
+			trace("service is ready, now can use API");
+			//resultTxt.text = "组件初始化成功，可以使用api了";
+			//			resultTxt.text = "组件初始化成功，可以使用api了,老版本错误码为:"+ evt.data.result + "一级错误码:" + evt.data.errCode + ",二级错误码:"+ evt.data.errCodeExt + ",错误信息为:" + evt.data.errMsg;
+			//此处代码留待开发商编写
+		}
 		private function startbefore():void
 		{
 			var wel:WelcomeProgress = new WelcomeProgress();
@@ -129,13 +151,16 @@ package
 		{
 			var obj:Object = stage.loaderInfo.parameters;
 			
-			var param:Object = {};
+			/*var param:Object = {};
 			param.baseDir = obj.baseDir;
 			param.config = obj.config;
 			param.program = obj.program;
 			param.filePath = obj.filePath ;
+			param.gameid = obj.gameid ;
+			param.filePath = obj.server ;
+			param.filePath = obj.filePath ;*/
 			
-			FacadeManager.startupFacade(PipeEvent.STARTUP_SHELL, {parameters:param, decode:null});
+			FacadeManager.startupFacade(PipeEvent.STARTUP_SHELL, {parameters:obj, decode:null});
 			FacadeManager.startupFacade(PipeEvent.STARTUP_LOADRES,null);
 		}
 		

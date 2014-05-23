@@ -38,12 +38,14 @@
             <!-- To use express install, set to playerProductInstall.swf, otherwise the empty string. -->
             var xiSwfUrlStr = "playerProductInstall.swf";
             var flashvars = {
-				filePath:"assets/kaifang.xml"
+				filePath:"assets/kaifang.xml",
+				gameid:"100",
+				serverUrl:"http://192.168.1.150/discuz/api_demo.php"
 			};
             var params = {};
             params.quality = "high";
             params.bgcolor = "#333333";
-            params.allowscriptaccess = "sameDomain";
+            params.allowscriptaccess = "always";
             params.allowfullscreen = "true";
             var attributes = {};
             attributes.id = "Answer";
