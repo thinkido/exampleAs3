@@ -1,10 +1,22 @@
-package display
+package com.thinkido.framework.display
 {
 	import com.thinkido.framework.common.vo.StyleData;
 	
 	import flash.display.Sprite;
 	import flash.geom.Point;
-	
+	/**
+	 * 
+	 * @author Administrator
+	 * @example
+	 * <listing version="3.0"> 
+			polygon = new Polygon();
+			addChild(polygon);
+			polygon.x = 200 ;
+			polygon.y = 200 ;
+			polygon.radius = 100 ;
+			polygon.draw([100,80,50,90,30,30,100,80,50,90]);
+		</listing>
+	 */	
 	public class Polygon extends Sprite
 	{
 		private var _radius:int ;

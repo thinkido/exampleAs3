@@ -1,4 +1,4 @@
-package display
+package com.thinkido.framework.display
 {
 	import com.greensock.TweenLite;
 	import com.thinkido.framework.common.vo.StyleData;

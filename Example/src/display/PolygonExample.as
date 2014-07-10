@@ -5,6 +5,7 @@ package display
 	
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
+	import com.thinkido.framework.display.Polygon;
 	
 	public class PolygonExample extends Application
 	{
