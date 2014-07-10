@@ -47,12 +47,12 @@
             params.allowscriptaccess = "sameDomain";
             params.allowfullscreen = "true";
             var attributes = {};
-            attributes.id = "DisplayObjectWidthHeight";
-            attributes.name = "DisplayObjectWidthHeight";
+            attributes.id = "PolygonExample";
+            attributes.name = "PolygonExample";
             attributes.align = "middle";
             swfobject.embedSWF(
-                "DisplayObjectWidthHeight.swf", "flashContent", 
-                "600", "600", 
+                "PolygonExample.swf", "flashContent", 
+                "100%", "100%", 
                 swfVersionStr, xiSwfUrlStr, 
                 flashvars, params, attributes);
             // JavaScript enabled so display the flashContent div in case it is not replaced with a swf object.
@@ -77,14 +77,14 @@
         </div>
         
         <noscript>
-            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="600" height="600" id="DisplayObjectWidthHeight">
-                <param name="movie" value="DisplayObjectWidthHeight.swf" />
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%" id="PolygonExample">
+                <param name="movie" value="PolygonExample.swf" />
                 <param name="quality" value="high" />
                 <param name="bgcolor" value="#ffffff" />
                 <param name="allowScriptAccess" value="sameDomain" />
                 <param name="allowFullScreen" value="true" />
                 <!--[if !IE]>-->
-                <object type="application/x-shockwave-flash" data="DisplayObjectWidthHeight.swf" width="600" height="600">
+                <object type="application/x-shockwave-flash" data="PolygonExample.swf" width="100%" height="100%">
                     <param name="quality" value="high" />
                     <param name="bgcolor" value="#ffffff" />
                     <param name="allowScriptAccess" value="sameDomain" />

@@ -8,7 +8,7 @@ package
 	
 	import lm.components.window.GWindow;
 	import lm.components.window.WindowEvent;
-	
+	[SWF(width="800",height="480")]
 	public class TestLm extends Application
 	{
 		[Embed(source="../asset/focusTile.png",mimeType="image/png")]
