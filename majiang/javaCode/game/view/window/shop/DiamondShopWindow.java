@@ -41,7 +41,7 @@ public class DiamondShopWindow extends UIWindow
 		_btnItemList[4].setNeighbors(_btnItemList[1], null, _btnItemList[3], _btnItemList[5]);
 		_btnItemList[5].setNeighbors(_btnItemList[2], null, _btnItemList[4], _btnItemList[3]);
 		_btnClose.setNeighbors(null, _btnItemList[0], null, null);
-		
+
 		switchFocus(_btnItemList[0]);
 	}
 
@@ -65,13 +65,17 @@ public class DiamondShopWindow extends UIWindow
 			{
 				if(_btnItemList[i] == target)
 				{
-					if(true)
+					if(Global.diamond >= _diamondCostList[i])
 					{
 						Global.diamond -= _diamondCostList[i];
 						updateDiamond();
 						CommonUtil.showPopupWindow(false, "购买积分成功，获得" + _goldGetList[i] + "积分", null);
 						Global.userDataVO.gold += _goldGetList[i];
 						((HallScene)SceneManager.getInstance().getCurScene()).updateUserInfo();
+					}
+					else
+					{
+						CommonUtil.showPopupWindow(false, "钻石不足，无法购买", null);
 					}
 				}
 			}

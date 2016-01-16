@@ -13,7 +13,7 @@ import ui.UIText;
 import ui.UIWindow;
 
 public class PopupWindow extends UIWindow {
-	private static final int LINE_LENGTH = 20;
+	private static final int LINE_LENGTH = 12;
 
 	protected ICallbackB _callback;
 

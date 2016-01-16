@@ -131,27 +131,29 @@ public class GameEndWindow extends UIWindow
 		for(int i = 0; i < _vo.huTypeVec.size(); i++)
 		{
 			GameEndTypeVO vo = (GameEndTypeVO)_vo.huTypeVec.elementAt(i);
-
-			Texture t = _huTypes.getTexture("" + vo.type);
-
-			if(t != null)
+			if(vo.fan > 0)
 			{
-				Bitmap bmd = new Bitmap(t);
-				bmd.setPosition(x, y);
-				this.addChild(bmd);
+				Texture t = _huTypes.getTexture("" + vo.type);
 
-				String sFan = null;
-				if(vo.fan < 10)
+				if(t != null)
 				{
-					sFan = "0" + vo.fan + "·¬";
-				}
-				else
-				{
-					sFan = vo.fan + "·¬";
-				}
-				int th = createBitmapFont(sFan, x + 150, y);
+					Bitmap bmd = new Bitmap(t);
+					bmd.setPosition(x, y);
+					this.addChild(bmd);
 
-				y = y + th + gap;
+					String sFan = null;
+					if(vo.fan < 10)
+					{
+						sFan = "0" + vo.fan + "·¬";
+					}
+					else
+					{
+						sFan = vo.fan + "·¬";
+					}
+					int th = createBitmapFont(sFan, x + 150, y);
+
+					y = y + th + gap;
+				}
 			}
 		}
 	}

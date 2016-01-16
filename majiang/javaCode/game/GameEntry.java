@@ -20,12 +20,13 @@ public class GameEntry extends Sprite
 	{
 		if(Global.account == null)
 		{
-			Global.account = "fuck222";
+			Global.account = "fucker2";
 			Global.adAccount = Global.account;
 		}
-		Global.resUrl = "http://182.140.237.55/res_i";
-		Res.localRes.init("/res.json");
-		Res.actively = Res.localRes;
+		Global.resUrl = "http://192.168.0.202/itv/gbmj/res";
+		// Res.localRes.init("/res.json");
+		Res.httpRes.init("/res.json", Global.resUrl);
+		Res.actively = Res.httpRes;
 		// Res.httpRes.init("/res.json", Global.resUrl);
 		// Res.actively = Res.httpRes;
 

@@ -18,6 +18,8 @@ public class RankItemVO
 	{
 		rank = msg.getRank();
 		portrait = msg.getPortrait();
+		if(portrait == 0)
+			portrait = 1;
 		value = String.valueOf(msg.getValue_int_1());
 		setName(msg.getName());
 	}
@@ -26,14 +28,16 @@ public class RankItemVO
 	{
 		rank = _rank;
 		portrait = _portrait;
+		if(portrait == 0)
+			portrait = 1;
 		value = _value;
 		setName(_name);
 	}
 
 	private void setName(String _name)
 	{
-		if(_name.length() > 8)
-			name = _name.substring(_name.length() - 8);
+		if(_name.length() > 7)
+			name = _name.substring(_name.length() - 7);
 		else
 			name = _name;
 	}

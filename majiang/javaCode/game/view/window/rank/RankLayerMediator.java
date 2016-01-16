@@ -4,6 +4,7 @@ package game.view.window.rank;
 import framework.resources.SpriteSheet;
 import framework.views.DisplayObject;
 import game.model.vo.RankItemVO;
+import ui.UIButton;
 import ui.UIImageView;
 import ui.UILayer;
 import ui.UITextBMFont;
@@ -30,6 +31,10 @@ public class RankLayerMediator
 	private RankItemVO[] _dataList;
 
 	private UIImageView[] _imgTopThree;
+	
+	private UIButton _btnPageUp;
+
+	private UIButton _btnPageDown;
 
 	private SpriteSheet _ssSmallHead;
 
@@ -53,6 +58,8 @@ public class RankLayerMediator
 		{
 			_imgHead[i] = (UIImageView)_layer.getChildByName("img_head_" + (i + 1));
 		}
+		_btnPageUp = (UIButton)_layer.getChildByName("btn_page_up");
+		_btnPageDown = (UIButton)_layer.getChildByName("btn_page_down");
 	}
 
 	public void initData(RankItemVO[] dataList)
@@ -110,5 +117,14 @@ public class RankLayerMediator
 			_imgTopThree[i].setVisible(isFirstPage);
 			_bfValueList[0][i].setVisible(!isFirstPage);
 		}
+		
+		if(_curPage < _totalPage - 1)
+			_btnPageDown.setState(UIButton.STATE_NORMAL);
+		else
+			_btnPageDown.setState(UIButton.STATE_DISABLE);
+		if(_curPage > 0)
+			_btnPageUp.setState(UIButton.STATE_NORMAL);
+		else
+			_btnPageUp.setState(UIButton.STATE_DISABLE);
 	}
 }

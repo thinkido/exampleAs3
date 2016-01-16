@@ -118,8 +118,9 @@ public class PlayerActionWindow extends UIWindow
 			System.out.println(act.toString());
 		}
 
-		int btnChiX = 587;
-		int btnNormalX = 587;
+		int btnChiX = 560;
+		int btnNormalX = 560;
+		Vector btnChis = new Vector();
 		for(int i = 0; i < _btns.size(); i++)
 		{
 			UIButton btn = (UIButton)_btns.elementAt(i);
@@ -140,6 +141,7 @@ public class PlayerActionWindow extends UIWindow
 			scgame_show_actions act = (scgame_show_actions)_btn2Act.get(btn);
 			if(act.getId() == PlayerAction.CHI_LEFT || act.getId() == PlayerAction.CHI_MIDDLE || act.getId() == PlayerAction.CHI_RIGHT)
 			{
+				btnChis.addElement(btn);
 				int y = 170;
 				int gap = 60;
 				btn.setPosition(btnChiX - btn.getWidth(), y);
@@ -160,6 +162,14 @@ public class PlayerActionWindow extends UIWindow
 		}
 
 		switchFocus((UIButton)_btns.elementAt(1));
+		
+		UIButton btnGuo = (UIButton)_btns.elementAt(0);
+		for(int i = 0; i < btnChis.size(); i++)
+		{
+			UIButton btnChi = (UIButton)btnChis.elementAt(0);
+			btnGuo.setNeighbors(btnChi, btnChi, btnGuo.getNeighbor(DIR_LEFT), btnGuo.getNeighbor(DIR_RIGHT));
+			btnChi.setNeighbors(btnGuo, btnGuo, btnChi.getNeighbor(DIR_LEFT), btnChi.getNeighbor(DIR_RIGHT));
+		}
 	}
 
 	private UIButton createBtnGuo()

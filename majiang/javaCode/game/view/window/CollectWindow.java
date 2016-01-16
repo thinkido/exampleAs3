@@ -36,9 +36,13 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 
 	private UIButton _btnClose;
 
+	private UIButton _btnOK;
+
 	private UIButton _btnContinue;
 
 	private UIButton _btnGetAward;
+
+	private boolean _bInGame;
 
 	protected void initUI()
 	{
@@ -60,6 +64,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 		}
 		_finalAwardItem = (UIButton)getChildByName("img_award_final");
 		_btnClose = (UIButton)getChildByName("btn_close");
+		_btnOK = (UIButton)getChildByName("btn_ok");
 		_btnContinue = (UIButton)getChildByName("btn_continue");
 		_btnGetAward = (UIButton)getChildByName("btn_getaward");
 		_btnContinue.setVisible(false);
@@ -70,6 +75,11 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 	{
 		YiuNetworkHandlerMgr.subscribe(this);
 		reqData();
+		if(_args != null && ((Boolean)_args).booleanValue())
+		{
+			_args = null;
+			_bInGame = true;
+		}
 	}
 
 	public void onLeave()
@@ -79,7 +89,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 
 	public void onConfirm(UIObject target)
 	{
-		if(target == _btnClose || target == _btnContinue)
+		if(target == _btnClose || target == _btnContinue || target == _btnOK)
 			WindowManager.getInstance().closeWindow(this);
 		else if(target == _btnGetAward)
 		{
@@ -150,6 +160,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 	{
 		if(bCanGetAward)
 		{
+			_btnOK.setVisible(false);
 			_btnContinue.setVisible(false);
 			_btnGetAward.setVisible(true);
 			_btnClose.setNeighbors(null, _btnGetAward, null, null);
@@ -158,11 +169,24 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 		}
 		else
 		{
-			_btnContinue.setVisible(true);
-			_btnGetAward.setVisible(false);
-			_btnClose.setNeighbors(null, _btnContinue, null, null);
-			_btnContinue.setNeighbors(_btnClose, null, null, null);
-			switchFocus(_btnContinue);
+			if(_bInGame)
+			{
+				_btnOK.setVisible(false);
+				_btnContinue.setVisible(true);
+				_btnGetAward.setVisible(false);
+				_btnClose.setNeighbors(null, _btnContinue, null, null);
+				_btnContinue.setNeighbors(_btnClose, null, null, null);
+				switchFocus(_btnContinue);
+			}
+			else
+			{
+				_btnOK.setVisible(true);
+				_btnContinue.setVisible(false);
+				_btnGetAward.setVisible(false);
+				_btnClose.setNeighbors(null, _btnOK, null, null);
+				_btnOK.setNeighbors(_btnClose, null, null, null);
+				switchFocus(_btnOK);
+			}
 		}
 	}
 

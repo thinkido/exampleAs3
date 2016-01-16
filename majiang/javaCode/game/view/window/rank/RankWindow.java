@@ -51,8 +51,10 @@ public class RankWindow extends UIWindow implements YiuNetworkListener
 	public void onEnter()
 	{
 		YiuNetworkHandlerMgr.subscribe(this);
-
-		_bfName.setText(Global.userDataVO.name);
+		String name = Global.userDataVO.name;
+		if(name.length() > 5)
+			name = name.substring(name.length() - 5);
+		_bfName.setText(name);
 		_bfGold.setText(CommonUtil.formatGold(Global.userDataVO.gold));
 		_bfLevel.setText(String.valueOf(Global.userDataVO.level));
 		_bfRank.setText("0");
@@ -184,18 +186,17 @@ public class RankWindow extends UIWindow implements YiuNetworkListener
 					winData[i] = new RankItemVO((t_rank_data)datalist.elementAt(i));
 				}
 				_mediatorList[2].initData(winData);
-				_myRankList[0] = 0;
-				_myRankList[1] = 0;
-				_myRankList[2] = 0;
-//				_myRankList[0] = msg.getMyCoin();
-//				_myRankList[1] = msg.getMyLevel();
-//				_myRankList[2] = msg.getMyWin();
+				_myRankList[0] = msg.getMyCoin();
+				_myRankList[1] = msg.getMyLevel();
+				_myRankList[2] = msg.getMyWin();
 				updateTab();
+				return true;
 			}
 		}
 		catch(Exception ex)
 		{
 			ex.printStackTrace();
+			return true;
 		}
 		return false;
 	}

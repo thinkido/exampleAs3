@@ -39,7 +39,7 @@ public class TestPlayer extends Sprite
 	{
 		int[] inHand = {11, 12, 13};
 		int mo = 21;
-		int[] onTable = {11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29};
+		int[] onTable = {11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 21, 22, 23, 24, 25, 26, 27, 28, 29};
 		CombinVO[] cbs = new CombinVO[3];
 		cbs[0] = new CombinVO(1, 11);
 		cbs[1] = new CombinVO(2, 11);

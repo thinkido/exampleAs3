@@ -1,17 +1,25 @@
 
 package game.view.window.shop;
 
+import game.control.LogManager;
 import game.control.SceneManager;
 import game.control.WindowManager;
 import game.model.Global;
 import game.util.CommonUtil;
 import game.view.scene.HallScene;
+
+import java.io.IOException;
+
+import net.jarlehansen.protobuf.javame.ByteString;
+import network.YiuNetworkListener;
+import protocol.cs_exchange_fee;
+import protocol.sc_exchange_fee_result;
 import ui.UIButton;
 import ui.UIObject;
 import ui.UITextBMFont;
 import ui.UIWindow;
 
-public class TicketShopWindow extends UIWindow
+public class TicketShopWindow extends UIWindow implements YiuNetworkListener
 {
 
 	private UIButton _btnClose;
@@ -22,7 +30,9 @@ public class TicketShopWindow extends UIWindow
 
 	private int[] _ticketCostList = new int[]{200, 400, 800, 1500, 2500, 5000};
 
-	private int[] _goldGetList = new int[]{1000, 2000, 5000, 10000, 20000, 50000};
+	private int[] _goldGetList = new int[]{10000, 20000, 50000, 100000, 200000, 500000};
+
+	private int _reqIndex;
 
 	protected void initUI()
 	{
@@ -65,13 +75,21 @@ public class TicketShopWindow extends UIWindow
 			{
 				if(_btnItemList[i] == target)
 				{
-					if(true)
+					if(Global.userDataVO.score >= _ticketCostList[i])
 					{
-						Global.userDataVO.score -= _ticketCostList[i];
-						updateTicket();
-						CommonUtil.showPopupWindow(false, "兑换积分成功，获得" + _goldGetList[i] + "积分", null);
-						Global.userDataVO.gold += _goldGetList[i];
-						((HallScene)SceneManager.getInstance().getCurScene()).updateUserInfo();
+						try
+						{
+							_reqIndex = i;
+							Global.socketHall.sendProtobuf("cs_exchange_fee", cs_exchange_fee.newBuilder().setFee_id(_goldGetList[_reqIndex]).build().toByteArray());
+						}
+						catch(IOException e)
+						{
+							LogManager.getInstance().log("请求兑换积分失败", LogManager.LEVEL_ERROR);
+						}
+					}
+					else
+					{
+						CommonUtil.showPopupWindow(false, "点券不足，无法兑换", null);
 					}
 				}
 			}
@@ -81,5 +99,33 @@ public class TicketShopWindow extends UIWindow
 	private void updateTicket()
 	{
 		_bfTicket.setText("" + Global.userDataVO.score);
+	}
+
+	public boolean onNetworkEvent(String name, ByteString content)
+	{
+		if(name.equals("sc_exchange_fee_result"))
+		{
+			try
+			{
+				sc_exchange_fee_result pb = sc_exchange_fee_result.parseFrom(content.toByteArray());
+				if(pb.getResult() == 1)
+					CommonUtil.showPopupWindow(false, "兑换积分出现错误", null);
+				else
+				{
+					Global.userDataVO.score -= _ticketCostList[_reqIndex];
+					updateTicket();
+					Global.userDataVO.gold += _goldGetList[_reqIndex];
+					((HallScene)SceneManager.getInstance().getCurScene()).updateUserInfo();
+					CommonUtil.showPopupWindow(false, "兑换积分成功，获得" + _goldGetList[_reqIndex] + "积分", null);
+				}
+				_reqIndex = -1;
+			}
+			catch(IOException e)
+			{
+				e.printStackTrace();
+			}
+			return true;
+		}
+		return false;
 	}
 }

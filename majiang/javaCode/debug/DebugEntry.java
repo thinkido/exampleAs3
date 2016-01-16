@@ -2,6 +2,7 @@
 package debug;
 
 import debug.units.TestEffect;
+import debug.units.TestPlayer;
 import framework.resources.Res;
 import framework.views.Sprite;
 import game.model.Global;
@@ -22,7 +23,7 @@ public class DebugEntry extends Sprite
 		Res.actively = Res.localRes;
 		Global.setRoot(this);
 		// LogManager.getInstance().showPanel();
-		this.addChild(new TestEffect());
+		this.addChild(new TestPlayer());
 	}
 
 }

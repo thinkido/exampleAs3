@@ -94,7 +94,7 @@ public class UserWindow extends UIWindow implements YiuNetworkListener
 		_ckMale.setNeighbors(_btnHead, null, _ckFemale, _ckFemale);
 		_ckFemale.setNeighbors(_btnHead, null, _ckMale, _ckMale);
 
-		switchFocus(_btnClose);
+		switchFocus(_btnHead);
 	}
 
 	public void onEnter()

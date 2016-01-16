@@ -70,7 +70,7 @@ public class AccountManager implements YiuNetworkListener
 
 			protected void doLost(YiuNetworkSocket socket)
 			{
-				LogManager.getInstance().log("网络连接已中断", LogManager.LEVEL_ERROR);
+//				LogManager.getInstance().log("网络连接已中断", LogManager.LEVEL_ERROR);
 				socket.close();
 				return;
 			}
