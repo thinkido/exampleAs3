@@ -2,7 +2,10 @@ package ui
 {	
 	import game.view.inline.LoadingView;
 	
+	import starling.display.Button;
 	import starling.display.Sprite;
+	import starling.text.TextField;
+	import starling.textures.Texture;
 	
 	public class UIComponent extends Sprite
 	{
@@ -93,7 +96,8 @@ package ui
 		protected static function decodeType(type:String):UIComponent
 		{
 			if(type == "ButtonObjectData")
-				return new UIButton();
+//				return new UIButton();
+				return new Button;
 			else if(type == "CheckBoxObjectData")
 				return new UICheckBox();
 			else if(type == "ImageViewObjectData" || type == "SpriteObjectData")
@@ -105,7 +109,8 @@ package ui
 			else if(type == "TextBMFontObjectData")
 				return new UITextBMFont();
 			else if(type == "TextObjectData")
-				return new UIText();
+//				return new UIText();
+				return new TextField;
 			else if(type == "ProjectNodeObjectData")
 				return new UILayer();
 			else
