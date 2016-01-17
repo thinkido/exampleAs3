@@ -1,13 +1,9 @@
-
-package ui;
-	
-	import java.util.Vector;
-	
-	import org.json.me.JSONObject;
-	
-	import framework.resources.Texture;
+package ui
+{	
 	import framework.util.ViewUtil;
-	import framework.views.Bitmap;
+	
+	import starling.display.Image;
+	import starling.textures.Texture;
 	
 	public class UIListView extends UIObject
 	{
@@ -15,42 +11,42 @@ package ui;
 		/**
 		 * 子元素焦点图片
 		 */
-		private Bitmap _focusTexture;
+		private var _focusTexture:Image;
 		
 		/**
 		 * 滚动方向
 		 */
-		private byte _scrollDir;
+		private var _scrollDir:int;
 		
 		/**
 		 * 显示长度
 		 */
-		private int _length;
+		private var _length:int;
 		
 		/**
 		 * 数据列表
 		 */
-		private Vector _dataList = new Vector();
+		private var _dataList:Array = [];
 		
 		/**
 		 * 子元素列表
 		 */
-		private Vector _itemList;
+		private var _itemList:Array;
 		
 		/**
 		 * 子元素类型
 		 */
-		private Class _itemClass;
+		private var _itemClass:Class;
 		
 		/**
 		 * 当前子元素在所有子元素中的偏移量
 		 */
-		private int _offsetInList = 0;
+		private var _offsetInList:int = 0;
 		
 		/**
 		 * 当前数据集在所有数据中的偏移量
 		 */
-		private int _offsetInData = 0;
+		private var _offsetInData:int = 0;
 		
 		/**
 		 * 初始化列表
@@ -59,19 +55,19 @@ package ui;
 		 * @param scrollDir 滚动方向
 		 * @param length 显示长度
 		 */
-		public void initialize(Class itemClass, byte scrollDir, int length)
+		public function initialize(itemClass:Class,  scrollDir:int, length:int):void
 		{
-			_itemList = new Vector();
+			_itemList = [];
 			_itemClass = itemClass;
 			_scrollDir = scrollDir;
 			_length = length;
-			for(int i = 0; i < _length; i++)
+			for(var i:int = 0; i < _length; i++)
 			{
 				try
 				{
-					UIListItem item = (UIListItem)_itemClass.newInstance();
-					int x = 0;
-					int y = 0;
+					var item:UIListItem = _itemClass.newInstance() as UIListItem;
+					var x:int = 0;
+					var y:int = 0;
 					if(_scrollDir == SCROLL_HORIZONTAL)
 					{
 						x = i * item.getGap();
@@ -85,47 +81,47 @@ package ui;
 					addChild(item);
 					_itemList.addElement(item);
 				}
-				catch(InstantiationException e)
+				catch( e:Error)
 				{
 					e.printStackTrace();
 				}
-				catch(IllegalAccessException e)
+				catch( e:Error)
 				{
 					e.printStackTrace();
 				}
 			}
 		}
 		
-		public boolean hasPre()
+		public function hasPre():Boolean
 		{
 			return _offsetInData + _offsetInList > 0;
 		}
 		
-		public boolean hasNext()
+		public function hasNext():Boolean
 		{
 			return _offsetInData + _offsetInList < _dataList.size() - 1;
 		}
 		
-		public double getCurRate()
+		public function getCurRate():Number
 		{
 			return (_offsetInData + _offsetInList) / (_dataList.size() - 1.0);
 		}
 		
-		public int getOffsetInData()
+		public function getOffsetInData():int
 		{
 			return _offsetInData;
 		}
 		
-		public int getOffsetInList()
+		public function getOffsetInList():int
 		{
 			return _offsetInList;
 		}
 		
-		public Object getCurData()
+		public function getCurData():Object
 		{
-			int index = _offsetInData + _offsetInList;
-			if(_dataList.size() > index)
-				return _dataList.elementAt(index);
+			var index:int = _offsetInData + _offsetInList;
+			if(_dataList.length > index)
+				return _dataList[index];
 			else
 				return null;
 		}
@@ -133,11 +129,11 @@ package ui;
 		/**
 		 * 设置状态，如果当前是STATE_FOCUS,则在其选中的子元素上显示焦点图片
 		 */
-		public void setState(byte state)
+		override public function setState( state:int):void
 		{
 			if(_state != state)
 			{
-				UIListItem curItem = (UIListItem)_itemList.elementAt(_offsetInList);
+				var curItem:UIListItem = _itemList[_offsetInList];
 				if(STATE_FOCUS == state)
 				{
 					curItem.setState(STATE_FOCUS);
@@ -162,7 +158,7 @@ package ui;
 		 * 
 		 * @param data
 		 */
-		public void setData(Vector data)
+		public function setData( data:Array):void
 		{
 			_dataList = data;
 			updateItems();
@@ -173,7 +169,7 @@ package ui;
 		 * 
 		 * @param index
 		 */
-		public void setOffset(int offsetindata, int offsetinlist)
+		public function setOffset( offsetindata:int, offsetinlist:int):void
 		{
 			_offsetInData = offsetindata;
 			changeFocus(0);
@@ -186,15 +182,15 @@ package ui;
 		 * 
 		 * @param t
 		 */
-		public void setFocusTexture(Texture t)
+		public function setFocusTexture( t:Texture):void
 		{
 			if(null == _focusTexture)
 			{
-				_focusTexture = new Bitmap(t);
+				_focusTexture = new Image(t);
 				if(_state == STATE_FOCUS)
 				{
 					addChild(_focusTexture);
-					UIListItem curItem = (UIListItem)_itemList.elementAt(_offsetInList);
+					var curItem:UIListItem = _itemList[_offsetInList];
 					curItem.setState(STATE_FOCUS);
 					ViewUtil.setCenter(_focusTexture, curItem);
 				}
@@ -209,7 +205,7 @@ package ui;
 		 * @param dir
 		 * @return
 		 */
-		public boolean tryMoveOnce(byte dir)
+		public function tryMoveOnce( dir:int):Boolean
 		{
 			if(_scrollDir == SCROLL_VERTICAL)
 			{
@@ -242,9 +238,9 @@ package ui;
 		 * 
 		 * @param dir
 		 */
-		public void moveOnce(byte dir)
+		public function moveOnce(dir:int):void
 		{
-			if(_dataList.size() > 0)
+			if(_dataList.length > 0)
 			{
 				if(dir == DIR_UP || dir == DIR_LEFT)
 				{
@@ -272,20 +268,20 @@ package ui;
 		/**
 		 * 更新子元素内容
 		 */
-		public void updateItems()
+		public function updateItems():void
 		{
-			for(int i = 0; i < _length; i++)
+			for(var i:int = 0; i < _length; i++)
 			{
-				UIListItem item = (UIListItem)_itemList.elementAt(i);
+				var item:UIListItem = _itemList[i];
 				if(null == _dataList)
 				{
 					item.setVisible(false);
 				}
 				else
 				{
-					if(_dataList.size() > _offsetInData + i)
+					if(_dataList.length > _offsetInData + i)
 					{
-						Object data = _dataList.elementAt(_offsetInData + i);
+						var data:Object = _dataList[_offsetInData + i];
 						item.setItemData(data, i + _offsetInData);
 						item.setVisible(true);
 					}
@@ -295,6 +291,7 @@ package ui;
 					}
 				}
 			}
+
 		}
 		
 		/**
@@ -302,15 +299,15 @@ package ui;
 		 * 
 		 * @param to
 		 */
-		public void changeFocus(int to)
+		public function changeFocus(to:int):void
 		{
 			if(_offsetInList != to)
 			{
-				((UIListItem)_itemList.elementAt(_offsetInList)).setState(STATE_NORMAL);
+				(_itemList[_offsetInList] as UIListItem).setState(STATE_NORMAL);
 				_offsetInList = to;
 				if(STATE_FOCUS == _state)
 				{
-					UIListItem curItem = (UIListItem)_itemList.elementAt(_offsetInList);
+					var curItem:UIListItem = _itemList[_offsetInList];
 					curItem.setState(STATE_FOCUS);
 					if(null != _focusTexture)
 						ViewUtil.setCenter(_focusTexture, curItem);
@@ -318,7 +315,7 @@ package ui;
 			}
 		}
 		
-		public void initWithJsonObject(JSONObject data)
+		public function initWithJsonObject( data:JSONObject):void
 		{
 			try
 			{
@@ -326,26 +323,26 @@ package ui;
 				setName(data.getString("Name"));
 				autoSetPosition(data);
 			}
-			catch(Exception e)
+			catch( e:Error)
 			{
 				e.printStackTrace();
 			}
 		}
 		
-		public void onDispose()
+		override public function onDispose():void
 		{
 			_focusTexture = null;
 			_dataList = null;
 			_itemList = null;
 			_itemClass = null;
-			int len = numChildren();
-			for(int i = 0; i < len; i++)
+			var len:int = numChildren();
+			for(var i:int = 0; i < len; i++)
 			{
 				try
 				{
-					((UIComponent)getChildAt(i)).onDispose();
+					(getChildAt(i) as UIComponent).onDispose();
 				}
-				catch(Exception e)
+				catch( e:Error)
 				{
 				}
 			}
@@ -353,3 +350,4 @@ package ui;
 			super.onDispose();
 		}
 	}
+}

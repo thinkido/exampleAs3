@@ -1,4 +1,3 @@
-
 package ui
 {
 	import flash.geom.Rectangle;

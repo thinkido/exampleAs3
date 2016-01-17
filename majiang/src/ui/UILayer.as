@@ -8,7 +8,7 @@ package ui
 		/**
 		 * 加载完成后处理
 		 */
-		public function initWithJsonObject(data:JSONObject):void
+		override public function initWithJsonObject(data:JSONObject):void
 		{
 			try
 			{

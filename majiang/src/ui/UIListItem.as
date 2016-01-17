@@ -1,55 +1,67 @@
-
-package ui;
-
-public abstract class UIListItem extends UIContainer
+package ui
 {
-
-	protected UIListItem _pre;
-
-	protected UIListItem _next;
-
-	protected byte _state = STATE_NORMAL;
-
-	public void setNeighbors(UIListItem pre, UIListItem next)
+	public class UIListItem extends UIContainer
 	{
-		_pre = pre;
-		_next = next;
-	}
-
-	public UIListItem getNeighbor(boolean isNext)
-	{
-		if(isNext)
+		
+		protected var _pre:UIListItem;
+		
+		protected var _next:UIListItem;
+		
+		protected var _state:int = STATE_NORMAL;
+		
+		public function setNeighbors(pre:UIListItem,  next:UIListItem):void
 		{
-			return _next;
+			_pre = pre;
+			_next = next;
 		}
-		else
+		
+		public function getNeighbor( isNext:Boolean):UIListItem
 		{
-			return _pre;
+			if(isNext)
+			{
+				return _next;
+			}
+			else
+			{
+				return _pre;
+			}
 		}
-	}
-
-	public byte getState()
-	{
-		return _state;
-	}
-
-	public void setState(byte state)
-	{
-		_state = state;
-	}
-
-	public abstract int getWidth();
-
-	public abstract int getHeight();
-
-	public abstract int getGap();
-
-	public abstract void setItemData(Object data, int index);
-
-	public void onDispose()
-	{
-		_pre = null;
-		_next = null;
-		super.onDispose();
+		
+		public function getState():int
+		{
+			return _state;
+		}
+		
+		public function setState( state:int):void
+		{
+			_state = state;
+		}
+		
+		public function  getWidth():int
+		{
+			return 0;
+		}
+		
+		public  function getHeight():int
+		{
+			return 0;
+		}
+		
+		public function getGap():int
+		{
+			return 0;
+		}
+		
+		public function setItemData( data:Object, index:int):void
+		{
+			
+		}
+		
+		override public function onDispose():void
+		{
+			_pre = null;
+			_next = null;
+			super.onDispose();
+		}
 	}
 }
