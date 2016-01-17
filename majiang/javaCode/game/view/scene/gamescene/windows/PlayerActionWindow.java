@@ -121,6 +121,7 @@ public class PlayerActionWindow extends UIWindow
 		int btnChiX = 560;
 		int btnNormalX = 560;
 		Vector btnChis = new Vector();
+		Vector btnNormals = new Vector();
 		for(int i = 0; i < _btns.size(); i++)
 		{
 			UIButton btn = (UIButton)_btns.elementAt(i);
@@ -154,6 +155,7 @@ public class PlayerActionWindow extends UIWindow
 			}
 			else
 			{
+				btnNormals.addElement(btn);
 				int y = 300;
 				int gap = 20;
 				btn.setPosition(btnNormalX - btn.getWidth(), y);
@@ -163,12 +165,24 @@ public class PlayerActionWindow extends UIWindow
 
 		switchFocus((UIButton)_btns.elementAt(1));
 		
-		UIButton btnGuo = (UIButton)_btns.elementAt(0);
 		for(int i = 0; i < btnChis.size(); i++)
 		{
-			UIButton btnChi = (UIButton)btnChis.elementAt(0);
-			btnGuo.setNeighbors(btnChi, btnChi, btnGuo.getNeighbor(DIR_LEFT), btnGuo.getNeighbor(DIR_RIGHT));
-			btnChi.setNeighbors(btnGuo, btnGuo, btnChi.getNeighbor(DIR_LEFT), btnChi.getNeighbor(DIR_RIGHT));
+			UIButton btnChi = (UIButton)btnChis.elementAt(i);
+			UIButton btnNormal = null;
+			if(i >= btnNormals.size())
+			{
+				btnNormal = (UIButton)btnNormals.elementAt(btnNormals.size() - 1);
+			}
+			else
+			{
+				btnNormal = (UIButton)btnNormals.elementAt(i);
+			}
+			
+			if(null == btnNormal.getNeighbor(DIR_UP))
+			{
+				btnNormal.setNeighbors(btnChi, btnChi, btnNormal.getNeighbor(DIR_LEFT), btnNormal.getNeighbor(DIR_RIGHT));
+			}
+			btnChi.setNeighbors(btnNormal, btnNormal, btnChi.getNeighbor(DIR_LEFT), btnChi.getNeighbor(DIR_RIGHT));
 		}
 	}
 

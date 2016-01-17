@@ -22,5 +22,10 @@ public class KeType
 	/**
 	 * Á¬
 	 */
-	static public final int LIAN = 3;
+	static public final int CHI = 4;
+	
+	/**
+	 * ½«
+	 */
+	static public final int JIANG = 7;
 }

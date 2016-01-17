@@ -13,6 +13,7 @@ import jing.consts.MahjongState;
 import jing.game.vo.CombinVO;
 import jing.pai.ChuTip;
 import jing.pai.consts.KeType;
+import jing.pai.consts.KeType2;
 import jing.pai.helper.ChuHelp;
 import jing.pai.model.CardKe;
 import jing.pai.vo.ChuVO;
@@ -626,6 +627,10 @@ public class Player extends Sprite
 		ChuHelp ch = new ChuHelp();
 		// 将手上的牌和刻字放入进行计算
 		ChuTip ct = ch.check(getInHandCards(), getOnTableKes());
+		if(ct != null)
+		{
+			System.out.println(ct.toString());
+		}
 		_chuTip = ct;
 		if(null != ct)
 		{
@@ -712,21 +717,43 @@ public class Player extends Sprite
 		{
 			Combin cb = (Combin)vec.elementAt(i);
 			int keType = -1;
+			int keType2 = 0;
 
 			if(cb.type() == CombinType.PENG)
 			{
 				keType = KeType.PENG;
+				keType2 = KeType2.PENG;
 			}
 			else if(cb.type() == CombinType.CHI_LEFT || cb.type() == CombinType.CHI_MIDDLE || cb.type() == CombinType.CHI_RIGHT)
 			{
-				keType = KeType.LIAN;
+				keType = KeType.CHI;
+				if(cb.type() == CombinType.CHI_LEFT)
+				{
+					keType2 = KeType2.ZUO_CHI;
+				}
+				else if(cb.type() == CombinType.CHI_MIDDLE)
+				{
+					keType2 = KeType2.MID_CHI;
+				}
+				else if(cb.type() == CombinType.CHI_RIGHT)
+				{
+					keType2 = KeType2.YOU_CHI;
+				}
 			}
 			else if(cb.type() == CombinType.AN_GANG || cb.type() == CombinType.GANG)
 			{
 				keType = KeType.GANG;
+				if(cb.type() == CombinType.AN_GANG)
+				{
+					keType2 = KeType2.AN_GANG;
+				}
+				else if(cb.type() == CombinType.GANG)
+				{
+					keType2 = KeType2.MING_GANG;
+				}
 			}
 
-			kes[i] = new CardKe(keType, cb.card());
+			kes[i] = new CardKe(keType, cb.card(), keType2);
 		}
 		return kes;
 	}
