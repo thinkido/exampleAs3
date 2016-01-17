@@ -1,0 +1,123 @@
+{
+  "ID": "d8952434-4267-4072-856d-22c0e7dd4c66",
+  "Version": "2.3.3.0",
+  "Name": "user_head_window",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 36,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_male_head.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 253.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4774
+            },
+            "PreSize": {
+              "X": 0.6641,
+              "Y": 0.9019
+            },
+            "LeftMargin": 107.5,
+            "RightMargin": 107.5,
+            "TopMargin": 38.0,
+            "BottomMargin": 14.0,
+            "Tag": 37,
+            "ActionTag": -1620616941,
+            "Size": {
+              "X": 425.0,
+              "Y": 478.0
+            },
+            "Name": "img_male_head",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_female_head.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 256.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.483
+            },
+            "PreSize": {
+              "X": 0.6641,
+              "Y": 0.9019
+            },
+            "LeftMargin": 107.5,
+            "RightMargin": 107.5,
+            "TopMargin": 35.0,
+            "BottomMargin": 17.0,
+            "Tag": 24,
+            "ActionTag": 395352341,
+            "Size": {
+              "X": 425.0,
+              "Y": 478.0
+            },
+            "Name": "img_female_head",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "img_female_head.png",
+        "img_male_head.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

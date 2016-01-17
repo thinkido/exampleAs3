@@ -1,0 +1,312 @@
+{
+  "ID": "70f8d6f9-2f3a-4570-87cf-f5a071edf9e5",
+  "Version": "2.3.3.0",
+  "Name": "popupwindow",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_pop_window_bg.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 1,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 324.0,
+              "Y": 265.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5063,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.4078,
+              "Y": 0.6189
+            },
+            "LeftMargin": 193.5,
+            "RightMargin": 185.5,
+            "TopMargin": 101.0,
+            "BottomMargin": 101.0,
+            "Tag": 4,
+            "ActionTag": -2127745467,
+            "Size": {
+              "X": 261.0,
+              "Y": 328.0
+            },
+            "Name": "img_window_bg",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_ok_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_ok_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_ok_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 99,
+            "Scale9Height": 51,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 267.0,
+              "Y": 162.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4172,
+              "Y": 0.3057
+            },
+            "PreSize": {
+              "X": 0.1547,
+              "Y": 0.0962
+            },
+            "LeftMargin": 217.5,
+            "RightMargin": 323.5,
+            "TopMargin": 342.5,
+            "BottomMargin": 136.5,
+            "Tag": 5,
+            "ActionTag": 1309021837,
+            "Size": {
+              "X": 99.0,
+              "Y": 51.0
+            },
+            "Name": "btn_ok",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_cancel_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_cancel_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_cancel_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9Width": 99,
+            "Scale9Height": 51,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 382.0007,
+              "Y": 162.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5969,
+              "Y": 0.3057
+            },
+            "PreSize": {
+              "X": 0.1547,
+              "Y": 0.0962
+            },
+            "LeftMargin": 332.5007,
+            "RightMargin": 208.4993,
+            "TopMargin": 342.5,
+            "BottomMargin": 136.5,
+            "Tag": 7,
+            "ActionTag": -429459534,
+            "Size": {
+              "X": 99.0,
+              "Y": 51.0
+            },
+            "Name": "btn_cancel",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 16,
+            "LabelText": "",
+            "HorizontalAlignmentType": "HT_Center",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 324.0003,
+              "Y": 300.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5063,
+              "Y": 0.566
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 324.0003,
+            "RightMargin": 315.9997,
+            "TopMargin": 230.0,
+            "BottomMargin": 300.0,
+            "Tag": 10,
+            "ActionTag": -475057417,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "tf_content",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/ImageFile.png",
+              "Plist": ""
+            },
+            "Scale9Width": 46,
+            "Scale9Height": 46,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 324.0,
+              "Y": 300.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5063,
+              "Y": 0.566
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 324.0,
+            "RightMargin": 316.0,
+            "TopMargin": 230.0,
+            "BottomMargin": 300.0,
+            "Tag": 7,
+            "ActionTag": 1261851985,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "img_content",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "btn_cancel_a.png",
+        "btn_cancel_z.png",
+        "btn_ok_a.png",
+        "btn_ok_z.png",
+        "Default/ImageFile.png",
+        "img_pop_window_bg.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

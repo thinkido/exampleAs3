@@ -1,0 +1,300 @@
+{
+  "ID": "6e3882e8-737a-4ab5-a95d-fc20b283acd6",
+  "Version": "2.3.3.0",
+  "Name": "shop_window",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 21,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_bg_shop.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 260.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4906
+            },
+            "PreSize": {
+              "X": 0.5344,
+              "Y": 0.6283
+            },
+            "LeftMargin": 149.0,
+            "RightMargin": 149.0,
+            "TopMargin": 103.5,
+            "BottomMargin": 93.5,
+            "Tag": 22,
+            "ActionTag": 1379246684,
+            "Size": {
+              "X": 342.0,
+              "Y": 333.0
+            },
+            "Name": "img_bg_shop",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_diamond_shop_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_diamond_shop_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_diamond_shop_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 98,
+            "Scale9Height": 151,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 175.0,
+              "Y": 155.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2734,
+              "Y": 0.2925
+            },
+            "PreSize": {
+              "X": 0.2,
+              "Y": 0.3264
+            },
+            "LeftMargin": 175.0,
+            "RightMargin": 337.0,
+            "TopMargin": 202.0,
+            "BottomMargin": 155.0,
+            "Tag": 23,
+            "ActionTag": 456587911,
+            "Size": {
+              "X": 128.0,
+              "Y": 173.0
+            },
+            "Name": "btn_diamond_shop",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_ticket_shop_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_ticket_shop_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_ticket_shop_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 98,
+            "Scale9Height": 151,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 327.0005,
+              "Y": 155.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5109,
+              "Y": 0.2925
+            },
+            "PreSize": {
+              "X": 0.2,
+              "Y": 0.3264
+            },
+            "LeftMargin": 327.0005,
+            "RightMargin": 184.9995,
+            "TopMargin": 202.0,
+            "BottomMargin": 155.0,
+            "Tag": 24,
+            "ActionTag": -2073343420,
+            "Size": {
+              "X": 128.0,
+              "Y": 173.0
+            },
+            "Name": "btn_ticket_shop",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 17,
+            "Scale9Height": 47,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 473.6624,
+              "Y": 383.6425
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7401,
+              "Y": 0.7239
+            },
+            "PreSize": {
+              "X": 0.0734,
+              "Y": 0.1302
+            },
+            "LeftMargin": 450.1624,
+            "RightMargin": 142.8376,
+            "TopMargin": 111.8575,
+            "BottomMargin": 349.1425,
+            "Tag": 25,
+            "ActionTag": 1130862574,
+            "Size": {
+              "X": 47.0,
+              "Y": 69.0
+            },
+            "Name": "btn_close",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "btn_close_a.png",
+        "btn_close_z.png",
+        "btn_diamond_shop_a.png",
+        "btn_diamond_shop_z.png",
+        "btn_ticket_shop_a.png",
+        "btn_ticket_shop_z.png",
+        "img_bg_shop.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

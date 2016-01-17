@@ -1,0 +1,170 @@
+{
+    "up": {
+        "new_in_hand": {
+            "card_prefix": "up_in_hand",
+            "startX": 130,
+            "startY": 28
+        },
+        "in_hand": {
+            "card_prefix": "up_in_hand",
+            "startX": 170,
+            "startY": 28,
+            "dir": "right",
+            "gap": 0
+        },
+        "in_hand_table": {
+            "card_prefix": "other_on_table_",
+            "startX": 460,
+            "startY": 28,
+            "dir": "left",
+            "gap": 5,
+            "combin_gap": 0,
+			"combin_gang_offY": -10
+        },
+        "show_hand": {
+            "card_prefix": "other_on_table_",
+            "startX": 170,
+            "startY": 28,
+            "dir": "right",
+            "gap": 0
+        },		
+        "on_table": {
+            "card_prefix": "other_on_table_",
+            "startX": 408,
+            "startY": 166,
+            "dir": "left",
+            "gap": 0,
+            "warp_count": 10,
+            "warp": {
+                "x": 0,
+                "y": -37
+            }
+        }
+    },
+    "left": {
+        "new_in_hand": {
+            "card_prefix": "left_in_hand",
+            "startX": 60,
+            "startY": 364
+        },
+        "in_hand": {
+            "card_prefix": "left_in_hand",
+            "startX": 60,
+            "startY": 329,
+            "dir": "up",
+            "gap": -30
+        },
+        "in_hand_table": {
+            "card_prefix": "other_on_table_",
+            "startX": 17,
+            "startY": 114,
+            "dir": "down",
+            "gap": 5,
+            "combin_gap": 0,
+			"combin_gang_offY": -10
+        },
+        "show_hand": {
+            "card_prefix": "left_show_hand_",
+            "startX": 60,
+            "startY": 329,
+            "dir": "up",
+            "gap": -10
+        },		
+        "on_table": {
+            "card_prefix": "other_on_table_",
+            "startX": 157,
+            "startY": 138,
+            "dir": "down",
+            "gap": -9,
+            "warp_count": 7,
+            "warp": {
+                "x": -21,
+                "y": 0
+            }
+        }
+    },
+    "right": {
+        "new_in_hand": {
+            "card_prefix": "right_in_hand",
+            "startX": 576,
+            "startY": 85
+        },
+        "in_hand": {
+            "card_prefix": "right_in_hand",
+            "startX": 576,
+            "startY": 124,
+            "dir": "down",
+            "gap": -30
+        },
+        "in_hand_table": {
+            "card_prefix": "other_on_table_",
+            "startX": 560,
+            "startY": 372,
+            "dir": "up",
+            "gap": 5,
+            "combin_gap": 0,
+			"combin_gang_offY": -10
+        },
+		"show_hand": {
+            "card_prefix": "right_show_hand_",
+            "startX": 576,
+            "startY": 124,
+            "dir": "down",
+            "gap": -10
+        },
+        "on_table": {
+            "card_prefix": "other_on_table_",
+            "startX": 460,
+            "startY": 138,
+            "dir": "down",
+            "gap": -9,
+            "warp_count": 7,
+            "warp": {
+                "x": 21,
+                "y": 0
+            }
+        }
+    },
+    "down": {
+        "new_in_hand": {
+            "card_prefix": "self_in_hand_",
+            "startX": 564,
+            "startY": 430
+        },
+        "in_hand": {
+            "card_prefix": "self_in_hand_",
+            "startX": 511,
+            "startY": 430,
+            "dir": "left",
+            "gap": 0
+        },
+        "in_hand_table": {
+            "card_prefix": "self_in_hand_table_",
+            "startX": 58,
+            "startY": 430,
+            "dir": "right",
+            "gap": 5,
+            "combin_gap": 0,
+			"combin_gang_offY": -7
+        },
+		"show_hand":{
+            "card_prefix": "self_in_hand_table_",
+            "startX": 511,
+            "startY": 430,
+            "dir": "left",
+            "gap": 0
+		},
+        "on_table": {
+            "card_prefix": "other_on_table_",
+            "startX": 199,
+            "startY": 319,
+            "dir": "right",
+            "gap": 0,
+            "warp_count": 10,
+            "warp": {
+                "x": 0,
+                "y": 44
+            }
+        }
+    }
+}

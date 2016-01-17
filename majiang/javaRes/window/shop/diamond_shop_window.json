@@ -1,0 +1,636 @@
+{
+  "ID": "dbcdb69a-81c2-46f1-99c1-138bc7353854",
+  "Version": "2.3.3.0",
+  "Name": "diamond_shop_window",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 26,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_bg_diamond_buy.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 258.22
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4872
+            },
+            "PreSize": {
+              "X": 0.5797,
+              "Y": 0.9245
+            },
+            "LeftMargin": 134.5,
+            "RightMargin": 134.5,
+            "TopMargin": 26.78,
+            "BottomMargin": 13.22,
+            "Tag": 27,
+            "ActionTag": -1847548866,
+            "Size": {
+              "X": 371.0,
+              "Y": 490.0
+            },
+            "Name": "img_bg_diamond_buy",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_1_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 55,
+            "Scale9Height": 143,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 170.0001,
+              "Y": 230.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2656,
+              "Y": 0.434
+            },
+            "PreSize": {
+              "X": 0.1328,
+              "Y": 0.3113
+            },
+            "LeftMargin": 170.0001,
+            "RightMargin": 384.9999,
+            "TopMargin": 135.0,
+            "BottomMargin": 230.0,
+            "Tag": 30,
+            "ActionTag": -831884229,
+            "Size": {
+              "X": 85.0,
+              "Y": 165.0
+            },
+            "Name": "btn_item_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_2_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_2_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_2_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 55,
+            "Scale9Height": 143,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 275.9994,
+              "Y": 230.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4312,
+              "Y": 0.434
+            },
+            "PreSize": {
+              "X": 0.1328,
+              "Y": 0.3113
+            },
+            "LeftMargin": 275.9994,
+            "RightMargin": 279.0006,
+            "TopMargin": 135.0,
+            "BottomMargin": 230.0,
+            "Tag": 31,
+            "ActionTag": -335318697,
+            "Size": {
+              "X": 85.0,
+              "Y": 165.0
+            },
+            "Name": "btn_item_2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_3_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_3_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_3_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 55,
+            "Scale9Height": 143,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 382.9998,
+              "Y": 230.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5984,
+              "Y": 0.434
+            },
+            "PreSize": {
+              "X": 0.1328,
+              "Y": 0.3113
+            },
+            "LeftMargin": 382.9998,
+            "RightMargin": 172.0002,
+            "TopMargin": 135.0,
+            "BottomMargin": 230.0,
+            "Tag": 32,
+            "ActionTag": -1642820991,
+            "Size": {
+              "X": 85.0,
+              "Y": 165.0
+            },
+            "Name": "btn_item_3",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_4_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_4_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_4_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 55,
+            "Scale9Height": 143,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 170.0,
+              "Y": 55.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2656,
+              "Y": 0.1038
+            },
+            "PreSize": {
+              "X": 0.1328,
+              "Y": 0.3113
+            },
+            "LeftMargin": 170.0,
+            "RightMargin": 385.0,
+            "TopMargin": 310.0,
+            "BottomMargin": 55.0,
+            "Tag": 33,
+            "ActionTag": -44835850,
+            "Size": {
+              "X": 85.0,
+              "Y": 165.0
+            },
+            "Name": "btn_item_4",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_5_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_5_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_5_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 55,
+            "Scale9Height": 143,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 276.0,
+              "Y": 55.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4313,
+              "Y": 0.1038
+            },
+            "PreSize": {
+              "X": 0.1328,
+              "Y": 0.3113
+            },
+            "LeftMargin": 276.0,
+            "RightMargin": 279.0,
+            "TopMargin": 310.0,
+            "BottomMargin": 55.0,
+            "Tag": 34,
+            "ActionTag": 791494728,
+            "Size": {
+              "X": 85.0,
+              "Y": 165.0
+            },
+            "Name": "btn_item_5",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_6_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_6_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "diamond_item_6_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 55,
+            "Scale9Height": 143,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 383.0,
+              "Y": 55.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5984,
+              "Y": 0.1038
+            },
+            "PreSize": {
+              "X": 0.1328,
+              "Y": 0.3113
+            },
+            "LeftMargin": 383.0,
+            "RightMargin": 172.0,
+            "TopMargin": 310.0,
+            "BottomMargin": 55.0,
+            "Tag": 35,
+            "ActionTag": 1386392027,
+            "Size": {
+              "X": 85.0,
+              "Y": 165.0
+            },
+            "Name": "btn_item_6",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 180.0,
+              "Y": 420.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2812,
+              "Y": 0.7925
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 180.0,
+            "RightMargin": 460.0,
+            "TopMargin": 110.0,
+            "BottomMargin": 420.0,
+            "UserData": "big_gold_num_fnt",
+            "Tag": 36,
+            "ActionTag": 521322347,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_diamond",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 17,
+            "Scale9Height": 47,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 488.4137,
+              "Y": 464.9111
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7631,
+              "Y": 0.8772
+            },
+            "PreSize": {
+              "X": 0.0734,
+              "Y": 0.1302
+            },
+            "LeftMargin": 464.9137,
+            "RightMargin": 128.0863,
+            "TopMargin": 30.5889,
+            "BottomMargin": 430.4111,
+            "Tag": 61,
+            "ActionTag": 1218479080,
+            "Size": {
+              "X": 47.0,
+              "Y": 69.0
+            },
+            "Name": "btn_close",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "btn_close_a.png",
+        "btn_close_z.png",
+        "Default/defaultBMFont.fnt",
+        "Default/defaultBMFont.png",
+        "diamond_item_1_a.png",
+        "diamond_item_1_z.png",
+        "diamond_item_2_a.png",
+        "diamond_item_2_z.png",
+        "diamond_item_3_a.png",
+        "diamond_item_3_z.png",
+        "diamond_item_4_a.png",
+        "diamond_item_4_z.png",
+        "diamond_item_5_a.png",
+        "diamond_item_5_z.png",
+        "diamond_item_6_a.png",
+        "diamond_item_6_z.png",
+        "img_bg_diamond_buy.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

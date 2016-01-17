@@ -1,0 +1,767 @@
+{
+  "ID": "eb605c6a-3ea5-4fdc-90df-c962fc3ce3ee",
+  "Version": "2.3.3.0",
+  "Name": "rank_window",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 34,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_bg_rank.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 250.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4717
+            },
+            "PreSize": {
+              "X": 0.8406,
+              "Y": 0.8189
+            },
+            "LeftMargin": 51.0,
+            "RightMargin": 51.0,
+            "TopMargin": 63.0,
+            "BottomMargin": 33.0,
+            "Tag": 50,
+            "ActionTag": -1744254481,
+            "Size": {
+              "X": 538.0,
+              "Y": 434.0
+            },
+            "Name": "img_bg_rank",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_rank_gold_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_rank_gold_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_rank_gold_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 70,
+            "Scale9Height": 30,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 165.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2578,
+              "Y": 0.6792
+            },
+            "PreSize": {
+              "X": 0.1562,
+              "Y": 0.0981
+            },
+            "LeftMargin": 115.0,
+            "RightMargin": 425.0,
+            "TopMargin": 144.0,
+            "BottomMargin": 334.0,
+            "Tag": 115,
+            "ActionTag": 216813088,
+            "Size": {
+              "X": 100.0,
+              "Y": 52.0
+            },
+            "Name": "btn_tab_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_rank_level_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_rank_level_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_rank_level_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 70,
+            "Scale9Height": 30,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.6792
+            },
+            "PreSize": {
+              "X": 0.1562,
+              "Y": 0.0981
+            },
+            "LeftMargin": 270.0,
+            "RightMargin": 270.0,
+            "TopMargin": 144.0,
+            "BottomMargin": 334.0,
+            "Tag": 116,
+            "ActionTag": -1692843764,
+            "Size": {
+              "X": 100.0,
+              "Y": 52.0
+            },
+            "Name": "btn_tab_2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_rank_charge_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_rank_charge_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_rank_charge_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 70,
+            "Scale9Height": 30,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 465.0,
+              "Y": 360.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7266,
+              "Y": 0.6792
+            },
+            "PreSize": {
+              "X": 0.1562,
+              "Y": 0.0981
+            },
+            "LeftMargin": 415.0,
+            "RightMargin": 125.0,
+            "TopMargin": 144.0,
+            "BottomMargin": 334.0,
+            "Tag": 117,
+            "ActionTag": 1837438640,
+            "Size": {
+              "X": 100.0,
+              "Y": 52.0
+            },
+            "Name": "btn_tab_3",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 17,
+            "Scale9Height": 47,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 569.7386,
+              "Y": 428.8932
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8902,
+              "Y": 0.8092
+            },
+            "PreSize": {
+              "X": 0.0734,
+              "Y": 0.1302
+            },
+            "LeftMargin": 546.2386,
+            "RightMargin": 46.7614,
+            "TopMargin": 66.6068,
+            "BottomMargin": 394.3932,
+            "Tag": 118,
+            "ActionTag": -1843187963,
+            "Size": {
+              "X": 47.0,
+              "Y": 69.0
+            },
+            "Name": "btn_close",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "rank_tab_3.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 107,
+            "ActionTag": 660830020,
+            "Size": {
+              "X": 640.0,
+              "Y": 530.0
+            },
+            "Name": "layer_tab_3",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "rank_tab_2.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 101,
+            "ActionTag": 907287574,
+            "Size": {
+              "X": 640.0,
+              "Y": 530.0
+            },
+            "Name": "layer_tab_2",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "rank_tab_1.json",
+              "Plist": ""
+            },
+            "StretchWidthEnable": false,
+            "StretchHeightEnable": false,
+            "InnerActionSpeed": 1.0,
+            "AnchorPoint": {},
+            "Position": {
+              "X": 0.0002,
+              "Y": 0.0001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": true,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "LeftMargin": 0.0002,
+            "RightMargin": -0.0002,
+            "TopMargin": -0.0001,
+            "BottomMargin": 0.0001,
+            "Tag": 51,
+            "ActionTag": 1734286944,
+            "Size": {
+              "X": 640.0,
+              "Y": 530.0
+            },
+            "Name": "layer_tab_1",
+            "ctype": "ProjectNodeObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/ImageFile.png",
+              "Plist": ""
+            },
+            "Scale9Width": 46,
+            "Scale9Height": 46,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 130.0,
+              "Y": 265.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2031,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 0.0641,
+              "Y": 0.1094
+            },
+            "LeftMargin": 109.5,
+            "RightMargin": 489.5,
+            "TopMargin": 236.0,
+            "BottomMargin": 236.0,
+            "Tag": 133,
+            "ActionTag": -200073702,
+            "Size": {
+              "X": 41.0,
+              "Y": 58.0
+            },
+            "Name": "img_head",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_head_border.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 130.0,
+              "Y": 263.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2031,
+              "Y": 0.4962
+            },
+            "PreSize": {
+              "X": 0.0688,
+              "Y": 0.1302
+            },
+            "LeftMargin": 108.0,
+            "RightMargin": 488.0,
+            "TopMargin": 232.5,
+            "BottomMargin": 228.5,
+            "Tag": 134,
+            "ActionTag": 789566012,
+            "Size": {
+              "X": 44.0,
+              "Y": 69.0
+            },
+            "Name": "img_head_border",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 115.0,
+              "Y": 202.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1797,
+              "Y": 0.3811
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 115.0,
+            "RightMargin": 525.0,
+            "TopMargin": 328.0,
+            "BottomMargin": 202.0,
+            "UserData": "com_id_gold_fnt",
+            "Tag": 135,
+            "ActionTag": 2077422155,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_name",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 128.0,
+              "Y": 165.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2,
+              "Y": 0.3113
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 128.0,
+            "RightMargin": 512.0,
+            "TopMargin": 365.0,
+            "BottomMargin": 165.0,
+            "UserData": "rank_value_fnt",
+            "Tag": 136,
+            "ActionTag": -1019544403,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_level",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 129.0,
+              "Y": 137.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2016,
+              "Y": 0.2585
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 129.0,
+            "RightMargin": 511.0,
+            "TopMargin": 393.0,
+            "BottomMargin": 137.0,
+            "UserData": "rank_value_fnt",
+            "Tag": 137,
+            "ActionTag": -114413756,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_rank",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 129.0,
+              "Y": 107.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2016,
+              "Y": 0.2019
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 129.0,
+            "RightMargin": 511.0,
+            "TopMargin": 423.0,
+            "BottomMargin": 107.0,
+            "UserData": "mid_gold_num_fnt",
+            "Tag": 138,
+            "ActionTag": 989811012,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_gold",
+            "ctype": "TextBMFontObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "btn_close_a.png",
+        "btn_close_z.png",
+        "btn_rank_charge_a.png",
+        "btn_rank_charge_z.png",
+        "btn_rank_gold_a.png",
+        "btn_rank_gold_z.png",
+        "btn_rank_level_a.png",
+        "btn_rank_level_z.png",
+        "Default/defaultBMFont.fnt",
+        "Default/defaultBMFont.png",
+        "Default/ImageFile.png",
+        "img_bg_rank.png",
+        "img_head_border.png",
+        "rank_tab_1.json",
+        "rank_tab_2.json",
+        "rank_tab_3.json"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

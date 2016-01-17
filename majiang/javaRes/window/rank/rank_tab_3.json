@@ -1,0 +1,1041 @@
+{
+  "ID": "cfa1bac1-f3fe-4e09-8a62-9c9c78f4c243",
+  "Version": "2.3.3.0",
+  "Name": "rank_tab_3",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 91,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_bg_rank_charge.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 370.0001,
+              "Y": 290.9999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5781,
+              "Y": 0.5491
+            },
+            "PreSize": {
+              "X": 0.5016,
+              "Y": 0.0868
+            },
+            "LeftMargin": 209.5001,
+            "RightMargin": 109.4999,
+            "TopMargin": 216.0001,
+            "BottomMargin": 267.9999,
+            "Tag": 92,
+            "ActionTag": 200876684,
+            "Size": {
+              "X": 321.0,
+              "Y": 46.0
+            },
+            "Name": "img_bg_rank_charge_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_bg_rank_charge.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 369.9994,
+              "Y": 233.9998
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5781,
+              "Y": 0.4415
+            },
+            "PreSize": {
+              "X": 0.5016,
+              "Y": 0.0868
+            },
+            "LeftMargin": 209.4994,
+            "RightMargin": 109.5006,
+            "TopMargin": 273.0002,
+            "BottomMargin": 210.9998,
+            "Tag": 93,
+            "ActionTag": 1969370730,
+            "Size": {
+              "X": 321.0,
+              "Y": 46.0
+            },
+            "Name": "img_bg_rank_charge_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_bg_rank_charge.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 370.0001,
+              "Y": 176.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5781,
+              "Y": 0.3321
+            },
+            "PreSize": {
+              "X": 0.5016,
+              "Y": 0.0868
+            },
+            "LeftMargin": 209.5001,
+            "RightMargin": 109.4999,
+            "TopMargin": 331.0,
+            "BottomMargin": 153.0,
+            "Tag": 94,
+            "ActionTag": -1730723787,
+            "Size": {
+              "X": 321.0,
+              "Y": 46.0
+            },
+            "Name": "img_bg_rank_charge_3",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_bg_rank_charge.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 369.9994,
+              "Y": 118.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5781,
+              "Y": 0.2226
+            },
+            "PreSize": {
+              "X": 0.5016,
+              "Y": 0.0868
+            },
+            "LeftMargin": 209.4994,
+            "RightMargin": 109.5006,
+            "TopMargin": 389.0,
+            "BottomMargin": 95.0,
+            "Tag": 95,
+            "ActionTag": -319734888,
+            "Size": {
+              "X": 321.0,
+              "Y": 46.0
+            },
+            "Name": "img_bg_rank_charge_4",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/ImageFile.png",
+              "Plist": ""
+            },
+            "Scale9Width": 46,
+            "Scale9Height": 46,
+            "AnchorPoint": {
+              "ScaleX": 0.5476,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 275.0,
+              "Y": 117.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4297,
+              "Y": 0.2208
+            },
+            "PreSize": {
+              "X": 0.0328,
+              "Y": 0.0604
+            },
+            "LeftMargin": 263.5,
+            "RightMargin": 355.5,
+            "TopMargin": 397.0,
+            "BottomMargin": 101.0,
+            "Tag": 189,
+            "ActionTag": -637467014,
+            "Size": {
+              "X": 21.0,
+              "Y": 32.0
+            },
+            "Name": "img_head_4",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/ImageFile.png",
+              "Plist": ""
+            },
+            "Scale9Width": 46,
+            "Scale9Height": 46,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 275.0,
+              "Y": 175.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4297,
+              "Y": 0.3302
+            },
+            "PreSize": {
+              "X": 0.0328,
+              "Y": 0.0604
+            },
+            "LeftMargin": 264.5,
+            "RightMargin": 354.5,
+            "TopMargin": 339.0,
+            "BottomMargin": 159.0,
+            "Tag": 190,
+            "ActionTag": 2121760610,
+            "Size": {
+              "X": 21.0,
+              "Y": 32.0
+            },
+            "Name": "img_head_3",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/ImageFile.png",
+              "Plist": ""
+            },
+            "Scale9Width": 46,
+            "Scale9Height": 46,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 275.0,
+              "Y": 233.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4297,
+              "Y": 0.4396
+            },
+            "PreSize": {
+              "X": 0.0328,
+              "Y": 0.0604
+            },
+            "LeftMargin": 264.5,
+            "RightMargin": 354.5,
+            "TopMargin": 281.0,
+            "BottomMargin": 217.0,
+            "Tag": 191,
+            "ActionTag": -148741753,
+            "Size": {
+              "X": 21.0,
+              "Y": 32.0
+            },
+            "Name": "img_head_2",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/ImageFile.png",
+              "Plist": ""
+            },
+            "Scale9Width": 46,
+            "Scale9Height": 46,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 275.0,
+              "Y": 290.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4297,
+              "Y": 0.5472
+            },
+            "PreSize": {
+              "X": 0.0328,
+              "Y": 0.0604
+            },
+            "LeftMargin": 264.5,
+            "RightMargin": 354.5,
+            "TopMargin": 224.0,
+            "BottomMargin": 274.0,
+            "Tag": 192,
+            "ActionTag": 1876981400,
+            "Size": {
+              "X": 21.0,
+              "Y": 32.0
+            },
+            "Name": "img_head_1",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 466.0001,
+              "Y": 102.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7281,
+              "Y": 0.1925
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 466.0001,
+            "RightMargin": 173.9999,
+            "TopMargin": 428.0,
+            "BottomMargin": 102.0,
+            "UserData": "rank_value_fnt",
+            "Tag": 193,
+            "ActionTag": -1253833990,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_3_4",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 466.0001,
+              "Y": 161.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7281,
+              "Y": 0.3038
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 466.0001,
+            "RightMargin": 173.9999,
+            "TopMargin": 369.0,
+            "BottomMargin": 161.0,
+            "UserData": "rank_value_fnt",
+            "Tag": 194,
+            "ActionTag": 135428726,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_3_3",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 466.0001,
+              "Y": 216.9999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7281,
+              "Y": 0.4094
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 466.0001,
+            "RightMargin": 173.9999,
+            "TopMargin": 313.0001,
+            "BottomMargin": 216.9999,
+            "UserData": "rank_value_fnt",
+            "Tag": 195,
+            "ActionTag": 391943247,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_3_2",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 466.0001,
+              "Y": 274.9999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7281,
+              "Y": 0.5189
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 466.0001,
+            "RightMargin": 173.9999,
+            "TopMargin": 255.0001,
+            "BottomMargin": 274.9999,
+            "UserData": "rank_value_fnt",
+            "Tag": 196,
+            "ActionTag": 1634809703,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_3_1",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 319.9992,
+              "Y": 102.9999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.1943
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 319.9992,
+            "RightMargin": 320.0008,
+            "TopMargin": 427.0001,
+            "BottomMargin": 102.9999,
+            "UserData": "com_id_gold_fnt",
+            "Tag": 197,
+            "ActionTag": -1780450746,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_2_4",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 319.9992,
+              "Y": 161.9999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.3057
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 319.9992,
+            "RightMargin": 320.0008,
+            "TopMargin": 368.0001,
+            "BottomMargin": 161.9999,
+            "UserData": "com_id_gold_fnt",
+            "Tag": 198,
+            "ActionTag": 1194402066,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_2_3",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 319.9992,
+              "Y": 218.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4113
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 319.9992,
+            "RightMargin": 320.0008,
+            "TopMargin": 312.0,
+            "BottomMargin": 218.0,
+            "UserData": "com_id_gold_fnt",
+            "Tag": 199,
+            "ActionTag": -1250844322,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_2_2",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 319.9992,
+              "Y": 275.9999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5208
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 319.9992,
+            "RightMargin": 320.0008,
+            "TopMargin": 254.0001,
+            "BottomMargin": 275.9999,
+            "UserData": "com_id_gold_fnt",
+            "Tag": 200,
+            "ActionTag": 612192783,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_2_1",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 220.9996,
+              "Y": 105.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3453,
+              "Y": 0.1981
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 220.9996,
+            "RightMargin": 419.0004,
+            "TopMargin": 425.0,
+            "BottomMargin": 105.0,
+            "UserData": "big_gold_num_fnt",
+            "Tag": 201,
+            "ActionTag": -1898502595,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_1_4",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 220.9996,
+              "Y": 163.9999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3453,
+              "Y": 0.3094
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 220.9996,
+            "RightMargin": 419.0004,
+            "TopMargin": 366.0001,
+            "BottomMargin": 163.9999,
+            "UserData": "big_gold_num_fnt",
+            "Tag": 202,
+            "ActionTag": 1705617781,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_1_3",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 220.9996,
+              "Y": 219.9999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3453,
+              "Y": 0.4151
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 220.9996,
+            "RightMargin": 419.0004,
+            "TopMargin": 310.0001,
+            "BottomMargin": 219.9999,
+            "UserData": "big_gold_num_fnt",
+            "Tag": 203,
+            "ActionTag": -1163461115,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_1_2",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "LabelText": "",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 220.9996,
+              "Y": 277.9998
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3453,
+              "Y": 0.5245
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": 220.9996,
+            "RightMargin": 419.0004,
+            "TopMargin": 252.0002,
+            "BottomMargin": 277.9998,
+            "UserData": "big_gold_num_fnt",
+            "Tag": 204,
+            "ActionTag": -1393998877,
+            "Size": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Name": "bf_value_1_1",
+            "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_rank_top_3.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 228.0,
+              "Y": 174.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3562,
+              "Y": 0.3283
+            },
+            "PreSize": {
+              "X": 0.025,
+              "Y": 0.0679
+            },
+            "LeftMargin": 220.0,
+            "RightMargin": 404.0,
+            "TopMargin": 338.0,
+            "BottomMargin": 156.0,
+            "Tag": 445,
+            "ActionTag": 11971013,
+            "Size": {
+              "X": 16.0,
+              "Y": 36.0
+            },
+            "Name": "img_top_3",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_rank_top_2.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 228.0,
+              "Y": 233.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3562,
+              "Y": 0.4396
+            },
+            "PreSize": {
+              "X": 0.025,
+              "Y": 0.0679
+            },
+            "LeftMargin": 220.0,
+            "RightMargin": 404.0,
+            "TopMargin": 279.0,
+            "BottomMargin": 215.0,
+            "Tag": 446,
+            "ActionTag": 22840378,
+            "Size": {
+              "X": 16.0,
+              "Y": 36.0
+            },
+            "Name": "img_top_2",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_rank_top_1.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 227.0,
+              "Y": 290.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3547,
+              "Y": 0.5472
+            },
+            "PreSize": {
+              "X": 0.025,
+              "Y": 0.0679
+            },
+            "LeftMargin": 219.0,
+            "RightMargin": 405.0,
+            "TopMargin": 222.0,
+            "BottomMargin": 272.0,
+            "Tag": 447,
+            "ActionTag": -943226137,
+            "Size": {
+              "X": 16.0,
+              "Y": 36.0
+            },
+            "Name": "img_top_1",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "Default/defaultBMFont.fnt",
+        "Default/defaultBMFont.png",
+        "Default/ImageFile.png",
+        "img_bg_rank_charge.png",
+        "img_rank_top_1.png",
+        "img_rank_top_2.png",
+        "img_rank_top_3.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

@@ -1,0 +1,368 @@
+{
+  "ID": "74753247-99c3-43d3-8fbd-87897b70ef94",
+  "Version": "2.3.3.0",
+  "Name": "gameend_window",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 22,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "gameend_bg.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 327.0,
+              "Y": 260.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5109,
+              "Y": 0.4906
+            },
+            "PreSize": {
+              "X": 0.8375,
+              "Y": 0.9245
+            },
+            "LeftMargin": 59.0,
+            "RightMargin": 45.0,
+            "TopMargin": 25.0,
+            "BottomMargin": 15.0,
+            "Tag": 4,
+            "ActionTag": -1832850294,
+            "Size": {
+              "X": 536.0,
+              "Y": 490.0
+            },
+            "Name": "gameend_bg_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_ready.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_ready_selected.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_ready.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 65,
+            "Scale9Height": 24,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 453.0,
+              "Y": 69.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7078,
+              "Y": 0.1302
+            },
+            "PreSize": {
+              "X": 0.1484,
+              "Y": 0.0868
+            },
+            "LeftMargin": 405.5,
+            "RightMargin": 139.5,
+            "TopMargin": 438.0,
+            "BottomMargin": 46.0,
+            "Tag": 23,
+            "ActionTag": -42121985,
+            "Size": {
+              "X": 95.0,
+              "Y": 46.0
+            },
+            "Name": "btn_ready",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_return_selected.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_return_selected.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_return.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 65,
+            "Scale9Height": 24,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 210.0,
+              "Y": 69.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3281,
+              "Y": 0.1302
+            },
+            "PreSize": {
+              "X": 0.1484,
+              "Y": 0.0868
+            },
+            "LeftMargin": 162.5,
+            "RightMargin": 382.5,
+            "TopMargin": 438.0,
+            "BottomMargin": 46.0,
+            "Tag": 24,
+            "ActionTag": 690566120,
+            "Size": {
+              "X": 95.0,
+              "Y": 46.0
+            },
+            "Name": "btn_hall",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "gameend_win.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 327.0,
+              "Y": 482.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5109,
+              "Y": 0.9094
+            },
+            "PreSize": {
+              "X": 0.15,
+              "Y": 0.1358
+            },
+            "LeftMargin": 279.0,
+            "RightMargin": 265.0,
+            "TopMargin": 12.0,
+            "BottomMargin": 446.0,
+            "Tag": 5,
+            "ActionTag": -1273149012,
+            "Size": {
+              "X": 96.0,
+              "Y": 72.0
+            },
+            "Name": "game_result",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "win_type.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 130.0,
+              "Y": 344.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2031,
+              "Y": 0.6491
+            },
+            "PreSize": {
+              "X": 0.0594,
+              "Y": 0.0453
+            },
+            "LeftMargin": 111.0,
+            "RightMargin": 491.0,
+            "TopMargin": 174.0,
+            "BottomMargin": 332.0,
+            "Tag": 9,
+            "ActionTag": -341949507,
+            "Size": {
+              "X": 38.0,
+              "Y": 24.0
+            },
+            "Name": "score_type",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "LabelText": "Fnt Text Label",
+            "LabelBMFontFile_CNB": {
+              "Type": "Default",
+              "Path": "Default/defaultBMFont.fnt",
+              "Plist": ""
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5247,
+              "ScaleY": 0.4444
+            },
+            "Position": {
+              "X": 387.0,
+              "Y": 112.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6047,
+              "Y": 0.2113
+            },
+            "PreSize": {
+              "X": 0.2531,
+              "Y": 0.0679
+            },
+            "LeftMargin": 302.0,
+            "RightMargin": 176.0,
+            "TopMargin": 398.0,
+            "BottomMargin": 96.0,
+            "UserData": "gameend_txt_fnt",
+            "Tag": 10,
+            "ActionTag": 34571547,
+            "Size": {
+              "X": 162.0,
+              "Y": 36.0
+            },
+            "Name": "txt_money",
+            "ctype": "TextBMFontObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "btn_ready.png",
+        "btn_ready_selected.png",
+        "btn_return.png",
+        "btn_return_selected.png",
+        "Default/defaultBMFont.fnt",
+        "Default/defaultBMFont.png",
+        "gameend_bg.png",
+        "gameend_win.png",
+        "win_type.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

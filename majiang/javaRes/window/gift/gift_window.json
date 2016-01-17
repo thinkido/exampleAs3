@@ -1,0 +1,695 @@
+{
+  "ID": "9da22c70-0301-4fcc-8c6f-d37530d6dab0",
+  "Version": "2.3.3.0",
+  "Name": "gift_window",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 21,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_bg_gift.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 262.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4943
+            },
+            "PreSize": {
+              "X": 0.9047,
+              "Y": 0.6113
+            },
+            "LeftMargin": 30.5,
+            "RightMargin": 30.5,
+            "TopMargin": 106.0,
+            "BottomMargin": 100.0,
+            "Tag": 22,
+            "ActionTag": -1489807731,
+            "Size": {
+              "X": 579.0,
+              "Y": 324.0
+            },
+            "Name": "img_bg_gift_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_focus.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 12,
+            "Scale9OriginY": 11,
+            "Scale9Width": 47,
+            "Scale9Height": 129,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 90.0001,
+              "Y": 249.9999
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1406,
+              "Y": 0.4717
+            },
+            "PreSize": {
+              "X": 0.1109,
+              "Y": 0.2849
+            },
+            "LeftMargin": 54.5001,
+            "RightMargin": 514.4999,
+            "TopMargin": 204.5001,
+            "BottomMargin": 174.4999,
+            "Tag": 23,
+            "ActionTag": -1726783155,
+            "Size": {
+              "X": 71.0,
+              "Y": 151.0
+            },
+            "Name": "btn_gift_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_2_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_focus.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_2_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 12,
+            "Scale9OriginY": 11,
+            "Scale9Width": 47,
+            "Scale9Height": 129,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 167.0001,
+              "Y": 250.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2609,
+              "Y": 0.4717
+            },
+            "PreSize": {
+              "X": 0.1109,
+              "Y": 0.2849
+            },
+            "LeftMargin": 131.5001,
+            "RightMargin": 437.4999,
+            "TopMargin": 204.5,
+            "BottomMargin": 174.5,
+            "Tag": 24,
+            "ActionTag": 685230786,
+            "Size": {
+              "X": 71.0,
+              "Y": 151.0
+            },
+            "Name": "btn_gift_2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_3_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_focus.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_3_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 12,
+            "Scale9OriginY": 11,
+            "Scale9Width": 47,
+            "Scale9Height": 129,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 244.0004,
+              "Y": 251.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3813,
+              "Y": 0.4736
+            },
+            "PreSize": {
+              "X": 0.1109,
+              "Y": 0.2849
+            },
+            "LeftMargin": 208.5004,
+            "RightMargin": 360.4996,
+            "TopMargin": 203.5,
+            "BottomMargin": 175.5,
+            "Tag": 25,
+            "ActionTag": -1769836713,
+            "Size": {
+              "X": 71.0,
+              "Y": 151.0
+            },
+            "Name": "btn_gift_3",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_4_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_focus.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_4_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 12,
+            "Scale9OriginY": 11,
+            "Scale9Width": 47,
+            "Scale9Height": 129,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 250.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.4717
+            },
+            "PreSize": {
+              "X": 0.1109,
+              "Y": 0.2849
+            },
+            "LeftMargin": 284.5,
+            "RightMargin": 284.5,
+            "TopMargin": 204.5,
+            "BottomMargin": 174.5,
+            "Tag": 26,
+            "ActionTag": -677256022,
+            "Size": {
+              "X": 71.0,
+              "Y": 151.0
+            },
+            "Name": "btn_gift_4",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_5_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_focus.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_5_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 12,
+            "Scale9OriginY": 11,
+            "Scale9Width": 47,
+            "Scale9Height": 129,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 397.0002,
+              "Y": 250.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6203,
+              "Y": 0.4717
+            },
+            "PreSize": {
+              "X": 0.1109,
+              "Y": 0.2849
+            },
+            "LeftMargin": 361.5002,
+            "RightMargin": 207.4998,
+            "TopMargin": 204.5,
+            "BottomMargin": 174.5,
+            "Tag": 27,
+            "ActionTag": 823369105,
+            "Size": {
+              "X": 71.0,
+              "Y": 151.0
+            },
+            "Name": "btn_gift_5",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_6_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_focus.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_6_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 12,
+            "Scale9OriginY": 11,
+            "Scale9Width": 47,
+            "Scale9Height": 129,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 474.0005,
+              "Y": 250.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7406,
+              "Y": 0.4717
+            },
+            "PreSize": {
+              "X": 0.1109,
+              "Y": 0.2849
+            },
+            "LeftMargin": 438.5005,
+            "RightMargin": 130.4995,
+            "TopMargin": 204.5,
+            "BottomMargin": 174.5,
+            "Tag": 28,
+            "ActionTag": 378464284,
+            "Size": {
+              "X": 71.0,
+              "Y": 151.0
+            },
+            "Name": "btn_gift_6",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_7_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_focus.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_gift_item_7_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 12,
+            "Scale9OriginY": 11,
+            "Scale9Width": 47,
+            "Scale9Height": 129,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 551.0005,
+              "Y": 250.0001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8609,
+              "Y": 0.4717
+            },
+            "PreSize": {
+              "X": 0.1109,
+              "Y": 0.2849
+            },
+            "LeftMargin": 515.5005,
+            "RightMargin": 53.4995,
+            "TopMargin": 204.4999,
+            "BottomMargin": 174.5001,
+            "Tag": 29,
+            "ActionTag": 24987408,
+            "Size": {
+              "X": 71.0,
+              "Y": 151.0
+            },
+            "Name": "btn_gift_7",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_getgift_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_getgift_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_getgift_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 136,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 128.935
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.2433
+            },
+            "PreSize": {
+              "X": 0.2594,
+              "Y": 0.1358
+            },
+            "LeftMargin": 237.0,
+            "RightMargin": 237.0,
+            "TopMargin": 365.065,
+            "BottomMargin": 92.935,
+            "Tag": 29,
+            "ActionTag": -163619898,
+            "Size": {
+              "X": 166.0,
+              "Y": 72.0
+            },
+            "Name": "btn_get_gift",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "btn_getgift_a.png",
+        "btn_getgift_d.png",
+        "btn_getgift_z.png",
+        "img_bg_gift.png",
+        "img_gift_item_1_d.png",
+        "img_gift_item_1_z.png",
+        "img_gift_item_2_d.png",
+        "img_gift_item_2_z.png",
+        "img_gift_item_3_d.png",
+        "img_gift_item_3_z.png",
+        "img_gift_item_4_d.png",
+        "img_gift_item_4_z.png",
+        "img_gift_item_5_d.png",
+        "img_gift_item_5_z.png",
+        "img_gift_item_6_d.png",
+        "img_gift_item_6_z.png",
+        "img_gift_item_7_d.png",
+        "img_gift_item_7_z.png",
+        "img_gift_item_focus.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

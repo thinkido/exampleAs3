@@ -1,0 +1,3328 @@
+{
+  "ID": "5786b87e-af0b-470c-a039-733a457a3c6b",
+  "Version": "2.3.3.0",
+  "Name": "collect_window",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 162,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "img_bg_collect.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 256.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.483
+            },
+            "PreSize": {
+              "X": 0.925,
+              "Y": 0.9774
+            },
+            "LeftMargin": 24.0,
+            "RightMargin": 24.0,
+            "TopMargin": 15.0,
+            "BottomMargin": -3.0,
+            "Tag": 163,
+            "ActionTag": -2116532050,
+            "Size": {
+              "X": 592.0,
+              "Y": 518.0
+            },
+            "Name": "img_bg_collect_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_continue_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_continue_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_continue_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 70,
+            "Scale9Height": 31,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 49.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.0925
+            },
+            "PreSize": {
+              "X": 0.1562,
+              "Y": 0.1
+            },
+            "LeftMargin": 270.0,
+            "RightMargin": 270.0,
+            "TopMargin": 454.5,
+            "BottomMargin": 22.5,
+            "Tag": 164,
+            "ActionTag": 1210041329,
+            "Size": {
+              "X": 100.0,
+              "Y": 53.0
+            },
+            "Name": "btn_continue",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_1_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 88.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1375,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 70.0,
+            "RightMargin": 534.0,
+            "TopMargin": 195.5,
+            "BottomMargin": 251.5,
+            "Tag": 172,
+            "ActionTag": 124419706,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tiao_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_2_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_2_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_2_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 139.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2172,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 121.0,
+            "RightMargin": 483.0,
+            "TopMargin": 195.5,
+            "BottomMargin": 251.5,
+            "Tag": 173,
+            "ActionTag": 685045792,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tiao_2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_3_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_3_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_3_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 190.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2969,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 172.0,
+            "RightMargin": 432.0,
+            "TopMargin": 195.5,
+            "BottomMargin": 251.5,
+            "Tag": 174,
+            "ActionTag": 2014040220,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tiao_3",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_4_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_4_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_4_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 241.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3766,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 223.0,
+            "RightMargin": 381.0,
+            "TopMargin": 195.5,
+            "BottomMargin": 251.5,
+            "Tag": 175,
+            "ActionTag": -1501710898,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tiao_4",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_5_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_5_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_5_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 292.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4563,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 274.0,
+            "RightMargin": 330.0,
+            "TopMargin": 195.5,
+            "BottomMargin": 251.5,
+            "Tag": 176,
+            "ActionTag": -1994510576,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tiao_5",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_6_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_6_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_6_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 343.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5359,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 325.0,
+            "RightMargin": 279.0,
+            "TopMargin": 195.5,
+            "BottomMargin": 251.5,
+            "Tag": 177,
+            "ActionTag": 1113030029,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tiao_6",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_7_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_7_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_7_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 394.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6156,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 376.0,
+            "RightMargin": 228.0,
+            "TopMargin": 195.5,
+            "BottomMargin": 251.5,
+            "Tag": 178,
+            "ActionTag": -1813536322,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tiao_7",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_8_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_8_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_8_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 445.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6953,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 427.0,
+            "RightMargin": 177.0,
+            "TopMargin": 195.5,
+            "BottomMargin": 251.5,
+            "Tag": 179,
+            "ActionTag": -915338275,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tiao_8",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_9_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_9_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tiao_9_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 496.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.775,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 478.0,
+            "RightMargin": 126.0,
+            "TopMargin": 195.5,
+            "BottomMargin": 251.5,
+            "Tag": 180,
+            "ActionTag": 391766344,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tiao_9",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_1_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 88.0,
+              "Y": 383.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1375,
+              "Y": 0.7226
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 70.0,
+            "RightMargin": 534.0,
+            "TopMargin": 105.5,
+            "BottomMargin": 341.5,
+            "Tag": 181,
+            "ActionTag": 1347432014,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_wan_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_2_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_2_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_2_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 139.0,
+              "Y": 383.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2172,
+              "Y": 0.7226
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 121.0,
+            "RightMargin": 483.0,
+            "TopMargin": 105.5,
+            "BottomMargin": 341.5,
+            "Tag": 182,
+            "ActionTag": 1344646110,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_wan_2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_3_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_3_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_3_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 190.0,
+              "Y": 383.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2969,
+              "Y": 0.7226
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 172.0,
+            "RightMargin": 432.0,
+            "TopMargin": 105.5,
+            "BottomMargin": 341.5,
+            "Tag": 183,
+            "ActionTag": -1851838558,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_wan_3",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_4_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_4_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_4_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 241.0,
+              "Y": 383.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3766,
+              "Y": 0.7226
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 223.0,
+            "RightMargin": 381.0,
+            "TopMargin": 105.5,
+            "BottomMargin": 341.5,
+            "Tag": 184,
+            "ActionTag": 1968615923,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_wan_4",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_5_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_5_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_5_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 292.0,
+              "Y": 383.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4563,
+              "Y": 0.7226
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 274.0,
+            "RightMargin": 330.0,
+            "TopMargin": 105.5,
+            "BottomMargin": 341.5,
+            "Tag": 185,
+            "ActionTag": 1649576572,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_wan_5",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_6_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_6_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_6_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 343.0,
+              "Y": 383.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5359,
+              "Y": 0.7226
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 325.0,
+            "RightMargin": 279.0,
+            "TopMargin": 105.5,
+            "BottomMargin": 341.5,
+            "Tag": 186,
+            "ActionTag": -83900939,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_wan_6",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_7_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_7_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_7_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 394.0,
+              "Y": 383.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6156,
+              "Y": 0.7226
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 376.0,
+            "RightMargin": 228.0,
+            "TopMargin": 105.5,
+            "BottomMargin": 341.5,
+            "Tag": 187,
+            "ActionTag": -1425528693,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_wan_7",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_8_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_8_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_8_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 445.0,
+              "Y": 383.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6953,
+              "Y": 0.7226
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 427.0,
+            "RightMargin": 177.0,
+            "TopMargin": 105.5,
+            "BottomMargin": 341.5,
+            "Tag": 188,
+            "ActionTag": 1250030553,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_wan_8",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_9_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_9_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_wan_9_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 496.0,
+              "Y": 383.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.775,
+              "Y": 0.7226
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 478.0,
+            "RightMargin": 126.0,
+            "TopMargin": 105.5,
+            "BottomMargin": 341.5,
+            "Tag": 189,
+            "ActionTag": -1930750564,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_wan_9",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_1_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 88.0,
+              "Y": 203.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1375,
+              "Y": 0.383
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 70.0,
+            "RightMargin": 534.0,
+            "TopMargin": 285.5,
+            "BottomMargin": 161.5,
+            "Tag": 190,
+            "ActionTag": -238103985,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tong_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_2_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_2_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_2_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 139.0,
+              "Y": 203.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2172,
+              "Y": 0.383
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 121.0,
+            "RightMargin": 483.0,
+            "TopMargin": 285.5,
+            "BottomMargin": 161.5,
+            "Tag": 191,
+            "ActionTag": 243369787,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tong_2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_3_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_3_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_3_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 190.0,
+              "Y": 203.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2969,
+              "Y": 0.383
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 172.0,
+            "RightMargin": 432.0,
+            "TopMargin": 285.5,
+            "BottomMargin": 161.5,
+            "Tag": 192,
+            "ActionTag": -1505328233,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tong_3",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_4_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_4_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_4_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 241.0,
+              "Y": 203.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3766,
+              "Y": 0.383
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 223.0,
+            "RightMargin": 381.0,
+            "TopMargin": 285.5,
+            "BottomMargin": 161.5,
+            "Tag": 193,
+            "ActionTag": -1425014504,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tong_4",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_5_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_5_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_5_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 292.0,
+              "Y": 203.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4563,
+              "Y": 0.383
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 274.0,
+            "RightMargin": 330.0,
+            "TopMargin": 285.5,
+            "BottomMargin": 161.5,
+            "Tag": 194,
+            "ActionTag": -638693558,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tong_5",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_6_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_6_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_6_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 343.0,
+              "Y": 203.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5359,
+              "Y": 0.383
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 325.0,
+            "RightMargin": 279.0,
+            "TopMargin": 285.5,
+            "BottomMargin": 161.5,
+            "Tag": 195,
+            "ActionTag": 1590009056,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tong_6",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_7_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_7_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_7_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 394.0,
+              "Y": 203.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6156,
+              "Y": 0.383
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 376.0,
+            "RightMargin": 228.0,
+            "TopMargin": 285.5,
+            "BottomMargin": 161.5,
+            "Tag": 196,
+            "ActionTag": -1809959442,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tong_7",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_8_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_8_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_8_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 445.0,
+              "Y": 203.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6953,
+              "Y": 0.383
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 427.0,
+            "RightMargin": 177.0,
+            "TopMargin": 285.5,
+            "BottomMargin": 161.5,
+            "Tag": 197,
+            "ActionTag": 349134575,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tong_8",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_9_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_9_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_tong_9_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 14,
+            "Scale9Height": 61,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 496.0,
+              "Y": 203.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.775,
+              "Y": 0.383
+            },
+            "PreSize": {
+              "X": 0.0562,
+              "Y": 0.1566
+            },
+            "LeftMargin": 478.0,
+            "RightMargin": 126.0,
+            "TopMargin": 285.5,
+            "BottomMargin": 161.5,
+            "Tag": 198,
+            "ActionTag": -1502956810,
+            "Size": {
+              "X": 36.0,
+              "Y": 83.0
+            },
+            "Name": "img_tong_9",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_close_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 17,
+            "Scale9Height": 47,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 589.0,
+              "Y": 477.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.9203,
+              "Y": 0.9
+            },
+            "PreSize": {
+              "X": 0.0734,
+              "Y": 0.1302
+            },
+            "LeftMargin": 565.5,
+            "RightMargin": 27.5,
+            "TopMargin": 18.5,
+            "BottomMargin": 442.5,
+            "Tag": 199,
+            "ActionTag": -372248935,
+            "Size": {
+              "X": 47.0,
+              "Y": 69.0
+            },
+            "Name": "btn_close",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_getaward_z.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_getaward_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_getaward_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 70,
+            "Scale9Height": 30,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 50.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.0943
+            },
+            "PreSize": {
+              "X": 0.1562,
+              "Y": 0.0981
+            },
+            "LeftMargin": 270.0,
+            "RightMargin": 270.0,
+            "TopMargin": 454.0,
+            "BottomMargin": 24.0,
+            "Tag": 234,
+            "ActionTag": 1958137975,
+            "Size": {
+              "X": 100.0,
+              "Y": 52.0
+            },
+            "Name": "btn_getaward",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 88.0,
+              "Y": 120.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.1375,
+              "Y": 0.2264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 58.0,
+            "RightMargin": 522.0,
+            "TopMargin": 374.0,
+            "BottomMargin": 84.0,
+            "Tag": 245,
+            "ActionTag": 1359759414,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_h_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 139.0,
+              "Y": 120.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2172,
+              "Y": 0.2264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 109.0,
+            "RightMargin": 471.0,
+            "TopMargin": 374.0,
+            "BottomMargin": 84.0,
+            "Tag": 246,
+            "ActionTag": -1991026765,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_h_2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 191.0002,
+              "Y": 120.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.2984,
+              "Y": 0.2264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 161.0002,
+            "RightMargin": 418.9998,
+            "TopMargin": 374.0,
+            "BottomMargin": 84.0,
+            "Tag": 247,
+            "ActionTag": 949937373,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_h_3",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 243.0003,
+              "Y": 120.0001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.3797,
+              "Y": 0.2264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 213.0003,
+            "RightMargin": 366.9997,
+            "TopMargin": 373.9999,
+            "BottomMargin": 84.0001,
+            "Tag": 248,
+            "ActionTag": 1238815221,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_h_4",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 292.0,
+              "Y": 120.0001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4563,
+              "Y": 0.2264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 262.0,
+            "RightMargin": 318.0,
+            "TopMargin": 373.9999,
+            "BottomMargin": 84.0001,
+            "Tag": 249,
+            "ActionTag": -720596999,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_h_5",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 343.0,
+              "Y": 120.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5359,
+              "Y": 0.2264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 313.0,
+            "RightMargin": 267.0,
+            "TopMargin": 374.0,
+            "BottomMargin": 84.0,
+            "Tag": 250,
+            "ActionTag": 1941526021,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_h_6",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 394.3815,
+              "Y": 120.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6162,
+              "Y": 0.2264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 364.3815,
+            "RightMargin": 215.6185,
+            "TopMargin": 374.0,
+            "BottomMargin": 84.0,
+            "Tag": 251,
+            "ActionTag": 1455948278,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_h_7",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 445.6401,
+              "Y": 120.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.6963,
+              "Y": 0.2264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 415.6401,
+            "RightMargin": 164.3599,
+            "TopMargin": 374.0,
+            "BottomMargin": 84.0,
+            "Tag": 252,
+            "ActionTag": 107819232,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_h_8",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_1_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 496.8166,
+              "Y": 118.9164
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.7763,
+              "Y": 0.2244
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 466.8166,
+            "RightMargin": 113.1834,
+            "TopMargin": 375.0836,
+            "BottomMargin": 82.9164,
+            "Tag": 253,
+            "ActionTag": -140438368,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_h_9",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_2_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_2_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_2_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 555.9999,
+              "Y": 385.0001
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8687,
+              "Y": 0.7264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 525.9999,
+            "RightMargin": 54.0001,
+            "TopMargin": 108.9999,
+            "BottomMargin": 349.0001,
+            "Tag": 168,
+            "ActionTag": -1235255996,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_v_1",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_2_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_2_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_2_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 554.9985,
+              "Y": 294.8172
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8672,
+              "Y": 0.5563
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 524.9985,
+            "RightMargin": 55.0015,
+            "TopMargin": 199.1828,
+            "BottomMargin": 258.8172,
+            "Tag": 254,
+            "ActionTag": -1766559003,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_v_2",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_2_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_2_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_2_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 553.8313,
+              "Y": 205.9662
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8654,
+              "Y": 0.3886
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 523.8313,
+            "RightMargin": 56.1687,
+            "TopMargin": 288.0338,
+            "BottomMargin": 169.9662,
+            "Tag": 255,
+            "ActionTag": 1162963600,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_v_3",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_3_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_3_a.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_reward_3_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 30,
+            "Scale9Height": 50,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 553.0001,
+              "Y": 120.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8641,
+              "Y": 0.2264
+            },
+            "PreSize": {
+              "X": 0.0938,
+              "Y": 0.1358
+            },
+            "LeftMargin": 523.0001,
+            "RightMargin": 56.9999,
+            "TopMargin": 374.0,
+            "BottomMargin": 84.0,
+            "Tag": 169,
+            "ActionTag": 422476944,
+            "Size": {
+              "X": 60.0,
+              "Y": 72.0
+            },
+            "Name": "img_award_final",
+            "ctype": "ButtonObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "btn_close_a.png",
+        "btn_close_z.png",
+        "btn_continue_a.png",
+        "btn_continue_z.png",
+        "btn_getaward_a.png",
+        "btn_getaward_z.png",
+        "img_bg_collect.png",
+        "img_reward_1_a.png",
+        "img_reward_1_d.png",
+        "img_reward_1_z.png",
+        "img_reward_2_a.png",
+        "img_reward_2_d.png",
+        "img_reward_2_z.png",
+        "img_reward_3_a.png",
+        "img_reward_3_d.png",
+        "img_reward_3_z.png",
+        "img_tiao_1_a.png",
+        "img_tiao_1_z.png",
+        "img_tiao_2_a.png",
+        "img_tiao_2_z.png",
+        "img_tiao_3_a.png",
+        "img_tiao_3_z.png",
+        "img_tiao_4_a.png",
+        "img_tiao_4_z.png",
+        "img_tiao_5_a.png",
+        "img_tiao_5_z.png",
+        "img_tiao_6_a.png",
+        "img_tiao_6_z.png",
+        "img_tiao_7_a.png",
+        "img_tiao_7_z.png",
+        "img_tiao_8_a.png",
+        "img_tiao_8_z.png",
+        "img_tiao_9_a.png",
+        "img_tiao_9_z.png",
+        "img_tong_1_a.png",
+        "img_tong_1_z.png",
+        "img_tong_2_a.png",
+        "img_tong_2_z.png",
+        "img_tong_3_a.png",
+        "img_tong_3_z.png",
+        "img_tong_4_a.png",
+        "img_tong_4_z.png",
+        "img_tong_5_a.png",
+        "img_tong_5_z.png",
+        "img_tong_6_a.png",
+        "img_tong_6_z.png",
+        "img_tong_7_a.png",
+        "img_tong_7_z.png",
+        "img_tong_8_a.png",
+        "img_tong_8_z.png",
+        "img_tong_9_a.png",
+        "img_tong_9_z.png",
+        "img_wan_1_a.png",
+        "img_wan_1_z.png",
+        "img_wan_2_a.png",
+        "img_wan_2_z.png",
+        "img_wan_3_a.png",
+        "img_wan_3_z.png",
+        "img_wan_4_a.png",
+        "img_wan_4_z.png",
+        "img_wan_5_a.png",
+        "img_wan_5_z.png",
+        "img_wan_6_a.png",
+        "img_wan_6_z.png",
+        "img_wan_7_a.png",
+        "img_wan_7_z.png",
+        "img_wan_8_a.png",
+        "img_wan_8_z.png",
+        "img_wan_9_a.png",
+        "img_wan_9_z.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}

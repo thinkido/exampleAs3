@@ -1,0 +1,257 @@
+{
+  "ID": "c259eb15-6b1d-4a7d-9bef-f22ec680916f",
+  "Version": "2.3.3.0",
+  "Name": "board_layer",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 51,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ingame_bg.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 320.0,
+              "Y": 265.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5,
+              "Y": 0.5
+            },
+            "PreSize": {
+              "X": 1.0,
+              "Y": 1.0
+            },
+            "Tag": 52,
+            "ActionTag": 277734499,
+            "Size": {
+              "X": 640.0,
+              "Y": 530.0
+            },
+            "Name": "ingame_bg_1",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ingame_indicate_01.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 321.0,
+              "Y": 236.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5016,
+              "Y": 0.4453
+            },
+            "PreSize": {
+              "X": 0.0734,
+              "Y": 0.0887
+            },
+            "LeftMargin": 297.5,
+            "RightMargin": 295.5,
+            "TopMargin": 270.5,
+            "BottomMargin": 212.5,
+            "Tag": 53,
+            "ActionTag": -386281424,
+            "Size": {
+              "X": 47.0,
+              "Y": 47.0
+            },
+            "Name": "c",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ingame_indicate_02.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 378.0,
+              "Y": 293.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5906,
+              "Y": 0.5528
+            },
+            "PreSize": {
+              "X": 0.0734,
+              "Y": 0.0887
+            },
+            "LeftMargin": 354.5,
+            "RightMargin": 238.5,
+            "TopMargin": 213.5,
+            "BottomMargin": 269.5,
+            "Tag": 54,
+            "ActionTag": 579717349,
+            "Size": {
+              "X": 47.0,
+              "Y": 47.0
+            },
+            "Name": "b",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ingame_indicate_03.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 324.0,
+              "Y": 361.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5063,
+              "Y": 0.6811
+            },
+            "PreSize": {
+              "X": 0.0734,
+              "Y": 0.0887
+            },
+            "LeftMargin": 300.5,
+            "RightMargin": 292.5,
+            "TopMargin": 145.5,
+            "BottomMargin": 337.5,
+            "Tag": 55,
+            "ActionTag": -648459139,
+            "Size": {
+              "X": 47.0,
+              "Y": 47.0
+            },
+            "Name": "a",
+            "ctype": "SpriteObjectData"
+          },
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "ingame_indicate_04.png",
+              "Plist": ""
+            },
+            "BlendFunc": {
+              "Src": 770,
+              "Dst": 771
+            },
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 262.0,
+              "Y": 296.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4094,
+              "Y": 0.5585
+            },
+            "PreSize": {
+              "X": 0.0734,
+              "Y": 0.0887
+            },
+            "LeftMargin": 238.5,
+            "RightMargin": 354.5,
+            "TopMargin": 210.5,
+            "BottomMargin": 272.5,
+            "Tag": 56,
+            "ActionTag": 1665794667,
+            "Size": {
+              "X": 47.0,
+              "Y": 47.0
+            },
+            "Name": "d",
+            "ctype": "SpriteObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Layer",
+        "ctype": "LayerObjectData"
+      },
+      "UsedResources": [
+        "ingame_bg.png",
+        "ingame_indicate_01.png",
+        "ingame_indicate_02.png",
+        "ingame_indicate_03.png",
+        "ingame_indicate_04.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Layer"
+}

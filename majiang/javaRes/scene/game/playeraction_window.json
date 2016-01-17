@@ -1,0 +1,75 @@
+{
+  "ID": "082f36f8-1fbd-4172-a847-1a9a4de8cf90",
+  "Version": "2.3.3.0",
+  "Name": "playeraction_window",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 44,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Default",
+              "Path": "Default/ImageFile.png",
+              "Plist": ""
+            },
+            "Scale9Width": 46,
+            "Scale9Height": 46,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 303.0,
+              "Y": 418.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.4734,
+              "Y": 0.7887
+            },
+            "PreSize": {
+              "X": 0.0719,
+              "Y": 0.0868
+            },
+            "LeftMargin": 280.0,
+            "RightMargin": 314.0,
+            "TopMargin": 89.0,
+            "BottomMargin": 395.0,
+            "Tag": 3,
+            "ActionTag": -118229691,
+            "Size": {
+              "X": 46.0,
+              "Y": 46.0
+            },
+            "Name": "Image_1",
+            "ctype": "ImageViewObjectData"
+          }
+        ],
+        "Size": {
+          "X": 640.0,
+          "Y": 530.0
+        },
+        "Name": "Scene",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "Default/ImageFile.png"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Scene"
+}
