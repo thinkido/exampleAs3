@@ -1,11 +1,18 @@
 package br.com.stimuli.loading.loadingtypes {
 	
-	import br.com.stimuli.loading.loadingtypes.LoadingItem;
+	import flash.events.ErrorEvent;
+	import flash.events.Event;
+	import flash.events.HTTPStatusEvent;
+	import flash.events.IOErrorEvent;
+	import flash.events.ProgressEvent;
+	import flash.events.SecurityErrorEvent;
+	import flash.net.URLLoader;
+	import flash.net.URLLoaderDataFormat;
+	import flash.net.URLRequest;
+	import flash.utils.getTimer;
+	
 	import br.com.stimuli.loading.BulkLoader;
-	import flash.display.*;
-    import flash.net.*;
-    import flash.events.*;
-    import flash.utils.*;
+	import br.com.stimuli.loading.loadingtypes.LoadingItem;
 
     /** @private */
 	public class BinaryItem extends LoadingItem {
@@ -20,6 +27,7 @@ package br.com.stimuli.loading.loadingtypes {
         }
         
 		override public function load() : void{
+			trace("进入场景，发送加载请求："+getTimer());
 		    super.load();
 		    loader = new URLLoader();
 			loader.dataFormat = URLLoaderDataFormat.BINARY;
