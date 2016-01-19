@@ -3,6 +3,7 @@ package ui
 	import game.view.inline.LoadingView;
 	
 	import starling.display.Sprite;
+	import starling.textures.Texture;
 	
 	public class UIComponent extends Sprite
 	{
