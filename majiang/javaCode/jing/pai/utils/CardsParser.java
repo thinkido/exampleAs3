@@ -122,7 +122,7 @@ public class CardsParser
 					temp.removeCard(ke.card);
 					temp.removeCard(ke.card);
 				}
-				else if(KeType.LIAN == ke.type)
+				else if(KeType.CHI == ke.type)
 				{
 					temp.removeCard(ke.card);
 					temp.removeCard(ke.card + 1);
@@ -163,12 +163,12 @@ public class CardsParser
 			if(card1 == card3)
 			{
 				// 三张牌是一样的，是一个坎
-				return new CardKe(KeType.PENG, card1);
+				return new CardKe(KeType.PENG, card1, 0);
 			}
 			else if(cards.findCard(card1 + 1, i + 1) > -1 && cards.findCard(card1 + 2, i + 2) > -1)
 			{
 				// 找得到顺子
-				return new CardKe(KeType.LIAN, card1);
+				return new CardKe(KeType.CHI, card1, 0);
 			}
 		}
 		return null;

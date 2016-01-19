@@ -92,8 +92,11 @@ package ui
 				}
 				x = x - anchorX;
 				y = Global.SCREEN_HEIGHT - y - anchorY;
-				setPosition(x, y);
-				setVisible(!data.has("VisibleForFrame") || data.getBoolean("VisibleForFrame"));
+//				setPosition(x, y);
+//				setVisible(!data.has("VisibleForFrame") || data.getBoolean("VisibleForFrame"));
+				this.x = x;
+				this.y = y;
+				this.visible = !data.has("VisibleForFrame") || data.getBoolean("VisibleForFrame");
 			}
 			catch( e:Error)
 			{

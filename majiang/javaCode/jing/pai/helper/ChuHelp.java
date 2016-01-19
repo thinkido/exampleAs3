@@ -49,9 +49,9 @@ public class ChuHelp
 				{
 					int jiaoCard = jiaoCards[i];
 					CardVector temp = tempCards.clone();
-					temp.add(jiaoCard);
+					//temp.add(jiaoCard);
 					//HuVO hu = new HuVO(); 
-					HuVO hu =new HuHelp().getHu(temp, kes);
+					HuVO hu =new HuHelp().getHu(temp, kes, jiaoCard);
 
 					chuVO.jiaos[i] = new JiaoVO(jiaoCard, hu);
 				}

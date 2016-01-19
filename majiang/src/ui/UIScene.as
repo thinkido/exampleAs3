@@ -11,14 +11,14 @@ package ui
 			
 		}
 		
-		public function onGoBack():void
+		override public function onGoBack():void
 		{
 			CommonUtil.showPopupWindow(true, "确定退出游戏?",new CallBack);
 		}
 
 
 		
-		public function initWithJsonObject( data:JSONObject):void
+		override public function initWithJsonObject( data:JSONObject):void
 		{
 			try
 			{

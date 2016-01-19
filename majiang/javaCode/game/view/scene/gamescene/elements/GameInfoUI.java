@@ -125,6 +125,8 @@ public class GameInfoUI extends UIContainer implements ITickListener
 		clearVectorImg((Vector)huas.get(GameDir.LEFT));
 		clearVectorImg((Vector)huas.get(GameDir.RIGHT));
 		clearVectorImg((Vector)huas.get(GameDir.DOWN));
+		
+		
 	}
 
 	private void clearVectorImg(Vector vec)
@@ -138,6 +140,7 @@ public class GameInfoUI extends UIContainer implements ITickListener
 			}
 			img.clearTexture();
 		}
+		vec.removeAllElements();
 	}
 
 	public void setRoomBase(int roomBase)

@@ -1,7 +1,6 @@
 
 package jing.pai.helper;
 
-import jing.pai.consts.HuType;
 import jing.pai.consts.KeType;
 import jing.pai.model.CardKe;
 import jing.pai.model.CardVector;
@@ -9,10 +8,7 @@ import jing.pai.utils.CardsParser;
 import jing.pai.vo.HuVO;
 
 /**
- * 根据牌型算出胡牌
- * 
- * BUG:
- * 1.将对有错误，应该是对对胡为基础
+ * 根据牌型算出胡牌 BUG: 1.将对有错误，应该是对对胡为基础
  * 
  * @param cards
  */
@@ -44,6 +40,11 @@ public class HuHelp
 
 	}
 
+	public HuVO getHu(CardVector inHands, CardKe[] onTables, int huCard)
+	{
+		return null;
+	}
+
 	public HuVO getHu(CardVector cards, CardKe[] keList)
 	{
 		_cards = cards;
@@ -56,65 +57,19 @@ public class HuHelp
 		pretreatment();
 
 		HuVO hu = new HuVO();
-
-		if(true == isQiDui())
-		{
-			// 七对是特殊牌型
-			if(true == isQingYiSe())
-			{
-				if(_gangCount > 0)
-				{
-					hu.type1 = HuType.QING_LONG_QI_DUI;
-				}
-				else
-				{
-					hu.type1 = HuType.QING_QI_DUI;
-				}
-			}
-			else if(_gangCount > 0)
-			{
-				hu.type1 = HuType.LONG_QI_DUI;
-			}
-			else
-			{
-				hu.type1 = HuType.AN_QI_DUI;
-			}
-		}
-		else if(true == isHu())
-		{
-			if(true == isQingYiSe())
-			{
-				if(true == isDuiDuiHu())
-				{
-					hu.type1 = HuType.QING_DUI;
-				}
-				else if(true == isDaiYao())
-				{
-					hu.type1 = HuType.QING_DAI_YAO;
-				}
-				else
-				{
-					hu.type1 = HuType.QING_YI_SE;
-				}
-			}
-			else if(true == isJiangDui())
-			{
-				hu.type1 = HuType.JIANG_DUI;
-			}
-			else if(true == isDaiYao())
-			{
-				hu.type1 = HuType.DAI_YAO;
-			}
-			else if(true == isDuiDuiHu())
-			{
-				hu.type1 = HuType.DUI_DUI_HU;
-			}
-			else
-			{
-				hu.type1 = HuType.PING_HU;
-			}
-		}
-
+		/*
+		 * if(true == isQiDui()) { // 七对是特殊牌型 if(true == isQingYiSe()) {
+		 * if(_gangCount > 0) { hu.type1 = HuType.QING_LONG_QI_DUI; } else {
+		 * hu.type1 = HuType.QING_QI_DUI; } } else if(_gangCount > 0) { hu.type1
+		 * = HuType.LONG_QI_DUI; } else { hu.type1 = HuType.AN_QI_DUI; } } else
+		 * if(true == isHu()) { if(true == isQingYiSe()) { if(true ==
+		 * isDuiDuiHu()) { hu.type1 = HuType.QING_DUI; } else if(true ==
+		 * isDaiYao()) { hu.type1 = HuType.QING_DAI_YAO; } else { hu.type1 =
+		 * HuType.QING_YI_SE; } } else if(true == isJiangDui()) { hu.type1 =
+		 * HuType.JIANG_DUI; } else if(true == isDaiYao()) { hu.type1 =
+		 * HuType.DAI_YAO; } else if(true == isDuiDuiHu()) { hu.type1 =
+		 * HuType.DUI_DUI_HU; } else { hu.type1 = HuType.PING_HU; } }
+		 */
 		return hu;
 	}
 
@@ -158,7 +113,7 @@ public class HuHelp
 		for(int i = 0; i < _keList.length; i++)
 		{
 			CardKe ke = _keList[i];
-			if(ke.type == KeType.LIAN)
+			if(ke.type == KeType.CHI)
 			{
 				return false;
 			}
@@ -167,7 +122,7 @@ public class HuHelp
 		for(int i = 0; i < _parser.kes().size(); i++)
 		{
 			CardKe ke = (CardKe)(_parser.kes().elementAt(i));
-			if(ke.type == KeType.LIAN)
+			if(ke.type == KeType.CHI)
 			{
 				return false;
 			}
@@ -250,7 +205,7 @@ public class HuHelp
 		for(int i = 0; i < _keList.length; i++)
 		{
 			CardKe ke = _keList[i];
-			if(ke.type == KeType.LIAN)
+			if(ke.type == KeType.CHI)
 			{
 				return false;
 			}
@@ -276,7 +231,7 @@ public class HuHelp
 		{
 			CardKe ke = _keList[i];
 			int temp = ke.card % 10;
-			if(ke.type == KeType.LIAN && temp != 1 && temp != 7)
+			if(ke.type == KeType.CHI && temp != 1 && temp != 7)
 			{
 				return false;
 			}

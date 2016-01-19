@@ -22,6 +22,10 @@ public class JiaoVO
 	
 	public String toString()
 	{
+		if(hu == null)
+		{
+			return "none hu";
+		}
 		String out = "JiaoCard [" + this.jiaoCard + "] " + "Hu " + hu.toString();		
 		return out;
 	}
