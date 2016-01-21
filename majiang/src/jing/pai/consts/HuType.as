@@ -5,7 +5,7 @@ public class HuType
 	/**
 	 * ºúÅÆÃèÊö
 	 */
-	static public const var HU_DESC:Array= {
+	static public const HU_DESC:Array= {
 			"ÎÞ",
 		   "ƽºú",
 		   "¶ԶԺú",
@@ -25,71 +25,71 @@ public class HuType
 	/**
 	 * ûÓкú
 	 */
-	static public const var NONE:int= 0;
+	static public const NONE:int= 0;
 	
 	/**
 	 * ƽºú
 	 */
-	static public const var PING_HU:int= 1;
+	static public const PING_HU:int= 1;
 
 	/**
 	 * ¶ԶԺú
 	 */
-	static public const var DUI_DUI_HU:int= 2;
+	static public const DUI_DUI_HU:int= 2;
 
 	/**
 	 * Çåһɫ
 	 */
-	static public const var QING_YI_SE:int= 3;
+	static public const QING_YI_SE:int= 3;
 
 	/**
 	 * °µÆ߶Ô
 	 */
-	static public const var AN_QI_DUI:int= 4;
+	static public const AN_QI_DUI:int= 4;
 
 	/**
 	 * Çå¶Ô
 	 */
-	static public const var QING_DUI:int= 5;
+	static public const QING_DUI:int= 5;
 
 	/**
 	 * ÁúÆ߶Ô
 	 */
-	static public const var LONG_QI_DUI:int= 6;
+	static public const LONG_QI_DUI:int= 6;
 
 	/**
 	 * ÇåÆ߶Ô
 	 */
-	static public const var QING_QI_DUI:int= 7;
+	static public const QING_QI_DUI:int= 7;
 
 	/**
 	 * Ììºú
 	 */
-	static public const var TIAN_HU:int= 8;
+	static public const TIAN_HU:int= 8;
 
 	/**
 	 * µغú
 	 */
-	static public const var DI_HU:int= 9;
+	static public const DI_HU:int= 9;
 
 	/**
 	 * ÇåÁúÆ߶Ô
 	 */
-	static public const var QING_LONG_QI_DUI:int= 10;
+	static public const QING_LONG_QI_DUI:int= 10;
 
 	/**
 	 * ´øçÛ
 	 */
-	static public const var DAI_YAO:int= 11;
+	static public const DAI_YAO:int= 11;
 
 	/**
 	 * Çå´øçÛ
 	 */
-	static public const var QING_DAI_YAO:int= 12;
+	static public const QING_DAI_YAO:int= 12;
 
 	/**
 	 * ½«¶Ô
 	 */
-	static public const var JIANG_DUI:int= 13;
+	static public const JIANG_DUI:int= 13;
 }
 }

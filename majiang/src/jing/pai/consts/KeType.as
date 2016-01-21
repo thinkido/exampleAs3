@@ -11,21 +11,21 @@ public class KeType
 	/**
 	 * Åö
 	 */
-	static public const var PENG:int= 1;
+	static public const PENG:int= 1;
 
 	/**
 	 * ¸Ü
 	 */
-	static public const var GANG:int= 2;
+	static public const GANG:int= 2;
 
 	/**
 	 * Á¬
 	 */
-	static public const var CHI:int= 4;
+	static public const CHI:int= 4;
 	
 	/**
 	 * ½«
 	 */
-	static public const var JIANG:int= 7;
+	static public const JIANG:int= 7;
 }
 }

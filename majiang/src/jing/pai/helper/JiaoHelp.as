@@ -14,7 +14,7 @@ public class JiaoHelp
 
 	private var _cards:CardVector= null;
 
-	private const var RIGHTFUL_COUNTS:Array= {1, 4, 7, 10, 13};
+	private const RIGHTFUL_COUNTS:Array= {1, 4, 7, 10, 13};
 
 	public function JiaoHelp()
 	{
@@ -193,7 +193,7 @@ public class JiaoHelp
 	 * @return
 	 */
 	private function isIncludePair(count:int):Boolean{
-		const var CARDS:Array= {2, 5, 8, 11};
+		const CARDS:Array= {2, 5, 8, 11};
 		for(var i:int= 0; i < CARDS.length; i++)
 		{
 			if(CARDS[i] == count)

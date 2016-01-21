@@ -11,11 +11,11 @@ public class MahjongBoardType
 	/**
 	 * ÎÞ
 	 */
-	static public const var NONE:int= 0;
+	static public const NONE:int= 0;
 
 	/**
 	 * ´ò³öºóÓнÐ
 	 */
-	static public const var FOR_JIAO:int= 1;
+	static public const FOR_JIAO:int= 1;
 }
 }
