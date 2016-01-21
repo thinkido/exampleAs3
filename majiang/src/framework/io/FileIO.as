@@ -1,11 +1,7 @@
 package framework.io
 {
 	import com.adobe.serialization.json.JSON;
-	import com.adobe.serialization.json.JSONDecoder;
 	import com.thinkido.framework.air.FileUtils;
-	
-	import flash.display.JointStyle;
-	import flash.filesystem.File;
 
 	public class FileIO
 	{
@@ -16,7 +12,7 @@ package framework.io
 		public static function getJson(path:String):Object
 		{
 			var str:String =  FileUtils.getStringByFile(path); 
-			var obj:Object = JSON.decode( str ) ;
+			var obj:Object = com.adobe.serialization.json.JSON.decode( str ) ;
 			return obj ;			
 		}
 		
@@ -37,7 +33,7 @@ package framework.io
 		 */
 		public static function getInputStream(path:String):Object
 		{
-			
+			return null;
 		}
 		
 //		getNetInputStream

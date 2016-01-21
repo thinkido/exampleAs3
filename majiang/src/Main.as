@@ -1,17 +1,6 @@
 package
 {
-	import com.freshplanet.ane.AirAlert.AirAlert;
-	import com.mike.utils.AdvertiseUtil;
-	import com.mike.utils.DeviceUtil;
-	import com.mike.utils.FlurryUtil;
-	import com.mike.utils.GameInfo;
-	import com.mike.utils.LanUtil;
-	import com.mike.utils.NetUtil;
-	import com.mike.utils.PlatType;
-	import com.mike.utils.PlatUtil;
 	import com.mike.utils.ResolutionUtil;
-	import com.mike.utils.ShareManager;
-	import com.mike.utils.TimeUtil;
 	
 	import flash.desktop.NativeApplication;
 	import flash.display.Sprite;
@@ -26,24 +15,16 @@ package
 	import flash.ui.Multitouch;
 	import flash.ui.MultitouchInputMode;
 	import flash.utils.getTimer;
-	import flash.utils.setTimeout;
 	
 	import br.com.stimuli.loading.BulkLoader;
 	import br.com.stimuli.loading.BulkProgressEvent;
-	import br.com.stimuli.loading.loadingtypes.LoadingItem;
 	
 	import configs.GameInstance;
 	
 	import events.GameEvent;
 	
-	import infos.data.LocalSO;
-	
-	import managers.CandyManager;
-	import managers.GameUtil;
 	import managers.ResManager;
 	import managers.SoundManager;
-	
-	import modules.mainui.views.WorkRoomIntroduce;
 	
 	import starling.core.Starling;
 	import starling.utils.AssetManager;

@@ -21,7 +21,7 @@ package network
 			var len:int = mListeners.length;
 			for(var index:int = 0; index < len; index++)
 			{
-				YiuNetworkListener listener = (YiuNetworkListener)mListeners.elementAt(index);
+				var listener:YiuNetworkListener = mListeners[index] as YiuNetworkListener;
 				if(listener != null)
 				{
 					if(!listener.onNetworkEvent(name, packet))

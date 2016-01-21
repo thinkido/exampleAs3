@@ -1,19 +1,20 @@
 package framework.events
 {
-/**
- * Ê¼þ¼àÌýÕ߽ӿÚ
- * 
- * @author Jing
- */
-public interface IEventListener
-{
+	
 	/**
-	 * ½ÓÊÕÊ¼þ
+	 * 事件监听者接口
 	 * 
-	 * @param type Ê¼þÀàÐÍ
-	 * @param dispatcher ¹㲥Õß
-	 * @param data Я´øµÄÊý¾Ý
+	 * @author Jing
 	 */
-	function onReciveEvent(type:uint, dispatcher:EventDispatcher, data:Object):void;	
-}
+	public interface IEventListener
+	{
+		/**
+		 * 接收事件
+		 * 
+		 * @param type 事件类型
+		 * @param dispatcher 广播者
+		 * @param data 携带的数据
+		 */
+		function onReciveEvent(type:int, dispatcher:EventDispatcher, data:Object):void;	
+	}
 }

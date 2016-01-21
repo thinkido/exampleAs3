@@ -10,7 +10,7 @@ import framework.util.StringUtil;
 public class Point
 {
 	/**
-	 * »ñȡһ¸öµãÈÆÈÎÒâµã˳ʱÕëÐýתÈÎÒâ½ǶȺóµÄ×ø±ê
+	 * 获取一个点绕任意点顺时针旋转任意角度后的坐标
 	 * @param x
 	 * @param y
 	 * @param cx
@@ -19,7 +19,7 @@ public class Point
 	 * @return
 	 */
 	static public function rotatePoint(x:int, y:int, cx:int, cy:int, angle:int):Point{
-		//Ê×ÏȻ»Ëã³öÕýȷµĽǶÈ
+		//首先换算出正确的角度
 		angle = angle % 360;
 		if(angle < 0)
 		{
@@ -30,7 +30,7 @@ public class Point
 		var newX:int= 0;
 		var newY:int= 0;
 		
-		//½ǶÈת»»Ϊ»¡¶È
+		//角度转换为弧度
         var radian:Number= angle * Math.PI / 180;
         var tx:Number= (x- cx) * Math.cos(radian) + (y - cy ) * Math.sin(radian) + cy;  
         var ty:Number= -(x - cx) * Math.sin(radian) + (y - cy) * Math.cos(radian) + cy;  
@@ -41,7 +41,7 @@ public class Point
 	}
 	
 	/**
-	 * X×ø±êλÖÃ
+	 * X坐标位置
 	 */
 	private var _x:int= 0;
 	
@@ -54,7 +54,7 @@ public class Point
 	}
 	
 	/**
-	 * Y×ø±êλÖÃ
+	 * Y坐标位置
 	 */
 	private var _y:int= 0;
 	
@@ -68,7 +68,7 @@ public class Point
 	
 	
 	/**
-	 * ÉèÖÃX,YµÄֵ
+	 * 设置X,Y的值ֵ
 	 * @param x
 	 * @param y
 	 */
@@ -85,8 +85,8 @@ public class Point
 	
 	public function toString():String{
 		var args:Array= new String[2];
-		args[0] = String.valueOf(_x);
-		args[1] = String.valueOf(_y);
+		args[0] = _x.toString();
+		args[1] = _y.toString();
 		return StringUtil.format("[x = %s, y = %s]",args);
 	}
 }

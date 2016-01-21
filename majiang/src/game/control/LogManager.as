@@ -2,14 +2,14 @@ package game.control
 {
 	import framework.time.ITickListener;
 	import framework.time.TickItem;
-	import framework.views.Bitmap;
-	import framework.views.Sprite;
-	import framework.views.Stage;
-	import framework.views.TextField;
 	
 	import game.model.Global;
-	import game.model.callback.ICallbackB;
 	import game.util.CommonUtil;
+	
+	import starling.display.Image;
+	import starling.display.Sprite;
+	import starling.display.Stage;
+	import starling.text.TextField;
 	
 	public class LogManager implements ITickListener
 	{
@@ -26,45 +26,45 @@ package game.control
 		
 		private static var MAX_LEN:int = 15;
 		
-		private Sprite _testLayer;
+		private var _testLayer:Sprite;
 		
-		private Bitmap _quad;
+		private var _quad:Image;
 		
-		private TextField _tfSystem;
+		private var _tfSystem:TextField;
 		
-		private TextField[] _tfPrintList;
+		private var _tfPrintList:Vector.<TextField>;
 		
-		private int _startIndex;
+		private var _startIndex:int;
 		
-		private int _printLen;
+		private var _printLen:int;
 		
 		// private int _tickerId;
 		
-		private LogManager()
+		public function LogManager()
 		{
 		}
 		
-		public static LogManager getInstance()
+		static public function getInstance():LogManager
 		{
 			if(_instance == null)
 				_instance = new LogManager();
 			return _instance;
 		}
 		
-		public void showPanel()
+		public function showPanel():void
 		{
 			_isTest = true;
 			_testLayer = new Sprite();
 			Global.root().addChild(_testLayer);
-			_quad = new Bitmap(Global.imgDarkBg);
+			_quad = new Image(Global.imgDarkBg);
 			_testLayer.addChild(_quad);
-			_tfSystem = new TextField();
-			_tfSystem.setColor(0xffffff);
+			_tfSystem = new TextField(100,12,'');
+//			_tfSystem.setColor(0xffffff);
 			_testLayer.addChild(_tfSystem);
 			_tfPrintList = new TextField[MAX_LEN];
-			for(int i = 0; i < MAX_LEN; i++)
+			for(var i:int = 0; i < MAX_LEN; i++)
 			{
-				_tfPrintList[i] = new TextField();
+				_tfPrintList[i] = new TextField(100,22,'');
 				_testLayer.addChild(_tfPrintList[i]);
 			}
 			// _tickerId = Stage.current.ticker.setTimeInterval(1000, this, null);
@@ -84,26 +84,19 @@ package game.control
 		// _testLayer = null;
 		// }
 		
-		public void log(String content)
+		public function log(content:String):void
 		{
-			log(content, LEVEL_PRINT);
+			log_a(content, LEVEL_PRINT);
 		}
 		
-		public void log(String content, int level)
+		public function log_a(content:String, level:int):void
 		{
-			int color = 0;
+			var color:int = 0;
 			if(level == LEVEL_ERROR)
 			{
 				//			Global.heartbeatCmd.stop();
 				color = 0xff0000;
-				CommonUtil.showPopupWindow(false, content, new ICallbackB()
-					{
-						
-						public void run(boolean data)
-						{
-							System.exit(0);
-						}
-					});
+				CommonUtil.showPopupWindow(false, content, new callBackA);
 			}
 			else if(level == LEVEL_WARNING)
 			{
@@ -126,26 +119,40 @@ package game.control
 				{
 					_printLen++;
 				}
-				int curIndex = (_startIndex + _printLen - 1) % MAX_LEN;
+				var curIndex:int = (_startIndex + _printLen - 1) % MAX_LEN;
 				_tfPrintList[curIndex].setText(content);
 				_tfPrintList[curIndex].setColor(color);
-				for(int i = 0; i < MAX_LEN; i++)
+				for(var i:int = 0; i < MAX_LEN; i++)
 				{
 					curIndex = (_startIndex + i) % MAX_LEN;
 					_tfPrintList[curIndex].setPosition(0, 60 + i * 15);
 				}
+
+
 			}
-			System.out.println(content);
+//			System.out.println(content);
+			trace(content);
 		}
 		
-		public void onTick(TickItem tickItem)
+		public function onTick(tickItem:TickItem):void
 		{
-			long free = Runtime.getRuntime().freeMemory() >> 10;
-			long total = Runtime.getRuntime().totalMemory() >> 10;
-			String content = "Time:" + (int)(Stage.current.now() / 1000) + "\n";
+			/*var free:Number = Runtime.getRuntime().freeMemory() >> 10;
+			var total:Number = Runtime.getRuntime().totalMemory() >> 10;
+			var content:String = "Time:" + (int)(Stage.current.now() / 1000) + "\n";
 			content += "FPS:" + Stage.current.getFPS() + "\n";
 			content += "MEM_USED:[" + (total - free) + "/" + total + "KB]";
-			_tfSystem.setText(content);
+			_tfSystem.text = content;*/
 		}
+	}
+}
+import flash.system.System;
+
+import game.model.callback.ICallbackB;
+
+class callBackA implements ICallbackB
+{
+	public function run(data:Boolean):void
+	{
+		System.exit(0);
 	}
 }

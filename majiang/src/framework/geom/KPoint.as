@@ -2,7 +2,7 @@ package framework.geom
 {
 	import flash.geom.Point;
 	
-	public class KPoint extends Point
+	public class KPoint extends flash.geom.Point
 	{
 		public function KPoint(x:Number=0, y:Number=0)
 		{
@@ -34,8 +34,8 @@ package framework.geom
 			var  radian:Number = angle * Math.PI / 180;
 			var  tx:Number = (x- cx) * Math.cos(radian) + (y - cy ) * Math.sin(radian) + cy;  
 			var  ty:Number = -(x - cx) * Math.sin(radian) + (y - cy) * Math.cos(radian) + cy;  
-			newX = (int)tx;
-			newY = (int)ty;
+			newX = tx;
+			newY = ty;
 			
 			return new KPoint(newX,newY);
 		}
