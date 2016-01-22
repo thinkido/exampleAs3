@@ -1,7 +1,7 @@
 package jing.pai.consts
 {
 /**
- * 刻的类型
+ * ¿̵ÄÀàÐÍ
  * @author Jing
  *
  */
@@ -9,22 +9,22 @@ public class KeType
 {
 
 	/**
-	 * 碰
+	 * Åö
 	 */
 	static public const PENG:int= 1;
 
 	/**
-	 * 杠
+	 * ¸Ü
 	 */
 	static public const GANG:int= 2;
 
 	/**
-	 * 连
+	 * Á¬
 	 */
 	static public const CHI:int= 4;
 	
 	/**
-	 * 将
+	 * ½«
 	 */
 	static public const JIANG:int= 7;
 }

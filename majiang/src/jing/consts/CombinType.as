@@ -11,9 +11,9 @@ public class CombinType
 
 	static public const CHI_MIDDLE:int= 4;
 
-	static public const CHI_LEFT:int= 5; // 服务器是5
+	static public const CHI_LEFT:int= 5; // ·þÎñÆ÷ÊÇ5
 
-	static public const CHI_RIGHT:int= 6; // 服务器是6
+	static public const CHI_RIGHT:int= 6; // ·þÎñÆ÷ÊÇ6
 
 }
 }

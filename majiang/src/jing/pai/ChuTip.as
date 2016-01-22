@@ -6,7 +6,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 
 /**
- * 出牌提示数据
+ * ³öÅÆÌáʾÊý¾Ý
  * 
  * @author Jing
  */
@@ -40,7 +40,7 @@ public class ChuTip
 	}
 
 	/**
-	 * 得到所有可以打出后有叫的牌的数组
+	 * µõ½ËùÓпÉÒԴò³öºóÓнеÄÅƵÄÊý×é
 	 * 
 	 * @return
 	 */

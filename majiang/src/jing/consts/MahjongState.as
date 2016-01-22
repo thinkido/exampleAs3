@@ -1,7 +1,7 @@
 package jing.consts
 {
 /**
- * 麻将的状态
+ * Â齫µÄ״̬
  * 
  * @author Jing
  */
@@ -9,27 +9,27 @@ public class MahjongState
 {
 
 	/**
-	 * 普通
+	 * ÆÕͨ
 	 */
 	static public const NORMAL:int= 0;
 
 	/**
-	 * 选中
+	 * ѡÖÐ
 	 */
 	static public const SELECTED:int= 1;
 
 	/**
-	 * 发光 碰、杠提示 选中的牌在桌面上的提示
+	 * ·¢¹â Å򡢸ÜÌáʾ ѡÖеÄÅÆÔÚ×ÀÃæÉϵÄÌáʾ
 	 */
 	static public const GLOW:int= 2;
 
 	/**
-	 * 禁止交互状态
+	 * ½ûֹ½»»¥״̬
 	 */
 	static public const DISABLE:int= 4;
 	
 	/**
-	 * 最后出的一张牌
+	 * ×îºó³öµÄһÕÅÅÆ
 	 */
 	static public const LAST_CHU:int= 5;
 }

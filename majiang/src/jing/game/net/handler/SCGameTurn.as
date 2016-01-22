@@ -22,7 +22,7 @@ public class SCGameTurn
 				var card:int= (Integer(pb.getMo_tiles().elementAt(i))).intValue();
 				if(CardUtil.isHua(card))
 				{
-					// 对应摸到花牌的处理
+					// ¶ÔӦÃ򵽻¨ÅƵĴ¦Àí
 					GameScene.cur.info.addHua(GameDir.DOWN, card);
 					GameScene.cur.info.showEffect(GameDir.DOWN, EffectType.BU_HUA);
 				}
@@ -36,12 +36,12 @@ public class SCGameTurn
 		player.updateChuTip();
 		player.setInTurn(true);
 
-		// 显示操作面板
+		// ÏÔʾ²Ù×÷Ãæ°å
 		PlayerActionWindow.show(pb.getShow_actions());
 
 		if(pb.getMo())
 		{
-			// 设置选中的牌
+			// ÉèÖÃѡÖеÄÅÆ
 			player.setSelectCard(player.cardCount(CardPlace.IN_HAND));
 		}
 		else
@@ -49,10 +49,10 @@ public class SCGameTurn
 			player.setSelectCard(player.cardCount(CardPlace.IN_HAND) - 1);
 		}
 
-		// 显示操作者
+		// ÏÔʾ²Ù×÷Õß
 		GameScene.cur.info.setTurnDir(GameDir.DOWN);
 
-		// 刷新倒计时
+		// ˢÐµ¹¼Æʱ
 		GameScene.cur.info.setCountdown(pb.getTimeout());
 	}
 

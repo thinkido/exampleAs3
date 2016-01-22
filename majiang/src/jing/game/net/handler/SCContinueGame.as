@@ -12,7 +12,7 @@ import protocol.sccontinue_seat_info;
 import protocol.stplayer_info;
 
 /**
- * 继续游戏
+ * ¼ÌÐøÓÎϷ
  * 
  * @author Jing
  */

@@ -4,7 +4,7 @@ import jing.pai.model.CardVector;
 import jing.pai.utils.CardUtil;
 
 /**
- * 根据牌型找出匹配的叫
+ * ¸ù¾ÝÅÆÐÍÕҳöƥÅäµĽÐ
  * 
  * @param cards
  * @return
@@ -47,37 +47,37 @@ public class JiaoHelp
 				var card2:int= temp.getAt(i);
 				if(int((card1 / 10) )== int((card2 / 10)))
 				{
-					// 是同一种花色的牌
+					// ÊÇͬһÖֻ¨ɫµÄÅÆ
 					temp.removeAt(i);
 					if(isRightfulCombination(temp))
 					{
 						if(card1 == card2 && false == jiaoCards.hasCard(card2))
 						{
-							// 对处
+							// ¶Դ¦
 							addJiaoCard(jiaoCards, card1);
 						}
 						else if(card1 + 1== card2)
 						{
 							if(card1 % 10== 1)
 							{
-								// 边张
+								// ±ßÕÅ
 								addJiaoCard(jiaoCards, card2 + 1);
 							}
 							else if(card2 % 10== 9)
 							{
-								// 边张
+								// ±ßÕÅ
 								addJiaoCard(jiaoCards, card1 - 1);
 							}
 							else
 							{
-								// 边张
+								// ±ßÕÅ
 								addJiaoCard(jiaoCards, card1 - 1);
 								addJiaoCard(jiaoCards, card2 + 1);
 							}
 						}
 						else if(card1 + 2== card2)
 						{
-							// 卡张
+							// ¿¨ÕÅ
 							addJiaoCard(jiaoCards, card1 + 1);
 						}
 					}
@@ -113,7 +113,7 @@ public class JiaoHelp
 	}
 
 	/**
-	 * 是否合法的牌数
+	 * ÊǷñºϷ¨µÄÅÆÊý
 	 * 
 	 * @param count
 	 * @return
@@ -130,7 +130,7 @@ public class JiaoHelp
 	}
 
 	/**
-	 * 这些牌型是否合理
+	 * ÕâЩÅÆÐÍÊǷñºÏÀí
 	 * 
 	 * @param cards
 	 * @return
@@ -162,7 +162,7 @@ public class JiaoHelp
 	}
 
 	/**
-	 * 是否都是坎
+	 * ÊǷñ¶¼Êǿ²
 	 * 
 	 * @param cards
 	 * @return
@@ -187,7 +187,7 @@ public class JiaoHelp
 	}
 
 	/**
-	 * 是否存在将牌
+	 * ÊǷñ´æÔڽ«ÅÆ
 	 * 
 	 * @param count
 	 * @return
@@ -205,7 +205,7 @@ public class JiaoHelp
 	}
 
 	/**
-	 * 获得坎
+	 * »ñµÿ²
 	 * 
 	 * @return
 	 */
@@ -224,13 +224,13 @@ public class JiaoHelp
 
 			if(card1 == card3)
 			{
-				// 三张牌是一样的，是一个坎
+				// ÈýÕÅÅÆÊÇһÑùµģ¬ÊÇһ¸ö¿²
 				var kan:Array= {card1, card1, card1};
 				return kan;
 			}
 			else if(true == CardUtil.typeShunEnable(card1) && cards.findCard(card1 + 1, i + 1) > -1&& cards.findCard(card1 + 2, i + 2) > -1)
 			{
-				// 找得到顺子
+				// Õҵõ½˳×Ó
 				var kan:Array= {card1, card1 + 1, card1 + 2};
 				return kan;
 			}
@@ -239,7 +239,7 @@ public class JiaoHelp
 	}
 
 	/**
-	 * 获得一对
+	 * »ñµÃһ¶Ô
 	 * 
 	 * @param cards
 	 * @return

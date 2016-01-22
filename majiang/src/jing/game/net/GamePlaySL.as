@@ -48,7 +48,7 @@ import protocol.sc_start_game;
 import protocol.sc_sure_lack;
 
 /**
- * 游戏进行的接口监听
+ * ÓÎϷ½øÐеĽӿڼàÌý
  * 
  * @author Jing
  */

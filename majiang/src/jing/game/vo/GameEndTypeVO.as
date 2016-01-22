@@ -4,17 +4,17 @@ public class GameEndTypeVO
 {
 
 	/**
-	 * 类型
+	 * ÀàÐÍ
 	 */
 	public var type:int= 0;
 
 	/**
-	 * 番数
+	 * ·¬Êý
 	 */
 	public var fan:int= 0;
 	
 	/**
-	 * 关联的玩家
+	 * ¹ØÁªµÄÍæ¼Ò
 	 */
 	public var id:String= null;
 

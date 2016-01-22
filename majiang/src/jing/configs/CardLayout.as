@@ -13,7 +13,7 @@ import framework.geom.Point;
 import framework.resources.Res;
 
 /**
- * 牌布局
+ * ÅƲ¼¾Ö
  * 
  * @author Jing
  */
@@ -28,7 +28,7 @@ public class CardLayout
 	}
 
 	/**
-	 * 获取布局信息
+	 * »ñȡ²¼¾ÖÐÅϢ
 	 * 
 	 * @param dir
 	 * @param place

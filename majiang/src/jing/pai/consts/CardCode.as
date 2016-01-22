@@ -1,7 +1,7 @@
 package jing.pai.consts
 {
 /**
- * 牌的值
+ * ÅƵÄֵ
  * @author Jing
  *
  */
@@ -53,5 +53,41 @@ public class CardCode
 	static public var HUA_6:int= 56;
 	static public var HUA_7:int= 57;
 	static public var HUA_8:int= 58;
+	
+	
+	static public var HAND_SEQS:int=  11;
+	static public var HAND_SEQE:int=  39;
+	static public var HAND_ZIS:int= 41;
+	static public var HAND_ZIE:int= 47;
+	static public var HAND_HUAS:int= 51;
+	static public var HAND_HUAE:int= 58;
+
+	static public var HAND_START:int= HAND_SEQS;
+	/*»¨ÅƲ»»á³öÏÖÔÚÊÖÅÆÖÐ*/
+	static public var HAND_LEN:int= 48;
+
+	static public var COM_SIZE:int=  5;
+
+	//#define HAND_LEN    40
+
+	static public var COMPLEX_LEN:int= 10;
+
+	static public var HU_MAX_NUM:int= 20;
+
+	static public var HU_MAX_TYPE:int= 20;
+	
+	static public var COM_PENG:int= 1;
+	static public var COM_GANG:int= 2;
+	static public var COM_CHI:int= 4;//°üº¬ËùÓеÄÁ¬ÅÆ
+	static public var COM_JIANG:int= 7;
+	
+	static public var COM_PENG2:int= 0;
+	static public var COM_KE:int= 1;
+	static public var COM_MING_GANG:int= 2;
+	static public var COM_AN_GANG:int= 3;
+	static public var COM_SEQ:int= 4;/*ÊÖÅÆÖеÄÐòÅÆ*/
+	static public var COM_ZUO_CHI:int= 5;/*×ó³Ô*/
+	static public var COM_MID_CHI:int= 6;/*ÖгÔ*/
+	static public var COM_YOU_CHI:int= 7;/*ÓҳÔ*/
 }
 }

@@ -15,12 +15,12 @@ public class ChuVO
 	}
 
 	/**
-	 * 出的牌
+	 * ³öµÄÅÆ
 	 */
 	public var playCard:int= -1;
 
 	/**
-	 * 下的叫
+	 * ÏµĽÐ
 	 */
 	public var jiaos:Array= null;
 

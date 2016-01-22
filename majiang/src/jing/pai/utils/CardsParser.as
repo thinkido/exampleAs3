@@ -7,7 +7,7 @@ import jing.pai.model.CardVector;
 import java.util.Vector;
 
 /**
- * 牌组解析器
+ * ÅÆ×é½âÎöÆ÷
  * 
  * @author Jing
  */
@@ -38,7 +38,7 @@ public class CardsParser
 	}
 
 	/**
-	 * 解析牌组
+	 * ½âÎöÅÆ×é
 	 * 
 	 * @param cards
 	 */
@@ -112,15 +112,15 @@ public class CardsParser
 
 				if(KeType.PENG == ke.type)
 				{
-					temp.removeCard(ke.card);
-					temp.removeCard(ke.card);
-					temp.removeCard(ke.card);
+					temp.removeCard(ke.id);
+					temp.removeCard(ke.id);
+					temp.removeCard(ke.id);
 				}
 				else if(KeType.CHI == ke.type)
 				{
-					temp.removeCard(ke.card);
-					temp.removeCard(ke.card + 1);
-					temp.removeCard(ke.card + 2);
+					temp.removeCard(ke.id);
+					temp.removeCard(ke.id + 1);
+					temp.removeCard(ke.id + 2);
 				}
 
 				ke = getKe(temp, 0);
@@ -128,7 +128,7 @@ public class CardsParser
 
 			if(temp.count() == 0)
 			{
-				// 所有的刻抽取完毕
+				// ËùÓеĿ̳éȡÍê±Ï
 				return kes;
 			}
 		}
@@ -137,7 +137,7 @@ public class CardsParser
 	}
 
 	/**
-	 * 获得坎
+	 * »ñµÿ²
 	 * 
 	 * @return
 	 */
@@ -155,12 +155,12 @@ public class CardsParser
 
 			if(card1 == card3)
 			{
-				// 三张牌是一样的，是一个坎
+				// ÈýÕÅÅÆÊÇһÑùµģ¬ÊÇһ¸ö¿²
 				return new CardKe(KeType.PENG, card1, 0);
 			}
 			else if(cards.findCard(card1 + 1, i + 1) > -1&& cards.findCard(card1 + 2, i + 2) > -1)
 			{
-				// 找得到顺子
+				// Õҵõ½˳×Ó
 				return new CardKe(KeType.CHI, card1, 0);
 			}
 		}

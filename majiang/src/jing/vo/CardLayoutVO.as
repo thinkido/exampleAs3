@@ -3,7 +3,7 @@ package jing.vo
 import framework.geom.Point;
 
 /**
- * 卡牌布局的VO
+ * ¿¨ÅƲ¼¾ֵÄVO
  * 
  * @author Jing
  */
@@ -11,47 +11,47 @@ public class CardLayoutVO
 {
 
 	/**
-	 * 使用的牌组图片前缀
+	 * ʹÓõÄÅÆ×éͼƬǰ׺
 	 */
 	public var cardPrefix:String= null;
 
 	/**
-	 * 起点X
+	 * ÆðµãX
 	 */
 	public var startX:int= 0;
 
 	/**
-	 * 起点Y
+	 * ÆðµãY
 	 */
 	public var startY:int= 0;
 
 	/**
-	 * 方向
+	 * ·½Ïò
 	 */
 	public var dir:String= null;
 
 	/**
-	 * 牌与牌之间的间隔
+	 * ÅÆÓëÅÆ֮¼äµļä¸ô
 	 */
 	public var gap:int= 0;
 
 	/**
-	 * 组中麻将之间的间隔
+	 * ×éÖÐÂ齫֮¼äµļä¸ô
 	 */
 	public var combinGap:int= 0;
 	
 	/**
-	 * 组合中的杠，上面那个的Y轴偏移
+	 * ×éºÏÖеĸܣ¬ÉÏÃæÄǸöµÄYÖáƫÒÆ
 	 */
 	public var combinGangOffY:int= 0;
 
 	/**
-	 * 换行的牌数阈值
+	 * »»ÐеÄÅÆÊýãÐֵ
 	 */
 	public var warpCount:int= 999;
 
 	/**
-	 * 换行后的偏移坐标量
+	 * »»ÐкóµÄƫÒÆ×ø±êÁ¿
 	 */
 	public var warp:Point= null;
 }

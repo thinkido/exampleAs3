@@ -4,42 +4,42 @@ public class KeType2
 {
 
 	/**
-	 * 碰
+	 * Åö
 	 */
 	static public const PENG:int= 0;
 
 	/**
-	 * 杠
+	 * ¸Ü
 	 */
 	static public const KE:int= 1;
 
 	/**
-	 * 明杠
+	 * Ã÷¸Ü
 	 */
 	static public const MING_GANG:int= 2;
 
 	/**
-	 * 暗杠
+	 * °µ¸Ü
 	 */
 	static public const AN_GANG:int= 3;
 
 	/**
-	 * 手牌序牌
+	 * ÊÖÅÆÐòÅÆ
 	 */
 	static public const SEQ:int= 4;
 
 	/**
-	 * 左吃
+	 * ×ó³Ô
 	 */
 	static public const ZUO_CHI:int= 5;
 
 	/**
-	 * 中吃
+	 * ÖгÔ
 	 */
 	static public const MID_CHI:int= 6;
 
 	/**
-	 * 右吃
+	 * ÓҳÔ
 	 */
 	static public const YOU_CHI:int= 7;
 

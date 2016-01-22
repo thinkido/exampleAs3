@@ -101,7 +101,7 @@ public class SCEndGame
 				if(smt.getAtm() == gs.pDown.seat())
 				{
 					_ge.cards = getCards(asi);
-					// 这个人赢了自己的钱
+					// Õâ¸öÈËӮÁË×ԼºµÄǮ
 					addHuTypes(asi, _ge.huTypeVec);
 					break;
 				}

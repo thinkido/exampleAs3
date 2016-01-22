@@ -6,14 +6,28 @@ public class HuVO
 {
 
 	/**
-	 * 胡的牌型
+	 * ºúµÄÅÆÐÍ
 	 */
 	public var types:Array= null;
+	public var len:int;
 
+	public function HuVO() {
+		types = new int[100];
+	}
 	/**
-	 * 胡的总番数
+	 * ºúµÄ×ܷ¬Êý
 	 */
-	public var fan:int= 0;
+	public var all_fan:int= 0;
+	
+	public function add_result(type:int, fan:int):void{
+		if (len >= types.length) {
+			System.out.println("add_result "+len);
+		} else {
+			types[len] = type;
+			len++;
+			this.all_fan += fan;
+		}
+	}
 
 	public function toString():String{
 		var strTypes:String= "";
@@ -23,7 +37,7 @@ public class HuVO
 			var typeDesc:String= " { " + type + " : " + GBHuType.HU_TXT[type] + " }";
 			strTypes += typeDesc;
 		}
-		return "[ 番数: " + fan + " , 类型: " + strTypes + " ]";
+		return "[ ·¬Êý: " + all_fan + " , ÀàÐÍ: " + strTypes + " ]";
 	}
 }
 }

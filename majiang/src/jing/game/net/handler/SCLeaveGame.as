@@ -5,7 +5,7 @@ import game.view.scene.gamescene.GameScene;
 import protocol.sc_leave_game;
 
 /**
- * 和服务器断开连接
+ * ºͷþÎñÆ÷¶ϿªÁ¬½Ó
  * 
  * @author Jing
  */

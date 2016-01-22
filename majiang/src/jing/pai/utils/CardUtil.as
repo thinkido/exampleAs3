@@ -9,7 +9,7 @@ public class CardUtil
 	}
 
 	/**
-	 * 获取卡牌类型
+	 * »ñȡ¿¨ÅÆÀàÐÍ
 	 * 
 	 * @param card
 	 * @return
@@ -20,7 +20,7 @@ public class CardUtil
 	}
 
 	/**
-	 * 是否是同样类型
+	 * ÊǷñÊÇͬÑùÀàÐÍ
 	 * 
 	 * @param card1
 	 * @param card2
@@ -37,7 +37,7 @@ public class CardUtil
 	}
 
 	/**
-	 * 是否是万
+	 * ÊǷñÊÇÍò
 	 * 
 	 * @param card
 	 * @return
@@ -52,7 +52,7 @@ public class CardUtil
 	}
 
 	/**
-	 * 是否是筒
+	 * ÊǷñÊÇͲ
 	 * 
 	 * @param card
 	 * @return
@@ -67,7 +67,7 @@ public class CardUtil
 	}
 
 	/**
-	 * 是否是条
+	 * ÊǷñÊÇÌõ
 	 * 
 	 * @param card
 	 * @return
@@ -82,7 +82,7 @@ public class CardUtil
 	}
 
 	/**
-	 * 是否是字
+	 * ÊǷñÊÇ×Ö
 	 * 
 	 * @param card
 	 * @return
@@ -97,7 +97,7 @@ public class CardUtil
 	}
 
 	/**
-	 * 是否是花
+	 * ÊǷñÊǻ¨
 	 * 
 	 * @param card
 	 * @return
@@ -112,7 +112,7 @@ public class CardUtil
 	}
 
 	/**
-	 * 牌型能否被吃、是否能组成顺子
+	 * ÅÆÐÍÄܷ񱻳ԡ¢ÊǷñÄÜ×é³É˳×Ó
 	 * 
 	 * @param card
 	 * @return

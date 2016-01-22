@@ -12,7 +12,7 @@ import framework.views.Bitmap;
 import framework.views.Sprite;
 
 /**
- * 麻将显示对象
+ * Â齫ÏÔʾ¶ÔÏó
  * 
  * @author Jing
  */
@@ -22,7 +22,7 @@ public class Mahjong extends Sprite
 	private var _card:int= 0;
 
 	/**
-	 * 卡牌
+	 * ¿¨ÅÆ
 	 */
 	public function card():int{
 		return _card;
@@ -31,19 +31,19 @@ public class Mahjong extends Sprite
 	private var _state:int= 0;
 
 	/**
-	 * 麻将的状态
+	 * Â齫µÄ״̬
 	 */
 	public function state():int{
 		return _state;
 	}
 
 	/**
-	 * 牌是否盖着的
+	 * ÅÆÊǷñ¸Ç×ŵÄ
 	 */
 	private var _isBack:Boolean= false;
 
 	/**
-	 * 麻将所属的玩家方位
+	 * Â齫ËùÊôµÄÍæ¼ҷ½λ
 	 */
 	private var _dir:String= null;
 
@@ -52,7 +52,7 @@ public class Mahjong extends Sprite
 	}
 
 	/**
-	 * 麻将所在的位置
+	 * Â齫ËùÔڵÄλÖÃ
 	 */
 	private var _place:String= null;
 
@@ -61,22 +61,22 @@ public class Mahjong extends Sprite
 	}
 
 	/**
-	 * 牌
+	 * ÅÆ
 	 */
 	private var _cards:SpriteSheet= null;
 
 	/**
-	 * 麻将图
+	 * Â齫ͼ
 	 */
 	private var _mj:Bitmap= null;
 
 	/**
-	 * 效果图
+	 * Ч¹ûͼ
 	 */
 	private var _effect:Bitmap= null;
 
 	/**
-	 * 边框的图(例如打出后可以下叫，那么就有特别的边框)
+	 * ±߿òµÄͼ(ÀýÈç´ò³öºó¿ÉÒÔÏ½У¬ÄÇô¾ÍÓÐÌرðµı߿ò)
 	 */
 	private var _board:Bitmap= null;
 
@@ -93,7 +93,7 @@ public class Mahjong extends Sprite
 	}
 
 	/**
-	 * 改变卡牌
+	 * ¸ı俨ÅÆ
 	 * 
 	 * @param card
 	 * @param dir
@@ -143,7 +143,7 @@ public class Mahjong extends Sprite
 		var tName:String= null;
 		if((_place.equals(CardPlace.IN_HAND) || _place.equals(CardPlace.NEW_IN_HAND)) && _dir != GameDir.DOWN)
 		{
-			// 别人的手牌
+			// ±ðÈ˵ÄÊÖÅÆ
 			tName = cardPrefix;
 		}
 		else if(_isBack)
@@ -158,7 +158,7 @@ public class Mahjong extends Sprite
 		var cardT:Texture= this._cards.getTexture(tName);
 		if(null == cardT)
 		{
-			System.out.println("不存在的麻将：" + tName);
+			System.out.println("²»´æÔڵÄÂ齫£º" + tName);
 		}
 		return cardT;
 	}
