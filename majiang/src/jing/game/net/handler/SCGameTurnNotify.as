@@ -21,7 +21,7 @@ public class SCGameTurnNotify
 				var card:int= (Integer(pb.getMo_tiles().elementAt(i))).intValue();
 				if(CardUtil.isHua(card))
 				{
-					// ¶ÔӦÃ򵽻¨ÅƵĴ¦Àí
+					// 对应摸到花牌的处理
 					GameScene.cur.info.addHua(player.dir(), card);
 					GameScene.cur.info.showEffect(player.dir(), EffectType.BU_HUA);
 				}
@@ -36,10 +36,10 @@ public class SCGameTurnNotify
 		
 		// GameScene.cur.pDown.setSelectCard(-1);
 
-		// ÏÔʾ²Ù×÷Õß
+		// 显示操作者
 		GameScene.cur.info.setTurnDir(player.dir());
 
-		// ˢÐµ¹¼Æʱ
+		// 刷新倒计时
 		GameScene.cur.info.setCountdown(pb.getTimeout());
 	}
 

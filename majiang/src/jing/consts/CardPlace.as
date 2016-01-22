@@ -3,27 +3,27 @@ package jing.consts
 public class CardPlace
 {
 	/**
-	 * Ã򵽵ÄÅÆ
+	 * 摸到的牌
 	 */
 	static const public var NEW_IN_HAND:String= "new_in_hand";
 	
 	/**
-	 * ÊÖÉϵÄÅÆ
+	 * 手上的牌
 	 */
 	static const public var IN_HAND:String= "in_hand";
 	
 	/**
-	 * ÊÖÉÏÅ򡢸ܡ¢³ԵÄÅÆ
+	 * 手上碰、杠、吃的牌
 	 */
 	static const public var IN_HAND_TABLE:String= "in_hand_table";
 	
 	/**
-	 * ´ò³öµÄÅÆ
+	 * 打出的牌
 	 */
 	static const public var ON_TABLE:String= "on_table";
 	
 	/**
-	 * ½áËãʱչʾµÄÊÖÅÆ
+	 * 结算时展示的手牌
 	 */
 	static const public var SHOW_HAND:String= "show_hand";
 }

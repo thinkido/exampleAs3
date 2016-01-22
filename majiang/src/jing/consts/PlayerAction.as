@@ -1,59 +1,59 @@
 package jing.consts
 {
 /**
- * Íæ¼Ҷ¯×÷
+ * 玩家动作
  * @author Jing
  *
  */
 public class PlayerAction
 {
 	/**
-	 * ¶¨ȱ
+	 * 定缺
 	 */
 	public const static var LACK:int= 1;
 
 	/**
-	 * ³öÅÆ
+	 * 出牌
 	 */
 	public const static var CHU:int= 2;
 
 	/**
-	 * ÅöÅÆ
+	 * 碰牌
 	 */
 	public const static var PENG:int= 3;
 
 	/**
-	 * Ã÷¸Ü
+	 * 明杠
 	 */
 	public const static var MING_GANG:int= 4;
 
 	/**
-	 * °µ¸Ü
+	 * 暗杠
 	 */
 	public const static var AN_GANG:int= 5;
 
 	/**
-	 * ºúÅÆ
+	 * 胡牌
 	 */
 	public const static var HU:int= 6;
 
 	/**
-	 * ¹ý
+	 * 过
 	 */
 	public const static var GUO:int= 7;
 	
 	/**
-	 * ³ÔÔÚÖÐ
+	 * 吃在中
 	 */
 	public const static var CHI_MIDDLE:int= 8;
 	
 	/**
-	 * ³ÔÔÚ×ó
+	 * 吃在左
 	 */
 	public const static var CHI_LEFT:int= 9;
 	
 	/**
-	 * ³ÔÔÚÓÒ
+	 * 吃在右
 	 */
 	public const static var CHI_RIGHT:int= 10;
 }

@@ -8,7 +8,7 @@ import org.json.me.JSONException;
 import org.json.me.JSONObject;
 
 /**
- * ÅäÖù¤¾ß
+ * 配置工具
  * 
  * @author Jing
  */
@@ -20,7 +20,7 @@ public class Config
 	private var _hallAddressVO:IpAddressVO= null;
 
 	/**
-	 * Íø¹صØַ
+	 * 网关地址
 	 * 
 	 * @return
 	 */
@@ -29,7 +29,7 @@ public class Config
 	}
 
 	/**
-	 * ´óÌüµØַ
+	 * 大厅地址
 	 * 
 	 * @return
 	 */
@@ -53,7 +53,7 @@ public class Config
 		}
 		catch(var e:JSONException)
 		{
-			LogManager.getInstance().log("¼ÓÔØÅäÖÃÎļþ³ö´í", LogManager.LEVEL_ERROR);
+			LogManager.getInstance().log("加载配置文件出错", LogManager.LEVEL_ERROR);
 		}
 
 		Res.actively.release(file);

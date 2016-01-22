@@ -7,7 +7,7 @@ import jing.vo.CardLayoutVO;
 import framework.views.Sprite;
 
 /**
- * ×éºÏÅƣ¬ÀýÈçÍæ¼Ҵò³öµÄÅ򡢳ԡ¢¸ܡ¢°µ¸Ü
+ * 组合牌，例如玩家打出的碰、吃、杠、暗杠
  * 
  * @author Jing
  */
@@ -21,7 +21,7 @@ public class Combin extends Sprite
 	}
 
 	/**
-	 * Èç¹ûÊǳÔ_card±íʾ˳×ӵĵÚһÕÅÅÆ
+	 * 如果是吃_card表示顺子的第一张牌
 	 */
 	private var _card:int= 0;
 
@@ -73,7 +73,7 @@ public class Combin extends Sprite
 			var card:int= _card;
 			if(_type == CombinType.CHI_LEFT || _type == CombinType.CHI_MIDDLE || _type == CombinType.CHI_RIGHT)
 			{
-				// Èç¹ûÊǳԣ¬_card±íʾ˳×ӵĵÚһ¸öÅÆ
+				// 如果是吃，_card表示顺子的第一个牌
 				card = _card + i;
 			}
 			var mj:Mahjong= new Mahjong(card, _dir, _place);

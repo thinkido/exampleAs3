@@ -10,7 +10,7 @@ import jing.pai.vo.JiaoVO;
 import java.util.Vector;
 
 /**
- * ³öÅưïÖú
+ * 出牌帮助
  * 
  * @author Jing
  */
@@ -18,7 +18,7 @@ public class ChuHelp
 {
 	public function check(cards:Array, kes:Array):ChuTip{
 		var tip:ChuTip= new ChuTip();
-		// ·ֱðȥµôһÕÅÅƣ¬Ȼºó¼ÆËãʣÏµÄÅÆÊǷñ×é³ɽÐ
+		// 分别去掉一张牌，然后计算剩下的牌是否组成叫
 		for(var playCardIndex:int= 0; playCardIndex < cards.length; playCardIndex++)
 		{
 			var playCard:int= cards[playCardIndex];
@@ -36,13 +36,13 @@ public class ChuHelp
 				}
 			}
 
-			// ½«Õâ¸öÁÙʱÅÆÐÍÓÃÀ´¼ì²éÊǷñÓнÐ
+			// 将这个临时牌型用来检查是否有叫
 			var jiaoCards:Array= new JiaoHelp().getJiao(tempCards);
 			if(jiaoCards != null && jiaoCards.length > 0)
 			{
 				var chuVO:ChuVO= new ChuVO(playCard, jiaoCards.length);
 				tip.put(playCard, chuVO);
-				// ÓнÐ,Ëã³ö¸÷ÖֽеÄÇé¿öÏ¶ÔӦµĺúµÄÅÆÐÍ
+				// 有叫,算出各种叫的情况下对应的胡的牌型
 				for(var i:int= 0; i < jiaoCards.length; i++)
 				{
 					var jiaoCard:int= jiaoCards[i];
@@ -65,7 +65,7 @@ public class ChuHelp
 	}
 
 	/**
-	 * ½«³öÅƺó½еÄÅƽøÐÐһ´ÎÅÅÐò
+	 * 将出牌后叫的牌进行一次排序
 	 * 
 	 * @param vo
 	 */

@@ -28,17 +28,17 @@ public class Player extends Sprite
 {
 
 	/**
-	 * ÐèҪÖØÐ²¼¾Ö
+	 * 需要重新布局
 	 */
 	private var _needRelayout:Boolean= true;
 
 	/**
-	 * Íæ¼ÒÏà¹صÄÂ齫µıí
+	 * 玩家相关的麻将的表
 	 */
 	var _mjT:Hashtable;
 
 	/**
-	 * ×ùλºÅ
+	 * 座位号
 	 */
 	private var _seat:int= -1;
 
@@ -101,14 +101,14 @@ public class Player extends Sprite
 	private var _inTurn:Boolean= false;
 
 	/**
-	 * ÊǷñÔÚ×Լº»غÏÖÐ
+	 * 是否在自己回合中
 	 */
 	public function inTurn():Boolean{
 		return _inTurn;
 	}
 
 	/**
-	 * ѡÖеÄÊÖÅÆË÷Òý£¬Èç¹ûË÷ÒýµÈÓÚÊÖÅƳ¤¶ȣ¬Ôò±íʾѡÖеÄÃ򵽵ÄÅÆ
+	 * 选中的手牌索引，如果索引等于手牌长度，则表示选中的摸到的牌
 	 */
 	private var _selected:int= -1;
 
@@ -129,7 +129,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÊǷñÍйÜÖÐ
+	 * 是否托管中
 	 */
 	public function isAuto():Boolean{
 		return _isAuto;
@@ -169,7 +169,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÒƳýÅÆ×ÀÉÏ×îºóһÕÅÅÆ
+	 * 移除牌桌上最后一张牌
 	 */
 	public function removeLastOnTable():void{
 		var vec:Vector= Vector(_mjT.get(CardPlace.ON_TABLE));
@@ -177,7 +177,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ¿¨ÅÆÊýÁ¿
+	 * 卡牌数量
 	 * 
 	 * @param place
 	 * @return
@@ -296,14 +296,14 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÐèҪˢÐ²¼¾Ö
+	 * 需要刷新布局
 	 */
 	public function needRefresh():void{
 		_needRelayout = true;
 	}
 
 	/**
-	 * ÓÎϷ½øÈëÐÂһ֡
+	 * 游戏进入新一帧
 	 */
 	protected function enterFrame(time:Number):void{
 		if(_needRelayout)
@@ -456,7 +456,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÉèÖÃÍæ¼ÒÊǷñÔÚ×Լº»غÏ
+	 * 设置玩家是否在自己回合
 	 * 
 	 * @param b
 	 */
@@ -465,7 +465,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÉèÖÃѡÖеÄÅÆ
+	 * 设置选中的牌
 	 * 
 	 * @param place
 	 * @param index
@@ -486,7 +486,7 @@ public class Player extends Sprite
 		if(null != mj)
 		{
 			mj.setState(MahjongState.SELECTED);
-			// ¸ù¾ÝѡÖеÄÅƣ¬ÉèÖÃ×ÀÃæÉÏËùÓÐÏàͬµÄÅÆΪ¸ßÁÁÌáʾ
+			// 根据选中的牌，设置桌面上所有相同的牌为高亮提示
 			GameScene.cur.glowSameCardOnTable(mj.card());
 
 			if(null != _chuTip)
@@ -505,7 +505,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * Ïòָ¶¨·½ÏòÇл»ѡÔñµÄÅÆ
+	 * 向指定方向切换选择的牌
 	 * 
 	 * @param moveDir
 	 */
@@ -583,7 +583,7 @@ public class Player extends Sprite
 
 	public function updateChuTip():void{
 		var ch:ChuHelp= new ChuHelp();
-		// ½«ÊÖÉϵÄÅƺͿÌ×ַÅÈë½øÐмÆËã
+		// 将手上的牌和刻字放入进行计算
 		var ct:ChuTip= ch.check(getInHandCards(), getOnTableKes());
 		if(ct != null)
 		{
@@ -593,8 +593,8 @@ public class Player extends Sprite
 		if(null != ct)
 		{
 			var cards:Array= ct.getPlayCards();
-			GDC.trace("³öÅÆÌáʾ£º" + ct.toString());
-			// ¸øËùÓдò³öºó¿ÉÒÔÏ½еÄÊÖÅƼÓÉϱ߿ò
+			GDC.trace("出牌提示：" + ct.toString());
+			// 给所有打出后可以下叫的手牌加上边框
 			var vecInHand:Vector= Vector(_mjT.get(CardPlace.IN_HAND));
 			for(var i:int= 0; i < vecInHand.size(); i++)
 			{
@@ -612,7 +612,7 @@ public class Player extends Sprite
 				}
 			}
 
-			// Ã򵽵ÄÅÆ
+			// 摸到的牌
 			var mj:Mahjong= getCard(CardPlace.NEW_IN_HAND, 0);
 			if(mj != null)
 			{
@@ -629,7 +629,7 @@ public class Player extends Sprite
 				}
 			}
 
-			// ÅжÏѡÖеÄÅƣ¬Èç¹û´ò³öºó¿ÉÒÔÏ½У¬ÔòÏÔʾ´ò³öºó½еÄÅÆÒԼ°¶ÔӦµĺúÅƷ¬ÐÍ
+			// 判断选中的牌，如果打出后可以下叫，则显示打出后叫的牌以及对应的胡牌番型
 			var chuVO:ChuVO= ct.get(_selected);
 			if(null != chuVO)
 			{
@@ -639,7 +639,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * µõ½ÊÖÅÆÖÐËùÓп¨ÅƵÄֵµÄÊý×é
+	 * 得到手牌中所有卡牌的值的数组
 	 * 
 	 * @return
 	 */
@@ -663,7 +663,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * µõ½×ÀÃæÉÏËùÓеĿ̵ÄÊý×é
+	 * 得到桌面上所有的刻的数组
 	 * 
 	 * @return
 	 */
@@ -717,7 +717,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ½«ָ¶¨״̬µĿ¨ÅƸü»»ΪÐµÄ״̬
+	 * 将指定状态的卡牌更换为新的状态
 	 * 
 	 * @param place
 	 * @param card
@@ -737,7 +737,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÖØÖÿ¨ÅƵÄ״̬ΪNormal
+	 * 重置卡牌的状态为Normal
 	 * 
 	 * @param place
 	 */

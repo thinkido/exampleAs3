@@ -10,12 +10,12 @@ public class JiaoVO
 	}
 
 	/**
-	 * ½еÄÅÆ
+	 * 叫的牌
 	 */
 	public var jiaoCard:int= -1;
 
 	/**
-	 * ºúµÄÅÆÐÍ
+	 * 胡的牌型
 	 */
 	public var hu:HuVO= null;
 	

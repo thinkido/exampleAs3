@@ -3,92 +3,92 @@ package jing.pai.consts
 public class HuType
 {
 	/**
-	 * ºúÅÆÃèÊö
+	 * 胡牌描述
 	 */
 	static public const HU_DESC:Array= {
-			"ÎÞ",
-		   "ƽºú",
-		   "¶ԶԺú",
-		   "Çåһɫ",
-		   "°µÆ߶Ô",
-		   "Çå¶Ô",
-		   "ÁúÆ߶Ô",
-		   "ÇåÆ߶Ô",
-		   "Ììºú",
-		   "µغú",
-		   "ÇåÁúÆ߶Ô",
-		   "´øçÛ",
-		   "Çå´øçÛ",
-		   "½«¶Ô",
+			"无",
+		   "平胡",
+		   "对对胡",
+		   "清一色",
+		   "暗七对",
+		   "清对",
+		   "龙七对",
+		   "清七对",
+		   "天胡",
+		   "地胡",
+		   "清龙七对",
+		   "带幺",
+		   "清带幺",
+		   "将对",
 	};
 	
 	/**
-	 * ûÓкú
+	 * 没有胡
 	 */
 	static public const NONE:int= 0;
 	
 	/**
-	 * ƽºú
+	 * 平胡
 	 */
 	static public const PING_HU:int= 1;
 
 	/**
-	 * ¶ԶԺú
+	 * 对对胡
 	 */
 	static public const DUI_DUI_HU:int= 2;
 
 	/**
-	 * Çåһɫ
+	 * 清一色
 	 */
 	static public const QING_YI_SE:int= 3;
 
 	/**
-	 * °µÆ߶Ô
+	 * 暗七对
 	 */
 	static public const AN_QI_DUI:int= 4;
 
 	/**
-	 * Çå¶Ô
+	 * 清对
 	 */
 	static public const QING_DUI:int= 5;
 
 	/**
-	 * ÁúÆ߶Ô
+	 * 龙七对
 	 */
 	static public const LONG_QI_DUI:int= 6;
 
 	/**
-	 * ÇåÆ߶Ô
+	 * 清七对
 	 */
 	static public const QING_QI_DUI:int= 7;
 
 	/**
-	 * Ììºú
+	 * 天胡
 	 */
 	static public const TIAN_HU:int= 8;
 
 	/**
-	 * µغú
+	 * 地胡
 	 */
 	static public const DI_HU:int= 9;
 
 	/**
-	 * ÇåÁúÆ߶Ô
+	 * 清龙七对
 	 */
 	static public const QING_LONG_QI_DUI:int= 10;
 
 	/**
-	 * ´øçÛ
+	 * 带幺
 	 */
 	static public const DAI_YAO:int= 11;
 
 	/**
-	 * Çå´øçÛ
+	 * 清带幺
 	 */
 	static public const QING_DAI_YAO:int= 12;
 
 	/**
-	 * ½«¶Ô
+	 * 将对
 	 */
 	static public const JIANG_DUI:int= 13;
 }

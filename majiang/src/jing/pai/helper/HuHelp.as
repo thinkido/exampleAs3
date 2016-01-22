@@ -7,7 +7,7 @@ import jing.pai.utils.CardsParser;
 import jing.pai.vo.HuVO;
 
 /**
- * ¸ù¾ÝÅÆÐÍËã³öºúÅÆ BUG: 1.½«¶ÔÓдíÎó£¬Ӧ¸ÃÊǶԶԺúΪ»ù´¡
+ * 根据牌型算出胡牌 BUG: 1.将对有错误，应该是对对胡为基础
  * 
  * @param cards
  */
@@ -15,22 +15,22 @@ public class HuHelp
 {
 
 	/**
-	 * ¸ÜÊýÁ¿(ÊÖÉÏ)
+	 * 杠数量(手上)
 	 */
 	private var _gangCount:int= 0;
 
 	/**
-	 * ÊÖÉϵÄÅÆ
+	 * 手上的牌
 	 */
 	private var _cards:CardVector= null;
 
 	/**
-	 * ½âÎöÆ÷
+	 * 解析器
 	 */
 	private var _parser:CardsParser= null;
 
 	/**
-	 * ¿Ì×Ó
+	 * 刻子
 	 */
 	private var _keList:Array= null;
 
@@ -55,7 +55,7 @@ public class HuHelp
 
 		var hu:HuVO= new HuVO();
 		/*
-		 * if(true == isQiDui()) { // Æ߶ÔÊÇÌØÊâÅÆÐÍ if(true == isQingYiSe()) {
+		 * if(true == isQiDui()) { // 七对是特殊牌型 if(true == isQingYiSe()) {
 		 * if(_gangCount > 0) { hu.type1 = HuType.QING_LONG_QI_DUI; } else {
 		 * hu.type1 = HuType.QING_QI_DUI; } } else if(_gangCount > 0) { hu.type1
 		 * = HuType.LONG_QI_DUI; } else { hu.type1 = HuType.AN_QI_DUI; } } else
@@ -86,7 +86,7 @@ public class HuHelp
 	}
 
 	/**
-	 * ÊǷñºúÅÆ
+	 * 是否胡牌
 	 * 
 	 * @return
 	 */
@@ -99,7 +99,7 @@ public class HuHelp
 	}
 
 	/**
-	 * ÊǷñ¶ԶԺú
+	 * 是否对对胡
 	 * 
 	 * @return
 	 */
@@ -126,7 +126,7 @@ public class HuHelp
 	}
 
 	/**
-	 * ÊǷñÊÇÇåһɫ
+	 * 是否是清一色
 	 * 
 	 * @return
 	 */
@@ -155,7 +155,7 @@ public class HuHelp
 	}
 
 	/**
-	 * ÊǷñÊÇÆ߶Ô
+	 * 是否是七对
 	 * 
 	 * @return
 	 */
@@ -179,7 +179,7 @@ public class HuHelp
 	}
 
 	/**
-	 * ÊǷñÊǽ«¶ԣ¬ֻÓÐ2¡¢5¡¢8
+	 * 是否是将对，只有2、5、8
 	 * 
 	 * @return
 	 */
@@ -212,7 +212,7 @@ public class HuHelp
 	}
 
 	/**
-	 * ÊǷñ´øçÛ
+	 * 是否带幺
 	 * 
 	 * @return
 	 */

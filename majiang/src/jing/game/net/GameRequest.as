@@ -16,7 +16,7 @@ import protocol.cs_game_manual;
 import protocol.cs_ready_game;
 
 /**
- * ÓÎϷ³¡¾°·¢³öµÄÇëÇó
+ * 游戏场景发出的请求
  * 
  * @author Jing
  */
@@ -51,7 +51,7 @@ public class GameRequest
 	}
 
 	/**
-	 * ¶¨ȱ
+	 * 定缺
 	 * 
 	 * @param id
 	 */
@@ -70,10 +70,10 @@ public class GameRequest
 	}
 
 	/**
-	 * Íæ¼Ҷ¯×÷
+	 * 玩家动作
 	 * 
-	 * @param action ²Ù×÷ID
-	 * @param cardTypeOrId ÅƵÄID»òÀàÐÍ
+	 * @param action 操作ID
+	 * @param cardTypeOrId 牌的ID或类型
 	 */
 	public function gameAction(action:int, cardTypeOrId:int):void{
 		var builder:cs_game_action.Builder= cs_game_action.newBuilder();
@@ -97,7 +97,7 @@ public class GameRequest
 	}
 
 	/**
-	 * ȡÏûÍйÜ
+	 * 取消托管
 	 */
 	public function gameManual():void{
 		try
@@ -111,7 +111,7 @@ public class GameRequest
 	}
 
 	private function requestError(content:String, e:IOException):void{
-		LogManager.getInstance().log("ЭÒ鷢Ëͳö´� + content, LogManager.LEVEL_ERROR);
+		LogManager.getInstance().log("协议发送出错：" + content, LogManager.LEVEL_ERROR);
 		e.printStackTrace();
 	}
 

@@ -1,7 +1,7 @@
 package jing.consts
 {
 /**
- * ÅƵÄֵ
+ * 牌的值
  * @author Jing
  *
  */

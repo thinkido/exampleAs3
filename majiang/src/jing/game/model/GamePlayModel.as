@@ -13,7 +13,7 @@ public class GamePlayModel
 {
 
 	/**
-	 * µ±ǰ»îԾµÄModel
+	 * 当前活跃的Model
 	 */
 	static public var current:GamePlayModel= null;
 
@@ -54,7 +54,7 @@ public class GamePlayModel
 	}
 
 	public function init():void{
-		// Á¬½ӷþÎñÆ÷
+		// 连接服务器
 		Global.socketGame.connect(_enterGameVO.ipAddressVO);
 		_sl = new GamePlaySL();
 		_sl.init();
@@ -66,7 +66,7 @@ public class GamePlayModel
 		_sl.dispose();
 		if(Global.socketGame != null && Global.socketGame.isConnected())
 		{
-			System.out.println("Ö󶯶ϿªºÍÓÎϷ·þµÄÁ¬½Ó");
+			System.out.println("主动断开和游戏服的连接");
 			Global.socketGame.close();
 		}
 	}
@@ -87,7 +87,7 @@ public class GamePlayModel
 		{
 
 			public function onTick(tickItem:TickItem):void{
-				// Ö÷¶¯Í˳򷿼ä
+				// 主动退出房间
 				kickedFromRoom();
 			}
 		}, null);
@@ -104,7 +104,7 @@ public class GamePlayModel
 	public function kickedFromRoom():void{
 		Global.socketGame.close();
 		_isKicked = true;
-		CommonUtil.showPopupWindow(false, "ÄúÒÑÀ뿪·¿¼䣡", null);
+		CommonUtil.showPopupWindow(false, "您已离开房间！", null);
 	}
 }
 }

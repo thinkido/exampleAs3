@@ -1,24 +1,24 @@
 package jing.pai.model
 {
 /**
- * ¿Ì
+ * 刻
  * 
  * @author Jing
  */
 public class CardKe
 {
 	/**
-	 * ¿̵ÄÀàÐÍ
+	 * 刻的类型
 	 */
 	public var type:int= 0;
 	
 	/**
-	 * ¿̵ÄÀàÐÍ2
+	 * 刻的类型2
 	 */
 	public var type2:int= 0;
 
 	/**
-	 * Èç¹ûÊÇÁ¬×֣¬ÔòcardΪÁ¬×ֵÚһ¸򣬺óÃæΪcard + 1, card + 2
+	 * 如果是连字，则card为连字第一个，后面为card + 1, card + 2
 	 */
 	public var card:int= 0;
 

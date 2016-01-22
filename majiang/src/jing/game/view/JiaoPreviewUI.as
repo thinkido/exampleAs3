@@ -9,7 +9,7 @@ import framework.views.Bitmap;
 import framework.views.Sprite;
 
 /**
- * ½ÐÅÆԤÀÀ
+ * 叫牌预览
  * 
  * @author Jing
  */

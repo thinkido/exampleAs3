@@ -1,7 +1,7 @@
 package jing.consts
 {
 /**
- * ÅƲ¼¾ַ½Ïò
+ * 牌布局方向
  * @author Jing
  *
  */
@@ -9,22 +9,22 @@ public class GameDir
 {
 
 	/**
-	 * ÏòÉÏÀ©ɢ²¼¾Ö
+	 * 向上扩散布局
 	 */
 	static const public var UP:String= "up";
 
 	/**
-	 * Ïò×óÀ©ɢ²¼¾Ö
+	 * 向左扩散布局
 	 */
 	static const public var LEFT:String= "left";
 
 	/**
-	 * ÏòÏÂÀ©ɢ²¼¾Ö
+	 * 向下扩散布局
 	 */
 	static const public var DOWN:String= "down";
 
 	/**
-	 * ÏòÓÒÀ©ɢ²¼¾Ö
+	 * 向右扩散布局
 	 */
 	static const public var RIGHT:String= "right";
 }

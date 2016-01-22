@@ -73,7 +73,7 @@ public class SCGameActionNotify
 		var mj:Mahjong= player.getCard(CardPlace.ON_TABLE, count - 1);
 		GameScene.cur.setLastChu(mj);
 
-		// GDC.trace(player.numChildren() + "×ӶÔÏó");
+		// GDC.trace(player.numChildren() + "子对象");
 	}
 
 	private function peng(pb:sc_game_action_notify):void{

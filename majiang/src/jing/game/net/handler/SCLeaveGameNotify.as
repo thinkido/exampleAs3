@@ -12,7 +12,7 @@ public class SCLeaveGameNotify
 		var player:Player= GameScene.cur.getPlayerBySeat(pb.getSeat_index());
 		GameScene.cur.info.setHu(player.dir(), false);
 		GameScene.cur.info.setReady(player.dir(), false);
-		GameScene.cur.info.setName(player.dir(), "µȴý¼ÓÈë");
+		GameScene.cur.info.setName(player.dir(), "等待加入");
 	}
 
 }

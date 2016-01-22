@@ -27,7 +27,7 @@ public class SCShowActions
 			return;
 		}
 		
-		// ÏÔʾ²Ù×÷Ãæ°å
+		// 显示操作面板
 		PlayerActionWindow.show(pb.getShow_actions());
 	}
 

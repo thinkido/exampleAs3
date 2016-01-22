@@ -6,22 +6,22 @@ public class GameEndVO
 {
 
 	/**
-	 * ½á¹û 0£ºÁ÷¾Ö 1£ºӮ 2£ºÊä
+	 * 结果 0：流局 1：赢 2：输
 	 */
 	public var state:int= 0;
 
 	/**
-	 * ·ÖÊýµÄ×ܼƸıä
+	 * 分数的总计改变
 	 */
 	public var totalScoreChange:int= 0;
 
 	/**
-	 * µ׷Ö
+	 * 底分
 	 */
 	public var basescore:int= 0;
 
 	/**
-	 * Íæ¼ÒÊÖÉϵÄÅÆ
+	 * 玩家手上的牌
 	 */
 	public var cards:Array= null;
 

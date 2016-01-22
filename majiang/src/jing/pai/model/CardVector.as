@@ -3,7 +3,7 @@ package jing.pai.model
 import java.util.Vector;
 
 /**
- * ÅƶÓÁÐ
+ * 牌队列
  * 
  * @author Jing
  */
@@ -27,7 +27,7 @@ public class CardVector
 	}
 
 	/**
-	 * ÔÚβ²¿¼ÓÈëһÕÅÅÆ
+	 * 在尾部加入一张牌
 	 * 
 	 * @param card
 	 */
@@ -36,7 +36,7 @@ public class CardVector
 	}
 
 	/**
-	 * ÔÚβ²¿¼ÓÈëһ¶ÑÅÆ
+	 * 在尾部加入一堆牌
 	 * 
 	 * @param cards
 	 */
@@ -48,7 +48,7 @@ public class CardVector
 	}
 
 	/**
-	 * ÔÚָ¶¨λÖüÓÈëһÕÅÅÆ
+	 * 在指定位置加入一张牌
 	 * 
 	 * @param card
 	 * @param index
@@ -58,7 +58,7 @@ public class CardVector
 	}
 
 	/**
-	 * ÒƳýһÕÅָ¶¨λÖõÄÅÆ
+	 * 移除一张指定位置的牌
 	 * 
 	 * @param index
 	 */
@@ -67,7 +67,7 @@ public class CardVector
 	}
 
 	/**
-	 * µõ½ָ¶¨λÖõÄÅÆ
+	 * 得到指定位置的牌
 	 * 
 	 * @param index
 	 * @return
@@ -77,7 +77,7 @@ public class CardVector
 	}
 
 	/**
-	 * ÒƳýһÕſ¨ÅÆ
+	 * 移除一张卡牌
 	 * 
 	 * @param card
 	 */
@@ -95,7 +95,7 @@ public class CardVector
 	}
 
 	/**
-	 * ÒƳý¿¨ÅÆ×é
+	 * 移除卡牌组
 	 * 
 	 * @param cards
 	 */
@@ -107,7 +107,7 @@ public class CardVector
 	}
 
 	/**
-	 * µõ½ËùÓп¨ÅƵÄÊý×é
+	 * 得到所有卡牌的数组
 	 * 
 	 * @return
 	 */
@@ -122,7 +122,7 @@ public class CardVector
 	}
 
 	/**
-	 * ÊǷñÓÐָ¶¨µÄÅÆ
+	 * 是否有指定的牌
 	 * 
 	 * @param card
 	 * @return
@@ -132,7 +132,7 @@ public class CardVector
 	}
 
 	/**
-	 * ָ¶¨¿¨ÅƵĳÖÓÐÊý
+	 * 指定卡牌的持有数
 	 * 
 	 * @param card
 	 * @return
@@ -150,7 +150,7 @@ public class CardVector
 	}
 
 	/**
-	 * ´Óָ¶¨Ë÷Ò񣨰𺬣©¿ªʼѰÕҿ¨ÅÆ
+	 * 从指定索引（包含）开始寻找卡牌
 	 * 
 	 * @param card
 	 * @param startIndex
@@ -169,7 +169,7 @@ public class CardVector
 	}
 
 	/**
-	 * ¿¨ÅƵÄÊýÁ¿
+	 * 卡牌的数量
 	 * 
 	 * @return
 	 */
@@ -178,7 +178,7 @@ public class CardVector
 	}
 
 	/**
-	 * ¶ÔÅƽøÐÐһ´ÎÅÅÐò,´Ó×óÖÁÓÒÒÀ´ÎÊÇ1µ½9Íò£¬1µ½9Ͳ£¬1µ½9Ìõ
+	 * 对牌进行一次排序,从左至右依次是1到9万，1到9筒，1到9条
 	 */
 	public function sort():void{
 		var size:int= count();
@@ -202,7 +202,7 @@ public class CardVector
 	}
 
 	/**
-	 * ¸´ÖÆ
+	 * 复制
 	 * 
 	 * @return
 	 */

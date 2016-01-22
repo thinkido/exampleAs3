@@ -6,12 +6,12 @@ public class HuVO
 {
 
 	/**
-	 * ºúµÄÅÆÐÍ
+	 * 胡的牌型
 	 */
 	public var types:Array= null;
 
 	/**
-	 * ºúµÄ×ܷ¬Êý
+	 * 胡的总番数
 	 */
 	public var fan:int= 0;
 
@@ -23,7 +23,7 @@ public class HuVO
 			var typeDesc:String= " { " + type + " : " + GBHuType.HU_TXT[type] + " }";
 			strTypes += typeDesc;
 		}
-		return "[ ·¬Êý: " + fan + " , ÀàÐÍ: " + strTypes + " ]";
+		return "[ 番数: " + fan + " , 类型: " + strTypes + " ]";
 	}
 }
 }
