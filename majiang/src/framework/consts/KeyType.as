@@ -36,20 +36,7 @@ package framework.consts
 		
 		public static const NUM_9:int = 57;
 		
-		public static const FIRE:int = Canvas.FIRE;
-		
-		public static const GAME_A:int = Canvas.GAME_A;
-		
-		public static const GAME_B:int = Canvas.GAME_B;
-		
-		public static const GAME_C:int = Canvas.GAME_C;
-		
-		public static const GAME_D:int = Canvas.GAME_D;
-		
-		public static const KEY_POUND:int = Canvas.KEY_POUND;
-		
-		public static const KEY_STAR:int = Canvas.KEY_STAR;
-		
+				
 		public function KeyType()
 		{
 		}

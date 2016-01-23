@@ -82,12 +82,8 @@ package framework.geom
 		
 		public function toString():String{
 			var format:String= "[x=%s,y=%s,w=%s,h=%s]";
-			var repls:Array= {String.valueOf(_x)
-				,String.valueOf(_y)
-					,String.valueOf(_w)
-					,String.valueOf(_h)};		
-			return StringUtil.format(format, repls);
-			
+			var repls:Array= {_x.toString(),_y.toString(),_w.toString(),_h.toString()};		
+			return StringUtil.format(format, repls);			
 		}
 		
 		/**

@@ -1,7 +1,7 @@
 package framework.nio
 {
 /**
- * ×ֽÚÊý×黺³åÇø
+ * 字节数组缓冲区
  * 
  * @author Jing
  */
@@ -9,7 +9,7 @@ public class ByteArray
 {
 
 	/**
-	 * ʹÓÃÏÖÓеÄ×ֽÚÊý×é×÷Ϊ»º³åÇø
+	 * 使用现有的字节数组作为缓冲区
 	 * 
 	 * @param bytes
 	 * @return
@@ -19,16 +19,16 @@ public class ByteArray
 	}
 
 	/**
-	 * ´´½¨ָ¶¨´óСµĻº³åÇø
+	 * 创建指定大小的缓冲区
 	 * 
 	 * @param capacity
 	 * @return
 	 */
 	public static function allocateDirect(capacity:int):ByteArray{
-		return new ByteArray(new byte[capacity]);
+		return new ByteArray([capacity]);
 	}
 
-	// ָÕëλÖÃ
+	// 指针位置
 	private var _position:int= 0;
 	
 	public function position(pos:int):void{
@@ -41,7 +41,7 @@ public class ByteArray
 
 	private var _ba:Array= null;
 	
-	public byte[] array()
+	public function array():Array
 	{
 		return _ba;
 	}
@@ -54,14 +54,14 @@ public class ByteArray
 	public function getShort():Number{
 		var a:int= _ba[_position] & 0xFF;
 		var b:int= _ba[_position + 1] << 8& 0xFF00;
-		var v:Number= short((a | b));
+		var v:Number= int((a | b));
 		_position += 2;
 		return v;
 	}
 	
 	public function putShort(value:Number):void{
-		_ba[_position] = byte((value & 0xFF));
-		_ba[_position + 1] = byte((value >> 8 & 0xFF));
+		_ba[_position] = int(value & 0xFF);
+		_ba[_position + 1] = int(value >> 8 & 0xFF);
 		_position += 2;
 	}
 
@@ -76,10 +76,10 @@ public class ByteArray
 	}
 	
 	public function putInt(value:int):void{
-		_ba[_position] = byte((value & 0xFF));
-		_ba[_position + 1] = byte((value >> 8 & 0xFF));
-		_ba[_position + 2] = byte((value >> 16 & 0xFF));
-		_ba[_position + 3] = byte((value >> 24 & 0xFF));
+		_ba[_position] = int(value & 0xFF);
+		_ba[_position + 1] = int(value >> 8 & 0xFF);
+		_ba[_position + 2] = int(value >> 16 & 0xFF);
+		_ba[_position + 3] = int(value >> 24 & 0xFF);
 		_position += 4;
 	}
 
@@ -90,7 +90,8 @@ public class ByteArray
 			copySize = _ba.length - _position;
 		}
 
-		System.arraycopy(_ba, _position, dst, 0, copySize);
+//		System.arraycopy(_ba, _position, dst, 0, copySize);
+		dst = _ba.slice(
 		_position += copySize;
 	}
 	

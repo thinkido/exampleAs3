@@ -21,19 +21,9 @@ package framework.events
 		 * 广播一个事件
 		 * 
 		 * @param type 事件的类型
-		 */
-		public function dispatchEvent(type:int):void
-		{
-			dispatchEvent_1(type, null);
-		}
-		
-		/**
-		 * 广播一个事件
-		 * 
-		 * @param type 事件的类型
 		 * @param data 事件携带的参数
 		 */
-		public function dispatchEvent_1( type:int, data:Object):void
+		public function dispatchEvent( type:int, data:Object = null ):void
 		{
 			var listeners:Array = _eventTbl[type] as Array;
 			if(null == listeners)
@@ -61,7 +51,7 @@ package framework.events
 		 */
 		public function addEventListener( type:int, listener:IEventListener):void
 		{
-			var listeners:Array = _eventTbl[type] as Array;
+			var listeners:* = _eventTbl[type] ;
 			if(null == listeners)
 			{
 				listeners = [];
@@ -80,7 +70,7 @@ package framework.events
 		 */
 		public function removeEventListener( type:int, listener:IEventListener):void
 		{
-			var listeners:Array = _eventTbl[type] as Array;
+			var listeners:* = _eventTbl[type] ;
 			if(null != listeners)
 			{
 				listeners.removeElement(listener);			
