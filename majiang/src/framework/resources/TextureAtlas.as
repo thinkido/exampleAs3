@@ -1,12 +1,9 @@
 package framework.resources
 {
-import java.util.Enumeration;
-import java.util.Object;
+
 
 import javax.microedition.lcdui.Image;
 
-import org.json.me.JSONException;
-import org.json.me.JSONObject;
 
 /**
  * 纹理集
@@ -71,7 +68,7 @@ public class TextureAtlas
 			var td:TextureData= TextureData(enumobj.nextElement());
 			if(null != td && td.name.startsWith(prefix))
 			{
-				frames.put(td.name, td);
+				frames[td.name] = td;
 			}
 		}
 		return new TextureAtlas(_img, frames);
@@ -116,7 +113,7 @@ public class TextureAtlas
 					data.sourceH = data.h + data.offY;
 				}
 
-				frames.put(key, data);
+				frames[key] = data;
 			}
 		}
 		catch(e:*)

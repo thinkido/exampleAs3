@@ -33,7 +33,7 @@ package game.control
 	
 		public function add( info:place_info):void
 		{
-//			_data.put(info.getId(), new PlaceData(v));
+//			_data[info.getId()] = new PlaceData(v);
 			_data[info.getId()] = new PlaceData(info);
 		}
 	

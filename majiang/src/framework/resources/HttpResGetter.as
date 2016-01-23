@@ -82,7 +82,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 					item.subkeys = subkeys;
 				}
 
-				_resTable.put(item.name(), item);
+				_resTable[item.name()] = item;
 			}
 		}
 		catch(var e:*)

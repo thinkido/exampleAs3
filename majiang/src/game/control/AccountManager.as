@@ -187,7 +187,7 @@ package game.control
 		
 		public void reqEnterHall()
 		{
-			Global.socketHall.send(new JSONArray().put("enter_hall").put(_id).put(_type).put(0).toString());
+			Global.socketHall.send(JSON.stringify(["enter_hall",_id,_type,0]) );
 		}
 		
 		public function onNetworkEvent(name:String, content:ByteString):Boolean

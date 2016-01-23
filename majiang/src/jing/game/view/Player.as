@@ -151,10 +151,10 @@ public class Player extends Sprite
 
 	private function init():void{
 		_mjT = new Object(4);
-		_mjT.put(CardPlace.IN_HAND, new Vector());
-		_mjT.put(CardPlace.IN_HAND_TABLE, new Vector());
-		_mjT.put(CardPlace.NEW_IN_HAND, new Vector());
-		_mjT.put(CardPlace.ON_TABLE, new Vector());
+		_mjT[CardPlace.IN_HAND] = new Vector();
+		_mjT[CardPlace.IN_HAND_TABLE] = new Vector();
+		_mjT[CardPlace.NEW_IN_HAND] = new Vector();
+		_mjT[CardPlace.ON_TABLE] = new Vector();
 	}
 
 	public function reset():void{

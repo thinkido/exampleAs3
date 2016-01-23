@@ -277,7 +277,7 @@ package game.view.scene
 				Global.socketHall.reconnect();
 				var userId:String = AccountManager.getInstance().getId();
 				var userType:String = AccountManager.getInstance().getType();
-				Global.socketHall.send(new JSONArray().put("enter_hall").put(userId).put(userType).put(1).toString());
+				Global.socketHall.send(JSON.stringify(["enter_hall",userId,userType,1]));
 			}
 		}
 		

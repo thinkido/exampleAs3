@@ -35,7 +35,7 @@ public class GameRequest
 	}
 
 	public function enterGame():void{
-		var json:String= new JSONArray().put("enter_game").put(AccountManager.getInstance().getId()).put(AccountManager.getInstance().getType()).put(0).put("none").put(false).put(1).put("nil").put("nil").toString();
+		var json:String= JSON.stringify(["enter_game",AccountManager.getInstance().getId(),AccountManager.getInstance().getType(),0,"none",false,1,"nil","nil"]);
 		Global.socketGame.send(json);
 	}
 
@@ -93,7 +93,7 @@ public class GameRequest
 	public function enterHall():void{
 		var id:String= AccountManager.getInstance().id();
 		var type:String= AccountManager.getInstance().type();
-		Global.socketHall.send(new JSONArray().put("enter_hall").put(id).put(type).put(0).toString());
+		Global.socketHall.send(JSON.stringify(["enter_hall",id,type,0]));
 	}
 
 	/**

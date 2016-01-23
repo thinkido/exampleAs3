@@ -19,7 +19,7 @@ package framework.util
 		 */
 		public function pressed(keyCode:int):void
 		{
-			_map.put(keyCode, true);
+			_map[keyCode] = true;
 			this.dispatchEvent(EventType.EVENT_KEY_PRESSED,  keyCode);
 		}
 		
@@ -30,7 +30,7 @@ package framework.util
 		 */
 		public function released(keyCode:int):void
 		{
-			_map.put(keyCode, false);
+			_map[keyCode] = false;
 			this.dispatchEvent(EventType.EVENT_KEY_RELEASEED, keyCode);
 		}
 		

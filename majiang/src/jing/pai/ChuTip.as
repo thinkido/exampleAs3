@@ -22,7 +22,7 @@ public class ChuTip
 
 	public function put(card:int, vo:ChuVO):void{
 		var cardStr:String= String.valueOf(card);
-		_t.put(cardStr, vo);
+		_t[cardStr] = vo;
 	}
 
 	public function get(card:int):ChuVO{

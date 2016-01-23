@@ -64,7 +64,7 @@ package game.view.scene.gamescene.windows
 					{
 						_btns.addElement(btn);
 					}
-					_btn2Act.put(btn, act);
+					_btn2Act[btn] = act;
 				}
 				else if(act.getId() == PlayerAction.PENG)
 				{
@@ -77,7 +77,7 @@ package game.view.scene.gamescene.windows
 					{
 						_btns.addElement(btn);
 					}
-					_btn2Act.put(btn, act);
+					_btn2Act[btn] = act;
 				}
 				else if(act.getId() == PlayerAction.HU)
 				{
@@ -90,20 +90,20 @@ package game.view.scene.gamescene.windows
 					{
 						_btns.addElement(btn);
 					}
-					_btn2Act.put(btn, act);
+					_btn2Act[btn] = act;
 				}
 				else if(act.getId() == PlayerAction.GUO)
 				{
 					btn = createBtnGuo();
 					_btns.insertElementAt(btn, 0);
-					_btn2Act.put(btn, act);
+					_btn2Act[btn] = act;
 				}
 				else if(act.getId() == PlayerAction.CHI_LEFT || act.getId() == PlayerAction.CHI_MIDDLE || act.getId() == PlayerAction.CHI_RIGHT)
 				{
 					var card:int = int(act.getTile_seq().elementAt(0));
 					btn = createBtnChi(act.getId(), card);
 					_btns.addElement(btn);
-					_btn2Act.put(btn, act);
+					_btn2Act[btn] = act;
 				}
 				
 //				trace(act.toString());

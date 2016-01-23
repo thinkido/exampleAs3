@@ -43,7 +43,7 @@ public class ChuHelp
 			{
 				
 				var chuVO:ChuVO= new ChuVO(playCard, jiaoCards.length);
-				tip.put(playCard, chuVO);
+				tip[playCard] = chuVO;
 				// ÓнÐ,Ëã³ö¸÷ÖֽеÄÇé¿öÏ¶ÔӦµĺúµÄÅÆÐÍ
 				for(var i:int= 0; i < jiaoCards.length; i++)
 				{
@@ -62,7 +62,7 @@ public class ChuHelp
 			}
 			else
 			{
-				// tip.put(playCard, new ChuVO());
+				// tip[playCard] = new ChuVO();
 			}
 		}
 

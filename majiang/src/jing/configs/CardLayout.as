@@ -47,10 +47,10 @@ public class CardLayout
 
 		try
 		{
-			_t.put(GameDir.UP, createDirLayout(obj[GameDir.UP]));
-			_t.put(GameDir.LEFT, createDirLayout(obj[GameDir.LEFT]));
-			_t.put(GameDir.RIGHT, createDirLayout(obj[GameDir.RIGHT]));
-			_t.put(GameDir.DOWN, createDirLayout(obj[GameDir.DOWN]));
+			_t[GameDir.UP] = createDirLayout(obj[GameDir.UP]);
+			_t[GameDir.LEFT] = createDirLayout(obj[GameDir.LEFT]);
+			_t[GameDir.RIGHT] = createDirLayout(obj[GameDir.RIGHT]);
+			_t[GameDir.DOWN] = createDirLayout(obj[GameDir.DOWN]);
 		}
 		catch(e:*)
 		{
@@ -63,11 +63,11 @@ public class CardLayout
 	private function createDirLayout(jsonObj:Object):Objectthrows JSONException
 	{
 		var t:Object= new Object(4);
-		t.put(CardPlace.NEW_IN_HAND, getCardLayoutVO(jsonObj[CardPlace.NEW_IN_HAND]));
-		t.put(CardPlace.IN_HAND, getCardLayoutVO(jsonObj[CardPlace.IN_HAND]));
-		t.put(CardPlace.IN_HAND_TABLE, getCardLayoutVO(jsonObj[CardPlace.IN_HAND_TABLE]));
-		t.put(CardPlace.ON_TABLE, getCardLayoutVO(jsonObj[CardPlace.ON_TABLE]));
-		t.put(CardPlace.SHOW_HAND, getCardLayoutVO(jsonObj[CardPlace.SHOW_HAND]));
+		t[CardPlace.NEW_IN_HAND] = getCardLayoutVO(jsonObj[CardPlace.NEW_IN_HAND]);
+		t[CardPlace.IN_HAND] = getCardLayoutVO(jsonObj[CardPlace.IN_HAND]);
+		t[CardPlace.IN_HAND_TABLE] = getCardLayoutVO(jsonObj[CardPlace.IN_HAND_TABLE]);
+		t[CardPlace.ON_TABLE] = getCardLayoutVO(jsonObj[CardPlace.ON_TABLE]);
+		t[CardPlace.SHOW_HAND] = getCardLayoutVO(jsonObj[CardPlace.SHOW_HAND]);
 		return t;
 	}
 

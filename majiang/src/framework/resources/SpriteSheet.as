@@ -1,11 +1,8 @@
 package framework.resources
 {
-import java.util.Object;
-import java.util.Vector;
 
 import javax.microedition.lcdui.Image;
 
-import org.json.me.JSONObject;
 
 /**
  * @author Jing
@@ -23,9 +20,9 @@ public class SpriteSheet
 		return _ta.img();
 	}
 
-	protected var _datas:Array= null;
+	public var _datas:Array= null;
 
-	public TextureData[] datas()
+	public function datas():Array
 	{
 		return _datas;
 	}
@@ -40,18 +37,18 @@ public class SpriteSheet
 		return _ta.getFrame(name);
 	}
 
-	protected function SpriteSheet(ta:TextureAtlas, frameNames:Array)
+	public function SpriteSheet(ta:TextureAtlas, frameNames:Array)
 	{
 		init(ta, frameNames);
 	}
 
-	protected function SpriteSheet(jsonObj:Object, frameNames:Array, sheet:Image)
+	public function SpriteSheet(jsonObj:Object, frameNames:Array, sheet:Image)
 	{
 		var ta:TextureAtlas= new TextureAtlas(sheet, jsonObj);
 		init(ta, frameNames);
 	}
 
-	protected function init(ta:TextureAtlas, frameNames:Array):void{
+	public function init(ta:TextureAtlas, frameNames:Array):void{
 		_ta = ta;
 		_datas = new TextureData[frameNames.length];
 		for(var i:int= 0; i < frameNames.length; i++)
@@ -93,7 +90,7 @@ public class SpriteSheet
 		{
 			var td:TextureData= TextureData(list.elementAt(i));
 			frameNames[i] = td.name;
-			frames.put(td.name, td);
+			frames[td.name] = td;
 		}
 
 		var ta:TextureAtlas= new TextureAtlas(_ta.img(), frames);

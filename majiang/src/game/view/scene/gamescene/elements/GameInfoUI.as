@@ -70,9 +70,9 @@ package game.view.scene.gamescene.elements
 			// lbRemain = (UIImageView)getChildByName("lb_remain");
 			nowAction = (UIImageView)getChildByName("now_action");
 			// lbBasescore = (UIImageView)getChildByName("lb_basescore");
-			txtCd = (UITextBMFont)getChildByName("txt_cd");
-			txtBasescore = (UITextBMFont)getChildByName("txt_basescore");
-			txtRemain = (UITextBMFont)getChildByName("txt_remain");
+			txtCd = getChildByName("txt_cd") as UITextBMFont;
+			txtBasescore = getChildByName("txt_basescore") as UITextBMFont;
+			txtRemain = getChildByName("txt_remain") as UITextBMFont;
 			initHuaStartPoints();
 			reset();
 	

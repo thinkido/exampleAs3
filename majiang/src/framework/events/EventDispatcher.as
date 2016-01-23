@@ -55,7 +55,7 @@ package framework.events
 			if(null == listeners)
 			{
 				listeners = [];
-//				_eventTbl.put(new Byte(type), listeners);
+//				_eventTbl[new Byte(type)] = listeners;
 				_eventTbl[type] = listeners;
 			}
 			
