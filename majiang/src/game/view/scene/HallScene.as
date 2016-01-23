@@ -82,7 +82,7 @@ package game.view.scene
 			}
 			catch( ex:Error)
 			{
-				LogManager.getInstance().log("发送协议失败", LogManager.LEVEL_WARNING);
+				trace("发送协议失败", "LogManager.LEVEL_WARNING");
 			}
 		}
 		
@@ -218,7 +218,7 @@ package game.view.scene
 				else if(name == "sc_hall_debug")
 				{
 					var msg:sc_hall_debug = sc_hall_debug.parseFrom(content.toByteArray());
-					LogManager.getInstance().log("debug:" + msg.getInfo());
+					trace("debug:" + msg.getInfo());
 					return false;
 				}
 				else if(name == "sc_enter_place")
@@ -246,14 +246,14 @@ package game.view.scene
 					}
 					catch( e:Error)
 					{
-						LogManager.getInstance().log("更新场地信息失败", LogManager.LEVEL_ERROR);
+						trace("更新场地信息失败", "LogManager.LEVEL_ERROR");
 					}
 					return false;
 				}
 				else if(name == "sc_enter_place_failed")
 				{
 					var msg:sc_enter_place_failed = sc_enter_place_failed.parseFrom(content.toByteArray());
-					LogManager.getInstance().log("进入游戏失败，错误代码:" + msg.getReason(), LogManager.LEVEL_WARNING);
+					trace("进入游戏失败，错误代码:" + msg.getReason(), "LogManager.LEVEL_WARNING");
 					return false;
 				}
 				return true;
@@ -270,7 +270,7 @@ package game.view.scene
 		{
 			if(Global.userDataVO.gold < 1000)
 			{
-				LogManager.getInstance().log("金币不足1000，不能快速开始", LogManager.LEVEL_WARNING);
+				trace("金币不足1000，不能快速开始", "LogManager.LEVEL_WARNING");
 			}
 			else
 			{
@@ -289,7 +289,7 @@ package game.view.scene
 			
 			if(place == null)
 			{
-				LogManager.getInstance().log("对应场次尚未开放", LogManager.LEVEL_WARNING);
+				trace("对应场次尚未开放", "LogManager.LEVEL_WARNING");
 				return;
 			}
 			// if (place.canEnter() == false) {
@@ -303,7 +303,7 @@ package game.view.scene
 			var curGold:Number = Global.userDataVO.gold;
 			if(reqGold > curGold)
 			{
-				LogManager.getInstance().log("入场需求金币不足", LogManager.LEVEL_WARNING);
+				trace("入场需求金币不足", "LogManager.LEVEL_WARNING");
 				return;
 			}
 			try

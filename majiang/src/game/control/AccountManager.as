@@ -74,7 +74,7 @@ package game.control
 				
 				protected function doLost(socket:YiuNetworkSocket):void
 				{
-					LogManager.getInstance().log("�����������ж�", LogManager.LEVEL_ERROR);
+					trace("�����������ж�", "LogManager.LEVEL_ERROR");
 					socket.close();
 					return;
 				}
@@ -82,7 +82,7 @@ package game.control
 				// status = [connect-failed,send-failed,receive-failed,connected]
 				public function onNetworkStatusNotify(socket:YiuNetworkSocket, status:String):void
 				{
-					LogManager.getInstance().log(status);
+					trace(status);
 					if(status == "connect-failed" || status == "send-failed")
 					{
 						doLost(socket);
@@ -163,23 +163,23 @@ package game.control
 			String ret = YiuHttpManager.PostOptJson(Global.cfg.gateAddressVO().toHttpAddress() + "/login", "id=" + _id + "&idtype=" + _type + "&name=" + _name + "&version=0.1");
 			if(ret == null || ret == "{}")
 			{
-				LogManager.getInstance().log("��¼ʧ��", LogManager.LEVEL_ERROR);
+				trace("��¼ʧ��", "LogManager.LEVEL_ERROR");
 			}
 			else
 			{
 				try
 				{
-					JSONObject json = new JSONObject(ret);
-					int day = json.getInt("loginday");
-					int gold = json.getInt("logingold");
-					boolean fetched = json.getBoolean("logingold_fetched");
+					var json:Object = JSON.parse(ret);
+					var day:int = json["loginday"];
+					var gold:int = json["logingold"];
+					var fetched:Boolean = json["logingold_fetched"] ;
 					Global.giftVO = new GiftVO(day, gold, fetched);
 				}
 				catch(JSONException e)
 				{
-					LogManager.getInstance().log("��¼/��ȡ��¼������Ϣʧ��", LogManager.LEVEL_ERROR);
+					trace("��¼/��ȡ��¼������Ϣʧ��", "LogManager.LEVEL_ERROR");
 				}
-				LogManager.getInstance().log("��½�ɹ�");
+				trace("��½�ɹ�");
 				YiuNetworkHandlerMgr.subscribe(this);
 				reqEnterHall();
 			}
@@ -213,7 +213,7 @@ package game.control
 			}
 			catch(IOException e)
 			{
-				LogManager.getInstance().log("����sc_enter_hallЭ��ʧ��", LogManager.LEVEL_ERROR);
+				trace("����sc_enter_hallЭ��ʧ��", "LogManager.LEVEL_ERROR");
 			}
 			return true;
 		}

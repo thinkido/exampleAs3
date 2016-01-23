@@ -92,15 +92,15 @@ public class TextureAtlas
 				var jsonChar:Object= jsonFrames[key];
 				var data:TextureData= new TextureData();
 				data.name = key;
-				data.x = jsonChar.getInt("x");
-				data.y = jsonChar.getInt("y");
-				data.w = jsonChar.getInt("w");
-				data.h = jsonChar.getInt("h");
-				data.offX = jsonChar.getInt("offX");
-				data.offY = jsonChar.getInt("offY");
+				data.x = parseInt(jsonChar["x"]);
+				data.y = parseInt(jsonChar["y"]);
+				data.w = parseInt(jsonChar["w"]);
+				data.h = parseInt(jsonChar["h"]);
+				data.offX = parseInt(jsonChar["offX"]);
+				data.offY = parseInt(jsonChar["offY"]);
 				if(jsonChar.has("sourceW"))
 				{
-					data.sourceW = jsonChar.getInt("sourceW");
+					data.sourceW = parseInt(jsonChar["sourceW"]);
 				}
 				else
 				{
@@ -109,7 +109,7 @@ public class TextureAtlas
 
 				if(jsonChar.has("sourceH"))
 				{
-					data.sourceH = jsonChar.getInt("sourceH");
+					data.sourceH = parseInt(jsonChar["sourceH"]);
 				}
 				else
 				{
@@ -119,7 +119,7 @@ public class TextureAtlas
 				frames.put(key, data);
 			}
 		}
-		catch(var e:JSONException)
+		catch(e:*)
 		{
 			trace( e.getStackTrace() );   //e.printStackTrace();
 		}

@@ -52,7 +52,7 @@ public class CardLayout
 			_t.put(GameDir.RIGHT, createDirLayout(obj[GameDir.RIGHT]));
 			_t.put(GameDir.DOWN, createDirLayout(obj[GameDir.DOWN]));
 		}
-		catch(var e:JSONException)
+		catch(e:*)
 		{
 			trace("config <card_layout.json> load error XXXXXXXXXXXXXXXXXXX");
 		}
@@ -75,32 +75,32 @@ public class CardLayout
 	{
 		var vo:CardLayoutVO= new CardLayoutVO();
 		vo.cardPrefix = jsonObj["card_prefix"];
-		vo.startX = jsonObj.getInt("startX");
-		vo.startY = jsonObj.getInt("startY");
+		vo.startX = parseInt(jsonObj["startX"]);
+		vo.startY = parseInt(jsonObj["startY"]);
 		if(jsonObj.has("dir"))
 		{
 			vo.dir = jsonObj["dir"];
 		}
 		if(jsonObj.has("gap"))
 		{
-			vo.gap = jsonObj.getInt("gap");
+			vo.gap = parseInt(jsonObj["gap"]);
 		}
 		if(jsonObj.has("combin_gap"))
 		{
-			vo.combinGap = jsonObj.getInt("combin_gap");
+			vo.combinGap = parseInt(jsonObj["combin_gap"]);
 		}
 		if(jsonObj.has("combin_gang_offY"))
 		{
-			vo.combinGangOffY = jsonObj.getInt("combin_gang_offY");
+			vo.combinGangOffY = parseInt(jsonObj["combin_gang_offY"]);
 		}
 		if(jsonObj.has("warp_count"))
 		{
-			vo.warpCount = jsonObj.getInt("warp_count");
+			vo.warpCount = parseInt(jsonObj["warp_count"]);
 		}
 		if(jsonObj.has("warp"))
 		{
 			var warpObj:Object= jsonObj["warp"];
-			vo.warp = new Point(warpObj.getInt("x"), warpObj.getInt("y"));
+			vo.warp = new Point(parseInt(warpObj["x"), warpObj.getInt("y"]));
 		}
 		return vo;
 	}

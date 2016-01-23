@@ -1,16 +1,16 @@
 package framework.resources
 {
+import framework.events.EventDispatcher;
+import framework.events.IEventListener;
+import framework.io.FileIO;
+import framework.util.StringUtil;
+
 import java.io.InputStream;
 
 import javax.microedition.lcdui.Image;
 import javax.microedition.media.Manager;
 import javax.microedition.media.MediaException;
 import javax.microedition.media.Player;
-
-import framework.events.EventDispatcher;
-import framework.events.IEventListener;
-import framework.io.FileIO;
-import framework.util.StringUtil;
 
 /**
  * 本地资源获取器
@@ -62,7 +62,7 @@ public class LocalResGetter extends AResGetter implements IEventListener
 				_resTable.put(item.name(), item);
 			}
 		}
-		catch(var e:JSONException)
+		catch(e:*)
 		{
 
 		}
@@ -87,7 +87,7 @@ public class LocalResGetter extends AResGetter implements IEventListener
 		}
 		else
 		{
-			bytes = (byte[])_dataTable[name];
+			bytes = _dataTable[name];
 		}
 		return bytes;
 	}
@@ -109,7 +109,7 @@ public class LocalResGetter extends AResGetter implements IEventListener
 		}
 		else
 		{
-			obj = JSONObject(_dataTable[name]);
+			obj = _dataTable[name];
 		}
 		return obj;
 	}
@@ -192,13 +192,13 @@ public class LocalResGetter extends AResGetter implements IEventListener
 			var sheet:Image= null;
 			try
 			{
-				sheet = Image.createImage(imagePath);
+				sheet = Image.createImage(imagePath);  
 			}
 			catch(e:*)
 			{
 				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
-			ss = new SpriteSheet(jsonObj, StringUtil.split(item.subkeys, ','), sheet);
+			ss = new SpriteSheet(jsonObj, item.subkeys.split(','), sheet);
 			_dataTable[name] = ss ;
 		}
 		else

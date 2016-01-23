@@ -46,7 +46,7 @@ package framework.io
 				var rc:int= c.getResponseCode();
 				if(rc != HttpConnection.HTTP_OK)
 				{
-					LogManager.getInstance().log(rc + " http request wrong: " + url, LogManager.LEVEL_ERROR);
+					trace(rc + " http request wrong: " + url, "LogManager.LEVEL_ERROR");
 				}
 				else
 				{
@@ -56,7 +56,7 @@ package framework.io
 			}
 			catch(e:*)
 			{
-				LogManager.getInstance().log(" http request wrong: " + url, LogManager.LEVEL_ERROR);
+				trace(" http request wrong: " + url, "LogManager.LEVEL_ERROR");
 				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 import framework.io.HttpData;
@@ -95,7 +95,7 @@ import framework.io.HttpData;
 			}
 			catch(var e:Exception)
 			{
-				LogManager.getInstance().log("http get error: " + url, LogManager.LEVEL_ERROR);
+				trace("http get error: " + url, "LogManager.LEVEL_ERROR");
 				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 			return hd;
@@ -168,7 +168,7 @@ import framework.io.HttpData;
 			}
 			catch(var e:Exception)
 			{
-				LogManager.getInstance().log("http post error:", LogManager.LEVEL_ERROR);
+				trace("http post error:", "LogManager.LEVEL_ERROR");
 				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 			constly

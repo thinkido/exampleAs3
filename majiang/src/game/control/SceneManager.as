@@ -106,7 +106,7 @@ package game.control
 			}
 			else
 			{
-				LogManager.getInstance().log("正在加载其他场景，请稍后重试", LogManager.LEVEL_WARNING);
+				trace("正在加载其他场景，请稍后重试", "LogManager.LEVEL_WARNING");
 			}
 		}
 		

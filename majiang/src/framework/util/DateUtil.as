@@ -14,7 +14,7 @@ public class DateUtil
 	static public function getDateFormat(time:Number, format:String):String{
 		var d:Date= new Date(time);
 		var ds:String= d.toString();
-		var arr:Array= StringUtil.split(ds, ' ');
+		var arr:Array= ds.split( ' ');
 		
 		
 		var mon:String= "00";
@@ -70,7 +70,7 @@ public class DateUtil
 		var dd:String= arr[2];
 		var yyyy:String= arr[5];
 		var hhmmss:String= arr[3];
-		var hms:Array= StringUtil.split(hhmmss, ':');
+		var hms:Array= hhmmss.split(':');
 		
 		
 		

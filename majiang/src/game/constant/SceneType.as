@@ -31,7 +31,7 @@ package game.constant
 			{
 				trace( e.getStackTrace() );   //e.printStackTrace();
 				newInstance = null;
-				LogManager.getInstance().log(e.getMessage(), LogManager.LEVEL_ERROR);
+				trace(e.getMessage(), "LogManager.LEVEL_ERROR");
 			}
 			return newInstance;
 		}

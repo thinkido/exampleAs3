@@ -49,11 +49,11 @@ public class Config
 		{
 			_gateAddressVO = new IpAddressVO(obj["gate_address"], obj.getInt("gate_port"]);
 			_hallAddressVO = new IpAddressVO(obj["hall_address"], obj.getInt("hall_port"]);
-			LogManager.getInstance().log("config loaded" + obj.toString());
+			trace("config loaded" + obj.toString());
 		}
-		catch(var e:JSONException)
+		catch(e:*)
 		{
-			LogManager.getInstance().log("¼ÓÔØÅäÖÃÎļþ³ö´í", LogManager.LEVEL_ERROR);
+			trace("¼ÓÔØÅäÖÃÎļþ³ö´í", "LogManager.LEVEL_ERROR");
 		}
 
 		Res.actively.release(file);

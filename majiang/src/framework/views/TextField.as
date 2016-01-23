@@ -70,7 +70,7 @@ public class TextField extends DisplayObject
 			_text = _text.substring(0, _maxLength);
 		}
 
-		_lines = StringUtil.split(text, '\n');
+		_lines = text.split('\n');
 		computeSize();
 	}
 

@@ -111,7 +111,7 @@ public class GameRequest
 	}
 
 	private function requestError(content:String, e:IOException):void{
-		LogManager.getInstance().log("ЭÒ鷢Ëͳö´� + content, LogManager.LEVEL_ERROR);
+		trace("ЭÒ鷢Ëͳö´� + content, "LogManager.LEVEL_ERROR");
 		trace( e.getStackTrace() );   //e.printStackTrace();
 	}
 

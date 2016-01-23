@@ -120,7 +120,7 @@ package game.view.window.user
 			}
 			catch( e:Error)
 			{
-				LogManager.getInstance().log("����Э��ʧ��", LogManager.LEVEL_ERROR);
+				trace("����Э��ʧ��", "LogManager.LEVEL_ERROR");
 			}
 		}
 		
@@ -150,7 +150,7 @@ package game.view.window.user
 					}
 					catch( e:Error)
 					{
-						LogManager.getInstance().log("���������Ϣʧ��", LogManager.LEVEL_ERROR);
+						trace("���������Ϣʧ��", "LogManager.LEVEL_ERROR");
 					}
 					
 				}

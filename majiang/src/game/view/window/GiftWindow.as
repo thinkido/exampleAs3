@@ -34,7 +34,7 @@ package game.view.window;
 		{
 			if (Global.giftVO == null) {
 				WindowManager.getInstance().closeWindow(this);
-				LogManager.getInstance().log("非法礼品VO", LogManager.LEVEL_ERROR);
+				trace("非法礼品VO", "LogManager.LEVEL_ERROR");
 			} else {
 				for (var i:int = 0; i < 7; i++) {
 					if (i < Global.giftVO.day - 1)

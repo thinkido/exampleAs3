@@ -17,7 +17,7 @@ package network
 	
 		public static function processPacket(name:String, packet:ByteString):void
 		{
-			LogManager.getInstance().log("Got Proto Name: " + name);
+			trace("Got Proto Name: " + name);
 			var len:int = mListeners.length;
 			for(var index:int = 0; index < len; index++)
 			{

@@ -1,10 +1,10 @@
 
 package ui;
 
+import framework.views.TextField;
+
 import org.json.me.JSONException;
 import org.json.me.JSONObject;
-
-import framework.views.TextField;
 
 public class UIText extends UIObject
 {
@@ -100,21 +100,21 @@ public class UIText extends UIObject
 		_tf.setLinegap(value);
 	}
 
-	public void initWithJsonObject(JSONObject data)
+	public void initWithJsonObject(data:Object)
 	{
 		try
 		{
-			JSONObject color = data["CColor"];
-			int r = color.has("R") ? color.getInt("R") : 255;
-			int g = color.has("G") ? color.getInt("G") : 255;
-			int b = color.has("B") ? color.getInt("B") : 255;
-			int colorCode = r << 16 | g << 8 | b;
+			var color:Object = data["CColor"];
+			var r:int = color["R"]!=undefined ? color["R"] : 255;
+			var g:int = color["G"]!=undefined ? color["G"] : 255;
+			var b:int = color["B"]!=undefined ? color["B"] : 255;
+			var colorCode:int = r << 16 | g << 8 | b;
 			setColor(colorCode);
 			setText(data["LabelText"]);
 			setName(data["Name"]);
 			autoSetPosition(data);
 		}
-		catch(JSONException e)
+		catch(e:*)
 		{
 			trace( e.getStackTrace() );   //e.printStackTrace();
 		}
