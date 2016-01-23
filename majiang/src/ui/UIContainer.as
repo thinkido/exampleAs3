@@ -10,11 +10,11 @@ package ui
 		{
 			try
 			{
-				data = data["Content").getJSONObject("Content").getJSONObject("ObjectData"];
+				data = data["Content"]["Content"]["ObjectData"];
 				var children:Array = data["Children"];
 				for(var i:int = 0; i < children.length; ++i)
 				{
-					var child:Object = children.getJSONObject(i);
+					var child:Object = children[i];
 					var item:UIComponent = decodeType(child["ctype"]);
 					if(item != null)
 					{

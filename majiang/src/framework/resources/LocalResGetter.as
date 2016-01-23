@@ -47,7 +47,7 @@ public class LocalResGetter extends AResGetter implements IEventListener
 			var resList:Array= jsonObj["resources"];
 			for(var i:int= 0; i < resList.length; i++)
 			{
-				var resItem:Object= resList.getJSONObject(i);
+				var resItem:Object= resList[i];
 				var itemName:String= resItem["name"];
 				var itemType:String= resItem["type"];
 				var itemUrl:String= "/" + resItem["url"];
@@ -288,7 +288,7 @@ public class LocalResGetter extends AResGetter implements IEventListener
 	 */
 	public function getUrl(name:String):String{
 		var url:String;
-		if(_resTable[name] == undefined)
+		if(_resTable[name] != undefined)
 		{
 			var item:ResItem= ResItem(_resTable[name]);
 			url = item.url();
@@ -310,7 +310,7 @@ public class LocalResGetter extends AResGetter implements IEventListener
 	 * @param name 图片资源的名称
 	 */
 	public function release(name:String):void{
-		if(_dataTable[name] == undefined)
+		if(_dataTable[name] != undefined)
 		{
 			_dataTable.remove(name);
 		}
@@ -318,7 +318,7 @@ public class LocalResGetter extends AResGetter implements IEventListener
 
 	private function getResItem(name:String, type:String):ResItem{
 		var item:ResItem= null;
-		if(_resTable[name] == undefined)
+		if(_resTable[name] != undefined)
 		{
 			item = ResItem(_resTable[name]);
 		}

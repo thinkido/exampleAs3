@@ -346,7 +346,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	 */
 	public function getUrl(name:String):String{
 		var url:String;
-		if(_resTable[name] == undefined)
+		if(_resTable[name] != undefined)
 		{
 			var item:ResItem= ResItem(_resTable[name]);
 			url = item.url();
@@ -367,7 +367,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	 * 释放资源
 	 */
 	public function release(name:String):void{
-		if(_dataTable[name] == undefined)
+		if(_dataTable[name] != undefined)
 		{
 			_dataTable.remove(name);
 		}
@@ -375,7 +375,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 
 	private function getResItem(name:String, type:String):ResItem{
 		var item:ResItem= null;
-		if(_resTable[name] == undefined)
+		if(_resTable[name] != undefined)
 		{
 			item = ResItem(_resTable[name]);
 			if(!item.type() ==type)

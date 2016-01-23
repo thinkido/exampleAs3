@@ -67,7 +67,7 @@ package ui
 		{
 			try
 			{
-				if(!data["FileData")["Type"] == "Default"]
+				if(!data["FileData"]["Type"] == "Default"]
 				{
 					var path:String = data["FileData"]["Path"];
 					_srcTexture = new Image(getTexture(transformPath(path)));

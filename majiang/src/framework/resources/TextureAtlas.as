@@ -89,7 +89,7 @@ public class TextureAtlas
 			for(var enumobj:Enumeration= jsonFrames.keys(); enumobj.hasMoreElements();)
 			{
 				var key:String= String(enumobj.nextElement());
-				var jsonChar:Object= jsonFrames.getJSONObject(key);
+				var jsonChar:Object= jsonFrames[key];
 				var data:TextureData= new TextureData();
 				data.name = key;
 				data.x = jsonChar.getInt("x");
