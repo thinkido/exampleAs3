@@ -43,7 +43,7 @@ public class TextField extends DisplayObject
 	 */
 	public function setMaxLength(length:int):void{
 		_maxLength = length;
-		if(_maxLength != -1&& _text.length() > _maxLength)
+		if(_maxLength != -1&& _text.length > _maxLength)
 		{
 			_text = _text.substring(0, _maxLength);
 		}
@@ -59,13 +59,13 @@ public class TextField extends DisplayObject
 	 * @param text
 	 */
 	public function setText(text:String):void{
-		if(_text.equals(text))
+		if(_text == text)
 		{
 			return;
 		}
 
 		_text = text;
-		if(_maxLength != -1&& _text.length() > _maxLength)
+		if(_maxLength != -1&& _text.length > _maxLength)
 		{
 			_text = _text.substring(0, _maxLength);
 		}

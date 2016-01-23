@@ -236,11 +236,11 @@ public class Stage extends Canvas implements Runnable
 		}
 		catch(var e:InstantiationException)
 		{
-			e.printStackTrace();
+			trace( e.getStackTrace() );   //e.printStackTrace();
 		}
 		catch(var e:IllegalAccessException)
 		{
-			e.printStackTrace();
+			trace( e.getStackTrace() );   //e.printStackTrace();
 		}
 		// ÎĵµÀàµĸ¸ÀàÊÇËü×Լº,ÒԴË×÷Ϊ±ê¼Ç
 		_root.setParent(_root);
@@ -293,7 +293,7 @@ public class Stage extends Canvas implements Runnable
 			}
 			catch(var e:InterruptedException)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 	}
@@ -331,7 +331,7 @@ public class Stage extends Canvas implements Runnable
 			// Image cache = DisplayObject.scale(_canvas, _viewWidth,
 			// _viewHeight);
 			// //long e = System.currentTimeMillis();
-			// //System.out.println("ºÄʱ£º" + (e - s));
+			// //trace("ºÄʱ£º" + (e - s));
 			// g.drawImage(cache, 0, 0, 0);
 		}
 	}

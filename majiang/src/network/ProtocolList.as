@@ -15,9 +15,9 @@ package network
 		public static var mNameGameMap:Object = new Object();
 		
 		
-	    /*public static Hashtable mGameMap = new Hashtable();
-	    public static Hashtable mNameHallMap = new Hashtable();
-	    public static Hashtable mNameGameMap = new Hashtable();*/
+	    /*public static Object mGameMap = new Object();
+	    public static Object mNameHallMap = new Object();
+	    public static Object mNameGameMap = new Object();*/
 	
 		static protected var sInited:Boolean = false;
 	

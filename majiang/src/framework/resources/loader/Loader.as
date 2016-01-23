@@ -1,6 +1,5 @@
 package framework.resources.loader
 {
-import java.util.Vector;
 
 import framework.consts.EventType;
 import framework.events.EventDispatcher;
@@ -11,11 +10,11 @@ public class Loader extends EventDispatcher implements Runnable
 {
 
 	/**
-	 * ¼ÓÔØÓõÄÏ߳Ì
+	 * 加载用的线程
 	 */
 	private var _t:Thread= null;
 
-	private var _list:Vector= new Vector();
+	private var _list:Array = [] ;
 
 	public function Loader()
 	{
@@ -23,7 +22,7 @@ public class Loader extends EventDispatcher implements Runnable
 	}
 
 	public function load(data:ResItem):void{
-		_list.addElement(data);
+		_list.push(data);
 
 		if(null == _t)
 		{
@@ -32,38 +31,38 @@ public class Loader extends EventDispatcher implements Runnable
 	}
 
 	public function run():void{
-		while(_list.size() > 0)
+		while(_list.length > 0)
 		{
-			var item:ResItem= ResItem(_list.elementAt(0));
-			_list.removeElementAt(0);
+			var item:ResItem= ResItem(_list[0]);
+			_list.shift();
 
 			var type:String= item.type();
 			var obj:Object= null;
-			if(type.equals(Res.TYPE_FONT))
+			if(type ==Res.TYPE_FONT)
 			{
 				obj = Res.httpRes.getFontSheet(item.name());
 			}
-			else if(type.equals(Res.TYPE_IMAGE))
+			else if(type ==Res.TYPE_IMAGE)
 			{
 				obj = Res.httpRes.getImage(item.name());
 			}
-			else if(type.equals(Res.TYPE_JSON))
+			else if(type ==Res.TYPE_JSON)
 			{
 				obj = Res.httpRes.getJson(item.name());
 			}
-			else if(type.equals(Res.TYPE_SHEET))
+			else if(type ==Res.TYPE_SHEET)
 			{
 				obj = Res.httpRes.getSheet(item.name());
 			}
-			else if(type.equals(Res.TYPE_SOUND))
+			else if(type ==Res.TYPE_SOUND)
 			{
 				obj = Res.httpRes.getAudio(item.name());
 			}
-			else if(type.equals(Res.TYPE_TEXTURE))
+			else if(type ==Res.TYPE_TEXTURE)
 			{
 				obj = Res.httpRes.getTexture(item.name());
 			}
-			else if(type.equals(Res.TYPE_BINARY))
+			else if(type ==Res.TYPE_BINARY)
 			{
 				obj = Res.httpRes.getBinary(item.name());
 			}

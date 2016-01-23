@@ -1,7 +1,7 @@
 package framework.resources
 {
 /**
- * ÎÆÀíÊý¾Ý
+ * 纹理数据
  * @author Jing
  *
  */
@@ -9,7 +9,7 @@ public class TextureData
 {
 	protected var name:String= null;
 	/**
-	 * ÎÆÀíÃû³Æ
+	 * 纹理名称
 	 */
 	public function name():String{
 		return name;
@@ -17,7 +17,7 @@ public class TextureData
 	
 	protected var x:int= 0;
 	/**
-	 * ÎÆÀíÓÐЧÏñËؿªʼµÄXλÖÃ
+	 * 纹理有效像素开始的X位置
 	 * @return
 	 */
 	public function x():int{
@@ -26,7 +26,7 @@ public class TextureData
 	
 	protected var y:int= 0;
 	/**
-	 * ÎÆÀíÓÐЧÏñËؿªʼµÄYλÖÃ
+	 * 纹理有效像素开始的Y位置
 	 * @return
 	 */
 	public function y():int{
@@ -35,7 +35,7 @@ public class TextureData
 	
 	protected var w:int= 0;
 	/**
-	 * ÎÆÀíÓÐЧÏñËؿí¶È
+	 * 纹理有效像素宽度
 	 * @return
 	 */
 	public function w():int{
@@ -44,7 +44,7 @@ public class TextureData
 	
 	protected var h:int= 0;
 	/**
-	 * ÎÆÀíÓÐЧÏñËظ߶È
+	 * 纹理有效像素高度
 	 * @return
 	 */
 	public function h():int{
@@ -53,7 +53,7 @@ public class TextureData
 	
 	protected var offX:int= 0;
 	/**
-	 * ÎÆÀíÓÐЧÏñËؾàÀëԭͼµÄXÖáƫÒÆ
+	 * 纹理有效像素距离原图的X轴偏移
 	 * @return
 	 */
 	public function offX():int{
@@ -62,7 +62,7 @@ public class TextureData
 	
 	protected var offY:int= 0;
 	/**
-	 * ÎÆÀíÓÐЧÏñËؾàÀëԭͼµÄYÖáƫÒÆ
+	 * 纹理有效像素距离原图的Y轴偏移
 	 * @return
 	 */
 	public function offY():int{
@@ -71,7 +71,7 @@ public class TextureData
 	
 	protected var sourceW:int= 0;
 	/**
-	 * ÎÆÀíԭʼͼƬ¿í¶È
+	 * 纹理原始图片宽度
 	 * @return
 	 */
 	public function sourceW():int{
@@ -80,7 +80,7 @@ public class TextureData
 	
 	protected var sourceH:int= 0;
 	/**
-	 * ÎÆÀíԭʼͼƬ¸߶È
+	 * 纹理原始图片高度
 	 * @return
 	 */
 	public function sourceH():int{

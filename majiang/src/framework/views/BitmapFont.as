@@ -35,10 +35,10 @@ public class BitmapFont extends DisplayObject
 			_text = text;
 		}
 
-		if(_text.length() > 0)
+		if(_text.length > 0)
 		{
-			_textChars = new char[_text.length()];
-			_text.getChars(0, _text.length(), _textChars, 0);
+			_textChars = new char[_text.length];
+			_text.getChars(0, _text.length, _textChars, 0);
 
 			updateSize();
 			if(_trans != 0)

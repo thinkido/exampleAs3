@@ -30,7 +30,7 @@ package ui
 	
 		public function buildUI( confName:String):void
 		{
-			var data:JSONObject = getJson(confName);
+			var data:Object = getJson(confName);
 			initWithJsonObject(data);
 			initUI();
 		}
@@ -55,7 +55,7 @@ package ui
 			_isInput = false;
 			var tf:TextField = _selected;
 			var text:String = tf.text;
-			tf.text = text.substring(0, text.length() - 1);
+			tf.text = text.substring(0, text.length - 1);
 		}
 	
 		public function onReciveEvent(type:int, dispatcher:EventDispatcher, data:Object):void
@@ -83,7 +83,7 @@ package ui
 							onReciveEvent(type, dispatcher, data);
 							break;
 						case KeyType.LEFT:
-							var strlen:int = text.length();
+							var strlen:int = text.length;
 							if(strlen > 2)
 							{
 								text = text.substring(0, strlen - 2) + "|";
@@ -104,11 +104,11 @@ package ui
 						case KeyType.NUM_7:
 						case KeyType.NUM_8:
 						case KeyType.NUM_9:
-							if(text.length() > TEXT_INPUT_MAX_LENGTH)
+							if(text.length > TEXT_INPUT_MAX_LENGTH)
 							{
 								break;
 							}
-							text = text.substring(0, text.length() - 1) + (keyCode - 48) + "|";
+							text = text.substring(0, text.length - 1) + (keyCode - 48) + "|";
 							tf.text = text;
 							break;
 						case KeyType.BACK:

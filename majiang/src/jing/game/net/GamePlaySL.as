@@ -71,109 +71,109 @@ public class GamePlaySL implements YiuNetworkListener
 	public function onNetworkEvent(name:String, content:ByteString):Boolean{
 		try
 		{
-			if(name.equals("sc_hall_debug"))
+			if(name == "sc_hall_debug")
 			{
 				var pb:sc_hall_debug= sc_hall_debug.parseFrom(content.toByteArray());
-				System.out.println(pb.toString());
+				trace(pb.toString());
 			}
-			else if(name.equals("sc_game_debug"))
+			else if(name == "sc_game_debug")
 			{
 				var pb:sc_game_debug= sc_game_debug.parseFrom(content.toByteArray());
-				System.out.println(pb.getInfo());
+				trace(pb.getInfo());
 			}
-			else if(name.equals("sc_enter_game"))
+			else if(name == "sc_enter_game")
 			{
 				new SCEnterGame(sc_enter_game.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_enter_game_notify"))
+			else if(name == "sc_enter_game_notify")
 			{
 				new SCEnterGameNotify(sc_enter_game_notify.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_ready_game"))
+			else if(name == "sc_ready_game")
 			{
 				new SCResadyGame();
 			}
-			else if(name.equals("sc_ready_game_notify"))
+			else if(name == "sc_ready_game_notify")
 			{
 				new SCReadyGameNotify(sc_ready_game_notify.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_start_game"))
+			else if(name == "sc_start_game")
 			{
 				new SCStartGame(sc_start_game.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_sure_lack"))
+			else if(name == "sc_sure_lack")
 			{
 				new SCSureLack(sc_sure_lack.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_lack_infos"))
+			else if(name == "sc_lack_infos")
 			{
 				new SCLackInfos(sc_lack_infos.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_game_action"))
+			else if(name == "sc_game_action")
 			{
 				new SCGameAction(sc_game_action.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_game_action_notify"))
+			else if(name == "sc_game_action_notify")
 			{
 				new SCGameActionNotify(sc_game_action_notify.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_game_action_failed"))
+			else if(name == "sc_game_action_failed")
 			{
 				new SCGameActionFailed(sc_game_action_failed.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_game_hide_actions"))
+			else if(name == "sc_game_hide_actions")
 			{
 				new SCGameHideActions(sc_game_hide_actions.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_game_turn"))
+			else if(name == "sc_game_turn")
 			{
 				new SCGameTurn(sc_game_turn.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_game_turn_notify"))
+			else if(name == "sc_game_turn_notify")
 			{
 				new SCGameTurnNotify(sc_game_turn_notify.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_leave_game"))
+			else if(name == "sc_leave_game")
 			{
 				new SCLeaveGame(sc_leave_game.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_leave_game_notify"))
+			else if(name == "sc_leave_game_notify")
 			{
 				new SCLeaveGameNotify(sc_leave_game_notify.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_leave_game_failed"))
+			else if(name == "sc_leave_game_failed")
 			{
 
 			}
-			else if(name.equals("sc_game_single_result"))
+			else if(name == "sc_game_single_result")
 			{
 
 			}
-			else if(name.equals("sc_continue_game"))
+			else if(name == "sc_continue_game")
 			{
 				new SCContinueGame(sc_continue_game.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_game_show_actions"))
+			else if(name == "sc_game_show_actions")
 			{
 				new SCShowActions(sc_game_show_actions.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_end_game"))
+			else if(name == "sc_end_game")
 			{
 				new SCEndGame(sc_end_game.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("cs_game_auto"))
+			else if(name == "cs_game_auto")
 			{
 				new CSGameAuto();
 			}
-			else if(name.equals("cs_game_manual"))
+			else if(name == "cs_game_manual")
 			{
 				new CSGameManual();
 			}
-			else if(name.equals("sc_gold_reset"))
+			else if(name == "sc_gold_reset")
 			{
 				new SCGoldReset(sc_gold_reset.parseFrom(content.toByteArray()));
 			}
-			else if(name.equals("sc_enter_hall"))
+			else if(name == "sc_enter_hall")
 			{
 				new SCEnterHall(sc_enter_hall.parseFrom(content.toByteArray()));
 			}

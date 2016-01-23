@@ -1,6 +1,6 @@
 package jing.configs
 {
-import java.util.Hashtable;
+import java.util.Object;
 
 import jing.consts.GameDir;
 import jing.consts.CardPlace;
@@ -20,7 +20,7 @@ import framework.resources.Res;
 public class CardLayout
 {
 
-	private var _t:Hashtable;
+	private var _t:Object;
 
 	public function CardLayout()
 	{
@@ -35,15 +35,15 @@ public class CardLayout
 	 * @return
 	 */
 	public function getLayout(dir:String, place:String):CardLayoutVO{
-		var dirTbl:Hashtable= Hashtable(_t.get(dir));
+		var dirTbl:Object= Object(_t.get(dir));
 		return (CardLayoutVO)dirTbl.get(place);
 	}
 
 	public function init(file:String):void{
-		var obj:JSONObject= null;
+		var obj:Object= null;
 		obj = Res.actively.getJson(file);
 
-		_t = new Hashtable(4);
+		_t = new Object(4);
 
 		try
 		{
@@ -54,15 +54,15 @@ public class CardLayout
 		}
 		catch(var e:JSONException)
 		{
-			System.out.println("config <card_layout.json> load error XXXXXXXXXXXXXXXXXXX");
+			trace("config <card_layout.json> load error XXXXXXXXXXXXXXXXXXX");
 		}
 
 		Res.actively.release(file);
 	}
 
-	private function createDirLayout(jsonObj:JSONObject):Hashtablethrows JSONException
+	private function createDirLayout(jsonObj:Object):Objectthrows JSONException
 	{
-		var t:Hashtable= new Hashtable(4);
+		var t:Object= new Object(4);
 		t.put(CardPlace.NEW_IN_HAND, getCardLayoutVO(jsonObj.getJSONObject(CardPlace.NEW_IN_HAND)));
 		t.put(CardPlace.IN_HAND, getCardLayoutVO(jsonObj.getJSONObject(CardPlace.IN_HAND)));
 		t.put(CardPlace.IN_HAND_TABLE, getCardLayoutVO(jsonObj.getJSONObject(CardPlace.IN_HAND_TABLE)));
@@ -71,15 +71,15 @@ public class CardLayout
 		return t;
 	}
 
-	private function getCardLayoutVO(jsonObj:JSONObject):CardLayoutVOthrows JSONException
+	private function getCardLayoutVO(jsonObj:Object):CardLayoutVOthrows JSONException
 	{
 		var vo:CardLayoutVO= new CardLayoutVO();
-		vo.cardPrefix = jsonObj.getString("card_prefix");
+		vo.cardPrefix = jsonObj["card_prefix"];
 		vo.startX = jsonObj.getInt("startX");
 		vo.startY = jsonObj.getInt("startY");
 		if(jsonObj.has("dir"))
 		{
-			vo.dir = jsonObj.getString("dir");
+			vo.dir = jsonObj["dir"];
 		}
 		if(jsonObj.has("gap"))
 		{
@@ -99,7 +99,7 @@ public class CardLayout
 		}
 		if(jsonObj.has("warp"))
 		{
-			var warpObj:JSONObject= jsonObj.getJSONObject("warp");
+			var warpObj:Object= jsonObj["warp"];
 			vo.warp = new Point(warpObj.getInt("x"), warpObj.getInt("y"));
 		}
 		return vo;

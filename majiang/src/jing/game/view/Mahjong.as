@@ -141,7 +141,7 @@ public class Mahjong extends Sprite
 	private function getTexture():Texture{
 		var cardPrefix:String= GDC.cl.getLayout(_dir, _place).cardPrefix;
 		var tName:String= null;
-		if((_place.equals(CardPlace.IN_HAND) || _place.equals(CardPlace.NEW_IN_HAND)) && _dir != GameDir.DOWN)
+		if((_place == CardPlace.IN_HAND || _place == CardPlace.NEW_IN_HAND) && _dir != GameDir.DOWN)
 		{
 			// ±ðÈ˵ÄÊÖÅÆ
 			tName = cardPrefix;
@@ -158,7 +158,7 @@ public class Mahjong extends Sprite
 		var cardT:Texture= this._cards.getTexture(tName);
 		if(null == cardT)
 		{
-			System.out.println("²»´æÔڵÄÂ齫£º" + tName);
+			trace("²»´æÔڵÄÂ齫£º" + tName);
 		}
 		return cardT;
 	}

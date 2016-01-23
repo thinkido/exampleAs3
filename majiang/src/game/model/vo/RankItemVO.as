@@ -31,8 +31,8 @@ package game.model.vo
 	
 		private function setName(_name:String):void
 		{
-			if(_name.length() > 8)
-				name = _name.substring(_name.length() - 8);
+			if(_name.length > 8)
+				name = _name.substring(_name.length - 8);
 			else
 				name = _name;
 		}

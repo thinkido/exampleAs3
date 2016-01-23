@@ -1,16 +1,6 @@
 package framework.resources
 {
-import java.io.IOException;
-import java.util.Hashtable;
-
-import javax.microedition.lcdui.Image;
-import javax.microedition.media.Manager;
-import javax.microedition.media.MediaException;
-import javax.microedition.media.Player;
-
-import org.json.me.JSONArray;
-import org.json.me.JSONException;
-import org.json.me.JSONObject;
+import flash.utils.ByteArray;
 
 import framework.consts.EventType;
 import framework.events.EventDispatcher;
@@ -21,8 +11,14 @@ import framework.resources.loader.Loader;
 import framework.util.JSONUtil;
 import framework.util.StringUtil;
 
+import javax.microedition.lcdui.Image;
+import javax.microedition.media.Manager;
+import javax.microedition.media.MediaException;
+import javax.microedition.media.Player;
+
+
 /**
- * ÍøÂç×ÊԴ»ñȡÆ÷
+ * 网络资源获取器
  * 
  * @author Jing
  */
@@ -30,22 +26,22 @@ public class HttpResGetter extends AResGetter implements IEventListener
 {
 
 	/**
-	 * ×ÊԴ±í
+	 * 资源表
 	 */
-	private var _resTable:Hashtable= new Hashtable();
+	private var _resTable:Object= {} ;
 
 	/**
-	 * ×ÊԴ¶ÔӦµÄÊý¾ݱí
+	 * 资源对应的数据表
 	 */
-	private var _dataTable:Hashtable= new Hashtable();
+	private var _dataTable:Object= {} ;
 
 	/**
-	 * HTTP·þÎñµØַ
+	 * HTTP服务地址
 	 */
 	private var _httpServer:String= null;
 
 	/**
-	 * ¼ÓÔØÆ÷
+	 * 加载器
 	 */
 	private var _loader:Loader= new Loader();
 
@@ -61,44 +57,44 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	}
 
 	public function init(path:String, httpServer:String):void{
-		if(httpServer.charAt(httpServer.length() - 1) == '/')
+		if(httpServer.charAt(httpServer.length - 1) == '/')
 		{
-			httpServer = httpServer.substring(0, httpServer.length() - 1);
+			httpServer = httpServer.substring(0, httpServer.length - 1);
 		}
 		_httpServer = httpServer;
 
 		try
 		{
 			var hd:HttpData= FileIO.getHttpData(_httpServer + path);
-			var jsonObj:JSONObject= JSONUtil.bytes2Json(hd.data());
-			var resList:JSONArray= jsonObj.getJSONArray("resources");
-			for(var i:int= 0; i < resList.length(); i++)
+			var jsonObj:Object = JSONUtil.bytes2Json(hd.data());
+			var resList:Array = jsonObj["resources"];
+			for(var i:int= 0; i < resList.length ; i++)
 			{
-				var resItem:JSONObject= resList.getJSONObject(i);
-				var itemName:String= resItem.getString("name");
-				var itemType:String= resItem.getString("type");
-				var itemUrl:String= _httpServer + "/" + resItem.getString("url");
+				var resItem:Object= resList[i] ;
+				var itemName:String= resItem.name ;
+				var itemType:String= resItem.type ;
+				var itemUrl:String= _httpServer + "/" + resItem.url ;
 				var item:ResItem= new ResItem(itemName, itemType, itemUrl);
 
-				if(itemType.equals("sheet"))
+				if(itemType =="sheet")
 				{
-					var subkeys:String= resItem.getString("subkeys");
+					var subkeys:String= resItem.subkeys );
 					item.subkeys = subkeys;
 				}
 
 				_resTable.put(item.name(), item);
 			}
 		}
-		catch(var e:JSONException)
+		catch(var e:*)
 		{
-
+	
 		}
 
-		System.out.println("Total web resource:" + _resTable.size());
+		trace("Total web resource:" + _resTable.size());
 	}
 
 	/**
-	 * Ò첽¼ÓÔØͼƬ
+	 * 异步加载图片
 	 * 
 	 * @param name
 	 */
@@ -108,7 +104,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	}
 
 	/**
-	 * Ò첽¼ÓÔØÎÆÀí
+	 * 异步加载纹理
 	 * 
 	 * @param name
 	 */
@@ -118,7 +114,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	}
 
 	/**
-	 * Ò첽»ñȡJSON
+	 * 异步获取JSON
 	 * 
 	 * @param name
 	 */
@@ -128,7 +124,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	}
 
 	/**
-	 * Ò첽»ñȡÎÆÀ�
+	 * 异步获取纹理集
 	 * 
 	 * @param name
 	 */
@@ -138,7 +134,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	}
 
 	/**
-	 * Ò첽»ñȡ¶þ½øÖÆÎļþ
+	 * 异步获取二进制文件
 	 * 
 	 * @param name
 	 */
@@ -148,7 +144,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	}
 
 	/**
-	 * Ò첽»ñȡ×ÖÌå
+	 * 异步获取字体
 	 * 
 	 * @param name
 	 */
@@ -162,35 +158,35 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	}
 
 	/**
-	 * »ñȡJSON¶ÔÏó
+	 * 获取JSON对象
 	 * 
 	 * @param name
 	 * @return
 	 */
-	public function getJson(name:String):JSONObject{
-		var obj:JSONObject= null;
+	public function getJson(name:String):Object{
+		var obj:Object= null;
 		var item:ResItem= getResItem(name, Res.TYPE_JSON);
-		if(false == _dataTable.containsKey(name))
+		if(_dataTable[name] == undefined)
 		{
 			var hd:HttpData= FileIO.getHttpData(item.url());
 			obj = JSONUtil.bytes2Json(hd.data());
-			_dataTable.put(name, obj);
+			_dataTable[name] = obj ;
 		}
 		else
 		{
-			obj = JSONObject(_dataTable.get(name));
+			obj = _dataTable[name] ;
 		}
 		return obj;
 	}
 
 	/**
-	 * »ñȡ¶þ½øÖÆÎļþ
+	 * 获取二进制文件
 	 */
-	public byte[] getBinary(var name:String)
+	public function getBinary(name:String):ByteArray
 	{
 		var bytes:Array= null;
 		var item:ResItem= getResItem(name, Res.TYPE_BINARY);
-		if(false == _dataTable.containsKey(name))
+		if(_dataTable[name] == undefined)
 		{
 			var url:String= item.url();
 			var hd:HttpData= FileIO.getHttpData(url);
@@ -198,40 +194,40 @@ public class HttpResGetter extends AResGetter implements IEventListener
 		}
 		else
 		{
-			bytes = (byte[])_dataTable.get(name);
+			bytes = _dataTable[name];
 		}
 
 		return bytes;
 	}
 
 	/**
-	 * »ñȡͼƬ×ÊԴ(ÒԺó²»ÔÙÌṩ£¬½¨ÒéʹÓÃgetTexture)
+	 * 获取图片资源(以后不再提供，建议使用getTexture)
 	 * 
-	 * @param name ͼƬ×ÊԴµÄÃû³Æ
+	 * @param name 图片资源的名称
 	 * @return
 	 */
 	public function getImage(name:String):Image{
 		var image:Image= null;
 		var item:ResItem= getResItem(name, Res.TYPE_IMAGE);
-		if(false == _dataTable.containsKey(name))
+		if(_dataTable[name] == undefined)
 		{
 			var url:String= item.url();
 			var hd:HttpData= FileIO.getHttpData(url);
 			var b:Array= hd.data();
 			var len:int= b.length;
 			image = Image.createImage(b, 0, len);
-			_dataTable.put(name, image);
+			_dataTable[name] = image ;
 		}
 		else
 		{
-			image = Image(_dataTable.get(name));
+			image = Image(_dataTable[name]);
 		}
 
 		return image;
 	}
 
 	/**
-	 * »ñȡͼƬÎÆÀí
+	 * 获取图片纹理
 	 * 
 	 * @param name
 	 * @return
@@ -239,7 +235,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	public function getTexture(name:String):Texture{
 		var t:Texture= null;
 		var item:ResItem= getResItem(name, Res.TYPE_TEXTURE);
-		if(false == _dataTable.containsKey(name))
+		if(_dataTable[name] == undefined)
 		{
 			var url:String= item.url();
 			var hd:HttpData= FileIO.getHttpData(url);
@@ -247,18 +243,18 @@ public class HttpResGetter extends AResGetter implements IEventListener
 			var len:int= b.length;
 			var image:Image= Image.createImage(b, 0, len);
 			t = new Texture(image);
-			_dataTable.put(name, t);
+			_dataTable[name] = t ;
 		}
 		else
 		{
-			t = Texture(_dataTable.get(name));
+			t = Texture(_dataTable[name]);
 		}
 
 		return t;
 	}
 
 	/**
-	 * »ñȡÎÆÀ�
+	 * 获取纹理集
 	 * 
 	 * @param name
 	 * @return
@@ -266,28 +262,28 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	public function getSheet(name:String):SpriteSheet{
 		var ss:SpriteSheet= null;
 		var item:ResItem= getResItem(name, Res.TYPE_SHEET);
-		if(false == _dataTable.containsKey(name))
+		if(_dataTable[name] == undefined)
 		{
 			var url:String= item.url();
 			var hd:HttpData= FileIO.getHttpData(url);
-			var jsonObj:JSONObject= JSONUtil.bytes2Json(hd.data());
-			var imagePath:String= url.substring(0, url.length() - 5) + ".png";
+			var jsonObj:Object= JSONUtil.bytes2Json(hd.data());
+			var imagePath:String= url.substring(0, url.length - 5) + ".png";
 			var imgHD:HttpData= FileIO.getHttpData(imagePath);
 			var sheet:Image= Image.createImage(imgHD.data(), 0, imgHD.data().length);
 
-			ss = new SpriteSheet(jsonObj, StringUtil.split(item.subkeys, ','), sheet);
-			_dataTable.put(name, ss);
+			ss = new SpriteSheet(jsonObj, item.subkeys.split(','), sheet);
+			_dataTable[name] = ss ;
 		}
 		else
 		{
-			ss = SpriteSheet(_dataTable.get(name));
+			ss = SpriteSheet(_dataTable[name]);
 		}
 
 		return ss;
 	}
 
 	/**
-	 * »ñȡ×ַû¼¯
+	 * 获取字符集
 	 * 
 	 * @param name
 	 * @return
@@ -295,28 +291,28 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	public function getFontSheet(name:String):FontSheet{
 		var fs:FontSheet= null;
 		var item:ResItem= getResItem(name, Res.TYPE_FONT);
-		if(false == _dataTable.containsKey(name))
+		if(_dataTable[name] == undefined)
 		{
 			var url:String= item.url();
 			var hd:HttpData= FileIO.getHttpData(url);
-			var jsonObj:JSONObject= JSONUtil.bytes2Json(hd.data());
-			var imagePath:String= url.substring(0, url.length() - 4) + ".png";
+			var jsonObj:Object= JSONUtil.bytes2Json(hd.data());
+			var imagePath:String= url.substring(0, url.length - 4) + ".png";
 			var imgHD:HttpData= FileIO.getHttpData(imagePath);
 			var sheet:Image= Image.createImage(imgHD.data(), 0, imgHD.data().length);
 
 			fs = new FontSheet(jsonObj, sheet);
-			_dataTable.put(name, fs);
+			_dataTable[name] = fs ;
 		}
 		else
 		{
-			fs = FontSheet(_dataTable.get(name));
+			fs = FontSheet(_dataTable[name]);
 		}
 
 		return fs;
 	}
 
 	/**
-	 * »ñȡÒôƵÎļþ
+	 * 获取音频文件
 	 */
 	public function getAudio(name:String):Player{
 		var p:Player= null;
@@ -325,39 +321,34 @@ public class HttpResGetter extends AResGetter implements IEventListener
 		{
 			try
 			{
-				System.out.println("¹¹½¨ÉùÒô×ÊԴ£º" + item.url());
+				trace("构建声音资源：" + item.url());
 				p = Manager.createPlayer(item.url());
-				_dataTable.put(name, p);
+				_dataTable[name] = p ;
 			}
-			catch(var e:IOException)
+			catch(e:*)
 			{
-				System.out.println("×ÊԴ¼ÓÔسö´� + item.url());
-				e.printStackTrace();
-			}
-			catch(var e:MediaException)
-			{
-				System.out.println("ýÌå³ö´� + item.url());
-				e.printStackTrace();
+				trace("资源加载出错：" + item.url());
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 		else
 		{
-			p = Player(_dataTable.get(name));
+			p = Player(_dataTable[name]);
 		}
 		return p;
 	}
 
 	/**
-	 * »ñȡ×ÊԴµÄURLµØַ
+	 * 获取资源的URL地址
 	 * 
 	 * @param name
 	 * @return
 	 */
 	public function getUrl(name:String):String{
 		var url:String;
-		if(_resTable.containsKey(name))
+		if(_resTable[name] == undefined)
 		{
-			var item:ResItem= ResItem(_resTable.get(name));
+			var item:ResItem= ResItem(_resTable[name]);
 			url = item.url();
 		}
 		else
@@ -373,10 +364,10 @@ public class HttpResGetter extends AResGetter implements IEventListener
 	}
 
 	/**
-	 * ÊͷÅ×ÊԴ
+	 * 释放资源
 	 */
 	public function release(name:String):void{
-		if(_dataTable.containsKey(name))
+		if(_dataTable[name] == undefined)
 		{
 			_dataTable.remove(name);
 		}
@@ -384,13 +375,13 @@ public class HttpResGetter extends AResGetter implements IEventListener
 
 	private function getResItem(name:String, type:String):ResItem{
 		var item:ResItem= null;
-		if(_resTable.containsKey(name))
+		if(_resTable[name] == undefined)
 		{
-			item = ResItem(_resTable.get(name));
-			if(false == item.type().equals(type))
+			item = ResItem(_resTable[name]);
+			if(!item.type() ==type)
 			{
 				item = new ResItem(name, type, item.url());
-				_resTable.put(name, item);
+				_resTable[name] = item ;
 			}
 		}
 		else
@@ -402,7 +393,7 @@ public class HttpResGetter extends AResGetter implements IEventListener
 			}
 			url = _httpServer + url;
 			item = new ResItem(name, type, url);
-			_resTable.put(name, item);
+			_resTable[name] = item ;
 		}
 		return item;
 	}

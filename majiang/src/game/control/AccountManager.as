@@ -95,7 +95,7 @@ package game.control
 			}
 			catch(e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 			Stage.current.ticker.setTimeInterval(HEARTBEAT_INTERVAL, new ITickListener()
 				{
@@ -161,7 +161,7 @@ package game.control
 			socketGame.setStatusListener(_statusListener);
 			Global.socketGame = socketGame;
 			String ret = YiuHttpManager.PostOptJson(Global.cfg.gateAddressVO().toHttpAddress() + "/login", "id=" + _id + "&idtype=" + _type + "&name=" + _name + "&version=0.1");
-			if(ret == null || ret.equals("{}"))
+			if(ret == null || ret == "{}")
 			{
 				LogManager.getInstance().log("��¼ʧ��", LogManager.LEVEL_ERROR);
 			}
@@ -194,7 +194,7 @@ package game.control
 		{
 			try
 			{
-				if(name.equals("sc_enter_hall"))
+				if(name == "sc_enter_hall")
 				{
 					YiuNetworkHandlerMgr.unSubscribe(this);
 					sc_enter_hall msg = sc_enter_hall.parseFrom(content.toByteArray());
@@ -203,7 +203,7 @@ package game.control
 					SceneManager.getInstance().switchScene(SceneType.SCENE_HALL);
 					return false;
 				}
-				else if(name.equals("sc_force_continue_game"))
+				else if(name == "sc_force_continue_game")
 				{
 					YiuNetworkHandlerMgr.unSubscribe(this);
 					sc_force_continue_game msg = sc_force_continue_game.parseFrom(content.toByteArray());

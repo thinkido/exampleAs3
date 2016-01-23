@@ -189,7 +189,7 @@ public class Sprite extends DisplayObject
 			for(var enumobj:Enumeration= _childs.elements(); enumobj.hasMoreElements();)
 			{
 				var object:DisplayObject= DisplayObject(enumobj.nextElement());
-				if(null != object.getName() && object.getName().equals(name))
+				if(null != object.getName() && object.getName() == name)
 				{
 					return object;
 				}

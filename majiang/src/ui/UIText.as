@@ -104,19 +104,19 @@ public class UIText extends UIObject
 	{
 		try
 		{
-			JSONObject color = data.getJSONObject("CColor");
+			JSONObject color = data["CColor"];
 			int r = color.has("R") ? color.getInt("R") : 255;
 			int g = color.has("G") ? color.getInt("G") : 255;
 			int b = color.has("B") ? color.getInt("B") : 255;
 			int colorCode = r << 16 | g << 8 | b;
 			setColor(colorCode);
-			setText(data.getString("LabelText"));
-			setName(data.getString("Name"));
+			setText(data["LabelText"]);
+			setName(data["Name"]);
 			autoSetPosition(data);
 		}
 		catch(JSONException e)
 		{
-			e.printStackTrace();
+			trace( e.getStackTrace() );   //e.printStackTrace();
 		}
 	}
 

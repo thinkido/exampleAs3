@@ -15,11 +15,11 @@ public class SCLeaveGame
 	public function SCLeaveGame(pb:sc_leave_game)
 	{
 		
-		if(pb.getWhy().equals("player_money_not_enough"))
+		if(pb.getWhy() == "player_money_not_enough")
 		{
 			playerMoneyNotEnough();
 		}
-		else if(pb.getWhy().equals("ready_timeout"))
+		else if(pb.getWhy() == "ready_timeout")
 		{
 			readyTimeout();
 		}

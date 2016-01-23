@@ -312,7 +312,7 @@ package game.view.scene
 			}
 			catch( e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 			return;
 		}

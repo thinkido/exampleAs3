@@ -11,7 +11,7 @@ public class SCShowActions
 
 	public function SCShowActions(pb:sc_game_show_actions)
 	{
-		System.out.println(pb.toString());
+		trace(pb.toString());
 		
 		
 		if(pb.getShow_actions().size() == 1)

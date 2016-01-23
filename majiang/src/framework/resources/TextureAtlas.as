@@ -1,7 +1,7 @@
 package framework.resources
 {
 import java.util.Enumeration;
-import java.util.Hashtable;
+import java.util.Object;
 
 import javax.microedition.lcdui.Image;
 
@@ -9,7 +9,7 @@ import org.json.me.JSONException;
 import org.json.me.JSONObject;
 
 /**
- * ÎÆÀ�
+ * 纹理集
  * 
  * @author Jing
  */
@@ -22,30 +22,30 @@ public class TextureAtlas
 		return _img;
 	}
 
-	protected var _frames:Hashtable= null;
+	protected var _frames:Object= null;
 
 	public function getFrame(name:String):TextureData{
 		return (TextureData)_frames.get(name);
 	}
 
-	public function TextureAtlas(img:Image, jsonObj:JSONObject)
+	public function TextureAtlas(img:Image, jsonObj:Object)
 	{
 		init(img, jsonObj);
 	}
 
-	public function TextureAtlas(img:Image, frames:Hashtable)
+	public function TextureAtlas(img:Image, frames:Object)
 	{
 		_img = img;
 		_frames = frames;
 	}
 
-	public function init(img:Image, jsonObj:JSONObject):void{
+	public function init(img:Image, jsonObj:Object):void{
 		_img = img;
 		_frames = getDatas(jsonObj);
 	}
 
 	/**
-	 * ´ÓÎÆÀ�ÖлñȡÎÆÀí֡
+	 * 从纹理集中获取纹理帧
 	 * 
 	 * @param name
 	 * @return
@@ -65,7 +65,7 @@ public class TextureAtlas
 	 * @return
 	 */
 	public function getTextureAtlas(prefix:String):TextureAtlas{
-		var frames:Hashtable= new Hashtable();
+		var frames:Object= new Object();
 		for(var enumobj:Enumeration= _frames.elements(); enumobj.hasMoreElements();)
 		{
 			var td:TextureData= TextureData(enumobj.nextElement());
@@ -77,19 +77,19 @@ public class TextureAtlas
 		return new TextureAtlas(_img, frames);
 	}
 
-	static public function getDatas(jsonObj:JSONObject):Hashtable{
-		var frames:Hashtable= null;
+	static public function getDatas(jsonObj:Object):Object{
+		var frames:Object= null;
 		try
 		{
 
-			var jsonFrames:JSONObject= jsonObj.getJSONObject("frames");
-			var charAmount:int= jsonFrames.length();
-			frames = new Hashtable(charAmount);
+			var jsonFrames:Array= jsonObj["frames"];
+			var charAmount:int= jsonFrames.length;
+			frames = new Object(charAmount);
 
 			for(var enumobj:Enumeration= jsonFrames.keys(); enumobj.hasMoreElements();)
 			{
 				var key:String= String(enumobj.nextElement());
-				var jsonChar:JSONObject= jsonFrames.getJSONObject(key);
+				var jsonChar:Object= jsonFrames.getJSONObject(key);
 				var data:TextureData= new TextureData();
 				data.name = key;
 				data.x = jsonChar.getInt("x");
@@ -121,7 +121,7 @@ public class TextureAtlas
 		}
 		catch(var e:JSONException)
 		{
-			e.printStackTrace();
+			trace( e.getStackTrace() );   //e.printStackTrace();
 		}
 		return frames;
 	}

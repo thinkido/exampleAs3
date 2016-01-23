@@ -43,7 +43,7 @@ package game.view.inline
 	
 		public function buildUI(confName:String):void
 		{
-			var data:JSONObject = getJson(confName);
+			var data:Object = getJson(confName);
 			initWithJsonObject(data);
 			initUI();
 		}

@@ -66,7 +66,7 @@ public class GamePlayModel
 		_sl.dispose();
 		if(Global.socketGame != null && Global.socketGame.isConnected())
 		{
-			System.out.println("Ö󶯶ϿªºÍÓÎϷ·þµÄÁ¬½Ó");
+			trace("Ö󶯶ϿªºÍÓÎϷ·þµÄÁ¬½Ó");
 			Global.socketGame.close();
 		}
 	}

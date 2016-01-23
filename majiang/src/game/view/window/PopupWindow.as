@@ -77,7 +77,7 @@ package game.view.window
 			baseUpdate(isConfirm, callback);
 			_imgContent.clearTexture();
 			var showTxt:String = "";
-			while (text.length() > LINE_LENGTH) {
+			while (text.length > LINE_LENGTH) {
 				showTxt += text.substring(0, LINE_LENGTH) + "\n";
 				text = text.substring(LINE_LENGTH);
 			}

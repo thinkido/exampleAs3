@@ -3,7 +3,7 @@ package framework.resources
 import javax.microedition.lcdui.Image;
 
 /**
- * ÎÆÀí
+ * 纹理
  * 
  * @author Jing
  */
@@ -13,7 +13,7 @@ public class Texture
 	private var _img:Image= null;
 
 	/**
-	 * ͼƬ×ÊԴ
+	 * 图片资源
 	 * @return
 	 */
 	public function img():Image{
@@ -23,7 +23,7 @@ public class Texture
 	private var _td:TextureData= null;
 
 	/**
-	 * ÎÆÀíµÄÏÔʾÊý¾Ý
+	 * 纹理的显示数据
 	 * @return
 	 */
 	public function data():TextureData{

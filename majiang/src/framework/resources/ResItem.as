@@ -1,7 +1,7 @@
 package framework.resources
 {
 /**
- * ×ÊԴÏî
+ * 资源项
  * 
  * @author Jing
  */
@@ -11,7 +11,7 @@ public class ResItem
 	private var _name:String= null;
 
 	/**
-	 * ×ÊԴÃû
+	 * 资源名
 	 * @return
 	 */
 	public function name():String{
@@ -21,7 +21,7 @@ public class ResItem
 	private var _type:String= null;
 
 	/**
-	 * ×ÊԴÀàÐÍ
+	 * 资源类型
 	 * @return
 	 */
 	public function type():String{
@@ -31,7 +31,7 @@ public class ResItem
 	private var _url:String= null;
 	
 	/**
-	 * ×ÊԴµØַ
+	 * 资源地址
 	 * @return
 	 */
 	public function url():String{
@@ -39,7 +39,7 @@ public class ResItem
 	}
 	
 	/**
-	 * ֻÓÐsheetÀàÐͲÅÓеÄÊôÐÔ
+	 * 只有sheet类型才有的属性
 	 */
 	public var subkeys:String= null;
 

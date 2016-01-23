@@ -68,7 +68,7 @@ public class WindowType
 		}
 		catch( e:Error)
 		{
-			e.printStackTrace();
+			trace( e.getStackTrace() );   //e.printStackTrace();
 			newInstance = null;
 			LogManager.getInstance().log(e.getMessage(), LogManager.LEVEL_ERROR);
 		}

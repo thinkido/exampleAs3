@@ -3,7 +3,7 @@ package jing.pai
 import jing.pai.vo.ChuVO;
 
 import java.util.Enumeration;
-import java.util.Hashtable;
+import java.util.Object;
 
 /**
  * ³öÅÆÌáʾÊý¾Ý
@@ -13,11 +13,11 @@ import java.util.Hashtable;
 public class ChuTip
 {
 
-	private var _t:Hashtable= null;
+	private var _t:Object= null;
 
 	public function ChuTip()
 	{
-		_t = new Hashtable();
+		_t = new Object();
 	}
 
 	public function put(card:int, vo:ChuVO):void{

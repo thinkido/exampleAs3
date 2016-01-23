@@ -92,7 +92,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 			}
 			catch( e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 	}

@@ -129,7 +129,7 @@ package game.util
 	//		String output;
 	//		if(isShort)
 	//		{
-	//			int len = name.length();
+	//			int len = name.length;
 	//			if(len > 7)
 	//				output = name.substring(2, 7);
 	//			else

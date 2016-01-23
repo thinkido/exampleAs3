@@ -21,7 +21,7 @@ public class HuVO
 	
 	public function add_result(type:int, fan:int):void{
 		if (len >= types.length) {
-			System.out.println("add_result "+len);
+			trace("add_result "+len);
 		} else {
 			types[len] = type;
 			len++;

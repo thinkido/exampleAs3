@@ -43,12 +43,12 @@ public class Config
 	}
 
 	public function init(file:String):void{
-		var obj:JSONObject= null;
+		var obj:Object= null;
 		obj = Res.actively.getJson(file);
 		try
 		{
-			_gateAddressVO = new IpAddressVO(obj.getString("gate_address"), obj.getInt("gate_port"));
-			_hallAddressVO = new IpAddressVO(obj.getString("hall_address"), obj.getInt("hall_port"));
+			_gateAddressVO = new IpAddressVO(obj["gate_address"), obj.getInt("gate_port"]);
+			_hallAddressVO = new IpAddressVO(obj["hall_address"), obj.getInt("hall_port"]);
 			LogManager.getInstance().log("config loaded" + obj.toString());
 		}
 		catch(var e:JSONException)

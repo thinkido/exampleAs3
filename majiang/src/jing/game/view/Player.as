@@ -1,6 +1,6 @@
 package jing.game.view
 {
-import java.util.Hashtable;
+import java.util.Object;
 import java.util.Vector;
 
 import jing.GDC;
@@ -35,7 +35,7 @@ public class Player extends Sprite
 	/**
 	 * Íæ¼ÒÏà¹صÄÂ齫µıí
 	 */
-	var _mjT:Hashtable;
+	var _mjT:Object;
 
 	/**
 	 * ×ùλºÅ
@@ -150,7 +150,7 @@ public class Player extends Sprite
 	}
 
 	private function init():void{
-		_mjT = new Hashtable(4);
+		_mjT = new Object(4);
 		_mjT.put(CardPlace.IN_HAND, new Vector());
 		_mjT.put(CardPlace.IN_HAND_TABLE, new Vector());
 		_mjT.put(CardPlace.NEW_IN_HAND, new Vector());
@@ -337,19 +337,19 @@ public class Player extends Sprite
 			var offX:int= 0;
 			var offY:int= 0;
 
-			if(GameDir.UP.equals(vo.dir))
+			if(GameDir.UP == vo.dir)
 			{
 				offY = -1* count * (obj.getHeight() + vo.gap);
 			}
-			else if(GameDir.LEFT.equals(vo.dir))
+			else if(GameDir.LEFT == vo.dir)
 			{
 				offX = -1* count * (obj.getWidth() + vo.gap);
 			}
-			else if(GameDir.DOWN.equals(vo.dir))
+			else if(GameDir.DOWN == vo.dir)
 			{
 				offY = count * (obj.getHeight() + vo.gap);
 			}
-			else if(GameDir.RIGHT.equals(vo.dir))
+			else if(GameDir.RIGHT == vo.dir)
 			{
 				offX = (count % vo.warpCount) * (obj.getWidth() + vo.gap);
 			}
@@ -382,19 +382,19 @@ public class Player extends Sprite
 			var offY:int= 0;
 			var count:int= i % vo.warpCount;
 
-			if(GameDir.UP.equals(vo.dir))
+			if(GameDir.UP == vo.dir)
 			{
 				offY = -1* count * (obj.getHeight() + vo.gap);
 			}
-			else if(GameDir.LEFT.equals(vo.dir))
+			else if(GameDir.LEFT == vo.dir)
 			{
 				offX = -1* count * (obj.getWidth() + vo.gap);
 			}
-			else if(GameDir.DOWN.equals(vo.dir))
+			else if(GameDir.DOWN == vo.dir)
 			{
 				offY = count * (obj.getHeight() + vo.gap);
 			}
-			else if(GameDir.RIGHT.equals(vo.dir))
+			else if(GameDir.RIGHT == vo.dir)
 			{
 				offX = (count % vo.warpCount) * (obj.getWidth() + vo.gap);
 			}
@@ -587,7 +587,7 @@ public class Player extends Sprite
 		var ct:ChuTip= ch.check(getInHandCards(), getOnTableKes());
 		if(ct != null)
 		{
-			System.out.println(ct.toString());
+			trace(ct.toString());
 		}
 		_chuTip = ct;
 

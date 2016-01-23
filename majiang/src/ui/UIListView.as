@@ -83,11 +83,11 @@ package ui
 				}
 				catch( e:Error)
 				{
-					e.printStackTrace();
+					trace( e.getStackTrace() );   //e.printStackTrace();
 				}
 				catch( e:Error)
 				{
-					e.printStackTrace();
+					trace( e.getStackTrace() );   //e.printStackTrace();
 				}
 			}
 		}
@@ -315,17 +315,17 @@ package ui
 			}
 		}
 		
-		public function initWithJsonObject( data:JSONObject):void
+		public function initWithJsonObject( data:Object):void
 		{
 			try
 			{
-				setFocusTexture(getTexture(transformPath(data.getJSONObject("FileData").getString("Path"))));
-				setName(data.getString("Name"));
+				setFocusTexture(getTexture(transformPath(data["FileData"]["Path"])));
+				setName(data["Name"]);
 				autoSetPosition(data);
 			}
 			catch( e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 		

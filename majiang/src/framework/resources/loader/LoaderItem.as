@@ -3,7 +3,7 @@ package framework.resources.loader
 import framework.resources.ResItem;
 
 /**
- * ¼ÓÔØÏî
+ * 加载项
  * @author Jing
  *
  */

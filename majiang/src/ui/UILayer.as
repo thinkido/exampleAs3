@@ -8,45 +8,45 @@ package ui
 		/**
 		 * 加载完成后处理
 		 */
-		override public function initWithJsonObject(data:JSONObject):void
+		override public function initWithJsonObject(data:Object):void
 		{
 			try
 			{
-				var position:JSONObject = data.getJSONObject("Position");
-				var size:JSONObject = data.getJSONObject("Size");
+				var position:Object = data["Position"];
+				var size:Object = data["Size"];
 				
-				var scale:JSONObject = data.getJSONObject("Scale");
-				var x:int = int(position.getString("X"));
-				var y:int = int(position.getString("Y"));
-				var w:int = int(size.getString("X"));
-				var h:int = int(size.getString("Y"));
-				var scaleX:Number = Number(scale.getString("ScaleX"));
-				var scaleY:Number = Number(scale.getString("ScaleY"));
+				var scale:Object = data["Scale"];
+				var x:int = int(position["X"]);
+				var y:int = int(position["Y"]);
+				var w:int = int(size["X"]);
+				var h:int = int(size["Y"]);
+				var scaleX:Number = Number(scale["ScaleX"]);
+				var scaleY:Number = Number(scale["ScaleY"]);
 				var anchorX:int = 0;
 				var anchorY:int = (int)(h * scaleY);
 				if(data.has("AnchorPoint"))
 				{
-					var anchor:JSONObject = data.getJSONObject("AnchorPoint");
+					var anchor:Object = data["AnchorPoint"];
 					if(anchor.has("ScaleX"))
 					{
-						anchorX = int((anchor.getString("ScaleX")) * w * scaleX);
+						anchorX = int((anchor["ScaleX"]) * w * scaleX);
 					}
 					if(anchor.has("ScaleY"))
 					{
-						anchorY = (int)((1 - Number(anchor.getString("ScaleY"))) * h * scaleY);
+						anchorY = (int)((1 - Number(anchor["ScaleY"])) * h * scaleY);
 					}
 				}
 				x = x - anchorX;
 				y = Global.SCREEN_HEIGHT - y - anchorY;
 				setPosition(x, y);
 				setVisible(!data.has("VisibleForFrame") || data.getBoolean("VisibleForFrame"));
-				setName(data.getString("Name"));
-				var conf:JSONObject = getJson(transformPath(data.getJSONObject("FileData").getString("Path")));
+				setName(data["Name"]);
+				var conf:Object = getJson(transformPath(data["FileData"]["Path"]));
 				super.initWithJsonObject(conf);
 			}
 			catch( e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 	}

@@ -63,9 +63,9 @@ public class UIButton extends UIObject
 	{
 		try
 		{
-			_srcBitmapArr[0] = new Bitmap(getTexture(transformPath(data.getJSONObject("NormalFileData").getString("Path"))));
-			_srcBitmapArr[1] = new Bitmap(getTexture(transformPath(data.getJSONObject("PressedFileData").getString("Path"))));
-			_srcBitmapArr[2] = new Bitmap(getTexture(transformPath(data.getJSONObject("DisabledFileData").getString("Path"))));
+			_srcBitmapArr[0] = new Bitmap(getTexture(transformPath(data["NormalFileData"]["Path"])));
+			_srcBitmapArr[1] = new Bitmap(getTexture(transformPath(data["PressedFileData"]["Path"])));
+			_srcBitmapArr[2] = new Bitmap(getTexture(transformPath(data["DisabledFileData"]["Path"])));
 			_isAddFocusSign = data.has("TouchEnable") && data.getBoolean("TouchEnable");
 			if(_isAddFocusSign)
 			{
@@ -73,12 +73,12 @@ public class UIButton extends UIObject
 				ViewUtil.setCenter(_srcBitmapArr[STATE_DISABLE], _srcBitmapArr[STATE_NORMAL]);
 			}
 			addChild(_srcBitmapArr[_state]);
-			setName(data.getString("Name"));
+			setName(data["Name"]);
 			autoSetPosition(data);
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+			trace( e.getStackTrace() );   //e.printStackTrace();
 		}
 	}
 

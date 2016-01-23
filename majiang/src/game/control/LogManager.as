@@ -130,7 +130,7 @@ package game.control
 
 
 			}
-//			System.out.println(content);
+//			trace(content);
 			trace(content);
 		}
 		

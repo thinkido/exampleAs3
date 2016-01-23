@@ -38,9 +38,9 @@ package framework.util
 				{
 					break;
 				}
-				var ei:int = si + p.length();
+				var ei:int = si + p.length;
 				str = str.substring(0, si) + repl + str.substring(ei);
-				index = si + repl.length();
+				index = si + repl.length;
 				
 			} while(global);
 			return str;

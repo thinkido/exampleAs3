@@ -41,7 +41,7 @@ package network
 					   
 	                    if (Log)
 						{
-//							System.out.println( "Got Protobuf: " + String.valueOf(pbPackedObject.getId()) );
+//							trace( "Got Protobuf: " + String.valueOf(pbPackedObject.getId()) );
 							trace( "Got Protobuf: " + pbPackedObject.getId() );
 						}
 	                    YiuNetworkHandlerMgr.processPacket(packedNode.mName, pbPackedObject.getContent());
@@ -51,7 +51,7 @@ package network
 				{
 	                if (Log) 
 					{
-//						System.out.println( "Got Protobuf: " + String.valueOf(pbObject.getId()) );
+//						trace( "Got Protobuf: " + String.valueOf(pbObject.getId()) );
 						trace( "Got Protobuf: " + pbObject.getId() );
 					}
 	                YiuNetworkHandlerMgr.processPacket(node.mName, pbObject.getContent());
@@ -59,7 +59,7 @@ package network
 	        }
 	        catch ( ex:Error)
 	        {
-	            //System.out.println( ex.getMessage() );
+	            //trace( ex.getMessage() );
 	        }
 	    }
 	}

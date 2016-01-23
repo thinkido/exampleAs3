@@ -33,24 +33,24 @@ package ui
 			return _bar.width
 		}
 		
-		public function initWithJsonObject( data:JSONObject):void
+		public function initWithJsonObject( data:Object):void
 		{
 			try
 			{
 				if(data.has("TextureFileData"))
 				{
-					setTexture(transformPath(data.getJSONObject("TextureFileData").getString("Path")));
+					setTexture(transformPath(data["TextureFileData"]["Path"]));
 				}
 				else if(data.has("ImageFileData"))
 				{
-					setTexture(transformPath(data.getJSONObject("ImageFileData").getString("Path")));
+					setTexture(transformPath(data["ImageFileData"]["Path"]));
 				}
-				setName(data.getString("Name"));
+				setName(data["Name"]);
 				autoSetPosition(data);
 			}
 			catch( e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 		

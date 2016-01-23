@@ -106,7 +106,7 @@ package game.view.scene.gamescene.windows
 					_btn2Act.put(btn, act);
 				}
 				
-//				System.out.println(act.toString());
+//				trace(act.toString());
 				trace(act.toString());
 			}
 

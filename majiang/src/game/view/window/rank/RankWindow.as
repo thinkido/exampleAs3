@@ -55,7 +55,7 @@ package game.view.window.rank
 			}
 			catch(e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 	

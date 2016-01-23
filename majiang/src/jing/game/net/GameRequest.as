@@ -44,7 +44,7 @@ public class GameRequest
 		{
 			Global.socketGame.sendProtobuf("cs_ready_game", cs_ready_game.newBuilder().setNoop(0).build().toByteArray());
 		}
-		catch(var e:IOException)
+		catch(e:*)
 		{
 			requestError("cs_ready_game", e);
 		}
@@ -63,7 +63,7 @@ public class GameRequest
 		{
 			Global.socketGame.sendProtobuf("cs_game_action", builder.build().toByteArray());
 		}
-		catch(var e:IOException)
+		catch(e:*)
 		{
 			requestError("cs_game_action", e);
 		}
@@ -84,7 +84,7 @@ public class GameRequest
 		{
 			Global.socketGame.sendProtobuf("cs_game_action", pb.toByteArray());
 		}
-		catch(var e:IOException)
+		catch(e:*)
 		{
 			requestError("cs_game_action", e);
 		}
@@ -104,7 +104,7 @@ public class GameRequest
 		{
 			Global.socketGame.sendProtobuf("cs_game_manual", cs_game_manual.newBuilder().setNoop(0).build().toByteArray());
 		}
-		catch(var e:IOException)
+		catch(e:*)
 		{
 			requestError("cs_game_manual", e);
 		}
@@ -112,7 +112,7 @@ public class GameRequest
 
 	private function requestError(content:String, e:IOException):void{
 		LogManager.getInstance().log("ЭÒ鷢Ëͳö´� + content, LogManager.LEVEL_ERROR);
-		e.printStackTrace();
+		trace( e.getStackTrace() );   //e.printStackTrace();
 	}
 
 }

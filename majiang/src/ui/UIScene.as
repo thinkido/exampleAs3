@@ -18,16 +18,16 @@ package ui
 
 
 		
-		override public function initWithJsonObject( data:JSONObject):void
+		override public function initWithJsonObject( data:Object):void
 		{
 			try
 			{
-				data = data.getJSONObject("Content").getJSONObject("Content").getJSONObject("ObjectData");
-				var children:JSONArray = data.getJSONArray("Children");
-				for(var i:int = 0; i < children.length(); ++i)
+				data = data["Content").getJSONObject("Content").getJSONObject("ObjectData"];
+				var children:Array = data["Children"];
+				for(var i:int = 0; i < children.length; ++i)
 				{
-					var child:JSONObject = children.getJSONObject(i);
-					var item:UIComponent = decodeType(child.getString("ctype"));
+					var child:Object = children.getJSONObject(i);
+					var item:UIComponent = decodeType(child["ctype"]);
 					if(item != null)
 					{
 						item.initWithJsonObject(child);
@@ -37,7 +37,7 @@ package ui
 			}
 			catch( e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 

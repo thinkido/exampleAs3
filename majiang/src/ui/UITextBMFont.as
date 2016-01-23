@@ -30,13 +30,13 @@ package ui
 			_bf.setAnchor(anchor);
 		}
 		
-		public function initWithJsonObject(data:JSONObject):void
+		public function initWithJsonObject(data:Object):void
 		{
 			try
 			{
-				var text:String = data.getString("LabelText");
-				var resource:String = transformPath(data.getString("UserData"));
-				setName(data.getString("Name"));
+				var text:String = data["LabelText"];
+				var resource:String = transformPath(data["UserData"]);
+				setName(data["Name"]);
 				_bf = new BitmapFont(getFontSheet(resource));
 				addChild(_bf);
 				setText(text);
@@ -44,7 +44,7 @@ package ui
 			}
 			catch( e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 		

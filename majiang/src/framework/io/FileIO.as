@@ -54,10 +54,10 @@ package framework.io
 					return iss;
 				}
 			}
-			catch(var e:IOException)
+			catch(e:*)
 			{
 				LogManager.getInstance().log(" http request wrong: " + url, LogManager.LEVEL_ERROR);
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 import framework.io.HttpData;
 			
@@ -96,7 +96,7 @@ import framework.io.HttpData;
 			catch(var e:Exception)
 			{
 				LogManager.getInstance().log("http get error: " + url, LogManager.LEVEL_ERROR);
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 			return hd;
 		}
@@ -169,7 +169,7 @@ import framework.io.HttpData;
 			catch(var e:Exception)
 			{
 				LogManager.getInstance().log("http post error:", LogManager.LEVEL_ERROR);
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 			constly
 			{
@@ -182,9 +182,9 @@ import framework.io.HttpData;
 					if(c != null)
 						c.close();
 				}
-				catch(var e:IOException)
+				catch(e:*)
 				{
-					e.printStackTrace();
+					trace( e.getStackTrace() );   //e.printStackTrace();
 				}
 			}
 			return null;

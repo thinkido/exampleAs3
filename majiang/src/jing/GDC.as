@@ -19,7 +19,7 @@ public class GDC
 		var enable:Boolean= false;
 		if(enable)
 		{
-			System.out.println(str);
+			trace(str);
 		}
 	}
 

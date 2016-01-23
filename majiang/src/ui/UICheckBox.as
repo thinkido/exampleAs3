@@ -112,27 +112,27 @@ package ui
 				_srcBitmapArr[state].setTexture(t);
 		}
 		
-		public function initWithJsonObject( data:JSONObject):void
+		public function initWithJsonObject( data:Object):void
 		{
 			try
 			{
-				_srcBitmapArr[0] = new Image(getTexture(transformPath(data.getJSONObject("NormalBackFileData").getString("Path"))));
-				_srcBitmapArr[1] = new Image(getTexture(transformPath(data.getJSONObject("PressedBackFileData").getString("Path"))));
-				_srcBitmapArr[2] = new Image(getTexture(transformPath(data.getJSONObject("DisableBackFileData").getString("Path"))));
-				_srcBitmapArr[3] = new Image(getTexture(transformPath(data.getJSONObject("NodeNormalFileData").getString("Path"))));
-				_srcBitmapArr[4] = new Image(getTexture(transformPath(data.getJSONObject("NodeDisableFileData").getString("Path"))));
+				_srcBitmapArr[0] = new Image(getTexture(transformPath(data["NormalBackFileData"]["Path"])));
+				_srcBitmapArr[1] = new Image(getTexture(transformPath(data["PressedBackFileData"]["Path"])));
+				_srcBitmapArr[2] = new Image(getTexture(transformPath(data["DisableBackFileData"]["Path"])));
+				_srcBitmapArr[3] = new Image(getTexture(transformPath(data["NodeNormalFileData"]["Path"])));
+				_srcBitmapArr[4] = new Image(getTexture(transformPath(data["NodeDisableFileData"]["Path"])));
 				_isAddFocusSign = data.has("TouchEnable") && data.getBoolean("TouchEnable");
 				if(_isAddFocusSign)
 					ViewUtil.setCenter(_srcBitmapArr[STATE_FOCUS], _srcBitmapArr[STATE_NORMAL]);
 				ViewUtil.setCenter(_srcBitmapArr[3], _srcBitmapArr[STATE_NORMAL]);
 				ViewUtil.setCenter(_srcBitmapArr[4], _srcBitmapArr[STATE_NORMAL]);
 				addChild(_srcBitmapArr[_state]);
-				setName(data.getString("Name"));
+				setName(data["Name"]);
 				autoSetPosition(data);
 			}
 			catch( e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 		

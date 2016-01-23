@@ -23,7 +23,7 @@ package game.view.scene.gamescene.elements
 	public class GameInfoUI extends UIContainer //implements ITickListener
 	{
 	
-		// private Hashtable statePoints = new Hashtable(4);
+		// private Object statePoints = new Object(4);
 	
 		private var stateImgs:Object = {};
 	
@@ -213,7 +213,7 @@ package game.view.scene.gamescene.elements
 		 */
 		public function addHua( dir:String, card:int):void
 		{
-//			System.out.println(dir + " 获得花牌：" + card);
+//			trace(dir + " 获得花牌：" + card);
 			trace(dir + " 获得花牌：" + card)
 	
 			var img:UIImageView = new UIImageView();
@@ -226,7 +226,7 @@ package game.view.scene.gamescene.elements
 //				img.setPosition(p.x() + vec.size() * img.getWidth(), p.y());
 				img.x = p.x + vec.length * img.width;
 			}
-			else if(dir.equals(GameDir.LEFT) || dir.equals(GameDir.RIGHT))
+			else if(dir == GameDir.LEFT || dir == GameDir.RIGHT)
 			{
 //				img.setPosition(p.x(), p.y() + vec.size() * img.getHeight());
 				img.y = p.y + vec.length * img.height;

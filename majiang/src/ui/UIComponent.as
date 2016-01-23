@@ -119,7 +119,7 @@ package ui
 		
 //		protected abstract void initWithJsonObject(JSONObject data);
 		
-		public function getJson(name:String):JSONObject
+		public function getJson(name:String):Object
 		{
 			_resList.addElement(name);
 			return Res.actively.getJson(name);

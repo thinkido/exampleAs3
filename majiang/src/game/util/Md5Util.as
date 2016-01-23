@@ -53,7 +53,7 @@ package game.util
 		{
 			int i;
 			md5Init();
-			md5Update(s.getBytes(), s.length());
+			md5Update(s.getBytes(), s.length);
 			md5Final();
 			digestHexStr = "";
 			for(i = 0; i < 16; i++)

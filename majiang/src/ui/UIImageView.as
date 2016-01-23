@@ -63,22 +63,22 @@ package ui
 				_srcTexture.clearTexture();
 		}
 	
-		public function initWithJsonObject( data:JSONObject):void
+		public function initWithJsonObject( data:Object):void
 		{
 			try
 			{
-				if(!data.getJSONObject("FileData").getString("Type").equals("Default"))
+				if(!data["FileData")["Type"] == "Default"]
 				{
-					var path:String = data.getJSONObject("FileData").getString("Path");
+					var path:String = data["FileData"]["Path"];
 					_srcTexture = new Image(getTexture(transformPath(path)));
 					addChild(_srcTexture);
 				}
-				setName(data.getString("Name"));
+				setName(data["Name"]);
 				autoSetPosition(data);
 			}
 			catch( e:Error)
 			{
-				e.printStackTrace();
+				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
 		}
 	

@@ -60,14 +60,14 @@ package network
 	
 		public function connect():void
 		{
-			if(mSocketName == null || mSocketName.length() == 0)
+			if(mSocketName == null || mSocketName.length == 0)
 				return;
 	
 			try
 			{
 				if(Log)
 				{
-//					System.out.println("Socket Connect: " + mSocketName);
+//					trace("Socket Connect: " + mSocketName);
 					trace("Socket Connect: " + mSocketName);
 				}
 				if(mIn != null)
@@ -102,7 +102,7 @@ package network
 					_statusListener.onNetworkStatusNotify(this, "connect-failed");
 				}
 	
-//				System.out.println(ex.getMessage());
+//				trace(ex.getMessage());
 				trace(ex.message);
 			}
 	
@@ -130,7 +130,7 @@ package network
 			{
 				if(Log)
 				{
-//					System.out.println("Socket Closed: " + mSocketName);
+//					trace("Socket Closed: " + mSocketName);
 					trace("Socket Closed: " + mSocketName);
 				}
 				if(mIn != null)
@@ -168,7 +168,7 @@ package network
 		{
 			try
 			{
-//				System.out.println("sent:" + strName);
+//				trace("sent:" + strName);
 				trace("sent:" + strName);
 				var node:ProtocolNode = ProtocolList.getNodeStr(strName);
 				if(node == null)
@@ -222,7 +222,7 @@ package network
 				mOut.flush();
 				if(Log)
 				{
-//					System.out.println("Packet Sent");
+//					trace("Packet Sent");
 					trace("Packet Sent");
 				}
 			}
@@ -233,12 +233,12 @@ package network
 					_statusListener.onNetworkStatusNotify(this, "send-failed");
 				}
 	
-//				System.out.println("SOCKET IO WRITE FAILED");
+//				trace("SOCKET IO WRITE FAILED");
 				trace("SOCKET IO WRITE FAILED");
 			}
 			catch(ex:Error)
 			{
-//				System.out.println(ex.getMessage());
+//				trace(ex.getMessage());
 				trace(ex.getMessage());
 			}
 		}
@@ -254,7 +254,7 @@ package network
 	
 			try
 			{
-				var length:int = packet.length();
+				var length:int = packet.length;
 				mLengthBuffer[3] = (byte)(length & 0xff);
 				mLengthBuffer[2] = (byte)((length >> 8) & 0xff);
 				mLengthBuffer[1] = (byte)((length >> 16) & 0xff);
@@ -264,7 +264,7 @@ package network
 				mOut.write(packet.getBytes());
 				mOut.flush();
 				if(Log)
-//					System.out.println("Packet Sent");
+//					trace("Packet Sent");
 					trace("Packet Sent");
 			}
 			catch( io:Error)
@@ -274,12 +274,12 @@ package network
 					_statusListener.onNetworkStatusNotify(this, "send-failed");
 				}
 	
-//				System.out.println("SOCKET IO WRITE FAILED");
+//				trace("SOCKET IO WRITE FAILED");
 				trace("SOCKET IO WRITE FAILED");
 			}
 			catch( ex:Error)
 			{
-//				System.out.println(ex.getMessage());
+//				trace(ex.getMessage());
 				trace(ex.getMessage());
 			}
 		}
@@ -306,7 +306,7 @@ package network
 					if(mBufferCursor >= LENGTH_SIZE)
 					{
 						mContentNeedLength = ((mBuffer[0] & 0xff) << 24) + ((mBuffer[1] & 0xff) << 16) + ((mBuffer[2] & 0xff) << 8) + (mBuffer[3] & 0xff);
-						// System.out.println( "Need Length: " +
+						// trace( "Need Length: " +
 						// String.valueOf(mContentNeedLength) );
 	
 						if(mContentNeedLength > MAX_BUFFER_LENGTH)
@@ -329,7 +329,7 @@ package network
 							}
 							else
 							{
-//								System.out.println("fuck failed receive length");
+//								trace("fuck failed receive length");
 								trace("fuck failed receive length");
 							}
 						}
@@ -358,7 +358,7 @@ package network
 							}
 							else
 							{
-//								System.out.println("fuck failed receive content");
+//								trace("fuck failed receive content");
 								trace("fuck failed receive content");
 							}
 						}
@@ -374,7 +374,7 @@ package network
 			}
 			catch(ex:Error)
 			{
-//				System.out.println(ex.getMessage());
+//				trace(ex.getMessage());
 				trace(ex.message);
 			}
 		}

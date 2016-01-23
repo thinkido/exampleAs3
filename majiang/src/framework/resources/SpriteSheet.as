@@ -1,6 +1,6 @@
 package framework.resources
 {
-import java.util.Hashtable;
+import java.util.Object;
 import java.util.Vector;
 
 import javax.microedition.lcdui.Image;
@@ -31,7 +31,7 @@ public class SpriteSheet
 	}
 
 	/**
-	 * ͨ¹ýÃû³ƻñȡÎÆÀ�Êý¾Ý
+	 * 通过名称获取纹理集数据
 	 * 
 	 * @param name
 	 * @return
@@ -45,7 +45,7 @@ public class SpriteSheet
 		init(ta, frameNames);
 	}
 
-	protected function SpriteSheet(jsonObj:JSONObject, frameNames:Array, sheet:Image)
+	protected function SpriteSheet(jsonObj:Object, frameNames:Array, sheet:Image)
 	{
 		var ta:TextureAtlas= new TextureAtlas(sheet, jsonObj);
 		init(ta, frameNames);
@@ -61,7 +61,7 @@ public class SpriteSheet
 	}
 
 	/**
-	 * »ñȡÎÆÀí
+	 * 获取纹理
 	 * 
 	 * @param name
 	 * @return
@@ -71,7 +71,7 @@ public class SpriteSheet
 	}
 
 	/**
-	 * ·µ»ØÓÉһ¸öָ¶¨µÄ×ַ󴮿ªʼ°´×ÖĸÅÅÐòµÄËùÓÐÎÆÀí(Õâ¶Ô"MovieClip"À´˵·ǳ£ÓÐÓÃ)
+	 * 返回由一个指定的字符串开始按字母排序的所有纹理(这对"MovieClip"来说非常有用)
 	 * 
 	 * @param prefix
 	 * @return
@@ -87,7 +87,7 @@ public class SpriteSheet
 			}
 		}
 
-		var frames:Hashtable= new Hashtable(list.size());
+		var frames:Object= new Object(list.size());
 		var frameNames:Array= new String[list.size()];
 		for(var i:int= 0; i < frameNames.length; i++)
 		{
