@@ -36,8 +36,10 @@ package game.constant
 			return newInstance;
 		}
 		
-		public static final SceneType SCENE_HALL = new SceneType(HallScene.class, "hall_scene_json");;
-			
-			public static final SceneType SCENE_GAME = new SceneType(GameScene.class, "game_scene_json");
+//		public static var SCENE_HALL:SceneType = new SceneType(HallScene.class, "hall_scene_json");
+//		public static var SCENE_GAME:SceneType = new SceneType(GameScene.class, "game_scene_json");
+		public static var SCENE_HALL:SceneType = new SceneType(HallScene, "hall_scene_json");;
+		public static var SCENE_GAME:SceneType = new SceneType(GameScene, "game_scene_json");
 				
-				}
+	}
+}

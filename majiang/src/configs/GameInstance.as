@@ -111,7 +111,8 @@ package configs
 		
 		public static function isPause():Boolean
 		{
-			return instance.gameState == GameState.PAUSE;
+//			return instance.gameState == GameState.PAUSE;
+			return false;
 		}
 		
 	}

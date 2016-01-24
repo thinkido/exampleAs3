@@ -1,15 +1,18 @@
 package
 {
 	
+	import flash.display.Sprite;
+	import flash.events.Event;
+	
 	import configs.GameInstance;
 	
 	import events.GameEvent;
 	
+	import framework.views.Stage;
+	
 	import managers.ResManager;
 	
 	import starling.display.Image;
-	import starling.display.Sprite;
-	import starling.events.Event;
 	import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
 	
@@ -29,6 +32,8 @@ package
 			EventCenter.instance.addEventListener(GameEvent.STAGE_ACTIVATE, onStageActivate);
 			EventCenter.instance.addEventListener(GameEvent.STAGE_DEACTIVATE, onStageDeactivate);
 			this.addEventListener(Event.ADDED_TO_STAGE,onResize);
+			
+//			this.addChild(new Stage);
 		}
 		
 		private var oldSoundEnable:Boolean = false;

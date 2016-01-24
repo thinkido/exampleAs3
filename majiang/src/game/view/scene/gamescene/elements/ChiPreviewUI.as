@@ -1,5 +1,11 @@
 package game.view.scene.gamescene.elements
 {
+	import jing.consts.CardPlace;
+	import jing.consts.GameDir;
+	import jing.consts.MahjongState;
+	import jing.consts.PlayerAction;
+	import jing.game.view.Mahjong;
+	
 	import starling.display.Sprite;
 	
 	public class ChiPreviewUI extends Sprite

@@ -1,5 +1,6 @@
 package game.model.action
 {
+	import game.model.callback.CallbackO;
 	
 	
 	public final class ActionImmediately extends Action

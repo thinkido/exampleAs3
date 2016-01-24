@@ -1,7 +1,5 @@
 package game.control
 {
-	import framework.views.Bitmap;
-	
 	import game.constant.SceneType;
 	import game.model.Global;
 	import game.model.action.Action;
@@ -9,7 +7,6 @@ package game.control
 	import game.model.action.ActionMoveBy;
 	import game.model.action.ActionSequence;
 	import game.model.callback.CallbackO;
-	import game.model.callback.ICallback;
 	import game.model.callback.ICallbackO;
 	import game.util.CommonUtil;
 	
@@ -60,7 +57,7 @@ package game.control
 		
 		public function switchScene(SceneType:SceneType):void
 		{
-			switchScene(SceneType, null);
+			switchScene_a(SceneType, null);
 		}
 		
 		public function switchScene_a(sceneType:SceneType, args:Object):void
@@ -88,15 +85,17 @@ package game.control
 						Global.sceneLayer.addChild(_curSceneCache);
 						startSwitch();
 						LoadingManager.getInstance().getCurLoadingView().setPosition(640, 0);
-						ActionManager.getInstance().doAction(new ActionSequence(new Action[]{new ActionMoveBy(LoadingManager.getInstance().getCurLoadingView(), -640, 0, SWITCH_TIME), new ActionImmediately(new CallbackO(new ICallbackO()
-							{
-								
-								public function run(data:Object):void
-								{
-									Global.sceneLayer.removeChild(_curSceneCache);
-									_curSceneCache = null;
-								}
-							}, null))}));
+						
+						/*ActionManager.getInstance().doAction(new ActionSequence({new ActionMoveBy(LoadingManager.getInstance().getCurLoadingView(), -640, 0, SWITCH_TIME),
+								new ActionImmediately(new CallbackO(new CallbackO_A(_curSceneCache), null))}));*/
+						
+						var callback:CallbackO = new CallbackO(new CallbackO_A(_curSceneCache), null);
+						var actionImm:ActionImmediately = new ActionImmediately(callback);
+						var moveBy:ActionMoveBy = new ActionMoveBy(LoadingManager.getInstance().getCurLoadingView(), -640, 0, SWITCH_TIME);
+						var vect:Vector.<Action> = new Vector.<Action>();
+//						vect.push({moveBy, actionImm});
+						var sequence:ActionSequence = new ActionSequence(vect);
+						ActionManager.getInstance().doAction(sequence);
 					}
 					else
 					{
@@ -104,6 +103,9 @@ package game.control
 					}
 				}
 			}
+
+
+
 			else
 			{
 				trace("正在加载其他场景，请稍后重试", "LogManager.LEVEL_WARNING");
@@ -112,14 +114,16 @@ package game.control
 		
 		protected function startSwitch():void
 		{
-			LoadingManager.getInstance().showLoading(true, "场景加载中，请耐心等待", new ICallback()
+			/*LoadingManager.getInstance().showLoading(true, "场景加载中，请耐心等待", new ICallback()
 				{
 					
 					public void run()
 					{
 						doSwitch();
 					}
-				});
+				});*/
+			
+			LoadingManager.getInstance().showLoading(true, "场景加载中，请耐心等待", new Callback_B(doSwitch));
 		}
 		
 		protected function doSwitch():void
@@ -129,19 +133,20 @@ package game.control
 			_curView.updateData(_args);
 			_args = null;
 			Global.sceneLayer.addChild(_curView);
-			LoadingManager.getInstance().showLoading(true, "场景加载完毕，即将呈现", new ICallback()
+			/*LoadingManager.getInstance().showLoading(true, "场景加载完毕，即将呈现", new ICallback()
 				{
 					
 					public void run()
 					{
 						finishSwitch();
 					}
-				});
+				});*/
+			LoadingManager.getInstance().showLoading(true, "场景加载完毕，即将呈现", new Callback_B(finishSwitch));
 		}
 		
 		protected function finishSwitch():void
 		{
-			ActionManager.getInstance().doAction(
+			/*ActionManager.getInstance().doAction(
 				new ActionSequence(
 					new Action[]{
 						new ActionMoveBy(LoadingManager.getInstance().getCurLoadingView(), -640, 0, SWITCH_TIME), new ActionImmediately(new CallbackO(new ICallbackO()
@@ -157,8 +162,18 @@ package game.control
 							curWindow.onStageFocus();
 						_curView.onEnter();
 					}
-				}, null))}));
+				}, null))}));*/
+			
+			var callbackO:ICallbackO = new CallbackO_B(_curView);
+			var actionImm:ActionImmediately = new ActionImmediately( new CallbackO(callbackO, null));
+			var moveBy:ActionMoveBy = new ActionMoveBy(LoadingManager.getInstance().getCurLoadingView(), -640, 0, SWITCH_TIME);
+			var vect:Vector.<Action> = new Vector.<Action>;
+			vect.push();
+			var sequence:ActionSequence = new ActionSequence(vect);
+			ActionManager.getInstance().doAction(sequence);
 		}
+
+
 		
 		public function getCurScene():UIScene
 		{
@@ -169,5 +184,70 @@ package game.control
 		{
 			return _curType;
 		}
+	}
+}
+import game.control.LoadingManager;
+import game.control.WindowManager;
+import game.model.Global;
+import game.model.callback.ICallback;
+import game.model.callback.ICallbackO;
+
+import starling.display.Image;
+
+import ui.UIScene;
+import ui.UIWindow;
+
+class CallbackO_A implements ICallbackO
+{
+	private var _curSceneCache:Image;
+	
+	public function CallbackO_A(img:Image)
+	{
+		_curSceneCache = img;
+	}
+	
+	public function run(data:Object):void
+	{
+		Global.sceneLayer.removeChild(_curSceneCache);
+		_curSceneCache = null;
+	}
+}
+
+class CallbackO_B implements ICallbackO
+{
+	private var _curView:UIScene
+	
+	public function CallbackO_B($scene:UIScene)
+	{
+		_curView = $scene;
+	}
+	
+	public function run( data:Object):void
+	{
+		LoadingManager.getInstance().hideLoading();
+		var curWindow:UIWindow = WindowManager.getInstance().getCurWindow();
+		if(curWindow == null)
+			_curView.onStageFocus();
+		else
+			curWindow.onStageFocus();
+		_curView.onEnter();
+	}
+}
+
+class Callback_B implements ICallback
+{
+	private var func:Function;
+	
+	public function Callback_B(myFunc:Function):void
+	{
+		func = myFunc;
+	}
+	public function run():void
+	{
+		if(this.func)
+		{
+			this.func();
+		}
+//		doSwitch();
 	}
 }

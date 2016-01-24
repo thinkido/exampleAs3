@@ -2,15 +2,11 @@ package game.control
 {
 	
 	import framework.consts.EventType;
+	import framework.events.EventDispatcher;
 	import framework.events.IEventListener;
 	import framework.views.Stage;
 	
 	import game.model.action.Action;
-	
-	import java.util.Enumeration;
-	import java.util.Vector;
-	
-	import starling.events.EventDispatcher;
 	
 	public class ActionManager implements IEventListener
 	{
@@ -28,10 +24,10 @@ package game.control
 			return _instance;
 		}
 	
-		private ActionManager()
+		public function ActionManager()
 		{
 			_busy = false;
-			_actionList = new Vector();
+			_actionList = [];
 		}
 	
 		public function doAction(action:Action):void
@@ -62,7 +58,7 @@ package game.control
 			}
 		}
 	
-		public function onReciveEvent(type:byte, dispatcher:EventDispatcher, data:Object):void
+		public function onReciveEvent(type:int, dispatcher:EventDispatcher, data:Object):void
 		{
 			/*for(Enumeration enumobj = _actionList.elements(); enumobj.hasMoreElements();)
 			{

@@ -11,21 +11,21 @@ public class GameDir
 	/**
 	 * ÏòÉÏÀ©ɢ²¼¾Ö
 	 */
-	static const public var UP:String= "up";
+	static public const UP:String= "up";
 
 	/**
 	 * Ïò×óÀ©ɢ²¼¾Ö
 	 */
-	static const public var LEFT:String= "left";
+	static public const LEFT:String= "left";
 
 	/**
 	 * ÏòÏÂÀ©ɢ²¼¾Ö
 	 */
-	static const public var DOWN:String= "down";
+	static public const DOWN:String= "down";
 
 	/**
 	 * ÏòÓÒÀ©ɢ²¼¾Ö
 	 */
-	static const public var RIGHT:String= "right";
+	static public const RIGHT:String= "right";
 }
 }

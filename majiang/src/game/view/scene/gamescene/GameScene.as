@@ -3,11 +3,24 @@ package game.view.scene.gamescene
 	import framework.consts.EventType;
 	import framework.consts.KeyType;
 	
+	import game.constant.SceneType;
 	import game.control.SceneManager;
 	import game.control.WindowManager;
 	import game.model.Global;
 	import game.model.vo.EnterGameVO;
 	import game.view.scene.gamescene.elements.GameInfoUI;
+	
+	import jing.consts.CardPlace;
+	import jing.consts.GameDir;
+	import jing.consts.MahjongState;
+	import jing.consts.PlayerAction;
+	import jing.game.model.GamePlayModel;
+	import jing.game.net.GameRequest;
+	import jing.game.view.JiaoPreviewUI;
+	import jing.game.view.Mahjong;
+	import jing.game.view.Player;
+	import jing.pai.vo.ChuVO;
+	import jing.pai.vo.JiaoVO;
 	
 	import starling.display.Stage;
 	import starling.events.EventDispatcher;
@@ -261,7 +274,7 @@ package game.view.scene.gamescene
 					case KeyType.CONFIRM:
 						if(pDown.inTurn())
 						{
-							Mahjong mj = pDown.getSelectedCard();
+							var mj:Mahjong = pDown.getSelectedCard();
 							if(null != mj)
 							{
 								GameRequest.ins().gameAction(PlayerAction.CHU, mj.card());

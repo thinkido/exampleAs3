@@ -1,7 +1,6 @@
 package framework.time
 {
-	import framework.time.ITickListener;
-	import framework.time.TickItem;
+	
 	
 	public class Ticker
 	{
@@ -11,8 +10,7 @@ package framework.time
 		 */
 		private var _lastTime:int = 0;
 		
-		private var _vector:Array = [];
-		
+		private var _vector:Vector.<TickItem> = new Vector.<TickItem>;
 		/**
 		 * 使用后自动增加的ID
 		 */
@@ -31,7 +29,8 @@ package framework.time
 		public function tick(now:int):void
 		{
 			_lastTime = now;
-			var size:int = _vector.length  ;
+			var size:int = _vector.length;
+
 			var item:TickItem ;
 			while(--size > -1)
 			{
@@ -46,7 +45,8 @@ package framework.time
 					}
 					else
 					{
-						_vector.removeElementAt(size);
+//						_vector.removeElementAt(size);
+						_vector.splice(size,1);
 					}
 				}
 			}
@@ -77,14 +77,15 @@ package framework.time
 		 */
 		public function release(id:int):void
 		{
-			var size:int = _vector.length ;
+			var size:int = _vector.length;
 			var item:TickItem ;
-			for(var i:int = 0; i < size; i++)
+			for(var i:int = size - 1; i >= 0; i--)
 			{
 				item = _vector[i] as TickItem;
 				if(item.id() == id)
 				{
-					_vector.splice(i,1) ;  // _vector.removeElementAt(i) ;
+//					_vector.removeElementAt(i);
+					_vector.splice(i,1);
 					break;
 				}
 			}
@@ -95,7 +96,7 @@ package framework.time
 		 */
 		public function getItem(id:int):TickItem
 		{
-			var size:int = _vector.length ;
+			var size:int = _vector.length;
 			var item:TickItem;
 			for(var i:int = 0; i < size; i++)
 			{
@@ -120,8 +121,11 @@ package framework.time
 		private function createItem(type:int, interval:int,listener:ITickListener,params:Object):TickItem
 		{
 			var item:TickItem = new TickItem(type, interval, listener, params);
+			/*item.type = type;
+			item.interval = interval;
+			item.listener()*/
 			item.setTickTime(_lastTime + interval);
-			item.setId(_incrementId++);
+			item.id = _incrementId++;
 			_vector.push(item);
 			return item;
 		}

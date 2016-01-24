@@ -1,10 +1,13 @@
 package jing.game.view
 {
+import framework.views.Sprite_additional;
+
 import jing.GDC;
-import jing.consts.GameDir;
 import jing.consts.CombinType;
+import jing.consts.GameDir;
 import jing.vo.CardLayoutVO;
-import framework.views.Sprite;
+
+import starling.display.Sprite;
 
 /**
  * ×éºÏÅƣ¬ÀýÈçÍæ¼Ҵò³öµÄÅ򡢳ԡ¢¸ܡ¢°µ¸Ü

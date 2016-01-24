@@ -2,8 +2,6 @@ package game.control
 {
 	import flash.utils.ByteArray;
 	
-	import framework.time.ITickListener;
-	import framework.time.TickItem;
 	import framework.views.Stage;
 	
 	import game.constant.SceneType;
@@ -13,23 +11,11 @@ package game.control
 	import game.model.vo.IpAddressVO;
 	import game.model.vo.UserDataVO;
 	
-	import java.io.IOException;
-	
-	import net.jarlehansen.protobuf.javame.ByteString;
-	
 	import network.ProtocolList;
 	import network.YiuNetworkHandlerMgr;
 	import network.YiuNetworkListener;
 	import network.YiuNetworkSocket;
 	import network.YiuNetworkStatusListener;
-	
-	import org.json.me.JSONArray;
-	import org.json.me.JSONException;
-	import org.json.me.JSONObject;
-	
-	import protocol.heartbeat;
-	import protocol.sc_enter_hall;
-	import protocol.sc_force_continue_game;
 	
 	public class AccountManager implements YiuNetworkListener
 	{
@@ -69,12 +55,12 @@ package game.control
 		
 		public function AccountManager():void
 		{
-			_statusListener = new YiuNetworkStatusListener()
+			/*_statusListener = new YiuNetworkStatusListener()
 			{
 				
 				protected function doLost(socket:YiuNetworkSocket):void
 				{
-					trace("�����������ж�", "LogManager.LEVEL_ERROR");
+					trace("网络连接已中断", "LogManager.LEVEL_ERROR");
 					socket.close();
 					return;
 				}
@@ -88,7 +74,8 @@ package game.control
 						doLost(socket);
 					}
 				}
-			};
+			};*/
+			_statusListener = new YiuNetworkStatusListener_A();
 			try
 			{
 				_heartbeatBytes = heartbeat.newBuilder().setNoop(0).build().toByteArray();
@@ -97,7 +84,7 @@ package game.control
 			{
 				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
-			Stage.current.ticker.setTimeInterval(HEARTBEAT_INTERVAL, new ITickListener()
+			/*Stage.current.ticker.setTimeInterval(HEARTBEAT_INTERVAL, new ITickListener()
 				{
 					
 					public void onTick(TickItem tickItem)
@@ -107,12 +94,13 @@ package game.control
 						if(Global.socketGame != null && Global.socketGame.isConnected())
 							Global.socketGame.sendProtobuf("heartbeat", _heartbeatBytes);
 					}
-				}, null);
-			
+				}, null);*/
+			Stage.current.ticker.setTimeInterval(HEARTBEAT_INTERVAL, new TickListener_A(_heartbeatBytes), null);
 			_id = Global.account;
 			_name = Global.adAccount;
 			ProtocolList.init();
 		}
+
 		
 		public function getId():String
 		{
@@ -146,24 +134,24 @@ package game.control
 			Global.giftVO = null;
 		}
 		
-		public void connect()
+		public function connect():void
 		{
-			// �����׽���
-			YiuNetworkSocket socketHall = new YiuNetworkSocket(Global.cfg.hallAddressVO());
+			// 大厅套接字
+			var socketHall:YiuNetworkSocket = new YiuNetworkSocket(Global.cfg.hallAddressVO());
 			Stage.current.ticker.setTimeInterval(SOCKET_INTERVAL, socketHall, null);
 			socketHall.setStatusListener(_statusListener);
 			socketHall.connect();
 			Global.socketHall = socketHall;
 			
-			// ��Ϸ�����׽���,��ʱ�����ӣ������뷿�������
-			YiuNetworkSocket socketGame = new YiuNetworkSocket();
+			// 游戏房间套接字,暂时不连接，当进入房间才连接
+			var socketGame:YiuNetworkSocket = new YiuNetworkSocket();
 			Stage.current.ticker.setTimeInterval(SOCKET_INTERVAL, socketGame, null);
 			socketGame.setStatusListener(_statusListener);
 			Global.socketGame = socketGame;
-			String ret = YiuHttpManager.PostOptJson(Global.cfg.gateAddressVO().toHttpAddress() + "/login", "id=" + _id + "&idtype=" + _type + "&name=" + _name + "&version=0.1");
+			var ret:String = YiuHttpManager.PostOptJson(Global.cfg.gateAddressVO().toHttpAddress() + "/login", "id=" + _id + "&idtype=" + _type + "&name=" + _name + "&version=0.1");
 			if(ret == null || ret == "{}")
 			{
-				trace("��¼ʧ��", "LogManager.LEVEL_ERROR");
+				trace("登录失败", "LogManager.LEVEL_ERROR");
 			}
 			else
 			{
@@ -175,29 +163,29 @@ package game.control
 					var fetched:Boolean = json["logingold_fetched"] ;
 					Global.giftVO = new GiftVO(day, gold, fetched);
 				}
-				catch(JSONException e)
+				catch( e:Error)
 				{
-					trace("��¼/��ȡ��¼������Ϣʧ��", "LogManager.LEVEL_ERROR");
+					trace("登录/获取登录奖励信息失败", "LogManager.LEVEL_ERROR");
 				}
-				trace("��½�ɹ�");
+				trace("登陆成功");
 				YiuNetworkHandlerMgr.subscribe(this);
 				reqEnterHall();
 			}
 		}
 		
-		public void reqEnterHall()
+		public function reqEnterHall():void
 		{
 			Global.socketHall.send(JSON.stringify(["enter_hall",_id,_type,0]) );
 		}
 		
-		public function onNetworkEvent(name:String, content:ByteString):Boolean
+		public function onNetworkEvent(name:String, content:String):Boolean
 		{
 			try
 			{
 				if(name == "sc_enter_hall")
 				{
 					YiuNetworkHandlerMgr.unSubscribe(this);
-					sc_enter_hall msg = sc_enter_hall.parseFrom(content.toByteArray());
+					var msg:sc_enter_hall = sc_enter_hall.parseFrom(content);
 					Global.userDataVO = new UserDataVO(msg);
 					PlaceDataManager.getInstance().init(msg.getPlace_infos());
 					SceneManager.getInstance().switchScene(SceneType.SCENE_HALL);
@@ -211,11 +199,67 @@ package game.control
 					return false;
 				}
 			}
-			catch(IOException e)
+			catch( e:Error)
 			{
-				trace("����sc_enter_hallЭ��ʧ��", "LogManager.LEVEL_ERROR");
+				trace("解析sc_enter_hall协议失败", "LogManager.LEVEL_ERROR");
 			}
 			return true;
 		}
+
+
+	}
+}
+import flash.utils.ByteArray;
+
+import framework.time.ITickListener;
+import framework.time.TickItem;
+
+import game.model.Global;
+
+import network.YiuNetworkSocket;
+import network.YiuNetworkStatusListener;
+
+class YiuNetworkStatusListener_A implements YiuNetworkStatusListener
+{
+//	private var socket:YiuNetworkSocket;
+	
+	/*public function YiuNetworkStatusListener_A(s:YiuNetworkSocket)
+	{
+		socket = s;
+	}*/
+	
+	protected function doLost(socket:YiuNetworkSocket):void
+	{
+		trace("网络连接已中断", "LogManager.LEVEL_ERROR");
+		socket.close();
+		return;
+	}
+	
+	// status = [connect-failed,send-failed,receive-failed,connected]
+	public function onNetworkStatusNotify(socket:YiuNetworkSocket, status:String):void
+	{
+		trace(status);
+		if(status == "connect-failed" || status == "send-failed")
+		{
+			doLost(socket);
+		}
+	}
+}
+
+class TickListener_A implements ITickListener
+{
+	private var _heartbeatBytes:ByteArray;
+	
+	public function TickListener_A($byte:ByteArray)
+	{
+		_heartbeatBytes == $byte;
+	}
+	
+	public function onTick( tickItem:TickItem):void
+	{
+		if(Global.socketHall != null && Global.socketHall.isConnected())
+			Global.socketHall.sendProtobuf("heartbeat", _heartbeatBytes);
+		if(Global.socketGame != null && Global.socketGame.isConnected())
+			Global.socketGame.sendProtobuf("heartbeat", _heartbeatBytes);
 	}
 }

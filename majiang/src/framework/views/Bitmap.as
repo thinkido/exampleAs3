@@ -30,7 +30,7 @@ public class Bitmap extends DisplayObject
 		setTexture(t);
 	}
 
-	public function Bitmap(t:Texture, anchor:int)
+	public function Bitmap_2(t:Texture, anchor:int):void
 	{
 		setTexture(t);
 		setAnchor(anchor);

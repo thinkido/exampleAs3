@@ -10,16 +10,16 @@ import java.util.Vector;
 public class CardVector
 {
 
-	private var _vec:Vector= null;
+	private var _vec:Array = null;
 
 	public function CardVector()
 	{
-		_vec = new Vector();
+		_vec = [];
 	}
 
-	public function CardVector(cards:Array)
+	public function CardVector_A(cards:Array):void
 	{
-		_vec = new Vector(cards.length);
+		_vec = [];
 		for(var i:int= 0; i < cards.length; i++)
 		{
 			add(cards[i]);
@@ -32,7 +32,8 @@ public class CardVector
 	 * @param card
 	 */
 	public function add(card:int):void{
-		_vec.addElement(toInteger(card));
+//		_vec.addElement(toInteger(card));
+		_vec.push(card);
 	}
 
 	/**
@@ -40,10 +41,11 @@ public class CardVector
 	 * 
 	 * @param cards
 	 */
-	public function add(cards:Array):void{
+	public function add_2(cards:Array):void{
 		for(var i:int= 0; i < cards.length; i++)
 		{
-			_vec.addElement(toInteger(cards[i]));
+//			_vec.addElement(toInteger(cards[i]));
+			_vec.push(cards[i]);
 		}
 	}
 
@@ -73,7 +75,8 @@ public class CardVector
 	 * @return
 	 */
 	public function getAt(index:int):int{
-		return toInt(Integer(_vec.elementAt(index)));
+//		return toInt(Integer(_vec.elementAt(index)));
+		return _vec[index];
 	}
 
 	/**
@@ -111,9 +114,9 @@ public class CardVector
 	 * 
 	 * @return
 	 */
-	public int[] getCards()
+	public function getCards():Array
 	{
-		var cards:Array= new int[_vec.size()];
+		var cards:Array= [];
 		for(var i:int= 0; i < cards.length; i++)
 		{
 			cards[i] = getAt(i);
@@ -207,15 +210,18 @@ public class CardVector
 	 * @return
 	 */
 	public function clone():CardVector{
-		return new CardVector(this.getCards());
+//		return new CardVector_A(this.getCards());
+		var vec:CardVector = new CardVector;
+		vec.CardVector_A(this.getCards());
+		return vec;
 	}
 
-	private function toInteger(card:int):Integer{
-		return new Integer(card);
+	private function toInteger(card:int):int{
+		return new card;
 	}
 
-	private function toInt(obj:Integer):int{
-		return obj.intValue();
+	private function toInt(obj:int):int{
+		return obj;
 	}
 
 	public function toString():String{

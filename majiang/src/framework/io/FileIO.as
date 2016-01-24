@@ -4,8 +4,6 @@ package framework.io
 	import com.thinkido.framework.air.FileUtils;
 	
 	import flash.utils.ByteArray;
-	
-	import game.control.LogManager;
 
 	public class FileIO
 	{
@@ -59,7 +57,6 @@ package framework.io
 				trace(" http request wrong: " + url, "LogManager.LEVEL_ERROR");
 				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
-import framework.io.HttpData;
 			
 			return null;
 		}
@@ -156,7 +153,7 @@ import framework.io.HttpData;
 				{
 					var actual:int= 0;
 					var bytesread:int= 0;
-					var data:Array= new byte[len];
+					var data:Array= [];
 					while((bytesread != len) && (actual != -1))
 					{
 						actual = iss.read(data, bytesread, len - bytesread);
@@ -197,7 +194,7 @@ import framework.io.HttpData;
 		 * @return
 		 */
 		static public function getInputStream(path:String):InputStream{
-			var iss:InputStream= MIDlet.class.getResourceAsStream(path);
+			var iss:InputStream= MIDlet.getResourceAsStream(path);
 			return iss;
 		}
 		

@@ -9,6 +9,7 @@ package game.view.window.shop
 	import starling.display.Button;
 	
 	import ui.UIObject;
+	import ui.UITextBMFont;
 	import ui.UIWindow;
 	
 	public class DiamondShopWindow extends UIWindow

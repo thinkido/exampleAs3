@@ -9,44 +9,43 @@ package framework.geom
 	 */
 	public class Rectangle
 	{
-		
 		private var _x:int= 0;
 		
-		public function x():int{
+		public function get x():int{
 			return _x;
 		}
 		
-		public function setX(x:int):void{
+		public function set x(x:int):void{
 			_x = x;
 		}
 		
 		private var _y:int= 0;
 		
-		public function y():int{
+		public function get y():int{
 			return _y;
 		}
 		
-		public function setY(y:int):void{
+		public function set y(y:int):void{
 			_y = y;
 		}
 		
 		private var _w:int= 0;
 		
-		public function w():int{
+		public function get width():int{
 			return _w;
 		}
 		
-		public function setW(w:int):void{
+		public function set width(w:int):void{
 			_w = w;
 		}
 		
 		private var _h:int= 0;
 		
-		public function h():int{
+		public function get height():int{
 			return _h;
 		}
 		
-		public function setH(h:int):void{
+		public function set height(h:int):void{
 			_h = h;
 		}
 		
@@ -80,9 +79,10 @@ package framework.geom
 			}
 		}
 		
-		public function toString():String{
+		public function toString():String
+		{
 			var format:String= "[x=%s,y=%s,w=%s,h=%s]";
-			var repls:Array= {_x.toString(),_y.toString(),_w.toString(),_h.toString()};		
+			var repls:Array= [_x.toString(),_y.toString(),_w.toString(),_h.toString()];		
 			return StringUtil.format(format, repls);			
 		}
 		
@@ -112,22 +112,22 @@ package framework.geom
 			var intersectX:int;
 			var intersectY:int;
 			
-			if (rectA.x() + rectA.w() < rectB.x())
+			if (rectA.x + rectA.width < rectB.x)
 			{
 				return null;
 			}
 			
-			if (rectA.x() > rectB.x() + rectB.w())
+			if (rectA.x > rectB.x + rectB.width)
 			{
 				return null;
 			}
 			
-			if (rectA.y() + rectA.h() < rectB.y())
+			if (rectA.y + rectA.height < rectB.y)
 			{
 				return null;
 			}
 			
-			if (rectA.y() > rectB.y() + rectB.h())
+			if (rectA.y > rectB.y + rectB.height)
 			{
 				return null;
 			}
@@ -151,8 +151,8 @@ package framework.geom
 		 */
 		static public function getUnionRect(rectA:Rectangle, rectB:Rectangle):Rectangle{
 			var unionRect:Rectangle= new Rectangle(0, 0, 0, 0);
-			unionRect.setX(rectA.x() < rectB.x()?rectA.x():rectB.x());
-			unionRect.setY(rectA.y() < rectB.y()?rectA.y():rectB.y());
+			unionRect.x = rectA.x < rectB.x ? rectA.x : rectB.x;
+			unionRect.y = rectA.y < rectB.y ? rectA.y : rectB.y;
 			unionRect.setRight(rectA.right() > rectB.right()?rectA.right():rectB.right());
 			unionRect.setBottom(rectA.bottom() > rectB.bottom()?rectA.bottom():rectB.bottom());
 			return unionRect;

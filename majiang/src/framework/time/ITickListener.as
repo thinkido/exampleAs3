@@ -2,7 +2,6 @@ package framework.time
 {
 	public interface ITickListener
 	{
-		
 		 function onTick(tickItem:TickItem):void;
 	}
 	/**

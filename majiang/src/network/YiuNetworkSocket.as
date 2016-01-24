@@ -35,9 +35,9 @@ package network
 	
 		private var mContentNeedLength:int;
 	
-		private var mBuffer:byte[] = new byte[MAX_BUFFER_LENGTH];
+		private var mBuffer:Vector.<int> = new Vector.<int>;
 	
-		private var  mLengthBuffer:byte[] = new byte[4];
+		private var  mLengthBuffer:Vector.<int> = new Vector.<int>;
 	
 		private var mBufferCursor:int = 0;
 	

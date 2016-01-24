@@ -7,8 +7,6 @@ import jing.pai.vo.ChuVO;
 import jing.pai.vo.HuVO;
 import jing.pai.vo.JiaoVO;
 
-import java.util.Vector;
-
 /**
  * ³öÅưïÖú
  * 
@@ -16,7 +14,7 @@ import java.util.Vector;
  */
 public class ChuHelp
 {
-	public function check(cards:Array, kes:Array):ChuTip{
+	public function check(cards:Vector.<int>, kes:Vector.<CardKe>):ChuTip{
 		var tip:ChuTip= new ChuTip();
 		
 		// ·ֱðȥµôһÕÅÅƣ¬Ȼºó¼ÆËãʣÏµÄÅÆÊǷñ×é³ɽÐ

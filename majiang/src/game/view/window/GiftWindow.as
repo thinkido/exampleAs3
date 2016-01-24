@@ -1,17 +1,14 @@
-package game.view.window;
+package game.view.window
 {
 	import framework.consts.KeyType;
 	
-	import game.control.LogManager;
 	import game.control.WindowManager;
 	import game.model.Global;
-	import game.model.callback.ICallbackB;
 	import game.util.CommonUtil;
 	
 	import starling.display.Button;
 	import starling.events.EventDispatcher;
 	
-	import ui.UIButton;
 	import ui.UIObject;
 	import ui.UIWindow;
 	
@@ -48,7 +45,8 @@ package game.view.window;
 						_btnGiftList[i].setState(STATE_NORMAL);
 				}
 				if (Global.giftVO.fetched)
-					_btnGet.setState(STATE_DISABLE);
+//					_btnGet.setState(STATE_DISABLE);
+					_btnGet.enabled = false;
 			}
 		}
 		
@@ -66,13 +64,16 @@ package game.view.window;
 						{
 							Global.giftVO.fetched = true;
 							_btnGiftList[Global.giftVO.day - 1].setState(STATE_DISABLE);
-							_btnGet.setState(STATE_DISABLE);
-							CommonUtil.showPopupWindow(false, "恭喜,成功领取"
+//							_btnGet.setState(STATE_DISABLE);
+							_btnGet.enabled = false;
+							/*CommonUtil.showPopupWindow(false, "恭喜,成功领取"
 								+ Global.giftVO.gold + "积分", new ICallbackB() {
 									public void run(boolean data) {
 										close();
 									}
-								});
+								});*/
+							CommonUtil.showPopupWindow(false, "恭喜,成功领取"
+								+ Global.giftVO.gold + "积分", new CallBack_A(close));
 						} else {
 							close();
 						}
@@ -80,13 +81,33 @@ package game.view.window;
 				}
 				
 			}
+
 		
 		public function close():void {
 			WindowManager.getInstance().closeWindow(this);
 		}
 		
-		 public function onConfirm( target:UIObject):void {
+		 override public function onConfirm( target:UIObject):void {
 			
+		}
+	}
+}
+import game.model.callback.ICallbackB;
+
+class CallBack_A implements ICallbackB
+{
+	private var func:Function;
+	
+	public function CallBack_A($func:Function)
+	{
+		func = $func;
+	}
+	
+	public function run(data:Boolean):void
+	{
+		if(func != null)
+		{
+			func();
 		}
 	}
 }

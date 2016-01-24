@@ -2,6 +2,7 @@ package framework.time
 {
 	public class TickItem
 	{
+
 		public function TickItem(type:int,interval:int,listener:ITickListener,data:Object)
 		{		
 			this.type = type;
@@ -17,12 +18,12 @@ package framework.time
 		/**
 		 * 触发项的ID
 		 */
-		public function id():int
+		public function get id():int
 		{
 			return _id;
 		}
 		
-		public function setId(id:int):void
+		public function set id(id:int):void
 		{
 			_id = id;
 		}
@@ -32,7 +33,7 @@ package framework.time
 		/**
 		 * 携带的数据
 		 */
-		public function data():Object
+		public function get data():Object
 		{
 			return _data;
 		}
@@ -40,9 +41,14 @@ package framework.time
 		/**
 		 * 每次被触发的间隔
 		 */
-		public function interval()
+		public function get interval():int
 		{
 			return _interval;
+		}
+		
+		public function set interval(value:int):void
+		{
+			_interval = value;
 		}
 		
 		private var _tickTime:int = 0;
@@ -78,6 +84,14 @@ package framework.time
 		{
 			_tickTime = tickTime;
 		} 
+		
+		/*public function TickItem(type:int = 0, interval:int = 0, listener:ITickListener = null, data:Object = null)
+		{		
+			this.type = type;
+			this._interval = interval;
+			this._listener = listener;
+			this._data = data;
+		}*/
 		
 	}
 }

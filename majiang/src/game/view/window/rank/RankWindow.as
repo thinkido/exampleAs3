@@ -1,5 +1,7 @@
 package game.view.window.rank
 {
+	import framework.resources.SpriteSheet;
+	
 	import game.control.WindowManager;
 	import game.model.Global;
 	import game.model.vo.RankItemVO;
@@ -13,6 +15,7 @@ package game.view.window.rank
 	import ui.UIImageView;
 	import ui.UILayer;
 	import ui.UIObject;
+	import ui.UITextBMFont;
 	import ui.UIWindow;
 	
 	public class RankWindow extends UIWindow implements YiuNetworkListener
@@ -145,7 +148,7 @@ package game.view.window.rank
 		}
 	
 		/** ��Ϣ���ؼ��� */
-		public function onNetworkEvent( name:String,  content:ByteString):Boolean
+		public function onNetworkEvent( name:String,  content:String):Boolean
 		{
 			try
 			{

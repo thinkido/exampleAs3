@@ -1,6 +1,8 @@
 package game.view.scene
 {
-	import game.control.LogManager;
+	import game.constant.SceneType;
+	import game.constant.WindowType;
+	import game.control.AccountManager;
 	import game.control.PlaceDataManager;
 	import game.control.SceneManager;
 	import game.control.WindowManager;
@@ -19,6 +21,7 @@ package game.view.scene
 	import ui.UIImageView;
 	import ui.UIObject;
 	import ui.UIScene;
+	import ui.UITextBMFont;
 	
 	public class HallScene extends UIScene implements YiuNetworkListener
 	{
@@ -68,7 +71,7 @@ package game.view.scene
 			keyStageList.push("lianxi", "chuji", "zhongji", "gaoji");
 		}
 		
-		public function onEnter():void
+		override public function onEnter():void
 		{
 			YiuNetworkHandlerMgr.subscribe(this);
 			updateUserInfo();

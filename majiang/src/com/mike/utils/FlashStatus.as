@@ -1,16 +1,14 @@
 package com.mike.utils
 {
-	
-	
-	import flash.display.Sprite;
-	import flash.display.Stage;
-	import flash.events.Event;
 	import flash.system.System;
-	import flash.text.TextField;
 	import flash.text.TextFormat;
 	import flash.utils.getTimer;
 	
-	
+	import starling.display.Sprite;
+	import starling.display.Stage;
+	import starling.events.Event;
+	import starling.text.TextField;
+		
 	public class FlashStatus extends Sprite
 	{
 		
@@ -21,16 +19,20 @@ package com.mike.utils
 		public function FlashStatus()
 		{
 			super();
-			fps = new TextField();
-			fps.defaultTextFormat = new TextFormat(null,12,0xff0000);
-			fps.width = 150;
-			fps.height = 22;
+			fps = new TextField(150,22,'');
+			fps.color = 0xff0000;
+			fps.fontSize = 12;
+//			fps.defaultTextFormat = new TextFormat(null,12,0xff0000);
+//			fps.width = 150;
+//			fps.height = 22;
 			this.addChild(fps);
 			
-			scCount = new TextField();
-			scCount.defaultTextFormat = new TextFormat(null,12,0xff0000);
-			scCount.width = 150;
-			scCount.height = 22;
+			scCount = new TextField(150,22,'');
+			scCount.color = 0xff0000;
+			scCount.fontSize = 12;
+//			scCount.defaultTextFormat = new TextFormat(null,12,0xff0000);
+//			scCount.width = 150;
+//			scCount.height = 22;
 			scCount.y = 30;
 			this.addChild(scCount);
 		}

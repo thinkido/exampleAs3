@@ -8,14 +8,14 @@ import framework.resources.Res;
 import framework.resources.Texture;
 import framework.views.Bitmap;
 import framework.views.BitmapFont;
-import framework.views.Sprite;
+import framework.views.Sprite_additional;
 
 /**
  * ½ÐÅÆԤÀÀ
  * 
  * @author Jing
  */
-public class JiaoPreviewUI extends Sprite
+public class JiaoPreviewUI extends Sprite_additional
 {
 
 	private var _bgT:Texture= null;

@@ -113,7 +113,7 @@ public class MovieClip extends DisplayObject
 			{
 				if(null != this.getParent())
 				{
-					(Sprite(this.getParent())).removeChild(this);
+					(Sprite_additional(this.getParent())).removeChild(this);
 				}
 				return;
 			}

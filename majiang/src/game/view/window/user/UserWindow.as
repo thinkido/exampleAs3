@@ -3,7 +3,8 @@ package game.view.window.user
 	import framework.consts.EventType;
 	import framework.consts.KeyType;
 	
-	import game.control.LogManager;
+	import game.constant.SceneType;
+	import game.control.AccountManager;
 	import game.control.SceneManager;
 	import game.control.WindowManager;
 	import game.model.Global;
@@ -16,9 +17,11 @@ package game.view.window.user
 	import starling.display.Button;
 	import starling.events.EventDispatcher;
 	
+	import ui.UICheckBox;
 	import ui.UIImageView;
 	import ui.UILayer;
 	import ui.UIObject;
+	import ui.UITextBMFont;
 	import ui.UIWindow;
 	
 	public class UserWindow extends UIWindow implements YiuNetworkListener
@@ -177,7 +180,7 @@ package game.view.window.user
 			}
 		}
 		
-		public function onNetworkEvent( name:String, content:ByteString):Boolean
+		public function onNetworkEvent( name:String, content:String):Boolean
 		{
 			try
 			{

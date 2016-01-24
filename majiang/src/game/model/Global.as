@@ -2,11 +2,17 @@ package game.model
 {	
 	import flash.system.System;
 	
+	import framework.resources.Res;
+	import framework.resources.SpriteSheet;
+	
+	import game.control.LoadingManager;
 	import game.control.PlaceDataManager;
 	import game.control.SceneManager;
 	import game.control.WindowManager;
 	import game.model.vo.GiftVO;
 	import game.model.vo.UserDataVO;
+	
+	import jing.configs.Config;
 	
 	import network.YiuNetworkSocket;
 	
@@ -22,9 +28,9 @@ package game.model
 		// 消息通知器
 		public static var notice:EventDispatcher = new EventDispatcher();
 		
-		public static final const GAME_ID:String = "90E94D37-DA24-DD26-A84E-19877299B7DB";
+		public static const GAME_ID:String = "90E94D37-DA24-DD26-A84E-19877299B7DB";
 		
-		public static final const CARDHOUSE_URL:String = "http://182.140.237.62/cardhouse/iptv/";
+		public static const CARDHOUSE_URL:String = "http://182.140.237.62/cardhouse/iptv/";
 		
 		public static const SCREEN_WIDTH:int = 640;
 		

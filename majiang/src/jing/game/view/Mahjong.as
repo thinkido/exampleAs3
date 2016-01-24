@@ -1,15 +1,17 @@
 package jing.game.view
 {
-import jing.GDC;
-import jing.consts.GameDir;
-import jing.consts.CardPlace;
-import jing.consts.MahjongBoardType;
-import jing.consts.MahjongState;
 import framework.resources.Res;
 import framework.resources.SpriteSheet;
 import framework.resources.Texture;
 import framework.views.Bitmap;
-import framework.views.Sprite;
+
+import jing.GDC;
+import jing.consts.CardPlace;
+import jing.consts.GameDir;
+import jing.consts.MahjongBoardType;
+import jing.consts.MahjongState;
+
+import starling.display.Sprite;
 
 /**
  * Â齫ÏÔʾ¶ÔÏó

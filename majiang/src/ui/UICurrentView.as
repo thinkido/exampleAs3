@@ -53,7 +53,7 @@ package ui
 		public function stopInput():void
 		{
 			_isInput = false;
-			var tf:TextField = _selected;
+			var tf:TextField = _selected as TextField;
 			var text:String = tf.text;
 			tf.text = text.substring(0, text.length - 1);
 		}
@@ -73,7 +73,7 @@ package ui
 				var keyCode:int = int(data);
 				if(_isInput)
 				{
-					var tf:TextField = _selected;
+					var tf:TextField = _selected as TextField;
 					var text:String = tf.text;
 					switch(keyCode)
 					{
@@ -136,7 +136,7 @@ package ui
 							dir = DIR_RIGHT;
 							break;
 						case KeyType.CONFIRM:
-							if(_selected.getClass() == UICheckBox.class)
+							if(_selected.getClass() == UICheckBox)
 							{
 								(_selected as UICheckBox).swapCheckedState();
 							}
@@ -164,7 +164,7 @@ package ui
 		 */
 		protected function onMove( dir:int):void
 		{
-			if(_selected.getClass() != UIListView.class || !(_selected as UIListView).tryMoveOnce(dir))
+			if(_selected.getClass() != UIListView || !(_selected as UIListView).tryMoveOnce(dir))
 			{
 				var target:UIObject = _selected.getNeighbor(dir);
 				while(null != target && STATE_DISABLE == target.getState())
@@ -194,13 +194,14 @@ package ui
 			{
 				if(_selected != null)
 				{
-					if(_selected.getClass() == UICheckBox.class)
+//					if(_selected.getClass() == UICheckBox)
+					if(_selected is UICheckBox)
 						_selected.setState((_selected as UICheckBox).isChecked() ? STATE_CHECKED_NORMAL : STATE_NORMAL);
 					else
 						_selected.setState(STATE_NORMAL);
 				}
 				_selected = target;
-				if(_selected.getClass() == UICheckBox.class)
+				if(_selected is UICheckBox)
 					_selected.setState((_selected as UICheckBox).isChecked() ? STATE_CHECKED_FOCUS : STATE_FOCUS);
 				else
 					_selected.setState(STATE_FOCUS);

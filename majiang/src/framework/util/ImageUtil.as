@@ -1,5 +1,7 @@
 package framework.util
 {
+	import starling.display.Image;
+
 	public class ImageUtil
 	{
 		public function ImageUtil()
@@ -16,8 +18,8 @@ package framework.util
 		 */
 		static public function alpha(img:Image, color:int):Image
 		{
-			var w:int = img.getWidth();
-			var h:int = img.getHeight();
+			var w:int = img.width;
+			var h:int = img.height;
 			var v:int ;
 			var colors:Array = [] ;
 			img.getRGB(colors, 0, w, 0, 0, w, h);
