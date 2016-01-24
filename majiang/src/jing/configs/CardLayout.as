@@ -35,8 +35,8 @@ public class CardLayout
 	 * @return
 	 */
 	public function getLayout(dir:String, place:String):CardLayoutVO{
-		var dirTbl:Object= Object(_t.get(dir));
-		return (CardLayoutVO)dirTbl.get(place);
+		var dirTbl:Object= Object(_t[dir]);
+		return dirTbl[place] as CardLayoutVO;
 	}
 
 	public function init(file:String):void{

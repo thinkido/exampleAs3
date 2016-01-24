@@ -131,7 +131,7 @@ package game.view.scene.gamescene.windows
 				
 				btn.setNeighbors(null, null, next, pre);
 				
-				scgame_show_actions act = (scgame_show_actions)_btn2Act.get(btn);
+				var act:scgame_show_actions = _btn2Act[btn] as scgame_show_actions;
 				if(act.getId() == PlayerAction.CHI_LEFT || act.getId() == PlayerAction.CHI_MIDDLE || act.getId() == PlayerAction.CHI_RIGHT)
 				{
 					var y:int = 170;
@@ -204,7 +204,7 @@ package game.view.scene.gamescene.windows
 		
 		override public function onConfirm( target:UIObject):void
 		{
-			var action:scgame_show_actions = _btn2Act.get(target) as scgame_show_actions;
+			var action:scgame_show_actions = _btn2Act[target] as scgame_show_actions;
 			var id:int = action.getId();
 			trace("玩家选择了操作：" + id);
 			var typeOrId:int = 0;

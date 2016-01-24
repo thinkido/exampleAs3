@@ -93,7 +93,7 @@ package game.view.scene.gamescene.elements
 		{
 			var img:UIImageView = null;
 			var p:Point = null;
-			img = (UIImageView)stateImgs.get(dir);
+			img = stateImgs[dir] as UIImageView;
 			p = new Point(img.getX() + img.getWidth() / 2, img.getY() + img.getHeight() / 2);
 			img.setAnchor(ANCHOR_CENTER);
 			img.setPosition(p.x(), p.y());
@@ -218,7 +218,7 @@ package game.view.scene.gamescene.elements
 	
 			var img:UIImageView = new UIImageView();
 			img.setTexture("hua_" + card + "_1_png");
-			var p:Point = (Point)huaStartPoint.get(dir);
+			var p:Point = huaStartPoint[dir] as Point;
 			var vec:Array = huas[dir] as Array;
 	
 			if(dir == GameDir.UP || dir == GameDir.DOWN)

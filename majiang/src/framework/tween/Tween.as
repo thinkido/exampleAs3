@@ -31,7 +31,7 @@ public class Tween extends EventDispatcher implements IEventListener
 	 * »º¶¯¶¯»­Àà
 	 * @param binded
 	 */
-	protected function Tween(binded:DisplayObject, delay:Number, duration:Number, targetX:int, targetY:int)
+	public function Tween(binded:DisplayObject, delay:Number, duration:Number, targetX:int, targetY:int)
 	{
 		_binded = binded;
 		_startX = _binded.getX();
@@ -63,11 +63,11 @@ public class Tween extends EventDispatcher implements IEventListener
 //		return new Tween(_binded, delay, duration, targetY, targetY);
 //	}
 	
-	public function destroy():void{
-		destroy(false);
-	}
+//	public function destroy():void{
+//		destroy(false);
+//	}
 	
-	public function destroy(complete:Boolean):void{
+	public function destroy(complete:Boolean = false):void{
 		if(true == complete)
 		{
 			_binded.setPosition(_endX, _endY);
@@ -90,7 +90,7 @@ public class Tween extends EventDispatcher implements IEventListener
 			return;
 		}
 		
-		var k:Number= double((now - _startTime) )/ _duration;
+		var k:Number= (now - _startTime) / _duration;
 		var tempX:int= int((k * _distanceX));
 		var tempY:int= int((k * _distanceY));
 		_binded.setPosition(_startX + tempX, _startY + tempY);

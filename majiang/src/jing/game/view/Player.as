@@ -183,7 +183,7 @@ public class Player extends Sprite
 	 * @return
 	 */
 	public function cardCount(place:String):int{
-		var vec:Vector= Vector(_mjT.get(place));
+		var vec:Vector= Vector(_mjT[place]);
 		return vec.size();
 	}
 
@@ -256,7 +256,7 @@ public class Player extends Sprite
 	}
 
 	private function setCards(cards:Array, place:String):void{
-		var vec:Vector= Vector(_mjT.get(place));
+		var vec:Vector= Vector(_mjT[place]);
 		tidyVec(vec, cards.length);
 
 		for(var i:int= 0; i < cards.length; i++)
@@ -556,7 +556,7 @@ public class Player extends Sprite
 	}
 
 	public function getCard(place:String, index:int):Mahjong{
-		var vec:Vector= Vector(_mjT.get(place));
+		var vec:Vector= Vector(_mjT[place]);
 		if(index >= vec.size() || index < 0)
 		{
 			return null;
@@ -631,7 +631,7 @@ public class Player extends Sprite
 			}
 
 			// ÅжÏѡÖеÄÅƣ¬Èç¹û´ò³öºó¿ÉÒÔÏ½У¬ÔòÏÔʾ´ò³öºó½еÄÅÆÒԼ°¶ÔӦµĺúÅƷ¬ÐÍ
-			var chuVO:ChuVO= ct.get(_selected);
+			var chuVO:ChuVO= ct[_selected];
 			if(null != chuVO)
 			{
 				GameScene.cur.showChuInfo(chuVO);
@@ -726,7 +726,7 @@ public class Player extends Sprite
 	 * @param newState
 	 */
 	public function changeCardsState(place:String, card:int, oldState:int, newState:int):void{
-		var vec:Vector= Vector(_mjT.get(place));
+		var vec:Vector= Vector(_mjT[place]);
 		for(var i:int= 0; i < vec.size(); i++)
 		{
 			var mj:Mahjong= Mahjong(vec.elementAt(i));
@@ -743,7 +743,7 @@ public class Player extends Sprite
 	 * @param place
 	 */
 	public function resetCardsState(place:String):void{
-		var vec:Vector= Vector(_mjT.get(place));
+		var vec:Vector= Vector(_mjT[place]);
 		for(var i:int= 0; i < vec.size(); i++)
 		{
 			var mj:Mahjong= Mahjong(vec.elementAt(i));

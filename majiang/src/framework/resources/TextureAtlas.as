@@ -22,7 +22,7 @@ public class TextureAtlas
 	protected var _frames:Object= null;
 
 	public function getFrame(name:String):TextureData{
-		return (TextureData)_frames.get(name);
+		return _frames[name] ;
 	}
 
 	public function TextureAtlas(img:Image, jsonObj:Object)
@@ -48,7 +48,7 @@ public class TextureAtlas
 	 * @return
 	 */
 	public function getTexture(name:String):Texture{
-		var td:TextureData= TextureData(_frames.get(name));
+		var td:TextureData= _frames[name]  ;
 		if(null == td)
 		{
 			return null;

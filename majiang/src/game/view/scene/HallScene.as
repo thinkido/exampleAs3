@@ -285,7 +285,7 @@ package game.view.scene
 		private function reqEnterPlace( placeId:String):void
 		{
 			var placeDataMgr:PlaceDataManager = PlaceDataManager.getInstance();
-			var place:PlaceData = placeDataMgr.get(placeId);
+			var place:PlaceData = placeDataMgr[placeId];
 			
 			if(place == null)
 			{

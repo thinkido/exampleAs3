@@ -2,7 +2,8 @@ package framework.util
 {
 	import framework.consts.EventType;
 	
-	import starling.events.EventDispatcher;
+	import framework.consts.EventType;
+	import framework.events.EventDispatcher;
 
 	public class Keyboard extends EventDispatcher
 	{
@@ -42,11 +43,11 @@ package framework.util
 		 */
 		public function isPressed(int keyCode):Boolean
 		{
-			if(false == _map.containsKey(keyCode)
+			if(_map[keyCode] == undefined)
 			{
 				return false;
 			}			
-			return _map.get(keyCode) as Boolean;
+			return _map[keyCode] as Boolean;
 		}
 		
 	}

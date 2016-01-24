@@ -27,7 +27,7 @@ public class ChuTip
 
 	public function get(card:int):ChuVO{
 		var cardStr:String= String.valueOf(card);
-		var obj:Object= _t.get(cardStr);
+		var obj:Object= _t[cardStr];
 		if(null != obj)
 		{
 			var chuVO:ChuVO= ChuVO(obj);
@@ -59,7 +59,7 @@ public class ChuTip
 
 	public function contains(card:int):Boolean{
 		var cardStr:String= String.valueOf(card);
-		if(_t.containsKey(cardStr))
+		if( _t[cardStr] != undefined )
 		{
 			return true;
 		}
