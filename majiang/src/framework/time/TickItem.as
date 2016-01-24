@@ -2,8 +2,12 @@ package framework.time
 {
 	public class TickItem
 	{
-		public function TickItem()
-		{
+		public function TickItem(type:int,interval:int,listener:ITickListener,data:Object)
+		{		
+			this.type = type;
+			this._interval = interval;
+			this._listener = listener;
+			this._data = data;
 		}
 		/**
 		 * 类型 0:触发一次 1:间隔触发
