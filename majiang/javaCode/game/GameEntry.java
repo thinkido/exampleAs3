@@ -23,10 +23,10 @@ public class GameEntry extends Sprite
 			Global.account = "test_tv";
 			Global.adAccount = Global.account;
 		}
-		//Global.resUrl = "http://192.168.0.202/itv/gbmj/res";
-		Res.localRes.init("/res.json");
-		//Res.httpRes.init("/res.json", Global.resUrl);
-		Res.actively = Res.localRes;
+		Global.resUrl = "http://192.168.0.202/itv/gbmj/res";
+		Res.httpRes.init("/res.json", Global.resUrl);
+		//Res.localRes.init("/res.json");		
+		Res.actively = Res.httpRes;
 		// Res.httpRes.init("/res.json", Global.resUrl);
 		// Res.actively = Res.httpRes;
 

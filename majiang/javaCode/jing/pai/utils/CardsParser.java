@@ -118,15 +118,15 @@ public class CardsParser
 
 				if(KeType.PENG == ke.type)
 				{
-					temp.removeCard(ke.card);
-					temp.removeCard(ke.card);
-					temp.removeCard(ke.card);
+					temp.removeCard(ke.id);
+					temp.removeCard(ke.id);
+					temp.removeCard(ke.id);
 				}
 				else if(KeType.CHI == ke.type)
 				{
-					temp.removeCard(ke.card);
-					temp.removeCard(ke.card + 1);
-					temp.removeCard(ke.card + 2);
+					temp.removeCard(ke.id);
+					temp.removeCard(ke.id + 1);
+					temp.removeCard(ke.id + 2);
 				}
 
 				ke = getKe(temp, 0);

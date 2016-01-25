@@ -53,4 +53,40 @@ public class CardCode
 	static public int HUA_6 = 56;
 	static public int HUA_7 = 57;
 	static public int HUA_8 = 58;
+	
+	
+	static public int  HAND_SEQS =  11;
+	static public int  HAND_SEQE =  39;
+	static public int  HAND_ZIS = 41;
+	static public int  HAND_ZIE = 47;
+	static public int  HAND_HUAS  = 51;
+	static public int  HAND_HUAE  = 58;
+
+	static public int  HAND_START = HAND_SEQS;
+	/*花牌不会出现在手牌中*/
+	static public int  HAND_LEN  = 48;
+
+	static public int  COM_SIZE  =  5;
+
+	//#define HAND_LEN    40
+
+	static public int  COMPLEX_LEN = 10;
+
+	static public int  HU_MAX_NUM = 20;
+
+	static public int  HU_MAX_TYPE = 20;
+	
+	static public int  COM_PENG   = 1;
+	static public int  COM_GANG   = 2;
+	static public int  COM_CHI    = 4;//包含所有的连牌
+	static public int  COM_JIANG  = 7;
+	
+	static public int  COM_PENG2     = 0;
+	static public int  COM_KE        = 1;
+	static public int  COM_MING_GANG = 2;
+	static public int  COM_AN_GANG   = 3;
+	static public int  COM_SEQ       = 4;/*手牌中的序牌*/
+	static public int  COM_ZUO_CHI   = 5;/*左吃*/
+	static public int  COM_MID_CHI   = 6;/*中吃*/
+	static public int  COM_YOU_CHI   = 7;/*右吃*/
 }

@@ -21,12 +21,16 @@ public class CardKe
 	/**
 	 * 如果是连字，则card为连字第一个，后面为card + 1, card + 2
 	 */
-	public int card = 0;
+	public int id = 0;
 
 	public CardKe(int type, int card, int type2)
 	{
 		this.type = type;
-		this.card = card;
+		this.id = card;
 		this.type2 = type2;
+	}
+	
+	public String toStrong() {
+		return "CardKe: type = "+type+", type2 = "+type2+", id = "+id+";";
 	}
 }

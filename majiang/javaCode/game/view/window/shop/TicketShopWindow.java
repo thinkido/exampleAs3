@@ -11,6 +11,7 @@ import game.view.scene.HallScene;
 import java.io.IOException;
 
 import net.jarlehansen.protobuf.javame.ByteString;
+import network.YiuNetworkHandlerMgr;
 import network.YiuNetworkListener;
 import protocol.cs_exchange_fee;
 import protocol.sc_exchange_fee_result;
@@ -58,11 +59,12 @@ public class TicketShopWindow extends UIWindow implements YiuNetworkListener
 	public void onEnter()
 	{
 		updateTicket();
+		YiuNetworkHandlerMgr.subscribe(this);
 	}
 
 	public void onLeave()
 	{
-
+		YiuNetworkHandlerMgr.unSubscribe(this);
 	}
 
 	public void onConfirm(UIObject target)
@@ -98,7 +100,7 @@ public class TicketShopWindow extends UIWindow implements YiuNetworkListener
 
 	private void updateTicket()
 	{
-		_bfTicket.setText("" + Global.userDataVO.score);
+		_bfTicket.setText(CommonUtil.formatGold(Global.userDataVO.score));
 	}
 
 	public boolean onNetworkEvent(String name, ByteString content)

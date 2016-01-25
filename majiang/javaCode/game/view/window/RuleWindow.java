@@ -1,21 +1,26 @@
 
 package game.view.window;
 
-import framework.resources.Res;
-import game.control.WindowManager;
+import org.json.me.JSONArray;
+import org.json.me.JSONException;
+import org.json.me.JSONObject;
+
 import ui.UIButton;
 import ui.UIImageView;
 import ui.UIObject;
 import ui.UIWindow;
+import framework.resources.Res;
+import game.control.LogManager;
+import game.control.WindowManager;
 
 public class RuleWindow extends UIWindow
 {
 
 	private int TAB_LENGTH = 4;
 
-	private String[] TYPE_STRING_LIST = new String[]{"aboutus", "rule", "score", "type"};
+	private String[] TYPE_STRING_LIST = new String[TAB_LENGTH];
 
-	private int[] CONTENT_LEN_LIST = new int[]{1, 5, 1, 38};
+	private int[] CONTENT_LEN_LIST = new int[TAB_LENGTH];
 
 	private int _curTab;
 
@@ -44,6 +49,27 @@ public class RuleWindow extends UIWindow
 			_curIndexList[i] = 0;
 		}
 		_curTab = 0;
+		String configFilaname = "rule_json";
+		JSONObject obj = Res.actively.getJson(configFilaname);
+		try
+		{
+			JSONArray configArr = obj.getJSONArray("config_list");
+			int len = configArr.length();
+			if(len != TAB_LENGTH)
+				LogManager.getInstance().log("配置文件内容不正确", LogManager.LEVEL_ERROR);
+			for(int i = 0; i < len; i++)
+			{
+				JSONObject configItem = configArr.getJSONObject(i);
+				TYPE_STRING_LIST[i] = configItem.getString("prefix");
+				CONTENT_LEN_LIST[i] = configItem.getInt("length");
+			}
+		}
+		catch(JSONException e)
+		{
+			LogManager.getInstance().log("加载配置文件出错", LogManager.LEVEL_ERROR);
+		}
+
+		Res.actively.release(configFilaname);
 	}
 
 	public void onEnter()
@@ -156,7 +182,7 @@ public class RuleWindow extends UIWindow
 
 	private void updateContent()
 	{
-		String filename = "img_txt_" + TYPE_STRING_LIST[_curTab] + "_" + (_curIndexList[_curTab] + 1) + "_png";
+		String filename = TYPE_STRING_LIST[_curTab] + (_curIndexList[_curTab] + 1) + "_png";
 		_imgContent.setTexture(Res.actively.getTexture(filename));
 		Res.actively.release(filename);
 		if(_curIndexList[_curTab] < CONTENT_LEN_LIST[_curTab] - 1)

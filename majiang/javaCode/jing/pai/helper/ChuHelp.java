@@ -20,6 +20,7 @@ public class ChuHelp
 	public ChuTip check(int[] cards, CardKe[] kes)
 	{
 		ChuTip tip = new ChuTip();
+		
 		// 分别去掉一张牌，然后计算剩下的牌是否组成叫
 		for(int playCardIndex = 0; playCardIndex < cards.length; playCardIndex++)
 		{
@@ -28,7 +29,7 @@ public class ChuHelp
 			{
 				continue;
 			}
-
+			
 			CardVector tempCards = new CardVector();
 			for(int i = 0; i < cards.length; i++)
 			{
@@ -42,6 +43,7 @@ public class ChuHelp
 			int[] jiaoCards = new JiaoHelp().getJiao(tempCards);
 			if(jiaoCards != null && jiaoCards.length > 0)
 			{
+				
 				ChuVO chuVO = new ChuVO(playCard, jiaoCards.length);
 				tip.put(playCard, chuVO);
 				// 有叫,算出各种叫的情况下对应的胡的牌型
@@ -51,10 +53,13 @@ public class ChuHelp
 					CardVector temp = tempCards.clone();
 					//temp.add(jiaoCard);
 					//HuVO hu = new HuVO(); 
-					HuVO hu =new HuHelp().getHu(temp, kes, jiaoCard);
+
+					HuVO hu = null;
+					//hu = new HuHelp().getHu(temp, kes, jiaoCard);
 
 					chuVO.jiaos[i] = new JiaoVO(jiaoCard, hu);
 				}
+				
 				sortJiaos(chuVO);
 			}
 			else

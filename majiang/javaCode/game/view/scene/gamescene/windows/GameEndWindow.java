@@ -17,6 +17,8 @@ import framework.resources.SpriteSheet;
 import framework.resources.Texture;
 import framework.views.Bitmap;
 import framework.views.BitmapFont;
+import game.constant.WindowType;
+import game.control.WindowManager;
 import game.view.scene.gamescene.GameScene;
 
 public class GameEndWindow extends UIWindow
@@ -25,6 +27,8 @@ public class GameEndWindow extends UIWindow
 	private UIButton _btnHall = null;
 
 	private UIButton _btnReady = null;
+
+	private UIButton _btnCollect = null;
 
 	private UIImageView _gameResult = null;
 
@@ -42,12 +46,14 @@ public class GameEndWindow extends UIWindow
 	{
 		_btnHall = (UIButton)getChildByName("btn_hall");
 		_btnReady = (UIButton)getChildByName("btn_ready");
+		_btnCollect = (UIButton)getChildByName("btn_collect");
 		_gameResult = (UIImageView)getChildByName("game_result");
 		_scoreType = (UIImageView)getChildByName("score_type");
 		_txtMoney = (UITextBMFont)getChildByName("txt_money");
 
-		_btnHall.setNeighbors(null, null, _btnReady, _btnReady);
-		_btnReady.setNeighbors(null, null, _btnHall, _btnHall);
+		_btnHall.setNeighbors(null, null, _btnReady, _btnCollect);
+		_btnCollect.setNeighbors(null, null, _btnHall, _btnReady);
+		_btnReady.setNeighbors(null, null, _btnCollect, _btnHall);
 
 		switchFocus(_btnReady);
 	}
@@ -179,6 +185,11 @@ public class GameEndWindow extends UIWindow
 		{
 			System.out.println("再来一局");
 			GameScene.cur.readyGame();
+		}
+		else if(target == _btnCollect)
+		{
+			System.out.println("集牌箱");
+			WindowManager.getInstance().openWindow(WindowType.WINDOW_COLLECT, new Boolean(true));
 		}
 	}
 

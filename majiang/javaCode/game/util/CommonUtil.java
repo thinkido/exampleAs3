@@ -115,9 +115,9 @@ public class CommonUtil
 	public static String formatGold(long gold)
 	{
 		String strGold = "";
-		if(gold >= 1000000000)
+		if(gold >= 100000000)
 			strGold += (gold / 100000000) + "вк";
-		else if(gold >= 100000)
+		else if(gold >= 10000)
 			strGold += (gold / 10000) + "Эђ";
 		else
 			strGold += gold;
