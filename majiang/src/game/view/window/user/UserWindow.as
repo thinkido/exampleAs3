@@ -59,7 +59,7 @@ package game.view.window.user
 		
 		private var _originSex:int;
 		
-		override protected function initUI():void
+		override public function initUI():void
 		{
 			_mediator = new UserHeadMediator(getChildByName("layer_user_head") as UILayer);
 			_btnClose = getChildByName("btn_close") as Button;

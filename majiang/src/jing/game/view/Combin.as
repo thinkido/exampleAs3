@@ -1,6 +1,6 @@
 package jing.game.view
 {
-import framework.views.Sprite_additional;
+import framework.views.Sprite;
 
 import jing.GDC;
 import jing.consts.CombinType;

@@ -1,7 +1,7 @@
 package framework.resources
 {
 
-import javax.microedition.lcdui.Image;
+import starling.display.Image;
 
 
 /**

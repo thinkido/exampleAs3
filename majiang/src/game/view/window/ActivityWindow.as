@@ -17,7 +17,7 @@ package game.view.window
 		
 		private var _btnClose:Button;
 		
-		override protected function initUI():void
+		override public function initUI():void
 		{
 			_btnClose = getChildByName("btn_close") as Button;
 			_btnTabList = new Vector.<Button>;

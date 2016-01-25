@@ -7,7 +7,7 @@ import framework.util.StringUtil;
 
 import java.io.InputStream;
 
-import javax.microedition.lcdui.Image;
+import starling.display.Image;
 import javax.microedition.media.Manager;
 import javax.microedition.media.MediaException;
 import javax.microedition.media.Player;

@@ -2,7 +2,7 @@ package framework.resources
 {
 	import framework.io.FileIO;
 	
-	import javax.microedition.lcdui.Image;
+	import starling.display.Image;
 	
 	
 	/**

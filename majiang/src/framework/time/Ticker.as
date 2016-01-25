@@ -41,7 +41,7 @@ package framework.time
 					
 					if(item.type == 1)
 					{
-						item.setTickTime(now + item.interval());
+						item.setTickTime(now + item.interval);
 					}
 					else
 					{
@@ -58,7 +58,7 @@ package framework.time
 		public function setTimeout(delay:int,listener:ITickListener,params:Object):int
 		{
 			var item:TickItem = createItem(0, delay, listener, params);
-			return item.id();
+			return item.id ;
 		}
 		
 		/**
@@ -67,7 +67,7 @@ package framework.time
 		public function setTimeInterval(interval:int,listener:ITickListener,params:Object):int
 		{
 			var item:TickItem = createItem(1, interval, listener, params);
-			return item.id();
+			return item.id;
 		}
 		
 		/**
@@ -82,7 +82,7 @@ package framework.time
 			for(var i:int = size - 1; i >= 0; i--)
 			{
 				item = _vector[i] as TickItem;
-				if(item.id() == id)
+				if(item.id == id)
 				{
 //					_vector.removeElementAt(i);
 					_vector.splice(i,1);
@@ -101,7 +101,7 @@ package framework.time
 			for(var i:int = 0; i < size; i++)
 			{
 				item = _vector[i] as TickItem;
-				if(item.id() == id)
+				if(item.id == id)
 				{
 					return item;
 				}

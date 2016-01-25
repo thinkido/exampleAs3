@@ -1,7 +1,7 @@
 package framework.views
 {
 import javax.microedition.lcdui.Graphics;
-import javax.microedition.lcdui.Image;
+import starling.display.Image;
 
 import framework.geom.Point;
 import framework.geom.Rectangle;

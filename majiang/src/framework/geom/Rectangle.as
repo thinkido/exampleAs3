@@ -132,8 +132,8 @@ package framework.geom
 				return null;
 			}
 			
-			intersectX = rectA.x() > rectB.x() ? rectA.x() : rectB.x();
-			intersectY = rectA.y() > rectB.y() ? rectA.y() : rectB.y();
+			intersectX = rectA.x > rectB.x ? rectA.x : rectB.x;
+			intersectY = rectA.y > rectB.y ? rectA.y : rectB.y;
 			
 			var intersectRight:int= rectA.right() < rectB.right() ? rectA.right() : rectB.right();
 			var intersectBottom:int= rectA.bottom() < rectB.bottom() ? rectA.bottom() : rectB.bottom();

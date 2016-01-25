@@ -102,7 +102,7 @@ package com.mike.utils
 				{
 					t.channel = t.sound.play(0,int.MAX_VALUE);
 				}
-				if (callBack)
+				if (callBack != null)
 				{
 					callBack();
 				}

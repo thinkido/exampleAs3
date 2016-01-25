@@ -1,5 +1,6 @@
 package game.model.vo
 {
+	import protos.hallserver.place_info;
 	
 	
 	public class PlaceData {

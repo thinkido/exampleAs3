@@ -43,7 +43,7 @@ package game.view.scene.gamescene.windows
 			
 			private var _huTypes:SpriteSheet = null;
 			
-			protected function initUI():void
+			override public function initUI():void
 			{
 				_btnHall = getChildByName("btn_hall") as Button;
 				_btnReady = getChildByName("btn_ready") as Button;
@@ -57,7 +57,7 @@ package game.view.scene.gamescene.windows
 				switchFocus(_btnReady);
 			}
 			
-			public function onEnter():void
+			override public function onEnter():void
 			{
 				_vo = _args as GameEndVO;
 				_fnt = Res.actively.getFontSheet("gameend_txt_fnt");

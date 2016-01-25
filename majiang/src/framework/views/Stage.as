@@ -130,12 +130,12 @@ package framework.views
 			return _viewPort;
 		}
 		
-		private var _root:Sprite_additional= null;
+		private var _root:Sprite= null;
 		
 		/**
 		 *  主显示容器(文档类)
 		 */
-		public function getRoot():Sprite_additional{
+		public function getRoot():Sprite{
 			return _root;
 		}
 		
@@ -233,7 +233,7 @@ package framework.views
 		public function setRoot(_rootCls:Class):void{
 			try
 			{
-				_root = Sprite_additional(_rootCls.newInstance());
+				_root = Sprite(_rootCls.newInstance());
 			}
 			catch(evt:Error)
 			{

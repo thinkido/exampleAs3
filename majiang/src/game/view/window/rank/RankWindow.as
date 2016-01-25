@@ -10,6 +10,8 @@ package game.view.window.rank
 	import network.YiuNetworkHandlerMgr;
 	import network.YiuNetworkListener;
 	
+	import protos.hallserver.sc_rank_list;
+	
 	import starling.display.Button;
 	
 	import ui.UIImageView;
@@ -91,7 +93,7 @@ package game.view.window.rank
 				_bfRank.setText("" + _myRankList[_curTab]);
 		}
 	
-		public function onMove( dir:int):void
+		override public function onMove( dir:int):void
 		{
 			if(_selected == _btnClose)
 			{
@@ -125,7 +127,7 @@ package game.view.window.rank
 			}
 		}
 	
-		public function initUI():void
+		override public function initUI():void
 		{
 			_btnTabList = new Vector.<Button>;
 			_mediatorList = new Vector.<RankLayerMediator>;

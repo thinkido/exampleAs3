@@ -1,7 +1,7 @@
 package network
 {
 	
-	import game.control.LogManager;
+	
 	
 	import java.util.Vector;
 	

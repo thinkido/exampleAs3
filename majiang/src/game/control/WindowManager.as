@@ -1,7 +1,12 @@
 package game.control
 {
 	
+	import game.constant.WindowType;
+	import game.model.Global;
+	import game.model.vo.OpenWindowVO;
+	
 	import ui.UIScene;
+	import ui.UIWindow;
 	
 	public class WindowManager
 	{

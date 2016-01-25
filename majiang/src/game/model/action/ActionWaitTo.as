@@ -1,5 +1,6 @@
 package game.model.action
 {
+	import game.model.callback.CallbackO;
 	
 	
 	public class ActionWaitTo extends ActionInterval

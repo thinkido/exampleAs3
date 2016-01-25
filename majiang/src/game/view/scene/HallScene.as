@@ -16,6 +16,13 @@ package game.view.scene
 	import network.YiuNetworkHandlerMgr;
 	import network.YiuNetworkListener;
 	
+	import protos.hallserver.sc_broadcast_msg;
+	import protos.hallserver.sc_enter_place;
+	import protos.hallserver.sc_enter_place_failed;
+	import protos.hallserver.sc_get_item;
+	import protos.hallserver.sc_hall_debug;
+	import protos.hallserver.sc_update_places;
+	
 	import starling.display.Button;
 	
 	import ui.UIImageView;
@@ -155,13 +162,13 @@ package game.view.scene
 
 		}
 		
-		public function initUI():void
+		override public function initUI():void
 		{
 			btnUser = getChildByName("btn_user") as Button;
 			btnShop = getChildByName("btn_shop") as Button;
 			btnActivity = getChildByName("btn_activity") as Button;
-			btnRank = getChildByName("btn_rank") as Button;;
-			btnRule = getChildByName("btn_rule") as Button;;
+			btnRank = getChildByName("btn_rank") as Button;
+			btnRule = getChildByName("btn_rule") as Button;
 			btnMatch = getChildByName("btn_match") as Button;
 			btnQuickStart = getChildByName("btn_quickstart") as Button;
 			imgHead = getChildByName("img_head") as UIImageView;

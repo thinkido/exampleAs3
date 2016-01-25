@@ -1,6 +1,5 @@
 package network
 {
-	import net.jarlehansen.protobuf.javame.ByteString;
 	
 	/**
 	 *

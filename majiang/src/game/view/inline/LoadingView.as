@@ -48,7 +48,7 @@ package game.view.inline
 			initUI();
 		}
 	
-		protected function initUI():void
+		public function initUI():void
 		{
 			_tfContent = this.getChildByName("tf_content") as TextField;
 //			_tfContent.setAnchor(ANCHOR_CENTER);

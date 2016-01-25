@@ -43,7 +43,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 
 	private var _btnGetAward:Button;
 
-	override protected function initUI():void
+	override public function initUI():void
 	{
 		_wanItemList = new Vector.<Button>;
 		_tiaoItemList = new Vector.<Button>;

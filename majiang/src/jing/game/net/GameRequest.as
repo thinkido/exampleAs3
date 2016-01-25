@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import jing.consts.PlayerAction;
 import game.control.AccountManager;
-import game.control.LogManager;
+
 import game.control.WindowManager;
 import game.model.Global;
 import game.view.scene.gamescene.GameScene;

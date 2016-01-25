@@ -32,7 +32,7 @@ package game.view.window.shop
 			this._goldGetList.push(1000, 2000, 5000, 10000, 20000, 50000);
 		}
 		
-		override protected function initUI():void
+		override public function initUI():void
 		{
 			_bfTicket = getChildByName("bf_ticket") as UITextBMFont;
 			_bfTicket.setAnchor(ANCHOR_BOTTOM_LEFT);

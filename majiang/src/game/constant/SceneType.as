@@ -1,6 +1,6 @@
 package game.constant
 {
-	import game.control.LogManager;
+	
 	import game.view.scene.HallScene;
 	import game.view.scene.gamescene.GameScene;
 	

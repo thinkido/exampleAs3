@@ -31,7 +31,7 @@ package game.view.window.shop
 			this._goldGetList.push(3000, 9000, 15000, 24000, 30000, 45000);
 		}
 		
-		override protected function initUI():void
+		override public function initUI():void
 		{
 			_bfDiamond = getChildByName("bf_diamond") as UITextBMFont;
 			_bfDiamond.setAnchor(ANCHOR_BOTTOM_LEFT);

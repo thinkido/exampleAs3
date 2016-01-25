@@ -187,7 +187,7 @@ package game.view.scene.gamescene.windows
 			return new UIButton("action_chi_normal_png", "action_chi_selected_png", "action_chi_normal_png");
 		}
 		
-		override protected function initUI():void
+		override public function initUI():void
 		{
 			
 		}

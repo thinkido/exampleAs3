@@ -16,5 +16,6 @@ package game.model.callback
 			if(_callback != null)
 				_callback.run(_args);
 		}
+		
 	}
 }

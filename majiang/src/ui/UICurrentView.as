@@ -23,7 +23,7 @@ package ui
 		 * 
 		 * @param path
 		 */
-		protected function initUI():void
+		public function initUI():void
 		{
 			
 		}
@@ -162,7 +162,7 @@ package ui
 		 * 
 		 * @param dir
 		 */
-		protected function onMove( dir:int):void
+		public function onMove( dir:int):void
 		{
 			if(_selected.getClass() != UIListView || !(_selected as UIListView).tryMoveOnce(dir))
 			{

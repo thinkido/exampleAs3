@@ -1,7 +1,7 @@
 package jing.configs
 {
 import framework.resources.Res;
-import game.control.LogManager;
+
 import game.model.vo.IpAddressVO;
 
 import org.json.me.JSONException;
@@ -47,8 +47,8 @@ public class Config
 		obj = Res.actively.getJson(file);
 		try
 		{
-			_gateAddressVO = new IpAddressVO(obj["gate_address"], obj.getInt("gate_port"]);
-			_hallAddressVO = new IpAddressVO(obj["hall_address"], obj.getInt("hall_port"]);
+			_gateAddressVO = new IpAddressVO(obj["gate_address"], obj["gate_port"]);
+			_hallAddressVO = new IpAddressVO(obj["hall_address"], obj["hall_port"]);
 			trace("config loaded" + obj.toString());
 		}
 		catch(e:*)

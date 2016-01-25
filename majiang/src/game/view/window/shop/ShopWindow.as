@@ -16,7 +16,7 @@ package game.view.window.shop
 		
 		private var _btnTicketBuy:Button;
 		
-		override protected function initUI():void
+		override public function initUI():void
 		{
 			_btnClose = getChildByName("btn_close") as Button;
 			_btnDiamondBuy = getChildByName("btn_diamond_shop") as Button;
@@ -39,7 +39,7 @@ package game.view.window.shop
 			
 		}
 		
-		public function onConfirm( target:UIObject):void
+		override public function onConfirm( target:UIObject):void
 		{
 			if(_btnClose == target)
 				WindowManager.getInstance().closeWindow(this);

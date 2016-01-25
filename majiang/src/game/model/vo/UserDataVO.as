@@ -1,7 +1,7 @@
 package game.model.vo
 	{
-	import protocol.sc_enter_hall;
-	import protocol.t_friend_data;
+	import protos.hallserver.sc_enter_hall;
+	import protos.hallserver.t_friend_data;
 	
 	public class UserDataVO
 	{

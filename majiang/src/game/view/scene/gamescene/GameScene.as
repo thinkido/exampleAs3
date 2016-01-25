@@ -76,7 +76,7 @@ package game.view.scene.gamescene
 		 */
 		private var jiaoPre:JiaoPreviewUI = null;
 		
-		protected function initUI():void
+		override public function initUI():void
 		{
 			pUp = new Player(GameDir.UP);
 			pLeft = new Player(GameDir.LEFT);
@@ -242,7 +242,7 @@ package game.view.scene.gamescene
 			return GameDir.DOWN;
 		}
 		
-		public function onReciveEvent( type:int,  dispatcher:EventDispatcher, data:Object):void
+		override public function onReciveEvent( type:int,  dispatcher:EventDispatcher, data:Object):void
 		{
 			if(type == EventType.EVENT_KEY_PRESSED)
 			{

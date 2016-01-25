@@ -11,7 +11,7 @@ import framework.resources.loader.Loader;
 import framework.util.JSONUtil;
 import framework.util.StringUtil;
 
-import javax.microedition.lcdui.Image;
+import starling.display.Image;
 import javax.microedition.media.Manager;
 import javax.microedition.media.MediaException;
 import javax.microedition.media.Player;

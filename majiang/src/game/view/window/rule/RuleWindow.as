@@ -34,7 +34,7 @@ package game.view.window.rule
 			this.CONTENT_LEN_LIST.push(1, 5, 1, 38);
 		}
 		
-		override protected function initUI():void
+		override public function initUI():void
 		{
 			_imgContent = getChildByName("img_content") as UIImageView;
 			_imgContent.setAnchor(ANCHOR_CENTER);

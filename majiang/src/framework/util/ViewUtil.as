@@ -1,5 +1,7 @@
 package framework.util
 {
+	import starling.display.DisplayObject;
+
 	public class ViewUtil
 	{
 		public function ViewUtil()

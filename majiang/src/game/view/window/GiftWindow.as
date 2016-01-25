@@ -18,7 +18,7 @@ package game.view.window
 		
 		private var _btnGet:Button;
 		
-		override protected function initUI():void
+		override public function initUI():void
 		{
 			_btnGiftList = new Vector.<Button>;
 			for (var i:int = 0; i < 7; i++) {

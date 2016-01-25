@@ -1,5 +1,9 @@
 package game.control
 {
+	import game.model.Global;
+	import game.model.callback.ICallback;
+	import game.view.inline.LoadingView;
+
 	public class LoadingManager
 	{
 	
