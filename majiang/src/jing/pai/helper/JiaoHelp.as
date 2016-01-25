@@ -4,7 +4,7 @@ package jing.pai.helper
 	import jing.pai.utils.CardUtil;
 	
 	/**
-	 * ¸ù¾ÝÅÆÐÍÕҳöƥÅäµĽÐ
+	 * 根据牌型找出匹配的叫
 	 * 
 	 * @param cards
 	 * @return
@@ -47,37 +47,37 @@ package jing.pai.helper
 					var card2:int= temp.getAt(i);
 					if(int((card1 / 10) )== int((card2 / 10)))
 					{
-						// ÊÇͬһÖֻ¨ɫµÄÅÆ
+						// 是同一种花色的牌
 						temp.removeAt(i);
 						if(isRightfulCombination(temp))
 						{
 							if(card1 == card2 && false == jiaoCards.hasCard(card2))
 							{
-								// ¶Դ¦
+								// 对处
 								addJiaoCard(jiaoCards, card1);
 							}
 							else if(card1 + 1== card2)
 							{
 								if(card1 % 10== 1)
 								{
-									// ±ßÕÅ
+									// 边张
 									addJiaoCard(jiaoCards, card2 + 1);
 								}
 								else if(card2 % 10== 9)
 								{
-									// ±ßÕÅ
+									// 边张
 									addJiaoCard(jiaoCards, card1 - 1);
 								}
 								else
 								{
-									// ±ßÕÅ
+									// 边张
 									addJiaoCard(jiaoCards, card1 - 1);
 									addJiaoCard(jiaoCards, card2 + 1);
 								}
 							}
 							else if(card1 + 2== card2)
 							{
-								// ¿¨ÕÅ
+								// 卡张
 								addJiaoCard(jiaoCards, card1 + 1);
 							}
 						}
@@ -113,7 +113,7 @@ package jing.pai.helper
 		}
 		
 		/**
-		 * ÊǷñºϷ¨µÄÅÆÊý
+		 * 是否合法的牌数
 		 * 
 		 * @param count
 		 * @return
@@ -130,7 +130,7 @@ package jing.pai.helper
 		}
 		
 		/**
-		 * ÕâЩÅÆÐÍÊǷñºÏÀí
+		 * 这些牌型是否合理
 		 * 
 		 * @param cards
 		 * @return
@@ -162,7 +162,7 @@ package jing.pai.helper
 		}
 		
 		/**
-		 * ÊǷñ¶¼Êǿ²
+		 * 是否都是坎
 		 * 
 		 * @param cards
 		 * @return
@@ -187,7 +187,7 @@ package jing.pai.helper
 		}
 		
 		/**
-		 * ÊǷñ´æÔڽ«ÅÆ
+		 * 是否存在将牌
 		 * 
 		 * @param count
 		 * @return
@@ -205,7 +205,7 @@ package jing.pai.helper
 		}
 		
 		/**
-		 * »ñµÿ²
+		 * 获得坎
 		 * 
 		 * @return
 		 */
@@ -224,13 +224,13 @@ package jing.pai.helper
 				var kan:Array;
 				if(card1 == card3)
 				{
-					// ÈýÕÅÅÆÊÇһÑùµģ¬ÊÇһ¸ö¿²
+					// 三张牌是一样的，是一个坎
 					kan = [card1, card1, card1];
 					return kan;
 				}
 				else if(true == CardUtil.typeShunEnable(card1) && cards.findCard(card1 + 1, i + 1) > -1&& cards.findCard(card1 + 2, i + 2) > -1)
 				{
-					// Õҵõ½˳×Ó
+					// 找得到顺子
 					kan = [card1, card1 + 1, card1 + 2];
 					return kan;
 				}
@@ -239,7 +239,7 @@ package jing.pai.helper
 		}
 		
 		/**
-		 * »ñµÃһ¶Ô
+		 * 获得一对
 		 * 
 		 * @param cards
 		 * @return

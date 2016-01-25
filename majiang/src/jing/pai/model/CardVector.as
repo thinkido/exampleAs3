@@ -1,236 +1,234 @@
 package jing.pai.model
 {
-import java.util.Vector;
-
-/**
- * ÅƶÓÁÐ
- * 
- * @author Jing
- */
-public class CardVector
-{
-
-	private var _vec:Array = null;
-
-	public function CardVector()
+	
+	
+	/**
+	 * 牌队列
+	 * 
+	 * @author Jing
+	 */
+	public class CardVector
 	{
-		_vec = [];
-	}
-
-	public function CardVector_A(cards:Array):void
-	{
-		_vec = [];
-		for(var i:int= 0; i < cards.length; i++)
+		
+		private var _vec:Array = null;
+		
+		public function CardVector_A(cards:Array = null ):void
 		{
-			add(cards[i]);
-		}
-	}
-
-	/**
-	 * ÔÚβ²¿¼ÓÈëһÕÅÅÆ
-	 * 
-	 * @param card
-	 */
-	public function add(card:int):void{
-//		_vec.addElement(toInteger(card));
-		_vec.push(card);
-	}
-
-	/**
-	 * ÔÚβ²¿¼ÓÈëһ¶ÑÅÆ
-	 * 
-	 * @param cards
-	 */
-	public function add_2(cards:Array):void{
-		for(var i:int= 0; i < cards.length; i++)
-		{
-//			_vec.addElement(toInteger(cards[i]));
-			_vec.push(cards[i]);
-		}
-	}
-
-	/**
-	 * ÔÚָ¶¨λÖüÓÈëһÕÅÅÆ
-	 * 
-	 * @param card
-	 * @param index
-	 */
-	public function addAt(card:int, index:int):void{
-		_vec.insertElementAt(toInteger(card), index);
-	}
-
-	/**
-	 * ÒƳýһÕÅָ¶¨λÖõÄÅÆ
-	 * 
-	 * @param index
-	 */
-	public function removeAt(index:int):void{
-		_vec.removeElementAt(index);
-	}
-
-	/**
-	 * µõ½ָ¶¨λÖõÄÅÆ
-	 * 
-	 * @param index
-	 * @return
-	 */
-	public function getAt(index:int):int{
-//		return toInt(Integer(_vec.elementAt(index)));
-		return _vec[index];
-	}
-
-	/**
-	 * ÒƳýһÕſ¨ÅÆ
-	 * 
-	 * @param card
-	 */
-	public function removeCard(card:int):int{
-		var count:int= this.count();
-		for(var i:int= 0; i < count; i++)
-		{
-			if(card == getAt(i))
+			_vec = [];
+			cards = cards || [] ;
+			for(var i:int= 0; i < cards.length; i++)
 			{
-				removeAt(i);
-				return i;
+				add(cards[i]);
 			}
 		}
-		return -1;
-	}
-
-	/**
-	 * ÒƳý¿¨ÅÆ×é
-	 * 
-	 * @param cards
-	 */
-	public function removeCards(cards:Array):void{
-		for(var i:int= 0; i < cards.length; i++)
-		{
-			removeCard(cards[i]);
+		
+		/**
+		 * 在尾部加入一张牌
+		 * 
+		 * @param card
+		 */
+		public function add(card:int):void{
+			//		_vec.addElement(toInteger(card));
+			_vec.push(card);
 		}
-	}
-
-	/**
-	 * µõ½ËùÓп¨ÅƵÄÊý×é
-	 * 
-	 * @return
-	 */
-	public function getCards():Array
-	{
-		var cards:Array= [];
-		for(var i:int= 0; i < cards.length; i++)
-		{
-			cards[i] = getAt(i);
-		}
-		return cards;
-	}
-
-	/**
-	 * ÊǷñÓÐָ¶¨µÄÅÆ
-	 * 
-	 * @param card
-	 * @return
-	 */
-	public function hasCard(card:int):Boolean{
-		return _vec.contains(toInteger(card));
-	}
-
-	/**
-	 * ָ¶¨¿¨ÅƵĳÖÓÐÊý
-	 * 
-	 * @param card
-	 * @return
-	 */
-	public function hasCardCount(card:int):int{
-		var count:int= 0;
-		for(var i:int= 0; i < count(); i++)
-		{
-			if(card == getAt(i))
+		
+		/**
+		 * 在尾部加入一堆牌
+		 * 
+		 * @param cards
+		 */
+		public function add_2(cards:Array):void{
+			for(var i:int= 0; i < cards.length; i++)
 			{
-				count++;
+				//			_vec.addElement(toInteger(cards[i]));
+				_vec.push(cards[i]);
 			}
 		}
-		return count;
-	}
-
-	/**
-	 * ´Óָ¶¨Ë÷Ò񣨰𺬣©¿ªʼѰÕҿ¨ÅÆ
-	 * 
-	 * @param card
-	 * @param startIndex
-	 * @return
-	 */
-	public function findCard(card:int, startIndex:int):int{
-		var count:int= this.count();
-		for(var i:int= startIndex; i < count; i++)
-		{
-			if(card == getAt(i))
-			{
-				return i;
-			}
+		
+		/**
+		 * 在指定位置加入一张牌
+		 * 
+		 * @param card
+		 * @param index
+		 */
+		public function addAt(card:int, index:int):void{
+			_vec.splice( card , 0 , index );
+//			_vec.insertElementAt(toInteger(card), index);
 		}
-		return -1;
-	}
-
-	/**
-	 * ¿¨ÅƵÄÊýÁ¿
-	 * 
-	 * @return
-	 */
-	public function count():int{
-		return _vec.size();
-	}
-
-	/**
-	 * ¶ÔÅƽøÐÐһ´ÎÅÅÐò,´Ó×óÖÁÓÒÒÀ´ÎÊÇ1µ½9Íò£¬1µ½9Ͳ£¬1µ½9Ìõ
-	 */
-	public function sort():void{
-		var size:int= count();
-		var newVec:CardVector= new CardVector();
-		for(var i:int= 0; i < size; i++)
-		{
-			var card:int= getAt(i);
-			var j:int= 0;
-			for(j = 0; j < newVec.count(); j++)
+		
+		/**
+		 * 移除一张指定位置的牌
+		 * 
+		 * @param index
+		 */
+		public function removeAt(index:int):void{
+			_vec.splice( index ,1 );
+//			_vec.removeElementAt(index);
+		}
+		
+		/**
+		 * 得到指定位置的牌
+		 * 
+		 * @param index
+		 * @return
+		 */
+		public function getAt(index:int):int{
+			//		return toInt(Integer(_vec.elementAt(index)));
+			return _vec[index];
+		}
+		
+		/**
+		 * 移除一张卡牌
+		 * 
+		 * @param card
+		 */
+		public function removeCard(card:int):int{
+			var count:int= this.count();
+			for(var i:int= 0; i < count; i++)
 			{
-				var tempCard:int= newVec.getAt(j);
-				if(card < tempCard)
+				if(card == getAt(i))
 				{
-					break;
+					removeAt(i);
+					return i;
 				}
 			}
-			newVec.addAt(card, j);
+			return -1;
 		}
-
-		_vec = newVec._vec;
-	}
-
-	/**
-	 * ¸´ÖÆ
-	 * 
-	 * @return
-	 */
-	public function clone():CardVector{
-//		return new CardVector_A(this.getCards());
-		var vec:CardVector = new CardVector;
-		vec.CardVector_A(this.getCards());
-		return vec;
-	}
-
-	private function toInteger(card:int):int{
-		return new card;
-	}
-
-	private function toInt(obj:int):int{
-		return obj;
-	}
-
-	public function toString():String{
-		var str:String= "";
-		for(var i:int= 0; i < count(); i++)
+		
+		/**
+		 * 移除卡牌组
+		 * 
+		 * @param cards
+		 */
+		public function removeCards(cards:Array):void{
+			for(var i:int= 0; i < cards.length; i++)
+			{
+				removeCard(cards[i]);
+			}
+		}
+		
+		/**
+		 * 得到所有卡牌的数组
+		 * 
+		 * @return
+		 */
+		public function getCards():Array
 		{
-			str += _vec.elementAt(i).toString() + ",";
+			var cards:Array= [];
+			for(var i:int= 0; i < cards.length; i++)
+			{
+				cards[i] = getAt(i);
+			}
+			return cards;
 		}
-		return str;
+		
+		/**
+		 * 是否有指定的牌
+		 * 
+		 * @param card
+		 * @return
+		 */
+		public function hasCard(card:int):Boolean{
+			return _vec.contains(toInteger(card));
+		}
+		
+		/**
+		 *指定卡牌的持有数
+		 * 
+		 * @param card
+		 * @return
+		 */
+		public function hasCardCount(card:int):int{
+			var count:int= 0;
+			for(var i:int= 0; i < count(); i++)
+			{
+				if(card == getAt(i))
+				{
+					count++;
+				}
+			}
+			return count;
+		}
+		
+		/**
+		 * 从指定索引（包含）开始寻找卡牌
+		 * 
+		 * @param card
+		 * @param startIndex
+		 * @return
+		 */
+		public function findCard(card:int, startIndex:int):int{
+			var count:int= this.count();
+			for(var i:int= startIndex; i < count; i++)
+			{
+				if(card == getAt(i))
+				{
+					return i;
+				}
+			}
+			return -1;
+		}
+		
+		/**
+		 * 卡牌的数量
+		 * 
+		 * @return
+		 */
+		public function count():int{
+			return _vec.length ;
+		}
+		
+		/**
+		 * 对牌进行一次排序,从左至右依次是1到9万，1到9筒，1到9条
+		 */
+		public function sort():void{
+			var size:int= count();
+			var newVec:CardVector= new CardVector();
+			for(var i:int= 0; i < size; i++)
+			{
+				var card:int= getAt(i);
+				var j:int= 0;
+				for(j = 0; j < newVec.count(); j++)
+				{
+					var tempCard:int= newVec.getAt(j);
+					if(card < tempCard)
+					{
+						break;
+					}
+				}
+				newVec.addAt(card, j);
+			}
+			
+			_vec = newVec._vec;
+		}
+		
+		/**
+		 * 复制
+		 * 
+		 * @return
+		 */
+		public function clone():CardVector{
+			//		return new CardVector_A(this.getCards());
+			var vec:CardVector = new CardVector;
+			vec.CardVector_A(this.getCards());
+			return vec;
+		}
+		
+		private function toInteger(card:int):int{
+			return card;
+		}
+		
+		private function toInt(obj:int):int{
+			return obj;
+		}
+		
+		public function toString():String{
+			var str:String= "";
+			for(var i:int= 0; i < count(); i++)
+			{
+				str += _vec[i].toString() + ",";
+			}
+			return str;
+		}
 	}
-}
 }
