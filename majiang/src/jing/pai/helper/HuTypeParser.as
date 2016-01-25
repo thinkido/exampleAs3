@@ -18,10 +18,10 @@ public class HuTypeParser {
 	}
 	
 
-	/*´óËÄϲ*/
+	/*大四喜*/
 	public static function is_da_si_xi(int pai[], CardKe complex[], len:int):Boolean{
 	    var handfeng:int= 0;
-	    /*¶«Î÷Äϱ±·ç*/
+	    /*东西南北风*/
 	    for (var i:int= CardCode.HAND_ZIS; i <= CardCode.HAND_ZIS + 3; i++){
 	        if (pai[i] == 3) {
 	            handfeng++;
@@ -36,10 +36,10 @@ public class HuTypeParser {
 	    return (handfeng == 4);
 	}
 
-	/*´óÈýԪ*/
+	/*大三元*/
 	public static function is_da_san_yuan(int pai[], CardKe complex[], len:int):Boolean{
 	    var handjian:int= 0;
-	    /*Öз¢°×*/
+	    /*中发白*/
 	    for (var i:int= 4; i < 7; i++){
 	        if (pai[i + CardCode.HAND_ZIS] == 3) {
 	            handjian++;
@@ -69,7 +69,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*ÂÌһɫ*/
+	/*绿一色*/
 	public static function is_lv_yi_se(CardKe comhu[], comhu_len:int):Boolean{
 	    for (var j:int= 0; j < comhu_len; j++){
 	        var type:int= comhu[j].type;
@@ -85,14 +85,14 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*¾ÅÁ«±¦µÆ*/
+	/*九莲宝灯*/
 	public static function is_jiu_lian_bao_deng(int pai[], CardKe complex[], len:int, hu:int):Boolean{
 	    int check_value[] = {3,1,1,1,1,1,1,1,3};
 	    var result:Boolean= false;
 	    var start:int= 0;
 
 	    pai[hu] -= 1;
-	    //³ÔÅÆÔò²»Äܺú¾ÅÕţ¬ËùÒÔ˳×Óһ¶¨ÔÚÊÖÅÆÉÏ
+	    //吃牌则不能胡九张，所以顺子一定在手牌上
 	    for (var i:int= CardCode.HAND_SEQS; i < CardCode.HAND_SEQE; i += 10) {
 	        if (pai[i] > 0){
 	            start = i; 
@@ -115,7 +115,7 @@ public class HuTypeParser {
 	    return result;
 	}
 
-	/*ËĸÜ*/
+	/*四杠*/
 	public static function is_si_gang(CardKe complex[], len:int):Boolean{
 	    if (len < 4) return false;
 
@@ -129,7 +129,7 @@ public class HuTypeParser {
 	}
 
 
-	/*Á¬Æ߶ԣ¬ÌØÊâÅÆÐÍ*/
+	/*连七对，特殊牌型*/
 	public static function is_lian_qi_dui(int pai[]):Boolean{
 	    var i:int= CardCode.HAND_SEQS;
 	    var start:int= 0;
@@ -156,7 +156,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*ʮÈýçۣ¬ÌØÊâÅÆÐÍ*/
+	/*十三幺，特殊牌型*/
 	public static function is_shi_san_yao(int pai[]):Boolean{
 	    int yao_seq_index[] = { CardCode.HAND_SEQS, CardCode.HAND_SEQS + 8, CardCode.HAND_SEQS + 10, CardCode.HAND_SEQS + 18, CardCode.HAND_SEQS + 20, CardCode.HAND_SEQS + 28,
 	        CardCode.HAND_ZIS, CardCode.HAND_ZIS + 1, CardCode.HAND_ZIS + 2, CardCode.HAND_ZIS + 3, CardCode.HAND_ZIS + 4, CardCode.HAND_ZIS + 5, CardCode.HAND_ZIS + 6};
@@ -174,12 +174,12 @@ public class HuTypeParser {
 	    return (cnt == 12&& eye);
 	}
 
-	/*Çåç۾Å*/
+	/*清幺九*/
 	public static function is_qing_yao_jiu(CardKe comhu[], comhu_len:int):Boolean{
 	    for (var j:int= 0; j < comhu_len; j++){
 	        var type:int= comhu[j].type;
 	        var id:int= comhu[j].id;
-	        //½«ÅƲ»×öҪÇó
+	        //将牌不做要求
 	        if (type == CardCode.COM_JIANG) continue;
 	        if (id % 10!= 1&& id % 10!= 9) return false;
 	        if (type != CardCode.COM_PENG && type != CardCode.COM_GANG) {
@@ -189,11 +189,11 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*СËÄϲ*/
+	/*小四喜*/
 	public static function is_xiao_si_xi(int pai[], CardKe complex[], len:int):Boolean{
 	    var handfeng:int= 0;
 	    var jiang:int= 0;
-	    /*¶«Î÷Äϱ±·ç*/
+	    /*东西南北风*/
 	    for (var i:int= CardCode.HAND_ZIS; i < CardCode.HAND_ZIS + 4; i++){
 	        if (pai[i] == 3) {
 	            handfeng++;
@@ -211,11 +211,11 @@ public class HuTypeParser {
 	    return (handfeng == 3&& jiang == 1);
 	}
 
-	/*СÈýԪ*/
+	/*小三元*/
 	public static function is_xiao_san_yuan(int pai[], CardKe complex[], len:int):Boolean{
 	    var handjian:int= 0;
 	    var jiang:int= 0;
-	    /*Öз¢°×*/
+	    /*中发白*/
 	    for (var i:int= 4; i < 7; i++){
 	        if (pai[i + CardCode.HAND_ZIS] == 3) {
 	            handjian++;
@@ -233,11 +233,11 @@ public class HuTypeParser {
 	    return (handjian == 2&& jiang == 1);
 	}
 
-	/*×Öһɫ*/
+	/*字一色*/
 	public static function is_zi_yi_se(int pai[], CardKe complex[], len:int):Boolean{
 	    var handzi:int= 0;
 	    var jiang:int= 0;
-	    /*Öз¢°×*/
+	    /*中发白*/
 	    for (var i:int= 0; i < 7; i++){
 	        if (pai[i + CardCode.HAND_ZIS] == 3) {
 	            handzi++;
@@ -255,12 +255,12 @@ public class HuTypeParser {
 	    return (handzi == 4&& jiang == 1);
 	}
 
-	/*Ëİµ¿Ì */
+	/*四暗刻 */
 	public static function is_si_an_ke(int pai[], CardKe complex[], len:int):Boolean{
 	    var handke:int= 0;
-	    /*Öз¢°×*/
+	    /*中发白*/
 	    for (var i:int= CardCode.HAND_SEQS; i < CardCode.HAND_LEN; i++){
-	        //Ëİµ¿̲»»á³öÏÖÊÖÅÆÖжàÓÚÈý¸öµÄ
+	        //四暗刻不会出现手牌中多于三个的
 	        if (pai[i] == 3) {
 	            handke++;
 	        }
@@ -273,7 +273,7 @@ public class HuTypeParser {
 	    return (handke == 4);
 	}
 
-	/*һɫ˫Áú»á*/
+	/*一色双龙会*/
 	public static function is_yi_se_shuang_long_hui(int pai[], CardKe complex[], len:int):Boolean{
 	    var handshao:int= 0;
 	    var handlao:int= 0;
@@ -303,7 +303,7 @@ public class HuTypeParser {
 	    return (handshao == 2&& handlao == 2);
 	}
 
-	/*һɫËÄͬ˳*/
+	/*一色四同顺*/
 	public static function is_yi_se_si_tong_shun(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = { 0, 0, 0, 0};
 	    var len_seq:int= 0;
@@ -322,7 +322,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/* һɫËĽڸß*/
+	/* 一色四节高*/
 	public static function is_yi_se_si_jie_gao(CardKe comhu[], comhu_len:int):Boolean{
 	    int ke_seq[] = { 0, 0, 0, 0};
 	    var len_ke:int= 0;
@@ -353,7 +353,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/* һɫËĲ½¸ß*/
+	/* 一色四步高*/
 	public static function is_yi_se_si_bu_gao(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = { 0, 0, 0, 0};
 	    var seq_len:int= 0;
@@ -392,21 +392,21 @@ public class HuTypeParser {
 	    return gang;
 	}
 
-	/*Èý¸Ü*/
+	/*三杠*/
 	public static function is_san_gang(int pai[], CardKe complex[], len:int):Boolean{
 	    var gang:int= get_gang(complex, len);
 
 	    return (gang == 3);
 	}
 
-	/*»ìç۾Å*/
+	/*混幺九*/
 	public static function is_hun_jiu_yao(int pai[], CardKe complex[], len:int):Boolean{
 	    var jiang:int= 0;
 	    var ke:int= 0;
 	    var id:int, type;
 	    int seq_index[] = { CardCode.HAND_SEQS, CardCode.HAND_SEQS + 8, CardCode.HAND_SEQS + 10, CardCode.HAND_SEQS + 18, CardCode.HAND_SEQS + 20, CardCode.HAND_SEQS + 28};
 	    for (var i:int= 0; i < seq_index.length; i++){
-	        //²»ͬ»¨ɫÊǲ»Á¬Ðøµģ¬ËùÒÔ
+	        //不同花色是不连续的，所以
 	        if (pai[seq_index[i]] == 2){
 	            jiang++;
 	        } else if (pai[seq_index[i]] == 3){
@@ -423,7 +423,7 @@ public class HuTypeParser {
 	    return (ke == 4&& jiang == 1);
 	}
 
-	/*Æ߶ԣ¬ÌØÊâÅÆÐÍ*/
+	/*七对，特殊牌型*/
 	public static function is_qi_dui(int pai[]):Boolean{
 	    var i:int= CardCode.HAND_START;
 	    var num_dui:int= 0;
@@ -446,7 +446,7 @@ public class HuTypeParser {
 	    while (i < cnt_seq_index.length) {
 	        var pai_index:int= cnt_seq_index[i];
 	        if (pai[pai_index] == 1){
-	            /*Èç¹ûһÖÖÀàÐÍÒѾ­ÓÐÁˣ¬Ôò²»ͳ¼Æ*/
+	            /*如果一种类型已经有了，则不统计*/
 	            var seqi:int= pai_index % 10- 1;
 	            if (seq[seqi] == 0) {
 	                total++;
@@ -456,7 +456,7 @@ public class HuTypeParser {
 	                    total++;
 	                seq[seqi] = 1;
 	            }
-	            /*ÏÂһ¸ö»¨ɫ*/
+	            /*下一个花色*/
 	            i = (i + 3) / 3* 3;
 	            continue;
 	        }
@@ -465,7 +465,7 @@ public class HuTypeParser {
 	    return total;
 	}
 
-	/*ÆßÐǲ»¿¿£¬ÌØÊâÅÆÐÍ*/
+	/*七星不靠，特殊牌型*/
 	public static function is_qi_xing_bu_kao(int pai[]):Boolean{
 	    var total:int= bu_kao_seq_cnt(pai);
 	    
@@ -476,7 +476,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*ȫ˫¿Ì*/
+	/*全双刻*/
 	public static function is_quan_shuang_ke(int pai[], CardKe complex[], len:int):Boolean{
 	    var id:int, type;
 	    var shuang:int= 0;
@@ -499,7 +499,7 @@ public class HuTypeParser {
 	    return (shuang == 4&& jiang == 1);
 	}
 
-	/*һɫÈýͬ˳*/
+	/*一色三同顺*/
 	public static function is_yi_se_san_tong_shun(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = { 0, 0, 0, 0};
 	    var len_seq:int= 0;
@@ -520,16 +520,16 @@ public class HuTypeParser {
 	            }
 	        }
 	    }
-	    //Èý¸ö
+	    //三个
 	    if ((seq[0] == seq[1]) && (seq[1] == seq[2]))
 	        return true;
-	    //¶àÓÚÈý¸ö
+	    //多于三个
 	    if (len_seq > 3&& ((seq[1] == seq[2]) && (seq[2] == seq[3])))
 	        return true;
 	    return false;
 	}
 
-	/*һɫÈý½ڸß*/
+	/*一色三节高*/
 	public static function is_yi_se_san_jie_gao(CardKe comhu[], comhu_len:int):Boolean{
 	    int ke_seq[] = { 0, 0, 0, 0};
 	    var len_ke:int= 0;
@@ -552,7 +552,7 @@ public class HuTypeParser {
 	        }
 	    }
 
-	    //ͬɫ
+	    //同色
 	    if ((ke_seq[0] + 1== ke_seq[1]) && (ke_seq[1] + 1== ke_seq[2]))
 	        return true;
 	    if (len_ke > 3&& ((ke_seq[1] + 1== ke_seq[2]) && (ke_seq[2] + 1== ke_seq[3])))
@@ -580,24 +580,24 @@ public class HuTypeParser {
 	    return (total == 14);
 	}
 
-	/*ȫ´ó*/
+	/*全大*/
 	public static function is_quan_da(int pai[], CardKe complex[], len:int):Boolean{
 	    return all_in_interval(pai, complex, len, 7, 9);
 	}
 
-	/*ȫÖÐ*/
+	/*全中*/
 	public static function is_quan_zhong(int pai[], CardKe complex[], len:int):Boolean{
 	    return all_in_interval(pai, complex, len, 4, 6);
 	}
 
-	/*ȫС*/
+	/*全小*/
 	public static function is_quan_xiao(int pai[], CardKe complex[], len:int):Boolean{
 	    return all_in_interval(pai, complex, len, 1, 3);
 	}
 
-	/*ÇåÁú*/
+	/*清龙*/
 	public static function is_qing_long(int pai[], CardKe complex[], len:int):Boolean{
-	    int rest[] = new int[pai.length];//ͬɫʣÓàÅÆ
+	    int rest[] = new int[pai.length];//同色剩余牌
 	    var ri:int= 0;
 	    var found:Boolean= false;
 
@@ -621,13 +621,13 @@ public class HuTypeParser {
 	            var index:int= i + j;
 	            if (rest[index] == 0) {
 	                ri = 0;
-	                found = false;//ûÕҵ½
+	                found = false;//没找到
 	                break;
 	            }
 	            rest[index] = rest[index] - 1;
 	            ri++;
 	        }
-	        if (found) break;//Õҵ½
+	        if (found) break;//找到
 	    }
 
 	    if (!found) return false;
@@ -635,7 +635,7 @@ public class HuTypeParser {
 	    return GuoBiaoCardsParser.hu(rest, ri, 0);
 	}
 
-	/*Èýɫ˫Áú»ᣬÌØÊâÅÆÐÍ*/
+	/*三色双龙会，特殊牌型*/
 	public static function is_san_se_shuang_long_hui(int pai[], CardKe complex[], len:int):Boolean{
 	    int laoshao[] = new int[6];
 	    var jiang:int= 0;
@@ -672,7 +672,7 @@ public class HuTypeParser {
 	    return (laoshao[0] == 6);
 	}
 
-	/*һɫÈ񲽸ß*/
+	/*一色三步高*/
 	public static function is_yi_se_san_bu_gao(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = { 0, 0, 0, 0};
 	    var seq_len:int= 0;
@@ -705,7 +705,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ȫ´øÎå*/
+	/*全带五*/
 	public static function is_quan_dai_wu(CardKe comhu[], comhu_len:int):Boolean{
 	    var seq5:int= 0;
 	    var jiang5:int= 0;
@@ -726,9 +726,9 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*Èýͬ¿Ì */
+	/*三同刻 */
 	public static function is_san_tong_ke(int pai[], CardKe complex[], len:int):Boolean{
-	    int seq[] = new int[pai.length];//ͬɫʣÓàÅÆ
+	    int seq[] = new int[pai.length];//同色剩余牌
 	    var remain:int= 0;
 	    var found:Boolean= false;
 
@@ -753,10 +753,10 @@ public class HuTypeParser {
 	    return GuoBiaoCardsParser.hu(seq, remain, 0);
 	}
 
-	/* È񰵿Ì */
+	/* 三暗刻 */
 	public static function is_san_an_ke(int pai[], CardKe complex[], len:int):Boolean{
 	    var handke:int= 0;
-	    /*Öз¢°×*/
+	    /*中发白*/
 	    for (var i:int= CardCode.HAND_SEQS; i < CardCode.HAND_LEN; i++){
 	        if (pai[i] == 3) {
 	            handke++;
@@ -770,7 +770,7 @@ public class HuTypeParser {
 	    return (handke == 4);
 	}
 
-	/*ȫ²»¿¿£¬ÌØÊâÅÆÐÍ*/
+	/*全不靠，特殊牌型*/
 	public static function is_quan_bu_kao(int pai[]):Boolean{
 	    var total:int= bu_kao_seq_cnt(pai);
 
@@ -782,12 +782,12 @@ public class HuTypeParser {
 	    return (total == 14);
 	}
 
-	/*TODO:×éºÏÁú£¬ÌØÊâÅÆÐÍ*/
+	/*TODO:组合龙，特殊牌型*/
 	public static function is_zu_he_long(int pai[], CardKe complex[], len:int):Boolean{
 	    return false;
 	}
 
-	/*´óÓÚÎå*/
+	/*大于五*/
 	public static function is_da_yu_wu(CardKe comhu[], comhu_len:int):Boolean{
 	    for (var j:int= 0; j < comhu_len; j++){
 	        if (comhu[j].id >= CardCode.HAND_ZIS || comhu[j].id % 10<= 5) {
@@ -797,7 +797,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*СÓÚÎå*/
+	/*小于五*/
 	public static function is_xiao_yu_wu(CardKe comhu[], comhu_len:int):Boolean{
 	    for (var j:int= 0; j < comhu_len; j++){
 	        if (comhu[j].id >= CardCode.HAND_ZIS || comhu[j].id % 10>= 5) {
@@ -810,7 +810,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*Èý·ç¿Ì*/
+	/*三风刻*/
 	public static function is_san_feng_ke(CardKe comhu[], comhu_len:int):Boolean{
 	    var fengke:int= 0;
 	    for (var j:int= 0; j < comhu_len; j++){
@@ -825,7 +825,7 @@ public class HuTypeParser {
 	    return (fengke == 3);
 	}
 
-	/*»¨Áú*/
+	/*花龙*/
 	public static function is_hua_long(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[][] = new int[3][3];
 
@@ -854,7 +854,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÍƲ»µ¹*/
+	/*推不倒*/
 	public static function is_tui_bu_dao(int pai[], CardKe complex[], len:int):Boolean{
 	    int seq[] = { 22, 24, 25, 26, 28, 29, 31, 32, 33, 34, 35, 38, 39, 47};
 	    var total:int= 0;
@@ -882,7 +882,7 @@ public class HuTypeParser {
 	    return (total == 14);
 	}
 
-	/*ÈýɫÈýͬ˳*/
+	/*三色三同顺*/
 	public static function is_san_se_san_tong_shun(CardKe comhu[], comhu_len:int):Boolean{
 	    int tile[] = new int[4];
 	    int color[] = new int[3];
@@ -900,7 +900,7 @@ public class HuTypeParser {
 	    }
 	    if (color[0] == 0|| color[1] == 0|| color[2] == 0)
 	        return false;
-	    /*Õҵ½ֻÓÐһ¸±˳×ӵĻ¨ɫ£¬ȻºóÕҵ½Ëü¶ÔӦµÄÅƺţ¬ȻºóÔٿ´ÆäËûÁ½¸ö»¨ɫÓÐûÓÐÏàµȵÄÅƺÅ*/
+	    /*找到只有一副顺子的花色，然后找到它对应的牌号，然后再看其他两个花色有没有相等的牌号*/
 	    if (color[0] == 1) {
 	        single_color = 1;
 	    } else {
@@ -923,7 +923,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*ÈýɫÈý½ڸß*/
+	/*三色三节高*/
 	public static function is_san_se_san_jie_gao(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = new int[4];
 	    var seq_len:int= 0;
@@ -939,7 +939,7 @@ public class HuTypeParser {
 
 	    for (var m:int= 0; m < seq_len - 1; m++) {
 	        for (var n:int= m + 1; m < seq_len; m++) {
-	            //¸ù¾ÝindexÅÅÐò
+	            //根据index排序
 	            if (seq[n] % 10< seq[m] % 10) {
 	                swap(seq, m, n);
 	            }
@@ -958,7 +958,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÅöÅöºÍ*/
+	/*碰碰和*/
 	public static function is_peng_peng_hu(CardKe comhu[], comhu_len:int):Boolean{
 	    var total:int= 0;
 	    for (var i:int= 0; i < comhu_len; i++){
@@ -970,7 +970,7 @@ public class HuTypeParser {
 	    return (total == 4);
 	}
 
-	/*»ìһɫ*/
+	/*混一色*/
 	public static function is_hu_yi_se(CardKe comhu[], comhu_len:int):Boolean{
 	    var color:int= 0;
 	    var zi:int= 0;
@@ -991,7 +991,7 @@ public class HuTypeParser {
 	    return (zi != 0) && color != 0;
 	}
 
-	/*ÈýɫÈ񲽸ß*/
+	/*三色三步高*/
 	public static function is_san_se_san_bu_gao(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = new int[4];
 	    var seq_len:int= 0;
@@ -1007,7 +1007,7 @@ public class HuTypeParser {
 
 	    for (var m:int= 0; m < seq_len - 1; m++) {
 	        for (var n:int= m + 1; m < seq_len; m++) {
-	            //¸ù¾ÝindexÅÅÐò
+	            //根据index排序
 	            if (seq[n] % 10< seq[m] % 10) {
 	                swap(seq, m, n);
 	            }
@@ -1026,7 +1026,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÎåÃÅÆë*/
+	/*五门齐*/
 	public static function is_wu_men_qi(CardKe comhu[], comhu_len:int):Boolean{
 	    int color[] = new int[5];
 	    for (var i:int= 0; i < comhu_len; i++){
@@ -1045,12 +1045,12 @@ public class HuTypeParser {
 	    return (color[0] == 5);
 	}
 
-	/*ȫÇóÈË*/
+	/*全求人*/
 	public static function is_quan_qiu_ren(int pai[], CardKe complex[], len:int):Boolean{
 	    return (len == 4);
 	}
 
-	/*˫°µ¸Ü*/
+	/*双暗杠*/
 	public static function is_shuang_an_gang(CardKe complex[], len:int):Boolean{
 	    var total:int= 0;
 	    for (var i:int= 0; i < len; i++){
@@ -1061,7 +1061,7 @@ public class HuTypeParser {
 	    return (total == 2);
 	}
 
-	/*˫¼ý¿Ì*/
+	/*双箭刻*/
 	public static function is_shuang_jian_ke(CardKe comhu[], comhu_len:int):Boolean{
 	    var total:int= 0;
 	    for (var i:int= 0; i < comhu_len; i++){
@@ -1074,7 +1074,7 @@ public class HuTypeParser {
 	    return (total == 2);
 	}
 
-	/*ȫ´øçÛ*/
+	/*全带幺*/
 	public static function is_quan_dai_yao(CardKe comhu[], comhu_len:int):Boolean{
 	    for (var i:int= 0; i < comhu_len; i++){
 	        var id:int= comhu[i].id;
@@ -1087,7 +1087,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*˫Ã÷¸Ü*/
+	/*双明杠*/
 	public static function is_shuang_ming_gang(CardKe complex[], len:int):Boolean{
 	    var total:int= 0;
 	    for (var i:int= 0; i < len; i++){
@@ -1098,7 +1098,7 @@ public class HuTypeParser {
 	    return (total == 2);
 	}
 
-	/*¼ý¿Ì*/
+	/*箭刻*/
 	public static function is_jian_ke(CardKe comhu[], comhu_len:int):Boolean{
 	    var total:int= 0;
 	    for (var i:int= 0; i < comhu_len; i++){
@@ -1110,12 +1110,12 @@ public class HuTypeParser {
 	    }
 	    return (total == 1);
 	}
-	/*Ȧ·ç¿̣¬²»֧³Ö*/
+	/*圈风刻，不支持*/
 	public static function is_quan_feng_ke(CardKe comhu[], comhu_len:int):Boolean{
 	    return false;
 	}
 
-	/*ƽºÍ*/
+	/*平和*/
 	public static function is_ping_hu(CardKe comhu[], comhu_len:int):Boolean{
 	    for (var i:int= 0; i < comhu_len; i++){
 	        if (comhu[i].id >= CardCode.HAND_ZIS){
@@ -1128,7 +1128,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*ËĹéһ*/
+	/*四归一*/
 	public static function is_si_gui_yi(CardKe comhu[], comhu_len:int):Boolean{
 	    int pai[] = new int[CardCode.HAND_SEQE + 1];
 	    for (var i:int= 0; i < comhu_len; i++){
@@ -1148,7 +1148,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*˫ͬ¿Ì*/
+	/*双同刻*/
 	public static function is_shuang_tong_ke(CardKe comhu[], comhu_len:int):Boolean{
 	    int pai[] = new int[10];
 	    for (var i:int= 0; i < comhu_len; i++){
@@ -1164,7 +1164,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*˫°µ¿Ì*/
+	/*双暗刻*/
 	public static function is_shuang_an_ke(CardKe comhu[], comhu_len:int):Boolean{
 	    var total:int= 0;
 	    for (var i:int= 0; i < comhu_len; i++){
@@ -1177,7 +1177,7 @@ public class HuTypeParser {
 	    return (total == 2);
 	}
 
-	/*°µ¸Ü*/
+	/*暗杠*/
 	public static function is_an_gang(CardKe complex[], len:int):Boolean{
 	    var total:int= 0;
 
@@ -1191,7 +1191,7 @@ public class HuTypeParser {
 	    return (total == 1);
 	}
 
-	/*¶ÏçÛ*/
+	/*断幺*/
 	public static function is_duan_yao(CardKe comhu[], comhu_len:int):Boolean{
 	    for (var i:int= 0; i < comhu_len; i++){
 	        var id:int= comhu[i].id;
@@ -1203,7 +1203,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*һ°ã¸ß*/
+	/*一般高*/
 	public static function is_yi_ban_gao(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = new int[4];
 	    var len:int= 0;
@@ -1233,18 +1233,18 @@ public class HuTypeParser {
 	    return (tong_cnt == 1);
 	}
 
-	/*²»ÇóÈË*/
+	/*不求人*/
 	public static function is_bu_qiu_ren(CardKe complex[], len:int):Boolean{
 	    
 	    return len == 0;
 	}
 
-	/*ÃÅǰÇå*/
+	/*门前清*/
 	public static function is_men_qian_qing(CardKe complex[], len:int):Boolean{
 	    return len == 0;
 	}
 
-	/*ϲÏà·ê*/
+	/*喜相逢*/
 	public static function is_xi_xiang_feng(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = new int[4];
 	    var len:int= 0;
@@ -1262,7 +1262,7 @@ public class HuTypeParser {
 	    }
 	    return false;
 	}
-	/*Á¬Áù*/
+	/*连六*/
 	public static function is_lian_liu(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = new int[4];
 	    var len:int= 0;
@@ -1281,7 +1281,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÀÏÉٸ±*/
+	/*老少副*/
 	public static function is_lao_shao_fu(CardKe comhu[], comhu_len:int):Boolean{
 	    int seq[] = new int[4];
 	    var len:int= 0;
@@ -1302,7 +1302,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ç۾ſÌ*/
+	/*幺九刻*/
 	public static function is_yao_jiu_ke(CardKe comhu[], comhu_len:int):Boolean{
 	    for (var i:int= 0; i < comhu_len; i++){
 	        var id:int= comhu[i].id;
@@ -1315,7 +1315,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*Ã÷¸Ü*/
+	/*明杠*/
 	public static function is_ming_gang(CardKe complex[], len:int):Boolean{
 	    for (var i:int= 0; i < len; i++){
 	        if (complex[i].type == CardCode.COM_GANG && complex[i].type2 == CardCode.COM_MING_GANG) {
@@ -1325,7 +1325,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ȱһÃÅ*/
+	/*缺一门*/
 	public static function is_que_yi_men(CardKe comhu[], comhu_len:int):Boolean{
 	    int color[] = new int[4];
 	    for (var i:int= 0; i < comhu_len; i++){
@@ -1336,7 +1336,7 @@ public class HuTypeParser {
 	    return (color[1] + color[2] + color[3] < 3);
 	}
 
-	/*ÎÞ×Ö*/
+	/*无字*/
 	public static function is_wu_zi(CardKe comhu[], comhu_len:int):Boolean{
 	    for (var i:int= 0; i < comhu_len; i++){
 	        if (comhu[i].id >= CardCode.HAND_ZIS){
@@ -1346,7 +1346,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*±ßÕÅ*/
+	/*边张*/
 	public static function is_bian_zhang(CardKe comhu[], comhu_len:int, hu:int):Boolean{
 	    var index:int= hu % 10;
 	    var type:int= hu / 10;
@@ -1373,7 +1373,7 @@ public class HuTypeParser {
 	    return hu_seq > 0;
 	}
 
-	/*¿²ÕÅ*/
+	/*坎张*/
 	public static function is_kan_zhang(CardKe comhu[], comhu_len:int, hu:int):Boolean{
 	    var index:int= hu % 10;
 	    var type:int= hu / 10;
@@ -1397,7 +1397,7 @@ public class HuTypeParser {
 	    return hu_seq > 0;
 	}
 
-	/*µ¥µö½«*/
+	/*单钓将*/
 	public static function is_dan_diao_jiang(CardKe comhu[], comhu_len:int, hu:int):Boolean{
 	    var jiang:int= 0;
 	    var com:int= 0;
@@ -1420,7 +1420,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*Çåһɫ*/
+	/*清一色*/
 	public static function is_qing_yi_se(int pai[], CardKe complex[], len:int):Boolean{
 
 	    var wan:int= 0;
@@ -1429,7 +1429,7 @@ public class HuTypeParser {
 
 	    var i:int= CardCode.HAND_SEQS;
 
-	    //¼ÆËãÊÖÅÆ
+	    //计算手牌
 	    for (; i <= CardCode.HAND_SEQE; i++) {
 	        if (i >= 11&& i <= 19) {
 	            wan += pai[i];
@@ -1442,7 +1442,7 @@ public class HuTypeParser {
 	        }
 	    }
 
-	    //¼ÆË㸴ÅÆ
+	    //计算复牌
 	    var j:int= 0;
 	    for (; j < len; j++) {
 	        var id:int= complex[j].id;

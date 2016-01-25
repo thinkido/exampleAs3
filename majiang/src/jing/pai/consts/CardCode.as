@@ -1,7 +1,7 @@
 package jing.pai.consts
 {
 /**
- * ÅƵÄֵ
+ * 牌的值
  * @author Jing
  *
  */
@@ -63,7 +63,7 @@ public class CardCode
 	static public var HAND_HUAE:int= 58;
 
 	static public var HAND_START:int= HAND_SEQS;
-	/*»¨ÅƲ»»á³öÏÖÔÚÊÖÅÆÖÐ*/
+	/*花牌不会出现在手牌中*/
 	static public var HAND_LEN:int= 48;
 
 	static public var COM_SIZE:int=  5;
@@ -78,16 +78,16 @@ public class CardCode
 	
 	static public var COM_PENG:int= 1;
 	static public var COM_GANG:int= 2;
-	static public var COM_CHI:int= 4;//°üº¬ËùÓеÄÁ¬ÅÆ
+	static public var COM_CHI:int= 4;//包含所有的连牌
 	static public var COM_JIANG:int= 7;
 	
 	static public var COM_PENG2:int= 0;
 	static public var COM_KE:int= 1;
 	static public var COM_MING_GANG:int= 2;
 	static public var COM_AN_GANG:int= 3;
-	static public var COM_SEQ:int= 4;/*ÊÖÅÆÖеÄÐòÅÆ*/
-	static public var COM_ZUO_CHI:int= 5;/*×ó³Ô*/
-	static public var COM_MID_CHI:int= 6;/*ÖгÔ*/
-	static public var COM_YOU_CHI:int= 7;/*ÓҳÔ*/
+	static public var COM_SEQ:int= 4;/*手牌中的序牌*/
+	static public var COM_ZUO_CHI:int= 5;/*左吃*/
+	static public var COM_MID_CHI:int= 6;/*中吃*/
+	static public var COM_YOU_CHI:int= 7;/*右吃*/
 }
 }

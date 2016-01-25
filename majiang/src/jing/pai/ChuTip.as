@@ -6,7 +6,7 @@ import java.util.Object;
 import jing.pai.vo.ChuVO;
 
 /**
- * ³öÅÆÌáʾÊý¾Ý
+ * 出牌提示数据
  * 
  * @author Jing
  */
@@ -40,7 +40,7 @@ public class ChuTip
 	}
 
 	/**
-	 * µõ½ËùÓпÉÒԴò³öºóÓнеÄÅƵÄÊý×é
+	 * 得到所有可以打出后有叫的牌的数组
 	 * 
 	 * @return
 	 */

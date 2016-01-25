@@ -7,7 +7,7 @@ import jing.pai.model.CardVector;
 import java.util.Vector;
 
 /**
- * ÅÆ×é½âÎöÆ÷
+ * 牌组解析器
  * 
  * @author Jing
  */
@@ -38,7 +38,7 @@ public class CardsParser
 	}
 
 	/**
-	 * ½âÎöÅÆ×é
+	 * 解析牌组
 	 * 
 	 * @param cards
 	 */
@@ -128,7 +128,7 @@ public class CardsParser
 
 			if(temp.count() == 0)
 			{
-				// ËùÓеĿ̳éȡÍê±Ï
+				// 所有的刻抽取完毕
 				return kes;
 			}
 		}
@@ -137,7 +137,7 @@ public class CardsParser
 	}
 
 	/**
-	 * »ñµÿ²
+	 * 获得坎
 	 * 
 	 * @return
 	 */
@@ -155,12 +155,12 @@ public class CardsParser
 
 			if(card1 == card3)
 			{
-				// ÈýÕÅÅÆÊÇһÑùµģ¬ÊÇһ¸ö¿²
+				// 三张牌是一样的，是一个坎
 				return new CardKe(KeType.PENG, card1, 0);
 			}
 			else if(cards.findCard(card1 + 1, i + 1) > -1&& cards.findCard(card1 + 2, i + 2) > -1)
 			{
-				// Õҵõ½˳×Ó
+				// 找得到顺子
 				return new CardKe(KeType.CHI, card1, 0);
 			}
 		}

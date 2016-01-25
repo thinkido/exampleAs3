@@ -4,7 +4,7 @@ import jing.pai.consts.CardCode;
 import jing.pai.model.CardKe;
 
 /**
- * ÅÆ×é½âÎöÆ÷
+ * 牌组解析器
  * 
  * @author Jing
  */
@@ -43,7 +43,7 @@ public class GuoBiaoCardsParser
 	}
 
 	/**
-	 * ʣÓàÅÆÊý
+	 * 剩余牌数
 	 * 
 	 * @param cards
 	 */
@@ -55,7 +55,7 @@ public class GuoBiaoCardsParser
 	    return sum;
 	}
 	/**
-	 * ½âÎöÅÆ×é
+	 * 解析牌组
 	 * 
 	 * @param cards
 	 */
@@ -65,13 +65,13 @@ public class GuoBiaoCardsParser
 		}
 	}
 	public static function hu(int pai[], remain:int, jiang:int):Boolean{
-	    if (remain == 0) return true; //Í˳öÌõ¼þ£¬ûÓÐʣÅƣ¬ºúÅÆÍ˳ö
+	    if (remain == 0) return true; //退出条件，没有剩牌，胡牌退出
 
 	    var result:Boolean= false;
 	    var i:int= CardCode.HAND_START;
-	    for (; pai[i] == 0&& i < CardCode.HAND_LEN; i++); //Õҵ½ÓÐÅƵĵط½£¬iΪµ±ǰÅƣ¬PAI[i] ÊǸöÊý
+	    for (; pai[i] == 0&& i < CardCode.HAND_LEN; i++); //找到有牌的地方，i为当前牌，PAI[i] 是个数
 
-	    //ÓÅÏÈѡÔñÈý¸öһÑùµÄ
+	    //优先选择三个一样的
 	    if (pai[i] >= 3) {
 	        pai[i] -= 3;
 	        remain -= 3;
@@ -82,7 +82,7 @@ public class GuoBiaoCardsParser
 	            return result;
 	        }
 	    }
-	    //ѡÔñ½«ÅÆ
+	    //选择将牌
 	    if (jiang == 0&& pai[i] >= 2) {
 	        jiang = 1;
 	        pai[i] -= 2;
@@ -96,7 +96,7 @@ public class GuoBiaoCardsParser
 	        }
 
 	    }
-	    //˳×Ó
+	    //顺子
 	    if (i <= CardCode.HAND_SEQE - 2&& (i % 10!= 8&& i % 10!= 9) && pai[i + 1] != 0&& pai[i + 2] != 0) {
 	        pai[i]--;
 	        pai[i + 1]--;
@@ -131,19 +131,19 @@ public class GuoBiaoCardsParser
 	        	gamehu[pos].len = curhu.len;
 	            pos++;
 	        }
-	        return pos; //Í˳öÌõ¼þ£¬ûÓÐʣÅƣ¬ºúÅÆÍ˳ö
+	        return pos; //退出条件，没有剩牌，胡牌退出
 	    }
 	    if (curhu.len >= CardCode.HU_MAX_NUM) {
 	        return pos;
 	    }
 	    var i:int= CardCode.HAND_START;
-	    for (; pai[i] == 0&& i < CardCode.HAND_LEN; i++); //Õҵ½ÓÐÅƵĵط½£¬iΪµ±ǰÅƣ¬PAI[i] ÊǸöÊý
+	    for (; pai[i] == 0&& i < CardCode.HAND_LEN; i++); //找到有牌的地方，i为当前牌，PAI[i] 是个数
 
-	    //˳×Ó
+	    //顺子
 	    if (i <= CardCode.HAND_SEQE - 2&& (i % 10!= 8&& i % 10!= 9) && pai[i + 1] != 0&& pai[i + 2] != 0) {
 	        pai[i]--; pai[i + 1]--; pai[i + 2]--;
 	        remain -= 3;
-	        /*·ÅÈë½á¹ûջ*/
+	        /*放入结果栈*/
 	        curhu.push(CardCode.COM_CHI, CardCode.COM_SEQ, i);
 	        pos = hu_result(pai, remain, jiang, gamehu, huType, pos);
 	        curhu.pop();
@@ -151,7 +151,7 @@ public class GuoBiaoCardsParser
 	        remain += 3;
 	    }
 	    end = pos;
-	    /*Èç¹ûÅÆÐÍͬʱΪ½«ÅƺÍ˳×ӣ¬ÔòÓпÉÄܻáÖظ´£¬²»Öظ´¼ÆËã*/
+	    /*如果牌型同时为将牌和顺子，则有可能会重复，不重复计算*/
 	    for (var j:int= start; j < end; j++){
 	        for (var k:int= 0; k < gamehu[j].len; k++)
 	        {
@@ -168,7 +168,7 @@ public class GuoBiaoCardsParser
 	        }
 	        if (haspeng || hasjiang) break;
 	    }
-	    //¿Ì×Ó
+	    //刻子
 	    if (!haspeng && pai[i] >= 3) {
 	        pai[i] -= 3;
 	        remain -= 3;
@@ -178,7 +178,7 @@ public class GuoBiaoCardsParser
 	        remain += 3;
 	        pai[i] += 3;
 	    }
-	    //½«ÅÆ
+	    //将牌
 	    if (!hasjiang && jiang == 0&& pai[i] >= 2) {
 	        jiang = 1;
 	        pai[i] -= 2;

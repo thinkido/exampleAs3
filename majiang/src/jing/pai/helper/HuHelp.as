@@ -9,7 +9,7 @@ import jing.pai.utils.GuoBiaoCardsParser.GameHu;
 import jing.pai.vo.HuVO;
 
 /**
- * ¸ù¾ÝÅÆÐÍËã³öºúÅÆ BUG: 1.½«¶ÔÓдíÎó£¬Ӧ¸ÃÊǶԶԺúΪ»ù´¡
+ * 根据牌型算出胡牌 BUG: 1.将对有错误，应该是对对胡为基础
  * 
  * @param cards
  */
@@ -40,41 +40,41 @@ public class HuHelp
 	    }
 	    var gamehu_len:int= 0;
 	    /*
-	    //    ÌØÊⷬÐÍ
+	    //    特殊番型
 	    */
-	    //Á¬Æ߶Ô
+	    //连七对
 	    if (HuTypeParser.is_lian_qi_dui(pai))
 	    {
 	    	result.add_result(GBHuType.HU_LIAN_QI_DUI, 88);
 	    }
-	    //ʮÈýçÛ
+	    //十三幺
 	    if (HuTypeParser.is_shi_san_yao(pai)) {
 	    	result.add_result(GBHuType.HU_SHI_SAN_YAO, 88);
 	    }
-	    //ÆßÐǲ»¿¿
+	    //七星不靠
 	    if (HuTypeParser.is_qi_xing_bu_kao(pai)) {
 	        result.add_result(GBHuType.HU_QI_XING_BU_KAO, 24);
 	    }
-	    //ȫ²»¿¿
+	    //全不靠
 	    if (HuTypeParser.is_quan_bu_kao(pai)){
 	        result.add_result(GBHuType.HU_QUAN_BU_KAO, 12);
 	    }
-	    //×éºÏÁú
+	    //组合龙
 	    if (HuTypeParser.is_zu_he_long(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_ZU_HE_LONG, 12);
 	    }
-	    //ÆßС¶ÔÅÆ
+	    //七小对牌
 	    if (HuTypeParser.is_qi_dui(pai)) {
 	        result.add_result(GBHuType.HU_QI_DUI, 24);
 	    }
-	    //Èýɫ˫Áú»á
+	    //三色双龙会
 	    if (HuTypeParser.is_san_se_shuang_long_hui(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SAN_SE_SHUANG, 16);
 	    }
-	    //ÅжÏÊǷñºú
+	    //判断是否胡
 	    flag = GuoBiaoCardsParser.hu(pai, GuoBiaoCardsParser.tileRemain(pai), 0);
 	    if (flag) {
-	        //·ÖÎöºúÅƵĸ÷ÖÖÇé¿ö
+	        //分析胡牌的各种情况
 	    	var huType:GameHu= new GameHu();
 	    	gamehu_len = GuoBiaoCardsParser.hu_result(pai, GuoBiaoCardsParser.tileRemain(pai), 0, gamehu, huType, gamehu_len);
 	    }
@@ -86,7 +86,7 @@ public class HuHelp
 	    var com_len:int= 0;
 	    var mul_hu:Array= new int[35];
 
-	    //ÅÆÐͷÖÎö
+	    //牌型分析
 	    for (var i:int= 0; i < gamehu_len; i++)
 	    {
 	        for (var j:int= 0; j < complex_length; j++) {
@@ -96,159 +96,159 @@ public class HuHelp
 	        com_hu = gamehu[i].complex;
 	        com_len = gamehu[i].len;
 	        /*
-	        //    ÅжϷ¬ÐÍ
+	        //    判断番型
 	        */
-	        //Çåç۾Å
+	        //清幺九
 	        if (mul_hu[0] == 0&& HuTypeParser.is_qing_yao_jiu(com_hu, com_len)) {
 	            mul_hu[0] = 1;
 	            result.add_result(GBHuType.HU_QING_YAO_JIU, 64);
 	        }
-	        //һɫËÄͬ˳
+	        //一色四同顺
 	        if (mul_hu[1] == 0&& HuTypeParser.is_yi_se_si_tong_shun(com_hu, com_len)) {
 	            mul_hu[1] = 1;
 	            result.add_result(GBHuType.HU_YI_SHI_TONG, 48);
 	        }
-	        //һɫËĽڸß
+	        //一色四节高
 	        if (mul_hu[2] == 0&& HuTypeParser.is_yi_se_si_jie_gao(com_hu, com_len)) {
 	            mul_hu[2] = 1;
 	            result.add_result(GBHuType.HU_YI_SHI_JIE, 48);
 	        }
-	        //һɫËĲ½¸ß
+	        //一色四步高
 	        if (mul_hu[3] == 0&& HuTypeParser.is_yi_se_si_bu_gao(com_hu, com_len)) {
 	            mul_hu[3] = 1;
 	            result.add_result(GBHuType.HU_YI_SHI_BU, 32);
 	        }
-	        //һɫÈýͬ˳
+	        //一色三同顺
 	        if (mul_hu[4] == 0&& HuTypeParser.is_yi_se_san_tong_shun(com_hu, com_len)) {
 	            mul_hu[4] = 1;
 	            result.add_result(GBHuType.HU_YI_SE_TONG, 24);
 	        }
-	        //һɫÈý½ڸß
+	        //一色三节高
 	        if (mul_hu[5] == 0&& HuTypeParser.is_yi_se_san_jie_gao(com_hu, com_len)) {
 	            mul_hu[5] = 1;
 	            result.add_result(GBHuType.HU_YI_SE_JIE, 24);
 	        }
-	        //һɫÈ񲽸ß
+	        //一色三步高
 	        if (mul_hu[6] == 0&& HuTypeParser.is_yi_se_san_bu_gao(com_hu, com_len)) {
 	            mul_hu[6] = 1;
 	            result.add_result(GBHuType.HU_YI_SE_BU, 16);
 	        }
-	        //ȫ´øÎå
+	        //全带五
 	        if (mul_hu[7] == 0&& HuTypeParser.is_quan_dai_wu(com_hu, com_len)) {
 	            mul_hu[7] = 1;
 	            result.add_result(GBHuType.HU_QUAN_DAI_WU, 16);
 	        }
-	        //´óÓÚÎå
+	        //大于五
 	        if (mul_hu[8] == 0&& HuTypeParser.is_da_yu_wu(com_hu, com_len)) {
 	            mul_hu[8] = 1;
 	            result.add_result(GBHuType.HU_DA_WU, 12);
 	        }
-	        //СÓÚÎå
+	        //小于五
 	        if (mul_hu[9] == 0&& HuTypeParser.is_xiao_yu_wu(com_hu, com_len)) {
 	            mul_hu[9] = 1;
 	            result.add_result(GBHuType.HU_XIAO_WU, 12);
 	        }
-	        //Èý·ç¿Ì
+	        //三风刻
 	        if (mul_hu[10] == 0&& HuTypeParser.is_san_feng_ke(com_hu, com_len)) {
 	            mul_hu[10] = 1;
 	            result.add_result(GBHuType.HU_SAN_FENG_KE, 12);
 	        }
-	        //»¨Áú
+	        //花龙
 	        if (mul_hu[11] == 0&& HuTypeParser.is_hua_long(com_hu, com_len)) {
 	            mul_hu[11] = 1;
 	            result.add_result(GBHuType.HU_HUA_LONG, 8);
 	        }
-	        //ÈýɫÈýͬ˳
+	        //三色三同顺
 	        if (mul_hu[12] == 0&& HuTypeParser.is_san_se_san_tong_shun(com_hu, com_len)) {
 	            mul_hu[12] = 1;
 	            result.add_result(GBHuType.HU_SAN_SE_TONG, 8);
 	        }
-	        //ÈýɫÈý½ڸß
+	        //三色三节高
 	        if (mul_hu[13] == 0&& HuTypeParser.is_san_se_san_jie_gao(com_hu, com_len)) {
 	            mul_hu[13] = 1;
 	            result.add_result(GBHuType.HU_SAN_SE_JIE, 8);
 	        }
-	        //ÅöÅöºÍ
+	        //碰碰和
 	        if (mul_hu[14] == 0&& HuTypeParser.is_peng_peng_hu(com_hu, com_len)) {
 	            mul_hu[14] = 1;
 	            result.add_result(GBHuType.HU_PENG_PENG, 6);
 	        }
-	        //ÈýɫÈ񲽸ß
+	        //三色三步高
 	        if (mul_hu[15] == 0&& HuTypeParser.is_san_se_san_bu_gao(com_hu, com_len)) {
 	            mul_hu[15] = 1;
 	            result.add_result(GBHuType.HU_SAN_SE_BU, 6);
 	        }
-	        //˫¼ý¿Ì
+	        //双箭刻
 	        if (mul_hu[16] == 0&& HuTypeParser.is_shuang_jian_ke(com_hu, com_len)) {
 	            mul_hu[16] = 1;
 	            result.add_result(GBHuType.HU_SHUANG_JIAN_KE, 6);
 	        }
-	        //ȫ´øçÛ
+	        //全带幺
 	        if (mul_hu[17] == 0&& HuTypeParser.is_quan_dai_yao(com_hu, com_len)) {
 	            mul_hu[17] = 1;
 	            result.add_result(GBHuType.HU_QUAN_DAI_YAO, 4);
 	        }
-	        //¼ý¿Ì
+	        //箭刻
 	        if (mul_hu[18] == 0&& HuTypeParser.is_jian_ke(com_hu, com_len)) {
 	            mul_hu[18] = 1;
 	            result.add_result(GBHuType.HU_JIAN_KE, 2);
 	        }
-	        //ƽºÍ
+	        //平和
 	        if (mul_hu[19] == 0&& HuTypeParser.is_ping_hu(com_hu, com_len)) {
 	            mul_hu[19] = 1;
 	            result.add_result(GBHuType.HU_PING_HU, 2);
 	        }
-	        //˫ͬ¿Ì
+	        //双同刻
 	        if (mul_hu[20] == 0&& HuTypeParser.is_shuang_tong_ke(com_hu, com_len)) {
 	            mul_hu[20] = 1;
 	            result.add_result(GBHuType.HU_SHUANG_TONG_KE, 2);
 	        }
-	        //˫°µ¿Ì
+	        //双暗刻
 	        if (mul_hu[21] == 0&& HuTypeParser.is_shuang_an_ke(com_hu, com_len)) {
 	            mul_hu[21] = 1;
 	            result.add_result(GBHuType.HU_SHUANG_AN_KE, 2);
 	        }
-	        //һ°ã¸ß
+	        //一般高
 	        if (mul_hu[22] == 0&& HuTypeParser.is_yi_ban_gao(com_hu, com_len)) {
 	            mul_hu[22] = 1;
 	            result.add_result(GBHuType.HU_YI_BAN_GAO, 1);
 	        }
-	        //ϲÏà·ê
+	        //喜相逢
 	        if (mul_hu[23] == 0&& HuTypeParser.is_xi_xiang_feng(com_hu, com_len)) {
 	            mul_hu[23] = 1;
 	            result.add_result(GBHuType.HU_XI_XIANG_FENG, 1);
 	        }
-	        //Á¬Áù
+	        //连六
 	        if (mul_hu[24] == 0&& HuTypeParser.is_lian_liu(com_hu, com_len)) {
 	            mul_hu[24] = 1;
 	            result.add_result(GBHuType.HU_LIAN_LIU, 1);
 	        }
-	        //ÀÏÉٸ±
+	        //老少副
 	        if (mul_hu[25] == 0&& HuTypeParser.is_lao_shao_fu(com_hu, com_len)) {
 	            mul_hu[25] = 1;
 	            result.add_result(GBHuType.HU_LAO_SHAO_JIANG, 1);
 	        }
-	        //ç۾ſÌ
+	        //幺九刻
 	        if (mul_hu[26] == 0&& HuTypeParser.is_yao_jiu_ke(com_hu, com_len)) {
 	            mul_hu[26] = 1;
 	            result.add_result(GBHuType.HU_YAO_JIU, 1);
 	        }
-	        //±ßÕÅ
+	        //边张
 	        if (mul_hu[27] == 0&& HuTypeParser.is_bian_zhang(com_hu, com_len, hu_tile)) {
 	            mul_hu[27] = 1;
 	            result.add_result(GBHuType.HU_BIAN_ZHANG, 1);
 	        }
-	        //¿²ÕÅ
+	        //坎张
 	        if (mul_hu[28] == 0&& HuTypeParser.is_kan_zhang(com_hu, com_len, hu_tile)) {
 	            mul_hu[28] = 1;
 	            result.add_result(GBHuType.HU_KAN_ZHANG, 1);
 	        }
-	        //µ¥µö½«
+	        //单钓将
 	        if (mul_hu[29] == 0&& HuTypeParser.is_dan_diao_jiang(com_hu, com_len, hu_tile)) {
 	            mul_hu[29] = 1;
 	            result.add_result(GBHuType.HU_DAN_DIAO_JIANG, 1);
 	        }
-	        //ËĹéһ
+	        //四归一
 	        if (mul_hu[30] == 0&& HuTypeParser.is_si_gui_yi(com_hu, com_len)) {
 	            mul_hu[30] = 1;
 	            result.add_result(GBHuType.HU_SHI_GUI_YI, 1);
@@ -257,114 +257,114 @@ public class HuHelp
 	    com_hu = gamehu[0].complex;
 	    com_len = gamehu[0].len;
 	    /*
-	    //    ÅжϷ¬Ðͣ¬ÕâЩÅÆÐÍֻÐèÅжÏһÖÖÇé¿򼴿É
+	    //    判断番型，这些牌型只需判断一种情况即可
 	    */
-	    //ÂÌһɫ
+	    //绿一色
 	    if (HuTypeParser.is_lv_yi_se(com_hu, com_len)) {
 	        result.add_result(GBHuType.HU_LU_YI_SE, 88);
 	    }
 
 	    /*
-	    //    ÅжϷ¬ÐÍ
+	    //    判断番型
 	    */
-	    //´óËÄϲ
+	    //大四喜
 	    if (HuTypeParser.is_da_si_xi(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_DA_SHI_XI, 88);
 	    }
-	    //´óÈýԪ
+	    //大三元
 	    if (HuTypeParser.is_da_san_yuan(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_DA_SAN_YUAN, 88);
 	    }
-	    //Ëİµ¿Ì
+	    //四暗刻
 	    if (HuTypeParser.is_si_an_ke(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SI_AN_KE, 64);
 	    }
-	    //СËÄϲ
+	    //小四喜
 	    if (HuTypeParser.is_xiao_si_xi(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_XIAO_SHI_XI, 64);
 	    }
-	    //СÈýԪ
+	    //小三元
 	    if (HuTypeParser.is_xiao_san_yuan(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_XIAO_SAN_YUAN, 64);
 	    }
-	    //×ÖһɫÅÆ
+	    //字一色牌
 	    if (HuTypeParser.is_zi_yi_se(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_ZI_YI_SE, 64);
 	    }
-	    //һɫ˫Áú»á
+	    //一色双龙会
 	    if (HuTypeParser.is_yi_se_shuang_long_hui(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_YI_SE_SHUANG, 64);
 	    }
-	    //»ìç۾Å
+	    //混幺九
 	    if (HuTypeParser.is_hun_jiu_yao(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_HUN_YAO, 32);
 	    }
-	    //ȫ˫¿Ì
+	    //全双刻
 	    if (HuTypeParser.is_quan_shuang_ke(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QUAN_SHUANG, 24);
 	    }
 	    
-	    //Èýͬ¿Ì
+	    //三同刻
 	    if (HuTypeParser.is_san_tong_ke(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SAN_TONG_KE, 16);
 	    }
-	    //È񰵿Ì
+	    //三暗刻
 	    if (HuTypeParser.is_san_an_ke(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SAN_AN_KE, 16);
 	    }
-	    //ÇåÁú
+	    //清龙
 	    if (HuTypeParser.is_qing_long(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QING_LONG, 16);
 	    }
-	    //¾ÅÁ«±¦µÆ
+	    //九莲宝灯
 	    if (HuTypeParser.is_jiu_lian_bao_deng(pai, complex, complex_length, hu_tile)) {
 	        result.add_result(GBHuType.HU_JIU_LIAN_DENG, 88);
 	    }
-	    //ËĸÜ
+	    //四杠
 	    if (HuTypeParser.is_si_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SI_GANG, 88);
 	    }
-	    //˫°µ¸Ü
+	    //双暗杠
 	    if (HuTypeParser.is_shuang_an_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SHUANG_AN_GANG, 6);
 	    }
-	    //˫Ã÷¸Ü
+	    //双明杠
 	    if (HuTypeParser.is_shuang_ming_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SHUANG_MING_GANG, 4);
 	    }
-	    //°µ¸Ü
+	    //暗杠
 	    if (HuTypeParser.is_an_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_AN_GANG, 2);
 	    }
-	    //Ã÷¸Ü
+	    //明杠
 	    if (HuTypeParser.is_ming_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_MING_GANG, 1);
 	    }
-	    //Èý¸Ü
+	    //三杠
 	    if (HuTypeParser.is_san_gang(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SAN_GANG, 32);
 	    }
-	    //ȫ´ó
+	    //全大
 	    if (HuTypeParser.is_quan_da(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QUAN_DA, 24);
 	    }
-	    //ȫÖÐ
+	    //全中
 	    if (HuTypeParser.is_quan_zhong(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QUAN_ZHONG, 24);
 	    }
-	    //ȫС
+	    //全小
 	    if (HuTypeParser.is_quan_xiao(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QUAN_XIAO, 24);
 	    }
 
 	    if (mo == 1) {
-	        //²»ÇóÈË
+	        //不求人
 	        if (HuTypeParser.is_bu_qiu_ren(complex, complex_length)) {
 	            result.add_result(GBHuType.HU_BU_QIU_REN, 4);
 	        }
 	    }
 	    else {
-	        //ÃÅǰÇå
+	        //门前清
 	        if (HuTypeParser.is_men_qian_qing(complex, complex_length)) {
 	            result.add_result(GBHuType.HU_MEN_QI_QING, 2);
 	        }
@@ -373,42 +373,42 @@ public class HuHelp
 	    if (gamehu_len != 0)
 	    {
 	        /*
-	        //    ÅжϷ¬ÐÍ
+	        //    判断番型
 	        */
-	        //ÍƲ»µ¹
+	        //推不倒
 	        if (HuTypeParser.is_tui_bu_dao(pai, complex, complex_length)) {
 	            result.add_result(GBHuType.HU_TUI_BU_DAO, 8);
 	        }
-	        //ÇåһɫÅÆ
+	        //清一色牌
 	        if (HuTypeParser.is_qing_yi_se(pai, complex, complex_length)) {
 	            result.add_result(GBHuType.HU_QING_YI_SE, 24);
 	        }
 	        
-	        //ÎÞ×Ö
+	        //无字
 	        if (HuTypeParser.is_wu_zi(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_WU_ZI, 1);
 	        }
-	        //ȱһÃÅ
+	        //缺一门
 	        if (HuTypeParser.is_que_yi_men(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_QUE_YI_MEN, 1);
 	        }
-	        //¶ÏçÛ
+	        //断幺
 	        if (HuTypeParser.is_duan_yao(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_DUAN_YAO, 2);
 	        }
-	        //ȫÇóÈË
+	        //全求人
 	        if (HuTypeParser.is_quan_qiu_ren(pai, complex, complex_length)) {
 	            result.add_result(GBHuType.HU_QUAN_QIU_REN, 6);
 	        }
-	        //ÎåÃÅÆë
+	        //五门齐
 	        if (HuTypeParser.is_wu_men_qi(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_WU_MEN_QI, 6);
 	        }
-	        //»ìһɫ
+	        //混一色
 	        if (HuTypeParser.is_hu_yi_se(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_HUN_YI_SE, 6);
 	        }
-	        //Î޷¬ºÍ
+	        //无番和
 	        if (result.len == 0) {
 	            result.add_result(GBHuType.HU_WU_FAN, 8);
 	        }
