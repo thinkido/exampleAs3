@@ -29,15 +29,14 @@ package game.model.vo
 		private var _canEnter:Boolean;
 		private var _chuTileTime:int;
 		
-		public function PlaceData() {
-			
+		
+		public function PlaceData(info:place_info = null ):void {
+			if( info != null ){
+				this.init(info);
+			}
 		}
 		
-		public function PlaceData_2(info:place_info):void {
-			this.init(info);
-		}
-		
-		public function init(info:place_info) {
+		public function init(info:place_info):void {
 			this.id_2(info.getId());
 			this.name_2(info.getName());
 			this.baseZhu_2(info.getBase_zhu());
