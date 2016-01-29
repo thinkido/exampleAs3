@@ -1,8 +1,10 @@
 package game.control
 {
 	import com.thinkido.framework.common.observer.Notification;
+	import com.thinkido.framework.common.observer.Observer;
 	import com.thinkido.framework.common.observer.ObserverThread;
 	import com.thinkido.framework.common.timer.vo.TimerData;
+	import com.thinkido.framework.events.TSocketEvent;
 	import com.thinkido.framework.manager.TimerManager;
 	import com.thinkido.framework.net.JSocket;
 	import com.thinkido.framework.net.NProtocol;
@@ -27,16 +29,19 @@ package game.control
 	import game.model.vo.UserDataVO;
 	
 	import network.ProtocolList;
+	import network.ProtocolNode;
 	import network.YiuNetworkHandlerMgr;
-	import network.YiuNetworkListener;
-	import network.YiuNetworkStatusListener;
+	
+	import org.osmf.logging.Log;
 	
 	import protos.common.heartbeat;
+	import protos.common.protocol;
+	import protos.common.sc_protocol_pack;
 	import protos.gameserver.heartbeat;
 	import protos.hallserver.sc_enter_hall;
 	import protos.hallserver.sc_force_continue_game;
 	
-	public class AccountManager implements YiuNetworkListener
+	public class AccountManager
 	{
 		
 		private static var SOCKET_INTERVAL:int = 200;
@@ -55,6 +60,8 @@ package game.control
 		private   var _heartTime:TimerData = TimerManager.createTimer(HEARTBEAT_INTERVAL, 0, heartHandle, null, null, null, false);
 		private  var _msgObserverThread:ObserverThread = new ObserverThread();
 		private  var stage:Stage;
+		
+		private var showLog:Boolean = true ;
 				
 		public function id():String
 		{
@@ -69,8 +76,6 @@ package game.control
 		}
 		
 		private var _name:String;
-		
-		private var _statusListener:YiuNetworkStatusListener;
 		
 		private  var _heartbeatBytes:ByteArray;
 		
@@ -88,7 +93,6 @@ package game.control
 		
 		public function AccountManager():void
 		{
-			_statusListener = new YiuNetworkStatusListener_A();
 			
 			// 大厅套接字
 			var socketHall:JSocket = new JSocket();
@@ -164,10 +168,11 @@ package game.control
 		
 		public function connect():void
 		{
-			Global.socketHall.setStatusListener(_statusListener);
 			Global.socketHall.connect();
+			Global.socketHall.addEventListener( TSocketEvent.LOGIN_SUCCESS , connHander );
+			Global.socketHall.addEventListener( TSocketEvent.LOGIN_FAILURE , connHander );
+			Global.socketHall.addEventListener( TSocketEvent.CLOSE , connHander );
 			
-			Global.socketGame.setStatusListener(_statusListener);
 //			var ret:String = YiuHttpManager.PostOptJson(Global.cfg.gateAddressVO().toHttpAddress() + "/login", "id=" + _id + "&idtype=" + _type + "&name=" + _name + "&version=0.1");
 			var url:String = Global.cfg.gateAddressVO().toHttpAddress() + "/login";
 			var ul:URLLoader = new URLLoader();
@@ -183,6 +188,17 @@ package game.control
 			ur.data = uv; 
 			ul.load(ur);
 		}
+		private function connHander( evt:TSocketEvent ):void
+		{
+			if( evt.type == TSocketEvent.LOGIN_SUCCESS ){
+				trace("socket msg:" + TSocketEvent.LOGIN_SUCCESS);
+			}else if( evt.type == TSocketEvent.LOGIN_FAILURE ){
+				trace("socket msg:" + TSocketEvent.LOGIN_FAILURE);
+			}else if( evt.type == TSocketEvent.CLOSE ){
+				trace("socket msg:" + TSocketEvent.CLOSE);
+			}			
+		}
+		
 		private function loginHander(e:Event):void
 		{
 			var ul:URLLoader = e.currentTarget as URLLoader;
@@ -242,10 +258,56 @@ package game.control
 			return;
 		}
 		
-		private function receiveMsg(protocol:NProtocol) : void
+		private function receiveMsg(np:NProtocol) : void
+		{			
+			var noti:Notification ;
+			
+			var pro:protocol = new protocol();
+			var pbObject:protocol = pro.mergeFrom( ByteArray(np.body) );
+			var node:ProtocolNode = ProtocolList.getNode(pbObject.getId());
+			
+			if (node == null) return;
+			
+			if (node.mName == "sc_protocol_pack")
+			{
+				var pbPack:sc_protocol_pack = new sc_protocol_pack() ;
+				pbPack.mergeFrom( pbObject.content ) ;
+				var vecProtocol:Array = pbPack.pack ;
+				for (var index:int = 0; index < vecProtocol.length; ++index)
+				{
+					var pbPackedObject:protocol = vecProtocol[index] as protocol; 
+					var packedNode:ProtocolNode = ProtocolList.getNode(pbPackedObject.getId());					   
+					if (showLog)
+					{
+						trace( "Got Protobuf: " + pbPackedObject.getId() );
+					}
+//					YiuNetworkHandlerMgr.processPacket(packedNode.mName, pbPackedObject.getContent());					
+					noti = new Notification( node.mName , pbPackedObject.content );
+					_msgObserverThread.notifyObservers(noti);
+				}
+			} 
+			else 
+			{
+				if (showLog) 
+				{
+					trace( "Got Protobuf: " + pbObject.getId() );
+				}
+//				YiuNetworkHandlerMgr.processPacket(node.mName, pbObject.getContent());
+				noti = new Notification( node.mName , pbPackedObject.content );
+				_msgObserverThread.notifyObservers(noti);
+			}
+			return;
+		}
+		
+		public function registerMsg(param1:int, $handle:Function, $name) : void
 		{
-			var _loc_4:* = new Notification( protocol.type.toString() , protocol );
-			_msgObserverThread.notifyObservers(_loc_4);
+			var _observer:Observer = new Observer($handle, $name);
+			_msgObserverThread.registerObserver(param1, _observer);
+			return;
+		}
+		public function removeMsg(param1:int, $name:String) : void
+		{
+			_msgObserverThread.removeObserver(param1, $name);
 			return;
 		}
 		

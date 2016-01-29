@@ -3,6 +3,8 @@ package network
 	
 	
 	
+	import com.thinkido.framework.utils.ArrayUtil;
+	
 	import flash.utils.ByteArray;
 	
 	/**
@@ -30,15 +32,16 @@ package network
 	
 		public static function subscribe(listener:YiuNetworkListener):void
 		{
-			if(mListeners.contains(listener))
+			if(mListeners.indexOf(listener) != -1)
 				return;
 	
-			mListeners.addElement(listener);
+			mListeners.push(listener);
 		}
 	
 		public static function unSubscribe(listener:YiuNetworkListener):void
 		{
-			mListeners.removeElement(listener);
+//			mListeners.removeElement(listener);
+			ArrayUtil.removeItem( mListeners , listener );
 		}
 	}
 }
