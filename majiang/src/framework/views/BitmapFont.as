@@ -124,7 +124,7 @@ public class BitmapFont extends DisplayObject
 	public function paint(g:Graphics):void{
 		if(_textImageCache != null)
 		{
-			var gp:Point= local2Global(_x, _y);
+			var gp:Point= local2Global(x, y);
 			g.drawRegion(_textImageCache, 0, 0, _textImageCache.width, _textImageCache.height, _trans, gp.x(), gp.y(), _anchor);
 			return;
 		}

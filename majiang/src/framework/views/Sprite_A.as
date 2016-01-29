@@ -7,12 +7,12 @@ import javax.microedition.lcdui.Graphics;
 
 import framework.geom.Rectangle;
 
-public class Sprite_additional extends DisplayObject
+public class Sprite_A extends DisplayObject
 {
 
 	private var _childs:Vector= new Vector();
 
-	public function Sprite_additional()
+	public function Sprite_A()
 	{
 
 	}
@@ -93,7 +93,7 @@ public class Sprite_additional extends DisplayObject
 	public function addChild(object:DisplayObject):DisplayObject{
 		if(object.getParent() != null)
 		{
-			var parent:Sprite_additional= Sprite_additional(object.getParent());
+			var parent:Sprite_A= Sprite_A(object.getParent());
 			parent.removeChild(object);
 		}
 		_childs.addElement(object);
@@ -112,7 +112,7 @@ public class Sprite_additional extends DisplayObject
 		// ÓпÉÄÜ֮ǰÔÚÁбíÖУ¬ËùÒÔÏÈÒƳýһ´Î
 		if(object.getParent() != null)
 		{
-			var parent:Sprite_additional= Sprite_additional(object.getParent());
+			var parent:Sprite_A= Sprite_A(object.getParent());
 			parent.removeChild(object);
 		}
 
