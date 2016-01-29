@@ -6,7 +6,7 @@ package ui
 		/**
 		 * 加载完成后处理
 		 */
-		public function initWithJsonObject(data:Object):void
+		override public function initWithJsonObject(data:Object):void
 		{
 			try
 			{

@@ -217,7 +217,8 @@ public class Sprite_additional extends DisplayObject
 	/**
 	 * ÓÎϷ½øÈëÐÂһ֡
 	 */
-	protected function enterFrame(time:Number):void{
+	protected function enterFrame(time:Number):void
+	{
 		for(var enumobj:Enumeration= _childs.elements(); enumobj.hasMoreElements();)
 		{
 			var object:DisplayObject= DisplayObject(enumobj.nextElement());

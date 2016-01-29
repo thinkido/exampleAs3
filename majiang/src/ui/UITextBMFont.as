@@ -1,6 +1,6 @@
 package ui
 {
-	import starling.text.BitmapFont;
+	import framework.views.BitmapFont;
 	
 	public class UITextBMFont extends UIObject
 	{
@@ -30,13 +30,14 @@ package ui
 			_bf.setAnchor(anchor);
 		}
 		
-		public function initWithJsonObject(data:Object):void
+		override public function initWithJsonObject(data:Object):void
 		{
 			try
 			{
 				var text:String = data["LabelText"];
 				var resource:String = transformPath(data["UserData"]);
-				setName(data["Name"]);
+//				setName(data["Name"]);
+				this.name = data['Name'];
 				_bf = new BitmapFont(getFontSheet(resource));
 				addChild(_bf);
 				setText(text);

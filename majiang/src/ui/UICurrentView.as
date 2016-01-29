@@ -2,12 +2,13 @@ package ui
 {	
 	import framework.consts.EventType;
 	import framework.consts.KeyType;
+	import framework.events.EventDispatcher;
+	import framework.events.IEventListener;
+	import framework.views.Stage;
 	
-	import starling.display.Stage;
-	import starling.events.EventDispatcher;
 	import starling.text.TextField;
 	
-	public class UICurrentView extends UIContainer //implements IEventListener
+	public class UICurrentView extends UIContainer implements IEventListener
 	{
 	
 		public static const TEXT_INPUT_MAX_LENGTH:int = 999;
@@ -136,7 +137,7 @@ package ui
 							dir = DIR_RIGHT;
 							break;
 						case KeyType.CONFIRM:
-							if(_selected.getClass() == UICheckBox)
+							if(_selected is UICheckBox)
 							{
 								(_selected as UICheckBox).swapCheckedState();
 							}
@@ -164,7 +165,7 @@ package ui
 		 */
 		public function onMove( dir:int):void
 		{
-			if(_selected.getClass() != UIListView || !(_selected as UIListView).tryMoveOnce(dir))
+			if(!(_selected is UIListView) || !(_selected as UIListView).tryMoveOnce(dir))
 			{
 				var target:UIObject = _selected.getNeighbor(dir);
 				while(null != target && STATE_DISABLE == target.getState())

@@ -1,12 +1,12 @@
 package framework.views
 {
+import flash.display.Graphics;
+
 import framework.geom.Point;
 import framework.geom.Rectangle;
 import framework.resources.FontSheet;
 import framework.resources.TextureData;
 import framework.util.ImageUtil;
-
-import javax.microedition.lcdui.Graphics;
 
 import starling.display.DisplayObject;
 import starling.display.Image;
@@ -27,7 +27,7 @@ public class BitmapFont extends DisplayObject
 
 	private var _text:String= "";
 
-	public function text():String{
+	public function get text():String{
 		return _text;
 	}
 
@@ -39,12 +39,12 @@ public class BitmapFont extends DisplayObject
 
 		if(_text.length > 0)
 		{
-			_textChars = [];
+//			_textChars = ;
 //			_text.getChars(0, _text.length, _textChars, 0);
 			_textChars = _text;
 			
 			updateSize();
-			if(_trans != 0)
+			if(this.rotation != 0)
 			{
 				updateTextImageCache();
 			}
@@ -65,10 +65,11 @@ public class BitmapFont extends DisplayObject
 	}
 
 	public function setTrans(value:int):void{
-		if(_trans != value)
+		if(this.rotation != value)
 		{
-			_trans = value;
-			if(_trans != 0)
+//			_trans = value;
+			this.rotation = value;
+			if(value != 0)
 			{
 				updateTextImageCache();
 			}
@@ -85,25 +86,26 @@ public class BitmapFont extends DisplayObject
 	private function updateTextImageCache():void{
 		var h:int= 0;
 		var w:int= 0;
+		var td:TextureData;
 		for(var i:int= 0; i < _textChars.length; i++)
 		{
-			var td:TextureData= _sheet.getCharData(_textChars[i]);
+			td = _sheet.getCharData(_textChars[i]);
 			if(null != td)
 			{
 				h = td.sourceH() > h ? td.sourceH() : h;
 				w += td.sourceW();
 			}
 		}
-		var flagColor:int= 0xFF778899;
+		var flagColor:uint= 0xFF778899;
 		_textImageCache = Image.createImage(w, h);
 		var g:Graphics= _textImageCache.getGraphics();
 		g.setColor(flagColor);
-		g.fillRect(0, 0, _textImageCache.getWidth(), _textImageCache.getHeight());
+		g.fillRect(0, 0, _textImageCache.width, _textImageCache.height);
 
 		var pos:int= 0;
-		for(var i:int= 0; i < _textChars.length; i++)
+		for(i = 0; i < _textChars.length; i++)
 		{
-			var td:TextureData= _sheet.getCharData(_textChars[i]);
+			td = _sheet.getCharData(_textChars[i]);
 			if(null != td)
 			{
 				var x:int= td.offX() + pos;

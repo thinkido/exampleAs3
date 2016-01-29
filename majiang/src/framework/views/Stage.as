@@ -10,6 +10,9 @@ package framework.views
 	import framework.time.Ticker;
 	import framework.util.Keyboard;
 	
+	import game.GameEntry;
+	import game.model.Global;
+	
 	import starling.display.Sprite;
 	
 	/**
@@ -17,10 +20,10 @@ package framework.views
 	 * 
 	 * @author Jing
 	 */
-	public class Stage extends Sprite /*implements Runnable*/
+	public class Stage extends Sprite implements Runnable
 	{
 		
-		public static var current:Stage= null;
+		public static var current:Stage = null;
 		
 		/**
 		 * 游戏每帧的预计耗时
@@ -194,7 +197,7 @@ package framework.views
 		
 		public function Stage()
 		{
-			
+			this.Stage_2(GameEntry, 25, 0x666666, Global.SCREEN_WIDTH, Global.SCREEN_HEIGHT);
 		}
 		
 		public function Stage_1(_rootCls:Class):void
