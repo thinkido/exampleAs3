@@ -32,7 +32,7 @@ package framework.resources
 			return _ta.getFrame(str);		
 		}
 		
-		protected function FontSheet(url:String)
+		public function FontSheet(url:String)
 		{
 			try
 			{
@@ -41,13 +41,14 @@ package framework.resources
 				var sheet:Image= Image.createImage(imagePath);
 				init(jsonObj, sheet);
 			}
-			catch(e:*)
+			catch(e:Error)
 			{
-				trace( e.getStackTrace() );   //e.printStackTrace();
+//				trace( e.getStackTrace() );   //e.printStackTrace();
+				trace(e.message);
 			}
 		}
 		
-		protected function FontSheet(jsonObj:Object, sheet:Image)
+		public function FontSheet_2(jsonObj:Object, sheet:Image):void
 		{
 			init(jsonObj, sheet);
 		}

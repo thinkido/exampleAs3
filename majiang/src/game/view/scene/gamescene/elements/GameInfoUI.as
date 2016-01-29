@@ -2,18 +2,26 @@ package game.view.scene.gamescene.elements
 {
 	import flash.geom.Point;
 	
+	import configs.AnchorType;
+	
 	import framework.consts.TransType;
+	import framework.resources.Res;
+	import framework.resources.SpriteSheet;
 	import framework.time.TickItem;
+	import framework.views.Stage;
 	
 	import game.control.UserDataManager;
 	
+	import jing.consts.GameDir;
+	
 	import starling.display.DisplayObject;
 	import starling.display.MovieClip;
-	import starling.display.Stage;
 	import starling.text.TextField;
 	
 	import ui.UIContainer;
 	import ui.UIImageView;
+	import ui.UIText;
+	import ui.UITextBMFont;
 	
 	/**
 	 * 游戏信息层
@@ -68,7 +76,7 @@ package game.view.scene.gamescene.elements
 			huas[GameDir.DOWN] = [];
 	
 			// lbRemain = (UIImageView)getChildByName("lb_remain");
-			nowAction = (UIImageView)getChildByName("now_action");
+			nowAction = this.getChildByName("now_action") as UIImageView;
 			// lbBasescore = (UIImageView)getChildByName("lb_basescore");
 			txtCd = getChildByName("txt_cd") as UITextBMFont;
 			txtBasescore = getChildByName("txt_basescore") as UITextBMFont;
@@ -94,13 +102,15 @@ package game.view.scene.gamescene.elements
 			var img:UIImageView = null;
 			var p:Point = null;
 			img = stateImgs[dir] as UIImageView;
-			p = new Point(img.getX() + img.getWidth() / 2, img.getY() + img.getHeight() / 2);
-			img.setAnchor(ANCHOR_CENTER);
-			img.setPosition(p.x(), p.y());
+			p = new Point(img.x + img.width / 2, img.y + img.height / 2);
+			img.setAnchor(AnchorType.ANCHOR_CENTER);
+//			img.setPosition(p.x(), p.y());
+			img.x = p.x;
+			img.y = p.y;
 			// statePoints[dir, p);
 		}
 	
-		public function dispose():void
+		override public function dispose():void
 		{
 			Stage.current.ticker.release(_timerId);
 			_timerId = -1;

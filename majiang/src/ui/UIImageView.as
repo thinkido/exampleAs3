@@ -28,12 +28,12 @@ package ui
 	
 		public function getHeight():int
 		{
-			return _srcTexture.getHeight();
+			return _srcTexture.height;
 		}
 	
 		public function getWidth():int
 		{
-			return _srcTexture.getWidth();
+			return _srcTexture.width;
 		}
 	
 		public function setTexture( t:Texture):void
@@ -61,10 +61,11 @@ package ui
 		public function clearTexture():void
 		{
 			if(null != _srcTexture)
-				_srcTexture.clearTexture();
+//				_srcTexture.clearTexture();
+				_srcTexture.dispose();
 		}
 	
-		public function initWithJsonObject( data:Object):void
+		override public function initWithJsonObject( data:Object):void
 		{
 			try
 			{

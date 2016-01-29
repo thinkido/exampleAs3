@@ -77,12 +77,12 @@ public class Bitmap extends DisplayObject
 		{
 			var clipX:int= td.x() + drawRect.x() - gp.x();
 			var clipY:int= td.y() + drawRect.y() - gp.y();
-			var clipW:int= drawRect.w();
-			var clipH:int= drawRect.h();
+			var clipW:int= drawRect.width;
+			var clipH:int= drawRect.height;
 
 			if(null != _scrollRect)
 			{
-				clipX += _scrollRect.x();
+				clipX += _scrollRect.x;
 				clipY += _scrollRect.y();
 				if(clipW > _scrollRect.w())
 				{

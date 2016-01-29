@@ -17,15 +17,22 @@ package framework.views
 	public class DisplayObject_A extends starling.events.EventDispatcher
 	{
 		
-		public static const ANCHOR_TOP_LEFT:int= Graphics.TOP | Graphics.LEFT;
+		private static const HCENTER:int = 1;
+		private static const VCENTER:int = 2;
+		private static const TOP:int = 16;
+		private static const LEFT:int = 4;
+		private static const RIGHT:int = 8;
+		private static const BOTTOM:int = 32;
 		
-		public static const ANCHOR_TOP_RIGHT:int= Graphics.TOP | Graphics.RIGHT;
+		public static const ANCHOR_TOP_LEFT:int= TOP | LEFT;
 		
-		public static const ANCHOR_BOTTOM_LEFT:int= Graphics.BOTTOM | Graphics.LEFT;
+		public static const ANCHOR_TOP_RIGHT:int= TOP | RIGHT;
 		
-		public static const ANCHOR_BOTTOM_RIGHT:int= Graphics.BOTTOM | Graphics.RIGHT;
+		public static const ANCHOR_BOTTOM_LEFT:int= BOTTOM | LEFT;
 		
-		public static const ANCHOR_CENTER:int= Graphics.HCENTER | Graphics.VCENTER;
+		public static const ANCHOR_BOTTOM_RIGHT:int= BOTTOM | RIGHT;
+		
+		public static const ANCHOR_CENTER:int= HCENTER | VCENTER;
 		
 		protected var _anchor:int= DisplayObject.ANCHOR_TOP_LEFT;
 		

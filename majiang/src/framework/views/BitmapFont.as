@@ -2,6 +2,8 @@ package framework.views
 {
 import flash.display.Graphics;
 
+import configs.AnchorType;
+
 import framework.geom.Point;
 import framework.geom.Rectangle;
 import framework.resources.FontSheet;
@@ -123,33 +125,33 @@ public class BitmapFont extends DisplayObject
 		if(_textImageCache != null)
 		{
 			var gp:Point= local2Global(_x, _y);
-			g.drawRegion(_textImageCache, 0, 0, _textImageCache.getWidth(), _textImageCache.getHeight(), _trans, gp.x(), gp.y(), _anchor);
+			g.drawRegion(_textImageCache, 0, 0, _textImageCache.width, _textImageCache.height, _trans, gp.x(), gp.y(), _anchor);
 			return;
 		}
 		else if(null != _textChars)
 		{
-			var posX:int= _x;
-			var posY:int= _y;
+			var posX:int= x;
+			var posY:int= y;
 
-			if(_anchor != DisplayObject.ANCHOR_TOP_LEFT)
+			if(_anchor != AnchorType.ANCHOR_TOP_LEFT)
 			{
 				updateSize();
 
 				switch(_anchor)
 				{
-					case DisplayObject.ANCHOR_CENTER:
-						posX -= _width >> 1;
-						posY -= _height >> 1;
+					case AnchorType.ANCHOR_CENTER:
+						posX -= width >> 1;
+						posY -= height >> 1;
 						break;
-					case DisplayObject.ANCHOR_BOTTOM_LEFT:
-						posY -= _height;
+					case AnchorType.ANCHOR_BOTTOM_LEFT:
+						posY -= height;
 						break;
-					case DisplayObject.ANCHOR_BOTTOM_RIGHT:
-						posX -= _width;
-						posY -= _height;
+					case AnchorType.ANCHOR_BOTTOM_RIGHT:
+						posX -= width;
+						posY -= height;
 						break;
-					case DisplayObject.ANCHOR_TOP_RIGHT:
-						posX -= _width;
+					case AnchorType.ANCHOR_TOP_RIGHT:
+						posX -= width;
 						break;
 				}
 			}
@@ -197,8 +199,8 @@ public class BitmapFont extends DisplayObject
 			}
 		}
 
-		_width = w;
-		_height = h;
+		width = w;
+		height = h;
 	}
 
 	protected function onScaleChange(scaleX:Number, scaleY:Number):void{

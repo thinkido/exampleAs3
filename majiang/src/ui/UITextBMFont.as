@@ -27,7 +27,7 @@ package ui
 		
 		public function setAnchor( anchor:int):void
 		{
-			_bf.setAnchor(anchor);
+//			_bf.setAnchor(anchor);
 		}
 		
 		override public function initWithJsonObject(data:Object):void

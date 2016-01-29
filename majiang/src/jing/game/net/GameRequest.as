@@ -1,19 +1,11 @@
 package jing.game.net
 {
-import java.io.IOException;
+import game.control.AccountManager;
+import game.model.Global;
 
 import jing.consts.PlayerAction;
-import game.control.AccountManager;
 
-import game.control.WindowManager;
-import game.model.Global;
-import game.view.scene.gamescene.GameScene;
-
-import org.json.me.JSONArray;
-
-import protocol.cs_game_action;
-import protocol.cs_game_manual;
-import protocol.cs_ready_game;
+import managers.LogManager;
 
 /**
  * ÓÎϷ³¡¾°·¢³öµÄÇëÇó

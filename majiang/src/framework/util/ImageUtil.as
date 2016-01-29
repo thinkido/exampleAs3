@@ -23,7 +23,7 @@ package framework.util
 			var v:int ;
 			var colors:Array = [] ;
 			img.getRGB(colors, 0, w, 0, 0, w, h);
-			for(int i = 0; i < colors.length; i++)
+			for(var i:int = 0; i < colors.length; i++)
 			{
 				v = colors[i];
 				if(v == color)
@@ -34,6 +34,8 @@ package framework.util
 			img = Image.createRGBImage(colors, w, h, true);
 			return img;
 		}
+		
+//		static public function alpha()
 		
 		static public function loadImage(url:String, func:Function):void
 		{
