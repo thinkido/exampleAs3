@@ -28,26 +28,26 @@ package game.model.vo
 	
 		public function UserDataVO(msg:sc_enter_hall)
 		{
-			name = msg.getName();
-			gold = msg.getGold();
-			exp = msg.getExp();
-			level = msg.getLevel();
-			sex = msg.getSex();
-			portrait = msg.getPortrait();
-			score = msg.getCollect_score();
+			name = msg.name;
+			gold = msg.gold;
+			exp = msg.exp;
+			level = msg.level;
+			sex = msg.sex;
+			portrait = msg.portrait;
+			score = msg.collectScore;
 		}
 	
 		public function update(friend:t_friend_data):void
 		{
-			name = friend.getName();
-			gold = friend.getGold();
-			exp = friend.getExp();
-			level = friend.getLevel();
-			sex = friend.getSex();
-			portrait = friend.getPortrait();
-			winNum = friend.getWin_count();
-			loseNum = friend.getLose_count();
-			pingNum = friend.getPing_count();
+			name = friend.name;
+			gold = friend.gold;
+			exp = friend.exp;
+			level = friend.level;
+			sex = friend.sex;
+			portrait = friend.portrait;
+			winNum = friend.winCount;
+			loseNum = friend.loseCount;
+			pingNum = friend.pingCount;
 		}
 		
 		public function getTotalNum():int

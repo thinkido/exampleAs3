@@ -1,5 +1,6 @@
 package game.model.vo
 {
+	import protos.hallserver.t_rank_data;
 	
 	
 	public class RankItemVO
@@ -15,10 +16,10 @@ package game.model.vo
 	
 		public function RankItemVO(msg:t_rank_data)
 		{
-			rank = msg.getRank();
-			portrait = msg.getPortrait();
-			value = msg.getValue_int_1().toString();
-			setName(msg.getName());
+			rank = msg.rank;
+			portrait = msg.portrait;
+			value = msg.valueInt_1.toString();
+			setName(msg.name());
 		}
 	
 		public function RankItemVO_2(_rank:int, _portrait:int, _name:String, _value:String):void
