@@ -54,13 +54,8 @@ package game.control
 				_instance = new SceneManager();
 			return _instance;
 		}
-		
-		public function switchScene(SceneType:SceneType):void
-		{
-			switchScene_a(SceneType, null);
-		}
-		
-		public function switchScene_a(sceneType:SceneType, args:Object):void
+				
+		public function switchScene(sceneType:SceneType, args:Object = null):void
 		{
 			if(!LoadingManager.getInstance().isLoading())
 			{
@@ -102,11 +97,7 @@ package game.control
 						startSwitch();
 					}
 				}
-			}
-
-
-
-			else
+			}else
 			{
 				trace("正在加载其他场景，请稍后重试", "LogManager.LEVEL_WARNING");
 			}

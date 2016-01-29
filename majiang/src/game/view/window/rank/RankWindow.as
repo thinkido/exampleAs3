@@ -58,7 +58,7 @@ package game.view.window.rank
 			{
 				Global.socketHall.sendProtobuf("cs_rank_list", cs_rank_list.newBuilder().setNoop(1).build().toByteArray());
 			}
-			catch(e:Error)
+			catch(e:*)
 			{
 				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
@@ -150,13 +150,14 @@ package game.view.window.rank
 		}
 	
 		/** ��Ϣ���ؼ��� */
-		public function onNetworkEvent( name:String,  content:String):Boolean
+		public function onNetworkEvent( name:String,  content:ByteArray):Boolean
 		{
 			try
 			{
 				if(name == "sc_rank_list")
 				{
-					var msg:sc_rank_list = sc_rank_list.parseFrom(content.toByteArray());
+					var msg:sc_rank_list = new sc_rank_list() ;
+					msg.mergeFrom(content) ;
 					var datalist:Array = msg.getCoinData();
 					var len:int = datalist.length;
 					var goldData:Vector.<RankItemVO> = new Vector.<RankItemVO>;

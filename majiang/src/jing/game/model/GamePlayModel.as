@@ -13,7 +13,7 @@ public class GamePlayModel
 {
 
 	/**
-	 * µ±ǰ»îԾµÄModel
+	 * 当前活跃的Model
 	 */
 	static public var current:GamePlayModel= null;
 
@@ -54,7 +54,7 @@ public class GamePlayModel
 	}
 
 	public function init():void{
-		// Á¬½ӷþÎñÆ÷
+		// 连接服务器
 		Global.socketGame.connect(_enterGameVO.ipAddressVO);
 		_sl = new GamePlaySL();
 		_sl.init();
@@ -87,7 +87,7 @@ public class GamePlayModel
 		{
 
 			public function onTick(tickItem:TickItem):void{
-				// Ö÷¶¯Í˳򷿼ä
+				// 主动退出房间
 				kickedFromRoom();
 			}
 		}, null);

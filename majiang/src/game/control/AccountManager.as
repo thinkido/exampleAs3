@@ -1,6 +1,21 @@
 package game.control
 {
+	import com.thinkido.framework.common.observer.Notification;
+	import com.thinkido.framework.common.observer.ObserverThread;
+	import com.thinkido.framework.common.timer.vo.TimerData;
+	import com.thinkido.framework.manager.TimerManager;
+	import com.thinkido.framework.net.JSocket;
+	import com.thinkido.framework.net.NProtocol;
+	
+	import flash.events.Event;
+	import flash.net.URLLoader;
+	import flash.net.URLLoaderDataFormat;
+	import flash.net.URLRequest;
+	import flash.net.URLRequestMethod;
+	import flash.net.URLVariables;
 	import flash.utils.ByteArray;
+	import flash.utils.Endian;
+	import flash.utils.getTimer;
 	
 	import framework.views.Stage;
 	
@@ -14,8 +29,12 @@ package game.control
 	import network.ProtocolList;
 	import network.YiuNetworkHandlerMgr;
 	import network.YiuNetworkListener;
-	import network.YiuNetworkSocket;
 	import network.YiuNetworkStatusListener;
+	
+	import protos.common.heartbeat;
+	import protos.gameserver.heartbeat;
+	import protos.hallserver.sc_enter_hall;
+	import protos.hallserver.sc_force_continue_game;
 	
 	public class AccountManager implements YiuNetworkListener
 	{
@@ -28,6 +47,15 @@ package game.control
 		
 		private var _id:String;
 		
+		//as3 jiang 添加
+		private   const importantMessageList:Array = [10052, 10020, 30000];
+		private   var sleepModeRenderTime:int = 100;
+		private   var inSleepMode:Boolean = false;
+		private   var lastRunTime:int = 0;
+		private   var _heartTime:TimerData = TimerManager.createTimer(HEARTBEAT_INTERVAL, 0, heartHandle, null, null, null, false);
+		private  var _msgObserverThread:ObserverThread = new ObserverThread();
+		private  var stage:Stage;
+				
 		public function id():String
 		{
 			return _id;
@@ -44,7 +72,7 @@ package game.control
 		
 		private var _statusListener:YiuNetworkStatusListener;
 		
-		private var _heartbeatBytes:ByteArray;
+		private  var _heartbeatBytes:ByteArray;
 		
 		public static function getInstance():AccountManager
 		{
@@ -52,53 +80,53 @@ package game.control
 				_instance = new AccountManager();
 			return _instance;
 		}
+		public function init(sta:Stage):void
+		{
+			stage = sta;
+			stage.addEventListener(Event.ENTER_FRAME, runReceiveMsgs);
+		}
 		
 		public function AccountManager():void
 		{
-			/*_statusListener = new YiuNetworkStatusListener()
-			{
-				
-				protected function doLost(socket:YiuNetworkSocket):void
-				{
-					trace("网络连接已中断", "LogManager.LEVEL_ERROR");
-					socket.close();
-					return;
-				}
-				
-				// status = [connect-failed,send-failed,receive-failed,connected]
-				public function onNetworkStatusNotify(socket:YiuNetworkSocket, status:String):void
-				{
-					trace(status);
-					if(status == "connect-failed" || status == "send-failed")
-					{
-						doLost(socket);
-					}
-				}
-			};*/
 			_statusListener = new YiuNetworkStatusListener_A();
+			
+			// 大厅套接字
+			var socketHall:JSocket = new JSocket();
+			Global.socketHall = socketHall;
+			
+			// 游戏房间套接字,暂时不连接，当进入房间才连接
+			var socketGame:JSocket = new JSocket();
+			Global.socketGame = socketGame;
+			
 			try
 			{
-				_heartbeatBytes = heartbeat.newBuilder().setNoop(0).build().toByteArray();
+				var hb:protos.gameserver.heartbeat = new heartbeat();
+				hb.noop = 0 ;
+				_heartbeatBytes = new ByteArray();
+				_heartbeatBytes.endian = Endian.LITTLE_ENDIAN ;
+				hb.writeTo( _heartbeatBytes );
+//				_heartbeatBytes = heartbeat.newBuilder().setNoop(0).build().toByteArray() ;
 			}
-			catch(e:Error)
+			catch(e:*)
 			{
-				trace( e.getStackTrace() );   //e.printStackTrace();
-			}
-			/*Stage.current.ticker.setTimeInterval(HEARTBEAT_INTERVAL, new ITickListener()
-				{
-					
-					public void onTick(TickItem tickItem)
-					{
-						if(Global.socketHall != null && Global.socketHall.isConnected())
-							Global.socketHall.sendProtobuf("heartbeat", _heartbeatBytes);
-						if(Global.socketGame != null && Global.socketGame.isConnected())
-							Global.socketGame.sendProtobuf("heartbeat", _heartbeatBytes);
-					}
-				}, null);*/
-			Stage.current.ticker.setTimeInterval(HEARTBEAT_INTERVAL, new TickListener_A(_heartbeatBytes), null);
+				trace( e.getStackTrace() );  
+			}		
 			_id = Global.account;
 			_name = Global.adAccount;
 			ProtocolList.init();
+		}		
+//			心跳包  待写
+		private  function heartHandle() : void
+		{
+			if (Global.socketHall != null && Global.socketHall.connected)
+			{
+				Global.socketHall.send("heartbeat", _heartbeatBytes);
+			}
+			if (Global.socketHall != null && Global.socketHall.connected)
+			{				
+				Global.socketHall.send("heartbeat", _heartbeatBytes);
+			}
+			return;
 		}
 
 		
@@ -121,13 +149,13 @@ package game.control
 		{
 			if(Global.socketHall != null)
 			{
-				if(Global.socketHall.isConnected())
+				if(Global.socketHall.connected )
 					Global.socketHall.close();
 				Global.socketHall = null;
 			}
 			if(Global.socketGame != null)
 			{
-				if(Global.socketGame.isConnected())
+				if(Global.socketGame.connected )
 					Global.socketGame.close();
 				Global.socketGame = null;
 			}
@@ -136,41 +164,89 @@ package game.control
 		
 		public function connect():void
 		{
-			// 大厅套接字
-			var socketHall:YiuNetworkSocket = new YiuNetworkSocket(Global.cfg.hallAddressVO());
-			Stage.current.ticker.setTimeInterval(SOCKET_INTERVAL, socketHall, null);
-			socketHall.setStatusListener(_statusListener);
-			socketHall.connect();
-			Global.socketHall = socketHall;
+			Global.socketHall.setStatusListener(_statusListener);
+			Global.socketHall.connect();
 			
-			// 游戏房间套接字,暂时不连接，当进入房间才连接
-			var socketGame:YiuNetworkSocket = new YiuNetworkSocket();
-			Stage.current.ticker.setTimeInterval(SOCKET_INTERVAL, socketGame, null);
-			socketGame.setStatusListener(_statusListener);
-			Global.socketGame = socketGame;
-			var ret:String = YiuHttpManager.PostOptJson(Global.cfg.gateAddressVO().toHttpAddress() + "/login", "id=" + _id + "&idtype=" + _type + "&name=" + _name + "&version=0.1");
-			if(ret == null || ret == "{}")
+			Global.socketGame.setStatusListener(_statusListener);
+//			var ret:String = YiuHttpManager.PostOptJson(Global.cfg.gateAddressVO().toHttpAddress() + "/login", "id=" + _id + "&idtype=" + _type + "&name=" + _name + "&version=0.1");
+			var url:String = Global.cfg.gateAddressVO().toHttpAddress() + "/login";
+			var ul:URLLoader = new URLLoader();
+			ul.dataFormat = URLLoaderDataFormat.BINARY;
+			ul.addEventListener(Event.COMPLETE, loginHander);
+			var ur:URLRequest = new URLRequest(url);
+			ur.method = URLRequestMethod.POST;
+			var uv:URLVariables = new URLVariables();
+			uv.id = _id;
+			uv.idtype = _type;
+			uv.name = _name;
+			uv.version=0.1;
+			ur.data = uv; 
+			ul.load(ur);
+		}
+		private function loginHander(e:Event):void
+		{
+			var ul:URLLoader = e.currentTarget as URLLoader;
+			var ba:ByteArray = ul.data;
+			var content:String = ba.readMultiByte(ba.bytesAvailable, "UTF-8");
+			var json:Object = JSON.parse(content);			
+			var day:int = json["loginday"];
+			var gold:int = json["logingold"];
+			var fetched:Boolean = json["logingold_fetched"] ;
+			Global.giftVO = new GiftVO(day, gold, fetched);
+			trace("登陆成功");
+			YiuNetworkHandlerMgr.subscribe(this);
+			reqEnterHall();
+		}
+			
+		private function runReceiveMsgs(event:Event) : void
+		{
+			var prot:NProtocol = null;
+			var now:int = getTimer();
+			inSleepMode = now - lastRunTime > sleepModeRenderTime;
+			lastRunTime = now; 
+			if (inSleepMode)
 			{
-				trace("登录失败", "LogManager.LEVEL_ERROR");
+				while (Global.socketHall.serverMsgArr.length > 0)
+				{
+					prot = Global.socketHall.serverMsgArr.shift();
+					receiveMsg(prot);
+				}
+				while (Global.socketGame.serverMsgArr.length > 0)
+				{
+					prot = Global.socketGame.serverMsgArr.shift();
+					receiveMsg(prot);
+				}
 			}
 			else
 			{
-				try
+				while (Global.socketHall.serverMsgArr.length > 0)
 				{
-					var json:Object = JSON.parse(ret);
-					var day:int = json["loginday"];
-					var gold:int = json["logingold"];
-					var fetched:Boolean = json["logingold_fetched"] ;
-					Global.giftVO = new GiftVO(day, gold, fetched);
+					prot = Global.socketHall.serverMsgArr.shift();
+					receiveMsg(prot);
+					if (getTimer() - now >= 5)
+					{
+						break;
+					}
 				}
-				catch( e:Error)
+				while (Global.socketGame.serverMsgArr.length > 0)
 				{
-					trace("登录/获取登录奖励信息失败", "LogManager.LEVEL_ERROR");
+					prot = Global.socketGame.serverMsgArr.shift();
+					receiveMsg(prot);
+					if (getTimer() - now >= 5)
+					{
+						break;
+					}
 				}
-				trace("登陆成功");
-				YiuNetworkHandlerMgr.subscribe(this);
-				reqEnterHall();
 			}
+			trace("使用时间："+(getTimer() - now));
+			return;
+		}
+		
+		private function receiveMsg(protocol:NProtocol) : void
+		{
+			var _loc_4:* = new Notification( protocol.type.toString() , protocol );
+			_msgObserverThread.notifyObservers(_loc_4);
+			return;
 		}
 		
 		public function reqEnterHall():void
@@ -178,14 +254,15 @@ package game.control
 			Global.socketHall.send(JSON.stringify(["enter_hall",_id,_type,0]) );
 		}
 		
-		public function onNetworkEvent(name:String, content:String):Boolean
+		public function onNetworkEvent( name:String, content:ByteArray ):Boolean
 		{
 			try
 			{
 				if(name == "sc_enter_hall")
 				{
 					YiuNetworkHandlerMgr.unSubscribe(this);
-					var msg:sc_enter_hall = sc_enter_hall.parseFrom(content);
+					var msg:sc_enter_hall = new sc_enter_hall() ;
+					msg.mergeFrom(content) ;
 					Global.userDataVO = new UserDataVO(msg);
 					PlaceDataManager.getInstance().init(msg.getPlace_infos());
 					SceneManager.getInstance().switchScene(SceneType.SCENE_HALL);
@@ -194,8 +271,9 @@ package game.control
 				else if(name == "sc_force_continue_game")
 				{
 					YiuNetworkHandlerMgr.unSubscribe(this);
-					sc_force_continue_game msg = sc_force_continue_game.parseFrom(content.toByteArray());
-					SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg.getHost(), msg.getPort()), true));
+					var msg1:sc_force_continue_game = new sc_force_continue_game() ;
+					msg1.mergeFrom(content) ;
+					SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg1.getHost(), msg1.getPort()), true));
 					return false;
 				}
 			}
@@ -207,59 +285,5 @@ package game.control
 		}
 
 
-	}
-}
-import flash.utils.ByteArray;
-
-import framework.time.ITickListener;
-import framework.time.TickItem;
-
-import game.model.Global;
-
-import network.YiuNetworkSocket;
-import network.YiuNetworkStatusListener;
-
-class YiuNetworkStatusListener_A implements YiuNetworkStatusListener
-{
-//	private var socket:YiuNetworkSocket;
-	
-	/*public function YiuNetworkStatusListener_A(s:YiuNetworkSocket)
-	{
-		socket = s;
-	}*/
-	
-	protected function doLost(socket:YiuNetworkSocket):void
-	{
-		trace("网络连接已中断", "LogManager.LEVEL_ERROR");
-		socket.close();
-		return;
-	}
-	
-	// status = [connect-failed,send-failed,receive-failed,connected]
-	public function onNetworkStatusNotify(socket:YiuNetworkSocket, status:String):void
-	{
-		trace(status);
-		if(status == "connect-failed" || status == "send-failed")
-		{
-			doLost(socket);
-		}
-	}
-}
-
-class TickListener_A implements ITickListener
-{
-	private var _heartbeatBytes:ByteArray;
-	
-	public function TickListener_A($byte:ByteArray)
-	{
-		_heartbeatBytes == $byte;
-	}
-	
-	public function onTick( tickItem:TickItem):void
-	{
-		if(Global.socketHall != null && Global.socketHall.isConnected())
-			Global.socketHall.sendProtobuf("heartbeat", _heartbeatBytes);
-		if(Global.socketGame != null && Global.socketGame.isConnected())
-			Global.socketGame.sendProtobuf("heartbeat", _heartbeatBytes);
 	}
 }

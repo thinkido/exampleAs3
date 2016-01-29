@@ -3,7 +3,7 @@ package jing
 import jing.configs.CardLayout;
 
 /**
- * ÓÎϷÊý¾ÝÖÐÐÄ
+ * 游戏数据中心
  * 
  * @author Jing
  */
@@ -11,7 +11,7 @@ public class GDC
 {
 
 	/**
-	 * ÓÎϷÅƾֲ¼¾Ö
+	 * 游戏牌局布局
 	 */
 	public static var cl:CardLayout= null;
 

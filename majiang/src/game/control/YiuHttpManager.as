@@ -1,11 +1,6 @@
 package game.control
 	{
-	import java.io.ByteArrayOutputStream;
-	import java.io.InputStream;
-	import java.io.OutputStream;
 	
-	import javax.microedition.io.Connector;
-	import javax.microedition.io.HttpConnection;
 	
 	public class YiuHttpManager
 	{
@@ -41,7 +36,7 @@ package game.control
 				}
 				res = bos.toString();
 			}
-			catch(e:Error)
+			catch(e:*)
 			{
 				// if an error occurred connecting to the server.
 				// throw new Exception(e.getMessage());

@@ -90,7 +90,7 @@ package framework.io
 					return hd;
 				}
 			}
-			catch(var e:Exception)
+			catch(e:*)
 			{
 				trace("http get error: " + url, "LogManager.LEVEL_ERROR");
 				trace( e.getStackTrace() );   //e.printStackTrace();
@@ -163,7 +163,7 @@ package framework.io
 					return httpData;
 				}
 			}
-			catch(var e:Exception)
+			catch(e:*)
 			{
 				trace("http post error:", "LogManager.LEVEL_ERROR");
 				trace( e.getStackTrace() );   //e.printStackTrace();

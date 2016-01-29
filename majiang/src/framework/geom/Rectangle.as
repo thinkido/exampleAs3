@@ -1,5 +1,7 @@
 package framework.geom
 {
+	import flash.geom.Rectangle;
+	
 	import framework.util.StringUtil;
 	
 	/**
@@ -7,82 +9,13 @@ package framework.geom
 	 * @author Jing
 	 *
 	 */
-	public class Rectangle
+	public class Rectangle extends flash.geom.Rectangle
 	{
-		private var _x:int= 0;
-		
-		public function get x():int{
-			return _x;
-		}
-		
-		public function set x(x:int):void{
-			_x = x;
-		}
-		
-		private var _y:int= 0;
-		
-		public function get y():int{
-			return _y;
-		}
-		
-		public function set y(y:int):void{
-			_y = y;
-		}
-		
-		private var _w:int= 0;
-		
-		public function get width():int{
-			return _w;
-		}
-		
-		public function set width(w:int):void{
-			_w = w;
-		}
-		
-		private var _h:int= 0;
-		
-		public function get height():int{
-			return _h;
-		}
-		
-		public function set height(h:int):void{
-			_h = h;
-		}
-		
-		public function right():int{
-			return _x + _w;
-		}
-		
-		/**
-		 * 设置矩形的右边框的位置，为导致修改h，会导致w小于0的设置无效
-		 * @param right
-		 */
-		public function setRight(right:int):void{
-			if(right >= _x)
-			{
-				_w = right - _x;
-			}
-		}
-		
-		public function bottom():int{
-			return _y + _h;
-		}
-		
-		/**
-		 * 设置矩形的右边框的位置，为导致修改h，会导致h小于0的设置无效
-		 * @param bottom
-		 */
-		public function setBottom(bottom:int):void{
-			if(bottom >= _y)
-			{
-				_h = bottom - _y;
-			}
-		}
-		
-		public function toString():String
+			
+		override public function toString():String
 		{
 			var format:String= "[x=%s,y=%s,w=%s,h=%s]";
-			var repls:Array= [_x.toString(),_y.toString(),_w.toString(),_h.toString()];		
+			var repls:Array= [x.toString(),y.toString(),width.toString(),height.toString()];		
 			return StringUtil.format(format, repls);			
 		}
 		
@@ -95,10 +28,7 @@ package framework.geom
 		 */
 		public function Rectangle(x:int, y:int, w:int, h:int)
 		{
-			_x = x;
-			_y = y;
-			_w = w;
-			_h = h;
+			super(w,y,w,h);
 		}
 		
 		/**
@@ -108,7 +38,7 @@ package framework.geom
 		 * @return
 		 *
 		 */
-		static public function getIntersectRect(rectA:Rectangle, rectB:Rectangle):Rectangle{
+		static public function getIntersectRect(rectA:framework.geom.Rectangle, rectB:framework.geom.Rectangle):framework.geom.Rectangle{
 			var intersectX:int;
 			var intersectY:int;
 			
@@ -135,11 +65,11 @@ package framework.geom
 			intersectX = rectA.x > rectB.x ? rectA.x : rectB.x;
 			intersectY = rectA.y > rectB.y ? rectA.y : rectB.y;
 			
-			var intersectRight:int= rectA.right() < rectB.right() ? rectA.right() : rectB.right();
-			var intersectBottom:int= rectA.bottom() < rectB.bottom() ? rectA.bottom() : rectB.bottom();
+			var intersectRight:int= rectA.right < rectB.right ? rectA.right : rectB.right;
+			var intersectBottom:int= rectA.bottom < rectB.bottom ? rectA.bottom : rectB.bottom;
 			var intersectW:int= intersectRight - intersectX;
 			var intersectH:int= intersectBottom - intersectY;
-			var intersectRect:Rectangle= new Rectangle(intersectX, intersectY, intersectW, intersectH);
+			var intersectRect:framework.geom.Rectangle = new framework.geom.Rectangle(intersectX, intersectY, intersectW, intersectH);
 			return intersectRect;
 		}
 		
@@ -149,12 +79,12 @@ package framework.geom
 		 * @param rectB
 		 * @return
 		 */
-		static public function getUnionRect(rectA:Rectangle, rectB:Rectangle):Rectangle{
-			var unionRect:Rectangle= new Rectangle(0, 0, 0, 0);
+		static public function getUnionRect(rectA:framework.geom.Rectangle, rectB:framework.geom.Rectangle):framework.geom.Rectangle{
+			var unionRect:framework.geom.Rectangle = new framework.geom.Rectangle(0, 0, 0, 0);
 			unionRect.x = rectA.x < rectB.x ? rectA.x : rectB.x;
 			unionRect.y = rectA.y < rectB.y ? rectA.y : rectB.y;
-			unionRect.setRight(rectA.right() > rectB.right()?rectA.right():rectB.right());
-			unionRect.setBottom(rectA.bottom() > rectB.bottom()?rectA.bottom():rectB.bottom());
+			unionRect.right = rectA.right > rectB.right?rectA.right:rectB.right;
+			unionRect.bottom = rectA.bottom > rectB.bottom?rectA.bottom:rectB.bottom;
 			return unionRect;
 			
 		}

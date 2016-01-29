@@ -1,16 +1,12 @@
 package jing.configs
 {
-import java.util.Object;
-
-import jing.consts.GameDir;
-import jing.consts.CardPlace;
-import jing.vo.CardLayoutVO;
-
-import org.json.me.JSONException;
-import org.json.me.JSONObject;
 
 import framework.geom.Point;
 import framework.resources.Res;
+
+import jing.consts.CardPlace;
+import jing.consts.GameDir;
+import jing.vo.CardLayoutVO;
 
 /**
  * ÅƲ¼¾Ö
@@ -60,9 +56,9 @@ public class CardLayout
 		Res.actively.release(file);
 	}
 
-	private function createDirLayout(jsonObj:Object):Objectthrows JSONException
+	private function createDirLayout(jsonObj:Object):Object
 	{
-		var t:Object= new Object(4);
+		var t:Object= new Object();
 		t[CardPlace.NEW_IN_HAND] = getCardLayoutVO(jsonObj[CardPlace.NEW_IN_HAND]);
 		t[CardPlace.IN_HAND] = getCardLayoutVO(jsonObj[CardPlace.IN_HAND]);
 		t[CardPlace.IN_HAND_TABLE] = getCardLayoutVO(jsonObj[CardPlace.IN_HAND_TABLE]);
@@ -71,7 +67,7 @@ public class CardLayout
 		return t;
 	}
 
-	private function getCardLayoutVO(jsonObj:Object):CardLayoutVOthrows JSONException
+	private function getCardLayoutVO(jsonObj:Object):CardLayoutVO
 	{
 		var vo:CardLayoutVO= new CardLayoutVO();
 		vo.cardPrefix = jsonObj["card_prefix"];

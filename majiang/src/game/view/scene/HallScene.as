@@ -215,31 +215,35 @@ package game.view.scene
 			imgTitle.setTexture(Global.getMyTitleTexture());
 		}
 		
-		public function onNetworkEvent( name:String, content:ByteString):Boolean
+		public function onNetworkEvent( name:String, content:ByteArray):Boolean
 		{
 			try
 			{
 				if(name == "sc_broadcast_msg")
 				{
-					var msg:sc_broadcast_msg = sc_broadcast_msg.parseFrom(content.toByteArray());
+					var msg:sc_broadcast_msg = new sc_broadcast_msg() ;
+					msg.mergeFrom(content) ;
 					NoticeBoard.show(msg.getMsg());
 					return false;
 				}
 				else if(name == "sc_hall_debug")
 				{
-					var msg:sc_hall_debug = sc_hall_debug.parseFrom(content.toByteArray());
+					var msg:sc_hall_debug = new sc_hall_debug() ;
+					msg.mergeFrom(content) ;
 					trace("debug:" + msg.getInfo());
 					return false;
 				}
 				else if(name == "sc_enter_place")
 				{
-					var msg:sc_enter_place = sc_enter_place.parseFrom(content.toByteArray());
+					var msg:sc_enter_place = new sc_enter_place() ;
+					msg.mergeFrom(content) ;
 					SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg.getHost(), msg.getPort()), false));
 					return false;
 				}
 				else if(name == "sc_get_item")
 				{
-					 var msg:sc_get_item = sc_get_item.parseFrom(content.toByteArray());
+					 var msg:sc_get_item = new sc_get_item() ;
+					msg.mergeFrom(content) ;
 					Global.userDataVO.gold += msg.getGold();
 					updateUserInfo();
 					var id:String = AccountManager.getInstance().getId();
@@ -251,7 +255,8 @@ package game.view.scene
 				{
 					try
 					{
-						var pb:sc_update_places = sc_update_places.parseFrom(content.toByteArray());
+						var pb:sc_update_places = new sc_update_places() ;
+						pb.mergeFrom(content) ;
 						PlaceDataManager.getInstance().init(pb.getPlace_infos());
 					}
 					catch( e:Error)
@@ -262,7 +267,7 @@ package game.view.scene
 				}
 				else if(name == "sc_enter_place_failed")
 				{
-					var msg:sc_enter_place_failed = sc_enter_place_failed.parseFrom(content.toByteArray());
+					var msg:sc_enter_place_failed = sc_enter_place_failed.parseFrom(content);
 					trace("进入游戏失败，错误代码:" + msg.getReason(), "LogManager.LEVEL_WARNING");
 					return false;
 				}

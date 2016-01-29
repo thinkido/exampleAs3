@@ -68,26 +68,28 @@ public class GamePlaySL implements YiuNetworkListener
 		YiuNetworkHandlerMgr.unSubscribe(this);
 	}
 
-	public function onNetworkEvent(name:String, content:ByteString):Boolean{
+	public function onNetworkEvent(name:String, content:ByteArray):Boolean{
 		try
 		{
 			if(name == "sc_hall_debug")
 			{
-				var pb:sc_hall_debug= sc_hall_debug.parseFrom(content.toByteArray());
+				var pb:sc_hall_debug= new sc_hall_debug() ;
+					pb.mergeFrom(content) ;
 				trace(pb.toString());
 			}
 			else if(name == "sc_game_debug")
 			{
-				var pb:sc_game_debug= sc_game_debug.parseFrom(content.toByteArray());
+				var pb:sc_game_debug= new sc_game_debug() ;
+					pb.mergeFrom(content) ;
 				trace(pb.getInfo());
 			}
 			else if(name == "sc_enter_game")
 			{
-				new SCEnterGame(sc_enter_game.parseFrom(content.toByteArray()));
+				new SCEnterGame(new sc_enter_game().mergeFrom(content));
 			}
 			else if(name == "sc_enter_game_notify")
 			{
-				new SCEnterGameNotify(sc_enter_game_notify.parseFrom(content.toByteArray()));
+				new SCEnterGameNotify(new sc_enter_game_notify().mergeFrom(content));
 			}
 			else if(name == "sc_ready_game")
 			{
@@ -95,51 +97,51 @@ public class GamePlaySL implements YiuNetworkListener
 			}
 			else if(name == "sc_ready_game_notify")
 			{
-				new SCReadyGameNotify(sc_ready_game_notify.parseFrom(content.toByteArray()));
+				new SCReadyGameNotify(new sc_ready_game_notify().mergeFrom(content));
 			}
 			else if(name == "sc_start_game")
 			{
-				new SCStartGame(sc_start_game.parseFrom(content.toByteArray()));
+				new SCStartGame(new sc_start_game().mergeFrom(content));
 			}
 			else if(name == "sc_sure_lack")
 			{
-				new SCSureLack(sc_sure_lack.parseFrom(content.toByteArray()));
+				new SCSureLack(new sc_sure_lack().mergeFrom(content));
 			}
 			else if(name == "sc_lack_infos")
 			{
-				new SCLackInfos(sc_lack_infos.parseFrom(content.toByteArray()));
+				new SCLackInfos(new sc_lack_infos().mergeFrom(content));
 			}
 			else if(name == "sc_game_action")
 			{
-				new SCGameAction(sc_game_action.parseFrom(content.toByteArray()));
+				new SCGameAction(new sc_game_action().mergeFrom(content));
 			}
 			else if(name == "sc_game_action_notify")
 			{
-				new SCGameActionNotify(sc_game_action_notify.parseFrom(content.toByteArray()));
+				new SCGameActionNotify(new sc_game_action_notify().mergeFrom(content));
 			}
 			else if(name == "sc_game_action_failed")
 			{
-				new SCGameActionFailed(sc_game_action_failed.parseFrom(content.toByteArray()));
+				new SCGameActionFailed(new sc_game_action_failed().mergeFrom(content));
 			}
 			else if(name == "sc_game_hide_actions")
 			{
-				new SCGameHideActions(sc_game_hide_actions.parseFrom(content.toByteArray()));
+				new SCGameHideActions(new sc_game_hide_actions().mergeFrom(content));
 			}
 			else if(name == "sc_game_turn")
 			{
-				new SCGameTurn(sc_game_turn.parseFrom(content.toByteArray()));
+				new SCGameTurn(new sc_game_turn().mergeFrom(content));
 			}
 			else if(name == "sc_game_turn_notify")
 			{
-				new SCGameTurnNotify(sc_game_turn_notify.parseFrom(content.toByteArray()));
+				new SCGameTurnNotify(new sc_game_turn_notify().mergeFrom(content));
 			}
 			else if(name == "sc_leave_game")
 			{
-				new SCLeaveGame(sc_leave_game.parseFrom(content.toByteArray()));
+				new SCLeaveGame(new sc_leave_game().mergeFrom(content));
 			}
 			else if(name == "sc_leave_game_notify")
 			{
-				new SCLeaveGameNotify(sc_leave_game_notify.parseFrom(content.toByteArray()));
+				new SCLeaveGameNotify(new sc_leave_game_notify().mergeFrom(content));
 			}
 			else if(name == "sc_leave_game_failed")
 			{
@@ -151,15 +153,15 @@ public class GamePlaySL implements YiuNetworkListener
 			}
 			else if(name == "sc_continue_game")
 			{
-				new SCContinueGame(sc_continue_game.parseFrom(content.toByteArray()));
+				new SCContinueGame(new sc_continue_game().mergeFrom(content));
 			}
 			else if(name == "sc_game_show_actions")
 			{
-				new SCShowActions(sc_game_show_actions.parseFrom(content.toByteArray()));
+				new SCShowActions(new sc_game_show_actions().mergeFrom(content));
 			}
 			else if(name == "sc_end_game")
 			{
-				new SCEndGame(sc_end_game.parseFrom(content.toByteArray()));
+				new SCEndGame(new sc_end_game().mergeFrom(content));
 			}
 			else if(name == "cs_game_auto")
 			{
@@ -171,11 +173,11 @@ public class GamePlaySL implements YiuNetworkListener
 			}
 			else if(name == "sc_gold_reset")
 			{
-				new SCGoldReset(sc_gold_reset.parseFrom(content.toByteArray()));
+				new SCGoldReset(new sc_gold_reset().mergeFrom(content));
 			}
 			else if(name == "sc_enter_hall")
 			{
-				new SCEnterHall(sc_enter_hall.parseFrom(content.toByteArray()));
+				new SCEnterHall(new sc_enter_hall().mergeFrom(content));
 			}
 		}
 		catch(var ex:Exception)

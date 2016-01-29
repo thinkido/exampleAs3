@@ -27,7 +27,7 @@ package game.constant
 				newInstance = _cls.newInstance() as UIScene;
 				newInstance.buildUI(_confName);
 			}
-			catch(e:Error)
+			catch(e:*)
 			{
 				trace( e.getStackTrace() );   //e.printStackTrace();
 				newInstance = null;

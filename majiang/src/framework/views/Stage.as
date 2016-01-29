@@ -240,7 +240,7 @@ package framework.views
 //				e.printStackTrace();
 				trace(evt.message);
 			}
-			/*catch(var e:IllegalAccessException)
+			/*catch(e:*)
 			{
 				e.printStackTrace();
 			}*/
@@ -297,7 +297,7 @@ package framework.views
 						}
 					}
 				}
-				catch(e:Error)
+				catch(e:*)
 				{
 //					e.printStackTrace();
 					trace(e.message);

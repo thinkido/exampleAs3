@@ -1,5 +1,6 @@
 package game.model.vo
 {
+	import game.constant.WindowType;
 	
 	
 	public class OpenWindowVO

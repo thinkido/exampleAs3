@@ -3,6 +3,7 @@ package game.control
 	import game.model.vo.PlaceData;
 	
 	import protos.hallserver.place_info;
+	
 
 	public class PlaceDataManager
 	{

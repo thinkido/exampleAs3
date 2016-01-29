@@ -44,11 +44,12 @@ package game.view.window
 		override public function updateData(args:Object):void 
 		{
 			var vo:PopupVO =  args as PopupVO;
-			if (vo.content.getClass() == String.class)
+			if ( vo.content is String){
 				update(vo.isConfirm, vo.content as String, vo.callback);
-				else
+			}else{
 				update_2(vo.isConfirm, vo.content as Texture, vo.callback);
-				}
+			}
+		}
 		
 		private function baseUpdate( isConfirm:Boolean, callback:ICallbackB):void 
 		{
@@ -113,7 +114,7 @@ package game.view.window
 			WindowManager.getInstance().closeWindow(this);
 		}
 		
-		public function onKeyPressed( type:int, dispatcher:EventDispatcher, data:Object):void
+		override public function onKeyPressed( type:int, dispatcher:EventDispatcher, data:Object):void
 		{
 			if (_btnCancel.visible) {
 				super.onKeyPressed(type, dispatcher, data);

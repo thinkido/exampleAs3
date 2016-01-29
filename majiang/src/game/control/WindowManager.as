@@ -36,12 +36,7 @@ package game.control
 			return _instance;
 		}
 	
-		public function openWindow(WindowType:WindowType):void
-		{
-			openWindow(WindowType, null);
-		}
-	
-		public function openWindow_2(windowType:WindowType, args:Object):void
+		public function openWindow(windowType:WindowType, args:Object = null):void
 		{
 			var vo:OpenWindowVO = new OpenWindowVO(windowType, args);
 //			_taskList.addElement(vo);

@@ -1,5 +1,7 @@
 package game.model
 {	
+	import com.thinkido.framework.net.JSocket;
+	
 	import flash.system.System;
 	
 	import framework.resources.Res;
@@ -64,12 +66,12 @@ package game.model
 		/**
 		 * 大厅套接字
 		 */
-		public static var socketHall:YiuNetworkSocket = null;
+		public static var socketHall:JSocket = null;
 		
 		/**
 		 * 游戏服套接字
 		 */
-		public static var socketGame:YiuNetworkSocket = null;
+		public static var socketGame:JSocket = null;
 		
 		/**
 		 * 用户数据

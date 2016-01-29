@@ -15,9 +15,11 @@ package framework.util
 		 */
 		static public function setCenter(a:DisplayObject, b:DisplayObject):void
 		{
-			var x:int = b.getX() + ((b.getWidth() - a.getWidth()) >> 1);
-			var y:int = b.getY() + ((b.getHeight() - a.getHeight()) >> 1);
-			a.setPosition(x, y);
+			var x:int = b.x + ((b.width - a.width) >> 1);
+			var y:int = b.y + ((b.height - a.height) >> 1);
+//			a.setPosition(x, y);
+			a.x = x ;
+			a.y = y ;
 		}
 	}
 }

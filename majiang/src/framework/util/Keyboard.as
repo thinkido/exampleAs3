@@ -1,8 +1,6 @@
 package framework.util
 {
 	import framework.consts.EventType;
-	
-	import framework.consts.EventType;
 	import framework.events.EventDispatcher;
 
 	public class Keyboard extends EventDispatcher
@@ -41,7 +39,7 @@ package framework.util
 		 * @param keyCode
 		 * @return
 		 */
-		public function isPressed(int keyCode):Boolean
+		public function isPressed(keyCode:int):Boolean
 		{
 			if(_map[keyCode] == undefined)
 			{

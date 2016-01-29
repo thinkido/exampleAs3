@@ -47,14 +47,12 @@ public class HttpResGetter extends AResGetter implements IEventListener
 
 	protected function HttpResGetter(path:String, httpServer:String)
 	{
-		init(path, httpServer);
+		if( path.length > 0 ){
+			init(path, httpServer);
+		}
 		_loader.addEventListener(EventType.EVENT_LOAD_COMPLETE, this);
 	}
 
-	protected function HttpResGetter()
-	{
-		_loader.addEventListener(EventType.EVENT_LOAD_COMPLETE, this);
-	}
 
 	public function init(path:String, httpServer:String):void{
 		if(httpServer.charAt(httpServer.length - 1) == '/')
@@ -78,14 +76,14 @@ public class HttpResGetter extends AResGetter implements IEventListener
 
 				if(itemType =="sheet")
 				{
-					var subkeys:String= resItem.subkeys );
+					var subkeys:String= resItem.subkeys ;
 					item.subkeys = subkeys;
 				}
 
 				_resTable[item.name()] = item;
 			}
 		}
-		catch(var e:*)
+		catch(e:*)
 		{
 	
 		}

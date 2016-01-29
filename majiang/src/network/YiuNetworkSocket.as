@@ -2,10 +2,15 @@ package network
 {
 	
 	import flash.events.IOErrorEvent;
-	import flash.system.System;
+	import flash.net.Socket;
+	import flash.utils.ByteArray;
 	
 	import framework.time.ITickListener;
 	import framework.time.TickItem;
+	
+	import game.model.vo.IpAddressVO;
+	
+	
 	
 	/**
 	 * @author jmulro
@@ -27,9 +32,9 @@ package network
 	
 		private var mSocket:StreamConnection;
 	
-		private var mIn:InputStream;
+		private var mIn:Socket;
 	
-		private var mOut:OutputStream;
+		private var mOut:Socket;
 	
 		private var mCurrentStage:int;
 	
@@ -86,7 +91,7 @@ package network
 					mSocket = null;
 				}
 	
-				mSocket = (StreamConnection)Connector.open(mSocketName, Connector.READ_WRITE);
+				mSocket = Connector.open(mSocketName, Connector.READ_WRITE) as StreamConnection;
 				mOut = mSocket.openOutputStream();
 				mIn = mSocket.openInputStream();
 	
@@ -164,34 +169,33 @@ package network
 			return(mSocket != null);
 		}
 	
-		public function sendProtobuf(strName:String, content:Object/*byte[]*/ ):void
+		public function sendProtobuf(strName:String, content:ByteArray):void
 		{
-			try
-			{
-//				trace("sent:" + strName);
+			try{
 				trace("sent:" + strName);
 				var node:ProtocolNode = ProtocolList.getNodeStr(strName);
 				if(node == null)
 				{
-//					System.out.print("No-Protocol: " + strName);
 					trace("No-Protocol: " + strName);
 					return;
-				}
-	
-				var proto:protocol = protocol.newBuilder().setId(node.mId).setContent(ByteString.copyFrom(content)).build();
-				send(proto.toByteArray());
+				}	
+//				var proto:protocol = protocol.newBuilder().setId(node.mId).setContent( content ).build();
+//				send(proto.toByteArray());
+				
+				send(content);
 			}
-			catch( ex:Error)
+			catch( e:Error)
 			{
-				ex.printStackTrace();
+				e.printStackTrace();
 			}
 		}
 	
-		public function sendProtobuf_a(iProtoId:int, content:*/*byte[]*/):void
+		public function sendProtobufById(iProtoId:int, content:ByteArray/*byte[]*/):void
 		{
 			try
 			{
-				var proto:protocol = protocol.newBuilder().setId(iProtoId).setContent(ByteString.copyFrom(content)).build();
+//				var proto:protocol = protocol.newBuilder().setId(iProtoId).setContent( content ).build();
+				
 				send(proto.toByteArray());
 			}
 			catch( ex:Error)
@@ -201,7 +205,7 @@ package network
 		}
 
 	
-		public function send( data:*/*byte[]*/):void
+		public function send( data:ByteArray/*byte[]*/):void
 		{
 			if(mSocket == null || mOut == null)
 			{
@@ -212,10 +216,10 @@ package network
 			try
 			{
 				var length:int = data.length;
-				mLengthBuffer[3] = (byte)(length & 0xff);
-				mLengthBuffer[2] = (byte)((length >> 8) & 0xff);
-				mLengthBuffer[1] = (byte)((length >> 16) & 0xff);
-				mLengthBuffer[0] = (byte)((length >> 24) & 0xff);
+				mLengthBuffer[3] = (length & 0xff);
+				mLengthBuffer[2] = ((length >> 8) & 0xff);
+				mLengthBuffer[1] = ((length >> 16) & 0xff);
+				mLengthBuffer[0] = ((length >> 24) & 0xff);
 	
 				mOut.write(mLengthBuffer, 0, 4);
 				mOut.write(data);
@@ -255,10 +259,10 @@ package network
 			try
 			{
 				var length:int = packet.length;
-				mLengthBuffer[3] = (byte)(length & 0xff);
-				mLengthBuffer[2] = (byte)((length >> 8) & 0xff);
-				mLengthBuffer[1] = (byte)((length >> 16) & 0xff);
-				mLengthBuffer[0] = (byte)((length >> 24) & 0xff);
+				mLengthBuffer[3] = (length & 0xff);	// (byte)(length & 0xff);
+				mLengthBuffer[2] = ((length >> 8) & 0xff);
+				mLengthBuffer[1] = ((length >> 16) & 0xff);
+				mLengthBuffer[0] = ((length >> 24) & 0xff);
 	
 				mOut.write(mLengthBuffer, 0, 4);
 				mOut.write(packet.getBytes());

@@ -97,14 +97,15 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 		}
 	}
 
-	public function onNetworkEvent( name:String, content:ByteString):Boolean
+	public function onNetworkEvent( name:String, content:ByteArray):Boolean
 	{
 		try
 		{
 
 			if(name == "sc_get_collect_box")
 			{
-				var pb:sc_get_collect_box = sc_get_collect_box.parseFrom(content.toByteArray());
+				var pb:sc_get_collect_box = new sc_get_collect_box() ;
+					pb.mergeFrom(content) ;
 				updateTitleState(pb.getC_wan(), _wanItemList);
 				updateTitleState(pb.getC_tiao(), _tiaoItemList);
 				updateTitleState(pb.getC_tong(), _tongItemList);
@@ -117,7 +118,8 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 			}
 			else if(name == "sc_get_award_collect_box")
 			{
-				var pb:sc_get_award_collect_box = sc_get_award_collect_box.parseFrom(content.toByteArray());
+				var pb:sc_get_award_collect_box = new sc_get_award_collect_box() ;
+					pb.mergeFrom(content) ;
 				if(pb.getResult() >= 0)
 				{
 					Global.userDataVO.score += pb.getResult();

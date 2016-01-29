@@ -2,8 +2,8 @@ package configs
 {
 	import flash.display.DisplayObject;
 	
-	import infos.GameRecord;
-	import infos.data.LocalSO;
+//	import infos.GameRecord;
+//	import infos.data.LocalSO;
 
 	public class GameInstance
 	{
@@ -56,9 +56,9 @@ package configs
 		public var YLXD_CLASS:Class;
 		public var LOG_CLASS:Class;
 		
-		public var scoreRecord:GameRecord = new GameRecord();
+//		public var scoreRecord:GameRecord = new GameRecord();
 		
-		public var so:LocalSO;
+//		public var so:LocalSO;
 		
 		public var lastShowFullAd:int;
 		

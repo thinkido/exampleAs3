@@ -3,7 +3,7 @@ package jing.pai.consts
 public class GBHuType
 {
 
-	static public const HU_TXT:Array= {
+	static public const HU_TXT:Array= [
 		"无",
 		"自摸",
 		"单钓将",
@@ -85,7 +85,7 @@ public class GBHuType
 		"绿一色",
 		"大三元",
 		"大四喜",
-	};
+	];
 
 	/*
 	 * 1番

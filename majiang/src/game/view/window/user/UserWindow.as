@@ -180,13 +180,14 @@ package game.view.window.user
 			}
 		}
 		
-		public function onNetworkEvent( name:String, content:String):Boolean
+		public function onNetworkEvent( name:String, content:ByteArray):Boolean
 		{
 			try
 			{
 				if(name == "sc_friend_profile")
 				{
-					var msg:sc_friend_profile = sc_friend_profile.parseFrom(content.toByteArray());
+					var msg:sc_friend_profile = new sc_friend_profile() ;
+					msg.mergeFrom(content) ;
 					var data:t_friend_data = msg.getProfile();
 					Global.userDataVO.update(data);
 					_bfTotalGame.setText("" + Global.userDataVO.getTotalNum());

@@ -66,7 +66,7 @@ package ui
 			}
 		}
 	
-		protected function onKeyPressed(type:int,  dispatcher:EventDispatcher,  data:Object):void
+		public function onKeyPressed(type:int,  dispatcher:EventDispatcher,  data:Object):void
 		{
 			if(_selected != null)
 			{

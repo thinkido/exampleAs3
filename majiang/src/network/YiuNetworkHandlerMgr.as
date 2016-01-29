@@ -3,9 +3,7 @@ package network
 	
 	
 	
-	import java.util.Vector;
-	
-	import net.jarlehansen.protobuf.javame.ByteString;
+	import flash.utils.ByteArray;
 	
 	/**
 	 * @author jmulro
@@ -15,7 +13,7 @@ package network
 	
 		protected static var mListeners:Array = [];
 	
-		public static function processPacket(name:String, packet:ByteString):void
+		public static function processPacket(name:String, packet:ByteArray):void
 		{
 			trace("Got Proto Name: " + name);
 			var len:int = mListeners.length;

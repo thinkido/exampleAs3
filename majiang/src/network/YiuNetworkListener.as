@@ -1,5 +1,6 @@
 package network
 {
+	import flash.utils.ByteArray;
 	
 	/**
 	 *
@@ -9,7 +10,7 @@ package network
 		/**
 		 * @return true: 继续分发此消息.  false: 不再分发此消息
 		 */
-//		function onNetworkEvent( name:String, content:ByteString):Boolean;
-		function onNetworkEvent( name:String, content:String):Boolean;
+//		function onNetworkEvent( name:String, content:ByteArray):Boolean;
+		function onNetworkEvent( name:String, content:ByteArray):Boolean;
 	}
 }

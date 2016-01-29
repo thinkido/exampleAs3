@@ -24,7 +24,7 @@ package ui
 					}
 				}
 			}
-			catch(e:Error)
+			catch(e:*)
 			{
 				trace( e.getStackTrace() );   //e.printStackTrace();
 			}
@@ -40,7 +40,7 @@ package ui
 				{
 					(getChildAt(i) as UIComponent).releaseRes();
 				}
-//				catch(e:Error)
+//				catch(e:*)
 				{
 				}
 			}
