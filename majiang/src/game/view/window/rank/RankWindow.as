@@ -1,7 +1,12 @@
 package game.view.window.rank
 {
+	import com.thinkido.framework.common.observer.Notification;
+	
+	import flash.utils.ByteArray;
+	
 	import framework.resources.SpriteSheet;
 	
+	import game.control.AccountManager;
 	import game.control.WindowManager;
 	import game.model.Global;
 	import game.model.vo.RankItemVO;
@@ -47,8 +52,8 @@ package game.view.window.rank
 	
 		override public function onEnter():void
 		{
-			YiuNetworkHandlerMgr.subscribe(this);
-	
+			AccountManager.getInstance().registerMsgs(proList ,onNetworkEvent,"RankWindow");
+			
 			_bfName.setText(Global.userDataVO.name);
 			_bfGold.setText(CommonUtil.formatGold(Global.userDataVO.gold));
 			_bfLevel.setText(Global.userDataVO.level.toString());
@@ -66,7 +71,7 @@ package game.view.window.rank
 	
 		override public function onLeave():void
 		{
-			YiuNetworkHandlerMgr.unSubscribe(this);
+			disposePro();
 		}
 	
 		override public function onConfirm( target:UIObject):void
@@ -148,10 +153,15 @@ package game.view.window.rank
 			_bfGold = getChildByName("bf_gold") as UITextBMFont;
 			_bfGold.setAnchor(ANCHOR_BOTTOM_LEFT);
 		}
-	
-		/** ��Ϣ���ؼ��� */
-		public function onNetworkEvent( name:String,  content:ByteArray):Boolean
+		
+		public function disposePro():void{
+			AccountManager.getInstance().removeMsgs(proList ,"RankWindow");		
+		}
+		private var proList:Array = ["sc_rank_list"];
+		public function onNetworkEvent(e:Notification):void
 		{
+			var name:String = e.name ;
+			var content:ByteArray = e.body as ByteArray ;
 			try
 			{
 				if(name == "sc_rank_list")

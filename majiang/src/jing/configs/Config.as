@@ -1,5 +1,6 @@
 package jing.configs
 {
+	import framework.io.FileIO;
 	import framework.resources.Res;
 	
 	import game.model.vo.IpAddressVO;
@@ -52,7 +53,6 @@ package jing.configs
 			{
 				trace("加载配置文件出错", "LogManager.LEVEL_ERROR");
 			}
-	
 			Res.actively.release(file);
 		}
 	}

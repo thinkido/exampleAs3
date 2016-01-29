@@ -1,24 +1,22 @@
 package game.view.window
 {
+import com.thinkido.framework.common.observer.Notification;
+
+import flash.utils.ByteArray;
+
+import game.control.AccountManager;
 import game.control.WindowManager;
 import game.model.Global;
 import game.util.CommonUtil;
 
-import java.io.IOException;
-
-import net.jarlehansen.protobuf.javame.ByteString;
-
 import network.YiuNetworkHandlerMgr;
 import network.YiuNetworkListener;
 
-import protocol.cs_get_award_collect_box;
-import protocol.cs_get_collect_box;
-import protocol.sc_get_award_collect_box;
-import protocol.sc_get_collect_box;
+import protos.hallserver.sc_get_award_collect_box;
+import protos.hallserver.sc_get_collect_box;
 
 import starling.display.Button;
 
-import ui.UIButton;
 import ui.UIObject;
 import ui.UIWindow;
 
@@ -71,13 +69,15 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 
 	override public function onEnter():void
 	{
-		YiuNetworkHandlerMgr.subscribe(this);
+//		YiuNetworkHandlerMgr.subscribe(this);
+		AccountManager.getInstance().registerMsgs(proList ,onNetworkEvent,"CollectWindow");
 		reqData();
 	}
 
 	override public function onLeave():void
 	{
-		YiuNetworkHandlerMgr.unSubscribe(this);
+//		YiuNetworkHandlerMgr.unSubscribe(this);
+		disposePro();
 	}
 
 	override public function onConfirm( target:UIObject):void
@@ -96,9 +96,16 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 			}
 		}
 	}
-
-	public function onNetworkEvent( name:String, content:ByteArray):Boolean
+	
+	public function disposePro():void{
+		AccountManager.getInstance().removeMsgs(proList ,"CollectWindow");		
+	}
+	private var proList:Array = ["sc_get_collect_box",
+		"sc_get_award_collect_box"];
+	public function onNetworkEvent(e:Notification):void
 	{
+		var name:String = e.name ;
+		var content:ByteArray = e.body as ByteArray ;
 		try
 		{
 
@@ -127,7 +134,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 				}
 				else
 				{
-					CommonUtil.showPopupWindow(false, "��ȡ����ʧ��", null);
+					CommonUtil.showPopupWindow(false, "领取奖励失败", null);
 				}
 				reqData();
 			}

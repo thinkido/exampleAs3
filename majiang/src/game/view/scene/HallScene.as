@@ -1,5 +1,9 @@
 package game.view.scene
 {
+	import com.thinkido.framework.common.observer.Notification;
+	
+	import flash.utils.ByteArray;
+	
 	import game.constant.SceneType;
 	import game.constant.WindowType;
 	import game.control.AccountManager;
@@ -25,6 +29,7 @@ package game.view.scene
 	
 	import starling.display.Button;
 	
+	import ui.UIButton;
 	import ui.UIImageView;
 	import ui.UIObject;
 	import ui.UIScene;
@@ -80,7 +85,7 @@ package game.view.scene
 		
 		override public function onEnter():void
 		{
-			YiuNetworkHandlerMgr.subscribe(this);
+			AccountManager.getInstance().registerMsgs(proList ,onNetworkEvent,"HallScene");
 			updateUserInfo();
 			if(Global.giftVO != null && !Global.giftVO.fetched)
 			{
@@ -98,7 +103,7 @@ package game.view.scene
 		
 		override public function onLeave():void
 		{
-			YiuNetworkHandlerMgr.unSubscribe(this);
+			disposePro();
 		}
 		
 		override public function onDispose():void
@@ -214,9 +219,20 @@ package game.view.scene
 			imgHead.setTexture(Global.getMyHeadTexture());
 			imgTitle.setTexture(Global.getMyTitleTexture());
 		}
-		
-		public function onNetworkEvent( name:String, content:ByteArray):Boolean
+			
+		public function disposePro():void{
+			AccountManager.getInstance().removeMsgs(proList ,"HallScene");		
+		}
+		private var proList:Array = ["sc_broadcast_msg",
+			"sc_hall_debug",
+			"sc_enter_place",
+			"sc_get_item",
+			"sc_update_places",
+			"sc_enter_place_failed"];
+		public function onNetworkEvent(e:Notification):void
 		{
+			var name:String = e.name ;
+			var content:ByteArray = e.body as ByteArray ;
 			try
 			{
 				if(name == "sc_broadcast_msg")

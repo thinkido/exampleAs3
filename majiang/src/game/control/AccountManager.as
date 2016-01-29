@@ -186,8 +186,14 @@ package game.control
 			uv.name = _name;
 			uv.version=0.1;
 			ur.data = uv; 
-			ul.load(ur);
+			ul.load(ur);			
+			
+			registerMsgs(proList ,onNetworkEvent,"AccountManager");
 		}
+		public function disposePro():void{
+			removeMsgs(proList ,"AccountManager");		
+		}
+		private var proList:Array = ["sc_enter_hall","sc_force_continue_game"];
 		private function connHander( evt:TSocketEvent ):void
 		{
 			if( evt.type == TSocketEvent.LOGIN_SUCCESS ){
@@ -299,15 +305,33 @@ package game.control
 			return;
 		}
 		
-		public function registerMsg(param1:int, $handle:Function, $name) : void
+		public function registerMsg(proName:String, $handle:Function, $name) : void
 		{
 			var _observer:Observer = new Observer($handle, $name);
-			_msgObserverThread.registerObserver(param1, _observer);
+			_msgObserverThread.registerObserver(proName, _observer);
 			return;
 		}
-		public function removeMsg(param1:int, $name:String) : void
+		public function removeMsg(proName:String, $name:String) : void
 		{
-			_msgObserverThread.removeObserver(param1, $name);
+			_msgObserverThread.removeObserver(proName, $name);
+			return;
+		}
+		public function registerMsgs(proNames:Array, $handle:Function, $name) : void
+		{
+			var item:* = undefined;
+			for each (item in proNames)
+			{				
+				registerMsg(item, $handle, $name);
+			}
+			return;
+		}		
+		public function removeMsgs(proNames:Array, $name:String) : void
+		{
+			var item:* = undefined;
+			for each (item in proNames)
+			{				
+				removeMsg(item, $name);
+			}
 			return;
 		}
 		
@@ -316,34 +340,30 @@ package game.control
 			Global.socketHall.send(JSON.stringify(["enter_hall",_id,_type,0]) );
 		}
 		
-		public function onNetworkEvent( name:String, content:ByteArray ):Boolean
+		public function onNetworkEvent(e:Notification):void
 		{
-			try
+			var name:String = e.name ;
+			var content:ByteArray = e.body as ByteArray ;
+			
+			if(name == "sc_enter_hall")
 			{
-				if(name == "sc_enter_hall")
-				{
-					YiuNetworkHandlerMgr.unSubscribe(this);
-					var msg:sc_enter_hall = new sc_enter_hall() ;
-					msg.mergeFrom(content) ;
-					Global.userDataVO = new UserDataVO(msg);
-					PlaceDataManager.getInstance().init(msg.getPlace_infos());
-					SceneManager.getInstance().switchScene(SceneType.SCENE_HALL);
-					return false;
-				}
-				else if(name == "sc_force_continue_game")
-				{
-					YiuNetworkHandlerMgr.unSubscribe(this);
-					var msg1:sc_force_continue_game = new sc_force_continue_game() ;
-					msg1.mergeFrom(content) ;
-					SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg1.getHost(), msg1.getPort()), true));
-					return false;
-				}
+				YiuNetworkHandlerMgr.unSubscribe(this);
+				var msg:sc_enter_hall = new sc_enter_hall() ;
+				msg.mergeFrom(content) ;
+				Global.userDataVO = new UserDataVO(msg);
+				PlaceDataManager.getInstance().init(msg.getPlace_infos());
+				SceneManager.getInstance().switchScene(SceneType.SCENE_HALL);
+				return false;
 			}
-			catch( e:Error)
+			else if(name == "sc_force_continue_game")
 			{
-				trace("解析sc_enter_hall协议失败", "LogManager.LEVEL_ERROR");
+				YiuNetworkHandlerMgr.unSubscribe(this);
+				var msg1:sc_force_continue_game = new sc_force_continue_game() ;
+				msg1.mergeFrom(content) ;
+				SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg1.getHost(), msg1.getPort()), true));
+				return false;
 			}
-			return true;
+			
 		}
 
 

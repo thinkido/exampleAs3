@@ -1,5 +1,9 @@
 package game.view.window.user
 {
+	import com.thinkido.framework.common.observer.Notification;
+	
+	import flash.utils.ByteArray;
+	
 	import framework.consts.EventType;
 	import framework.consts.KeyType;
 	
@@ -13,6 +17,9 @@ package game.view.window.user
 	
 	import network.YiuNetworkHandlerMgr;
 	import network.YiuNetworkListener;
+	
+	import protos.hallserver.sc_friend_profile;
+	import protos.hallserver.t_friend_data;
 	
 	import starling.display.Button;
 	import starling.events.EventDispatcher;
@@ -114,7 +121,8 @@ package game.view.window.user
 			_bfTicket.setText("" + Global.userDataVO.score);
 			_bfGold.setText(CommonUtil.formatGold(Global.userDataVO.gold));
 			
-			YiuNetworkHandlerMgr.subscribe(this);
+			AccountManager.getInstance().registerMsgs(proList ,onNetworkEvent,"UserWindow");
+//			YiuNetworkHandlerMgr.subscribe(this);
 			var id:String = AccountManager.getInstance().getId();
 			var idtype:String = AccountManager.getInstance().getType();
 			try
@@ -123,7 +131,7 @@ package game.view.window.user
 			}
 			catch( e:Error)
 			{
-				trace("����Э��ʧ��", "LogManager.LEVEL_ERROR");
+				trace("发送协议失败", "LogManager.LEVEL_ERROR");
 			}
 		}
 		
@@ -134,7 +142,7 @@ package game.view.window.user
 		
 		override public function onLeave():void
 		{
-			YiuNetworkHandlerMgr.unSubscribe(this);
+			disposePro();
 		}
 		
 		override public function onConfirm(target:UIObject):void
@@ -149,11 +157,11 @@ package game.view.window.user
 						Global.socketHall.sendProtobuf("cs_update_profile", cs_update_profile.newBuilder().setSex(Global.userDataVO.sex).setPortrait(Global.userDataVO.portrait).build().toByteArray());
 						if(SceneManager.getInstance().getCurSceneType() == SceneType.SCENE_HALL)
 							(SceneManager.getInstance().getCurScene() as HallScene).updateUserInfo();
-						CommonUtil.showPopupWindow(false, "���������Ϣ�ɹ�", null);
+						CommonUtil.showPopupWindow(false, "保存玩家信息成功", null);
 					}
 					catch( e:Error)
 					{
-						trace("���������Ϣʧ��", "LogManager.LEVEL_ERROR");
+						trace("保存玩家信息失败", "LogManager.LEVEL_ERROR");
 					}
 					
 				}
@@ -179,9 +187,14 @@ package game.view.window.user
 				updatePortrait();
 			}
 		}
-		
-		public function onNetworkEvent( name:String, content:ByteArray):Boolean
+		public function disposePro():void{
+			AccountManager.getInstance().removeMsgs(proList ,"UserWindow");		
+		}
+		private var proList:Array = ["sc_friend_profile"];
+		public function onNetworkEvent(e:Notification):void
 		{
+			var name:String = e.name ;
+			var content:ByteArray = e.body as ByteArray ;
 			try
 			{
 				if(name == "sc_friend_profile")

@@ -22,7 +22,7 @@ package game
 		{
 			if(Global.account == null)
 			{
-				Global.account = "fuck222";
+				Global.account = "zhidaGame";
 				Global.adAccount = Global.account;
 			}
 			Global.resUrl = "http://182.140.237.55/res_i";

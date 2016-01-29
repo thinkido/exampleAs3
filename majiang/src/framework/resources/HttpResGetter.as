@@ -1,5 +1,10 @@
 package framework.resources
 {
+	import com.adobe.serialization.json.JSON;
+	import com.thinkido.framework.manager.loader.LoaderManager;
+	import com.thinkido.framework.manager.loader.vo.LoadData;
+	
+	import flash.events.Event;
 	import flash.utils.ByteArray;
 	
 	import framework.consts.EventType;
@@ -43,7 +48,7 @@ package framework.resources
 		 */
 		private var _loader:Loader= new Loader();
 	
-		public function HttpResGetter(path:String, httpServer:String)
+		public function HttpResGetter(path:String="", httpServer:String="")
 		{
 			if( path.length > 0 ){
 				init(path, httpServer);
@@ -58,34 +63,32 @@ package framework.resources
 				httpServer = httpServer.substring(0, httpServer.length - 1);
 			}
 			_httpServer = httpServer;
-	
-			try
-			{
-				var hd:HttpData= FileIO.getHttpData(_httpServer + path);
-				var jsonObj:Object = JSONUtil.bytes2Json(hd.data());
-				var resList:Array = jsonObj["resources"];
-				for(var i:int= 0; i < resList.length ; i++)
-				{
-					var resItem:Object= resList[i] ;
-					var itemName:String= resItem.name ;
-					var itemType:String= resItem.type ;
-					var itemUrl:String= _httpServer + "/" + resItem.url ;
-					var item:ResItem= new ResItem(itemName, itemType, itemUrl);
-	
-					if(itemType =="sheet")
-					{
-						var subkeys:String= resItem.subkeys ;
-						item.subkeys = subkeys;
-					}
-	
-					_resTable[item.name()] = item;
-				}
-			}
-			catch(e:*)
-			{
+			var ld:LoadData = new LoadData(_httpServer + path,initComplete) ;
+			LoaderManager.load([ld]);
+			
+		}
 		
+		private function initComplete( $ld:LoadData, evt:Event ) : void
+		{
+			var str:String = evt.currentTarget.data ;
+			var jsonObj:Object = JSON.decode(str) ;
+			var resList:Array = jsonObj["resources"];
+			for(var i:int= 0; i < resList.length ; i++)
+			{
+				var resItem:Object= resList[i] ;
+				var itemName:String= resItem.name ;
+				var itemType:String= resItem.type ;
+				var itemUrl:String= _httpServer + "/" + resItem.url ;
+				var item:ResItem= new ResItem(itemName, itemType, itemUrl);				
+				
+				if(itemType =="sheet")
+				{
+					var subkeys:String= resItem.subkeys ;
+					item.subkeys = subkeys;
+				}
+				
+				_resTable[item.name()] = item;
 			}
-	
 			trace("Total web resource:" + _resTable.size());
 		}
 	
