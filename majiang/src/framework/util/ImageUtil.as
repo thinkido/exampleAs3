@@ -34,5 +34,10 @@ package framework.util
 			img = Image.createRGBImage(colors, w, h, true);
 			return img;
 		}
+		
+		static public function loadImage(url:String, func:Function):void
+		{
+			
+		}
 	}
 }

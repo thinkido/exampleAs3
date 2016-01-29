@@ -1,10 +1,12 @@
 package ui
 {	
+	import framework.resources.FontSheet;
+	import framework.resources.Res;
+	import framework.resources.SpriteSheet;
+	
 	import game.view.inline.LoadingView;
 	
-	import starling.display.Button;
 	import starling.display.Sprite;
-	import starling.text.TextField;
 	import starling.textures.Texture;
 	
 	public class UIComponent extends Sprite
@@ -93,11 +95,20 @@ package ui
 			return path.replace('.', '_');
 		}
 		
+		public function removeAllChildren():void
+		{
+			var num:int = this.numChildren;
+			while(num-- > 0)
+			{
+				this.removeChildAt(0);
+			}
+		}
+		
 		protected static function decodeType(type:String):UIComponent
 		{
 			if(type == "ButtonObjectData")
 //				return new UIButton();
-				return new Button;
+				return new UIButton;
 			else if(type == "CheckBoxObjectData")
 				return new UICheckBox();
 			else if(type == "ImageViewObjectData" || type == "SpriteObjectData")
@@ -109,15 +120,18 @@ package ui
 			else if(type == "TextBMFontObjectData")
 				return new UITextBMFont();
 			else if(type == "TextObjectData")
-//				return new UIText();
-				return new TextField;
+				return new UIText();
+//				return new TextField(100,22,'');
 			else if(type == "ProjectNodeObjectData")
 				return new UILayer();
 			else
 				return null;
 		}
 		
-//		protected abstract void initWithJsonObject(JSONObject data);
+		public function initWithJsonObject(data:Object):void
+		{
+			
+		}
 		
 		public function getJson(name:String):Object
 		{

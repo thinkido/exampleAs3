@@ -76,8 +76,11 @@ package ui
 					{
 						y = i * item.getGap();
 					}
-					item.setPosition(x, y);
-					item.setVisible(false);
+//					item.setPosition(x, y);
+//					item.setVisible(false);
+					item.x = x;
+					item.y = y;
+					item.visible = false;
 					addChild(item);
 					_itemList.addElement(item);
 				}
@@ -196,7 +199,7 @@ package ui
 				}
 			}
 			else
-				_focusTexture.setTexture(t);
+				_focusTexture.texture = t;
 		}
 		
 		/**
@@ -275,7 +278,8 @@ package ui
 				var item:UIListItem = _itemList[i];
 				if(null == _dataList)
 				{
-					item.setVisible(false);
+//					item.setVisible(false);
+					item.visible = false;
 				}
 				else
 				{
@@ -283,11 +287,13 @@ package ui
 					{
 						var data:Object = _dataList[_offsetInData + i];
 						item.setItemData(data, i + _offsetInData);
-						item.setVisible(true);
+//						item.setVisible(true);
+						item.visible = true;
 					}
 					else
 					{
-						item.setVisible(false);
+//						item.setVisible(false);
+						item.visible = false;
 					}
 				}
 			}
@@ -315,12 +321,13 @@ package ui
 			}
 		}
 		
-		public function initWithJsonObject( data:Object):void
+		override public function initWithJsonObject( data:Object):void
 		{
 			try
 			{
 				setFocusTexture(getTexture(transformPath(data["FileData"]["Path"])));
-				setName(data["Name"]);
+//				setName(data["Name"]);
+				this.name = data['Name'];
 				autoSetPosition(data);
 			}
 			catch( e:Error)

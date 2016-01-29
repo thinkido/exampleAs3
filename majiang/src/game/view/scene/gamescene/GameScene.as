@@ -91,7 +91,8 @@ package game.view.scene.gamescene
 			this.addChild(info);
 			
 			jiaoPre = new JiaoPreviewUI();
-			jiaoPre.setVisible(false);
+//			jiaoPre.setVisible(false);
+			jiaoPre.visible = false;
 			this.addChild(jiaoPre);
 		}
 		
@@ -99,11 +100,13 @@ package game.view.scene.gamescene
 		{
 			if(null == jiaos)
 			{
-				jiaoPre.setVisible(false);
+//				jiaoPre.setVisible(false);
+				jiaoPre.visible = false;
 			}
 			else
 			{
-				jiaoPre.setVisible(true);
+//				jiaoPre.setVisible(true);
+				jiaoPre.visible = true;
 				jiaoPre.update(jiaos);
 			}
 			

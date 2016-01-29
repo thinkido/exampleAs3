@@ -38,9 +38,13 @@ package ui
 				}
 				x = x - anchorX;
 				y = Global.SCREEN_HEIGHT - y - anchorY;
-				setPosition(x, y);
+				/*setPosition(x, y);
 				setVisible(!data.has("VisibleForFrame") || data.getBoolean("VisibleForFrame"));
-				setName(data["Name"]);
+				setName(data["Name"]);*/
+				this.x = x;
+				this.y = y;
+				this.visible = !data.has("VisibleForFrame") || data["VisibleForFrame"];
+				this.name = data['Name'];
 				var conf:Object = getJson(transformPath(data["FileData"]["Path"]));
 				super.initWithJsonObject(conf);
 			}

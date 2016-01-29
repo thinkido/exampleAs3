@@ -1,13 +1,12 @@
 package jing.pai.helper
 {
+
 import jing.pai.ChuTip;
 import jing.pai.model.CardKe;
 import jing.pai.model.CardVector;
 import jing.pai.vo.ChuVO;
 import jing.pai.vo.HuVO;
 import jing.pai.vo.JiaoVO;
-
-import java.util.Vector;
 
 /**
  * 出牌帮助
@@ -16,7 +15,7 @@ import java.util.Vector;
  */
 public class ChuHelp
 {
-	public function check(cards:Array, kes:Array):ChuTip{
+	public function check(cards:Vector.<int>, kes:Vector.<CardKe>):ChuTip{
 		var tip:ChuTip= new ChuTip();
 		
 		// 分别去掉一张牌，然后计算剩下的牌是否组成叫
@@ -45,7 +44,7 @@ public class ChuHelp
 				var chuVO:ChuVO= new ChuVO(playCard, jiaoCards.length);
 				tip[playCard] = chuVO;
 				// 有叫,算出各种叫的情况下对应的胡的牌型
-				for(var i:int= 0; i < jiaoCards.length; i++)
+				for(i = 0; i < jiaoCards.length; i++)
 				{
 					var jiaoCard:int= jiaoCards[i];
 					var temp:CardVector= tempCards.clone();

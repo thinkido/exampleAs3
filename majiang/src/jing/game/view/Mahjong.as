@@ -2,8 +2,6 @@ package jing.game.view
 {
 import framework.resources.Res;
 import framework.resources.SpriteSheet;
-import framework.resources.Texture;
-import framework.views.Bitmap;
 
 import jing.GDC;
 import jing.consts.CardPlace;
@@ -11,7 +9,9 @@ import jing.consts.GameDir;
 import jing.consts.MahjongBoardType;
 import jing.consts.MahjongState;
 
+import starling.display.Image;
 import starling.display.Sprite;
+import starling.textures.Texture;
 
 /**
  * Â齫ÏÔʾ¶ÔÏó
@@ -70,24 +70,24 @@ public class Mahjong extends Sprite
 	/**
 	 * Â齫ͼ
 	 */
-	private var _mj:Bitmap= null;
+	private var _mj:Image= null;
 
 	/**
 	 * Ч¹ûͼ
 	 */
-	private var _effect:Bitmap= null;
+	private var _effect:Image= null;
 
 	/**
 	 * ±߿òµÄͼ(ÀýÈç´ò³öºó¿ÉÒÔÏ½У¬ÄÇô¾ÍÓÐÌرðµı߿ò)
 	 */
-	private var _board:Bitmap= null;
+	private var _board:Image= null;
 
 	public function Mahjong(card:int, dir:String, place:String)
 	{
 		_cards = Res.actively.getSheet("mahjong_json");
-		_mj = new Bitmap(null);
-		_effect = new Bitmap(null);
-		_board = new Bitmap(null);
+		_mj = new Image(null);
+		_effect = new Image(null);
+		_board = new Image(null);
 		this.addChild(_mj);
 		this.addChild(_effect);
 		this.addChild(_board);
@@ -112,26 +112,32 @@ public class Mahjong extends Sprite
 		_state = state;
 		if(_state == MahjongState.NORMAL)
 		{
-			_effect.setTexture(null);
+//			_effect.setTexture(null);
+			_effect.texture = null;
 		}
 		else if(_state == MahjongState.SELECTED)
 		{
-			_effect.setTexture(Res.actively.getTexture("in_hand_card_effect_png"));
-			_effect.setPosition(0, 0);
+			_effect.texture = Res.actively.getTexture("in_hand_card_effect_png");
+//			_effect.setPosition(0, 0);
+			_effect.x = 0;
+			_effect.y = 0;
 		}
 		else if(_state == MahjongState.GLOW)
 		{
-			_effect.setTexture(Res.actively.getTexture("on_table_card_effect_png"));
-			_effect.setPosition(0, 0);
+			_effect.texture = Res.actively.getTexture("on_table_card_effect_png");
+//			_effect.setPosition(0, 0);
+			
 		}
 		else if(_state == MahjongState.DISABLE)
 		{
-			_effect.setTexture(null);
+			_effect.texture = null;
 		}
 		else if(_state == MahjongState.LAST_CHU)
 		{
-			_effect.setTexture(Res.actively.getTexture("last_chu_png"));
-			_effect.setPosition(-4, -41);
+			_effect.texture = Res.actively.getTexture("last_chu_png");
+//			_effect.setPosition(-4, -41);
+			_effect.x = -4;
+			_effect.y = -41;
 		}
 	}
 
@@ -166,28 +172,28 @@ public class Mahjong extends Sprite
 	}
 
 	private function refresh():void{
-		_mj.setTexture(getTexture());
-		this.setWidth(_mj.getWidth());
-		this.setHeight(_mj.getHeight());
+		_mj.texture = getTexture();
+		this.width = _mj.width;
+		this.height =_mj.height;
 	}
 
 	public function setBoard(type:int):void{
 		if(MahjongBoardType.NONE == type)
 		{
-			_board.setTexture(null);
+			_board.texture = null;
 		}
 		else if(MahjongBoardType.FOR_JIAO == type)
 		{
-			_board.setTexture(Res.actively.getTexture("for_jiao_png"));
+			_board.texture = Res.actively.getTexture("for_jiao_png");
 		}
 	}
 
 	public function getW():int{
-		return _mj.getWidth();
+		return _mj.width;
 	}
 
 	public function getH():int{
-		return _mj.getHeight();
+		return _mj.height;
 	}
 
 }

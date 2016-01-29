@@ -2,7 +2,9 @@ package framework.resources
 {
 	import flash.utils.ByteArray;
 	
-	import framework.events.EventDispatcher;
+	import starling.events.EventDispatcher;
+	import starling.textures.Texture;
+	
 	
 	
 	/**
@@ -10,14 +12,35 @@ package framework.resources
 	 * @author Jing
 	 *
 	 */
-	public abstract class AResGetter extends EventDispatcher
+	public class AResGetter extends EventDispatcher
 	{	
-		abstract public function getJson(name:String):Object;	
-		abstract public function getTexture(name:String):Texture;
-		abstract public function getSheet(name:String):SpriteSheet;
-		abstract public function getFontSheet(name:String):FontSheet;
-		abstract public function getBinary(name:String):ByteArray;	//bytearraya 有2个累；
-		abstract public function getUrl(name:String):String;	
-		abstract public function release(name:String):void;	
+		public function getJson(name:String):Object
+		{
+			return null;
+		}
+		public function getTexture(name:String):Texture
+		{
+			return null;
+		}
+		public function getSheet(name:String):SpriteSheet
+		{
+			return null;
+		}
+		public function getFontSheet(name:String):FontSheet
+		{
+			return null;
+		}
+		public function getBinary(name:String):ByteArray	//bytearraya 有2个累；
+		{
+			return null;
+		}
+		public function getUrl(name:String):String
+		{
+			return '';
+		}
+		public function release(name:String):void
+		{
+			
+		}
 	}
 }

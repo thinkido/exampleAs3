@@ -5,7 +5,7 @@ package jing.pai.vo
 		public function ChuVO(playCard:int = -1 , jiaoCount:int = -99999999 )
 		{
 			this.playCard = playCard;
-			this.jiaos = jiaoCount == -99999999 ? null : new JiaoVO[jiaoCount]; ;		//new JiaoVO[jiaoCount];
+			this.jiaos = jiaoCount == -99999999 ? null : new Vector.<JiaoVO>(jiaoCount);// JiaoVO[jiaoCount]; ;		//new JiaoVO[jiaoCount];
 		}
 	
 		/**
@@ -16,7 +16,7 @@ package jing.pai.vo
 		/**
 		 * 下的叫
 		 */
-		public var jiaos:Array= null;
+		public var jiaos:Vector.<JiaoVO> = null;
 	
 		public function toString():String{
 			if(null == this.jiaos || -1== this.playCard)

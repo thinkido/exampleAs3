@@ -1,8 +1,5 @@
 package jing.game.view
-{
-	import framework.views.DisplayObject;
-	import framework.views.Sprite;
-	
+{	
 	import game.view.scene.gamescene.GameScene;
 	
 	import jing.GDC;
@@ -20,6 +17,9 @@ package jing.game.view
 	import jing.pai.vo.ChuVO;
 	import jing.vo.CardLayoutVO;
 	
+	import starling.display.DisplayObject;
+	import starling.display.Sprite;
+	
 	/**
 	 * @author Jing
 	 */
@@ -34,7 +34,7 @@ package jing.game.view
 		/**
 		 * Íæ¼ÒÏà¹صÄÂ齫µıí
 		 */
-		var _mjT:Object;
+		private var _mjT:Object;
 		
 		/**
 		 * ×ùλºÅ
@@ -49,11 +49,11 @@ package jing.game.view
 			_seat = seat;
 		}
 		
-		private var _name:String= null;
+/*		private var _name:String= null;
 		
 		public function name():String{
 			return _name;
-		}
+		}*/
 		
 		private var _gold:Number= -1;
 		
@@ -83,13 +83,13 @@ package jing.game.view
 			_isReady = v;
 		}
 		
-		var _dir:String;
+		private var _dir:String;
 		
 		public function dir():String{
 			return _dir;
 		}
 		
-		var _showHand:Boolean= false;
+		private var _showHand:Boolean= false;
 		
 		private var _lack:int= 0;
 		
@@ -142,7 +142,7 @@ package jing.game.view
 		
 		public function updateInfo(seat:int, name:String, gold:Number, portrait:int, gender:int):void{
 			_seat = seat;
-			_name = name;
+			this.name = name;
 			_gold = gold;
 			_portrait = portrait;
 			_gender = gender;
@@ -165,6 +165,15 @@ package jing.game.view
 			
 			init();
 			this.removeAllChildren();
+		}
+		
+		public function removeAllChildren():void
+		{
+			var num:int = this.numChildren;
+			while(num-- > 0)
+			{
+				this.removeChildAt(0);
+			}
 		}
 		
 		/**
@@ -197,16 +206,17 @@ package jing.game.view
 			}
 			
 			var vec:Vector= Vector(_mjT.get(CardPlace.IN_HAND));
+			var mj:Mahjong;
 			for(var i:int= 0; i < vec.size(); i++)
 			{
-				var mj:Mahjong= Mahjong(vec.elementAt(i));
+				mj = Mahjong(vec.elementAt(i));
 				mj.changeCard(mj.card(), mj.dir(), showHand ? CardPlace.SHOW_HAND : CardPlace.IN_HAND);
 			}
 			
 			var newVec:Vector= Vector(_mjT.get(CardPlace.NEW_IN_HAND));
 			if(newVec.size() > 0)
 			{
-				var mj:Mahjong= Mahjong(newVec.elementAt(0));
+				mj = Mahjong(newVec.elementAt(0));
 				mj.changeCard(mj.card(), mj.dir(), showHand ? CardPlace.SHOW_HAND : CardPlace.IN_HAND);
 			}
 			
@@ -304,7 +314,7 @@ package jing.game.view
 		/**
 		 * ÓÎϷ½øÈëÐÂһ֡
 		 */
-		override protected function enterFrame(time:Number):void{
+		protected function enterFrame(time:Number):void{
 			if(_needRelayout)
 			{
 				_needRelayout = false;
@@ -338,25 +348,27 @@ package jing.game.view
 				
 				if(GameDir.UP == vo.dir)
 				{
-					offY = -1* count * (obj.getHeight() + vo.gap);
+					offY = -1* count * (obj.height + vo.gap);
 				}
 				else if(GameDir.LEFT == vo.dir)
 				{
-					offX = -1* count * (obj.getWidth() + vo.gap);
+					offX = -1* count * (obj.width + vo.gap);
 				}
 				else if(GameDir.DOWN == vo.dir)
 				{
-					offY = count * (obj.getHeight() + vo.gap);
+					offY = count * (obj.height + vo.gap);
 				}
 				else if(GameDir.RIGHT == vo.dir)
 				{
-					offX = (count % vo.warpCount) * (obj.getWidth() + vo.gap);
+					offX = (count % vo.warpCount) * (obj.width + vo.gap);
 				}
 				
 				x = vo.startX + offX;
 				y = vo.startY + offY;
 				
-				obj.setPosition(x, y);
+//				obj.setPosition(x, y);
+				obj.x = x;
+				obj.y = y;
 			}
 		}
 		
@@ -383,25 +395,27 @@ package jing.game.view
 				
 				if(GameDir.UP == vo.dir)
 				{
-					offY = -1* count * (obj.getHeight() + vo.gap);
+					offY = -1* count * (obj.height + vo.gap);
 				}
 				else if(GameDir.LEFT == vo.dir)
 				{
-					offX = -1* count * (obj.getWidth() + vo.gap);
+					offX = -1* count * (obj.width + vo.gap);
 				}
 				else if(GameDir.DOWN == vo.dir)
 				{
-					offY = count * (obj.getHeight() + vo.gap);
+					offY = count * (obj.height + vo.gap);
 				}
 				else if(GameDir.RIGHT == vo.dir)
 				{
-					offX = (count % vo.warpCount) * (obj.getWidth() + vo.gap);
+					offX = (count % vo.warpCount) * (obj.width + vo.gap);
 				}
 				
 				x = vo.startX + warpX + offX;
 				y = vo.startY + warpY + offY;
 				
-				obj.setPosition(x, y);
+//				obj.setPosition(x, y);
+				obj.x = x;
+				obj.y = y;
 			}
 		}
 		
@@ -409,11 +423,11 @@ package jing.game.view
 			for(var i:int= 0; i < this.numChildren(); i++)
 			{
 				var obj:DisplayObject= this.getChildAt(i);
-				var y:int= obj.getY();
+				var y:int= obj.y;
 				var j:int= 0;
 				for(j = 0; j < i; j++)
 				{
-					if(y < this.getChildAt(j).getY())
+					if(y < this.getChildAt(j).y)
 					{
 						break;
 					}
@@ -442,11 +456,11 @@ package jing.game.view
 			}
 			
 			vecInHand.removeAllElements();
-			for(var index:int= 0; index < vecNoLack.size(); ++index)
+			for(index = 0; index < vecNoLack.size(); ++index)
 			{
 				vecInHand.addElement(vecNoLack.elementAt(index));
 			}
-			for(var index:int= 0; index < vecLack.size(); ++index)
+			for(index = 0; index < vecLack.size(); ++index)
 			{
 				vecInHand.addElement(vecLack.elementAt(index));
 			}
@@ -567,13 +581,14 @@ package jing.game.view
 		
 		public function clearJiaoTip():void{
 			var vecInHand:Vector= Vector(_mjT.get(CardPlace.IN_HAND));
+			var mj:Mahjong;
 			for(var i:int= 0; i < vecInHand.size(); i++)
 			{
-				var mj:Mahjong= Mahjong(vecInHand.elementAt(i));
+				mj = Mahjong(vecInHand.elementAt(i));
 				mj.setBoard(MahjongBoardType.NONE);
 			}
 			
-			var mj:Mahjong= getCard(CardPlace.NEW_IN_HAND, 0);
+			mj = getCard(CardPlace.NEW_IN_HAND, 0);
 			if(mj != null)
 			{
 				mj.setBoard(MahjongBoardType.NONE);
@@ -596,9 +611,10 @@ package jing.game.view
 				GDC.trace("³öÅÆÌáʾ£º" + ct.toString());
 				// ¸øËùÓдò³öºó¿ÉÒÔÏ½еÄÊÖÅƼÓÉϱ߿ò
 				var vecInHand:Vector= Vector(_mjT.get(CardPlace.IN_HAND));
+				var mj:Mahjong;
 				for(var i:int= 0; i < vecInHand.size(); i++)
 				{
-					var mj:Mahjong= Mahjong(vecInHand.elementAt(i));
+					mj = Mahjong(vecInHand.elementAt(i));
 					for(var j:int= 0; j < cards.length; j++)
 					{
 						if(mj.card() == cards[j])
@@ -613,10 +629,10 @@ package jing.game.view
 				}
 				
 				// Ã򵽵ÄÅÆ
-				var mj:Mahjong= getCard(CardPlace.NEW_IN_HAND, 0);
+				mj = getCard(CardPlace.NEW_IN_HAND, 0);
 				if(mj != null)
 				{
-					for(var j:int= 0; j < cards.length; j++)
+					for(j = 0; j < cards.length; j++)
 					{
 						if(mj.card() == cards[j])
 						{

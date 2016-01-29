@@ -1,11 +1,13 @@
 package framework.views
 {
-import javax.microedition.lcdui.Graphics;
+import flash.display.Graphics;
 
 import framework.geom.Point;
 import framework.geom.Rectangle;
-import framework.resources.Texture;
 import framework.resources.TextureData;
+
+import starling.display.DisplayObject;
+import starling.textures.Texture;
 
 /**
  * λͼÏÔʾ¶ÔÏó
@@ -33,15 +35,15 @@ public class Bitmap extends DisplayObject
 	public function Bitmap_2(t:Texture, anchor:int):void
 	{
 		setTexture(t);
-		setAnchor(anchor);
+//		setAnchor(anchor);
 	}
 
 	public function setTexture(t:Texture):void{
 		_source = _t = t;
 		if(null != t)
 		{
-			_width = t.data().w();
-			_height = t.data().h();
+			width = t.data().w();
+			height = t.data().h();
 		}
 	}
 

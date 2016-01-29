@@ -1,9 +1,6 @@
 package ui
 {
 	import framework.util.ViewUtil;
-	import framework.views.Bitmap;
-	
-	import org.json.me.JSONObject;
 	
 	import starling.display.Image;
 	import starling.textures.Texture;
@@ -127,7 +124,8 @@ package ui
 				ViewUtil.setCenter(_srcBitmapArr[3], _srcBitmapArr[STATE_NORMAL]);
 				ViewUtil.setCenter(_srcBitmapArr[4], _srcBitmapArr[STATE_NORMAL]);
 				addChild(_srcBitmapArr[_state]);
-				setName(data["Name"]);
+//				setName(data["Name"]);
+				this.name = data["Name"];
 				autoSetPosition(data);
 			}
 			catch( e:Error)

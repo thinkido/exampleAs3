@@ -2,6 +2,7 @@ package framework.resources
 {
 
 import starling.display.Image;
+import starling.textures.Texture;
 
 
 /**
@@ -36,13 +37,18 @@ public class SpriteSheet
 	public function getSSD(name:String):TextureData{
 		return _ta.getFrame(name);
 	}
+	
+	public function SpriteSheet():void
+	{
+		
+	}
 
-	public function SpriteSheet(ta:TextureAtlas, frameNames:Array)
+	public function SpriteSheet_1(ta:TextureAtlas, frameNames:Array):void
 	{
 		init(ta, frameNames);
 	}
 
-	public function SpriteSheet(jsonObj:Object, frameNames:Array, sheet:Image)
+	public function SpriteSheet_2(jsonObj:Object, frameNames:Array, sheet:Image):void
 	{
 		var ta:TextureAtlas= new TextureAtlas(sheet, jsonObj);
 		init(ta, frameNames);
@@ -75,20 +81,21 @@ public class SpriteSheet
 	 */
 	public function getSpriteSheet(prefix:String):SpriteSheet{
 		var list:Vector= new Vector();
+		var td:TextureData;
 		for(var i:int= 0; i < _datas.length; i++)
 		{
-			var td:TextureData= _datas[i];
+			td= _datas[i];
 			if(td.name.startsWith(prefix))
 			{
 				list.addElement(td);
 			}
 		}
 
-		var frames:Object= new Object(list.size());
+		var frames:Object= new Object();
 		var frameNames:Array= new String[list.size()];
-		for(var i:int= 0; i < frameNames.length; i++)
+		for(i = 0; i < frameNames.length; i++)
 		{
-			var td:TextureData= TextureData(list.elementAt(i));
+			td= TextureData(list.elementAt(i));
 			frameNames[i] = td.name;
 			frames[td.name] = td;
 		}

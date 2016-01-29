@@ -18,6 +18,7 @@ package ui
 		public function getScrollRect():Rectangle
 		{
 			return _srcTexture.getScrollRect();
+//			return _srcTexture
 		}
 	
 		public function setScrollRect( rect:Rectangle):void

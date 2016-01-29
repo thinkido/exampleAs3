@@ -1,13 +1,15 @@
 package framework.views
 {
-import javax.microedition.lcdui.Graphics;
-import starling.display.Image;
-
 import framework.geom.Point;
 import framework.geom.Rectangle;
 import framework.resources.FontSheet;
 import framework.resources.TextureData;
 import framework.util.ImageUtil;
+
+import javax.microedition.lcdui.Graphics;
+
+import starling.display.DisplayObject;
+import starling.display.Image;
 
 /**
  * λͼ×ÖÌå
@@ -21,7 +23,7 @@ public class BitmapFont extends DisplayObject
 
 	private var _textImageCache:Image= null;
 
-	private var _textChars:Array= null;
+	private var _textChars:String = null;
 
 	private var _text:String= "";
 
@@ -37,9 +39,10 @@ public class BitmapFont extends DisplayObject
 
 		if(_text.length > 0)
 		{
-			_textChars = new char[_text.length];
-			_text.getChars(0, _text.length, _textChars, 0);
-
+			_textChars = [];
+//			_text.getChars(0, _text.length, _textChars, 0);
+			_textChars = _text;
+			
 			updateSize();
 			if(_trans != 0)
 			{
@@ -171,8 +174,8 @@ public class BitmapFont extends DisplayObject
 	private function updateSize():void{
 		if(_textChars == null || _sheet == null)
 		{
-			_width = 0;
-			_height = 0;
+			width = 0;
+			height = 0;
 			return;
 		}
 
