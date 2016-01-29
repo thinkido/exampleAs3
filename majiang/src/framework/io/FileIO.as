@@ -61,13 +61,18 @@ package framework.io
 			return null;
 		}
 		
+		
+		
 		/**
 		 * 获取网络数据
 		 * 
 		 * @param url
 		 * @return
 		 */
-		static public function getHttpData(url:String):HttpData{
+		static public function getHttpData(url:String, args:Object = null):HttpData{
+			if( args != null ){
+				url = url + "?" + encodeParams(args) ;
+			}
 			var hd:HttpData= null;
 			try
 			{
@@ -98,9 +103,6 @@ package framework.io
 			return hd;
 		}
 		
-		static public function getHttpData(url:String, args:Object):HttpData{
-			return getHttpData(url + "?" + encodeParams(args));
-		}
 		
 		static public function encodeParams(args:Object):String{
 			var strParam:String= "";

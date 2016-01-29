@@ -140,7 +140,8 @@ package jing.pai.model
 		 */
 		public function hasCardCount(card:int):int{
 			var count:int= 0;
-			for(var i:int= 0; i < count(); i++)
+			var len:int =  this.count() ;
+			for(var i:int= 0; i < len ; i++)
 			{
 				if(card == getAt(i))
 				{

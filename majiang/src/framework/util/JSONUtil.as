@@ -1,6 +1,7 @@
 package framework.util
 {
 	import com.adobe.serialization.json.JSON;
+	import com.adobe.serialization.json.JSONDecoder;
 	
 	import flash.utils.ByteArray;
 
@@ -20,8 +21,8 @@ package framework.util
 			var json:String = "";
 			try
 			{
-				json = bytes.readUTF() ;
-				jsonObj = JSON.decode(json) ;
+				json = bytes.readUTF() ; 
+				jsonObj = JSON.decode(json) ;  
 			}
 			catch(e:*)
 			{

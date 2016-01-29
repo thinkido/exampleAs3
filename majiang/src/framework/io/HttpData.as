@@ -1,6 +1,6 @@
 package framework.io
 {
-	import java.io.InputStream;
+	
 	
 	/**
 	 * Http网络请求的数据

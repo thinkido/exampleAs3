@@ -68,13 +68,13 @@ package ui
 		{
 			try
 			{
-				if(!data["FileData"]["Type"] == "Default"]
+				if(data["FileData"]["Type"] != "Default" )
 				{
 					var path:String = data["FileData"]["Path"];
 					_srcTexture = new Image(getTexture(transformPath(path)));
 					addChild(_srcTexture);
 				}
-				setName(data["Name"]);
+				this.name = data["Name"]
 				autoSetPosition(data);
 			}
 			catch( e:Error)

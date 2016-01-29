@@ -5,8 +5,6 @@ package framework.resources
 	import starling.events.EventDispatcher;
 	import starling.textures.Texture;
 	
-	
-	
 	/**
 	 * 资源获取器基类
 	 * @author Jing
@@ -18,7 +16,7 @@ package framework.resources
 		{
 			return null;
 		}
-		public function getTexture(name:String):Texture
+		public function getTexture(name:String):starling.textures.Texture
 		{
 			return null;
 		}
