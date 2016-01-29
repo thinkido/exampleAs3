@@ -1,7 +1,7 @@
 // =================================================================================================
 //
 //	Starling Framework
-//	Copyright 2011 Gamua OG. All Rights Reserved.
+//	Copyright 2011-2014 Gamua. All Rights Reserved.
 //
 //	This program is free software. You can redistribute and/or modify it
 //	in accordance with the terms of the accompanying license agreement.
@@ -11,8 +11,10 @@
 package starling.display
 {
     import flash.geom.Matrix;
+    import flash.geom.Matrix3D;
     import flash.geom.Point;
     import flash.geom.Rectangle;
+    import flash.geom.Vector3D;
     
     import starling.core.RenderSupport;
     import starling.utils.VertexData;
@@ -42,7 +44,9 @@ package starling.display
         
         /** Helper objects. */
         private static var sHelperPoint:Point = new Point();
+        private static var sHelperPoint3D:Vector3D = new Vector3D();
         private static var sHelperMatrix:Matrix = new Matrix();
+        private static var sHelperMatrix3D:Matrix3D = new Matrix3D();
         
         /** Creates a quad with a certain size and color. The last parameter controls if the 
          *  alpha value should be premultiplied into the color values on rendering, which can
@@ -50,13 +54,16 @@ package starling.display
         public function Quad(width:Number, height:Number, color:uint=0xffffff,
                              premultipliedAlpha:Boolean=true)
         {
+            if (width == 0.0 || height == 0.0)
+                throw new ArgumentError("Invalid size: width and height must not be zero");
+
             mTinted = color != 0xffffff;
             
             mVertexData = new VertexData(4, premultipliedAlpha);
             mVertexData.setPosition(0, 0.0, 0.0);
             mVertexData.setPosition(1, width, 0.0);
             mVertexData.setPosition(2, 0.0, height);
-            mVertexData.setPosition(3, width, height);            
+            mVertexData.setPosition(3, width, height);
             mVertexData.setUniformColor(color);
             
             onVertexDataChanged();
@@ -87,6 +94,12 @@ package starling.display
                                  sHelperPoint.x * scaleX, sHelperPoint.y * scaleY);
                 if (scaleX < 0) { resultRect.width  *= -1; resultRect.x -= resultRect.width;  }
                 if (scaleY < 0) { resultRect.height *= -1; resultRect.y -= resultRect.height; }
+            }
+            else if (is3D && stage)
+            {
+                stage.getCameraPosition(targetSpace, sHelperPoint3D);
+                getTransformationMatrix3D(targetSpace, sHelperMatrix3D);
+                mVertexData.getBoundsProjected(sHelperMatrix3D, sHelperPoint3D, 0, 4, resultRect);
             }
             else
             {
@@ -138,8 +151,8 @@ package starling.display
         /** Sets the colors of all vertices to a certain value. */
         public function set color(value:uint):void 
         {
-            for (var i:int=0; i<4; ++i)
-                setVertexColor(i, value);
+            mVertexData.setUniformColor(value);
+            onVertexDataChanged();
             
             if (value != 0xffffff || alpha != 1.0) mTinted = true;
             else mTinted = mVertexData.tinted;
@@ -160,6 +173,14 @@ package starling.display
             mVertexData.copyTo(targetData, targetVertexID);
         }
         
+        /** Transforms the vertex positions of the raw vertex data by a certain matrix and
+         *  copies the result to another VertexData instance. */
+        public function copyVertexDataTransformedTo(targetData:VertexData, targetVertexID:int=0,
+                                                    matrix:Matrix=null):void
+        {
+            mVertexData.copyTransformedTo(targetData, targetVertexID, matrix, 0, 4);
+        }
+        
         /** @inheritDoc */
         public override function render(support:RenderSupport, parentAlpha:Number):void
         {
@@ -168,5 +189,9 @@ package starling.display
         
         /** Returns true if the quad (or any of its vertices) is non-white or non-opaque. */
         public function get tinted():Boolean { return mTinted; }
+        
+        /** Indicates if the rgb values are stored premultiplied with the alpha value; this can
+         *  affect the rendering. (Most developers don't have to care, though.) */
+        public function get premultipliedAlpha():Boolean { return mVertexData.premultipliedAlpha; }
     }
 }

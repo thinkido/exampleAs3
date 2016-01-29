@@ -1,7 +1,7 @@
 // =================================================================================================
 //
 //	Starling Framework
-//	Copyright 2011 Gamua OG. All Rights Reserved.
+//	Copyright 2011-2014 Gamua. All Rights Reserved.
 //
 //	This program is free software. You can redistribute and/or modify it
 //	in accordance with the terms of the accompanying license agreement.
@@ -15,7 +15,7 @@ package starling.errors
     public class MissingContextError extends Error
     {
         /** Creates a new MissingContextError object. */
-        public function MissingContextError(message:*="", id:*=0)
+        public function MissingContextError(message:*="Starling context is missing", id:*=0)
         {
             super(message, id);
         }

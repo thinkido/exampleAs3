@@ -1,19 +1,20 @@
 // =================================================================================================
 //
 //	Starling Framework
-//	Copyright 2011 Gamua OG. All Rights Reserved.
+//	Copyright 2011-2014 Gamua. All Rights Reserved.
 //
 //	This program is free software. You can redistribute and/or modify it
 //	in accordance with the terms of the accompanying license agreement.
 //
 // =================================================================================================
 
-package starling.core
+package starling.events
 {
     import flash.display.BitmapData;
     import flash.display.Shape;
     import flash.geom.Point;
     
+    import starling.core.Starling;
     import starling.display.Image;
     import starling.display.Sprite;
     import starling.textures.Texture;
