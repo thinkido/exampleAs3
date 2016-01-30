@@ -8,6 +8,7 @@ package game.view.window.rank
 	import framework.resources.SpriteSheet;
 	
 	import game.control.AccountManager;
+	import game.control.NetManager;
 	import game.control.WindowManager;
 	import game.model.Global;
 	import game.model.vo.RankItemVO;
@@ -180,7 +181,7 @@ package game.view.window.rank
 					for(var i:int = 0; i < len; i++)
 					{
 						goldData[i] = new RankItemVO(datalist[i] as t_rank_data);
-						goldData[i].value = CommonUtil.formatGold(Integer.valueOf(goldData[i].value).longValue());
+						goldData[i].value = CommonUtil.formatGold(goldData[i].value);
 					}
 					_mediatorList[0].initData(goldData);
 					datalist = msg.getExpData();

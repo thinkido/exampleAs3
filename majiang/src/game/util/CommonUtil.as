@@ -44,9 +44,9 @@ package game.util
 		{
 			var strGold:String = "";
 			if(gold >= 1000000000)
-				strGold += (gold / 100000000) + "вк";
+				strGold += (gold / 100000000) + "亿";
 			else if(gold >= 100000)
-				strGold += (gold / 10000) + "Эђ";
+				strGold += (gold / 10000) + "万";
 			else
 				strGold += gold;
 			return strGold;

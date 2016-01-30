@@ -34,7 +34,6 @@ package game.control
 	
 	import org.osmf.logging.Log;
 	
-	import protos.common.heartbeat;
 	import protos.common.protocol;
 	import protos.common.sc_protocol_pack;
 	import protos.gameserver.heartbeat;
