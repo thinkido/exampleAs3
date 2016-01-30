@@ -105,7 +105,7 @@
             },
             "Position": {
               "X": 453.0,
-              "Y": 69.0
+              "Y": 69.5
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -115,7 +115,7 @@
             "IconVisible": false,
             "PrePosition": {
               "X": 0.7078,
-              "Y": 0.1302
+              "Y": 0.1311
             },
             "PreSize": {
               "X": 0.1484,
@@ -123,8 +123,8 @@
             },
             "LeftMargin": 405.5,
             "RightMargin": 139.5,
-            "TopMargin": 438.0,
-            "BottomMargin": 46.0,
+            "TopMargin": 437.5,
+            "BottomMargin": 46.5,
             "Tag": 23,
             "ActionTag": -42121985,
             "Size": {
@@ -180,7 +180,7 @@
             },
             "Position": {
               "X": 210.0,
-              "Y": 69.0
+              "Y": 69.5
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -190,7 +190,7 @@
             "IconVisible": false,
             "PrePosition": {
               "X": 0.3281,
-              "Y": 0.1302
+              "Y": 0.1311
             },
             "PreSize": {
               "X": 0.1484,
@@ -198,8 +198,8 @@
             },
             "LeftMargin": 162.5,
             "RightMargin": 382.5,
-            "TopMargin": 438.0,
-            "BottomMargin": 46.0,
+            "TopMargin": 437.5,
+            "BottomMargin": 46.5,
             "Tag": 24,
             "ActionTag": 690566120,
             "Size": {
@@ -328,10 +328,10 @@
               "X": 0.2531,
               "Y": 0.0679
             },
-            "LeftMargin": 302.0,
-            "RightMargin": 176.0,
-            "TopMargin": 398.0,
-            "BottomMargin": 96.0,
+            "LeftMargin": 301.9986,
+            "RightMargin": 176.0014,
+            "TopMargin": 397.9984,
+            "BottomMargin": 96.0016,
             "UserData": "gameend_txt_fnt",
             "Tag": 10,
             "ActionTag": 34571547,
@@ -341,6 +341,81 @@
             },
             "Name": "txt_money",
             "ctype": "TextBMFontObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "btn_collect_selected.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "btn_collect_selected.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "btn_collect.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 15,
+            "Scale9OriginY": 11,
+            "Scale9Width": 70,
+            "Scale9Height": 30,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "TouchEnable": true,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 331.0,
+              "Y": 69.5
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.5172,
+              "Y": 0.1311
+            },
+            "PreSize": {
+              "X": 0.1562,
+              "Y": 0.0981
+            },
+            "LeftMargin": 281.0,
+            "RightMargin": 259.0,
+            "TopMargin": 434.5,
+            "BottomMargin": 43.5,
+            "Tag": 8,
+            "ActionTag": 1582815945,
+            "Size": {
+              "X": 100.0,
+              "Y": 52.0
+            },
+            "Name": "btn_collect",
+            "ctype": "ButtonObjectData"
           }
         ],
         "Size": {
@@ -351,6 +426,8 @@
         "ctype": "SingleNodeObjectData"
       },
       "UsedResources": [
+        "btn_collect.png",
+        "btn_collect_selected.png",
         "btn_ready.png",
         "btn_ready_selected.png",
         "btn_return.png",

@@ -1,0 +1,20 @@
+{
+	"config_list":[
+		{
+			"prefix" : "img_txt_aboutus_",
+			"length" : 1
+		},
+		{
+			"prefix" : "img_txt_rule_",
+			"length" : 5
+		},
+		{
+			"prefix" : "img_txt_score_",
+			"length" : 1
+		},
+		{
+			"prefix" : "img_txt_type_",
+			"length" : 39
+		}
+	]
+}

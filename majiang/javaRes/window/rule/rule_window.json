@@ -472,6 +472,154 @@
             },
             "Name": "img_content",
             "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_page_up_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_page_up_z.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_page_up_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 13,
+            "Scale9Height": 30,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 536.0,
+              "Y": 253.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8375,
+              "Y": 0.4774
+            },
+            "PreSize": {
+              "X": 0.0547,
+              "Y": 0.0981
+            },
+            "LeftMargin": 518.5,
+            "RightMargin": 86.5,
+            "TopMargin": 251.0,
+            "BottomMargin": 227.0,
+            "Tag": 27,
+            "ActionTag": -1944342563,
+            "Size": {
+              "X": 35.0,
+              "Y": 52.0
+            },
+            "Name": "btn_page_up",
+            "ctype": "ButtonObjectData"
+          },
+          {
+            "FontSize": 14,
+            "ButtonText": "Button",
+            "TextColor": {
+              "R": 65,
+              "G": 65,
+              "B": 70
+            },
+            "DisabledFileData": {
+              "Type": "Normal",
+              "Path": "img_page_down_d.png",
+              "Plist": ""
+            },
+            "PressedFileData": {
+              "Type": "Normal",
+              "Path": "img_page_down_z.png",
+              "Plist": ""
+            },
+            "NormalFileData": {
+              "Type": "Normal",
+              "Path": "img_page_down_z.png",
+              "Plist": ""
+            },
+            "Scale9Enable": true,
+            "Scale9OriginX": 11,
+            "Scale9OriginY": 11,
+            "Scale9Width": 13,
+            "Scale9Height": 30,
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 535.0,
+              "Y": 150.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.8359,
+              "Y": 0.283
+            },
+            "PreSize": {
+              "X": 0.0547,
+              "Y": 0.0981
+            },
+            "LeftMargin": 517.5,
+            "RightMargin": 87.5,
+            "TopMargin": 354.0,
+            "BottomMargin": 124.0,
+            "Tag": 28,
+            "ActionTag": -1545770871,
+            "Size": {
+              "X": 35.0,
+              "Y": 52.0
+            },
+            "Name": "btn_page_down",
+            "ctype": "ButtonObjectData"
           }
         ],
         "Size": {
@@ -493,7 +641,11 @@
         "btn_tab_type_a.png",
         "btn_tab_type_z.png",
         "Default/ImageFile.png",
-        "img_bg_rule.png"
+        "img_bg_rule.png",
+        "img_page_down_d.png",
+        "img_page_down_z.png",
+        "img_page_up_d.png",
+        "img_page_up_z.png"
       ],
       "ctype": "GameFileData"
     }
