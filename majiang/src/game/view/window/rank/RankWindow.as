@@ -3,6 +3,7 @@ package game.view.window.rank
 	import com.thinkido.framework.common.observer.Notification;
 	
 	import flash.utils.ByteArray;
+	import flash.utils.Endian;
 	
 	import framework.resources.SpriteSheet;
 	
@@ -12,9 +13,9 @@ package game.view.window.rank
 	import game.model.vo.RankItemVO;
 	import game.util.CommonUtil;
 	
-	import network.YiuNetworkHandlerMgr;
 	import network.YiuNetworkListener;
 	
+	import protos.hallserver.cs_rank_list;
 	import protos.hallserver.sc_rank_list;
 	
 	import starling.display.Button;
@@ -61,7 +62,12 @@ package game.view.window.rank
 			_imgHead.setTexture(Global.getMyHeadTexture());
 			try
 			{
-				Global.socketHall.sendProtobuf("cs_rank_list", cs_rank_list.newBuilder().setNoop(1).build().toByteArray());
+				var msg:cs_rank_list = new cs_rank_list();
+				msg.noop = 1 ;
+				var msgBy:ByteArray = new ByteArray();
+				msgBy.endian = Endian.LITTLE_ENDIAN ;
+				msg.writeTo( msgBy );
+				NetManager.sendProtobuf(Global.socketHall,"cs_rank_list", msgBy );
 			}
 			catch(e:*)
 			{

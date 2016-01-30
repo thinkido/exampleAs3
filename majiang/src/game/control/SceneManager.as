@@ -70,7 +70,7 @@ package game.control
 					}
 					if(null != _curView)
 					{
-						_curSceneCache = CommonUtil.getSnapShot();
+						_curSceneCache = Global.root() ; // CommonUtil.getSnapShot();
 						_curView.onStageBlur();
 						_curView.onLeave();
 						Global.sceneLayer.removeChild(_curView);

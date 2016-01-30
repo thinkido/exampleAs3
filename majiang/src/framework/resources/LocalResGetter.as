@@ -244,33 +244,9 @@ package framework.resources
 		public function getAudio(name:String, type:String):Player{
 			var p:Player= null;
 			var item:ResItem= getResItem(name, Res.TYPE_SOUND);
-			if(false == _dataTable.contains(name))
-			{
-				var iss:InputStream= FileIO.getInputStream(item.url());
-	
-				if(null == iss)
-				{
-					trace("资源不存在：" + item.url());
-				}
-				else
-				{
-					try
-					{
-						p = Manager.createPlayer(iss, type);
-						_dataTable[name] = p ;
-					}
-					catch(e:*)
-					{
-						trace("资源加载出错：" + item.url());
-					}
-				}
-	
-			}
-			else
-			{
-				p = Player(_dataTable[name]);
-			}
-			return p;
+			trace("资源加载出错：" + item.url());
+			
+			return null ;
 		}
 	
 		/**

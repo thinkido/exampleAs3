@@ -3,6 +3,7 @@ package game.view.window.user
 	import com.thinkido.framework.common.observer.Notification;
 	
 	import flash.utils.ByteArray;
+	import flash.utils.Endian;
 	
 	import framework.consts.EventType;
 	import framework.consts.KeyType;
@@ -15,9 +16,10 @@ package game.view.window.user
 	import game.util.CommonUtil;
 	import game.view.scene.HallScene;
 	
-	import network.YiuNetworkHandlerMgr;
 	import network.YiuNetworkListener;
 	
+	import protos.hallserver.cs_friend_profile;
+	import protos.hallserver.cs_update_profile;
 	import protos.hallserver.sc_friend_profile;
 	import protos.hallserver.t_friend_data;
 	
@@ -127,7 +129,13 @@ package game.view.window.user
 			var idtype:String = AccountManager.getInstance().getType();
 			try
 			{
-				Global.socketHall.sendProtobuf("cs_friend_profile", cs_friend_profile.newBuilder().setId(id).setIdtype(idtype).build().toByteArray());
+				var msg:cs_friend_profile = new cs_friend_profile();
+				msg.id = id ;
+				msg.idtype = idtype ;
+				var msgBy:ByteArray = new ByteArray();
+				msgBy.endian = Endian.LITTLE_ENDIAN ;
+				msg.writeTo( msgBy );
+				NetManager.sendProtobuf(Global.socketHall,"cs_friend_profile", msgBy );
 			}
 			catch( e:Error)
 			{
@@ -154,7 +162,13 @@ package game.view.window.user
 				{
 					try
 					{
-						Global.socketHall.sendProtobuf("cs_update_profile", cs_update_profile.newBuilder().setSex(Global.userDataVO.sex).setPortrait(Global.userDataVO.portrait).build().toByteArray());
+						var msg:cs_update_profile = new cs_update_profile();
+						msg.sex = Global.userDataVO.sex ;
+						msg.portrait = Global.userDataVO.portrait ;
+						var msgBy:ByteArray = new ByteArray();
+						msgBy.endian = Endian.LITTLE_ENDIAN ;
+						msg.writeTo( msgBy );
+						NetManager.sendProtobuf(Global.socketHall,"cs_update_profile", msgBy );
 						if(SceneManager.getInstance().getCurSceneType() == SceneType.SCENE_HALL)
 							(SceneManager.getInstance().getCurScene() as HallScene).updateUserInfo();
 						CommonUtil.showPopupWindow(false, "保存玩家信息成功", null);

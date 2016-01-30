@@ -3,6 +3,7 @@ package game.view.scene
 	import com.thinkido.framework.common.observer.Notification;
 	
 	import flash.utils.ByteArray;
+	import flash.utils.Endian;
 	
 	import game.constant.SceneType;
 	import game.constant.WindowType;
@@ -17,9 +18,11 @@ package game.view.scene
 	import game.util.CommonUtil;
 	import game.view.inline.NoticeBoard;
 	
-	import network.YiuNetworkHandlerMgr;
 	import network.YiuNetworkListener;
 	
+	import protos.hallserver.cs_enter_place;
+	import protos.hallserver.cs_friend_profile;
+	import protos.hallserver.cs_update_places;
 	import protos.hallserver.sc_broadcast_msg;
 	import protos.hallserver.sc_enter_place;
 	import protos.hallserver.sc_enter_place_failed;
@@ -93,7 +96,12 @@ package game.view.scene
 			}
 			try
 			{
-				Global.socketHall.sendProtobuf("cs_update_places", cs_update_places.newBuilder().setNoop(0).build().toByteArray());
+				var msg:cs_update_places = new cs_update_places();
+				msg.noop = 0 ;
+				var msgBy:ByteArray = new ByteArray();
+				msgBy.endian = Endian.LITTLE_ENDIAN ;
+				hb.writeTo( msgBy );
+				NetManager.sendProtobuf(NetManagerGlobal.socketHall,"cs_update_places", msgBy );
 			}
 			catch( ex:Error)
 			{
@@ -264,7 +272,14 @@ package game.view.scene
 					updateUserInfo();
 					var id:String = AccountManager.getInstance().getId();
 					var type:String = AccountManager.getInstance().getType();
-					Global.socketHall.sendProtobuf("cs_friend_profile", cs_friend_profile.newBuilder().setId(id).setIdtype(type).setWhy("myprofile").build().toByteArray());
+					var cfp:cs_friend_profile = new cs_friend_profile();
+					cfp.id = id ;
+					cfp.idtype = type ;
+					cfp.why = "myprofile" ;
+					var msgBy:ByteArray = new ByteArray();
+					msgBy.endian = Endian.LITTLE_ENDIAN ;
+					cfp.writeTo( msgBy );
+					NetManager.sendProtobuf(NetManagerGlobal.socketHall,"cs_friend_profile", msgBy );
 					return false;
 				}
 				else if(name == "sc_update_places")
@@ -339,7 +354,13 @@ package game.view.scene
 			}
 			try
 			{
-				Global.socketHall.sendProtobuf("cs_enter_place", cs_enter_place.newBuilder().setPlace_id(placeId).setUsr_key("").build().toByteArray());
+				var msg:cs_enter_place = new cs_enter_place();
+				msg.placeId = placeId ;
+				msg.usrKey = "" ;
+				var msgBy:ByteArray = new ByteArray();
+				msgBy.endian = Endian.LITTLE_ENDIAN ;
+				msg.writeTo( msgBy );
+				NetManager.sendProtobuf(NetManagerGlobal.socketHall,"cs_enter_place", msgBy);
 			}
 			catch( e:Error)
 			{

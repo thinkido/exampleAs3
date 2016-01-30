@@ -3,15 +3,17 @@ package game.view.window
 import com.thinkido.framework.common.observer.Notification;
 
 import flash.utils.ByteArray;
+import flash.utils.Endian;
 
 import game.control.AccountManager;
 import game.control.WindowManager;
 import game.model.Global;
 import game.util.CommonUtil;
 
-import network.YiuNetworkHandlerMgr;
 import network.YiuNetworkListener;
 
+import protos.hallserver.cs_get_award_collect_box;
+import protos.hallserver.cs_get_collect_box;
 import protos.hallserver.sc_get_award_collect_box;
 import protos.hallserver.sc_get_collect_box;
 
@@ -88,7 +90,12 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 		{
 			try
 			{
-				Global.socketHall.sendProtobuf("cs_get_award_collect_box", cs_get_award_collect_box.newBuilder().setId(0).build().toByteArray());
+				var msg:cs_get_award_collect_box = new cs_get_award_collect_box();
+				msg.id = 0 ;
+				var msgBy:ByteArray = new ByteArray();
+				msgBy.endian = Endian.LITTLE_ENDIAN ;
+				msg.writeTo( msgBy );
+				NetManager.sendProtobuf(Global.socketHall,"cs_get_award_collect_box", msgBy);
 			}
 			catch( e:Error)
 			{
@@ -150,7 +157,12 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 	{
 		try
 		{
-			Global.socketHall.sendProtobuf("cs_get_collect_box", cs_get_collect_box.newBuilder().setId(0).build().toByteArray());
+			var msg:cs_get_collect_box = new cs_get_collect_box();
+			msg.id = 0 ;
+			var msgBy:ByteArray = new ByteArray();
+			msgBy.endian = Endian.LITTLE_ENDIAN ;
+			msg.writeTo( msgBy );
+			NetManager.sendProtobuf(Global.socketHall,"cs_get_collect_box", msgBy );
 		}
 		catch( ex:Error)
 		{

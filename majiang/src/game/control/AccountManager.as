@@ -109,7 +109,6 @@ package game.control
 				_heartbeatBytes = new ByteArray();
 				_heartbeatBytes.endian = Endian.LITTLE_ENDIAN ;
 				hb.writeTo( _heartbeatBytes );
-//				_heartbeatBytes = heartbeat.newBuilder().setNoop(0).build().toByteArray() ;
 			}
 			catch(e:*)
 			{
@@ -222,7 +221,7 @@ package game.control
 			
 		private function runReceiveMsgs(event:Event) : void
 		{
-			var prot:NProtocol = null;
+			var prot:ByteArray = null;
 			var now:int = getTimer();
 			inSleepMode = now - lastRunTime > sleepModeRenderTime;
 			lastRunTime = now; 
@@ -264,12 +263,12 @@ package game.control
 			return;
 		}
 		
-		private function receiveMsg(np:NProtocol) : void
+		private function receiveMsg(np:ByteArray) : void
 		{			
 			var noti:Notification ;
 			
 			var pro:protocol = new protocol();
-			var pbObject:protocol = pro.mergeFrom( ByteArray(np.body) );
+			var pbObject:protocol = pro.mergeFrom( np );
 			var node:ProtocolNode = ProtocolList.getNode(pbObject.getId());
 			
 			if (node == null) return;
