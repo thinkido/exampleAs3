@@ -1,6 +1,6 @@
 package jing.game.net.handler
 {
-import protocol.sc_game_hide_actions;
+import protocol.gameserver.sc_game_hide_actions;
 
 
 public class SCGameHideActions

@@ -1,10 +1,12 @@
 package jing.game.net.handler
 {
+import game.view.scene.gamescene.windows.PlayerActionWindow;
+
 import jing.consts.PlayerAction;
 import jing.game.net.GameRequest;
-import game.view.scene.gamescene.windows.PlayerActionWindow;
-import protocol.sc_game_show_actions;
-import protocol.scgame_show_actions;
+
+import protocol.gameserver.sc_game_show_actions;
+import protocol.gameserver.scgame_show_actions;
 
 public class SCShowActions
 {
@@ -14,14 +16,14 @@ public class SCShowActions
 		trace(pb.toString());
 		
 		
-		if(pb.getShow_actions().size() == 1)
+		if(pb.showActions.length == 1)
 		{
-			var action:scgame_show_actions= scgame_show_actions(pb.getShow_actions().elementAt(0));
-			var id:int= action.getId();
+			var action:scgame_show_actions= pb.showActions[0] as scgame_show_actions;
+			var id:int= action.id;
 			var typeOrId:int= 0;
 			if(id == PlayerAction.MING_GANG || id == PlayerAction.AN_GANG)
 			{
-				typeOrId = (Integer(action.getTile_seq().elementAt(0))).intValue();
+				typeOrId = int(action.tileSeq[0]);
 			}
 			GameRequest.ins().gameAction(id, typeOrId);
 			return;

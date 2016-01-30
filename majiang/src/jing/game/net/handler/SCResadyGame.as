@@ -1,6 +1,7 @@
 package jing.game.net.handler
 {
 import game.view.scene.gamescene.GameScene;
+
 import jing.consts.GameDir;
 
 public class SCResadyGame

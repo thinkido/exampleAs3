@@ -2,24 +2,26 @@ package jing.game.net.handler
 {
 import game.view.scene.gamescene.GameScene;
 import game.view.scene.gamescene.windows.PlayerActionWindow;
+
 import jing.consts.CardPlace;
 import jing.consts.EffectType;
 import jing.consts.GameDir;
 import jing.game.view.Player;
 import jing.pai.utils.CardUtil;
-import protocol.sc_game_turn;
+
+import protocol.gameserver.sc_game_turn;
 
 public class SCGameTurn
 {
 
 	public function SCGameTurn(pb:sc_game_turn)
 	{
-		var player:Player= GameScene.cur.getPlayerBySeat(pb.getSeat_index());
-		if(pb.getMo())
+		var player:Player= GameScene.cur.getPlayerBySeat(pb.seatIndex);
+		if(pb.mo)
 		{
-			for(var i:int= 0; i < pb.getMo_tiles().size(); i++)
+			for(var i:int= 0; i < pb.moTiles.length; i++)
 			{
-				var card:int= (Integer(pb.getMo_tiles().elementAt(i))).intValue();
+				var card:int= int(pb.moTiles[i]);
 				if(CardUtil.isHua(card))
 				{
 					// ¶ÔӦÃ򵽻¨ÅƵĴ¦Àí
@@ -37,9 +39,9 @@ public class SCGameTurn
 		player.setInTurn(true);
 
 		// ÏÔʾ²Ù×÷Ãæ°å
-		PlayerActionWindow.show(pb.getShow_actions());
+		PlayerActionWindow.show(pb.showActions);
 
-		if(pb.getMo())
+		if(pb.mo)
 		{
 			// ÉèÖÃѡÖеÄÅÆ
 			player.setSelectCard(player.cardCount(CardPlace.IN_HAND));
@@ -53,7 +55,7 @@ public class SCGameTurn
 		GameScene.cur.info.setTurnDir(GameDir.DOWN);
 
 		// ˢÐµ¹¼Æʱ
-		GameScene.cur.info.setCountdown(pb.getTimeout());
+		GameScene.cur.info.setCountdown(pb.timeout);
 	}
 
 }
