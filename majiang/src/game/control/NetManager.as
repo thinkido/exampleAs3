@@ -28,12 +28,12 @@ package game.control
 			var proto:protocol = new protocol();
 			proto.id = node.mId ; 
 			proto.content = data ;
-			var ipro:TProtocol = new TProtocol();
+//			var ipro:TProtocol = new TProtocol();
 			var msg:ByteArray = new ByteArray();
 			msg.endian = Endian.LITTLE_ENDIAN ;
 			proto.writeTo(msg) ;
-			ipro.body = msg;
-			socket.send( ipro ) ;
+//			ipro.body = msg;
+			socket.send( msg ) ;
 		}
 	}
 }

@@ -1,5 +1,9 @@
 package game.view.window
 {
+	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
+	import com.thinkido.framework.manager.keyBoard.KeyCode;
+	import com.thinkido.framework.manager.keyBoard.KeyEvent;
+	
 	import framework.consts.KeyType;
 	
 	import game.control.WindowManager;
@@ -7,7 +11,7 @@ package game.view.window
 	import game.util.CommonUtil;
 	
 	import starling.display.Button;
-	import starling.events.EventDispatcher;
+	import starling.text.TextField;
 	
 	import ui.UIObject;
 	import ui.UIWindow;
@@ -25,6 +29,8 @@ package game.view.window
 				_btnGiftList[i] =  getChildByName("btn_gift_" + (i + 1)) as Button;
 			}
 			_btnGet =  getChildByName("btn_get_gift") as Button;
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
 		}
 		
 		override public function onEnter():void
@@ -54,9 +60,25 @@ package game.view.window
 			
 		}
 		
-		override protected function onKeyPressed( type:int, dispatcher:EventDispatcher, data:Object):void
+		private function onKeyUpHandler(event:KeyEvent):void
 		{
-				var keyCode:int = int( data);
+			if(event.keyEvent.target is TextField )
+			{				
+				return;
+			}			
+			var keycode:int = event.keyEvent.keyCode;
+			switch(keycode)
+			{
+				case KeyCode.Num1:
+					
+					break;
+			}
+		}
+		
+		private function onKeyDownHandler(event:KeyEvent):void
+		{
+			var keyCode:int = event.keyEvent.keyCode;
+			
 				switch (keyCode)
 				{
 					case KeyType.CONFIRM:

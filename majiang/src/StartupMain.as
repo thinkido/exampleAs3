@@ -1,5 +1,8 @@
 package     
 {   
+	import com.thinkido.framework.common.Global;
+	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
+	
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
@@ -28,6 +31,8 @@ package
 			
 			// start it!   
 			mStarling.start();   
+			Global.stage = this.stage ;
+			KeyBoardManager.instance.start();
 		}   
 	}   
 } 

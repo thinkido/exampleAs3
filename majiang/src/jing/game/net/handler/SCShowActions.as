@@ -5,8 +5,8 @@ import game.view.scene.gamescene.windows.PlayerActionWindow;
 import jing.consts.PlayerAction;
 import jing.game.net.GameRequest;
 
-import protocol.gameserver.sc_game_show_actions;
-import protocol.gameserver.scgame_show_actions;
+import protos.gameserver.sc_game_show_actions;
+import protos.gameserver.scgame_show_actions;
 
 public class SCShowActions
 {
@@ -30,7 +30,7 @@ public class SCShowActions
 		}
 		
 		// ÏÔʾ²Ù×÷Ãæ°å
-		PlayerActionWindow.show(pb.getShow_actions());
+		PlayerActionWindow.show(pb.showActions);
 	}
 
 }

@@ -1,20 +1,21 @@
 package game.view.window
 {
 	
+	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
+	import com.thinkido.framework.manager.keyBoard.KeyCode;
+	import com.thinkido.framework.manager.keyBoard.KeyEvent;
+	
 	import game.control.WindowManager;
 	import game.model.Global;
 	import game.model.callback.ICallbackB;
 	import game.model.vo.PopupVO;
 	
 	import starling.display.Button;
-	import starling.events.EventDispatcher;
 	import starling.text.TextField;
 	import starling.textures.Texture;
 	
-	import ui.UIButton;
 	import ui.UIImageView;
 	import ui.UIObject;
-	import ui.UIText;
 	import ui.UIWindow;
 	
 	public class PopupWindow extends UIWindow
@@ -106,6 +107,8 @@ package game.view.window
 			_midBtnOkX = Global.SCREEN_WIDTH / 2 - 43;
 			_btnOK.setNeighbors(null, null, _btnCancel, _btnCancel);
 			_btnCancel.setNeighbors(null, null, _btnOK, _btnOK);
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
 		}
 		
 		override public function onConfirm(target:UIObject):void {
@@ -114,12 +117,30 @@ package game.view.window
 			WindowManager.getInstance().closeWindow(this);
 		}
 		
-		override public function onKeyPressed( type:int, dispatcher:EventDispatcher, data:Object):void
+		private function onKeyUpHandler(event:KeyEvent):void
 		{
+			if(event.keyEvent.target is TextField )
+			{				
+				return;
+			}			
+			var keycode:int = event.keyEvent.keyCode;
+			switch(keycode)
+			{
+				case KeyCode.Num1:
+					
+					break;
+			}
+		}
+		
+		private function onKeyDownHandler(event:KeyEvent):void
+		{
+			var keyCode:int = event.keyEvent.keyCode;
+			
 			if (_btnCancel.visible) {
-				super.onKeyPressed(type, dispatcher, data);
+//				super.onKeyPressed(type, dispatcher, data);
 			} else {
 				onConfirm(_btnOK);
+				event.stopImmediatePropagation() ;
 			}
 		}
 		

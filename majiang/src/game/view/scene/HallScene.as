@@ -8,6 +8,7 @@ package game.view.scene
 	import game.constant.SceneType;
 	import game.constant.WindowType;
 	import game.control.AccountManager;
+	import game.control.NetManager;
 	import game.control.PlaceDataManager;
 	import game.control.SceneManager;
 	import game.control.WindowManager;
@@ -100,8 +101,8 @@ package game.view.scene
 				msg.noop = 0 ;
 				var msgBy:ByteArray = new ByteArray();
 				msgBy.endian = Endian.LITTLE_ENDIAN ;
-				hb.writeTo( msgBy );
-				NetManager.sendProtobuf(NetManagerGlobal.socketHall,"cs_update_places", msgBy );
+				msg.writeTo( msgBy );
+				NetManager.sendProtobuf(Global.socketHall,"cs_update_places", msgBy );
 			}
 			catch( ex:Error)
 			{
@@ -252,23 +253,23 @@ package game.view.scene
 				}
 				else if(name == "sc_hall_debug")
 				{
-					var msg:sc_hall_debug = new sc_hall_debug() ;
-					msg.mergeFrom(content) ;
-					trace("debug:" + msg.getInfo());
+					var msg1:sc_hall_debug = new sc_hall_debug() ;
+					msg1.mergeFrom(content) ;
+					trace("debug:" + msg1.getInfo());
 					return false;
 				}
 				else if(name == "sc_enter_place")
 				{
-					var msg:sc_enter_place = new sc_enter_place() ;
-					msg.mergeFrom(content) ;
-					SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg.getHost(), msg.getPort()), false));
+					var msg2:sc_enter_place = new sc_enter_place() ;
+					msg2.mergeFrom(content) ;
+					SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg2.host, msg2.port), false));
 					return false;
 				}
 				else if(name == "sc_get_item")
 				{
-					 var msg:sc_get_item = new sc_get_item() ;
-					msg.mergeFrom(content) ;
-					Global.userDataVO.gold += msg.getGold();
+					 var msg3:sc_get_item = new sc_get_item() ;
+					msg3.mergeFrom(content) ;
+					Global.userDataVO.gold += msg3.gold;
 					updateUserInfo();
 					var id:String = AccountManager.getInstance().getId();
 					var type:String = AccountManager.getInstance().getType();
@@ -279,7 +280,7 @@ package game.view.scene
 					var msgBy:ByteArray = new ByteArray();
 					msgBy.endian = Endian.LITTLE_ENDIAN ;
 					cfp.writeTo( msgBy );
-					NetManager.sendProtobuf(NetManagerGlobal.socketHall,"cs_friend_profile", msgBy );
+					NetManager.sendProtobuf(Global.socketHall,"cs_friend_profile", msgBy );
 					return false;
 				}
 				else if(name == "sc_update_places")
@@ -288,7 +289,7 @@ package game.view.scene
 					{
 						var pb:sc_update_places = new sc_update_places() ;
 						pb.mergeFrom(content) ;
-						PlaceDataManager.getInstance().init(pb.getPlace_infos());
+						PlaceDataManager.getInstance().init(pb.placeInfos );
 					}
 					catch( e:Error)
 					{
@@ -298,8 +299,9 @@ package game.view.scene
 				}
 				else if(name == "sc_enter_place_failed")
 				{
-					var msg:sc_enter_place_failed = sc_enter_place_failed.parseFrom(content);
-					trace("进入游戏失败，错误代码:" + msg.getReason(), "LogManager.LEVEL_WARNING");
+					var msg4:sc_enter_place_failed = new sc_enter_place_failed()
+					msg4.mergeFrom(content) ;
+					trace("进入游戏失败，错误代码:" + msg4.reason , "LogManager.LEVEL_WARNING");
 					return false;
 				}
 				return true;
@@ -360,7 +362,7 @@ package game.view.scene
 				var msgBy:ByteArray = new ByteArray();
 				msgBy.endian = Endian.LITTLE_ENDIAN ;
 				msg.writeTo( msgBy );
-				NetManager.sendProtobuf(NetManagerGlobal.socketHall,"cs_enter_place", msgBy);
+				NetManager.sendProtobuf(Global.socketHall,"cs_enter_place", msgBy);
 			}
 			catch( e:Error)
 			{

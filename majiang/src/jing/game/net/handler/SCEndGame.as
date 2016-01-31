@@ -8,18 +8,17 @@ import game.constant.WindowType;
 import game.control.WindowManager;
 import game.view.scene.gamescene.GameScene;
 
-import jing.GDC;
 import jing.consts.CombinType;
 import jing.game.view.Player;
 import jing.game.vo.GameEndTypeVO;
 import jing.game.vo.GameEndVO;
 import jing.pai.model.CardVector;
 
-import protocol.gameserver.all_seq_info;
-import protocol.gameserver.sc_end_game;
-import protocol.gameserver.sccomplex_tile;
-import protocol.gameserver.st_hu_desc;
-import protocol.gameserver.st_money_transfer;
+import protos.gameserver.all_seq_info;
+import protos.gameserver.sc_end_game;
+import protos.gameserver.sccomplex_tile;
+import protos.gameserver.st_hu_desc;
+import protos.gameserver.st_money_transfer;
 
 public class SCEndGame
 {
@@ -42,7 +41,7 @@ public class SCEndGame
 
 		for(var index:int= 0; index < pb.seqInfos.length; ++index)
 		{
-			var asi:all_seq_info= (pb.getSeq_infos()[index]) as all_seq_info;
+			var asi:all_seq_info= (pb.seqInfos[index]) as all_seq_info;
 			syncEndCards(asi);
 			if(false == pb.getLiuju())
 			{

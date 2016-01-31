@@ -215,7 +215,7 @@ package game.view.window.user
 				{
 					var msg:sc_friend_profile = new sc_friend_profile() ;
 					msg.mergeFrom(content) ;
-					var data:t_friend_data = msg.getProfile();
+					var data:t_friend_data = msg.profile ;
 					Global.userDataVO.update(data);
 					_bfTotalGame.setText("" + Global.userDataVO.getTotalNum());
 					// _bfContinuousWin

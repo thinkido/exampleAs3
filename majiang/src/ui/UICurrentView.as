@@ -1,14 +1,20 @@
 package ui
 {	
+	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
+	import com.thinkido.framework.manager.keyBoard.KeyCode;
+	import com.thinkido.framework.manager.keyBoard.KeyEvent;
+	
 	import framework.consts.EventType;
 	import framework.consts.KeyType;
 	import framework.events.EventDispatcher;
 	import framework.events.IEventListener;
 	import framework.views.Stage;
 	
+	import org.osflash.thunderbolt.Logger;
+	
 	import starling.text.TextField;
 	
-	public class UICurrentView extends UIContainer implements IEventListener
+	public class UICurrentView extends UIContainer
 	{
 	
 		public static const TEXT_INPUT_MAX_LENGTH:int = 999;
@@ -34,8 +40,11 @@ package ui
 			var data:Object = getJson(confName);
 			initWithJsonObject(data);
 			initUI();
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
+			
 		}
-	
+			
 		public function updateData( args:Object):void
 		{
 			_args = args;
@@ -57,21 +66,29 @@ package ui
 			var tf:TextField = _selected as TextField;
 			var text:String = tf.text;
 			tf.text = text.substring(0, text.length - 1);
-		}
-	
-		public function onReciveEvent(type:int, dispatcher:EventDispatcher, data:Object):void
+		}	
+				
+		private function onKeyUpHandler(event:KeyEvent):void
 		{
-			if(type == EventType.EVENT_KEY_PRESSED)
+			if(event.keyEvent.target is TextField )
+			{				
+				return;
+			}			
+			var keycode:int = event.keyEvent.keyCode;
+			switch(keycode)
 			{
-				onKeyPressed(type, dispatcher, data);
+				case KeyCode.Num1:
+					
+					break;
 			}
 		}
-	
-		public function onKeyPressed(type:int,  dispatcher:EventDispatcher,  data:Object):void
+		
+		private function onKeyDownHandler(event:KeyEvent):void
 		{
+			var keyCode:int = event.keyEvent.keyCode;
+			
 			if(_selected != null)
-			{
-				var keyCode:int = int(data);
+			{				
 				if(_isInput)
 				{
 					var tf:TextField = _selected as TextField;
@@ -81,7 +98,6 @@ package ui
 						case KeyType.UP:
 						case KeyType.DOWN:
 							stopInput();
-							onReciveEvent(type, dispatcher, data);
 							break;
 						case KeyType.LEFT:
 							var strlen:int = text.length;

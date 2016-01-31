@@ -5,10 +5,10 @@ import game.view.scene.gamescene.GameScene;
 import jing.game.view.Player;
 import jing.game.vo.CombinVO;
 
-import protocol.gameserver.sc_continue_game;
-import protocol.gameserver.sccomplex_tile;
-import protocol.gameserver.sccontinue_seat_info;
-import protocol.gameserver.stplayer_info;
+import protos.gameserver.sc_continue_game;
+import protos.gameserver.sccomplex_tile;
+import protos.gameserver.sccontinue_seat_info;
+import protos.gameserver.stplayer_info;
 
 /**
  * ¼ÌÐøÓÎϷ
@@ -47,7 +47,7 @@ public class SCContinueGame
 				var vecLack:Array= info.handSeq.lack;
 				var vecZi:Array= info.handSeq.zi;
 
-				inHandCards = new int[vecWan.length + vecTong.length + vecTiao.length + vecLack.length + vecZi.length];
+				inHandCards = [] ;
 				var cardIndex:int= 0;
 				for(var index:int= 0; index < vecWan.length; ++index)
 				{
@@ -77,7 +77,7 @@ public class SCContinueGame
 			}
 			else
 			{
-				inHandCards = new int[info.handSeqCount];
+				inHandCards = [] ;
 
 				if(info.moCount != 0)
 				{

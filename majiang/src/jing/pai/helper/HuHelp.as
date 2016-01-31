@@ -2,10 +2,8 @@ package jing.pai.helper
 {
 import jing.pai.consts.CardCode;
 import jing.pai.consts.GBHuType;
-import jing.pai.model.CardKe;
 import jing.pai.model.CardVector;
 import jing.pai.utils.GuoBiaoCardsParser;
-import jing.pai.utils.GuoBiaoCardsParser.GameHu;
 import jing.pai.vo.HuVO;
 
 /**
@@ -22,10 +20,10 @@ public class HuHelp
 	}
 
 	public function getHu(inHands:CardVector, onTables:Array, huCard:int):HuVO{
-		int pai[] = new int[48];
+		var pai:Array = [] ;
 		
 		for (var i:int= 0; i < inHands.count(); i++) {
-			pai[inHands.getAt(i)] += 1;
+			pai[inHands[i]] += 1;
 		}
 		pai[huCard] += 1;
 		return getHu(pai, onTables.length, onTables, 0, 0);

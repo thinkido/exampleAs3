@@ -18,6 +18,7 @@ package game.view.window.rank
 	
 	import protos.hallserver.cs_rank_list;
 	import protos.hallserver.sc_rank_list;
+	import protos.hallserver.t_rank_data;
 	
 	import starling.display.Button;
 	
@@ -175,7 +176,7 @@ package game.view.window.rank
 				{
 					var msg:sc_rank_list = new sc_rank_list() ;
 					msg.mergeFrom(content) ;
-					var datalist:Array = msg.getCoinData();
+					var datalist:Array = msg.coinData ;
 					var len:int = datalist.length;
 					var goldData:Vector.<RankItemVO> = new Vector.<RankItemVO>;
 					for(var i:int = 0; i < len; i++)
@@ -184,7 +185,7 @@ package game.view.window.rank
 						goldData[i].value = CommonUtil.formatGold(goldData[i].value);
 					}
 					_mediatorList[0].initData(goldData);
-					datalist = msg.getExpData();
+					datalist = msg.expData ;
 					len = datalist.length;
 					var levelData:Vector.<RankItemVO> = new Vector.<RankItemVO>;
 					for(var i:int = 0; i < len; i++)
@@ -192,7 +193,7 @@ package game.view.window.rank
 						levelData[i] = new RankItemVO(datalist[i] as t_rank_data);
 					}
 					_mediatorList[1].initData(levelData);
-					datalist = msg.getWinData();
+					datalist = msg.winData ;
 					len = datalist.length;
 					var winData:Vector.<RankItemVO> = new Vector.<RankItemVO>;
 					for(var i:int = 0; i < len; i++)
@@ -200,7 +201,7 @@ package game.view.window.rank
 						winData[i] = new RankItemVO(datalist[i] as t_rank_data);
 					}
 					_mediatorList[2].initData(winData);
-					_myRankList[0] = 0;
+					_myRankList[0] = 0 ;
 					_myRankList[1] = 0;
 					_myRankList[2] = 0;
 	//				_myRankList[0] = msg.getMyCoin();
