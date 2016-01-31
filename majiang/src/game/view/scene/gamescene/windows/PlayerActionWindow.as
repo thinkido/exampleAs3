@@ -1,10 +1,20 @@
 package game.view.scene.gamescene.windows
 {
+	import framework.resources.Res;
+	
+	import game.constant.WindowType;
 	import game.control.WindowManager;
+	import game.view.scene.gamescene.GameScene;
 	import game.view.scene.gamescene.elements.ChiPreviewUI;
+	
+	import jing.consts.PlayerAction;
+	import jing.game.net.GameRequest;
+	
+	import protos.gameserver.scgame_show_actions;
 	
 	import starling.display.Button;
 	
+	import ui.UIButton;
 	import ui.UIObject;
 	import ui.UIWindow;
 	
@@ -53,7 +63,7 @@ package game.view.scene.gamescene.windows
 			{
 				var act:scgame_show_actions = actions[index] as scgame_show_actions;
 				var btn:Button = null;
-				if(act.getId() == PlayerAction.AN_GANG || act.getId() == PlayerAction.MING_GANG)
+				if(act.id == PlayerAction.AN_GANG || act.id == PlayerAction.MING_GANG)
 				{
 					btn = createBtnGang();
 					if(_btns.length > 3)
@@ -66,7 +76,7 @@ package game.view.scene.gamescene.windows
 					}
 					_btn2Act[btn] = act;
 				}
-				else if(act.getId() == PlayerAction.PENG)
+				else if(act.id == PlayerAction.PENG)
 				{
 					btn = createBtnPeng();
 					if(_btns.size() > 2)
@@ -79,7 +89,7 @@ package game.view.scene.gamescene.windows
 					}
 					_btn2Act[btn] = act;
 				}
-				else if(act.getId() == PlayerAction.HU)
+				else if(act.id == PlayerAction.HU)
 				{
 					btn = createBtnHu();
 					if(_btns.size() > 4)
@@ -92,16 +102,16 @@ package game.view.scene.gamescene.windows
 					}
 					_btn2Act[btn] = act;
 				}
-				else if(act.getId() == PlayerAction.GUO)
+				else if(act.id == PlayerAction.GUO)
 				{
 					btn = createBtnGuo();
 					_btns.insertElementAt(btn, 0);
 					_btn2Act[btn] = act;
 				}
-				else if(act.getId() == PlayerAction.CHI_LEFT || act.getId() == PlayerAction.CHI_MIDDLE || act.getId() == PlayerAction.CHI_RIGHT)
+				else if(act.id == PlayerAction.CHI_LEFT || act.id == PlayerAction.CHI_MIDDLE || act.id == PlayerAction.CHI_RIGHT)
 				{
-					var card:int = int(act.getTile_seq().elementAt(0));
-					btn = createBtnChi(act.getId(), card);
+					var card:int = int(act.tileSeq[0]);
+					btn = createBtnChi(act.id, card);
 					_btns.addElement(btn);
 					_btn2Act[btn] = act;
 				}
@@ -132,7 +142,7 @@ package game.view.scene.gamescene.windows
 				btn.setNeighbors(null, null, next, pre);
 				
 				var act:scgame_show_actions = _btn2Act[btn] as scgame_show_actions;
-				if(act.getId() == PlayerAction.CHI_LEFT || act.getId() == PlayerAction.CHI_MIDDLE || act.getId() == PlayerAction.CHI_RIGHT)
+				if(act.id == PlayerAction.CHI_LEFT || act.id == PlayerAction.CHI_MIDDLE || act.id == PlayerAction.CHI_RIGHT)
 				{
 					var y:int = 170;
 					var gap:int = 60;
@@ -141,7 +151,7 @@ package game.view.scene.gamescene.windows
 					btnChiX -= (gap + btn.width);
 					
 					var card:int = int(act.getTile_seq().elementAt(0));
-					var cp:ChiPreviewUI = new ChiPreviewUI(card, act.getId());
+					var cp:ChiPreviewUI = new ChiPreviewUI(card, act.id);
 //					cp.setPosition(btn.getX() + 75, btn.getY() + 35);
 					cp.x = btn.x + 75;
 					cp.y = btn.y + 35;
@@ -205,12 +215,12 @@ package game.view.scene.gamescene.windows
 		override public function onConfirm( target:UIObject):void
 		{
 			var action:scgame_show_actions = _btn2Act[target] as scgame_show_actions;
-			var id:int = action.getId();
+			var id:int = action.id;
 			trace("玩家选择了操作：" + id);
 			var typeOrId:int = 0;
 			if(id == PlayerAction.MING_GANG || id == PlayerAction.AN_GANG)
 			{
-				typeOrId = ((Integer)action.getTile_seq().elementAt(0)).intValue();
+				typeOrId = int(action.tileSeq[0]) ;
 			}
 			GameRequest.ins().gameAction(id, typeOrId);
 			WindowManager.getInstance().closeWindow(this);

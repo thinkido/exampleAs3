@@ -34,7 +34,6 @@ package game.control
 	
 	import org.osmf.logging.Log;
 	
-	import protos.common.heartbeat;
 	import protos.common.protocol;
 	import protos.common.sc_protocol_pack;
 	import protos.gameserver.heartbeat;
@@ -109,7 +108,6 @@ package game.control
 				_heartbeatBytes = new ByteArray();
 				_heartbeatBytes.endian = Endian.LITTLE_ENDIAN ;
 				hb.writeTo( _heartbeatBytes );
-//				_heartbeatBytes = heartbeat.newBuilder().setNoop(0).build().toByteArray() ;
 			}
 			catch(e:*)
 			{
@@ -222,7 +220,7 @@ package game.control
 			
 		private function runReceiveMsgs(event:Event) : void
 		{
-			var prot:NProtocol = null;
+			var prot:ByteArray = null;
 			var now:int = getTimer();
 			inSleepMode = now - lastRunTime > sleepModeRenderTime;
 			lastRunTime = now; 
@@ -264,13 +262,13 @@ package game.control
 			return;
 		}
 		
-		private function receiveMsg(np:NProtocol) : void
+		private function receiveMsg(np:ByteArray) : void
 		{			
 			var noti:Notification ;
 			
 			var pro:protocol = new protocol();
-			var pbObject:protocol = pro.mergeFrom( ByteArray(np.body) );
-			var node:ProtocolNode = ProtocolList.getNode(pbObject.getId());
+			var pbObject:protocol = pro.mergeFrom( np );
+			var node:ProtocolNode = ProtocolList.getNode(pbObject.id );
 			
 			if (node == null) return;
 			
@@ -282,10 +280,10 @@ package game.control
 				for (var index:int = 0; index < vecProtocol.length; ++index)
 				{
 					var pbPackedObject:protocol = vecProtocol[index] as protocol; 
-					var packedNode:ProtocolNode = ProtocolList.getNode(pbPackedObject.getId());					   
+					var packedNode:ProtocolNode = ProtocolList.getNode(pbPackedObject.id );					   
 					if (showLog)
 					{
-						trace( "Got Protobuf: " + pbPackedObject.getId() );
+						trace( "Got Protobuf: " + pbPackedObject.id );
 					}
 //					YiuNetworkHandlerMgr.processPacket(packedNode.mName, pbPackedObject.getContent());					
 					noti = new Notification( node.mName , pbPackedObject.content );
@@ -296,7 +294,7 @@ package game.control
 			{
 				if (showLog) 
 				{
-					trace( "Got Protobuf: " + pbObject.getId() );
+					trace( "Got Protobuf: " + pbObject.id );
 				}
 //				YiuNetworkHandlerMgr.processPacket(node.mName, pbObject.getContent());
 				noti = new Notification( node.mName , pbPackedObject.content );
@@ -351,7 +349,7 @@ package game.control
 				var msg:sc_enter_hall = new sc_enter_hall() ;
 				msg.mergeFrom(content) ;
 				Global.userDataVO = new UserDataVO(msg);
-				PlaceDataManager.getInstance().init(msg.getPlace_infos());
+				PlaceDataManager.getInstance().init(msg.placeInfos);
 				SceneManager.getInstance().switchScene(SceneType.SCENE_HALL);
 				return false;
 			}
@@ -360,7 +358,7 @@ package game.control
 				YiuNetworkHandlerMgr.unSubscribe(this);
 				var msg1:sc_force_continue_game = new sc_force_continue_game() ;
 				msg1.mergeFrom(content) ;
-				SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg1.getHost(), msg1.getPort()), true));
+				SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg1.host, msg1.port), true));
 				return false;
 			}
 			

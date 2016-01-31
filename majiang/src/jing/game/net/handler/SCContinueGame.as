@@ -1,15 +1,14 @@
 package jing.game.net.handler
 {
-import java.util.Enumeration;
-import java.util.Vector;
+import game.view.scene.gamescene.GameScene;
 
 import jing.game.view.Player;
 import jing.game.vo.CombinVO;
-import game.view.scene.gamescene.GameScene;
-import protocol.sc_continue_game;
-import protocol.sccomplex_tile;
-import protocol.sccontinue_seat_info;
-import protocol.stplayer_info;
+
+import protos.gameserver.sc_continue_game;
+import protos.gameserver.sccomplex_tile;
+import protos.gameserver.sccontinue_seat_info;
+import protos.gameserver.stplayer_info;
 
 /**
  * ¼ÌÐøÓÎϷ
@@ -23,86 +22,87 @@ public class SCContinueGame
 	{
 		var gs:GameScene= GameScene.cur;
 
-		GameScene.cur.pDown.setSeat(pb.getSeat_index());
-
-		for(var en:Enumeration= pb.getSeat_infoes().elements(); en.hasMoreElements();)
+		GameScene.cur.pDown.setSeat(pb.seatIndex);
+		
+		var len:int = pb.seatInfoes.length;
+		for(var i:int = 0; i < len; i++)
 		{
-			var info:sccontinue_seat_info= sccontinue_seat_info(en.nextElement());
-			var player:Player= gs.getPlayerBySeat(info.getSeat_index());
+			var info:sccontinue_seat_info= pb.seatInfoes[i];
+			var player:Player= gs.getPlayerBySeat(info.seatIndex);
 
-			var seat_info:stplayer_info= stplayer_info(info.getPlayer_info());
-			player.updateInfo(info.getSeat_index(), seat_info.getName(), seat_info.getGold(), seat_info.getPortrait(), seat_info.getSex());
-			player.setLack(info.getLack());
+			var seat_info:stplayer_info= stplayer_info(info.playerInfo);
+			player.updateInfo(info.seatIndex, seat_info.name, seat_info.gold.toNumber(), seat_info.portrait, seat_info.sex);
+			player.setLack(info.lack);
 
-			if(info.getIs_hu())
+			if(info.isHu)
 			{
 				gs.info.setHu(player.dir(), true);
 			}
 			var inHandCards:Array= null;
-			if(info.getSeat_index() == gs.pDown.seat())
+			if(info.seatIndex == gs.pDown.seat())
 			{
-				var vecWan:Vector= info.getHand_seq().getWan();
-				var vecTong:Vector= info.getHand_seq().getTong();
-				var vecTiao:Vector= info.getHand_seq().getTiao();
-				var vecLack:Vector= info.getHand_seq().getLack();
-				var vecZi:Vector= info.getHand_seq().getZi();
+				var vecWan:Array= info.handSeq.wan;
+				var vecTong:Array= info.handSeq.tong;
+				var vecTiao:Array= info.handSeq.tiao;
+				var vecLack:Array= info.handSeq.lack;
+				var vecZi:Array= info.handSeq.zi;
 
-				inHandCards = new int[vecWan.size() + vecTong.size() + vecTiao.size() + vecLack.size() + vecZi.size()];
+				inHandCards = [] ;
 				var cardIndex:int= 0;
-				for(var index:int= 0; index < vecWan.size(); ++index)
+				for(var index:int= 0; index < vecWan.length; ++index)
 				{
-					var card_value:int= (Integer(vecWan.elementAt(index))).intValue();
+					var card_value:int= int(vecWan[index]);
 					inHandCards[cardIndex++] = card_value;
 				}
-				for(var index:int= 0; index < vecTong.size(); ++index)
+				for(var index:int= 0; index < vecTong.length; ++index)
 				{
-					var card_value:int= (Integer(vecTong.elementAt(index))).intValue();
+					var card_value:int= int(vecTong[index]);
 					inHandCards[cardIndex++] = card_value;
 				}
-				for(var index:int= 0; index < vecTiao.size(); ++index)
+				for(var index:int= 0; index < vecTiao.length; ++index)
 				{
-					var card_value:int= (Integer(vecTiao.elementAt(index))).intValue();
+					var card_value:int= int(vecTiao[index]);
 					inHandCards[cardIndex++] = card_value;
 				}
-				for(var index:int= 0; index < vecLack.size(); ++index)
+				for(var index:int= 0; index < vecLack.length; ++index)
 				{
-					var card_value:int= (Integer(vecLack.elementAt(index))).intValue();
+					var card_value:int= int(vecLack[index]);
 					inHandCards[cardIndex++] = card_value;
 				}
-				for(var index:int= 0; index < vecZi.size(); ++index)
+				for(var index:int= 0; index < vecZi.length; ++index)
 				{
-					var card_value:int= (Integer(vecZi.elementAt(index))).intValue();
+					var card_value:int= int(vecZi[index]);
 					inHandCards[cardIndex++] = card_value;
 				}
 			}
 			else
 			{
-				inHandCards = new int[info.getHand_seq_count()];
+				inHandCards = [] ;
 
-				if(info.getMo_count() != 0)
+				if(info.moCount != 0)
 				{
 					player.setNewInHand(-1);
 				}
 			}
 
-			var vecHua:Vector= info.getHand_seq().getHua();
-			for(var index:int= 0; index < vecHua.size(); ++index)
+			var vecHua:Array= info.handSeq.hua;
+			for(var index:int= 0; index < vecHua.length; ++index)
 			{
-				gs.info.addHua(player.dir(), (Integer(vecHua.elementAt(index))).intValue());
+				gs.info.addHua(player.dir(), int(vecHua[index]));
 			}
 
-			var vecComplex:Vector= info.getComplex_seq();
-			var cbs:Array= new CombinVO[vecComplex.size()];
-			for(var index:int= 0; index < vecComplex.size(); index++)
+			var vecComplex:Array= info.complexSeq;
+			var cbs:Array= new CombinVO[vecComplex.length];
+			for(var index:int= 0; index < vecComplex.length; index++)
 			{
-				var tile:sccomplex_tile= sccomplex_tile(vecComplex.elementAt(index));
-				cbs[index] = new CombinVO(tile.getType(), tile.getId());
+				var tile:sccomplex_tile= sccomplex_tile(vecComplex[index]);
+				cbs[index] = new CombinVO(tile.type, tile.id);
 			}
 
-			var onTableCards:Array= new int[info.getChued_seq().size()];
-			for(var index:int= 0; index < info.getChued_seq().size(); index++)
+			var onTableCards:Array= new int[info.chuedSeq.length];
+			for(var index:int= 0; index < info.chuedSeq.length; index++)
 			{
-				var card:int= (Integer(info.getChued_seq().elementAt(index))).intValue();
+				var card:int= int(info.chuedSeq[index]);
 				onTableCards[index] = card;
 			}
 
@@ -115,9 +115,9 @@ public class SCContinueGame
 			GameScene.cur.info.setName(player.dir(), player.name());
 		}
 
-		GameScene.cur.model.updateRoomInfo(pb.getRoomid(), pb.getRoom_base(), pb.getRoom_level());
+		GameScene.cur.model.updateRoomInfo(pb.roomid, pb.roomBase, pb.roomLevel);
 		GameScene.cur.info.setRoomBase(GameScene.cur.model.roomBase());
-		GameScene.cur.info.setRemainTiles(pb.getTiles_remain());
+		GameScene.cur.info.setRemainTiles(pb.tilesRemain);
 	}
 }
 }

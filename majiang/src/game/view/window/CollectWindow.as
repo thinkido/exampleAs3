@@ -3,15 +3,17 @@ package game.view.window
 import com.thinkido.framework.common.observer.Notification;
 
 import flash.utils.ByteArray;
+import flash.utils.Endian;
 
 import game.control.AccountManager;
 import game.control.WindowManager;
 import game.model.Global;
 import game.util.CommonUtil;
 
-import network.YiuNetworkHandlerMgr;
 import network.YiuNetworkListener;
 
+import protos.hallserver.cs_get_award_collect_box;
+import protos.hallserver.cs_get_collect_box;
 import protos.hallserver.sc_get_award_collect_box;
 import protos.hallserver.sc_get_collect_box;
 
@@ -88,7 +90,12 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 		{
 			try
 			{
-				Global.socketHall.sendProtobuf("cs_get_award_collect_box", cs_get_award_collect_box.newBuilder().setId(0).build().toByteArray());
+				var msg:cs_get_award_collect_box = new cs_get_award_collect_box();
+				msg.id = 0 ;
+				var msgBy:ByteArray = new ByteArray();
+				msgBy.endian = Endian.LITTLE_ENDIAN ;
+				msg.writeTo( msgBy );
+				NetManager.sendProtobuf(Global.socketHall,"cs_get_award_collect_box", msgBy);
 			}
 			catch( e:Error)
 			{
@@ -113,24 +120,24 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 			{
 				var pb:sc_get_collect_box = new sc_get_collect_box() ;
 					pb.mergeFrom(content) ;
-				updateTitleState(pb.getC_wan(), _wanItemList);
-				updateTitleState(pb.getC_tiao(), _tiaoItemList);
-				updateTitleState(pb.getC_tong(), _tongItemList);
-				var awardFlag:Boolean = updateAwardState(pb.getAward_hori(), _hAwardItemList);
-				awardFlag = awardFlag || updateAwardState(pb.getAward_vert(), _vAwardItemList);
-				var finalStatus:int = pb.getAward_status();
+				updateTitleState(pb.cWan, _wanItemList);
+				updateTitleState(pb.cTiao, _tiaoItemList);
+				updateTitleState(pb.cTong, _tongItemList);
+				var awardFlag:Boolean = updateAwardState(pb.awardHori, _hAwardItemList);
+				awardFlag = awardFlag || updateAwardState(pb.awardVert, _vAwardItemList);
+				var finalStatus:int = pb.awardStatus;
 				awardFlag = awardFlag || finalStatus == 1;
 				setSingleAwardState(_finalAwardItem, finalStatus);
 				initBtn(awardFlag);
 			}
 			else if(name == "sc_get_award_collect_box")
 			{
-				var pb:sc_get_award_collect_box = new sc_get_award_collect_box() ;
-					pb.mergeFrom(content) ;
-				if(pb.getResult() >= 0)
+				var pb1:sc_get_award_collect_box = new sc_get_award_collect_box() ;
+					pb1.mergeFrom(content) ;
+				if(pb1.result >= 0)
 				{
-					Global.userDataVO.score += pb.getResult();
-					CommonUtil.showPopupWindow(false, pb.getTips(), null);
+					Global.userDataVO.score += pb.result ;
+					CommonUtil.showPopupWindow(false, pb1.tips, null);
 				}
 				else
 				{
@@ -150,7 +157,12 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 	{
 		try
 		{
-			Global.socketHall.sendProtobuf("cs_get_collect_box", cs_get_collect_box.newBuilder().setId(0).build().toByteArray());
+			var msg:cs_get_collect_box = new cs_get_collect_box();
+			msg.id = 0 ;
+			var msgBy:ByteArray = new ByteArray();
+			msgBy.endian = Endian.LITTLE_ENDIAN ;
+			msg.writeTo( msgBy );
+			NetManager.sendProtobuf(Global.socketHall,"cs_get_collect_box", msgBy );
 		}
 		catch( ex:Error)
 		{

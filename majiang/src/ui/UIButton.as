@@ -78,7 +78,7 @@ package ui
 				}
 				addChild(_srcBitmapArr[_state]);
 //				setName(data.getString("Name"));
-				this.name = data.getString("Name");
+				this.name = data["Name"];
 				autoSetPosition(data);
 			}
 			catch( e:Error)

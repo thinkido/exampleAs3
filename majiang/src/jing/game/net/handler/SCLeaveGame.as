@@ -1,8 +1,8 @@
 package jing.game.net.handler
 {
-import game.model.Global;
 import game.view.scene.gamescene.GameScene;
-import protocol.sc_leave_game;
+
+import protocol.gameserver.sc_leave_game;
 
 /**
  * ºͷþÎñÆ÷¶ϿªÁ¬½Ó
@@ -15,11 +15,11 @@ public class SCLeaveGame
 	public function SCLeaveGame(pb:sc_leave_game)
 	{
 		
-		if(pb.getWhy() == "player_money_not_enough")
+		if(pb.why == "player_money_not_enough")
 		{
 			playerMoneyNotEnough();
 		}
-		else if(pb.getWhy() == "ready_timeout")
+		else if(pb.why == "ready_timeout")
 		{
 			readyTimeout();
 		}

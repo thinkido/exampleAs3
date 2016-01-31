@@ -1,7 +1,7 @@
 package game.control
 	{
-	import protocol.sc_enter_hall;
-	import protocol.t_friend_data;
+	import protos.hallserver.sc_enter_hall;
+	import protos.hallserver.t_friend_data;
 	
 	public class UserDataManager {
 	
@@ -45,30 +45,30 @@ package game.control
 	
 		public function initData(msg:sc_enter_hall):void 
 		{
-			_name = msg.getName();
+			_name = msg.name ;
 			// if(_name)
 	
-			_gold = msg.getGold();
-			_exp = msg.getExp();
-			_level = msg.getLevel();
-			_sex = msg.getSex();
-			_vip = msg.getVip();
-			_first = msg.getFirst_buy_gold();
-			_portrait = msg.getPortrait();
-			_score = msg.getCollect_score();
+			_gold = msg.gold ;
+			_exp = msg.exp ;
+			_level = msg.level ;
+			_sex = msg.sex;
+			_vip = msg.vip ;
+			_first = msg.firstBuyGold ;
+			_portrait = msg.portrait ;
+			_score = msg.collectScore ;
 			// _taskAwardNum = msg.getQuest_can_fetch();
 			// _achieveAwardNum = msg.getAch_can_fetch();
 		}
 	
 		public function updateByFriendProfile(friend:t_friend_data):void
 		{
-			_name = friend.getName();
-			_gold = friend.getGold();
-			_exp = friend.getExp();
-			_level = friend.getLevel();
-			_sex = friend.getSex();
-			_vip = friend.getVip();
-			_portrait = friend.getPortrait();
+			_name = friend.name ;
+			_gold = friend.gold ;
+			_exp = friend.exp ;
+			_level = friend.level ;
+			_sex = friend.sex ;
+			_vip = friend.vip ;
+			_portrait = friend.portrait ;
 	
 			// TODO: no score
 			// _score = friend.getScore();

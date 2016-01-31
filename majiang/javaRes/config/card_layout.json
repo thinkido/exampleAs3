@@ -157,7 +157,7 @@
         "on_table": {
             "card_prefix": "other_on_table_",
             "startX": 199,
-            "startY": 319,
+            "startY": 300,
             "dir": "right",
             "gap": 0,
             "warp_count": 10,

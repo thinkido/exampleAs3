@@ -3,19 +3,22 @@ package game.view.window.rank
 	import com.thinkido.framework.common.observer.Notification;
 	
 	import flash.utils.ByteArray;
+	import flash.utils.Endian;
 	
 	import framework.resources.SpriteSheet;
 	
 	import game.control.AccountManager;
+	import game.control.NetManager;
 	import game.control.WindowManager;
 	import game.model.Global;
 	import game.model.vo.RankItemVO;
 	import game.util.CommonUtil;
 	
-	import network.YiuNetworkHandlerMgr;
 	import network.YiuNetworkListener;
 	
+	import protos.hallserver.cs_rank_list;
 	import protos.hallserver.sc_rank_list;
+	import protos.hallserver.t_rank_data;
 	
 	import starling.display.Button;
 	
@@ -61,7 +64,12 @@ package game.view.window.rank
 			_imgHead.setTexture(Global.getMyHeadTexture());
 			try
 			{
-				Global.socketHall.sendProtobuf("cs_rank_list", cs_rank_list.newBuilder().setNoop(1).build().toByteArray());
+				var msg:cs_rank_list = new cs_rank_list();
+				msg.noop = 1 ;
+				var msgBy:ByteArray = new ByteArray();
+				msgBy.endian = Endian.LITTLE_ENDIAN ;
+				msg.writeTo( msgBy );
+				NetManager.sendProtobuf(Global.socketHall,"cs_rank_list", msgBy );
 			}
 			catch(e:*)
 			{
@@ -168,16 +176,16 @@ package game.view.window.rank
 				{
 					var msg:sc_rank_list = new sc_rank_list() ;
 					msg.mergeFrom(content) ;
-					var datalist:Array = msg.getCoinData();
+					var datalist:Array = msg.coinData ;
 					var len:int = datalist.length;
 					var goldData:Vector.<RankItemVO> = new Vector.<RankItemVO>;
 					for(var i:int = 0; i < len; i++)
 					{
 						goldData[i] = new RankItemVO(datalist[i] as t_rank_data);
-						goldData[i].value = CommonUtil.formatGold(Integer.valueOf(goldData[i].value).longValue());
+						goldData[i].value = CommonUtil.formatGold(goldData[i].value);
 					}
 					_mediatorList[0].initData(goldData);
-					datalist = msg.getExpData();
+					datalist = msg.expData ;
 					len = datalist.length;
 					var levelData:Vector.<RankItemVO> = new Vector.<RankItemVO>;
 					for(var i:int = 0; i < len; i++)
@@ -185,7 +193,7 @@ package game.view.window.rank
 						levelData[i] = new RankItemVO(datalist[i] as t_rank_data);
 					}
 					_mediatorList[1].initData(levelData);
-					datalist = msg.getWinData();
+					datalist = msg.winData ;
 					len = datalist.length;
 					var winData:Vector.<RankItemVO> = new Vector.<RankItemVO>;
 					for(var i:int = 0; i < len; i++)
@@ -193,7 +201,7 @@ package game.view.window.rank
 						winData[i] = new RankItemVO(datalist[i] as t_rank_data);
 					}
 					_mediatorList[2].initData(winData);
-					_myRankList[0] = 0;
+					_myRankList[0] = 0 ;
 					_myRankList[1] = 0;
 					_myRankList[2] = 0;
 	//				_myRankList[0] = msg.getMyCoin();

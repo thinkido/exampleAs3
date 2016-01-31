@@ -478,7 +478,7 @@
             },
             "Position": {
               "X": 424.8877,
-              "Y": 9.9018
+              "Y": 11.9018
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -488,21 +488,21 @@
             "IconVisible": false,
             "PrePosition": {
               "X": 0.6639,
-              "Y": 0.0187
+              "Y": 0.0225
             },
             "PreSize": {
-              "X": 0.0266,
-              "Y": 0.0472
+              "X": 0.0406,
+              "Y": 0.0717
             },
-            "LeftMargin": 415.0481,
-            "RightMargin": 207.9519,
-            "TopMargin": 504.7282,
-            "BottomMargin": 0.2718,
+            "LeftMargin": 409.8389,
+            "RightMargin": 204.1611,
+            "TopMargin": 494.7358,
+            "BottomMargin": -2.7358,
             "Tag": 15,
             "ActionTag": -328272030,
             "Size": {
-              "X": 17.0,
-              "Y": 25.0
+              "X": 26.0,
+              "Y": 38.0
             },
             "Name": "down_hua",
             "ctype": "SpriteObjectData"
@@ -522,7 +522,7 @@
               "ScaleY": 0.3852
             },
             "Position": {
-              "X": 633.1496,
+              "X": 628.1496,
               "Y": 169.5751
             },
             "Scale": {
@@ -532,22 +532,22 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.9893,
+              "X": 0.9815,
               "Y": 0.32
             },
             "PreSize": {
-              "X": 0.0266,
-              "Y": 0.0472
+              "X": 0.0406,
+              "Y": 0.0717
             },
-            "LeftMargin": 623.31,
-            "RightMargin": -0.31,
-            "TopMargin": 345.0549,
-            "BottomMargin": 159.9451,
+            "LeftMargin": 613.1008,
+            "RightMargin": 0.8992,
+            "TopMargin": 337.0625,
+            "BottomMargin": 154.9375,
             "Tag": 39,
             "ActionTag": -854140509,
             "Size": {
-              "X": 17.0,
-              "Y": 25.0
+              "X": 26.0,
+              "Y": 38.0
             },
             "Name": "right_hua",
             "ctype": "SpriteObjectData"
@@ -567,8 +567,8 @@
               "ScaleY": 0.3852
             },
             "Position": {
-              "X": 444.081,
-              "Y": 514.5351
+              "X": 444.0811,
+              "Y": 507.535
             },
             "Scale": {
               "ScaleX": 1.0,
@@ -578,21 +578,21 @@
             "IconVisible": false,
             "PrePosition": {
               "X": 0.6939,
-              "Y": 0.9708
+              "Y": 0.9576
             },
             "PreSize": {
-              "X": 0.0266,
-              "Y": 0.0472
+              "X": 0.0406,
+              "Y": 0.0717
             },
-            "LeftMargin": 434.2414,
-            "RightMargin": 188.7586,
-            "TopMargin": 0.0949,
-            "BottomMargin": 504.9051,
+            "LeftMargin": 429.0323,
+            "RightMargin": 184.9677,
+            "TopMargin": -0.8974,
+            "BottomMargin": 492.8974,
             "Tag": 40,
             "ActionTag": 1256356147,
             "Size": {
-              "X": 17.0,
-              "Y": 25.0
+              "X": 26.0,
+              "Y": 38.0
             },
             "Name": "up_hua",
             "ctype": "SpriteObjectData"
@@ -612,7 +612,7 @@
               "ScaleY": 0.3852
             },
             "Position": {
-              "X": 10.3473,
+              "X": 17.3473,
               "Y": 166.7814
             },
             "Scale": {
@@ -622,22 +622,22 @@
             "CColor": {},
             "IconVisible": false,
             "PrePosition": {
-              "X": 0.0162,
+              "X": 0.0271,
               "Y": 0.3147
             },
             "PreSize": {
-              "X": 0.0266,
-              "Y": 0.0472
+              "X": 0.0406,
+              "Y": 0.0717
             },
-            "LeftMargin": 0.5077,
-            "RightMargin": 622.4923,
-            "TopMargin": 347.8486,
-            "BottomMargin": 157.1514,
+            "LeftMargin": 2.2985,
+            "RightMargin": 611.7015,
+            "TopMargin": 339.8562,
+            "BottomMargin": 152.1438,
             "Tag": 41,
             "ActionTag": -1396856907,
             "Size": {
-              "X": 17.0,
-              "Y": 25.0
+              "X": 26.0,
+              "Y": 38.0
             },
             "Name": "left_hua",
             "ctype": "SpriteObjectData"

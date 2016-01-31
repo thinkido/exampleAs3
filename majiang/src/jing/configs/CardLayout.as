@@ -96,7 +96,7 @@ public class CardLayout
 		if(jsonObj.has("warp"))
 		{
 			var warpObj:Object= jsonObj["warp"];
-			vo.warp = new Point(parseInt(warpObj["x"), warpObj.getInt("y"]));
+			vo.warp = new Point( parseInt(warpObj["x"]), parseInt(warpObj["y"]) );
 		}
 		return vo;
 	}

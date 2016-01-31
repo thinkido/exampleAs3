@@ -1,6 +1,6 @@
 package jing.game.net.handler
 {
-import protocol.sc_game_action_failed;
+import protocol.gameserver.sc_game_action_failed;
 
 
 public class SCGameActionFailed

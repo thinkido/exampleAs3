@@ -31,15 +31,15 @@ package game.control
 			{
 //				this.add((place_info)v.elementAt(i));
 				this.add(v[i]);
-				// _data.put(((place_info)v.elementAt(i)).getId(), new
+				// _data.put(((place_info)v.elementAt(i)).id, new
 				// PlaceData((place_info)v.elementAt(i)));
 			}
 		}
 	
 		public function add( info:place_info):void
 		{
-//			_data[info.getId()] = new PlaceData(v);
-			_data[info.getId()] = new PlaceData(info);
+//			_data[info.id] = new PlaceData(v);
+			_data[info.id] = new PlaceData(info);
 		}
 	
 		public function del(id:String):void

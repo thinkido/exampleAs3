@@ -1,6 +1,14 @@
 package
 {
+	import br.com.stimuli.loading.BulkLoader;
+	import br.com.stimuli.loading.BulkProgressEvent;
+	
 	import com.mike.utils.ResolutionUtil;
+	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
+	
+	import configs.GameInstance;
+	
+	import events.GameEvent;
 	
 	import flash.desktop.NativeApplication;
 	import flash.display.Sprite;
@@ -15,13 +23,6 @@ package
 	import flash.ui.Multitouch;
 	import flash.ui.MultitouchInputMode;
 	import flash.utils.getTimer;
-	
-	import br.com.stimuli.loading.BulkLoader;
-	import br.com.stimuli.loading.BulkProgressEvent;
-	
-	import configs.GameInstance;
-	
-	import events.GameEvent;
 	
 	import managers.ResManager;
 	import managers.SoundManager;
@@ -80,6 +81,7 @@ package
 			
 			beginTime = getTimer();
 			NativeApplication.nativeApplication.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown);
+			
 			stage.addEventListener(Event.DEACTIVATE, onGameDeactivate);
 			stage.addEventListener(Event.ACTIVATE, onGameActivate);
 			GameInstance.instance.sceneWidth = Math.min(stage.fullScreenWidth, stage.fullScreenHeight);

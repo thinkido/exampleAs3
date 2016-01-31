@@ -7,6 +7,8 @@ package game.model
 	import framework.resources.Res;
 	import framework.resources.SpriteSheet;
 	
+	import game.constant.WindowType;
+	import game.control.AccountManager;
 	import game.control.LoadingManager;
 	import game.control.PlaceDataManager;
 	import game.control.SceneManager;
@@ -15,8 +17,6 @@ package game.model
 	import game.model.vo.UserDataVO;
 	
 	import jing.configs.Config;
-	
-	import network.YiuNetworkSocket;
 	
 	import starling.display.Sprite;
 	import starling.events.EventDispatcher;
