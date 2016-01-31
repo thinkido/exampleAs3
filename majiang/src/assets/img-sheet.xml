@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4c54521fd241d932da60aa556c866058:1/1$ -->
+<TextureAtlas imagePath="img-sheet.png">
+    <SubTexture name="img_txt_type_10_png" x="2" y="1000" width="391" height="258" frameX="-7" frameY="-9" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_11_png" x="1199" y="982" width="391" height="252" frameX="-7" frameY="-15" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_12_png" x="2" y="268" width="397" height="244" frameX="-7" frameY="-23" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_13_png" x="401" y="260" width="397" height="244" frameX="-7" frameY="-23" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_14_png" x="1598" y="498" width="397" height="240" frameX="-7" frameY="-27" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_15_png" x="800" y="254" width="397" height="244" frameX="-8" frameY="-23" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_16_png" x="1564" y="1238" width="385" height="238" frameX="-7" frameY="-29" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_17_png" x="395" y="1256" width="389" height="238" frameX="-8" frameY="-29" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_18_png" x="2" y="514" width="397" height="240" frameX="-7" frameY="-27" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_19_png" x="800" y="744" width="397" height="238" frameX="-7" frameY="-29" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_1_png" x="1598" y="2" width="397" height="250" frameX="-7" frameY="-17" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_20_png" x="1199" y="742" width="397" height="238" frameX="-7" frameY="-29" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_21_png" x="1159" y="1722" width="385" height="238" frameX="-7" frameY="-29" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_22_png" x="772" y="1740" width="385" height="238" frameX="-7" frameY="-29" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_23_png" x="2" y="1504" width="385" height="240" frameX="-7" frameY="-27" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_24_png" x="401" y="506" width="397" height="242" frameX="-7" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_25_png" x="391" y="1496" width="385" height="242" frameX="-7" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_26_png" x="2" y="1260" width="387" height="242" frameX="-8" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_27_png" x="387" y="1746" width="383" height="242" frameX="-8" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_28_png" x="2" y="1746" width="383" height="242" frameX="-9" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_29_png" x="800" y="500" width="397" height="242" frameX="-7" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_2_png" x="2" y="2" width="397" height="264" frameX="-8" frameY="-17" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_30_png" x="401" y="2" width="397" height="256" frameX="-8" frameY="-11" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_31_png" x="1598" y="740" width="397" height="238" frameX="-8" frameY="-29" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_32_png" x="786" y="1236" width="389" height="240" frameX="-8" frameY="-27" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_33_png" x="786" y="1478" width="385" height="242" frameX="-7" frameY="-26" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_34_png" x="401" y="750" width="395" height="260" frameX="-8" frameY="-16" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_35_png" x="1598" y="980" width="391" height="256" frameX="-7" frameY="-11" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_36_png" x="2" y="756" width="395" height="242" frameX="-8" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_37_png" x="395" y="1012" width="389" height="242" frameX="-8" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_38_png" x="1564" y="1478" width="381" height="120" frameX="-10" frameY="-24" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_3_png" x="1199" y="2" width="397" height="250" frameX="-8" frameY="-17" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_4_png" x="798" y="984" width="391" height="250" frameX="-7" frameY="-17" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_5_png" x="1177" y="1236" width="385" height="250" frameX="-7" frameY="-17" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_6_png" x="800" y="2" width="397" height="250" frameX="-8" frameY="-17" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_7_png" x="1199" y="498" width="397" height="242" frameX="-8" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_8_png" x="1598" y="254" width="397" height="242" frameX="-8" frameY="-25" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_type_9_png" x="1199" y="254" width="397" height="242" frameX="-8" frameY="-25" frameWidth="415" frameHeight="284"/>
+</TextureAtlas>

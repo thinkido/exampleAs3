@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:0d05a924fe3d333239f8a5cb0a7b0f5e:1/1$ -->
+<TextureAtlas imagePath="scene-game-sheet2.png">
+    <SubTexture name="btn_stage_1_a_png" x="800" y="320" width="154" height="316"/>
+    <SubTexture name="btn_stage_1_z_png" x="800" y="952" width="154" height="312" frameX="0" frameY="-4" frameWidth="154" frameHeight="316"/>
+    <SubTexture name="btn_stage_2_a_png" x="644" y="320" width="154" height="316"/>
+    <SubTexture name="btn_stage_2_z_png" x="644" y="952" width="154" height="312" frameX="0" frameY="-4" frameWidth="154" frameHeight="316"/>
+    <SubTexture name="btn_stage_3_a_png" x="800" y="2" width="154" height="316"/>
+    <SubTexture name="btn_stage_3_z_png" x="800" y="638" width="154" height="312" frameX="0" frameY="-4" frameWidth="154" frameHeight="316"/>
+    <SubTexture name="btn_stage_4_a_png" x="644" y="2" width="154" height="316"/>
+    <SubTexture name="btn_stage_4_z_png" x="644" y="638" width="154" height="312" frameX="0" frameY="-4" frameWidth="154" frameHeight="316"/>
+    <SubTexture name="img_bg_hall_jpg" x="2" y="1066" width="640" height="530"/>
+    <SubTexture name="img_bg_hall_png" x="2" y="534" width="640" height="530"/>
+    <SubTexture name="ingame_bg_png" x="2" y="2" width="640" height="530"/>
+</TextureAtlas>

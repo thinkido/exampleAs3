@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:bc14722e90ba6fcb59630d4f4a3f8278:1/1$ -->
+<TextureAtlas imagePath="window-sheet1.png">
+    <SubTexture name="btn_cancel_a_png" x="848" y="211" width="99" height="51"/>
+    <SubTexture name="btn_cancel_z_png" x="834" y="313" width="95" height="49" frameX="-2" frameY="-2" frameWidth="99" frameHeight="51"/>
+    <SubTexture name="btn_close_a_png" x="971" y="2" width="47" height="69"/>
+    <SubTexture name="btn_close_z_png" x="518" y="441" width="41" height="61" frameX="-3" frameY="-4" frameWidth="47" frameHeight="69"/>
+    <SubTexture name="btn_continue_a_png" x="646" y="50" width="100" height="53"/>
+    <SubTexture name="btn_continue_z_png" x="835" y="264" width="96" height="47" frameX="-2" frameY="-4" frameWidth="100" frameHeight="53"/>
+    <SubTexture name="btn_getaward_a_png" x="748" y="104" width="100" height="52"/>
+    <SubTexture name="btn_getaward_z_png" x="639" y="263" width="96" height="48" frameX="-3" frameY="-2" frameWidth="100" frameHeight="52"/>
+    <SubTexture name="btn_getgift_a_png" x="300" y="50" width="172" height="78"/>
+    <SubTexture name="btn_getgift_d_png" x="126" y="50" width="172" height="78"/>
+    <SubTexture name="btn_getgift_z_png" x="474" y="50" width="170" height="74" frameX="-1" frameY="-3" frameWidth="172" frameHeight="78"/>
+    <SubTexture name="btn_head_a_png" x="889" y="423" width="58" height="32"/>
+    <SubTexture name="btn_head_z_png" x="889" y="389" width="58" height="32"/>
+    <SubTexture name="btn_ok_a_png" x="848" y="158" width="99" height="51"/>
+    <SubTexture name="btn_ok_z_png" x="737" y="312" width="95" height="49" frameX="-2" frameY="-2" frameWidth="99" frameHeight="51"/>
+    <SubTexture name="btn_rank_charge_a_png" x="639" y="159" width="98" height="52" frameX="-2" frameY="0" frameWidth="100" frameHeight="52"/>
+    <SubTexture name="btn_rank_charge_z_png" x="737" y="262" width="96" height="48" frameX="-2" frameY="-3" frameWidth="100" frameHeight="52"/>
+    <SubTexture name="btn_rank_gold_a_png" x="850" y="50" width="100" height="52"/>
+    <SubTexture name="btn_rank_gold_z_png" x="639" y="213" width="96" height="48" frameX="-2" frameY="-2" frameWidth="100" frameHeight="52"/>
+    <SubTexture name="btn_rank_level_a_png" x="748" y="50" width="100" height="52"/>
+    <SubTexture name="btn_rank_level_z_png" x="739" y="212" width="96" height="48" frameX="-2" frameY="-3" frameWidth="100" frameHeight="52"/>
+    <SubTexture name="btn_tab_aboutus_a_png" x="747" y="158" width="99" height="52"/>
+    <SubTexture name="btn_tab_aboutus_z_png" x="465" y="180" width="95" height="48" frameX="-2" frameY="-3" frameWidth="99" frameHeight="52"/>
+    <SubTexture name="btn_tab_rule_a_png" x="474" y="126" width="99" height="52"/>
+    <SubTexture name="btn_tab_rule_z_png" x="320" y="130" width="95" height="48" frameX="-2" frameY="-4" frameWidth="99" frameHeight="52"/>
+    <SubTexture name="btn_tab_score_a_png" x="850" y="104" width="99" height="52"/>
+    <SubTexture name="btn_tab_score_z_png" x="223" y="130" width="95" height="48" frameX="-2" frameY="-4" frameWidth="99" frameHeight="52"/>
+    <SubTexture name="btn_tab_type_a_png" x="646" y="105" width="99" height="52"/>
+    <SubTexture name="btn_tab_type_z_png" x="126" y="130" width="95" height="48" frameX="-2" frameY="-3" frameWidth="99" frameHeight="52"/>
+    <SubTexture name="ck_sex_checked_png" x="390" y="250" width="16" height="24"/>
+    <SubTexture name="ck_sex_focus_png" x="390" y="180" width="25" height="37"/>
+    <SubTexture name="ck_sex_normal_png" x="390" y="219" width="20" height="29"/>
+    <SubTexture name="img_activity_1_a_png" x="2" y="858" width="122" height="155"/>
+    <SubTexture name="img_activity_1_z_png" x="2" y="701" width="122" height="155"/>
+    <SubTexture name="img_activity_2_a_png" x="2" y="544" width="122" height="155"/>
+    <SubTexture name="img_activity_2_z_png" x="2" y="387" width="122" height="155"/>
+    <SubTexture name="img_activity_3_a_png" x="2" y="230" width="122" height="155"/>
+    <SubTexture name="img_activity_3_z_png" x="2" y="73" width="122" height="155"/>
+    <SubTexture name="img_bg_rank_charge_png" x="648" y="2" width="321" height="46"/>
+    <SubTexture name="img_bg_rank_gold_png" x="325" y="2" width="321" height="46"/>
+    <SubTexture name="img_bg_rank_level_png" x="2" y="2" width="321" height="46"/>
+    <SubTexture name="img_gift_item_1_d_png" x="573" y="432" width="62" height="151"/>
+    <SubTexture name="img_gift_item_1_z_png" x="639" y="313" width="62" height="151"/>
+    <SubTexture name="img_gift_item_2_d_png" x="454" y="383" width="62" height="151"/>
+    <SubTexture name="img_gift_item_2_z_png" x="390" y="278" width="62" height="151"/>
+    <SubTexture name="img_gift_item_3_d_png" x="575" y="279" width="62" height="151"/>
+    <SubTexture name="img_gift_item_3_z_png" x="465" y="230" width="62" height="151"/>
+    <SubTexture name="img_gift_item_4_d_png" x="326" y="180" width="62" height="151"/>
+    <SubTexture name="img_gift_item_4_z_png" x="262" y="180" width="62" height="151"/>
+    <SubTexture name="img_gift_item_5_d_png" x="198" y="180" width="62" height="151"/>
+    <SubTexture name="img_gift_item_5_z_png" x="575" y="126" width="62" height="151"/>
+    <SubTexture name="img_gift_item_6_d_png" x="126" y="180" width="70" height="151" frameX="-1" frameY="0" frameWidth="72" frameHeight="151"/>
+    <SubTexture name="img_gift_item_6_z_png" x="949" y="379" width="70" height="151" frameX="-1" frameY="0" frameWidth="72" frameHeight="151"/>
+    <SubTexture name="img_gift_item_7_d_png" x="949" y="226" width="70" height="151" frameX="-1" frameY="0" frameWidth="72" frameHeight="151"/>
+    <SubTexture name="img_gift_item_7_z_png" x="952" y="73" width="70" height="151" frameX="-1" frameY="0" frameWidth="72" frameHeight="151"/>
+    <SubTexture name="img_gift_item_focus_png" x="703" y="363" width="60" height="91"/>
+    <SubTexture name="img_head_border_png" x="529" y="230" width="44" height="69"/>
+    <SubTexture name="img_rank_top_1_png" x="933" y="264" width="12" height="36" frameX="-2" frameY="0" frameWidth="16" frameHeight="36"/>
+    <SubTexture name="img_rank_top_2_png" x="931" y="351" width="16" height="36"/>
+    <SubTexture name="img_rank_top_3_png" x="931" y="313" width="16" height="36"/>
+    <SubTexture name="img_reward_1_a_png" x="529" y="371" width="42" height="68" frameX="-11" frameY="-4" frameWidth="60" frameHeight="72"/>
+    <SubTexture name="img_reward_1_d_png" x="765" y="437" width="60" height="68" frameX="0" frameY="-4" frameWidth="60" frameHeight="72"/>
+    <SubTexture name="img_reward_1_z_png" x="529" y="301" width="42" height="68" frameX="-11" frameY="-4" frameWidth="60" frameHeight="72"/>
+    <SubTexture name="img_reward_2_a_png" x="417" y="204" width="46" height="72" frameX="-11" frameY="0" frameWidth="60" frameHeight="72"/>
+    <SubTexture name="img_reward_2_d_png" x="827" y="364" width="60" height="72"/>
+    <SubTexture name="img_reward_2_z_png" x="417" y="130" width="46" height="72" frameX="-11" frameY="0" frameWidth="60" frameHeight="72"/>
+    <SubTexture name="img_reward_3_a_png" x="827" y="438" width="56" height="72" frameX="-4" frameY="0" frameWidth="60" frameHeight="72"/>
+    <SubTexture name="img_reward_3_d_png" x="765" y="363" width="60" height="72"/>
+    <SubTexture name="img_reward_3_z_png" x="703" y="456" width="56" height="72" frameX="-4" frameY="0" frameWidth="60" frameHeight="72"/>
+    <SubTexture name="img_tiao_1_a_png" x="202" y="670" width="36" height="83"/>
+    <SubTexture name="img_tiao_1_z_png" x="202" y="785" width="36" height="83"/>
+    <SubTexture name="img_tiao_2_a_png" x="202" y="882" width="36" height="83"/>
+    <SubTexture name="img_tiao_2_z_png" x="164" y="333" width="36" height="83"/>
+    <SubTexture name="img_tiao_3_a_png" x="164" y="431" width="36" height="83"/>
+    <SubTexture name="img_tiao_3_z_png" x="164" y="536" width="36" height="83"/>
+    <SubTexture name="img_tiao_4_a_png" x="164" y="670" width="36" height="83"/>
+    <SubTexture name="img_tiao_4_z_png" x="164" y="785" width="36" height="83"/>
+    <SubTexture name="img_tiao_5_a_png" x="164" y="882" width="36" height="83"/>
+    <SubTexture name="img_tiao_5_z_png" x="126" y="333" width="36" height="83"/>
+    <SubTexture name="img_tiao_6_a_png" x="126" y="431" width="36" height="83"/>
+    <SubTexture name="img_tiao_6_z_png" x="126" y="536" width="36" height="83"/>
+    <SubTexture name="img_tiao_7_a_png" x="126" y="670" width="36" height="83"/>
+    <SubTexture name="img_tiao_7_z_png" x="126" y="785" width="36" height="83"/>
+    <SubTexture name="img_tiao_8_a_png" x="126" y="882" width="36" height="83"/>
+    <SubTexture name="img_tiao_8_z_png" x="979" y="787" width="36" height="83"/>
+    <SubTexture name="img_tiao_9_a_png" x="941" y="787" width="36" height="83"/>
+    <SubTexture name="img_tiao_9_z_png" x="860" y="797" width="36" height="83"/>
+    <SubTexture name="img_tong_1_a_png" x="903" y="787" width="36" height="83"/>
+    <SubTexture name="img_tong_1_z_png" x="979" y="702" width="36" height="83"/>
+    <SubTexture name="img_tong_2_a_png" x="941" y="702" width="36" height="83"/>
+    <SubTexture name="img_tong_2_z_png" x="822" y="767" width="36" height="83"/>
+    <SubTexture name="img_tong_3_a_png" x="784" y="767" width="36" height="83"/>
+    <SubTexture name="img_tong_3_z_png" x="865" y="712" width="36" height="83"/>
+    <SubTexture name="img_tong_4_a_png" x="903" y="702" width="36" height="83"/>
+    <SubTexture name="img_tong_4_z_png" x="746" y="762" width="36" height="83"/>
+    <SubTexture name="img_tong_5_a_png" x="827" y="682" width="36" height="83"/>
+    <SubTexture name="img_tong_5_z_png" x="789" y="682" width="36" height="83"/>
+    <SubTexture name="img_tong_6_a_png" x="951" y="617" width="36" height="83"/>
+    <SubTexture name="img_tong_6_z_png" x="865" y="627" width="36" height="83"/>
+    <SubTexture name="img_tong_7_a_png" x="913" y="617" width="36" height="83"/>
+    <SubTexture name="img_tong_7_z_png" x="708" y="700" width="36" height="83"/>
+    <SubTexture name="img_tong_8_a_png" x="670" y="700" width="36" height="83"/>
+    <SubTexture name="img_tong_8_z_png" x="827" y="597" width="36" height="83"/>
+    <SubTexture name="img_tong_9_a_png" x="751" y="677" width="36" height="83"/>
+    <SubTexture name="img_tong_9_z_png" x="789" y="597" width="36" height="83"/>
+    <SubTexture name="img_wan_1_a_png" x="961" y="532" width="36" height="83"/>
+    <SubTexture name="img_wan_1_z_png" x="875" y="542" width="36" height="83"/>
+    <SubTexture name="img_wan_2_a_png" x="923" y="532" width="36" height="83"/>
+    <SubTexture name="img_wan_2_z_png" x="632" y="636" width="36" height="83"/>
+    <SubTexture name="img_wan_3_a_png" x="713" y="615" width="36" height="83"/>
+    <SubTexture name="img_wan_3_z_png" x="675" y="615" width="36" height="83"/>
+    <SubTexture name="img_wan_4_a_png" x="837" y="512" width="36" height="83"/>
+    <SubTexture name="img_wan_4_z_png" x="751" y="592" width="36" height="83"/>
+    <SubTexture name="img_wan_5_a_png" x="799" y="512" width="36" height="83"/>
+    <SubTexture name="img_wan_5_z_png" x="594" y="585" width="36" height="83"/>
+    <SubTexture name="img_wan_6_a_png" x="556" y="585" width="36" height="83"/>
+    <SubTexture name="img_wan_6_z_png" x="713" y="530" width="36" height="83"/>
+    <SubTexture name="img_wan_7_a_png" x="637" y="551" width="36" height="83"/>
+    <SubTexture name="img_wan_7_z_png" x="675" y="530" width="36" height="83"/>
+    <SubTexture name="img_wan_8_a_png" x="637" y="466" width="36" height="83"/>
+    <SubTexture name="img_wan_8_z_png" x="761" y="507" width="36" height="83"/>
+    <SubTexture name="img_wan_9_a_png" x="885" y="457" width="36" height="83"/>
+    <SubTexture name="img_wan_9_z_png" x="518" y="504" width="36" height="83"/>
+</TextureAtlas>

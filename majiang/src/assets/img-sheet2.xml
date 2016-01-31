@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:4e1e36c4dd0ae446156f75bb5be8f9fa:1/1$ -->
+<TextureAtlas imagePath="img-sheet2.png">
+    <SubTexture name="img_dark_bg_png" x="2" y="2" width="640" height="530"/>
+    <SubTexture name="img_txt_aboutus_1_png" x="2" y="1054" width="391" height="206" frameX="-9" frameY="-36" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_aboutus_png" x="2" y="1054" width="391" height="206" frameX="-9" frameY="-36" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_rule_1_png" x="399" y="794" width="395" height="232" frameX="-9" frameY="-22" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_rule_2_png" x="2" y="794" width="395" height="258" frameX="-8" frameY="-19" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_rule_3_png" x="401" y="534" width="395" height="258" frameX="-8" frameY="-7" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_rule_4_png" x="399" y="1028" width="391" height="258" frameX="-8" frameY="-6" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_rule_5_png" x="391" y="1288" width="383" height="258" frameX="-9" frameY="-7" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_rule_6_png" x="2" y="1262" width="387" height="232" frameX="-9" frameY="-16" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_score_1_png" x="2" y="534" width="397" height="258" frameX="-9" frameY="-14" frameWidth="415" frameHeight="284"/>
+    <SubTexture name="img_txt_score_png" x="2" y="534" width="397" height="258" frameX="-9" frameY="-14" frameWidth="415" frameHeight="284"/>
+</TextureAtlas>

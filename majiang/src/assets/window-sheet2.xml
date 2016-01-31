@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:c77c9ac7c8211a8b2f6b48300d7626d4:1/1$ -->
+<TextureAtlas imagePath="window-sheet2.png">
+    <SubTexture name="btn_close_a_png" x="1982" y="2" width="47" height="69"/>
+    <SubTexture name="btn_close_z_png" x="1136" y="340" width="41" height="61" frameX="-3" frameY="-4" frameWidth="47" frameHeight="69"/>
+    <SubTexture name="btn_diamond_shop_a_png" x="462" y="697" width="128" height="173"/>
+    <SubTexture name="btn_diamond_shop_z_png" x="1849" y="332" width="128" height="169" frameX="0" frameY="-4" frameWidth="128" frameHeight="173"/>
+    <SubTexture name="btn_ticket_shop_a_png" x="462" y="522" width="128" height="173"/>
+    <SubTexture name="btn_ticket_shop_z_png" x="1719" y="332" width="128" height="169" frameX="0" frameY="-4" frameWidth="128" frameHeight="173"/>
+    <SubTexture name="diamond_item_1_a_png" x="959" y="1794" width="85" height="165"/>
+    <SubTexture name="diamond_item_1_z_png" x="1168" y="667" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="diamond_item_2_a_png" x="872" y="1794" width="85" height="165"/>
+    <SubTexture name="diamond_item_2_z_png" x="1885" y="503" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="diamond_item_3_a_png" x="785" y="1794" width="85" height="165"/>
+    <SubTexture name="diamond_item_3_z_png" x="1802" y="503" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="diamond_item_4_a_png" x="698" y="1825" width="85" height="165"/>
+    <SubTexture name="diamond_item_4_z_png" x="1719" y="503" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="diamond_item_5_a_png" x="611" y="1825" width="85" height="165"/>
+    <SubTexture name="diamond_item_5_z_png" x="1136" y="508" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="diamond_item_6_a_png" x="524" y="1825" width="85" height="165"/>
+    <SubTexture name="diamond_item_6_z_png" x="1156" y="1111" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="img_bg_activity_png" x="2" y="522" width="458" height="329"/>
+    <SubTexture name="img_bg_collect_png" x="2" y="2" width="592" height="518"/>
+    <SubTexture name="img_bg_diamond_buy_png" x="375" y="1333" width="371" height="490"/>
+    <SubTexture name="img_bg_gift_png" x="596" y="2" width="581" height="336"/>
+    <SubTexture name="img_bg_rank_png" x="596" y="340" width="538" height="434"/>
+    <SubTexture name="img_bg_rule_png" x="1179" y="2" width="538" height="504"/>
+    <SubTexture name="img_bg_shop_png" x="824" y="776" width="342" height="333"/>
+    <SubTexture name="img_bg_ticket_buy_png" x="2" y="1333" width="371" height="490"/>
+    <SubTexture name="img_bg_user_png" x="429" y="872" width="393" height="440"/>
+    <SubTexture name="img_female_head_png" x="748" y="1314" width="425" height="478"/>
+    <SubTexture name="img_male_head_png" x="2" y="853" width="425" height="478"/>
+    <SubTexture name="img_pop_window_bg_png" x="1719" y="2" width="261" height="328"/>
+    <SubTexture name="ticket_item_1_a_png" x="437" y="1825" width="85" height="165"/>
+    <SubTexture name="ticket_item_1_z_png" x="1073" y="1111" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="ticket_item_2_a_png" x="350" y="1825" width="85" height="165"/>
+    <SubTexture name="ticket_item_2_z_png" x="990" y="1111" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="ticket_item_3_a_png" x="263" y="1825" width="85" height="165"/>
+    <SubTexture name="ticket_item_3_z_png" x="907" y="1111" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="ticket_item_4_a_png" x="176" y="1825" width="85" height="165"/>
+    <SubTexture name="ticket_item_4_z_png" x="824" y="1111" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="ticket_item_5_a_png" x="89" y="1825" width="85" height="165"/>
+    <SubTexture name="ticket_item_5_z_png" x="1129" y="1794" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+    <SubTexture name="ticket_item_6_a_png" x="2" y="1825" width="85" height="165"/>
+    <SubTexture name="ticket_item_6_z_png" x="1046" y="1794" width="81" height="157" frameX="-2" frameY="-4" frameWidth="85" frameHeight="165"/>
+</TextureAtlas>

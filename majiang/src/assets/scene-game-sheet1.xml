@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:657fe7b174c0932cfb2ecd59602f348a:1/1$ -->
+<TextureAtlas imagePath="scene-game-sheet1.png">
+    <SubTexture name="action_chi_normal_png" x="818" y="200" width="175" height="114" frameX="0" frameY="-1" frameWidth="175" frameHeight="116"/>
+    <SubTexture name="action_chi_selected_png" x="818" y="83" width="175" height="116"/>
+    <SubTexture name="action_gang_normal_png" x="617" y="614" width="78" height="116" frameX="-1" frameY="0" frameWidth="80" frameHeight="116"/>
+    <SubTexture name="action_gang_selected_png" x="642" y="497" width="80" height="116"/>
+    <SubTexture name="action_guo_normal_png" x="642" y="200" width="175" height="114" frameX="0" frameY="-1" frameWidth="175" frameHeight="116"/>
+    <SubTexture name="action_guo_selected_png" x="642" y="83" width="175" height="116"/>
+    <SubTexture name="action_hu_normal_png" x="538" y="532" width="78" height="116" frameX="-1" frameY="0" frameWidth="80" frameHeight="116"/>
+    <SubTexture name="action_hu_selected_png" x="738" y="494" width="80" height="116"/>
+    <SubTexture name="action_peng_normal_png" x="723" y="611" width="78" height="116" frameX="-1" frameY="0" frameWidth="80" frameHeight="116"/>
+    <SubTexture name="action_peng_selected_png" x="837" y="488" width="80" height="116"/>
+    <SubTexture name="btn_activity_a_png" x="900" y="783" width="48" height="76" frameX="0" frameY="-2" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="btn_activity_z_png" x="786" y="832" width="44" height="68" frameX="-2" frameY="-6" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="btn_match_a_png" x="851" y="725" width="48" height="76" frameX="0" frameY="-2" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="btn_match_z_png" x="741" y="799" width="44" height="70" frameX="-2" frameY="-4" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="btn_quickstart_a_png" x="833" y="1" width="190" height="81"/>
+    <SubTexture name="btn_quickstart_z_png" x="642" y="1" width="190" height="81"/>
+    <SubTexture name="btn_rank_a_png" x="935" y="706" width="48" height="76" frameX="0" frameY="-1" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="btn_rank_z_png" x="786" y="761" width="44" height="70" frameX="-2" frameY="-3" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="btn_ready_png" x="837" y="441" width="95" height="46"/>
+    <SubTexture name="btn_ready_selected_png" x="855" y="315" width="100" height="53"/>
+    <SubTexture name="btn_return_png" x="642" y="450" width="95" height="46"/>
+    <SubTexture name="btn_return_selected_png" x="749" y="368" width="100" height="52"/>
+    <SubTexture name="btn_rule_a_png" x="802" y="684" width="48" height="76" frameX="0" frameY="-2" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="btn_rule_z_png" x="741" y="728" width="44" height="70" frameX="-2" frameY="-4" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="btn_shop_a_png" x="886" y="646" width="48" height="78"/>
+    <SubTexture name="btn_shop_z_png" x="696" y="728" width="44" height="72" frameX="-2" frameY="-3" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="btn_user_a_png" x="837" y="605" width="48" height="78"/>
+    <SubTexture name="btn_user_z_png" x="948" y="398" width="44" height="72" frameX="-2" frameY="-3" frameWidth="48" frameHeight="78"/>
+    <SubTexture name="for_jiao_png" x="989" y="473" width="31" height="42"/>
+    <SubTexture name="game_hu_png" x="984" y="706" width="39" height="63"/>
+    <SubTexture name="game_scene_bg_png" x="1" y="1" width="640" height="530"/>
+    <SubTexture name="gameend_bg_png" x="1" y="532" width="536" height="490"/>
+    <SubTexture name="gameend_draw_png" x="850" y="369" width="97" height="71"/>
+    <SubTexture name="gameend_lose_png" x="642" y="380" width="97" height="69"/>
+    <SubTexture name="gameend_win_png" x="740" y="421" width="96" height="72"/>
+    <SubTexture name="hua_51_0_png" x="617" y="532" width="17" height="25"/>
+    <SubTexture name="hua_51_1_png" x="819" y="598" width="17" height="25"/>
+    <SubTexture name="hua_52_0_png" x="819" y="572" width="17" height="25"/>
+    <SubTexture name="hua_52_1_png" x="819" y="546" width="17" height="25"/>
+    <SubTexture name="hua_53_0_png" x="819" y="520" width="17" height="25"/>
+    <SubTexture name="hua_53_1_png" x="819" y="494" width="17" height="25"/>
+    <SubTexture name="hua_54_0_png" x="989" y="516" width="17" height="25"/>
+    <SubTexture name="hua_54_1_png" x="993" y="447" width="17" height="25"/>
+    <SubTexture name="hua_55_0_png" x="993" y="421" width="17" height="25"/>
+    <SubTexture name="hua_55_1_png" x="994" y="395" width="17" height="25"/>
+    <SubTexture name="hua_56_0_png" x="994" y="369" width="17" height="25"/>
+    <SubTexture name="hua_56_1_png" x="994" y="343" width="17" height="25"/>
+    <SubTexture name="hua_57_0_png" x="994" y="317" width="17" height="25"/>
+    <SubTexture name="hua_57_1_png" x="994" y="291" width="17" height="25"/>
+    <SubTexture name="hua_58_0_png" x="994" y="265" width="17" height="25"/>
+    <SubTexture name="hua_58_1_png" x="994" y="239" width="17" height="25"/>
+    <SubTexture name="img_head_border_png" x="831" y="802" width="44" height="69"/>
+    <SubTexture name="in_hand_card_effect_png" x="956" y="315" width="37" height="82"/>
+    <SubTexture name="ingame_indicate_01_png" x="949" y="831" width="47" height="35" frameX="0" frameY="-6" frameWidth="47" frameHeight="47"/>
+    <SubTexture name="ingame_indicate_02_png" x="538" y="920" width="35" height="47" frameX="-6" frameY="0" frameWidth="47" frameHeight="47"/>
+    <SubTexture name="ingame_indicate_03_png" x="949" y="795" width="47" height="35" frameX="0" frameY="-6" frameWidth="47" frameHeight="47"/>
+    <SubTexture name="ingame_indicate_04_png" x="831" y="872" width="35" height="47" frameX="-6" frameY="0" frameWidth="47" frameHeight="47"/>
+    <SubTexture name="jiao_preview_bg_png" x="918" y="542" width="50" height="103"/>
+    <SubTexture name="last_chu_png" x="994" y="83" width="28" height="85"/>
+    <SubTexture name="lose_type_png" x="876" y="860" width="38" height="24"/>
+    <SubTexture name="now_action_down_png" x="969" y="542" width="49" height="82" frameX="-7" frameY="-10" frameWidth="63" frameHeight="92"/>
+    <SubTexture name="now_action_left_png" x="538" y="679" width="55" height="70" frameX="0" frameY="-10" frameWidth="63" frameHeight="92"/>
+    <SubTexture name="now_action_right_png" x="933" y="471" width="55" height="70" frameX="-8" frameY="-10" frameWidth="63" frameHeight="92"/>
+    <SubTexture name="now_action_up_png" x="969" y="625" width="49" height="80" frameX="-7" frameY="0" frameWidth="63" frameHeight="92"/>
+    <SubTexture name="on_table_card_effect_png" x="994" y="169" width="23" height="39"/>
+    <SubTexture name="player_auto_png" x="749" y="315" width="105" height="52"/>
+    <SubTexture name="player_ready_png" x="642" y="315" width="106" height="64"/>
+    <SubTexture name="txt_game_basescore_png" x="994" y="209" width="20" height="29"/>
+    <SubTexture name="txt_game_remain_png" x="538" y="649" width="76" height="29"/>
+    <SubTexture name="win_type_png" x="984" y="770" width="38" height="24"/>
+</TextureAtlas>
