@@ -91,7 +91,7 @@ package game.control
 			_curView.updateData(_args);
 			_args = null;
 			_windowStack.addElement(_curView);
-			Global.windowLayer.addChild(_curView);
+			LayerManager.windowLayer.addChild(_curView);
 			LoadingManager.getInstance().hideLoading();
 			_curView.onStageFocus();
 			_curView.onEnter();
@@ -108,7 +108,7 @@ package game.control
 				curWindow.onStageBlur();
 				curWindow.onLeave();
 				_windowStack.removeElement(curWindow);
-				Global.windowLayer.removeChild(curWindow);
+				LayerManager.windowLayer.removeChild(curWindow);
 				curWindow.releaseRes();
 				curWindow.onDispose();
 				curWindow = null;
@@ -136,7 +136,7 @@ package game.control
 				curWindow.onStageBlur();
 				curWindow.onLeave();
 				_windowStack.removeElement(curWindow);
-				Global.windowLayer.removeChild(curWindow);
+				LayerManager.windowLayer.removeChild(curWindow);
 				curWindow.releaseRes();
 				curWindow.onDispose();
 				curWindow = null;
@@ -167,7 +167,7 @@ package game.control
 					curWindow.onStageBlur();
 					curWindow.onLeave();
 					_windowStack.removeElement(curWindow);
-					Global.windowLayer.removeChild(curWindow);
+					LayerManager.windowLayer.removeChild(curWindow);
 					curWindow.releaseRes();
 					curWindow.onDispose();
 					curWindow = null;

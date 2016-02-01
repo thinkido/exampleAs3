@@ -61,7 +61,7 @@ package game.view.window.rank
 			_bfGold.setText(CommonUtil.formatGold(Global.userDataVO.gold));
 			_bfLevel.setText(Global.userDataVO.level.toString());
 			_bfRank.setText("0");
-			_imgHead.setTexture(Global.getMyHeadTexture());
+			_imgHead.setTexture(ResManager.getMyHeadTexture());
 			try
 			{
 				var msg:cs_rank_list = new cs_rank_list();

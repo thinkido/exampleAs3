@@ -4,7 +4,7 @@ import flash.display.Graphics;
 
 import configs.AnchorType;
 
-import framework.geom.Point;
+import flash.geom.Point;
 import framework.geom.Rectangle;
 import framework.resources.FontSheet;
 import framework.resources.TextureData;

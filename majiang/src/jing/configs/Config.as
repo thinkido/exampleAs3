@@ -1,9 +1,10 @@
 package jing.configs
 {
-	import framework.io.FileIO;
 	import framework.resources.Res;
 	
 	import game.model.vo.IpAddressVO;
+	
+	import managers.ResManager;
 	
 	/**
 	 * 配置工具
@@ -42,7 +43,8 @@ package jing.configs
 	
 		public function init(file:String):void{
 			var obj:Object= null;
-			obj = Res.actively.getJson(file);
+//			obj = Res.actively.getJson(file);
+			obj = ResManager.getFile(file , Res.TYPE_JSON , true) ; 
 			try
 			{
 				_gateAddressVO = new IpAddressVO(obj["gate_address"], obj["gate_port"]);
@@ -53,7 +55,6 @@ package jing.configs
 			{
 				trace("加载配置文件出错", "LogManager.LEVEL_ERROR");
 			}
-			Res.actively.release(file);
 		}
 	}
 }

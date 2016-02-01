@@ -57,12 +57,12 @@ package game.control
 			_callback = callback;
 			_curLoadingView = isLoadingScene ? _loadingScene : _loadingWindow;
 			_curLoadingView.update(text, _nextframeCallback);
-			Global.loadingLayer.addChild(_curLoadingView);
+			LayerManager.topLayer.addChild(_curLoadingView);
 		}
 	
 		public function hideLoading():void
 		{
-			Global.loadingLayer.removeChild(_curLoadingView);
+			LayerManager.topLayer.removeChild(_curLoadingView);
 			_curLoadingView = null;
 			_callback = null;
 			_isLoading = false;

@@ -4,7 +4,6 @@ package
 	import br.com.stimuli.loading.BulkProgressEvent;
 	
 	import com.mike.utils.ResolutionUtil;
-	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
 	
 	import configs.GameInstance;
 	
@@ -24,8 +23,15 @@ package
 	import flash.ui.MultitouchInputMode;
 	import flash.utils.getTimer;
 	
+	import framework.resources.Res;
+	
+	import game.model.Global;
+	
+	import jing.GDC;
+	import jing.configs.CardLayout;
+	import jing.configs.Config;
+	
 	import managers.ResManager;
-	import managers.SoundManager;
 	
 	import starling.core.Starling;
 	import starling.utils.AssetManager;
@@ -90,7 +96,8 @@ package
 			
 			EventCenter.instance.addEventListener(GameEvent.STARLING_CREATE, onStarlingCreated);
 			var rect:Rectangle ;
-			rect = new Rectangle(0,0,Math.min(stage.fullScreenWidth, stage.fullScreenHeight),Math.max(stage.fullScreenWidth, stage.fullScreenHeight));
+//			rect = new Rectangle(0,0,Math.min(stage.fullScreenWidth, stage.fullScreenHeight),Math.max(stage.fullScreenWidth, stage.fullScreenHeight));
+			rect = new Rectangle(0,0, ResolutionUtil.instance.designWidth , ResolutionUtil.instance.designHeight );
 //			if (!DeviceUtil.ios)
 				Starling.handleLostContext = true;
 			app = new Starling(Game,stage,rect,null,"auto","auto");
@@ -98,8 +105,21 @@ package
 			app.stage.stageHeight = ResolutionUtil.instance.designHeight;
 			app.showStats = true;
 			app.start();
+			initBaseData() ;
 			loadRes(null);
 			stage.addEventListener(Event.ENTER_FRAME, onenterframe);
+		}
+		private function initBaseData():void{
+			if(Global.account == null)
+			{
+				Global.account = "zhidaGame";
+				Global.adAccount = Global.account;
+			}
+			Global.resUrl = "http://182.140.237.55/res_i";
+			ResManager.loadInitConfig("/res.json");
+			
+			Global.cfg = new Config("config_json");
+			GDC.cl = new CardLayout();
 		}
 		
 		protected function onenterframe(event:Event):void
@@ -127,12 +147,6 @@ package
 			starGame();
 		}
 		
-		
-		private function initData():void
-		{
-//			GameInstance.instance.so = new LocalSO("com.kunpeng.collectcandy");
-		}
-		
 		public function loadRes(e:GameEvent):void
 		{
 			ResManager.resLoader = new BulkLoader("main");
@@ -149,7 +163,6 @@ package
 				var am:AssetManager = new AssetManager();
 				ResManager.assetsManager = am;
 				starGame();
-				SoundManager.init();
 			};
 			ResManager.resLoader.addEventListener(BulkProgressEvent.COMPLETE,comp);
 			ResManager.resLoader.start();
@@ -160,7 +173,6 @@ package
 			trace(GameInstance.instance.resLoadCom,GameInstance.instance.haveStarlingCreate,timeBool);
 			if (GameInstance.instance.resLoadCom && GameInstance.instance.haveStarlingCreate)
 			{
-				initData();
 				EventCenter.instance.dispatchEvent(new GameEvent(GameEvent.START_GAME));
 				GameInstance.beginTime = getTimer();
 			}

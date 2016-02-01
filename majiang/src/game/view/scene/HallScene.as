@@ -225,8 +225,8 @@ package game.view.scene
 		{
 			bfName.setText(Global.userDataVO.name);
 			bfGold.setText(CommonUtil.formatGold(Global.userDataVO.gold));
-			imgHead.setTexture(Global.getMyHeadTexture());
-			imgTitle.setTexture(Global.getMyTitleTexture());
+			imgHead.setTexture(ResManager.getMyHeadTexture());
+			imgTitle.setTexture(ResManager.getMyTitleTexture());
 		}
 			
 		public function disposePro():void{
@@ -322,7 +322,7 @@ package game.view.scene
 			}
 			else
 			{
-				Global.socketHall.reconnect();
+				Global.socketHall.reconnect() ;
 				var userId:String = AccountManager.getInstance().getId();
 				var userType:String = AccountManager.getInstance().getType();
 				Global.socketHall.send(JSON.stringify(["enter_hall",userId,userType,1]));

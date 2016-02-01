@@ -10,6 +10,7 @@ package game.view.window.user
 	
 	import game.constant.SceneType;
 	import game.control.AccountManager;
+	import game.control.NetManager;
 	import game.control.SceneManager;
 	import game.control.WindowManager;
 	import game.model.Global;
@@ -109,7 +110,7 @@ package game.view.window.user
 			
 			_bfName.setText(Global.userDataVO.name);
 			_bfLevel.setText("" + Global.userDataVO.level);
-			_imgTitle.setTexture(Global.getMyTitleTexture());
+			_imgTitle.setTexture(ResManager.getMyTitleTexture());
 			if(Global.userDataVO.sex == 0)
 			{
 				_ckFemale.setState(STATE_CHECKED_NORMAL);
@@ -145,7 +146,7 @@ package game.view.window.user
 		
 		private function updatePortrait():void
 		{
-			_imgHead.setTexture(Global.getMyHeadTexture());
+			_imgHead.setTexture(ResManager.getMyHeadTexture());
 		}
 		
 		override public function onLeave():void

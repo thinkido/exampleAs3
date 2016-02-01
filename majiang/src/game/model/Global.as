@@ -25,6 +25,8 @@ package game.model
 	public class Global
 	{
 		
+		public static var game:Game;
+		
 		private static var _root:Sprite;
 		
 		// 消息通知器
@@ -42,21 +44,6 @@ package game.model
 		 * 配置表
 		 */
 		public static var cfg:Config;
-		
-		/**
-		 * 窗口灰色半透明遮盖
-		 */
-		public static var imgDarkBg:Texture;
-		
-		/**
-		 * 头像纹理集
-		 */
-		public static var ssHead:SpriteSheet;
-		
-		/**
-		 * 称号纹理集
-		 */
-		public static var ssTitle:SpriteSheet;
 		
 		/**
 		 * 资源地址
@@ -94,82 +81,5 @@ package game.model
 		
 		public static var diamond:int;
 		
-		/** 视图层级 **/
-		public static var sceneLayer:Sprite;
-		
-		public static var windowLayer:Sprite;
-		
-		public static var effectLayer:Sprite;
-		
-		public static var loadingLayer:Sprite;
-		
-		public static function root():Sprite
-		{
-			return _root;
-		}
-		
-		public static function setRoot(root:Sprite):void
-		{
-			if(null == _root)
-			{
-				_root = root;
-				sceneLayer = new Sprite();
-				windowLayer = new Sprite();
-				effectLayer = new Sprite();
-				loadingLayer = new Sprite();
-				_root.addChild(sceneLayer);
-				_root.addChild(windowLayer);
-				_root.addChild(effectLayer);
-				_root.addChild(loadingLayer);
-			}
-		}
-		
-		public static function reset():void
-		{
-			WindowManager.getInstance().closeAllWindow();
-			SceneManager.getInstance().reset();
-			AccountManager.getInstance().reset();
-			PlaceDataManager.getInstance().reset();
-			System.gc();
-		}
-		
-		public static function init():void
-		{
-			LoadingManager.getInstance().init("loadingwindow_json", "loadingscene_json");
-			WindowType.WINDOW_POPUP.createInstance();
-			var imgDarkBgFileName:String = "img_dark_bg_png";
-			imgDarkBg = Res.actively.getTexture(imgDarkBgFileName);
-			Res.actively.release(imgDarkBgFileName);
-			var ssHeadFileName:String = "head_json";
-			ssHead = Res.actively.getSheet(ssHeadFileName);
-			Res.actively.release(ssHeadFileName);
-			var ssTitleFileName:String = "title_json";
-			ssTitle = Res.actively.getSheet(ssTitleFileName);
-			Res.actively.release(ssTitleFileName);
-			
-			AccountManager.getInstance().connect();
-		}
-		
-		public static function getMyHeadTexture():Texture
-		{
-			return getHeadTexture(userDataVO.sex, userDataVO.portrait);
-		}
-		
-		public static function getHeadTexture(sex:int, portrait:int):Texture
-		{
-			if(sex == 0)
-				portrait += 9;
-			return ssHead.getTexture("head_" + portrait);
-		}
-		
-		public static function getMyTitleTexture():Texture
-		{
-			return getTitleTexture(userDataVO.level);
-		}
-		
-		public static function getTitleTexture(level:int):Texture
-		{
-			return ssTitle.getTexture("title_" + level);
-		}
 	}
 }

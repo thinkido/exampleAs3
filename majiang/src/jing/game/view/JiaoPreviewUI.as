@@ -2,13 +2,13 @@ package jing.game.view
 {
 import framework.resources.FontSheet;
 import framework.resources.Res;
-import framework.views.Bitmap;
-import framework.views.BitmapFont;
+import starling.text.BitmapFont;
 
 import jing.consts.CardPlace;
 import jing.consts.GameDir;
 import jing.pai.vo.JiaoVO;
 
+import starling.display.Image;
 import starling.display.Sprite;
 import starling.textures.Texture;
 
@@ -35,14 +35,14 @@ public class JiaoPreviewUI extends Sprite
 		var x:int= 0;
 		for(var i:int= 0; i < jiaos.length; i++)
 		{
-			var bg:Bitmap= new Bitmap(_bgT);
+			var bg:Image= new Image(_bgT);
 			this.addChild(bg);
-			bg.setPosition(x, 0);
-			x += bg.getWidth();
+			bg.x = x ;
+			x += bg.width ;
 			
 			var mj:Mahjong= new Mahjong(jiaos[i].jiaoCard, GameDir.DOWN, CardPlace.IN_HAND);
-			var mjx:int= bg.getX() + (bg.getWidth() - mj.width) / 2;
-			var mjy:int= bg.getY() + (bg.getHeight() - mj.height) / 2;
+			var mjx:int= bg.x + (bg.width - mj.width) / 2;
+			var mjy:int= bg.y + (bg.height - mj.height) / 2;
 //			mj.setPosition(mjx, mjy);
 			mj.x = mjx;
 			mj.y = mjy;

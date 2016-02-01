@@ -1,7 +1,7 @@
 package jing.configs
 {
 
-import framework.geom.Point;
+import flash.geom.Point;
 import framework.resources.Res;
 
 import jing.consts.CardPlace;
@@ -39,7 +39,7 @@ public class CardLayout
 		var obj:Object= null;
 		obj = Res.actively.getJson(file);
 
-		_t = new Object(4);
+		_t = [] ;
 
 		try
 		{

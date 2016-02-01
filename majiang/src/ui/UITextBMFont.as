@@ -1,6 +1,6 @@
 package ui
 {
-	import framework.views.BitmapFont;
+	import starling.text.BitmapFont;
 	
 	public class UITextBMFont extends UIObject
 	{

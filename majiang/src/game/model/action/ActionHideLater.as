@@ -17,14 +17,14 @@ package game.model.action
 	
 		public function onStart():void
 		{
-			Global.effectLayer.addChild(_displayObject);
+			LayerManager.effectLayer.addChild(_displayObject);
 			super.onStart();
 		}
 	
 		public function onComplete():void
 		{
 			super.onComplete();
-			Global.effectLayer.removeChild(_displayObject);
+			LayerManager.effectLayer.removeChild(_displayObject);
 		}
 	
 		public function getReverseAction():Action

@@ -23,7 +23,8 @@ package framework.io
 		
 		public static function getJson(path:String):Object
 		{
-			var str:String =  FileUtils.getStringByFile(path); 
+			var by:ByteArray = FileUtils.getContentByFileName(path) ;
+			var str:String = by.readUTFBytes( by.length ) ; 
 			var obj:Object = com.adobe.serialization.json.JSON.decode( str ) ;
 			return obj ;			
 		}	

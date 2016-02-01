@@ -1,5 +1,5 @@
 package game.model.vo
-	{
+{
 	import protos.hallserver.sc_enter_hall;
 	import protos.hallserver.t_friend_data;
 	

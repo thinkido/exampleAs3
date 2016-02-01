@@ -44,9 +44,9 @@ package game.view.scene.gamescene.elements
 			mjs[0] = new Mahjong(card1, GameDir.DOWN, CardPlace.ON_TABLE);
 			mjs[1] = new Mahjong(card2, GameDir.DOWN, CardPlace.ON_TABLE);
 			mjs[2] = new Mahjong(card3, GameDir.DOWN, CardPlace.ON_TABLE);
-			var w:int = mjs[0].getWidth();
-			mjs[1].setPosition(w, 0);
-			mjs[2].setPosition(w * 2, 0);
+			var w:int = mjs[0].width ;
+			mjs[1].x = w;
+			mjs[2].x = w * 2;
 			mjs[eatedIndex].setState(MahjongState.GLOW);
 			for(var i:int = 0; i < mjs.length; i++)
 			{

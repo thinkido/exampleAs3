@@ -24,16 +24,16 @@ package game.model.action
 			_imgPlane.x = Global.SCREEN_WIDTH;
 			_imgPlane.y = Global.SCREEN_HEIGHT / 2 - 40;
 			setSmokePostion();
-			Global.effectLayer.addChild(_imgSmokeList[0]);
-			Global.effectLayer.addChild(_imgSmokeList[1]);
-			Global.effectLayer.addChild(_imgPlane);
+			LayerManager.effectLayer.addChild(_imgSmokeList[0]);
+			LayerManager.effectLayer.addChild(_imgSmokeList[1]);
+			LayerManager.effectLayer.addChild(_imgPlane);
 		}
 	
 		override public function onComplete():void
 		{
-			Global.effectLayer.removeChild(_imgPlane);
-			Global.effectLayer.removeChild(_imgSmokeList[0]);
-			Global.effectLayer.removeChild(_imgSmokeList[1]);
+			LayerManager.effectLayer.removeChild(_imgPlane);
+			LayerManager.effectLayer.removeChild(_imgSmokeList[0]);
+			LayerManager.effectLayer.removeChild(_imgSmokeList[1]);
 		}
 	
 		override public function onStep():Boolean

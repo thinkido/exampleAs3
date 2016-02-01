@@ -19,7 +19,7 @@ package game.control
 		}
 		
 		public static function sendProtobuf( socket:JSocket , proName:String , data:ByteArray ):void{
-			var node:ProtocolNode = ProtocolList.getNode(proName);
+			var node:ProtocolNode = ProtocolList.getNodeStr(proName);
 			if(node == null)
 			{
 				trace("No-Protocol: " + proName);

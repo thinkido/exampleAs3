@@ -4,7 +4,7 @@ package game.view.scene.gamescene.windows
 		import framework.resources.Res;
 		import framework.resources.SpriteSheet;
 		import framework.views.Bitmap;
-		import framework.views.BitmapFont;
+		import starling.text.BitmapFont;
 		
 		import game.view.scene.gamescene.GameScene;
 		

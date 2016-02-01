@@ -10,6 +10,8 @@ package game.control
 	import game.model.callback.ICallbackO;
 	import game.util.CommonUtil;
 	
+	import managers.LayerManager;
+	
 	import starling.display.Image;
 	
 	import ui.UIScene;
@@ -40,7 +42,7 @@ package game.control
 			{
 				_curView.onStageBlur();
 				_curView.onLeave();
-				Global.sceneLayer.removeChild(_curView);
+				LayerManager.sceneLayer.removeChild(_curView);
 				_curView.releaseRes();
 				_curView.onDispose();
 				_curView = null;
@@ -73,11 +75,11 @@ package game.control
 						_curSceneCache = Global.root() ; // CommonUtil.getSnapShot();
 						_curView.onStageBlur();
 						_curView.onLeave();
-						Global.sceneLayer.removeChild(_curView);
+						LayerManager.sceneLayer.removeChild(_curView);
 						_curView.releaseRes();
 						_curView.onDispose();
 						_curView = null;
-						Global.sceneLayer.addChild(_curSceneCache);
+						LayerManager.sceneLayer.addChild(_curSceneCache);
 						startSwitch();
 						LoadingManager.getInstance().getCurLoadingView().setPosition(640, 0);
 						
@@ -123,7 +125,7 @@ package game.control
 			_curView.releaseRes();
 			_curView.updateData(_args);
 			_args = null;
-			Global.sceneLayer.addChild(_curView);
+			LayerManager.sceneLayer.addChild(_curView);
 			/*LoadingManager.getInstance().showLoading(true, "场景加载完毕，即将呈现", new ICallback()
 				{
 					
@@ -199,7 +201,7 @@ class CallbackO_A implements ICallbackO
 	
 	public function run(data:Object):void
 	{
-		Global.sceneLayer.removeChild(_curSceneCache);
+		LayerManager.sceneLayer.removeChild(_curSceneCache);
 		_curSceneCache = null;
 	}
 }

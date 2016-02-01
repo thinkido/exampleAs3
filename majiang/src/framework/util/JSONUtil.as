@@ -22,7 +22,7 @@ package framework.util
 			try
 			{
 				json = bytes.readUTF() ; 
-				jsonObj = JSON.decode(json) ;  
+				jsonObj = com.adobe.serialization.json.JSON.decode(json) ;  
 			}
 			catch(e:*)
 			{

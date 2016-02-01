@@ -19,7 +19,6 @@ package ui
 					if(item != null)
 					{
 						item.initWithJsonObject(child);
-						item.
 						addChild(item);
 					}
 				}
