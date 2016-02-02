@@ -1,6 +1,5 @@
 package game.control
 {
-	import game.model.callback.ICallback;
 	import game.view.inline.LoadingView;
 	
 	import managers.LayerManager;
@@ -40,11 +39,11 @@ package game.control
 			return _isLoading;
 		}
 	
-		public function showLoading(isLoadingScene:Boolean, text:String):void
+		public function showLoading(isLoadingScene:Boolean, text:String, callback:Function):void
 		{
 			_isLoading = true;
 			_curLoadingView = isLoadingScene ? _loadingScene : _loadingWindow;
-			_curLoadingView.update(text);
+			_curLoadingView.update(text, callback);
 			LayerManager.topLayer.addChild(_curLoadingView);
 		}
 	
