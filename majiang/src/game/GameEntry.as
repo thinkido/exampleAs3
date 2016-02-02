@@ -32,7 +32,7 @@ package game
 			// Res.actively = Res.httpRes;
 			
 			Global.cfg = new Config("config_json");
-			GDC.cl = new CardLayout();
+			Global.cl = new CardLayout();
 		}
 		
 		protected function addedToStage():void

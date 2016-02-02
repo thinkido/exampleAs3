@@ -1,8 +1,9 @@
 package game.control
 {
-	import game.model.Global;
 	import game.model.callback.ICallback;
 	import game.view.inline.LoadingView;
+	
+	import managers.LayerManager;
 
 	public class LoadingManager
 	{
@@ -14,18 +15,6 @@ package game.control
 		private var _loadingScene:LoadingView;
 	
 		private var _curLoadingView:LoadingView;
-	
-		private var _callback:ICallback;
-	
-		private var _nextframeCallback:ICallback = new ICallback()
-		{
-	
-			public function run():void
-			{
-				if(_callback != null)
-					_callback.run();
-			}
-		};
 	
 		private var _isLoading:Boolean;
 	
@@ -51,12 +40,11 @@ package game.control
 			return _isLoading;
 		}
 	
-		public function showLoading(isLoadingScene:Boolean, text:String, callback:ICallback):void
+		public function showLoading(isLoadingScene:Boolean, text:String):void
 		{
 			_isLoading = true;
-			_callback = callback;
 			_curLoadingView = isLoadingScene ? _loadingScene : _loadingWindow;
-			_curLoadingView.update(text, _nextframeCallback);
+			_curLoadingView.update(text);
 			LayerManager.topLayer.addChild(_curLoadingView);
 		}
 	
@@ -64,7 +52,6 @@ package game.control
 		{
 			LayerManager.topLayer.removeChild(_curLoadingView);
 			_curLoadingView = null;
-			_callback = null;
 			_isLoading = false;
 		}
 	

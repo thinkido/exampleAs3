@@ -4,7 +4,10 @@ package managers
 	import br.com.stimuli.loading.BulkLoader;
 	
 	import com.as3game.spritesheet.SpriteSheet;
+	import com.as3game.spritesheet.vos.DataFormat;
+	import com.thinkido.framework.air.FileUtils;
 	
+	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	
 	import framework.io.FileIO;
@@ -13,6 +16,8 @@ package managers
 	
 	import game.model.Global;
 	
+	import starling.display.Image;
+	import starling.text.BitmapFont;
 	import starling.textures.Texture;
 	import starling.utils.AssetManager;
 
@@ -113,13 +118,57 @@ package managers
 			trace("Total local resource:" + _resTable.size());
 		}
 		
+//		返回json 对应的png 地址
+		public static function getSheetUrl( url:String ):String{
+			return url.substring(0, url.length - 5) + ".png" ;
+		}
+//		返回json 对应的 png 地址
+		public static function getFontUrl( url:String ):String{
+			return url.substring(0, url.length - 4) + ".png" ;
+		}
+		
 		public static function getFile(name:String , type:String , delDic:Boolean = false ):*{
 			var obj:* = null;
-			var item:ResItem= getResItem(name, Res.TYPE_JSON ,  delDic );
+			var item:ResItem = getResItem(name, Res.TYPE_JSON ,  delDic );
 			if(_dataTable[name] == undefined)
 			{
 				var url:String= item.url();
-				obj = FileIO.getJson(url);
+				switch( type){
+					case Res.TYPE_JSON:
+						obj = FileIO.getJson(url);
+						break ;
+					case Res.TYPE_IMAGE :
+						obj = resLoader.getBitmap(url) ;
+						break ;
+					case Res.TYPE_TEXTURE :
+						var bmd:BitmapData = resLoader.getBitmapData( url ) ;
+						obj = Texture.fromBitmapData( bmd ) ;
+						break ;
+					case Res.TYPE_SHEET :			//不能本地获取;
+						var sheets:Object= FileUtils.getStringByFileName( url);
+						var imagePath:String = url.substring(0, url.length - 5) + ".png" ;
+						var ssBmd:BitmapData = resLoader.getBitmapData( imagePath ) ;
+						if( sheet == null ){
+							throw new Error("需要先用resLoader加载完图片后再调用");
+						}
+						obj = new SpriteSheet( ssBmd , sheets, DataFormat.FORMAT_JSON);					
+						break ;
+					case Res.TYPE_FONT:		//不能本地获取;
+						var xml:XML = new XML( FileUtils.getStringByFileName( url ) );						
+						var imagePath1:String= url.substring(0, url.length - 4) + ".png";
+						var sheet:BitmapData = resLoader.getBitmapData( imagePath1 ) ;
+						if( sheet == null ){
+							throw new Error("需要先用resLoader加载完图片后再调用");
+						}
+						obj = new BitmapFont( sheet , xml ) ;
+						break ;
+					case Res.TYPE_SOUND:
+						throw new Error("Res.TYPE_SOUND can't found");
+						break ;
+					case Res.TYPE_BINARY:
+						obj = FileUtils.getContentByFile( name );
+						break ;
+				}
 				_dataTable[name] = obj ;
 			}
 			else
@@ -148,6 +197,27 @@ package managers
 				_resTable[name] = undefined ;
 			}			
 			return item;
+		}
+		/** 获取资源的URL地址* 
+		 * @param name
+		* @return
+		*/
+		public static function getUrl(name:String):String{
+			var url:String;
+			if(_resTable[name] != undefined)
+			{
+				var item:ResItem= ResItem(_resTable[name]);
+				url = item.url();
+			}
+			else
+			{
+				url = name;
+				if(url.charAt(0) != '/')
+				{
+					url = '/' + url;
+				}
+			}
+			return url;
 		}
 		
 	}

@@ -52,11 +52,16 @@ package com.thinkido.framework.air
 			var by:ByteArray ;
 			fs.open(file, FileMode.READ);
 			by = new ByteArray();
-//			by.endian = Endian.LITTLE_ENDIAN ;
+			//			by.endian = Endian.LITTLE_ENDIAN ;
 			fs.readBytes(by,0,fs.bytesAvailable) ;
 			fs.close();
 			by.position = 0;
 			return by.readUTFBytes(by.length); ;
+		}
+		public static function getStringByFileName(fileName:String):String{
+			var file:File = new File(fileName);
+			
+			return getStringByFile(file) ;
 		}
 		public static function getContentByFileName(fileName:String):ByteArray{
 			var file:File = new File(fileName);

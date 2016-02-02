@@ -2,7 +2,6 @@ package
 {
 	
 	import com.mike.utils.ResolutionUtil;
-	import com.thinkido.framework.common.Global;
 	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
 	
 	import configs.GameInstance;
@@ -21,6 +20,8 @@ package
 	import game.control.SceneManager;
 	import game.control.WindowManager;
 	import game.model.Global;
+	
+	import jing.configs.CardLayout;
 	
 	import managers.LayerManager;
 	import managers.ResManager;
@@ -104,17 +105,17 @@ package
 			
 		}
 		private function initView():void
-		{			
+		{						
+			Global.cl = new CardLayout();			
+			
 			WindowType.WINDOW_POPUP.createInstance();
 			var imgDarkBgFileName:String = "img_dark_bg_png";
 			imgDarkBg = Res.actively.getTexture(imgDarkBgFileName);
-			Res.actively.release(imgDarkBgFileName);
 			var ssHeadFileName:String = "head_json";
 			ssHead = Res.actively.getSheet(ssHeadFileName);
-			Res.actively.release(ssHeadFileName);
 			var ssTitleFileName:String = "title_json";
 			ssTitle = Res.actively.getSheet(ssTitleFileName);
-			Res.actively.release(ssTitleFileName);
+			
 		}
 		private function initEvt():void
 		{
@@ -122,6 +123,7 @@ package
 			KeyBoardManager.instance.start();	
 			SoundManager.init();	
 			LayerManager.init() ;
+			AccountManager.getInstance().init( this.stage ) ;
 		}	
 		
 		public static function reset():void

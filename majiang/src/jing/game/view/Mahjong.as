@@ -147,7 +147,7 @@ public class Mahjong extends Sprite
 	}
 
 	private function getTexture():Texture{
-		var cardPrefix:String= GDC.cl.getLayout(_dir, _place).cardPrefix;
+		var cardPrefix:String= Global.cl.getLayout(_dir, _place).cardPrefix;
 		var tName:String= null;
 		if((_place == CardPlace.IN_HAND || _place == CardPlace.NEW_IN_HAND) && _dir != GameDir.DOWN)
 		{

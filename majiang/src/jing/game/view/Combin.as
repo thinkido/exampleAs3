@@ -60,7 +60,7 @@ package jing.game.view
 		
 		private function refresh():void{
 			this.removeAllChildren();
-			var vo:CardLayoutVO= GDC.cl.getLayout(_dir, _place);
+			var vo:CardLayoutVO= Global.cl.getLayout(_dir, _place);
 			switch(_type)
 			{
 				case CombinType.AN_GANG:

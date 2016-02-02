@@ -119,7 +119,7 @@ package
 			ResManager.loadInitConfig("/res.json");
 			
 			Global.cfg = new Config("config_json");
-			GDC.cl = new CardLayout();
+			Global.cl = new CardLayout();
 		}
 		
 		protected function onenterframe(event:Event):void

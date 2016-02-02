@@ -45,9 +45,9 @@ package jing.pai
 		{
 			var cards:Array= [];
 			var i:int= 0;
-			for each(var item:String in _t)
+			for (var key:String in _t)
 			{
-				cards[i++] = int(item);
+				cards[i++] = key ;
 			}
 			
 			/*for(var enumobj:Enumeration= _t.keys(); enumobj.hasMoreElements();)

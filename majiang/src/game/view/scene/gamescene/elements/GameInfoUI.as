@@ -1,21 +1,29 @@
 package game.view.scene.gamescene.elements
 {
-	import flash.geom.Point;
+	import com.as3game.spritesheet.SpriteSheet;
+	import com.thinkido.framework.manager.loader.LoaderManager;
+	import com.thinkido.framework.manager.loader.vo.LoadData;
 	
 	import configs.AnchorType;
 	
+	import flash.events.Event;
+	import flash.geom.Point;
+	import flash.utils.clearInterval;
+	import flash.utils.setInterval;
+	
 	import framework.consts.TransType;
 	import framework.resources.Res;
-	import framework.resources.SpriteSheet;
-	import framework.time.TickItem;
-	import framework.views.Stage;
 	
 	import game.control.UserDataManager;
+	import game.model.Global;
 	
 	import jing.consts.GameDir;
 	
+	import managers.ResManager;
+	
 	import starling.display.DisplayObject;
 	import starling.display.MovieClip;
+	import starling.display.Stage;
 	import starling.text.TextField;
 	
 	import ui.UIContainer;
@@ -84,7 +92,7 @@ package game.view.scene.gamescene.elements
 			initHuaStartPoints();
 			reset();
 	
-			_timerId = Stage.current.ticker.setTimeInterval(1000, this, null);
+			_timerId = setInterval( onTick, 1000 );
 	
 			layoutNameTxts();
 	
@@ -112,7 +120,7 @@ package game.view.scene.gamescene.elements
 	
 		override public function dispose():void
 		{
-			Stage.current.ticker.release(_timerId);
+			clearInterval( _timerId) ;
 			_timerId = -1;
 		}
 	
@@ -264,7 +272,7 @@ package game.view.scene.gamescene.elements
 			}
 		}
 	
-		public function onTick( tickItem:TickItem):void
+		public function onTick( ):void
 		{
 			if(_cd > 0)
 			{
@@ -282,27 +290,31 @@ package game.view.scene.gamescene.elements
 	
 		private function layoutNameTxts():void
 		{
-			var cx:int = Stage.current.stageWidth() >> 1;
-			var cy:int = Stage.current.stageHeight() >> 1;
+			var cx:int = Global.SCREEN_WIDTH >> 1;
+			var cy:int = Global.SCREEN_HEIGHT >> 1;
 	
 			var txt:TextField = null;
 			txt = txtNames[GameDir.UP] as UIText;
 			txt.setAnchor(ANCHOR_CENTER);
-			txt.setPosition(cx, 10);
+			txt.x = cx ;
+			txt.y = 10 ;
 			txt.text = "等待加入";
 			txt = txtNames[GameDir.DOWN] as UIText;
 			txt.setAnchor(ANCHOR_CENTER);
-			txt.setPosition(cx, 520);
+			txt.x = cx ;
+			txt.y = 520 ;
 			txt.text = "等待加入";
 			txt = txtNames[GameDir.LEFT] as UIText;
 			txt.setAnchor(ANCHOR_CENTER);
-			txt.setTrans(TransType.ROT270);
-			txt.setPosition(10, cy);
+			txt.rotation = TransType.ROT270 ;
+			txt.x = 10 ;
+			txt.y = cy ;
 			txt.text = "等待加入";
 			txt = txtNames[GameDir.RIGHT] as UIText;
 			txt.setAnchor(ANCHOR_CENTER);
-			txt.setTrans(TransType.ROT90);
-			txt.setPosition(630, cy);
+			txt.rotation = TransType.ROT90 ;
+			txt.x = 630 ;
+			txt.y = cy ;
 			txt.text = "等待加入";
 		}
 	
@@ -335,7 +347,12 @@ package game.view.scene.gamescene.elements
 		public function showEffect( dir:String, effect:String):void
 		{
 			var img:UIImageView = stateImgs[dir] as UIImageView;
-	
+			
+			var url:String = "eft_" + effect + "_json" ;
+			
+			var ld:LoadData = new LoadData( url , effectLoaded , null , null,"",url) ;
+			LoaderManager.load([ld] ,  ResManager.resLoader ) ;
+			
 			var ss:SpriteSheet = Res.actively.getSheet("eft_" + effect + "_json");
 			var mc:MovieClip = new MovieClip(ss, 100);
 			mc.setAnchor(ANCHOR_CENTER);
@@ -343,5 +360,9 @@ package game.view.scene.gamescene.elements
 			mc.setPosition(img.getX(), img.getY());
 			this.addChild(mc);
 		}
+		private function effectLoaded( ld:LoadData , evt:Event ):void{
+			
+		}
+		
 	}
 }

@@ -324,10 +324,10 @@ package jing.game.view
 		}
 		
 		private function refreshLayout():void{
-			layoutInHandVec(Vector(_mjT.get(CardPlace.IN_HAND)), true == _showHand ? GDC.cl.getLayout(_dir, CardPlace.SHOW_HAND) : GDC.cl.getLayout(_dir, CardPlace.IN_HAND));
-			layoutVec(Vector(_mjT.get(CardPlace.IN_HAND_TABLE)), GDC.cl.getLayout(_dir, CardPlace.IN_HAND_TABLE));
-			layoutVec(Vector(_mjT.get(CardPlace.NEW_IN_HAND)), GDC.cl.getLayout(_dir, CardPlace.NEW_IN_HAND));
-			layoutVec(Vector(_mjT.get(CardPlace.ON_TABLE)), GDC.cl.getLayout(_dir, CardPlace.ON_TABLE));
+			layoutInHandVec(Vector(_mjT.get(CardPlace.IN_HAND)), true == _showHand ? Global.cl.getLayout(_dir, CardPlace.SHOW_HAND) : Global.cl.getLayout(_dir, CardPlace.IN_HAND));
+			layoutVec(Vector(_mjT.get(CardPlace.IN_HAND_TABLE)), Global.cl.getLayout(_dir, CardPlace.IN_HAND_TABLE));
+			layoutVec(Vector(_mjT.get(CardPlace.NEW_IN_HAND)), Global.cl.getLayout(_dir, CardPlace.NEW_IN_HAND));
+			layoutVec(Vector(_mjT.get(CardPlace.ON_TABLE)), Global.cl.getLayout(_dir, CardPlace.ON_TABLE));
 			sortDeep();
 		}
 		

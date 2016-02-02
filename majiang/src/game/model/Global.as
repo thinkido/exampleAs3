@@ -2,25 +2,14 @@ package game.model
 {	
 	import com.thinkido.framework.net.JSocket;
 	
-	import flash.system.System;
-	
-	import framework.resources.Res;
-	import framework.resources.SpriteSheet;
-	
-	import game.constant.WindowType;
-	import game.control.AccountManager;
-	import game.control.LoadingManager;
-	import game.control.PlaceDataManager;
-	import game.control.SceneManager;
-	import game.control.WindowManager;
 	import game.model.vo.GiftVO;
 	import game.model.vo.UserDataVO;
 	
+	import jing.configs.CardLayout;
 	import jing.configs.Config;
 	
 	import starling.display.Sprite;
 	import starling.events.EventDispatcher;
-	import starling.textures.Texture;
 	
 	public class Global
 	{
@@ -40,6 +29,11 @@ package game.model
 		
 		public static const SCREEN_HEIGHT:int = 530;
 		
+		/**
+		 * 游戏牌局布局
+		 */
+		public static var cl:CardLayout= null;
+
 		/**
 		 * 配置表
 		 */
