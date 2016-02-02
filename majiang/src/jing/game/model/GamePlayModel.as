@@ -1,11 +1,16 @@
 package jing.game.model
 {
+import flash.utils.clearTimeout;
+import flash.utils.setTimeout;
+
 import framework.time.ITickListener;
 import framework.time.TickItem;
 import framework.views.Stage;
+
 import game.model.Global;
 import game.model.vo.EnterGameVO;
 import game.util.CommonUtil;
+
 import jing.game.net.GamePlaySL;
 import jing.game.net.GameRequest;
 
@@ -83,20 +88,13 @@ public class GamePlayModel
 	}
 
 	public function startLeaveRoomTimer():void{
-		_leaveRoomTimerId = Stage.current.ticker.setTimeout(20000, new ITickListener()
-		{
-
-			public function onTick(tickItem:TickItem):void{
-				// 主动退出房间
-				kickedFromRoom();
-			}
-		}, null);
+		_leaveRoomTimerId = setTimeout(kickedFromRoom, 20000 );
 	}
 
 	public function releaseOutRoomTimer():void{
 		if(-1!= _leaveRoomTimerId)
 		{
-			Stage.current.ticker.release(_leaveRoomTimerId);
+			clearTimeout(_leaveRoomTimerId);
 			_leaveRoomTimerId = -1;
 		}
 	}

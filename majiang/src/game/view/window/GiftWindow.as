@@ -95,7 +95,7 @@ package game.view.window
 									}
 								});*/
 							CommonUtil.showPopupWindow(false, "恭喜,成功领取"
-								+ Global.giftVO.gold + "积分", new CallBack_A(close));
+								+ Global.giftVO.gold + "积分", close);
 						} else {
 							close();
 						}
@@ -111,25 +111,6 @@ package game.view.window
 		
 		 override public function onConfirm( target:UIObject):void {
 			
-		}
-	}
-}
-import game.model.callback.ICallbackB;
-
-class CallBack_A implements ICallbackB
-{
-	private var func:Function;
-	
-	public function CallBack_A($func:Function)
-	{
-		func = $func;
-	}
-	
-	public function run(data:Boolean):void
-	{
-		if(func != null)
-		{
-			func();
 		}
 	}
 }

@@ -7,7 +7,6 @@ package game.view.window
 	
 	import game.control.WindowManager;
 	import game.model.Global;
-	import game.model.callback.ICallbackB;
 	import game.model.vo.PopupVO;
 	
 	import starling.display.Button;
@@ -22,7 +21,7 @@ package game.view.window
 	{
 		private static var LINE_LENGTH:int = 20;
 		
-		protected var _callback:ICallbackB;
+		protected var _callback:Function;
 		
 		protected var _btnOK:Button;
 		
@@ -52,7 +51,7 @@ package game.view.window
 			}
 		}
 		
-		private function baseUpdate( isConfirm:Boolean, callback:ICallbackB):void 
+		private function baseUpdate( isConfirm:Boolean, callback:Function):void 
 		{
 			_callback = callback;
 			if (isConfirm) {
@@ -74,7 +73,7 @@ package game.view.window
 			}
 		}
 		
-		private function update( isConfirm:Boolean,  text:String,  callback:ICallbackB):void
+		private function update( isConfirm:Boolean,  text:String,  callback:Function):void
 		{
 			baseUpdate(isConfirm, callback);
 			_imgContent.clearTexture();
@@ -87,7 +86,7 @@ package game.view.window
 			_tfContent.setText(showTxt);
 		}
 		
-		private function update_2( isConfirm:Boolean, texture:Texture,  callback:ICallbackB):void
+		private function update_2( isConfirm:Boolean, texture:Texture,  callback:Function):void
 		{
 			baseUpdate(isConfirm, callback);
 			_tfContent.setText("");

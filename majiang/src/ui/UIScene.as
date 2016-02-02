@@ -1,6 +1,8 @@
 package ui
 {
 	
+	import flash.system.System;
+	
 	import game.util.CommonUtil;
 	
 	public class UIScene extends UICurrentView
@@ -13,10 +15,14 @@ package ui
 		
 		override public function onGoBack():void
 		{
-			CommonUtil.showPopupWindow(true, "确定退出游戏?",new CallBack);
+			CommonUtil.showPopupWindow(true, "确定退出游戏?", onConfirm);
 		}
 
-
+		private function onConfirm( data:Boolean):void
+		{
+			if(data)
+				System.exit(0);
+		}
 		
 		override public function initWithJsonObject( data:Object):void
 		{
@@ -41,17 +47,5 @@ package ui
 			}
 		}
 
-	}
-}
-import flash.system.System;
-
-import game.model.callback.ICallbackB;
-
-class CallBack implements ICallbackB
-{
-	public function run( data:Boolean):void
-	{
-		if(data)
-			System.exit(0);
 	}
 }

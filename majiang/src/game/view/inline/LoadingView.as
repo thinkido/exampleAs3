@@ -1,8 +1,6 @@
 
 package game.view.inline
 {
-	import game.model.callback.ICallback;
-	
 	import org.json.me.JSONObject;
 	
 	import starling.text.TextField;
@@ -21,7 +19,7 @@ package game.view.inline
 	
 	//	protected UIImageView[] _imgTipsLiad = new UIImageView[TIPS_LENGTH];
 	
-		protected var _callback:ICallback;
+		protected var _callback:Function;
 	
 		protected var _curIndex:int;
 	
@@ -34,10 +32,8 @@ package game.view.inline
 			else if(_stateFlag == 1)
 			{
 				_stateFlag = 2;
-				var callback:ICallback = _callback;
-				_callback = null;
-				if(callback != null)
-					callback.run();
+				if(_callback != null)
+					_callback.call();
 			}
 		}
 	
@@ -58,7 +54,7 @@ package game.view.inline
 	//		}
 		}
 	
-		public function update(text:String, callback:ICallback):void
+		public function update(text:String, callback:Function):void
 		{
 			_stateFlag = 0;
 	//		updateTips();

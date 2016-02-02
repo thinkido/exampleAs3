@@ -4,8 +4,6 @@ package game.util
 	import game.control.ActionManager;
 	import game.control.WindowManager;
 	import game.model.action.ActionWaitTo;
-	import game.model.callback.CallbackO;
-	import game.model.callback.ICallbackB;
 	import game.model.vo.PopupVO;
 	
 	public class CommonUtil
@@ -53,14 +51,9 @@ package game.util
 		}	
 	
 	
-		public static function showPopupWindow(isConfirm:Boolean, content:Object, callback:ICallbackB):void
+		public static function showPopupWindow(isConfirm:Boolean, content:Object, callback:Function):void
 		{
 			WindowManager.getInstance().openWindow(WindowType.WINDOW_POPUP, new PopupVO(isConfirm, content, callback));
-		}
-		
-		public static function setTimeout(callback:CallbackO, interval:Number):void
-		{
-			ActionManager.getInstance().doAction(new ActionWaitTo(interval, null, callback));
 		}
 	}
 }

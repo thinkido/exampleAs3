@@ -64,10 +64,7 @@ package game.control
 							doOpen();
 						}
 					});*/
-					LoadingManager.getInstance().showLoading(false, "窗口加载中，请耐心等待", function():void
-					{
-						doOpen();
-					});
+					LoadingManager.getInstance().showLoading(false, "窗口加载中，请耐心等待", doOpen);
 				}
 			}
 		}

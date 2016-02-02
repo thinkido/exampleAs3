@@ -1,5 +1,7 @@
 package jing.game.net.handler
 {
+import flash.utils.setTimeout;
+
 import framework.time.ITickListener;
 import framework.time.TickItem;
 import framework.views.Stage;
@@ -56,13 +58,10 @@ public class SCEndGame
 		gs.pLeft.setShowHand(true);
 		gs.model.startLeaveRoomTimer();
 
-		Stage.current.ticker.setTimeout(2000, new ITickListener(_ge)
-			{
-				public function onTick(tickItem:TickItem):void{
+		setTimeout(function():void{
 					WindowManager.getInstance().openWindow(WindowType.WINDOW_GAME_END, _ge);
-				}
-			}
-			, null);
+				}, 2000
+			);
 
 	}
 
