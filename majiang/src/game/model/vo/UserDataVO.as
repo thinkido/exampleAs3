@@ -26,7 +26,7 @@ package game.model.vo
 	
 		public var pingNum:int;
 	
-		public function UserDataVO(msg:sc_enter_hall)
+		public function UserDataVO(msg:sc_enter_hall):void
 		{
 			name = msg.name;
 			gold = msg.gold;

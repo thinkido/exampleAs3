@@ -23,11 +23,8 @@ package
 	import flash.ui.MultitouchInputMode;
 	import flash.utils.getTimer;
 	
-	import framework.resources.Res;
-	
 	import game.model.Global;
 	
-	import jing.GDC;
 	import jing.configs.CardLayout;
 	import jing.configs.Config;
 	

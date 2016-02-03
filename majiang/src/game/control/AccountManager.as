@@ -7,7 +7,6 @@ package game.control
 	import com.thinkido.framework.events.TSocketEvent;
 	import com.thinkido.framework.manager.TimerManager;
 	import com.thinkido.framework.net.JSocket;
-	import com.thinkido.framework.net.NProtocol;
 	
 	import flash.events.Event;
 	import flash.net.URLLoader;
@@ -18,8 +17,6 @@ package game.control
 	import flash.utils.ByteArray;
 	import flash.utils.Endian;
 	import flash.utils.getTimer;
-	
-	import framework.views.Stage;
 	
 	import game.constant.SceneType;
 	import game.model.Global;
@@ -32,13 +29,13 @@ package game.control
 	import network.ProtocolNode;
 	import network.YiuNetworkHandlerMgr;
 	
-	import org.osmf.logging.Log;
-	
 	import protos.common.protocol;
 	import protos.common.sc_protocol_pack;
 	import protos.gameserver.heartbeat;
 	import protos.hallserver.sc_enter_hall;
 	import protos.hallserver.sc_force_continue_game;
+	
+	import starling.display.Stage;
 	
 	public class AccountManager
 	{
