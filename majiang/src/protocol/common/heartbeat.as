@@ -1,4 +1,4 @@
-package protos.common {
+package protocol.common {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.common {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.common.sc_protocol_pack;
+	import protocol.common.sc_protocol_pack;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.common {
 		/**
 		 *  @private
 		 */
-		public static const NOOP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.common.heartbeat.noop", "noop", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const NOOP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.common.heartbeat.noop", "noop", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var noop$field:int;
 
@@ -42,9 +42,9 @@ package protos.common {
 		/**
 		 *  @private
 		 */
-		public static const VVV:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.common.heartbeat.vvv", "vvv", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.common.sc_protocol_pack; });
+		public static const VVV:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.common.heartbeat.vvv", "vvv", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.common.sc_protocol_pack; });
 
-		[ArrayElementType("protos.common.sc_protocol_pack")]
+		[ArrayElementType("protocol.common.sc_protocol_pack")]
 		public var vvv:Array = [];
 
 		/**
@@ -80,7 +80,7 @@ package protos.common {
 					this.noop = com.netease.protobuf.ReadUtils.read_TYPE_INT32(input);
 					break;
 				case 2:
-					this.vvv.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.common.sc_protocol_pack()));
+					this.vvv.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.common.sc_protocol_pack()));
 					break;
 				default:
 					super.readUnknown(input, tag);

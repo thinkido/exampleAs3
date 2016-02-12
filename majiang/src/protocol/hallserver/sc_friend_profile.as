@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.hallserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.hallserver.t_friend_data;
+	import protocol.hallserver.t_friend_data;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,9 +15,9 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PROFILE:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.hallserver.sc_friend_profile.profile", "profile", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.t_friend_data; });
+		public static const PROFILE:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.hallserver.sc_friend_profile.profile", "profile", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.t_friend_data; });
 
-		private var profile$field:protos.hallserver.t_friend_data;
+		private var profile$field:protocol.hallserver.t_friend_data;
 
 		public function clearProfile():void {
 			profile$field = null;
@@ -27,18 +27,18 @@ package protos.hallserver {
 			return profile$field != null;
 		}
 
-		public function set profile(value:protos.hallserver.t_friend_data):void {
+		public function set profile(value:protocol.hallserver.t_friend_data):void {
 			profile$field = value;
 		}
 
-		public function get profile():protos.hallserver.t_friend_data {
+		public function get profile():protocol.hallserver.t_friend_data {
 			return profile$field;
 		}
 
 		/**
 		 *  @private
 		 */
-		public static const WHY:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_friend_profile.why", "why", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const WHY:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_friend_profile.why", "why", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var why$field:String;
 
@@ -89,7 +89,7 @@ package protos.hallserver {
 						throw new flash.errors.IOError('Bad data format: sc_friend_profile.profile cannot be set twice.');
 					}
 					++profile$count;
-					this.profile = new protos.hallserver.t_friend_data();
+					this.profile = new protocol.hallserver.t_friend_data();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.profile);
 					break;
 				case 2:

@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.scenter_seat_info;
+	import protocol.gameserver.scenter_seat_info;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,9 +15,9 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INFO:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_enter_game_notify.seat_info", "seatInfo", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.scenter_seat_info; });
+		public static const SEAT_INFO:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_enter_game_notify.seat_info", "seatInfo", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.scenter_seat_info; });
 
-		private var seat_info$field:protos.gameserver.scenter_seat_info;
+		private var seat_info$field:protocol.gameserver.scenter_seat_info;
 
 		public function clearSeatInfo():void {
 			seat_info$field = null;
@@ -27,18 +27,18 @@ package protos.gameserver {
 			return seat_info$field != null;
 		}
 
-		public function set seatInfo(value:protos.gameserver.scenter_seat_info):void {
+		public function set seatInfo(value:protocol.gameserver.scenter_seat_info):void {
 			seat_info$field = value;
 		}
 
-		public function get seatInfo():protos.gameserver.scenter_seat_info {
+		public function get seatInfo():protocol.gameserver.scenter_seat_info {
 			return seat_info$field;
 		}
 
 		/**
 		 *  @private
 		 */
-		public static const REV_NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.sc_enter_game_notify.rev_name", "revName", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const REV_NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.sc_enter_game_notify.rev_name", "revName", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var rev_name$field:String;
 
@@ -89,7 +89,7 @@ package protos.gameserver {
 						throw new flash.errors.IOError('Bad data format: sc_enter_game_notify.seatInfo cannot be set twice.');
 					}
 					++seat_info$count;
-					this.seatInfo = new protos.gameserver.scenter_seat_info();
+					this.seatInfo = new protocol.gameserver.scenter_seat_info();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.seatInfo);
 					break;
 				case 3:

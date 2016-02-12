@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.t_award_item;
+	import protocol.gameserver.t_award_item;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const EGG_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_minigame_egg_open.egg_index", "eggIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const EGG_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_minigame_egg_open.egg_index", "eggIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var egg_index$field:int;
 
@@ -42,9 +42,9 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const AWARD:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_minigame_egg_open.award", "award", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.t_award_item; });
+		public static const AWARD:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_minigame_egg_open.award", "award", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.t_award_item; });
 
-		private var award$field:protos.gameserver.t_award_item;
+		private var award$field:protocol.gameserver.t_award_item;
 
 		public function clearAward():void {
 			award$field = null;
@@ -54,18 +54,18 @@ package protos.gameserver {
 			return award$field != null;
 		}
 
-		public function set award(value:protos.gameserver.t_award_item):void {
+		public function set award(value:protocol.gameserver.t_award_item):void {
 			award$field = value;
 		}
 
-		public function get award():protos.gameserver.t_award_item {
+		public function get award():protocol.gameserver.t_award_item {
 			return award$field;
 		}
 
 		/**
 		 *  @private
 		 */
-		public static const REMAIN_TIMES:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_minigame_egg_open.remain_times", "remainTimes", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const REMAIN_TIMES:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_minigame_egg_open.remain_times", "remainTimes", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var remain_times$field:int;
 
@@ -130,7 +130,7 @@ package protos.gameserver {
 						throw new flash.errors.IOError('Bad data format: sc_minigame_egg_open.award cannot be set twice.');
 					}
 					++award$count;
-					this.award = new protos.gameserver.t_award_item();
+					this.award = new protocol.gameserver.t_award_item();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.award);
 					break;
 				case 3:

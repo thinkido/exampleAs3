@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.hallserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.hallserver.protocol;
+	import protocol.hallserver.protocol;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_protocol_pack.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_protocol_pack.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var id$field:int;
 
@@ -42,9 +42,9 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PACK:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.hallserver.sc_protocol_pack.pack", "pack", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.protocol; });
+		public static const PACK:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.hallserver.sc_protocol_pack.pack", "pack", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.protocol; });
 
-		[ArrayElementType("protos.hallserver.protocol")]
+		[ArrayElementType("protocol.hallserver.protocol")]
 		public var pack:Array = [];
 
 		/**
@@ -80,7 +80,7 @@ package protos.hallserver {
 					this.id = com.netease.protobuf.ReadUtils.read_TYPE_INT32(input);
 					break;
 				case 2:
-					this.pack.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.hallserver.protocol()));
+					this.pack.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.hallserver.protocol()));
 					break;
 				default:
 					super.readUnknown(input, tag);

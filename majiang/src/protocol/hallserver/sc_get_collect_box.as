@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const C_WAN:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.hallserver.sc_get_collect_box.c_wan", "cWan", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const C_WAN:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.hallserver.sc_get_collect_box.c_wan", "cWan", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var cWan:Array = [];
@@ -22,7 +22,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const C_TONG:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.hallserver.sc_get_collect_box.c_tong", "cTong", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const C_TONG:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.hallserver.sc_get_collect_box.c_tong", "cTong", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var cTong:Array = [];
@@ -30,7 +30,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const C_TIAO:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.hallserver.sc_get_collect_box.c_tiao", "cTiao", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const C_TIAO:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.hallserver.sc_get_collect_box.c_tiao", "cTiao", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var cTiao:Array = [];
@@ -38,7 +38,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const AWARD_VERT:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.hallserver.sc_get_collect_box.award_vert", "awardVert", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const AWARD_VERT:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.hallserver.sc_get_collect_box.award_vert", "awardVert", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var awardVert:Array = [];
@@ -46,7 +46,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const AWARD_HORI:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.hallserver.sc_get_collect_box.award_hori", "awardHori", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const AWARD_HORI:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.hallserver.sc_get_collect_box.award_hori", "awardHori", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var awardHori:Array = [];
@@ -54,7 +54,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const AWARD_STATUS:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_get_collect_box.award_status", "awardStatus", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const AWARD_STATUS:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_get_collect_box.award_status", "awardStatus", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var award_status$field:int;
 

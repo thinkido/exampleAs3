@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const OID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_rank_data.oid", "oid", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const OID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_rank_data.oid", "oid", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var oid$field:int;
 
@@ -41,7 +41,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.t_rank_data.id", "id", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.t_rank_data.id", "id", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var id$field:String;
 
@@ -64,7 +64,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.t_rank_data.idtype", "idtype", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.t_rank_data.idtype", "idtype", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var idtype$field:String;
 
@@ -87,7 +87,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.t_rank_data.name", "name", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.t_rank_data.name", "name", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var name$field:String;
 
@@ -110,7 +110,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const RANK:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_rank_data.rank", "rank", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const RANK:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_rank_data.rank", "rank", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var rank$field:int;
 
@@ -135,7 +135,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const VALUE_INT_1:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_rank_data.value_int_1", "valueInt_1", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const VALUE_INT_1:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_rank_data.value_int_1", "valueInt_1", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var value_int_1$field:int;
 
@@ -160,7 +160,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const VALUE_INT_2:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_rank_data.value_int_2", "valueInt_2", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const VALUE_INT_2:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_rank_data.value_int_2", "valueInt_2", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var value_int_2$field:int;
 
@@ -185,7 +185,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const VALUE_STR:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.t_rank_data.value_str", "valueStr", (8 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const VALUE_STR:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.t_rank_data.value_str", "valueStr", (8 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var value_str$field:String;
 
@@ -208,7 +208,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const TREND:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_rank_data.trend", "trend", (9 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TREND:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_rank_data.trend", "trend", (9 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var trend$field:int;
 
@@ -233,7 +233,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const VIP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_rank_data.vip", "vip", (10 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const VIP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_rank_data.vip", "vip", (10 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var vip$field:int;
 
@@ -258,7 +258,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PORTRAIT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_rank_data.portrait", "portrait", (11 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const PORTRAIT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_rank_data.portrait", "portrait", (11 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var portrait$field:int;
 

@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const AWARD_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.t_award_item.award_id", "awardId", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const AWARD_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.t_award_item.award_id", "awardId", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var award_id$field:int;
 
@@ -41,7 +41,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const AWARD_DESC:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.t_award_item.award_desc", "awardDesc", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const AWARD_DESC:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.t_award_item.award_desc", "awardDesc", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var award_desc$field:String;
 
@@ -64,7 +64,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const AWARD_AVAILABLE:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.gameserver.t_award_item.award_available", "awardAvailable", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const AWARD_AVAILABLE:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.gameserver.t_award_item.award_available", "awardAvailable", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var award_available$field:Boolean;
 

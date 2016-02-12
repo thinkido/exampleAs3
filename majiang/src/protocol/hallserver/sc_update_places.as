@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.hallserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.hallserver.place_info;
+	import protocol.hallserver.place_info;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,15 +15,15 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PLACE_INFOS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.hallserver.sc_update_places.place_infos", "placeInfos", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.place_info; });
+		public static const PLACE_INFOS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.hallserver.sc_update_places.place_infos", "placeInfos", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.place_info; });
 
-		[ArrayElementType("protos.hallserver.place_info")]
+		[ArrayElementType("protocol.hallserver.place_info")]
 		public var placeInfos:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const QUEST_CAN_FETCH:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_update_places.quest_can_fetch", "questCanFetch", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const QUEST_CAN_FETCH:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_update_places.quest_can_fetch", "questCanFetch", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var quest_can_fetch$field:int;
 
@@ -50,7 +50,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ACH_CAN_FETCH:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_update_places.ach_can_fetch", "achCanFetch", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ACH_CAN_FETCH:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_update_places.ach_can_fetch", "achCanFetch", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var ach_can_fetch$field:int;
 
@@ -103,7 +103,7 @@ package protos.hallserver {
 				var tag:uint = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 				switch (tag >> 3) {
 				case 1:
-					this.placeInfos.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.hallserver.place_info()));
+					this.placeInfos.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.hallserver.place_info()));
 					break;
 				case 2:
 					if (quest_can_fetch$count != 0) {

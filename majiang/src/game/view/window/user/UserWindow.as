@@ -19,10 +19,10 @@ package game.view.window.user
 	
 	import network.YiuNetworkListener;
 	
-	import protos.hallserver.cs_friend_profile;
-	import protos.hallserver.cs_update_profile;
-	import protos.hallserver.sc_friend_profile;
-	import protos.hallserver.t_friend_data;
+	import protocol.hallserver.cs_friend_profile;
+	import protocol.hallserver.cs_update_profile;
+	import protocol.hallserver.sc_friend_profile;
+	import protocol.hallserver.t_friend_data;
 	
 	import starling.display.Button;
 	import starling.events.EventDispatcher;

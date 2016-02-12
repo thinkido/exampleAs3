@@ -1,7 +1,7 @@
 package game.model.vo
 {
-	import protos.hallserver.sc_enter_hall;
-	import protos.hallserver.t_friend_data;
+	import protocol.hallserver.sc_enter_hall;
+	import protocol.hallserver.t_friend_data;
 	
 	public class UserDataVO
 	{
@@ -29,8 +29,8 @@ package game.model.vo
 		public function UserDataVO(msg:sc_enter_hall):void
 		{
 			name = msg.name;
-			gold = msg.gold;
-			exp = msg.exp;
+			gold = msg.gold as Number;
+			exp = msg.exp as Number;
 			level = msg.level;
 			sex = msg.sex;
 			portrait = msg.portrait;

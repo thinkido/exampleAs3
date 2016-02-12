@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const NOOP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.heartbeat.noop", "noop", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const NOOP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.heartbeat.noop", "noop", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var noop$field:int;
 

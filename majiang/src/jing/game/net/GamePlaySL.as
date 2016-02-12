@@ -31,27 +31,27 @@ package jing.game.net
 	
 	import network.YiuNetworkListener;
 	
-	import protos.gameserver.sc_continue_game;
-	import protos.gameserver.sc_end_game;
-	import protos.gameserver.sc_enter_game;
-	import protos.gameserver.sc_enter_game_notify;
-	import protos.gameserver.sc_game_action;
-	import protos.gameserver.sc_game_action_failed;
-	import protos.gameserver.sc_game_action_notify;
-	import protos.gameserver.sc_game_debug;
-	import protos.gameserver.sc_game_hide_actions;
-	import protos.gameserver.sc_game_show_actions;
-	import protos.gameserver.sc_game_turn;
-	import protos.gameserver.sc_game_turn_notify;
-	import protos.gameserver.sc_gold_reset;
-	import protos.gameserver.sc_lack_infos;
-	import protos.gameserver.sc_leave_game;
-	import protos.gameserver.sc_leave_game_notify;
-	import protos.gameserver.sc_ready_game_notify;
-	import protos.gameserver.sc_start_game;
-	import protos.gameserver.sc_sure_lack;
-	import protos.hallserver.sc_enter_hall;
-	import protos.hallserver.sc_hall_debug;
+	import protocol.gameserver.sc_continue_game;
+	import protocol.gameserver.sc_end_game;
+	import protocol.gameserver.sc_enter_game;
+	import protocol.gameserver.sc_enter_game_notify;
+	import protocol.gameserver.sc_game_action;
+	import protocol.gameserver.sc_game_action_failed;
+	import protocol.gameserver.sc_game_action_notify;
+	import protocol.gameserver.sc_game_debug;
+	import protocol.gameserver.sc_game_hide_actions;
+	import protocol.gameserver.sc_game_show_actions;
+	import protocol.gameserver.sc_game_turn;
+	import protocol.gameserver.sc_game_turn_notify;
+	import protocol.gameserver.sc_gold_reset;
+	import protocol.gameserver.sc_lack_infos;
+	import protocol.gameserver.sc_leave_game;
+	import protocol.gameserver.sc_leave_game_notify;
+	import protocol.gameserver.sc_ready_game_notify;
+	import protocol.gameserver.sc_start_game;
+	import protocol.gameserver.sc_sure_lack;
+	import protocol.hallserver.sc_enter_hall;
+	import protocol.hallserver.sc_hall_debug;
 	
 	/**
 	 * 游戏进行的接口监听

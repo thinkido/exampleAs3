@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const DAY:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_be_vip.day", "day", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const DAY:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_be_vip.day", "day", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var day$field:int;
 
@@ -41,7 +41,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const GOLD_COST:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protos.hallserver.sc_be_vip.gold_cost", "goldCost", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const GOLD_COST:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protocol.hallserver.sc_be_vip.gold_cost", "goldCost", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var gold_cost$field:Int64;
 

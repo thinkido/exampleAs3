@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const RESULT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_get_award_collect_box.result", "result", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const RESULT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_get_award_collect_box.result", "result", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var result$field:int;
 
@@ -41,7 +41,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const TIPS:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_get_award_collect_box.tips", "tips", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const TIPS:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_get_award_collect_box.tips", "tips", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var tips$field:String;
 
@@ -64,7 +64,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const SCORE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_get_award_collect_box.score", "score", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SCORE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_get_award_collect_box.score", "score", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var score$field:int;
 

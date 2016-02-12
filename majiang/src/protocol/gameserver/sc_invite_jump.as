@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const RESULT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_invite_jump.result", "result", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const RESULT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_invite_jump.result", "result", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var result$field:int;
 
@@ -41,7 +41,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TO_HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.sc_invite_jump.to_host", "toHost", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const TO_HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.sc_invite_jump.to_host", "toHost", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var to_host$field:String;
 
@@ -64,7 +64,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TO_PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_invite_jump.to_port", "toPort", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TO_PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_invite_jump.to_port", "toPort", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var to_port$field:int;
 
@@ -89,7 +89,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TO_TABLE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_invite_jump.to_table", "toTable", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TO_TABLE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_invite_jump.to_table", "toTable", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var to_table$field:int;
 
@@ -114,7 +114,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TO_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_invite_jump.to_seat", "toSeat", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TO_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_invite_jump.to_seat", "toSeat", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var to_seat$field:int;
 
@@ -139,7 +139,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const INVITER_ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.sc_invite_jump.inviter_id", "inviterId", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const INVITER_ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.sc_invite_jump.inviter_id", "inviterId", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var inviter_id$field:String;
 
@@ -162,7 +162,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const INVITER_IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.sc_invite_jump.inviter_idtype", "inviterIdtype", (7 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const INVITER_IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.sc_invite_jump.inviter_idtype", "inviterIdtype", (7 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var inviter_idtype$field:String;
 

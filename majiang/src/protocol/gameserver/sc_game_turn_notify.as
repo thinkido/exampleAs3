@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TIMEOUT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_turn_notify.timeout", "timeout", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TIMEOUT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_turn_notify.timeout", "timeout", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var timeout$field:int;
 
@@ -41,7 +41,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_turn_notify.seat_index", "seatIndex", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_turn_notify.seat_index", "seatIndex", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var seat_index$field:int;
 
@@ -66,7 +66,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const MO:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.gameserver.sc_game_turn_notify.mo", "mo", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const MO:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.gameserver.sc_game_turn_notify.mo", "mo", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var mo$field:Boolean;
 
@@ -91,7 +91,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const MO_TILES:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_turn_notify.mo_tiles", "moTiles", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const MO_TILES:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_turn_notify.mo_tiles", "moTiles", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var moTiles:Array = [];
@@ -99,7 +99,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TILES_REMAIN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_turn_notify.tiles_remain", "tilesRemain", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TILES_REMAIN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_turn_notify.tiles_remain", "tilesRemain", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var tiles_remain$field:int;
 

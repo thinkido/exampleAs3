@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const PID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.stplayer_info.pid", "pid", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const PID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.stplayer_info.pid", "pid", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var pid$field:String;
 
@@ -37,7 +37,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.stplayer_info.name", "name", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.stplayer_info.name", "name", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var name$field:String;
 
@@ -60,7 +60,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const GOLD:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protos.gameserver.stplayer_info.gold", "gold", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const GOLD:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protocol.gameserver.stplayer_info.gold", "gold", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var gold$field:Int64;
 
@@ -83,7 +83,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const EXP:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protos.gameserver.stplayer_info.exp", "exp", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const EXP:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protocol.gameserver.stplayer_info.exp", "exp", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var exp$field:Int64;
 
@@ -106,7 +106,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const LEVEL:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.stplayer_info.level", "level", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const LEVEL:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.stplayer_info.level", "level", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var level$field:int;
 
@@ -133,7 +133,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.stplayer_info.sex", "sex", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.stplayer_info.sex", "sex", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var sex$field:int;
 
@@ -158,7 +158,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const VIP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.stplayer_info.vip", "vip", (8 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const VIP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.stplayer_info.vip", "vip", (8 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var vip$field:int;
 
@@ -183,7 +183,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const PORTRAIT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.stplayer_info.portrait", "portrait", (9 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const PORTRAIT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.stplayer_info.portrait", "portrait", (9 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var portrait$field:int;
 
@@ -208,7 +208,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.stplayer_info.id", "id", (10 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.stplayer_info.id", "id", (10 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var id$field:String;
 
@@ -231,7 +231,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.stplayer_info.idtype", "idtype", (11 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.stplayer_info.idtype", "idtype", (11 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var idtype$field:String;
 

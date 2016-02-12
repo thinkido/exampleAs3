@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.t_friend_data.id", "id", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.t_friend_data.id", "id", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var id$field:String;
 
@@ -37,7 +37,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.t_friend_data.idtype", "idtype", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.t_friend_data.idtype", "idtype", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var idtype$field:String;
 
@@ -60,7 +60,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.t_friend_data.name", "name", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.t_friend_data.name", "name", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var name$field:String;
 
@@ -83,7 +83,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const GOLD:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.gold", "gold", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const GOLD:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.gold", "gold", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var gold$field:int;
 
@@ -110,7 +110,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const LEVEL:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.level", "level", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const LEVEL:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.level", "level", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var level$field:int;
 
@@ -135,7 +135,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const EXP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.exp", "exp", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const EXP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.exp", "exp", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var exp$field:int;
 
@@ -160,7 +160,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const SEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.sex", "sex", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.sex", "sex", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var sex$field:int;
 
@@ -185,7 +185,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const VIP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.vip", "vip", (8 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const VIP:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.vip", "vip", (8 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var vip$field:int;
 
@@ -210,7 +210,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const WIN_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.win_count", "winCount", (9 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const WIN_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.win_count", "winCount", (9 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var win_count$field:int;
 
@@ -235,7 +235,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const LOSE_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.lose_count", "loseCount", (10 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const LOSE_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.lose_count", "loseCount", (10 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var lose_count$field:int;
 
@@ -260,7 +260,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PING_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.ping_count", "pingCount", (11 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const PING_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.ping_count", "pingCount", (11 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var ping_count$field:int;
 
@@ -285,7 +285,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ONLINE:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.hallserver.t_friend_data.online", "online", (12 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ONLINE:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.hallserver.t_friend_data.online", "online", (12 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var online$field:Boolean;
 
@@ -310,7 +310,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const INGAME:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.hallserver.t_friend_data.ingame", "ingame", (13 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const INGAME:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.hallserver.t_friend_data.ingame", "ingame", (13 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var ingame$field:Boolean;
 
@@ -335,7 +335,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const OID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.oid", "oid", (14 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const OID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.oid", "oid", (14 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var oid$field:int;
 
@@ -360,7 +360,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const LAST_LOGIN_TIME:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protos.hallserver.t_friend_data.last_login_time", "lastLoginTime", (15 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const LAST_LOGIN_TIME:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protocol.hallserver.t_friend_data.last_login_time", "lastLoginTime", (15 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var last_login_time$field:Int64;
 
@@ -383,7 +383,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PORTRAIT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_friend_data.portrait", "portrait", (16 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const PORTRAIT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_friend_data.portrait", "portrait", (16 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var portrait$field:int;
 

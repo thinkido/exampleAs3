@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const WAN:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.st_hand_seq.wan", "wan", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const WAN:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.st_hand_seq.wan", "wan", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var wan:Array = [];
@@ -22,7 +22,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TONG:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.st_hand_seq.tong", "tong", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TONG:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.st_hand_seq.tong", "tong", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var tong:Array = [];
@@ -30,7 +30,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TIAO:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.st_hand_seq.tiao", "tiao", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TIAO:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.st_hand_seq.tiao", "tiao", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var tiao:Array = [];
@@ -38,7 +38,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ZI:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.st_hand_seq.zi", "zi", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ZI:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.st_hand_seq.zi", "zi", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var zi:Array = [];
@@ -46,7 +46,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const HUA:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.st_hand_seq.hua", "hua", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const HUA:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.st_hand_seq.hua", "hua", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var hua:Array = [];
@@ -54,7 +54,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const LACK:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.st_hand_seq.lack", "lack", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const LACK:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.st_hand_seq.lack", "lack", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var lack:Array = [];
@@ -62,7 +62,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const MO:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.st_hand_seq.mo", "mo", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const MO:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.st_hand_seq.mo", "mo", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var mo:Array = [];

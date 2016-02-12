@@ -10,7 +10,7 @@ package game.control
 	import network.ProtocolList;
 	import network.ProtocolNode;
 	
-	import protos.common.protocol;
+	import protocol.common.protocol;
 
 	public class NetManager
 	{
@@ -33,6 +33,13 @@ package game.control
 			msg.endian = Endian.LITTLE_ENDIAN ;
 			proto.writeTo(msg) ;
 //			ipro.body = msg;
+			socket.send( msg ) ;
+		}
+		
+		public static function sendStr( socket:JSocket , dataStr:String ):void{
+			var msg:ByteArray = new ByteArray();
+			msg.endian = Endian.LITTLE_ENDIAN ;
+			msg.writeUTFBytes( dataStr) ;
 			socket.send( msg ) ;
 		}
 	}

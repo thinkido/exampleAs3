@@ -12,10 +12,7 @@ package
 	
 	import events.GameEvent;
 	
-	import flash.display.Sprite;
 	import flash.events.Event;
-	
-	import framework.resources.Res;
 	
 	import game.constant.WindowType;
 	import game.control.AccountManager;
@@ -32,8 +29,7 @@ package
 	import managers.SoundManager;
 	
 	import starling.display.Image;
-	import starling.textures.Texture;
-	import starling.textures.TextureAtlas;
+	import starling.display.Sprite;
 	
 	public class Game extends Sprite
 	{

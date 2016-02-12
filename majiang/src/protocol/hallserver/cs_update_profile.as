@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const SEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.cs_update_profile.sex", "sex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.cs_update_profile.sex", "sex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var sex$field:int;
 
@@ -41,7 +41,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PORTRAIT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.cs_update_profile.portrait", "portrait", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const PORTRAIT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.cs_update_profile.portrait", "portrait", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var portrait$field:int;
 

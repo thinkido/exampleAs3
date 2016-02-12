@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,8 +7,8 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.t_award_item;
-	import protos.gameserver.t_egg_item;
+	import protocol.gameserver.t_award_item;
+	import protocol.gameserver.t_egg_item;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -16,23 +16,23 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const EGGS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_minigame_egg_change_group.eggs", "eggs", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.t_egg_item; });
+		public static const EGGS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_minigame_egg_change_group.eggs", "eggs", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.t_egg_item; });
 
-		[ArrayElementType("protos.gameserver.t_egg_item")]
+		[ArrayElementType("protocol.gameserver.t_egg_item")]
 		public var eggs:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const AWARDS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_minigame_egg_change_group.awards", "awards", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.t_award_item; });
+		public static const AWARDS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_minigame_egg_change_group.awards", "awards", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.t_award_item; });
 
-		[ArrayElementType("protos.gameserver.t_award_item")]
+		[ArrayElementType("protocol.gameserver.t_award_item")]
 		public var awards:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const CHANGE_REMAIN_TIMES:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_minigame_egg_change_group.change_remain_times", "changeRemainTimes", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const CHANGE_REMAIN_TIMES:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_minigame_egg_change_group.change_remain_times", "changeRemainTimes", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var change_remain_times$field:int;
 
@@ -86,10 +86,10 @@ package protos.gameserver {
 				var tag:uint = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 				switch (tag >> 3) {
 				case 1:
-					this.eggs.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.t_egg_item()));
+					this.eggs.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.t_egg_item()));
 					break;
 				case 2:
-					this.awards.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.t_award_item()));
+					this.awards.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.t_award_item()));
 					break;
 				case 3:
 					if (change_remain_times$count != 0) {

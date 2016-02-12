@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.scgame_show_actions;
+	import protocol.gameserver.scgame_show_actions;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TIMEOUT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_show_actions.timeout", "timeout", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TIMEOUT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_show_actions.timeout", "timeout", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var timeout$field:int;
 
@@ -42,9 +42,9 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SHOW_ACTIONS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_game_show_actions.show_actions", "showActions", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.scgame_show_actions; });
+		public static const SHOW_ACTIONS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_game_show_actions.show_actions", "showActions", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.scgame_show_actions; });
 
-		[ArrayElementType("protos.gameserver.scgame_show_actions")]
+		[ArrayElementType("protocol.gameserver.scgame_show_actions")]
 		public var showActions:Array = [];
 
 		/**
@@ -80,7 +80,7 @@ package protos.gameserver {
 					this.timeout = com.netease.protobuf.ReadUtils.read_TYPE_INT32(input);
 					break;
 				case 2:
-					this.showActions.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.scgame_show_actions()));
+					this.showActions.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.scgame_show_actions()));
 					break;
 				default:
 					super.readUnknown(input, tag);

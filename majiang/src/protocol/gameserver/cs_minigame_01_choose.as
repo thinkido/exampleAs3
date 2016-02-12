@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const BIG:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.gameserver.cs_minigame_01_choose.big", "big", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const BIG:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.gameserver.cs_minigame_01_choose.big", "big", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var big$field:Boolean;
 

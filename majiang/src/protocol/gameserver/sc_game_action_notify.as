@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,9 +7,9 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.st_hand_seq;
-	import protos.gameserver.sccomplex_tile;
-	import protos.gameserver.st_money_transfer;
+	import protocol.gameserver.st_hand_seq;
+	import protocol.gameserver.sccomplex_tile;
+	import protocol.gameserver.st_money_transfer;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -17,7 +17,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var id$field:int;
 
@@ -44,7 +44,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SUB_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.sub_id", "subId", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SUB_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.sub_id", "subId", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var sub_id$field:int;
 
@@ -69,15 +69,15 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const MONEY_TRANSFER:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_game_action_notify.money_transfer", "moneyTransfer", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_money_transfer; });
+		public static const MONEY_TRANSFER:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_game_action_notify.money_transfer", "moneyTransfer", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_money_transfer; });
 
-		[ArrayElementType("protos.gameserver.st_money_transfer")]
+		[ArrayElementType("protocol.gameserver.st_money_transfer")]
 		public var moneyTransfer:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const TILE_TYPE_OR_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.tile_type_or_id", "tileTypeOrId", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TILE_TYPE_OR_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.tile_type_or_id", "tileTypeOrId", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var tile_type_or_id$field:int;
 
@@ -102,7 +102,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ACT_SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.act_seat_index", "actSeatIndex", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ACT_SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.act_seat_index", "actSeatIndex", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var act_seat_index$field:int;
 
@@ -127,7 +127,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ACT_HAND_SEQ_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.act_hand_seq_count", "actHandSeqCount", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ACT_HAND_SEQ_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.act_hand_seq_count", "actHandSeqCount", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var act_hand_seq_count$field:int;
 
@@ -152,7 +152,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ACT_MO_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.act_mo_count", "actMoCount", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ACT_MO_COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.act_mo_count", "actMoCount", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var act_mo_count$field:int;
 
@@ -177,9 +177,9 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ACT_HAND_SEQ:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_game_action_notify.act_hand_seq", "actHandSeq", (8 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_hand_seq; });
+		public static const ACT_HAND_SEQ:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_game_action_notify.act_hand_seq", "actHandSeq", (8 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_hand_seq; });
 
-		private var act_hand_seq$field:protos.gameserver.st_hand_seq;
+		private var act_hand_seq$field:protocol.gameserver.st_hand_seq;
 
 		public function clearActHandSeq():void {
 			act_hand_seq$field = null;
@@ -189,26 +189,26 @@ package protos.gameserver {
 			return act_hand_seq$field != null;
 		}
 
-		public function set actHandSeq(value:protos.gameserver.st_hand_seq):void {
+		public function set actHandSeq(value:protocol.gameserver.st_hand_seq):void {
 			act_hand_seq$field = value;
 		}
 
-		public function get actHandSeq():protos.gameserver.st_hand_seq {
+		public function get actHandSeq():protocol.gameserver.st_hand_seq {
 			return act_hand_seq$field;
 		}
 
 		/**
 		 *  @private
 		 */
-		public static const ACT_COMPLEX_SEQ:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_game_action_notify.act_complex_seq", "actComplexSeq", (9 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.sccomplex_tile; });
+		public static const ACT_COMPLEX_SEQ:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_game_action_notify.act_complex_seq", "actComplexSeq", (9 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.sccomplex_tile; });
 
-		[ArrayElementType("protos.gameserver.sccomplex_tile")]
+		[ArrayElementType("protocol.gameserver.sccomplex_tile")]
 		public var actComplexSeq:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const ACT_CHUED_SEQ:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.act_chued_seq", "actChuedSeq", (10 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ACT_CHUED_SEQ:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.act_chued_seq", "actChuedSeq", (10 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var actChuedSeq:Array = [];
@@ -216,7 +216,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ACT_HU_SEQ:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.act_hu_seq", "actHuSeq", (11 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ACT_HU_SEQ:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.act_hu_seq", "actHuSeq", (11 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var actHuSeq:Array = [];
@@ -224,7 +224,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ACTED_SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.acted_seat_index", "actedSeatIndex", (12 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ACTED_SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.acted_seat_index", "actedSeatIndex", (12 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var acted_seat_index$field:int;
 
@@ -249,7 +249,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TILES_REMAIN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_game_action_notify.tiles_remain", "tilesRemain", (13 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TILES_REMAIN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_game_action_notify.tiles_remain", "tilesRemain", (13 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var tiles_remain$field:int;
 
@@ -363,7 +363,7 @@ package protos.gameserver {
 					this.subId = com.netease.protobuf.ReadUtils.read_TYPE_INT32(input);
 					break;
 				case 3:
-					this.moneyTransfer.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.st_money_transfer()));
+					this.moneyTransfer.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.st_money_transfer()));
 					break;
 				case 4:
 					if (tile_type_or_id$count != 0) {
@@ -398,11 +398,11 @@ package protos.gameserver {
 						throw new flash.errors.IOError('Bad data format: sc_game_action_notify.actHandSeq cannot be set twice.');
 					}
 					++act_hand_seq$count;
-					this.actHandSeq = new protos.gameserver.st_hand_seq();
+					this.actHandSeq = new protocol.gameserver.st_hand_seq();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.actHandSeq);
 					break;
 				case 9:
-					this.actComplexSeq.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.sccomplex_tile()));
+					this.actComplexSeq.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.sccomplex_tile()));
 					break;
 				case 10:
 					if ((tag & 7) == com.netease.protobuf.WireType.LENGTH_DELIMITED) {

@@ -42,7 +42,7 @@ package game.view.window.rank
 			_imgTopThree = new UIImageView[3];
 			for(var i:int = 0; i < 3; i++)
 			{
-				_imgTopThree[i] = (UIImageView)_layer.getChildByName("img_top_" + (i + 1));
+				_imgTopThree[i] = _layer.getChildByName("img_top_" + (i + 1)) as UIImageView;
 				for(var j:int = 0; j < ITEM_LENGTH; j++)
 				{
 					_bfValueList[i][j] = _layer.getChildByName("bf_value_" + (i + 1) + "_" + (j + 1)) as UITextBMFont;

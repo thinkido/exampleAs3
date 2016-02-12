@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ONLINE:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.hallserver.sc_friend_online.online", "online", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ONLINE:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.hallserver.sc_friend_online.online", "online", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var online$field:Boolean;
 
@@ -41,7 +41,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_friend_online.name", "name", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_friend_online.name", "name", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var name$field:String;
 
@@ -64,7 +64,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const DUAL_FRIEND:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.hallserver.sc_friend_online.dual_friend", "dualFriend", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const DUAL_FRIEND:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.hallserver.sc_friend_online.dual_friend", "dualFriend", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var dual_friend$field:Boolean;
 
@@ -89,7 +89,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_friend_online.id", "id", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_friend_online.id", "id", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var id$field:String;
 
@@ -112,7 +112,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_friend_online.idtype", "idtype", (5 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_friend_online.idtype", "idtype", (5 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var idtype$field:String;
 

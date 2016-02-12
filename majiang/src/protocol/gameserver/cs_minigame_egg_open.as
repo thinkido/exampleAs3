@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const EGG_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.cs_minigame_egg_open.egg_index", "eggIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const EGG_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.cs_minigame_egg_open.egg_index", "eggIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var egg_index$field:int;
 

@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.hallserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.hallserver.t_checkout;
+	import protocol.hallserver.t_checkout;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_shopitem.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_shopitem.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var id$field:int;
 
@@ -42,7 +42,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const SHOPID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_shopitem.shopid", "shopid", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SHOPID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_shopitem.shopid", "shopid", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var shopid$field:int;
 
@@ -67,7 +67,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PRODUCTID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.t_shopitem.productid", "productid", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const PRODUCTID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.t_shopitem.productid", "productid", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var productid$field:String;
 
@@ -90,9 +90,9 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const CHECKOUT:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.hallserver.t_shopitem.checkout", "checkout", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.t_checkout; });
+		public static const CHECKOUT:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.hallserver.t_shopitem.checkout", "checkout", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.t_checkout; });
 
-		private var checkout$field:protos.hallserver.t_checkout;
+		private var checkout$field:protocol.hallserver.t_checkout;
 
 		public function clearCheckout():void {
 			checkout$field = null;
@@ -102,18 +102,18 @@ package protos.hallserver {
 			return checkout$field != null;
 		}
 
-		public function set checkout(value:protos.hallserver.t_checkout):void {
+		public function set checkout(value:protocol.hallserver.t_checkout):void {
 			checkout$field = value;
 		}
 
-		public function get checkout():protos.hallserver.t_checkout {
+		public function get checkout():protocol.hallserver.t_checkout {
 			return checkout$field;
 		}
 
 		/**
 		 *  @private
 		 */
-		public static const DISCOUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_shopitem.discount", "discount", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const DISCOUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_shopitem.discount", "discount", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var discount$field:int;
 
@@ -138,7 +138,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const VIP_DISCOUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_shopitem.vip_discount", "vipDiscount", (8 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const VIP_DISCOUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_shopitem.vip_discount", "vipDiscount", (8 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var vip_discount$field:int;
 
@@ -232,7 +232,7 @@ package protos.hallserver {
 						throw new flash.errors.IOError('Bad data format: t_shopitem.checkout cannot be set twice.');
 					}
 					++checkout$count;
-					this.checkout = new protos.hallserver.t_checkout();
+					this.checkout = new protocol.hallserver.t_checkout();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.checkout);
 					break;
 				case 7:

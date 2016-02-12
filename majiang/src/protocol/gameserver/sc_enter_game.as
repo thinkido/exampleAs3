@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.scenter_seat_info;
+	import protocol.gameserver.scenter_seat_info;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_enter_game.seat_index", "seatIndex", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_enter_game.seat_index", "seatIndex", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var seat_index$field:int;
 
@@ -42,15 +42,15 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INFOES:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_enter_game.seat_infoes", "seatInfoes", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.scenter_seat_info; });
+		public static const SEAT_INFOES:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_enter_game.seat_infoes", "seatInfoes", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.scenter_seat_info; });
 
-		[ArrayElementType("protos.gameserver.scenter_seat_info")]
+		[ArrayElementType("protocol.gameserver.scenter_seat_info")]
 		public var seatInfoes:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const REV_NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.sc_enter_game.rev_name", "revName", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const REV_NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.sc_enter_game.rev_name", "revName", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var rev_name$field:String;
 
@@ -73,7 +73,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ROOMID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_enter_game.roomid", "roomid", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ROOMID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_enter_game.roomid", "roomid", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var roomid$field:int;
 
@@ -98,7 +98,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ROOM_LEVEL:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.sc_enter_game.room_level", "roomLevel", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ROOM_LEVEL:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.sc_enter_game.room_level", "roomLevel", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var room_level$field:String;
 
@@ -121,7 +121,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ROOM_BASE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_enter_game.room_base", "roomBase", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ROOM_BASE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_enter_game.room_base", "roomBase", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var room_base$field:int;
 
@@ -196,7 +196,7 @@ package protos.gameserver {
 					this.seatIndex = com.netease.protobuf.ReadUtils.read_TYPE_INT32(input);
 					break;
 				case 3:
-					this.seatInfoes.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.scenter_seat_info()));
+					this.seatInfoes.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.scenter_seat_info()));
 					break;
 				case 4:
 					if (rev_name$count != 0) {

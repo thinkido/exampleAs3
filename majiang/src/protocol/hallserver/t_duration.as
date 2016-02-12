@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const BEGIN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_duration.begin", "begin", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const BEGIN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_duration.begin", "begin", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var begin$field:int;
 
@@ -41,7 +41,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const END:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_duration.end", "end", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const END:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_duration.end", "end", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var end$field:int;
 

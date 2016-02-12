@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const REASON:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_hall_common_error.reason", "reason", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const REASON:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_hall_common_error.reason", "reason", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var reason$field:int;
 

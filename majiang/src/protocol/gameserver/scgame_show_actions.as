@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.st_hu_desc;
+	import protocol.gameserver.st_hu_desc;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.scgame_show_actions.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.scgame_show_actions.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var id$field:int;
 
@@ -42,7 +42,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SUB_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.scgame_show_actions.sub_id", "subId", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SUB_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.scgame_show_actions.sub_id", "subId", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var sub_id$field:int;
 
@@ -67,7 +67,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TILE_SEQ:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.scgame_show_actions.tile_seq", "tileSeq", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TILE_SEQ:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.scgame_show_actions.tile_seq", "tileSeq", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var tileSeq:Array = [];
@@ -75,9 +75,9 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const HU_DESC:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.gameserver.scgame_show_actions.hu_desc", "huDesc", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_hu_desc; });
+		public static const HU_DESC:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.gameserver.scgame_show_actions.hu_desc", "huDesc", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_hu_desc; });
 
-		private var hu_desc$field:protos.gameserver.st_hu_desc;
+		private var hu_desc$field:protocol.gameserver.st_hu_desc;
 
 		public function clearHuDesc():void {
 			hu_desc$field = null;
@@ -87,18 +87,18 @@ package protos.gameserver {
 			return hu_desc$field != null;
 		}
 
-		public function set huDesc(value:protos.gameserver.st_hu_desc):void {
+		public function set huDesc(value:protocol.gameserver.st_hu_desc):void {
 			hu_desc$field = value;
 		}
 
-		public function get huDesc():protos.gameserver.st_hu_desc {
+		public function get huDesc():protocol.gameserver.st_hu_desc {
 			return hu_desc$field;
 		}
 
 		/**
 		 *  @private
 		 */
-		public static const ACTED_SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.scgame_show_actions.acted_seat_index", "actedSeatIndex", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ACTED_SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.scgame_show_actions.acted_seat_index", "actedSeatIndex", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var acted_seat_index$field:int;
 
@@ -186,7 +186,7 @@ package protos.gameserver {
 						throw new flash.errors.IOError('Bad data format: scgame_show_actions.huDesc cannot be set twice.');
 					}
 					++hu_desc$count;
-					this.huDesc = new protos.gameserver.st_hu_desc();
+					this.huDesc = new protocol.gameserver.st_hu_desc();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.huDesc);
 					break;
 				case 5:

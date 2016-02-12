@@ -16,11 +16,11 @@ import jing.game.vo.GameEndTypeVO;
 import jing.game.vo.GameEndVO;
 import jing.pai.model.CardVector;
 
-import protos.gameserver.all_seq_info;
-import protos.gameserver.sc_end_game;
-import protos.gameserver.sccomplex_tile;
-import protos.gameserver.st_hu_desc;
-import protos.gameserver.st_money_transfer;
+import protocol.gameserver.all_seq_info;
+import protocol.gameserver.sc_end_game;
+import protocol.gameserver.sccomplex_tile;
+import protocol.gameserver.st_hu_desc;
+import protocol.gameserver.st_money_transfer;
 
 public class SCEndGame
 {

@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.hallserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.hallserver.t_iteminfo;
+	import protocol.hallserver.t_iteminfo;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,9 +15,9 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const LISTS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.hallserver.sc_itemlist.lists", "lists", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.t_iteminfo; });
+		public static const LISTS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.hallserver.sc_itemlist.lists", "lists", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.t_iteminfo; });
 
-		[ArrayElementType("protos.hallserver.t_iteminfo")]
+		[ArrayElementType("protocol.hallserver.t_iteminfo")]
 		public var lists:Array = [];
 
 		/**
@@ -41,7 +41,7 @@ package protos.hallserver {
 				var tag:uint = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 				switch (tag >> 3) {
 				case 1:
-					this.lists.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.hallserver.t_iteminfo()));
+					this.lists.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.hallserver.t_iteminfo()));
 					break;
 				default:
 					super.readUnknown(input, tag);

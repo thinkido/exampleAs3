@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.cs_chat.seat_index", "seatIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.cs_chat.seat_index", "seatIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var seat_index$field:int;
 
@@ -41,7 +41,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.cs_chat.name", "name", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.cs_chat.name", "name", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var name$field:String;
 
@@ -64,7 +64,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.cs_chat.id", "id", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.cs_chat.id", "id", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var id$field:String;
 
@@ -87,7 +87,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.cs_chat.idtype", "idtype", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.cs_chat.idtype", "idtype", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var idtype$field:String;
 
@@ -110,7 +110,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const MSG:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.cs_chat.msg", "msg", (5 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const MSG:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.cs_chat.msg", "msg", (5 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var msg$field:String;
 

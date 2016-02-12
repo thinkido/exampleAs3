@@ -166,7 +166,7 @@ package managers
 						throw new Error("Res.TYPE_SOUND can't found");
 						break ;
 					case Res.TYPE_BINARY:
-						obj = FileUtils.getContentByFile( name );
+						obj = FileUtils.getContentByFileName( name );
 						break ;
 				}
 				_dataTable[name] = obj ;

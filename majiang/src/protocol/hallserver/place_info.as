@@ -1,4 +1,4 @@
-package protos.hallserver 
+package protocol.hallserver 
 {
 	import com.netease.protobuf.Message;
 	import com.netease.protobuf.WritingBuffer;
@@ -18,7 +18,7 @@ package protos.hallserver
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.place_info.id", "id", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.place_info.id", "id", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var id$field:String;
 
@@ -41,7 +41,7 @@ package protos.hallserver
 		/**
 		 *  @private
 		 */
-		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.place_info.name", "name", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.place_info.name", "name", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var name$field:String;
 
@@ -64,7 +64,7 @@ package protos.hallserver
 		/**
 		 *  @private
 		 */
-		public static const BASE_ZHU:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.place_info.base_zhu", "baseZhu", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const BASE_ZHU:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.place_info.base_zhu", "baseZhu", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var base_zhu$field:int;
 
@@ -91,7 +91,7 @@ package protos.hallserver
 		/**
 		 *  @private
 		 */
-		public static const PLAYER_NUM:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.place_info.player_num", "playerNum", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const PLAYER_NUM:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.place_info.player_num", "playerNum", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var player_num$field:int;
 
@@ -116,7 +116,7 @@ package protos.hallserver
 		/**
 		 *  @private
 		 */
-		public static const REQ_PLAYER_GOLD:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.place_info.req_player_gold", "reqPlayerGold", (8 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const REQ_PLAYER_GOLD:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.place_info.req_player_gold", "reqPlayerGold", (8 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var req_player_gold$field:int;
 
@@ -141,7 +141,7 @@ package protos.hallserver
 		/**
 		 *  @private
 		 */
-		public static const CAN_ENTER:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.hallserver.place_info.can_enter", "canEnter", (9 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const CAN_ENTER:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.hallserver.place_info.can_enter", "canEnter", (9 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var can_enter$field:Boolean;
 
@@ -166,7 +166,7 @@ package protos.hallserver
 		/**
 		 *  @private
 		 */
-		public static const CHU_TILE_TIME:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.place_info.chu_tile_time", "chuTileTime", (10 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const CHU_TILE_TIME:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.place_info.chu_tile_time", "chuTileTime", (10 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var chu_tile_time$field:int;
 

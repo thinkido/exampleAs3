@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PLACE_ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_enter_place.place_id", "placeId", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const PLACE_ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_enter_place.place_id", "placeId", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var place_id$field:String;
 
@@ -37,7 +37,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const USR_KEY:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_enter_place.usr_key", "usrKey", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const USR_KEY:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_enter_place.usr_key", "usrKey", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var usr_key$field:String;
 

@@ -16,9 +16,9 @@ package game.view.window.rank
 	
 	import network.YiuNetworkListener;
 	
-	import protos.hallserver.cs_rank_list;
-	import protos.hallserver.sc_rank_list;
-	import protos.hallserver.t_rank_data;
+	import protocol.hallserver.cs_rank_list;
+	import protocol.hallserver.sc_rank_list;
+	import protocol.hallserver.t_rank_data;
 	
 	import starling.display.Button;
 	

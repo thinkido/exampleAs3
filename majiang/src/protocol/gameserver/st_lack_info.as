@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_lack_info.seat_index", "seatIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_lack_info.seat_index", "seatIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var seat_index$field:int;
 
@@ -41,7 +41,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const LACK:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_lack_info.lack", "lack", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const LACK:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_lack_info.lack", "lack", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var lack$field:int;
 

@@ -1,4 +1,4 @@
-package protos.common {
+package protocol.common {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.common {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.common.protocol;
+	import protocol.common.protocol;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.common {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.common.sc_protocol_pack.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.common.sc_protocol_pack.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var id$field:int;
 
@@ -42,9 +42,9 @@ package protos.common {
 		/**
 		 *  @private
 		 */
-		public static const PACK:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.common.sc_protocol_pack.pack", "pack", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.common.protocol; });
+		public static const PACK:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.common.sc_protocol_pack.pack", "pack", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.common.protocol; });
 
-		[ArrayElementType("protos.common.protocol")]
+		[ArrayElementType("protocol.common.protocol")]
 		public var pack:Array = [];
 
 		/**
@@ -80,7 +80,7 @@ package protos.common {
 					this.id = com.netease.protobuf.ReadUtils.read_TYPE_INT32(input);
 					break;
 				case 2:
-					this.pack.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.common.protocol()));
+					this.pack.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.common.protocol()));
 					break;
 				default:
 					super.readUnknown(input, tag);

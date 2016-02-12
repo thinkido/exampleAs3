@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TYPE1:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_hu_desc.type1", "type1", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TYPE1:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_hu_desc.type1", "type1", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var type1$field:int;
 
@@ -41,7 +41,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TYPE2:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_hu_desc.type2", "type2", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TYPE2:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_hu_desc.type2", "type2", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var type2$field:int;
 
@@ -66,7 +66,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const GEN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_hu_desc.gen", "gen", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const GEN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_hu_desc.gen", "gen", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var gen$field:int;
 
@@ -91,7 +91,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SELF_MO:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.gameserver.st_hu_desc.self_mo", "selfMo", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SELF_MO:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.gameserver.st_hu_desc.self_mo", "selfMo", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var self_mo$field:Boolean;
 
@@ -116,7 +116,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TYPE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_hu_desc.type", "type", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TYPE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_hu_desc.type", "type", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var type$field:int;
 
@@ -141,7 +141,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const FAN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_hu_desc.fan", "fan", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const FAN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_hu_desc.fan", "fan", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var fan$field:int;
 

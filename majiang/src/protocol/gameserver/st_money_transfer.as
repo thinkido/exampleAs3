@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const PERSON:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_money_transfer.person", "person", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const PERSON:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_money_transfer.person", "person", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var person$field:int;
 
@@ -41,7 +41,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ATM:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_money_transfer.atm", "atm", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ATM:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_money_transfer.atm", "atm", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var atm$field:int;
 
@@ -66,7 +66,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const MONEY:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_money_transfer.money", "money", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const MONEY:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_money_transfer.money", "money", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var money$field:int;
 
@@ -91,7 +91,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TRANSFER:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.st_money_transfer.transfer", "transfer", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TRANSFER:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.st_money_transfer.transfer", "transfer", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var transfer$field:int;
 

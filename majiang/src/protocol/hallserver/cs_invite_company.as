@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_invite_company.name", "name", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_invite_company.name", "name", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var name$field:String;
 
@@ -37,7 +37,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.cs_invite_company.seat", "seat", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.cs_invite_company.seat", "seat", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var seat$field:int;
 
@@ -64,7 +64,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_invite_company.host", "host", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_invite_company.host", "host", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var host$field:String;
 
@@ -87,7 +87,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.cs_invite_company.port", "port", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.cs_invite_company.port", "port", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var port$field:int;
 
@@ -112,7 +112,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ROOMID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.cs_invite_company.roomid", "roomid", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ROOMID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.cs_invite_company.roomid", "roomid", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var roomid$field:int;
 
@@ -137,7 +137,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_invite_company.id", "id", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_invite_company.id", "id", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var id$field:String;
 
@@ -160,7 +160,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_invite_company.idtype", "idtype", (7 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_invite_company.idtype", "idtype", (7 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var idtype$field:String;
 

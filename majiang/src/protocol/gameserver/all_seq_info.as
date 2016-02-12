@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,10 +7,10 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.st_hand_seq;
-	import protos.gameserver.sccomplex_tile;
-	import protos.gameserver.st_hu_desc;
-	import protos.gameserver.st_money_transfer;
+	import protocol.gameserver.st_hand_seq;
+	import protocol.gameserver.sccomplex_tile;
+	import protocol.gameserver.st_hu_desc;
+	import protocol.gameserver.st_money_transfer;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -18,7 +18,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.all_seq_info.seat_index", "seatIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.all_seq_info.seat_index", "seatIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var seat_index$field:int;
 
@@ -45,57 +45,57 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const WAN_GANG_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.wan_gang_mt", "wanGangMt", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_money_transfer; });
+		public static const WAN_GANG_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.wan_gang_mt", "wanGangMt", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_money_transfer; });
 
-		[ArrayElementType("protos.gameserver.st_money_transfer")]
+		[ArrayElementType("protocol.gameserver.st_money_transfer")]
 		public var wanGangMt:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const ZHI_GANG_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.zhi_gang_mt", "zhiGangMt", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_money_transfer; });
+		public static const ZHI_GANG_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.zhi_gang_mt", "zhiGangMt", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_money_transfer; });
 
-		[ArrayElementType("protos.gameserver.st_money_transfer")]
+		[ArrayElementType("protocol.gameserver.st_money_transfer")]
 		public var zhiGangMt:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const AN_GANG_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.an_gang_mt", "anGangMt", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_money_transfer; });
+		public static const AN_GANG_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.an_gang_mt", "anGangMt", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_money_transfer; });
 
-		[ArrayElementType("protos.gameserver.st_money_transfer")]
+		[ArrayElementType("protocol.gameserver.st_money_transfer")]
 		public var anGangMt:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const HU_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.hu_mt", "huMt", (5 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_money_transfer; });
+		public static const HU_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.hu_mt", "huMt", (5 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_money_transfer; });
 
-		[ArrayElementType("protos.gameserver.st_money_transfer")]
+		[ArrayElementType("protocol.gameserver.st_money_transfer")]
 		public var huMt:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const HUA_ZHU_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.hua_zhu_mt", "huaZhuMt", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_money_transfer; });
+		public static const HUA_ZHU_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.hua_zhu_mt", "huaZhuMt", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_money_transfer; });
 
-		[ArrayElementType("protos.gameserver.st_money_transfer")]
+		[ArrayElementType("protocol.gameserver.st_money_transfer")]
 		public var huaZhuMt:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const DA_JIAO_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.da_jiao_mt", "daJiaoMt", (7 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_money_transfer; });
+		public static const DA_JIAO_MT:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.da_jiao_mt", "daJiaoMt", (7 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_money_transfer; });
 
-		[ArrayElementType("protos.gameserver.st_money_transfer")]
+		[ArrayElementType("protocol.gameserver.st_money_transfer")]
 		public var daJiaoMt:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const DA_JIAO_DESC:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.da_jiao_desc", "daJiaoDesc", (8 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_hu_desc; });
+		public static const DA_JIAO_DESC:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.da_jiao_desc", "daJiaoDesc", (8 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_hu_desc; });
 
-		private var da_jiao_desc$field:protos.gameserver.st_hu_desc;
+		private var da_jiao_desc$field:protocol.gameserver.st_hu_desc;
 
 		public function clearDaJiaoDesc():void {
 			da_jiao_desc$field = null;
@@ -105,28 +105,28 @@ package protos.gameserver {
 			return da_jiao_desc$field != null;
 		}
 
-		public function set daJiaoDesc(value:protos.gameserver.st_hu_desc):void {
+		public function set daJiaoDesc(value:protocol.gameserver.st_hu_desc):void {
 			da_jiao_desc$field = value;
 		}
 
-		public function get daJiaoDesc():protos.gameserver.st_hu_desc {
+		public function get daJiaoDesc():protocol.gameserver.st_hu_desc {
 			return da_jiao_desc$field;
 		}
 
 		/**
 		 *  @private
 		 */
-		public static const HU_DESC:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.hu_desc", "huDesc", (9 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_hu_desc; });
+		public static const HU_DESC:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.hu_desc", "huDesc", (9 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_hu_desc; });
 
-		[ArrayElementType("protos.gameserver.st_hu_desc")]
+		[ArrayElementType("protocol.gameserver.st_hu_desc")]
 		public var huDesc:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const HAND_SEQ:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.hand_seq", "handSeq", (10 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_hand_seq; });
+		public static const HAND_SEQ:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.hand_seq", "handSeq", (10 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_hand_seq; });
 
-		private var hand_seq$field:protos.gameserver.st_hand_seq;
+		private var hand_seq$field:protocol.gameserver.st_hand_seq;
 
 		public function clearHandSeq():void {
 			hand_seq$field = null;
@@ -136,18 +136,18 @@ package protos.gameserver {
 			return hand_seq$field != null;
 		}
 
-		public function set handSeq(value:protos.gameserver.st_hand_seq):void {
+		public function set handSeq(value:protocol.gameserver.st_hand_seq):void {
 			hand_seq$field = value;
 		}
 
-		public function get handSeq():protos.gameserver.st_hand_seq {
+		public function get handSeq():protocol.gameserver.st_hand_seq {
 			return hand_seq$field;
 		}
 
 		/**
 		 *  @private
 		 */
-		public static const HU_SEQ:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protos.gameserver.all_seq_info.hu_seq", "huSeq", (11 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const HU_SEQ:RepeatedFieldDescriptor_TYPE_INT32 = new RepeatedFieldDescriptor_TYPE_INT32("protocol.gameserver.all_seq_info.hu_seq", "huSeq", (11 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		[ArrayElementType("int")]
 		public var huSeq:Array = [];
@@ -155,15 +155,15 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const COMPLEX_SEQ:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.all_seq_info.complex_seq", "complexSeq", (12 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.sccomplex_tile; });
+		public static const COMPLEX_SEQ:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.all_seq_info.complex_seq", "complexSeq", (12 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.sccomplex_tile; });
 
-		[ArrayElementType("protos.gameserver.sccomplex_tile")]
+		[ArrayElementType("protocol.gameserver.sccomplex_tile")]
 		public var complexSeq:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const VIP_CHANGE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.all_seq_info.vip_change", "vipChange", (13 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const VIP_CHANGE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.all_seq_info.vip_change", "vipChange", (13 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var vip_change$field:int;
 
@@ -188,7 +188,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TOTAL_GOLD:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protos.gameserver.all_seq_info.total_gold", "totalGold", (14 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TOTAL_GOLD:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protocol.gameserver.all_seq_info.total_gold", "totalGold", (14 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var total_gold$field:Int64;
 
@@ -211,7 +211,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const MONEY_CHANGE:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protos.gameserver.all_seq_info.money_change", "moneyChange", (15 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const MONEY_CHANGE:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protocol.gameserver.all_seq_info.money_change", "moneyChange", (15 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var money_change$field:Int64;
 
@@ -321,40 +321,40 @@ package protos.gameserver {
 					this.seatIndex = com.netease.protobuf.ReadUtils.read_TYPE_INT32(input);
 					break;
 				case 2:
-					this.wanGangMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.st_money_transfer()));
+					this.wanGangMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.st_money_transfer()));
 					break;
 				case 3:
-					this.zhiGangMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.st_money_transfer()));
+					this.zhiGangMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.st_money_transfer()));
 					break;
 				case 4:
-					this.anGangMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.st_money_transfer()));
+					this.anGangMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.st_money_transfer()));
 					break;
 				case 5:
-					this.huMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.st_money_transfer()));
+					this.huMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.st_money_transfer()));
 					break;
 				case 6:
-					this.huaZhuMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.st_money_transfer()));
+					this.huaZhuMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.st_money_transfer()));
 					break;
 				case 7:
-					this.daJiaoMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.st_money_transfer()));
+					this.daJiaoMt.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.st_money_transfer()));
 					break;
 				case 8:
 					if (da_jiao_desc$count != 0) {
 						throw new flash.errors.IOError('Bad data format: all_seq_info.daJiaoDesc cannot be set twice.');
 					}
 					++da_jiao_desc$count;
-					this.daJiaoDesc = new protos.gameserver.st_hu_desc();
+					this.daJiaoDesc = new protocol.gameserver.st_hu_desc();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.daJiaoDesc);
 					break;
 				case 9:
-					this.huDesc.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.st_hu_desc()));
+					this.huDesc.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.st_hu_desc()));
 					break;
 				case 10:
 					if (hand_seq$count != 0) {
 						throw new flash.errors.IOError('Bad data format: all_seq_info.handSeq cannot be set twice.');
 					}
 					++hand_seq$count;
-					this.handSeq = new protos.gameserver.st_hand_seq();
+					this.handSeq = new protocol.gameserver.st_hand_seq();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.handSeq);
 					break;
 				case 11:
@@ -365,7 +365,7 @@ package protos.gameserver {
 					this.huSeq.push(com.netease.protobuf.ReadUtils.read_TYPE_INT32(input));
 					break;
 				case 12:
-					this.complexSeq.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.sccomplex_tile()));
+					this.complexSeq.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.sccomplex_tile()));
 					break;
 				case 13:
 					if (vip_change$count != 0) {

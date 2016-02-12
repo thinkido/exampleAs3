@@ -5,10 +5,10 @@ import game.view.scene.gamescene.GameScene;
 import jing.game.view.Player;
 import jing.game.vo.CombinVO;
 
-import protos.gameserver.sc_continue_game;
-import protos.gameserver.sccomplex_tile;
-import protos.gameserver.sccontinue_seat_info;
-import protos.gameserver.stplayer_info;
+import protocol.gameserver.sc_continue_game;
+import protocol.gameserver.sccomplex_tile;
+import protocol.gameserver.sccontinue_seat_info;
+import protocol.gameserver.stplayer_info;
 
 /**
  * ¼ÌÐøÓÎϷ

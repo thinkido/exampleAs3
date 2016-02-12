@@ -1,7 +1,7 @@
 package game.control
 	{
-	import protos.hallserver.sc_enter_hall;
-	import protos.hallserver.t_friend_data;
+	import protocol.hallserver.sc_enter_hall;
+	import protocol.hallserver.t_friend_data;
 	
 	public class UserDataManager {
 	

@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const WHY:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.cs_leave_game.why", "why", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const WHY:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.cs_leave_game.why", "why", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var why$field:String;
 

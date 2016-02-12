@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const FEE_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.st_fee.fee_id", "feeId", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const FEE_ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.st_fee.fee_id", "feeId", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var fee_id$field:int;
 
@@ -41,7 +41,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PHONE_NUMBER:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.st_fee.phone_number", "phoneNumber", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const PHONE_NUMBER:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.st_fee.phone_number", "phoneNumber", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var phone_number$field:String;
 
@@ -64,7 +64,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const TIME:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.st_fee.time", "time", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TIME:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.st_fee.time", "time", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var time$field:int;
 
@@ -89,7 +89,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const STATUS:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.st_fee.status", "status", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const STATUS:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.st_fee.status", "status", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var status$field:int;
 

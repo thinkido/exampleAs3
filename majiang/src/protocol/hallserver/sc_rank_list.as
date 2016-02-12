@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.hallserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.hallserver.t_rank_data;
+	import protocol.hallserver.t_rank_data;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,25 +15,25 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const WINDATA:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.hallserver.sc_rank_list.winData", "winData", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.t_rank_data; });
+		public static const WINDATA:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.hallserver.sc_rank_list.winData", "winData", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.t_rank_data; });
 
-		[ArrayElementType("protos.hallserver.t_rank_data")]
+		[ArrayElementType("protocol.hallserver.t_rank_data")]
 		public var winData:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const COINDATA:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.hallserver.sc_rank_list.coinData", "coinData", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.t_rank_data; });
+		public static const COINDATA:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.hallserver.sc_rank_list.coinData", "coinData", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.t_rank_data; });
 
-		[ArrayElementType("protos.hallserver.t_rank_data")]
+		[ArrayElementType("protocol.hallserver.t_rank_data")]
 		public var coinData:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const EXPDATA:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.hallserver.sc_rank_list.expData", "expData", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.t_rank_data; });
+		public static const EXPDATA:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.hallserver.sc_rank_list.expData", "expData", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.t_rank_data; });
 
-		[ArrayElementType("protos.hallserver.t_rank_data")]
+		[ArrayElementType("protocol.hallserver.t_rank_data")]
 		public var expData:Array = [];
 
 		/**
@@ -65,13 +65,13 @@ package protos.hallserver {
 				var tag:uint = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 				switch (tag >> 3) {
 				case 1:
-					this.winData.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.hallserver.t_rank_data()));
+					this.winData.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.hallserver.t_rank_data()));
 					break;
 				case 2:
-					this.coinData.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.hallserver.t_rank_data()));
+					this.coinData.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.hallserver.t_rank_data()));
 					break;
 				case 3:
-					this.expData.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.hallserver.t_rank_data()));
+					this.expData.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.hallserver.t_rank_data()));
 					break;
 				default:
 					super.readUnknown(input, tag);

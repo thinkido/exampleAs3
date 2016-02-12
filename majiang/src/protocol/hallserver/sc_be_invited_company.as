@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const FROM_NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_be_invited_company.from_name", "fromName", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const FROM_NAME:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_be_invited_company.from_name", "fromName", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var from_name$field:String;
 
@@ -37,7 +37,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const FROM_HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_be_invited_company.from_host", "fromHost", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const FROM_HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_be_invited_company.from_host", "fromHost", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var from_host$field:String;
 
@@ -60,7 +60,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const FROM_PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_be_invited_company.from_port", "fromPort", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const FROM_PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_be_invited_company.from_port", "fromPort", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var from_port$field:int;
 
@@ -87,7 +87,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const FROM_TABLE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_be_invited_company.from_table", "fromTable", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const FROM_TABLE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_be_invited_company.from_table", "fromTable", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var from_table$field:int;
 
@@ -112,7 +112,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const FROM_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_be_invited_company.from_seat", "fromSeat", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const FROM_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_be_invited_company.from_seat", "fromSeat", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var from_seat$field:int;
 
@@ -137,7 +137,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const FROM_ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_be_invited_company.from_id", "fromId", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const FROM_ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_be_invited_company.from_id", "fromId", (6 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var from_id$field:String;
 
@@ -160,7 +160,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const FROM_IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_be_invited_company.from_idtype", "fromIdtype", (7 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const FROM_IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_be_invited_company.from_idtype", "fromIdtype", (7 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var from_idtype$field:String;
 

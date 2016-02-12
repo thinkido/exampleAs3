@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const RESULT:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.gameserver.sc_minigame_01_done.result", "result", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const RESULT:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.gameserver.sc_minigame_01_done.result", "result", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var result$field:Boolean;
 
@@ -41,7 +41,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const EARNPOINT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_minigame_01_done.earnPoint", "earnPoint", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const EARNPOINT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_minigame_01_done.earnPoint", "earnPoint", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var earnPoint$field:int;
 

@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.stplayer_info;
+	import protocol.gameserver.stplayer_info;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,9 +15,9 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const PLAYER_INFO:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.gameserver.scenter_seat_info.player_info", "playerInfo", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.stplayer_info; });
+		public static const PLAYER_INFO:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.gameserver.scenter_seat_info.player_info", "playerInfo", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.stplayer_info; });
 
-		private var player_info$field:protos.gameserver.stplayer_info;
+		private var player_info$field:protocol.gameserver.stplayer_info;
 
 		public function clearPlayerInfo():void {
 			player_info$field = null;
@@ -27,18 +27,18 @@ package protos.gameserver {
 			return player_info$field != null;
 		}
 
-		public function set playerInfo(value:protos.gameserver.stplayer_info):void {
+		public function set playerInfo(value:protocol.gameserver.stplayer_info):void {
 			player_info$field = value;
 		}
 
-		public function get playerInfo():protos.gameserver.stplayer_info {
+		public function get playerInfo():protocol.gameserver.stplayer_info {
 			return player_info$field;
 		}
 
 		/**
 		 *  @private
 		 */
-		public static const READY:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.gameserver.scenter_seat_info.ready", "ready", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const READY:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.gameserver.scenter_seat_info.ready", "ready", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var ready$field:Boolean;
 
@@ -65,7 +65,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.scenter_seat_info.seat_index", "seatIndex", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.scenter_seat_info.seat_index", "seatIndex", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var seat_index$field:int;
 
@@ -123,7 +123,7 @@ package protos.gameserver {
 						throw new flash.errors.IOError('Bad data format: scenter_seat_info.playerInfo cannot be set twice.');
 					}
 					++player_info$count;
-					this.playerInfo = new protos.gameserver.stplayer_info();
+					this.playerInfo = new protocol.gameserver.stplayer_info();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.playerInfo);
 					break;
 				case 2:

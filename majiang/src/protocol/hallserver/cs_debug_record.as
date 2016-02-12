@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const RECORD:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_debug_record.record", "record", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const RECORD:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_debug_record.record", "record", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var record$field:String;
 

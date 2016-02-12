@@ -5,7 +5,7 @@ import game.model.Global;
 import game.model.vo.UserDataVO;
 import game.view.scene.gamescene.GameScene;
 
-import protos.hallserver.sc_enter_hall;
+import protocol.hallserver.sc_enter_hall;
 
 public class SCEnterHall
 {

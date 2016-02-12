@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.hallserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.hallserver.t_myitem;
+	import protocol.hallserver.t_myitem;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const GOLD:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_get_item.gold", "gold", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const GOLD:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_get_item.gold", "gold", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var gold$field:int;
 
@@ -42,15 +42,15 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ITEMS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.hallserver.sc_get_item.items", "items", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.t_myitem; });
+		public static const ITEMS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.hallserver.sc_get_item.items", "items", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.t_myitem; });
 
-		[ArrayElementType("protos.hallserver.t_myitem")]
+		[ArrayElementType("protocol.hallserver.t_myitem")]
 		public var items:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const GOLD_COST:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protos.hallserver.sc_get_item.gold_cost", "goldCost", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const GOLD_COST:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protocol.hallserver.sc_get_item.gold_cost", "goldCost", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var gold_cost$field:Int64;
 
@@ -108,7 +108,7 @@ package protos.hallserver {
 					this.gold = com.netease.protobuf.ReadUtils.read_TYPE_INT32(input);
 					break;
 				case 2:
-					this.items.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.hallserver.t_myitem()));
+					this.items.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.hallserver.t_myitem()));
 					break;
 				case 3:
 					if (gold_cost$count != 0) {

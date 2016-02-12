@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.hallserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.hallserver.t_shopitem;
+	import protocol.hallserver.t_shopitem;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const SHOP_DISCOUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_shoplist.shop_discount", "shopDiscount", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SHOP_DISCOUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_shoplist.shop_discount", "shopDiscount", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var shop_discount$field:int;
 
@@ -42,7 +42,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const SHOP_MAINTAIN:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.hallserver.sc_shoplist.shop_maintain", "shopMaintain", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SHOP_MAINTAIN:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.hallserver.sc_shoplist.shop_maintain", "shopMaintain", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var shop_maintain$field:Boolean;
 
@@ -67,9 +67,9 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const LISTS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.hallserver.sc_shoplist.lists", "lists", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.t_shopitem; });
+		public static const LISTS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.hallserver.sc_shoplist.lists", "lists", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.t_shopitem; });
 
-		[ArrayElementType("protos.hallserver.t_shopitem")]
+		[ArrayElementType("protocol.hallserver.t_shopitem")]
 		public var lists:Array = [];
 
 		/**
@@ -117,7 +117,7 @@ package protos.hallserver {
 					this.shopMaintain = com.netease.protobuf.ReadUtils.read_TYPE_BOOL(input);
 					break;
 				case 3:
-					this.lists.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.hallserver.t_shopitem()));
+					this.lists.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.hallserver.t_shopitem()));
 					break;
 				default:
 					super.readUnknown(input, tag);

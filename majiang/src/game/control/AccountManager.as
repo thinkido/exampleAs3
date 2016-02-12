@@ -29,11 +29,11 @@ package game.control
 	import network.ProtocolNode;
 	import network.YiuNetworkHandlerMgr;
 	
-	import protos.common.protocol;
-	import protos.common.sc_protocol_pack;
-	import protos.gameserver.heartbeat;
-	import protos.hallserver.sc_enter_hall;
-	import protos.hallserver.sc_force_continue_game;
+	import protocol.common.protocol;
+	import protocol.common.sc_protocol_pack;
+	import protocol.gameserver.heartbeat;
+	import protocol.hallserver.sc_enter_hall;
+	import protocol.hallserver.sc_force_continue_game;
 	
 	import starling.display.Stage;
 	
@@ -100,7 +100,7 @@ package game.control
 			
 			try
 			{
-				var hb:protos.gameserver.heartbeat = new heartbeat();
+				var hb:protocol.gameserver.heartbeat = new heartbeat();
 				hb.noop = 0 ;
 				_heartbeatBytes = new ByteArray();
 				_heartbeatBytes.endian = Endian.LITTLE_ENDIAN ;

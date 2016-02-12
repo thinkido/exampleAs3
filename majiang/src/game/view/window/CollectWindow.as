@@ -12,10 +12,10 @@ import game.util.CommonUtil;
 
 import network.YiuNetworkListener;
 
-import protos.hallserver.cs_get_award_collect_box;
-import protos.hallserver.cs_get_collect_box;
-import protos.hallserver.sc_get_award_collect_box;
-import protos.hallserver.sc_get_collect_box;
+import protocol.hallserver.cs_get_award_collect_box;
+import protocol.hallserver.cs_get_collect_box;
+import protocol.hallserver.sc_get_award_collect_box;
+import protocol.hallserver.sc_get_collect_box;
 
 import starling.display.Button;
 

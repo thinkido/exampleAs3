@@ -1,6 +1,6 @@
 package game.model.vo
 {
-	import protos.hallserver.t_rank_data;
+	import protocol.hallserver.t_rank_data;
 	
 	
 	public class RankItemVO

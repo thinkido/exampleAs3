@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.sc_force_continue_game.host", "host", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.sc_force_continue_game.host", "host", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var host$field:String;
 
@@ -37,7 +37,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.sc_force_continue_game.port", "port", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.sc_force_continue_game.port", "port", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var port$field:int;
 

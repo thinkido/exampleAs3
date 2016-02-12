@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.hallserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.hallserver.t_duration;
+	import protocol.hallserver.t_duration;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_myitem.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_myitem.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var id$field:int;
 
@@ -42,7 +42,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const SHOPID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_myitem.shopid", "shopid", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SHOPID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_myitem.shopid", "shopid", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var shopid$field:int;
 
@@ -67,7 +67,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_myitem.count", "count", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_myitem.count", "count", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var count$field:int;
 
@@ -92,7 +92,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const STATUS:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.t_myitem.status", "status", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const STATUS:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.t_myitem.status", "status", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var status$field:int;
 
@@ -117,9 +117,9 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const DURATION:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.hallserver.t_myitem.duration", "duration", (5 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.hallserver.t_duration; });
+		public static const DURATION:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.hallserver.t_myitem.duration", "duration", (5 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.hallserver.t_duration; });
 
-		private var duration$field:protos.hallserver.t_duration;
+		private var duration$field:protocol.hallserver.t_duration;
 
 		public function clearDuration():void {
 			duration$field = null;
@@ -129,11 +129,11 @@ package protos.hallserver {
 			return duration$field != null;
 		}
 
-		public function set duration(value:protos.hallserver.t_duration):void {
+		public function set duration(value:protocol.hallserver.t_duration):void {
 			duration$field = value;
 		}
 
-		public function get duration():protos.hallserver.t_duration {
+		public function get duration():protocol.hallserver.t_duration {
 			return duration$field;
 		}
 
@@ -211,7 +211,7 @@ package protos.hallserver {
 						throw new flash.errors.IOError('Bad data format: t_myitem.duration cannot be set twice.');
 					}
 					++duration$count;
-					this.duration = new protos.hallserver.t_duration();
+					this.duration = new protocol.hallserver.t_duration();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.duration);
 					break;
 				default:

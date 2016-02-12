@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const RESULT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_send_online_gift.result", "result", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const RESULT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_send_online_gift.result", "result", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var result$field:int;
 
@@ -41,7 +41,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const GOLD:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protos.gameserver.sc_send_online_gift.gold", "gold", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const GOLD:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protocol.gameserver.sc_send_online_gift.gold", "gold", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var gold$field:Int64;
 
@@ -64,7 +64,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const DIAMOND:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protos.gameserver.sc_send_online_gift.diamond", "diamond", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const DIAMOND:FieldDescriptor_TYPE_INT64 = new FieldDescriptor_TYPE_INT64("protocol.gameserver.sc_send_online_gift.diamond", "diamond", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var diamond$field:Int64;
 
@@ -87,7 +87,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TIME:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_send_online_gift.time", "time", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TIME:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_send_online_gift.time", "time", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var time$field:int;
 

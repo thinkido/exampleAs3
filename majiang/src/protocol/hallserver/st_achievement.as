@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.st_achievement.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.st_achievement.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var id$field:int;
 
@@ -41,7 +41,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const COMPLETE:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.hallserver.st_achievement.complete", "complete", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const COMPLETE:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.hallserver.st_achievement.complete", "complete", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var complete$field:Boolean;
 
@@ -66,7 +66,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.st_achievement.count", "count", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const COUNT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.st_achievement.count", "count", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var count$field:int;
 
@@ -91,7 +91,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const FETCHED:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.hallserver.st_achievement.fetched", "fetched", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const FETCHED:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.hallserver.st_achievement.fetched", "fetched", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var fetched$field:Boolean;
 

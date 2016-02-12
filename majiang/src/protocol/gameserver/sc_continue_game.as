@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,8 +7,8 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.scgame_show_actions;
-	import protos.gameserver.sccontinue_seat_info;
+	import protocol.gameserver.scgame_show_actions;
+	import protocol.gameserver.sccontinue_seat_info;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -16,7 +16,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const BANKER_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.banker_seat", "bankerSeat", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const BANKER_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.banker_seat", "bankerSeat", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var banker_seat$field:int;
 
@@ -43,7 +43,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.seat_index", "seatIndex", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.seat_index", "seatIndex", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var seat_index$field:int;
 
@@ -68,7 +68,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const LACK_SECOND:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.lack_second", "lackSecond", (3 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const LACK_SECOND:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.lack_second", "lackSecond", (3 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var lack_second$field:int;
 
@@ -93,7 +93,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const CURR_TURN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.curr_turn", "currTurn", (4 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const CURR_TURN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.curr_turn", "currTurn", (4 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var curr_turn$field:int;
 
@@ -118,7 +118,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const TURN_SECOND:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.turn_second", "turnSecond", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TURN_SECOND:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.turn_second", "turnSecond", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var turn_second$field:int;
 
@@ -143,7 +143,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const THINKING:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.gameserver.sc_continue_game.thinking", "thinking", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const THINKING:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.gameserver.sc_continue_game.thinking", "thinking", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var thinking$field:Boolean;
 
@@ -168,7 +168,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const THINK_SECOND:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.think_second", "thinkSecond", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const THINK_SECOND:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.think_second", "thinkSecond", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var think_second$field:int;
 
@@ -193,23 +193,23 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SHOW_ACTIONS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_continue_game.show_actions", "showActions", (8 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.scgame_show_actions; });
+		public static const SHOW_ACTIONS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_continue_game.show_actions", "showActions", (8 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.scgame_show_actions; });
 
-		[ArrayElementType("protos.gameserver.scgame_show_actions")]
+		[ArrayElementType("protocol.gameserver.scgame_show_actions")]
 		public var showActions:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INFOES:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_continue_game.seat_infoes", "seatInfoes", (9 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.sccontinue_seat_info; });
+		public static const SEAT_INFOES:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_continue_game.seat_infoes", "seatInfoes", (9 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.sccontinue_seat_info; });
 
-		[ArrayElementType("protos.gameserver.sccontinue_seat_info")]
+		[ArrayElementType("protocol.gameserver.sccontinue_seat_info")]
 		public var seatInfoes:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const TILES_REMAIN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.tiles_remain", "tilesRemain", (10 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TILES_REMAIN:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.tiles_remain", "tilesRemain", (10 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var tiles_remain$field:int;
 
@@ -234,7 +234,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ROOMID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.roomid", "roomid", (11 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ROOMID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.roomid", "roomid", (11 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var roomid$field:int;
 
@@ -259,7 +259,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SERVICE_GOLD:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.service_gold", "serviceGold", (12 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SERVICE_GOLD:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.service_gold", "serviceGold", (12 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var service_gold$field:int;
 
@@ -284,7 +284,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const MA_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.ma_seat", "maSeat", (13 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const MA_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.ma_seat", "maSeat", (13 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var ma_seat$field:int;
 
@@ -309,7 +309,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ROOM_LEVEL:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.gameserver.sc_continue_game.room_level", "roomLevel", (14 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ROOM_LEVEL:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.gameserver.sc_continue_game.room_level", "roomLevel", (14 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var room_level$field:String;
 
@@ -332,7 +332,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const ROOM_BASE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.sc_continue_game.room_base", "roomBase", (15 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ROOM_BASE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.sc_continue_game.room_base", "roomBase", (15 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var room_base$field:int;
 
@@ -493,10 +493,10 @@ package protos.gameserver {
 					this.thinkSecond = com.netease.protobuf.ReadUtils.read_TYPE_INT32(input);
 					break;
 				case 8:
-					this.showActions.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.scgame_show_actions()));
+					this.showActions.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.scgame_show_actions()));
 					break;
 				case 9:
-					this.seatInfoes.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.sccontinue_seat_info()));
+					this.seatInfoes.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.sccontinue_seat_info()));
 					break;
 				case 10:
 					if (tiles_remain$count != 0) {

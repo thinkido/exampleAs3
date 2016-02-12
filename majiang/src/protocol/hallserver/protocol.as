@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -15,7 +15,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.protocol.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ID:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.protocol.id", "id", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var id$field:int;
 
@@ -42,7 +42,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const CONTENT:FieldDescriptor_TYPE_BYTES = new FieldDescriptor_TYPE_BYTES("protos.hallserver.protocol.content", "content", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const CONTENT:FieldDescriptor_TYPE_BYTES = new FieldDescriptor_TYPE_BYTES("protocol.hallserver.protocol.content", "content", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var content$field:flash.utils.ByteArray;
 

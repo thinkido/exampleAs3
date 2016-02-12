@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.all_seq_info;
+	import protocol.gameserver.all_seq_info;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,15 +15,15 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEQ_INFOS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protos.gameserver.sc_end_game.seq_infos", "seqInfos", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.all_seq_info; });
+		public static const SEQ_INFOS:RepeatedFieldDescriptor_TYPE_MESSAGE = new RepeatedFieldDescriptor_TYPE_MESSAGE("protocol.gameserver.sc_end_game.seq_infos", "seqInfos", (1 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.all_seq_info; });
 
-		[ArrayElementType("protos.gameserver.all_seq_info")]
+		[ArrayElementType("protocol.gameserver.all_seq_info")]
 		public var seqInfos:Array = [];
 
 		/**
 		 *  @private
 		 */
-		public static const LIUJU:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.gameserver.sc_end_game.liuju", "liuju", (2 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const LIUJU:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.gameserver.sc_end_game.liuju", "liuju", (2 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var liuju$field:Boolean;
 
@@ -73,7 +73,7 @@ package protos.gameserver {
 				var tag:uint = com.netease.protobuf.ReadUtils.read_TYPE_UINT32(input);
 				switch (tag >> 3) {
 				case 1:
-					this.seqInfos.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protos.gameserver.all_seq_info()));
+					this.seqInfos.push(com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, new protocol.gameserver.all_seq_info()));
 					break;
 				case 2:
 					if (liuju$count != 0) {

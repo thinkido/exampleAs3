@@ -1,4 +1,4 @@
-package protos.hallserver {
+package protocol.hallserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -14,7 +14,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ACCEPTED:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protos.hallserver.cs_confirm_be_invited_company.accepted", "accepted", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const ACCEPTED:FieldDescriptor_TYPE_BOOL = new FieldDescriptor_TYPE_BOOL("protocol.hallserver.cs_confirm_be_invited_company.accepted", "accepted", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var accepted$field:Boolean;
 
@@ -41,7 +41,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_confirm_be_invited_company.id", "id", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const ID:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_confirm_be_invited_company.id", "id", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var id$field:String;
 
@@ -64,7 +64,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_confirm_be_invited_company.idtype", "idtype", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const IDTYPE:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_confirm_be_invited_company.idtype", "idtype", (3 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var idtype$field:String;
 
@@ -87,7 +87,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const TO_HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protos.hallserver.cs_confirm_be_invited_company.to_host", "toHost", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
+		public static const TO_HOST:FieldDescriptor_TYPE_STRING = new FieldDescriptor_TYPE_STRING("protocol.hallserver.cs_confirm_be_invited_company.to_host", "toHost", (4 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED);
 
 		private var to_host$field:String;
 
@@ -110,7 +110,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const TO_PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.cs_confirm_be_invited_company.to_port", "toPort", (5 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TO_PORT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.cs_confirm_be_invited_company.to_port", "toPort", (5 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var to_port$field:int;
 
@@ -135,7 +135,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const TO_TABLE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.cs_confirm_be_invited_company.to_table", "toTable", (6 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TO_TABLE:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.cs_confirm_be_invited_company.to_table", "toTable", (6 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var to_table$field:int;
 
@@ -160,7 +160,7 @@ package protos.hallserver {
 		/**
 		 *  @private
 		 */
-		public static const TO_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.hallserver.cs_confirm_be_invited_company.to_seat", "toSeat", (7 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const TO_SEAT:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.hallserver.cs_confirm_be_invited_company.to_seat", "toSeat", (7 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var to_seat$field:int;
 

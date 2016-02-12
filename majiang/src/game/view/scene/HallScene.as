@@ -21,15 +21,15 @@ package game.view.scene
 	
 	import network.YiuNetworkListener;
 	
-	import protos.hallserver.cs_enter_place;
-	import protos.hallserver.cs_friend_profile;
-	import protos.hallserver.cs_update_places;
-	import protos.hallserver.sc_broadcast_msg;
-	import protos.hallserver.sc_enter_place;
-	import protos.hallserver.sc_enter_place_failed;
-	import protos.hallserver.sc_get_item;
-	import protos.hallserver.sc_hall_debug;
-	import protos.hallserver.sc_update_places;
+	import protocol.hallserver.cs_enter_place;
+	import protocol.hallserver.cs_friend_profile;
+	import protocol.hallserver.cs_update_places;
+	import protocol.hallserver.sc_broadcast_msg;
+	import protocol.hallserver.sc_enter_place;
+	import protocol.hallserver.sc_enter_place_failed;
+	import protocol.hallserver.sc_get_item;
+	import protocol.hallserver.sc_hall_debug;
+	import protocol.hallserver.sc_update_places;
 	
 	import starling.display.Button;
 	

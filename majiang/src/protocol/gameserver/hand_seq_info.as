@@ -1,4 +1,4 @@
-package protos.gameserver {
+package protocol.gameserver {
 	import com.netease.protobuf.*;
 	use namespace com.netease.protobuf.used_by_generated_code;
 	import com.netease.protobuf.fieldDescriptors.*;
@@ -7,7 +7,7 @@ package protos.gameserver {
 	import flash.utils.IDataOutput;
 	import flash.utils.IExternalizable;
 	import flash.errors.IOError;
-	import protos.gameserver.st_hand_seq;
+	import protocol.gameserver.st_hand_seq;
 	// @@protoc_insertion_point(imports)
 
 	// @@protoc_insertion_point(class_metadata)
@@ -15,7 +15,7 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protos.gameserver.hand_seq_info.seat_index", "seatIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
+		public static const SEAT_INDEX:FieldDescriptor_TYPE_INT32 = new FieldDescriptor_TYPE_INT32("protocol.gameserver.hand_seq_info.seat_index", "seatIndex", (1 << 3) | com.netease.protobuf.WireType.VARINT);
 
 		private var seat_index$field:int;
 
@@ -42,9 +42,9 @@ package protos.gameserver {
 		/**
 		 *  @private
 		 */
-		public static const HAND_SEQ:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protos.gameserver.hand_seq_info.hand_seq", "handSeq", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protos.gameserver.st_hand_seq; });
+		public static const HAND_SEQ:FieldDescriptor_TYPE_MESSAGE = new FieldDescriptor_TYPE_MESSAGE("protocol.gameserver.hand_seq_info.hand_seq", "handSeq", (2 << 3) | com.netease.protobuf.WireType.LENGTH_DELIMITED, function():Class { return protocol.gameserver.st_hand_seq; });
 
-		private var hand_seq$field:protos.gameserver.st_hand_seq;
+		private var hand_seq$field:protocol.gameserver.st_hand_seq;
 
 		public function clearHandSeq():void {
 			hand_seq$field = null;
@@ -54,11 +54,11 @@ package protos.gameserver {
 			return hand_seq$field != null;
 		}
 
-		public function set handSeq(value:protos.gameserver.st_hand_seq):void {
+		public function set handSeq(value:protocol.gameserver.st_hand_seq):void {
 			hand_seq$field = value;
 		}
 
-		public function get handSeq():protos.gameserver.st_hand_seq {
+		public function get handSeq():protocol.gameserver.st_hand_seq {
 			return hand_seq$field;
 		}
 
@@ -100,7 +100,7 @@ package protos.gameserver {
 						throw new flash.errors.IOError('Bad data format: hand_seq_info.handSeq cannot be set twice.');
 					}
 					++hand_seq$count;
-					this.handSeq = new protos.gameserver.st_hand_seq();
+					this.handSeq = new protocol.gameserver.st_hand_seq();
 					com.netease.protobuf.ReadUtils.read_TYPE_MESSAGE(input, this.handSeq);
 					break;
 				default:
