@@ -43,7 +43,6 @@ package jing.configs
 	
 		public function init(file:String):void{
 			var obj:Object= null;
-//			obj = Res.actively.getJson(file);
 			obj = ResManager.getFile(file , Res.TYPE_JSON , true) ; 
 			try
 			{

@@ -41,7 +41,7 @@ package game.view.window.rule
 			_btnClose = getChildByName("btn_close") as Button; 
 			for(var i:int = 0; i < TAB_LENGTH; i++)
 			{
-				_btnTabList[i] = (UIButton)getChildByName("btn_tab_" + (i + 1));
+				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as UIButton;
 				_curIndexList[i] = 0;
 			}
 			_curTab = 0;
@@ -158,8 +158,8 @@ package game.view.window.rule
 		private function updateContent():void
 		{
 			var filename:String = "img_txt_" + TYPE_STRING_LIST[_curTab] + "_" + (_curIndexList[_curTab] + 1) + "_png";
-			_imgContent.setTexture(Res.actively.getTexture(filename));
-			Res.actively.release(filename);
+			_imgContent.setTexture( ResManager.getFile(filename , Res.TYPE_TEXTURE ) );
+			ResManager.release(filename);
 		}
 		
 	}

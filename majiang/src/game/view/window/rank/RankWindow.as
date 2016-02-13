@@ -5,7 +5,7 @@ package game.view.window.rank
 	import flash.utils.ByteArray;
 	import flash.utils.Endian;
 	
-	import framework.resources.SpriteSheet;
+	import framework.resources.Res;
 	
 	import game.control.AccountManager;
 	import game.control.NetManager;
@@ -14,6 +14,8 @@ package game.view.window.rank
 	import game.model.vo.RankItemVO;
 	import game.util.CommonUtil;
 	
+	import managers.ResManager;
+	
 	import network.YiuNetworkListener;
 	
 	import protocol.hallserver.cs_rank_list;
@@ -21,6 +23,7 @@ package game.view.window.rank
 	import protocol.hallserver.t_rank_data;
 	
 	import starling.display.Button;
+	import starling.textures.TextureAtlas;
 	
 	import ui.UIImageView;
 	import ui.UILayer;
@@ -144,7 +147,7 @@ package game.view.window.rank
 		{
 			_btnTabList = new Vector.<Button>;
 			_mediatorList = new Vector.<RankLayerMediator>;
-			var ssSmallHead:SpriteSheet = getSheet("small_head_json");
+			var ssSmallHead:TextureAtlas = ResManager.getFile("small_head_json" , Res.TYPE_TEXTUREATLAS ) as TextureAtlas;
 			for(var i:int = 0; i < TAB_LENGTH; i++)
 			{
 				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as Button;

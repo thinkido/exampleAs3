@@ -1,10 +1,6 @@
 package game.view.scene.gamescene.windows
 {
-		import framework.resources.FontSheet;
 		import framework.resources.Res;
-		import framework.resources.SpriteSheet;
-		import framework.views.Bitmap;
-		import starling.text.BitmapFont;
 		
 		import game.view.scene.gamescene.GameScene;
 		
@@ -14,11 +10,15 @@ package game.view.scene.gamescene.windows
 		import jing.game.vo.GameEndTypeVO;
 		import jing.game.vo.GameEndVO;
 		
+		import managers.ResManager;
+		
 		import starling.display.Button;
 		import starling.display.Image;
+		import starling.text.BitmapFont;
+		import starling.text.TextField;
 		import starling.textures.Texture;
+		import starling.textures.TextureAtlas;
 		
-		import ui.UIButton;
 		import ui.UIImageView;
 		import ui.UIObject;
 		import ui.UITextBMFont;
@@ -39,9 +39,9 @@ package game.view.scene.gamescene.windows
 			
 			private var _vo:GameEndVO = null;
 			
-			private var _fnt:FontSheet = null;
+			private var _fntName:String = "" ;
 			
-			private var _huTypes:SpriteSheet = null;
+			private var _huTypes:TextureAtlas = null;
 			
 			override public function initUI():void
 			{
@@ -60,16 +60,16 @@ package game.view.scene.gamescene.windows
 			override public function onEnter():void
 			{
 				_vo = _args as GameEndVO;
-				_fnt = Res.actively.getFontSheet("gameend_txt_fnt");
-				_huTypes = Res.actively.getSheet("hu_type_json");
+				_fntName = "gameend_txt_fnt" ;
+				_huTypes = ResManager.getFile("hu_type_json" , Res.TYPE_TEXTUREATLAS ) as TextureAtlas ;
 				update();
 			}
 			
 			override public function onLeave():void
 			{
 				this.removeAllChildren();
-				Res.actively.release("gameend_txt_fnt");
-				Res.actively.release("hu_type_json");
+				ResManager.release("gameend_txt_fnt");
+				ResManager.release("hu_type_json");
 			}
 			
 			private function update():void
@@ -167,10 +167,17 @@ package game.view.scene.gamescene.windows
 			private function createBitmapFont( text:String, x:int, y:int):int
 			{
 				var bf:BitmapFont = null;
-				bf = new BitmapFont(_fnt);
-				bf.setText(text);
-				bf.setPosition(x, y);
-				this.addChild(bf);
+				bf = ResManager.getFile(_fntName , Res.TYPE_FONT ) as BitmapFont;
+				TextField.registerBitmapFont( bf , _fntName );
+				var txt:TextField = new TextField();
+				txt.text = text ;
+				txt.x = x ;
+				txt.y = y ;
+				txt.fontName = _fntName ;
+				this.addChild(txt);
+//				bf.setText(text);
+//				bf.setPosition(x, y);
+//				this.addChild(bf);
 				return 22;
 			}
 			

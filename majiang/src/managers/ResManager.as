@@ -3,11 +3,8 @@ package managers
 	
 	import br.com.stimuli.loading.BulkLoader;
 	
-	import com.as3game.spritesheet.SpriteSheet;
-	import com.as3game.spritesheet.vos.DataFormat;
 	import com.thinkido.framework.air.FileUtils;
 	
-	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	
 	import framework.io.FileIO;
@@ -16,7 +13,7 @@ package managers
 	
 	import game.model.Global;
 	
-	import starling.display.Image;
+	import starling.display.MovieClip;
 	import starling.text.BitmapFont;
 	import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
@@ -133,7 +130,7 @@ package managers
 			var item:ResItem = getResItem(name, Res.TYPE_JSON ,  delDic );
 			var imagePath:String ;
 			var bmd:BitmapData , texture:Texture ;
-			var atlas:XML ;
+			var atlas:XML , ta:TextureAtlas ;
 			if(_dataTable[name] == undefined)
 			{
 				var url:String= item.url();
@@ -174,6 +171,18 @@ package managers
 						break ;
 					case Res.TYPE_BINARY:
 						obj = FileUtils.getContentByFileName( name );
+						break ;
+					case Res.TYPE_MOVIECLIP:
+						atlas = new XML( FileUtils.getStringByFileName( url ) );
+						imagePath = url.substring(0, url.length - 5) + ".png" ;
+						bmd = resLoader.getBitmapData( imagePath ) ;
+						if( bmd == null ){
+							throw new Error("需要先用resLoader加载完图片后再调用");
+						}
+						texture = Texture.fromBitmapData( bmd ) ;
+						ta = new TextureAtlas( texture , atlas );
+						var mts:Vector.<Texture> = ta.getTextures( "100" ) ; 
+						obj = new MovieClip( mts ) ;
 						break ;
 				}
 				_dataTable[name] = obj ;
@@ -225,6 +234,10 @@ package managers
 				}
 			}
 			return url;
+		}
+		
+		public static function release(name:String):void{
+			resLoader.remove(name);
 		}
 		
 	}

@@ -1,10 +1,10 @@
 package ui
 {	
-	import framework.resources.FontSheet;
 	import framework.resources.Res;
-	import framework.resources.SpriteSheet;
 	
 	import game.view.inline.LoadingView;
+	
+	import managers.ResManager;
 	
 	import starling.display.Sprite;
 	import starling.textures.Texture;
@@ -136,25 +136,13 @@ package ui
 		public function getJson(name:String):Object
 		{
 			_resList.addElement(name);
-			return Res.actively.getJson(name);
+			return ResManager.getFile( name , Res.TYPE_JSON ) ;
 		}
 		
 		public function getTexture(name:String):Texture
 		{
 			_resList.addElement(name);
-			return Res.actively.getTexture(name);
-		}
-		
-		public function getSheet(name:String):SpriteSheet
-		{
-			_resList.addElement(name);
-			return Res.actively.getSheet(name);
-		}
-		
-		public function getFontSheet(name:String):FontSheet
-		{
-			_resList.addElement(name);
-			return Res.actively.getFontSheet(name);
+			return ResManager.getFile(name , Res.TYPE_TEXTURE ) ; 
 		}
 		
 		public function releaseRes():void
@@ -164,12 +152,12 @@ package ui
 				/*for(Enumeration enumobj = _resList.elements(); enumobj.hasMoreElements();)
 				{
 					String name = (String)enumobj.nextElement();
-					Res.actively.release(name);
+					ResManager.release(name);
 				}
 				_resList.removeAllElements();*/
 				for each( var name:String in _resList)
 				{
-					Res.actively.release(name);
+					ResManager.release(name);
 				}
 				_resList.length = 0;
 			}

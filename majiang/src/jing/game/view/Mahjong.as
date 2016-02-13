@@ -1,7 +1,5 @@
 package jing.game.view
 {
-	import com.as3game.spritesheet.SpriteSheet;
-	
 	import framework.resources.Res;
 	
 	import game.model.Global;

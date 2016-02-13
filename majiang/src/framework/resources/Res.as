@@ -47,5 +47,9 @@ package framework.resources
 		 * 类型 二进制文件
 		 */
 		static public const TYPE_TEXTUREATLAS:String= "textureAtlas";
+		/**
+		 * 类型 二进制文件
+		 */
+		static public const TYPE_MOVIECLIP:String= "MovieClip";
 	}
 }

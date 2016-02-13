@@ -29,8 +29,8 @@ package game.view.inline
 		public function NoticeBoard() 
 		{
 			var filename:String = "notice_board_bg_png";
-			_bg = new Image(Res.actively.getTexture(filename));
-			Res.actively.release(filename);
+			_bg = new Image( ResManager.getFile(filename , Res.TYPE_TEXTURE ) );
+			ResManager.release(filename);
 			this.addChild(_bg);
 			_tf = new TextField();
 			_tf.setBold(true);

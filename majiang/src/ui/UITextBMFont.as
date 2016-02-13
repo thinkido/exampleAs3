@@ -1,11 +1,16 @@
 package ui
 {
+	import framework.resources.Res;
+	
+	import managers.ResManager;
+	
 	import starling.text.BitmapFont;
+	import starling.text.TextField;
 	
 	public class UITextBMFont extends UIObject
 	{
 		
-		private var _bf:BitmapFont = null;
+		private var _bf:TextField = null;
 		
 		public function UITextBMFont()
 		{
@@ -21,7 +26,7 @@ package ui
 		{
 			if(null != _bf)
 			{
-				_bf.setText(text);
+				_bf.text = text;
 			}
 		}
 		
@@ -38,7 +43,10 @@ package ui
 				var resource:String = transformPath(data["UserData"]);
 //				setName(data["Name"]);
 				this.name = data['Name'];
-				_bf = new BitmapFont(getFontSheet(resource));
+				var bf:BitmapFont = ResManager.getFile(resource , Res.TYPE_FONT ) as BitmapFont; 	//new BitmapFont(getFontSheet(resource)); 
+				TextField.registerBitmapFont( bf , resource ) ;
+				_bf = new TextField();
+				_bf.fontName = resource ;
 				addChild(_bf);
 				setText(text);
 				autoSetPosition(data);

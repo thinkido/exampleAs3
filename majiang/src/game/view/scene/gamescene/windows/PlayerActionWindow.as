@@ -209,7 +209,7 @@ package game.view.scene.gamescene.windows
 		
 		override public function onLeave():void
 		{
-			Res.actively.release("action_guo_normal_png");
+			ResManager.release("action_guo_normal_png");
 		}
 		
 		override public function onConfirm( target:UIObject):void

@@ -343,7 +343,7 @@ package game.view.scene.gamescene.elements
 			huaStartPoint[GameDir.DOWN] = p;
 			this.removeChild(img);
 		}
-	
+		private var mc:MovieClip ;
 		public function showEffect( dir:String, effect:String):void
 		{
 			var img:UIImageView = stateImgs[dir] as UIImageView;
@@ -353,13 +353,25 @@ package game.view.scene.gamescene.elements
 			var ld:LoadData = new LoadData( url , effectLoaded , null , null,"",url) ;
 			LoaderManager.load([ld] ,  ResManager.resLoader ) ;
 			
-			var ss:SpriteSheet = Res.actively.getSheet("eft_" + effect + "_json");
-			var mc:MovieClip = new MovieClip(ss, 100);
-			mc.setAnchor(ANCHOR_CENTER);
-			mc.setAutoDispose(true);
-			mc.setPosition(img.getX(), img.getY());
+			mc = ResManager.getFile("eft_" + effect + "_json" , Res.TYPE_MOVIECLIP ) as MovieClip;
+			mc.x = img.x ;
+			mc.y = img.y ;
+			mc.addEventListener( Event.COMPLETE , mcEnd );
 			this.addChild(mc);
+			
+//			var ss:SpriteSheet = Res.actively.getSheet("eft_" + effect + "_json");
+//			var mc:MovieClip = new MovieClip(ss, 100);
+//			mc.setAnchor(ANCHOR_CENTER);
+//			mc.setAutoDispose(true);
+//			mc.setPosition(img.getX(), img.getY());
+//			this.addChild(mc);
 		}
+		
+		private function mcEnd( evt:Event ):void{
+			mc.removeEventListener( Event.COMPLETE , mcEnd );
+			this.removeChild( mc ); 
+		}
+		
 		private function effectLoaded( ld:LoadData , evt:Event ):void{
 			
 		}

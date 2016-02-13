@@ -3,9 +3,11 @@ package game.view.window.rank
 	import game.model.vo.RankItemVO;
 	
 	import starling.display.DisplayObject;
+	import starling.textures.TextureAtlas;
 	
 	import ui.UIImageView;
 	import ui.UILayer;
+	import ui.UITextBMFont;
 	
 	public class RankLayerMediator
 	{
@@ -31,9 +33,9 @@ package game.view.window.rank
 	
 		private var _imgTopThree:Vector.<UIImageView>;
 	
-		private var _ssSmallHead:UIImageView;
+		private var _ssSmallHead:TextureAtlas ;
 	
-		public function RankLayerMediator( layer:UILayer,  ssSmallHead:SpriteSheet)
+		public function RankLayerMediator( layer:UILayer,  ssSmallHead:TextureAtlas)
 		{
 			_layer = layer;
 			_ssSmallHead = ssSmallHead;

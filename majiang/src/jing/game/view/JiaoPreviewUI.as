@@ -1,15 +1,17 @@
 package jing.game.view
 {
-import framework.resources.FontSheet;
 import framework.resources.Res;
-import starling.text.BitmapFont;
 
 import jing.consts.CardPlace;
 import jing.consts.GameDir;
 import jing.pai.vo.JiaoVO;
 
+import managers.ResManager;
+
 import starling.display.Image;
 import starling.display.Sprite;
+import starling.text.BitmapFont;
+import starling.text.TextField;
 import starling.textures.Texture;
 
 /**
@@ -22,12 +24,12 @@ public class JiaoPreviewUI extends Sprite
 
 	private var _bgT:Texture= null;
 	
-	private var _fnt:FontSheet= null;
+	private var _fntName:String = "" ;
 
 	public function JiaoPreviewUI()
 	{		
-		_bgT = Res.actively.getTexture("jiao_preview_bg_png");
-		_fnt = Res.actively.getFontSheet("gameend_txt_fnt");
+		_bgT = ResManager.getFile("jiao_preview_bg_png" , Res.TYPE_TEXTURE ) ;
+		_fntName = "gameend_txt_fnt" ;
 	}
 
 	public function update(jiaos:Vector.<JiaoVO>):void{
@@ -47,21 +49,27 @@ public class JiaoPreviewUI extends Sprite
 			mj.x = mjx;
 			mj.y = mjy;
 			this.addChild(mj);
+			var bf:BitmapFont= null;
+			bf = ResManager.getFile(_fntName , Res.TYPE_FONT ) as BitmapFont;
+			TextField.registerBitmapFont( bf , _fntName );
+			var txt:TextField ;
 			
 			if(jiaos[i].hu != null)
 			{
-				var bf:BitmapFont= null;
-				bf = new BitmapFont(_fnt);
-				bf.setText(jiaos[i].hu.all_fan + "·¬");
-				bf.setPosition(mjx, mjy + mj.height);
-				this.addChild(bf);
+				txt = new TextField();
+				txt.text = jiaos[i].hu.all_fan + "·¬" ;
+				txt.x = mjx ;
+				txt.y = mjy + mj.height ;
+				txt.fontName = _fntName ;
+				this.addChild(txt);
 			}
 			
-			var bf:BitmapFont= null;
-			bf = new BitmapFont(_fnt);
-			bf.setText(111+ "·¬");
-			bf.setPosition(mjx, mjy + mj.height);
-			this.addChild(bf);
+			txt = new TextField();
+			txt.text = 111 + "·¬" ;
+			txt.x = mjx ;
+			txt.y = mjy + mj.height ;
+			txt.fontName = _fntName ;
+			this.addChild(txt);
 		}
 
 //		this.setWidth(x);
@@ -82,7 +90,7 @@ public class JiaoPreviewUI extends Sprite
 	}
 
 	public function dispose():void{
-		Res.actively.release("jiao_preview_bg_png");
+		ResManager.release("jiao_preview_bg_png");
 	}
 
 }
