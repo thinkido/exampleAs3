@@ -48,8 +48,8 @@ package game.control
 			_name = msg.name ;
 			// if(_name)
 	
-			_gold = msg.gold ;
-			_exp = msg.exp ;
+			_gold = Number(msg.gold) ;
+			_exp = Number(msg.exp) ;
 			_level = msg.level ;
 			_sex = msg.sex;
 			_vip = msg.vip ;

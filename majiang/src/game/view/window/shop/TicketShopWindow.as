@@ -35,8 +35,8 @@ package game.view.window.shop
 		override public function initUI():void
 		{
 			_bfTicket = getChildByName("bf_ticket") as UITextBMFont;
-			_bfTicket.setAnchor(ANCHOR_BOTTOM_LEFT);
-			_btnClose = getChildByName("btn_close") as UITextBMFont;
+//			_bfTicket.setAnchor(ANCHOR_BOTTOM_LEFT);
+			_btnClose = getChildByName("btn_close") as Button;
 			_btnItemList = new Vector.<Button>;
 			for(var i:int = 0; i < 6; i++)
 			{

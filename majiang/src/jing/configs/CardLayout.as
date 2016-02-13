@@ -23,7 +23,7 @@ package jing.configs
 	
 		public function CardLayout()
 		{
-			init("card_layout_json");
+			init("card_layout.json");
 		}
 	
 		/**
@@ -42,7 +42,7 @@ package jing.configs
 			var obj:Object= null;
 			obj = ResManager.getFile(file ,Res.TYPE_JSON , true );
 	
-			_t = [] ;
+			_t = {} ;
 	
 			try
 			{

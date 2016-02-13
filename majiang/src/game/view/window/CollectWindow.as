@@ -6,6 +6,7 @@ import flash.utils.ByteArray;
 import flash.utils.Endian;
 
 import game.control.AccountManager;
+import game.control.NetManager;
 import game.control.WindowManager;
 import game.model.Global;
 import game.util.CommonUtil;
@@ -57,7 +58,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 			_hAwardItemList[i] = getChildByName("img_award_h_" + (i + 1)) as Button;
 		}
 		_vAwardItemList = new Vector.<Button>;
-		for(var i:int = 0; i < 3; i++)
+		for(i = 0; i < 3; i++)
 		{
 			_vAwardItemList[i] = getChildByName("img_award_v_" + (i + 1)) as Button;
 		}
@@ -150,7 +151,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 		{
 			ex.printStackTrace();
 		}
-		return false;
+//		return false;
 	}
 
 	private function reqData():void

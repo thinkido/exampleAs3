@@ -17,6 +17,8 @@ package game.view.window.user
 	import game.util.CommonUtil;
 	import game.view.scene.HallScene;
 	
+	import managers.ResManager;
+	
 	import network.YiuNetworkListener;
 	
 	import protocol.hallserver.cs_friend_profile;
@@ -76,27 +78,27 @@ package game.view.window.user
 			_imgHead = getChildByName("img_head") as UIImageView;
 			_btnHead = getChildByName("btn_head") as Button;
 			_bfName = getChildByName("bf_name") as UITextBMFont;
-			_bfName.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfName.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_imgTitle = getChildByName("img_title") as UIImageView;
 			_bfLevel = getChildByName("bf_level") as UITextBMFont;
-			_bfLevel.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfLevel.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_ckMale = getChildByName("ck_male") as UICheckBox;
 			_ckFemale = getChildByName("ck_female") as UICheckBox;
 			_bfTicket = getChildByName("bf_ticket") as UITextBMFont;
-			_bfTicket.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfTicket.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_bfGold = getChildByName("bf_gold") as UITextBMFont;
-			_bfGold.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfGold.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_bfTotalGame = getChildByName("bf_total_game") as UITextBMFont;
-			_bfTotalGame.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfTotalGame.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_bfContinuousWin = getChildByName("bf_continuous_win") as UITextBMFont;
-			_bfContinuousWin.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfContinuousWin.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_bfWinRate = getChildByName("bf_win_rate") as UITextBMFont;
-			_bfWinRate.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfWinRate.setAnchor(ANCHOR_BOTTOM_LEFT);
 			
-			_btnClose.setNeighbors(null, _btnHead, null, null);
-			_btnHead.setNeighbors(_btnClose, _ckMale, null, null);
-			_ckMale.setNeighbors(_btnHead, null, _ckFemale, _ckFemale);
-			_ckFemale.setNeighbors(_btnHead, null, _ckMale, _ckMale);
+//			_btnClose.setNeighbors(null, _btnHead, null, null);
+//			_btnHead.setNeighbors(_btnClose, _ckMale, null, null);
+//			_ckMale.setNeighbors(_btnHead, null, _ckFemale, _ckFemale);
+//			_ckFemale.setNeighbors(_btnHead, null, _ckMale, _ckMale);
 			
 			switchFocus(_btnClose);
 		}
@@ -206,6 +208,7 @@ package game.view.window.user
 			AccountManager.getInstance().removeMsgs(proList ,"UserWindow");		
 		}
 		private var proList:Array = ["sc_friend_profile"];
+		
 		public function onNetworkEvent(e:Notification):void
 		{
 			var name:String = e.name ;
@@ -227,10 +230,10 @@ package game.view.window.user
 			{
 				ex.printStackTrace();
 			}
-			return false;
+//			return false;
 		}
 		
-		override public function onReciveEvent( type:int, dispatcher:EventDispatcher, data:Object):void
+		public function onReciveEvent( type:int, dispatcher:EventDispatcher, data:Object):void
 		{
 			if(type == EventType.EVENT_KEY_PRESSED && _mediator.getVisible())
 			{

@@ -60,7 +60,8 @@ package game.constant
 			var newInstance:UIWindow;
 			try
 			{
-				newInstance = _cls.newInstance() as UIWindow;
+//				newInstance = _cls.newInstance() as UIWindow;
+				newInstance = new _cls() as UIWindow;
 				newInstance.buildUI(_confName);
 				if(_isShowDarkBg)
 					newInstance.addDarkBg();

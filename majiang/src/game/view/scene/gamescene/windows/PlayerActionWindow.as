@@ -1,7 +1,5 @@
 package game.view.scene.gamescene.windows
 {
-	import framework.resources.Res;
-	
 	import game.constant.WindowType;
 	import game.control.WindowManager;
 	import game.view.scene.gamescene.GameScene;
@@ -9,6 +7,8 @@ package game.view.scene.gamescene.windows
 	
 	import jing.consts.PlayerAction;
 	import jing.game.net.GameRequest;
+	
+	import managers.ResManager;
 	
 	import protocol.gameserver.scgame_show_actions;
 	
@@ -142,10 +142,12 @@ package game.view.scene.gamescene.windows
 				btn.setNeighbors(null, null, next, pre);
 				
 				var act:scgame_show_actions = _btn2Act[btn] as scgame_show_actions;
+				var y:int;
+				var gap:int;
 				if(act.id == PlayerAction.CHI_LEFT || act.id == PlayerAction.CHI_MIDDLE || act.id == PlayerAction.CHI_RIGHT)
 				{
-					var y:int = 170;
-					var gap:int = 60;
+					y = 170;
+					gap = 60;
 //					btn.setPosition(btnChiX - btn.width, y);
 					btn.x = btnChiX - btn.width;
 					btnChiX -= (gap + btn.width);
@@ -159,8 +161,8 @@ package game.view.scene.gamescene.windows
 				}
 				else
 				{
-					var y:int = 300;
-					var gap:int = 20;
+					y = 300;
+					gap = 20;
 //					btn.setPosition(btnNormalX - btn.getWidth(), y);
 					btn.x = btnNormalX - btn.width;
 					btnNormalX -= gap + btn.width;

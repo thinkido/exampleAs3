@@ -156,13 +156,13 @@ package game.view.window.rank
 			_btnClose = getChildByName("btn_close") as Button;
 			_imgHead = getChildByName("img_head") as UIImageView;
 			_bfName = getChildByName("bf_name") as UITextBMFont;
-			_bfName.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfName.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_bfLevel = getChildByName("bf_level") as UITextBMFont;
-			_bfLevel.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfLevel.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_bfRank = getChildByName("bf_rank") as UITextBMFont;
-			_bfRank.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfRank.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_bfGold = getChildByName("bf_gold") as UITextBMFont;
-			_bfGold.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			_bfGold.setAnchor(ANCHOR_BOTTOM_LEFT);
 		}
 		
 		public function disposePro():void{
@@ -191,7 +191,7 @@ package game.view.window.rank
 					datalist = msg.expData ;
 					len = datalist.length;
 					var levelData:Vector.<RankItemVO> = new Vector.<RankItemVO>;
-					for(var i:int = 0; i < len; i++)
+					for(i = 0; i < len; i++)
 					{
 						levelData[i] = new RankItemVO(datalist[i] as t_rank_data);
 					}
@@ -199,7 +199,7 @@ package game.view.window.rank
 					datalist = msg.winData ;
 					len = datalist.length;
 					var winData:Vector.<RankItemVO> = new Vector.<RankItemVO>;
-					for(var i:int = 0; i < len; i++)
+					for(i = 0; i < len; i++)
 					{
 						winData[i] = new RankItemVO(datalist[i] as t_rank_data);
 					}
@@ -217,7 +217,7 @@ package game.view.window.rank
 			{
 				ex.printStackTrace();
 			}
-			return false;
+//			return false;
 		}
 	
 		override public function onDispose():void

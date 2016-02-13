@@ -1,7 +1,8 @@
 package ui
 {
 	import game.control.WindowManager;
-	import game.model.Global;
+	
+	import managers.ResManager;
 	
 	import starling.display.Image;
 	
@@ -10,7 +11,8 @@ package ui
 	
 		public function addDarkBg():void
 		{
-			addChildAt(new Image(Global.imgDarkBg), 0);
+//			addChildAt(new Image(Global.imgDarkBg), 0);
+			this.addChildAt(new Image(ResManager.imgDarkBg), 0);
 		}
 	
 		/**

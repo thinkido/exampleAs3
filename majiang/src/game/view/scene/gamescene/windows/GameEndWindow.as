@@ -117,9 +117,11 @@ package game.view.scene.gamescene.windows
 						mjx += 20;
 					}
 					
-					mj.setPosition(mjx, mjy);
+//					mj.setPosition(mjx, mjy);
+					mj.x = mjx;
+					mj.y = mjy;
 					
-					mjx += mj.getWidth();
+					mjx += mj.width;
 				}
 			}
 			
@@ -169,7 +171,7 @@ package game.view.scene.gamescene.windows
 				var bf:BitmapFont = null;
 				bf = ResManager.getFile(_fntName , Res.TYPE_FONT ) as BitmapFont;
 				TextField.registerBitmapFont( bf , _fntName );
-				var txt:TextField = new TextField();
+				var txt:TextField = new TextField(100,22,'');
 				txt.text = text ;
 				txt.x = x ;
 				txt.y = y ;

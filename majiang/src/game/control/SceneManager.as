@@ -11,6 +11,7 @@ package game.control
 	import game.model.action.ActionMoveBy;
 	import game.model.action.ActionSequence;
 	import game.util.CommonUtil;
+	import game.view.inline.LoadingView;
 	
 	import managers.LayerManager;
 	
@@ -83,7 +84,10 @@ package game.control
 						_curView = null;
 						LayerManager.sceneLayer.addChild(_curSceneCache);
 						startSwitch();
-						LoadingManager.getInstance().getCurLoadingView().setPosition(640, 0);
+//						LoadingManager.getInstance().getCurLoadingView().setPosition(640, 0);
+						var loadingView:LoadingView = LoadingManager.getInstance().getCurLoadingView();
+						loadingView.x = 640;
+						loadingView.y = 0;
 						
 						TweenMax.to( LoadingManager.getInstance().getCurLoadingView(), SWITCH_TIME / 1000, { "x":LoadingManager.getInstance().getCurLoadingView().x - 640, 
 							"onComplete":onMoveComplete, "onCompleteParams":[_curSceneCache] } );

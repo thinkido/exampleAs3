@@ -83,13 +83,15 @@ package game.view.window
 				text = text.substring(LINE_LENGTH);
 			}
 			showTxt += text;
-			_tfContent.setText(showTxt);
+//			_tfContent.setText(showTxt);
+			_tfContent.text = showTxt;
 		}
 		
 		private function update_2( isConfirm:Boolean, texture:Texture,  callback:Function):void
 		{
 			baseUpdate(isConfirm, callback);
-			_tfContent.setText("");
+//			_tfContent.setText("");
+			_tfContent.text = '';
 			_imgContent.setTexture(texture);
 		}
 		
@@ -98,14 +100,14 @@ package game.view.window
 			_btnOK =  getChildByName("btn_ok") as Button;
 			_btnCancel = getChildByName("btn_cancel") as Button;
 			_tfContent =  getChildByName("tf_content") as TextField;
-			_tfContent.setAnchor(ANCHOR_CENTER);
+//			_tfContent.setAnchor(ANCHOR_CENTER);
 			_imgContent =  getChildByName("img_content") as UIImageView;
-			_imgContent.setAnchor(ANCHOR_CENTER);
+//			_imgContent.setAnchor(ANCHOR_CENTER);
 			_originBtnOkX = _btnOK.x;
 			_originBtnOkY = _btnOK.y;
 			_midBtnOkX = Global.SCREEN_WIDTH / 2 - 43;
-			_btnOK.setNeighbors(null, null, _btnCancel, _btnCancel);
-			_btnCancel.setNeighbors(null, null, _btnOK, _btnOK);
+//			_btnOK.setNeighbors(null, null, _btnCancel, _btnCancel);
+//			_btnCancel.setNeighbors(null, null, _btnOK, _btnOK);
 			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
 		}

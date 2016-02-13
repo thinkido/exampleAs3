@@ -7,6 +7,7 @@ package ui
 	import managers.ResManager;
 	
 	import starling.display.Sprite;
+	import starling.text.TextField;
 	import starling.textures.Texture;
 	
 	public class UIComponent extends Sprite
@@ -135,7 +136,8 @@ package ui
 		
 		public function getJson(name:String):Object
 		{
-			_resList.addElement(name);
+//			_resList.addElement(name);
+			_resList.push(name);
 			return ResManager.getFile( name , Res.TYPE_JSON ) ;
 		}
 		

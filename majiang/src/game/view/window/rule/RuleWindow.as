@@ -1,6 +1,10 @@
 package game.view.window.rule
 {
+	import framework.resources.Res;
+	
 	import game.control.WindowManager;
+	
+	import managers.ResManager;
 	
 	import starling.display.Button;
 	
@@ -37,11 +41,11 @@ package game.view.window.rule
 		override public function initUI():void
 		{
 			_imgContent = getChildByName("img_content") as UIImageView;
-			_imgContent.setAnchor(ANCHOR_CENTER);
+//			_imgContent.setAnchor(ANCHOR_CENTER);
 			_btnClose = getChildByName("btn_close") as Button; 
 			for(var i:int = 0; i < TAB_LENGTH; i++)
 			{
-				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as UIButton;
+				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as Button;
 				_curIndexList[i] = 0;
 			}
 			_curTab = 0;
@@ -64,7 +68,7 @@ package game.view.window.rule
 				WindowManager.getInstance().closeWindow(this);
 		}
 		
-		public function onMove( dir:int):void
+		override public function onMove( dir:int):void
 		{
 			if(_selected == _btnClose)
 			{

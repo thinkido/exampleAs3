@@ -45,7 +45,7 @@ package ui
 				this.name = data['Name'];
 				var bf:BitmapFont = ResManager.getFile(resource , Res.TYPE_FONT ) as BitmapFont; 	//new BitmapFont(getFontSheet(resource)); 
 				TextField.registerBitmapFont( bf , resource ) ;
-				_bf = new TextField();
+				_bf = new TextField(100,22,'');
 				_bf.fontName = resource ;
 				addChild(_bf);
 				setText(text);
