@@ -19,6 +19,7 @@ package managers
 	import starling.display.Image;
 	import starling.text.BitmapFont;
 	import starling.textures.Texture;
+	import starling.textures.TextureAtlas;
 	import starling.utils.AssetManager;
 
 	public class ResManager
@@ -30,9 +31,9 @@ package managers
 		/*** 窗口灰色半透明遮盖		 */
 		public static var imgDarkBg:Texture;		
 		/*** 头像纹理集		 */
-		public static var ssHead:SpriteSheet;
+		public static var ssHead:TextureAtlas;
 		/*** 称号纹理集		 */
-		public static var ssTitle:SpriteSheet;
+		public static var ssTitle:TextureAtlas;
 		
 		public static const BASE:String = "assets/";
 		
@@ -130,6 +131,9 @@ package managers
 		public static function getFile(name:String , type:String , delDic:Boolean = false ):*{
 			var obj:* = null;
 			var item:ResItem = getResItem(name, Res.TYPE_JSON ,  delDic );
+			var imagePath:String ;
+			var bmd:BitmapData , texture:Texture ;
+			var atlas:XML ;
 			if(_dataTable[name] == undefined)
 			{
 				var url:String= item.url();
@@ -141,26 +145,29 @@ package managers
 						obj = resLoader.getBitmap(url) ;
 						break ;
 					case Res.TYPE_TEXTURE :
-						var bmd:BitmapData = resLoader.getBitmapData( url ) ;
+						bmd = resLoader.getBitmapData( url ) ;
 						obj = Texture.fromBitmapData( bmd ) ;
 						break ;
-					case Res.TYPE_SHEET :			//不能本地获取;
-						var sheets:Object= FileUtils.getStringByFileName( url);
-						var imagePath:String = url.substring(0, url.length - 5) + ".png" ;
-						var ssBmd:BitmapData = resLoader.getBitmapData( imagePath ) ;
-						if( sheet == null ){
+					case Res.TYPE_SHEET :	
+					case Res.TYPE_TEXTUREATLAS:
+						atlas = new XML( FileUtils.getStringByFileName( url ) );
+						imagePath = url.substring(0, url.length - 5) + ".png" ;
+						bmd = resLoader.getBitmapData( imagePath ) ;
+						if( bmd == null ){
 							throw new Error("需要先用resLoader加载完图片后再调用");
 						}
-						obj = new SpriteSheet( ssBmd , sheets, DataFormat.FORMAT_JSON);					
+						texture = Texture.fromBitmapData( bmd ) ;
+						obj = new TextureAtlas( texture , atlas );
 						break ;
 					case Res.TYPE_FONT:		//不能本地获取;
 						var xml:XML = new XML( FileUtils.getStringByFileName( url ) );						
 						var imagePath1:String= url.substring(0, url.length - 4) + ".png";
-						var sheet:BitmapData = resLoader.getBitmapData( imagePath1 ) ;
-						if( sheet == null ){
-							throw new Error("需要先用resLoader加载完图片后再调用");
+						bmd = resLoader.getBitmapData( imagePath1 ) ;
+						if( bmd == null ){
+							throw new Error("需要先用resLoader加载完图片后再调用");		// bitmapdata 必须先加载才能获取,
 						}
-						obj = new BitmapFont( sheet , xml ) ;
+						var ft:Texture = Texture.fromBitmapData( bmd ) ;
+						obj = new BitmapFont( ft , xml ) ;
 						break ;
 					case Res.TYPE_SOUND:
 						throw new Error("Res.TYPE_SOUND can't found");

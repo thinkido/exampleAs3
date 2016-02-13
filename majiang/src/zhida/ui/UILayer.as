@@ -9,6 +9,7 @@ package zhida.ui
 	{
 		public var modal:Boolean = false;
 		public var modalAlpha:Number = 0.5;
+//		starling.display。Canvas 实现半透明
 		
 		public function UILayer()
 		{
@@ -76,7 +77,6 @@ package zhida.ui
 		
 		public function resetAlpha():void
 		{
-			this.graphics.clear();
 			this.modal = false;
 			this.modalAlpha = 1;
 		}

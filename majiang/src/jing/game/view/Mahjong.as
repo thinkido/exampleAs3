@@ -16,6 +16,7 @@ package jing.game.view
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.textures.Texture;
+	import starling.textures.TextureAtlas;
 	
 	/**
 	 * 麻将显示对象
@@ -69,7 +70,7 @@ package jing.game.view
 		/**
 		 * 牌
 		 */
-		private var _cards:SpriteSheet= null;
+		private var _cards:TextureAtlas= null;
 	
 		/**
 		 * 麻将图
@@ -88,7 +89,7 @@ package jing.game.view
 	
 		public function Mahjong(card:int, dir:String, place:String)
 		{
-			_cards = ResManager.getFile("mahjong_json" ,Res.TYPE_SHEET );
+			_cards = ResManager.getFile("mahjong_json" ,Res.TYPE_TEXTUREATLAS ) as TextureAtlas;
 			_mj = new Image(null);
 			_effect = new Image(null);
 			_board = new Image(null);

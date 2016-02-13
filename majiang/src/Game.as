@@ -14,6 +14,8 @@ package
 	
 	import flash.events.Event;
 	
+	import framework.resources.Res;
+	
 	import game.constant.WindowType;
 	import game.control.AccountManager;
 	import game.control.LoadingManager;
@@ -30,6 +32,8 @@ package
 	
 	import starling.display.Image;
 	import starling.display.Sprite;
+	import starling.textures.Texture;
+	import starling.textures.TextureAtlas;
 	
 	public class Game extends Sprite
 	{
@@ -113,12 +117,12 @@ package
 			
 			WindowType.WINDOW_POPUP.createInstance();
 			
-//			var imgDarkBgFileName:String = "img_dark_bg_png";
-//			imgDarkBg = Res.actively.getTexture(imgDarkBgFileName);
-//			var ssHeadFileName:String = "head_json";
-//			ssHead = Res.actively.getSheet(ssHeadFileName);
-//			var ssTitleFileName:String = "title_json";
-//			ssTitle = Res.actively.getSheet(ssTitleFileName);
+			var imgDarkBgFileName:String = "img_dark_bg_png";
+			ResManager.imgDarkBg = ResManager.getFile(imgDarkBgFileName, Res.TYPE_TEXTURE ) as Texture;
+			var ssHeadFileName:String = "head_json";
+			ResManager.ssHead = ResManager.getFile(ssHeadFileName, Res.TYPE_TEXTUREATLAS) as TextureAtlas;
+			var ssTitleFileName:String = "title_json";
+			ResManager.ssTitle = ResManager.getFile(ssTitleFileName , Res.TYPE_TEXTUREATLAS ) as TextureAtlas;
 			
 		}
 		private function initEvt():void
