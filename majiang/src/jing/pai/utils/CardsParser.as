@@ -4,8 +4,6 @@ import jing.pai.consts.KeType;
 import jing.pai.model.CardKe;
 import jing.pai.model.CardVector;
 
-import java.util.Vector;
-
 /**
  * 牌组解析器
  * 
