@@ -18,54 +18,53 @@ import protocol.hallserver.cs_get_collect_box;
 import protocol.hallserver.sc_get_award_collect_box;
 import protocol.hallserver.sc_get_collect_box;
 
-import starling.display.Button;
-
+import ui.UIButton;
 import ui.UIObject;
 import ui.UIWindow;
 
 public class CollectWindow extends UIWindow implements YiuNetworkListener
 {
 
-	private var _wanItemList:Vector.<Button>;
+	private var _wanItemList:Vector.<UIButton>;
 
-	private var _tiaoItemList:Vector.<Button>;
+	private var _tiaoItemList:Vector.<UIButton>;
 
-	private var _tongItemList:Vector.<Button>;
+	private var _tongItemList:Vector.<UIButton>;
 
-	private var _hAwardItemList:Vector.<Button>;
+	private var _hAwardItemList:Vector.<UIButton>;
 
-	private var _vAwardItemList:Vector.<Button>;
+	private var _vAwardItemList:Vector.<UIButton>;
 
-	private var _finalAwardItem:Button;
+	private var _finalAwardItem:UIButton;
 
-	private var _btnClose:Button;
+	private var _btnClose:UIButton;
 
-	private var _btnContinue:Button;
+	private var _btnContinue:UIButton;
 
-	private var _btnGetAward:Button;
+	private var _btnGetAward:UIButton;
 
 	override public function initUI():void
 	{
-		_wanItemList = new Vector.<Button>;
-		_tiaoItemList = new Vector.<Button>;
-		_tongItemList = new Vector.<Button>;
-		_hAwardItemList = new Vector.<Button>;
+		_wanItemList = new Vector.<UIButton>;
+		_tiaoItemList = new Vector.<UIButton>;
+		_tongItemList = new Vector.<UIButton>;
+		_hAwardItemList = new Vector.<UIButton>;
 		for(var i:int = 0; i < 9; i++)
 		{
-			_wanItemList[i] = getChildByName("img_wan_" + (i + 1)) as Button;
-			_tiaoItemList[i] = getChildByName("img_tiao_" + (i + 1)) as Button;
-			_tongItemList[i] = getChildByName("img_tong_" + (i + 1)) as Button;
-			_hAwardItemList[i] = getChildByName("img_award_h_" + (i + 1)) as Button;
+			_wanItemList[i] = getChildByName("img_wan_" + (i + 1)) as UIButton;
+			_tiaoItemList[i] = getChildByName("img_tiao_" + (i + 1)) as UIButton;
+			_tongItemList[i] = getChildByName("img_tong_" + (i + 1)) as UIButton;
+			_hAwardItemList[i] = getChildByName("img_award_h_" + (i + 1)) as UIButton;
 		}
-		_vAwardItemList = new Vector.<Button>;
+		_vAwardItemList = new Vector.<UIButton>;
 		for(i = 0; i < 3; i++)
 		{
-			_vAwardItemList[i] = getChildByName("img_award_v_" + (i + 1)) as Button;
+			_vAwardItemList[i] = getChildByName("img_award_v_" + (i + 1)) as UIButton;
 		}
-		_finalAwardItem = getChildByName("img_award_final") as Button;
-		_btnClose = getChildByName("btn_close") as Button;
-		_btnContinue = getChildByName("btn_continue") as Button;
-		_btnGetAward = getChildByName("btn_getaward") as Button;
+		_finalAwardItem = getChildByName("img_award_final") as UIButton;
+		_btnClose = getChildByName("btn_close") as UIButton;
+		_btnContinue = getChildByName("btn_continue") as UIButton;
+		_btnGetAward = getChildByName("btn_getaward") as UIButton;
 		_btnContinue.visible = false;
 		_btnGetAward.visible = false;
 	}
@@ -191,7 +190,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 		}
 	}
 
-	private function updateTitleState( vStatus:Array, tileList:Vector.<Button>):void
+	private function updateTitleState( vStatus:Array, tileList:Vector.<UIButton>):void
 	{
 		var len:int = vStatus.length;
 		for(var index:int = 0; index < len; index++)
@@ -204,7 +203,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 		}
 	}
 
-	private function updateAwardState( vStatus:Array,  awardList:Vector.<Button>):Boolean
+	private function updateAwardState( vStatus:Array,  awardList:Vector.<UIButton>):Boolean
 	{
 		var flag:Boolean = false;
 		var len:int = vStatus.size();
@@ -218,7 +217,7 @@ public class CollectWindow extends UIWindow implements YiuNetworkListener
 		return flag;
 	}
 
-	private function setSingleAwardState( item:Button, status:int):void
+	private function setSingleAwardState( item:UIButton, status:int):void
 	{
 		if(status == 0)
 			item.setState(STATE_NORMAL);

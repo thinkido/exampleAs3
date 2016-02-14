@@ -89,8 +89,8 @@ package ui
 		
 		public function setTrans(value:int):void
 		{
-			super.setTrans(value);
-			
+//			super.setTrans(value);
+			super.rotation = value;
 //			_tf.setTrans(value);
 			_tf.rotation = value;
 		}

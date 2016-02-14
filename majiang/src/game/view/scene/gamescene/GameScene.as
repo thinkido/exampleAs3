@@ -1,5 +1,7 @@
 package game.view.scene.gamescene
 {
+	import com.thinkido.framework.manager.keyBoard.KeyEvent;
+	
 	import framework.consts.EventType;
 	import framework.consts.KeyType;
 	
@@ -119,6 +121,8 @@ package game.view.scene.gamescene
 		{
 			trace("gamescene 监听键盘事件");
 			Stage.current.keyboard.addEventListener(EventType.EVENT_KEY_PRESSED, this);
+			
+			
 		}
 		
 		/**
@@ -128,6 +132,7 @@ package game.view.scene.gamescene
 		{
 			trace("gamescene 释放键盘事件");
 			Stage.current.keyboard.removeEventListener(EventType.EVENT_KEY_PRESSED, this);
+//			this.stage.removeEventListener(KeyEvent.KEY_DOWN, this.
 		}
 		
 		override public function onEnter():void
@@ -247,7 +252,8 @@ package game.view.scene.gamescene
 		
 		override public function onReciveEvent( type:int,  dispatcher:EventDispatcher, data:Object):void
 		{
-			if(type == EventType.EVENT_KEY_PRESSED)
+//			if(type == EventType.EVENT_KEY_PRESSED)
+			if(type == KeyEvent.KEY_DOWN)
 			{
 				var keyCode:int = int(data);
 				

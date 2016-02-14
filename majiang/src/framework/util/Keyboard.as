@@ -1,5 +1,7 @@
 package framework.util
 {
+	import com.thinkido.framework.manager.keyBoard.KeyEvent;
+	
 	import framework.consts.EventType;
 	import framework.events.EventDispatcher;
 
@@ -19,7 +21,8 @@ package framework.util
 		public function pressed(keyCode:int):void
 		{
 			_map[keyCode] = true;
-			this.dispatchEvent(EventType.EVENT_KEY_PRESSED,  keyCode);
+//			this.dispatchEvent(EventType.EVENT_KEY_PRESSED,  keyCode);
+			this.dispatchEvent(KeyEvent.KEY_DOWN, keyCode);
 		}
 		
 		/**

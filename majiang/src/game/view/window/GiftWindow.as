@@ -10,25 +10,25 @@ package game.view.window
 	import game.model.Global;
 	import game.util.CommonUtil;
 	
-	import starling.display.Button;
 	import starling.text.TextField;
 	
+	import ui.UIButton;
 	import ui.UIObject;
 	import ui.UIWindow;
 	
 	public class GiftWindow extends UIWindow {
 		
-		private var _btnGiftList:Vector.<Button>;
+		private var _btnGiftList:Vector.<UIButton>;
 		
-		private var _btnGet:Button;
+		private var _btnGet:UIButton;
 		
 		override public function initUI():void
 		{
-			_btnGiftList = new Vector.<Button>;
+			_btnGiftList = new Vector.<UIButton>;
 			for (var i:int = 0; i < 7; i++) {
-				_btnGiftList[i] =  getChildByName("btn_gift_" + (i + 1)) as Button;
+				_btnGiftList[i] =  getChildByName("btn_gift_" + (i + 1)) as UIButton;
 			}
-			_btnGet =  getChildByName("btn_get_gift") as Button;
+			_btnGet =  getChildByName("btn_get_gift") as UIButton;
 			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
 		}
@@ -51,8 +51,8 @@ package game.view.window
 						_btnGiftList[i].setState(STATE_NORMAL);
 				}
 				if (Global.giftVO.fetched)
-//					_btnGet.setState(STATE_DISABLE);
-					_btnGet.enabled = false;
+					_btnGet.setState(STATE_DISABLE);
+//					_btnGet.enabled = false;
 			}
 		}
 		
@@ -86,8 +86,8 @@ package game.view.window
 						{
 							Global.giftVO.fetched = true;
 							_btnGiftList[Global.giftVO.day - 1].setState(STATE_DISABLE);
-//							_btnGet.setState(STATE_DISABLE);
-							_btnGet.enabled = false;
+							_btnGet.setState(STATE_DISABLE);
+//							_btnGet.enabled = false;
 							/*CommonUtil.showPopupWindow(false, "恭喜,成功领取"
 								+ Global.giftVO.gold + "积分", new ICallbackB() {
 									public void run(boolean data) {

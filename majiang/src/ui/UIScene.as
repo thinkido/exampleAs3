@@ -15,10 +15,10 @@ package ui
 		
 		override public function onGoBack():void
 		{
-			CommonUtil.showPopupWindow(true, "确定退出游戏?", onConfirm);
+			CommonUtil.showPopupWindow(true, "确定退出游戏?", onConfirmA);
 		}
 
-		private function onConfirm( data:Boolean):void
+		public function onConfirmA( data:Boolean):void
 		{
 			if(data)
 				System.exit(0);

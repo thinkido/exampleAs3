@@ -32,7 +32,7 @@ package ui
 		override public function releaseRes():void
 		{
 			super.releaseRes();
-			var len:int = numChildren();
+			var len:int = this.numChildren;
 			for(var i:int = 0; i < len; i++)
 			{
 //				try
@@ -47,7 +47,7 @@ package ui
 	
 		 override public function onDispose():void
 		{
-			var len:int = numChildren();
+			var len:int = this.numChildren;
 			for(var i:int = 0; i < len; i++)
 			{
 				try

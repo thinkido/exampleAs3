@@ -22,9 +22,9 @@ package game.view.window.rank
 	import protocol.hallserver.sc_rank_list;
 	import protocol.hallserver.t_rank_data;
 	
-	import starling.display.Button;
 	import starling.textures.TextureAtlas;
 	
+	import ui.UIButton;
 	import ui.UIImageView;
 	import ui.UILayer;
 	import ui.UIObject;
@@ -38,11 +38,11 @@ package game.view.window.rank
 	
 		private var _curTab:int;
 	
-		private var _btnTabList:Vector.<Button>;
+		private var _btnTabList:Vector.<UIButton>;
 	
 		private var _mediatorList:Vector.<RankLayerMediator>;
 	
-		private var _btnClose:Button;
+		private var _btnClose:UIButton;
 	
 		private var _imgHead:UIImageView;
 	
@@ -145,15 +145,15 @@ package game.view.window.rank
 	
 		override public function initUI():void
 		{
-			_btnTabList = new Vector.<Button>;
+			_btnTabList = new Vector.<UIButton>;
 			_mediatorList = new Vector.<RankLayerMediator>;
 			var ssSmallHead:TextureAtlas = ResManager.getFile("small_head_json" , Res.TYPE_TEXTUREATLAS ) as TextureAtlas;
 			for(var i:int = 0; i < TAB_LENGTH; i++)
 			{
-				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as Button;
+				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as UIButton;
 				_mediatorList[i] = new RankLayerMediator(getChildByName("layer_tab_" + (i + 1)) as UILayer, ssSmallHead);
 			}
-			_btnClose = getChildByName("btn_close") as Button;
+			_btnClose = getChildByName("btn_close") as UIButton;
 			_imgHead = getChildByName("img_head") as UIImageView;
 			_bfName = getChildByName("bf_name") as UITextBMFont;
 //			_bfName.setAnchor(ANCHOR_BOTTOM_LEFT);

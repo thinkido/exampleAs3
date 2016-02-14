@@ -102,11 +102,20 @@ package ui
 		public function setStateView( state:int, t:Texture):void
 		{
 			if(STATE_CHECKED_FOCUS == state || STATE_CHECKED_NORMAL == state)
-				_srcBitmapArr[3].setTexture(t);
+			{
+//				_srcBitmapArr[3].setTexture(t);
+				_srcBitmapArr[3].texture = t;
+			}
 			else if(STATE_CHECKED_DISABLE == state)
-				_srcBitmapArr[4].setTexture(t);
+			{
+//				_srcBitmapArr[4].setTexture(t);
+				_srcBitmapArr[4].texture = t;
+			}
 			else
-				_srcBitmapArr[state].setTexture(t);
+			{
+//				_srcBitmapArr[state].setTexture(t);
+				_srcBitmapArr[state].texture = t;
+			}
 		}
 		
 		override public function initWithJsonObject( data:Object):void

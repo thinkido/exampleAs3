@@ -48,10 +48,10 @@ package game.view.window.rank
 				for(var j:int = 0; j < ITEM_LENGTH; j++)
 				{
 					_bfValueList[i][j] = _layer.getChildByName("bf_value_" + (i + 1) + "_" + (j + 1)) as UITextBMFont;
-					_bfValueList[i][j].setAnchor(DisplayObject.ANCHOR_BOTTOM_LEFT);
+//					_bfValueList[i][j].setAnchor(DisplayObject.ANCHOR_BOTTOM_LEFT);
 				}
 			}
-			for(var i:int = 0; i < ITEM_LENGTH; i++)
+			for(i = 0; i < ITEM_LENGTH; i++)
 			{
 				_imgHead[i] = _layer.getChildByName("img_head_" + (i + 1)) as UIImageView;
 			}
@@ -90,7 +90,7 @@ package game.view.window.rank
 	
 		public function setVisible( b:Boolean):void
 		{
-			_layer.setVisible(b);
+			_layer.visible = b;
 		}
 	
 		private function updateView():void
@@ -109,8 +109,10 @@ package game.view.window.rank
 			var isFirstPage:Boolean = _curPage == 0;
 			for(var i:int = 0; i < 3; i++)
 			{
-				_imgTopThree[i].setVisible(isFirstPage);
-				_bfValueList[0][i].setVisible(!isFirstPage);
+//				_imgTopThree[i].setVisible(isFirstPage);
+//				_bfValueList[0][i].setVisible(!isFirstPage);
+				_imgTopThree[i].visible = isFirstPage;
+				_bfValueList[0][i].visible = !isFirstPage;
 			}
 		}
 	}

@@ -57,7 +57,8 @@ package ui
 		 */
 		public function setStateView(state:int, t:Texture):void
 		{
-			_srcBitmapArr[state].setTexture(t);
+//			_srcBitmapArr[state].setTexture(t);
+			_srcBitmapArr[state].texture = t;
 		}
 		
 		override public function initWithJsonObject( data:Object):void

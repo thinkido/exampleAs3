@@ -17,13 +17,13 @@ package ui
 	
 		public function getScrollRect():Rectangle
 		{
-			return _srcTexture.getScrollRect();
-//			return _srcTexture
+//			return _srcTexture.getScrollRect();
+			return new Rectangle(0,0,_srcTexture.texture.width, _srcTexture.texture.height);
 		}
 	
 		public function setScrollRect( rect:Rectangle):void
 		{
-			_srcTexture.setScrollRect(rect);
+//			_srcTexture.setScrollRect(rect);
 		}
 	
 		public function getHeight():int

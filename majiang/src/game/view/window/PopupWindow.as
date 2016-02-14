@@ -9,10 +9,10 @@ package game.view.window
 	import game.model.Global;
 	import game.model.vo.PopupVO;
 	
-	import starling.display.Button;
 	import starling.text.TextField;
 	import starling.textures.Texture;
 	
+	import ui.UIButton;
 	import ui.UIImageView;
 	import ui.UIObject;
 	import ui.UIWindow;
@@ -23,9 +23,9 @@ package game.view.window
 		
 		protected var _callback:Function;
 		
-		protected var _btnOK:Button;
+		protected var _btnOK:UIButton;
 		
-		protected var _btnCancel:Button;
+		protected var _btnCancel:UIButton;
 		
 		protected var _tfContent:TextField;;
 		
@@ -97,8 +97,8 @@ package game.view.window
 		
 		override public function initUI():void
 		{
-			_btnOK =  getChildByName("btn_ok") as Button;
-			_btnCancel = getChildByName("btn_cancel") as Button;
+			_btnOK =  getChildByName("btn_ok") as UIButton;
+			_btnCancel = getChildByName("btn_cancel") as UIButton;
 			_tfContent =  getChildByName("tf_content") as TextField;
 //			_tfContent.setAnchor(ANCHOR_CENTER);
 			_imgContent =  getChildByName("img_content") as UIImageView;
@@ -106,15 +106,19 @@ package game.view.window
 			_originBtnOkX = _btnOK.x;
 			_originBtnOkY = _btnOK.y;
 			_midBtnOkX = Global.SCREEN_WIDTH / 2 - 43;
-//			_btnOK.setNeighbors(null, null, _btnCancel, _btnCancel);
-//			_btnCancel.setNeighbors(null, null, _btnOK, _btnOK);
+			_btnOK.setNeighbors(null, null, _btnCancel, _btnCancel);
+			_btnCancel.setNeighbors(null, null, _btnOK, _btnOK);
 			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
 		}
 		
 		override public function onConfirm(target:UIObject):void {
 			if (_callback != null)
-				_callback.run(target == _btnOK);
+			{
+//				_callback.run(target == _btnOK);
+				_callback.call(target == _btnOK);
+			}
+				
 			WindowManager.getInstance().closeWindow(this);
 		}
 		

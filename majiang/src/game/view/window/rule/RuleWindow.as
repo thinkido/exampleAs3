@@ -6,8 +6,7 @@ package game.view.window.rule
 	
 	import managers.ResManager;
 	
-	import starling.display.Button;
-	
+	import ui.UIButton;
 	import ui.UIImageView;
 	import ui.UIObject;
 	import ui.UIWindow;
@@ -26,9 +25,9 @@ package game.view.window.rule
 //		private int[] _curIndexList = [] ;
 		private var _curIndexList:Vector.<int> = new Vector.<int>;
 		
-		private var _btnTabList:Vector.<Button> = new Vector.<Button>;
+		private var _btnTabList:Vector.<UIButton> = new Vector.<UIButton>;
 		
-		private var _btnClose:Button;
+		private var _btnClose:UIButton;
 		
 		private var _imgContent:UIImageView;
 		
@@ -42,10 +41,10 @@ package game.view.window.rule
 		{
 			_imgContent = getChildByName("img_content") as UIImageView;
 //			_imgContent.setAnchor(ANCHOR_CENTER);
-			_btnClose = getChildByName("btn_close") as Button; 
+			_btnClose = getChildByName("btn_close") as UIButton; 
 			for(var i:int = 0; i < TAB_LENGTH; i++)
 			{
-				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as Button;
+				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as UIButton;
 				_curIndexList[i] = 0;
 			}
 			_curTab = 0;

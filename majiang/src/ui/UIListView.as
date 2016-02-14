@@ -65,7 +65,7 @@ package ui
 			{
 				try
 				{
-					var item:UIListItem = _itemClass.newInstance() as UIListItem;
+					var item:UIListItem = new _itemClass as UIListItem;
 					var x:int = 0;
 					var y:int = 0;
 					if(_scrollDir == SCROLL_HORIZONTAL)
@@ -342,7 +342,7 @@ package ui
 			_dataList = null;
 			_itemList = null;
 			_itemClass = null;
-			var len:int = numChildren();
+			var len:int = numChildren;
 			for(var i:int = 0; i < len; i++)
 			{
 				try

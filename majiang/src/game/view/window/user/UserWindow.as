@@ -1,11 +1,11 @@
 package game.view.window.user
 {
 	import com.thinkido.framework.common.observer.Notification;
+	import com.thinkido.framework.manager.keyBoard.KeyEvent;
 	
 	import flash.utils.ByteArray;
 	import flash.utils.Endian;
 	
-	import framework.consts.EventType;
 	import framework.consts.KeyType;
 	
 	import game.constant.SceneType;
@@ -26,9 +26,9 @@ package game.view.window.user
 	import protocol.hallserver.sc_friend_profile;
 	import protocol.hallserver.t_friend_data;
 	
-	import starling.display.Button;
 	import starling.events.EventDispatcher;
 	
+	import ui.UIButton;
 	import ui.UICheckBox;
 	import ui.UIImageView;
 	import ui.UILayer;
@@ -39,11 +39,11 @@ package game.view.window.user
 	public class UserWindow extends UIWindow implements YiuNetworkListener
 	{
 		
-		private var _btnClose:Button;
+		private var _btnClose:UIButton;
 		
 		private var _imgHead:UIImageView;
 		
-		private var _btnHead:Button;
+		private var _btnHead:UIButton;
 		
 		private var _bfName:UITextBMFont;
 		
@@ -74,9 +74,9 @@ package game.view.window.user
 		override public function initUI():void
 		{
 			_mediator = new UserHeadMediator(getChildByName("layer_user_head") as UILayer);
-			_btnClose = getChildByName("btn_close") as Button;
+			_btnClose = getChildByName("btn_close") as UIButton;
 			_imgHead = getChildByName("img_head") as UIImageView;
-			_btnHead = getChildByName("btn_head") as Button;
+			_btnHead = getChildByName("btn_head") as UIButton;
 			_bfName = getChildByName("bf_name") as UITextBMFont;
 //			_bfName.setAnchor(ANCHOR_BOTTOM_LEFT);
 			_imgTitle = getChildByName("img_title") as UIImageView;
@@ -235,7 +235,8 @@ package game.view.window.user
 		
 		public function onReciveEvent( type:int, dispatcher:EventDispatcher, data:Object):void
 		{
-			if(type == EventType.EVENT_KEY_PRESSED && _mediator.getVisible())
+//			if(type == EventType.EVENT_KEY_PRESSED && _mediator.getVisible())
+			if(type == KeyEvent.KEY_DOWN && _mediator.getVisible())
 			{
 				var keyCode:int = int(data);
 				if(keyCode >= KeyType.NUM_0 && keyCode <= KeyType.NUM_9)

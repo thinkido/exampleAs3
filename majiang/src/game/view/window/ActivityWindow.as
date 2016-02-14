@@ -4,8 +4,6 @@ package game.view.window
 	import game.control.WindowManager;
 	import game.util.CommonUtil;
 	
-	import starling.display.Button;
-	
 	import ui.UIButton;
 	import ui.UIObject;
 	import ui.UIWindow;
@@ -13,20 +11,20 @@ package game.view.window
 	public class ActivityWindow extends UIWindow
 	{
 		
-		private var _btnTabList:Vector.<Button>;
+		private var _btnTabList:Vector.<UIButton>;
 		
-		private var _btnClose:Button;
+		private var _btnClose:UIButton;
 		
 		override public function initUI():void
 		{
-			_btnClose = getChildByName("btn_close") as Button;
-			_btnTabList = new Vector.<Button>;
+			_btnClose = getChildByName("btn_close") as UIButton;
+			_btnTabList = new Vector.<UIButton>;
 			for(var i:int = 0; i < 3; i++)
 			{
-				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as Button;
+				_btnTabList[i] = getChildByName("btn_tab_" + (i + 1)) as UIButton;
 			}
 			_btnClose.setNeighbors(null, _btnTabList[0], null, null);
-			for(var i:int = 0; i < 3; i++)
+			for(i = 0; i < 3; i++)
 			{
 				var pre:int = i - 1;
 				if(pre < 0)

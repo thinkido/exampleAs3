@@ -11,9 +11,7 @@ package game.view.scene.gamescene.windows
 	import managers.ResManager;
 	
 	import protocol.gameserver.scgame_show_actions;
-	
-	import starling.display.Button;
-	
+		
 	import ui.UIButton;
 	import ui.UIObject;
 	import ui.UIWindow;
@@ -62,7 +60,7 @@ package game.view.scene.gamescene.windows
 			for(var index:int = 0; index < actions.length; ++index)
 			{
 				var act:scgame_show_actions = actions[index] as scgame_show_actions;
-				var btn:Button = null;
+				var btn:UIButton = null;
 				if(act.id == PlayerAction.AN_GANG || act.id == PlayerAction.MING_GANG)
 				{
 					btn = createBtnGang();
@@ -126,17 +124,17 @@ package game.view.scene.gamescene.windows
 			var btnNormalX:int = 587;
 			for(var i:int = 0; i < _btns.length; i++)
 			{
-				var btn:Button = _btns[i] as Button;
+				var btn:UIButton = _btns[i] as UIButton;
 				this.addChild(btn);
-				var pre:Button = null;
-				var next:Button = null;
+				var pre:UIButton = null;
+				var next:UIButton = null;
 				if(i != 0)
 				{
-					pre = _btns[i - 1] as Button;
+					pre = _btns[i - 1] as UIButton;
 				}
 				if(i != _btns.length - 1)
 				{
-					next = _btns[i + 1] as Button;
+					next = _btns[i + 1] as UIButton;
 				}
 				
 				btn.setNeighbors(null, null, next, pre);
@@ -169,32 +167,32 @@ package game.view.scene.gamescene.windows
 				}
 			}
 			
-			switchFocus(_btns[1] as Button);
+			switchFocus(_btns[1] as UIButton);
 		}
 
 
 		
-		private function  createBtnGuo():Button
+		private function  createBtnGuo():UIButton
 		{
 			return new UIButton("action_guo_normal_png", "action_guo_selected_png", "action_guo_normal_png");
 		}
 		
-		private function createBtnGang():Button
+		private function createBtnGang():UIButton
 		{
 			return new UIButton("action_gang_normal_png", "action_gang_selected_png", "action_gang_normal_png");
 		}
 		
-		private function createBtnHu():Button
+		private function createBtnHu():UIButton
 		{
 			return new UIButton("action_hu_normal_png", "action_hu_selected_png", "action_hu_normal_png");
 		}
 		
-		private function createBtnPeng():Button
+		private function createBtnPeng():UIButton
 		{
 			return new UIButton("action_peng_normal_png", "action_peng_selected_png", "action_peng_normal_png");
 		}
 		
-		private function createBtnChi(actId:int, card:int):Button
+		private function createBtnChi(actId:int, card:int):UIButton
 		{
 			return new UIButton("action_chi_normal_png", "action_chi_selected_png", "action_chi_normal_png");
 		}

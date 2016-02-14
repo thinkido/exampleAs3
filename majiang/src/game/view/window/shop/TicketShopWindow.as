@@ -6,7 +6,6 @@ package game.view.window.shop
 	import game.util.CommonUtil;
 	import game.view.scene.HallScene;
 	
-	import starling.display.Button;
 	
 	import ui.UIButton;
 	import ui.UIObject;
@@ -16,9 +15,9 @@ package game.view.window.shop
 	public class TicketShopWindow extends UIWindow
 	{
 		
-		private var _btnClose:Button;
+		private var _btnClose:UIButton;
 		
-		private var _btnItemList:Vector.<Button>;
+		private var _btnItemList:Vector.<UIButton>;
 		
 		private var _bfTicket:UITextBMFont;
 		
@@ -36,11 +35,11 @@ package game.view.window.shop
 		{
 			_bfTicket = getChildByName("bf_ticket") as UITextBMFont;
 //			_bfTicket.setAnchor(ANCHOR_BOTTOM_LEFT);
-			_btnClose = getChildByName("btn_close") as Button;
-			_btnItemList = new Vector.<Button>;
+			_btnClose = getChildByName("btn_close") as UIButton;
+			_btnItemList = new Vector.<UIButton>;
 			for(var i:int = 0; i < 6; i++)
 			{
-				_btnItemList[i] = getChildByName("btn_item_" + (i + 1)) as Button;
+				_btnItemList[i] = getChildByName("btn_item_" + (i + 1)) as UIButton;
 			}
 			_btnItemList[0].setNeighbors(_btnClose, _btnItemList[3], _btnItemList[2], _btnItemList[1]);
 			_btnItemList[1].setNeighbors(_btnClose, _btnItemList[4], _btnItemList[0], _btnItemList[2]);

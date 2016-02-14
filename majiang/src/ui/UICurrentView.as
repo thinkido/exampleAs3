@@ -6,12 +6,9 @@ package ui
 	
 	import framework.consts.EventType;
 	import framework.consts.KeyType;
-	import framework.events.EventDispatcher;
-	import framework.events.IEventListener;
-	import framework.views.Stage;
 	
-	import org.osflash.thunderbolt.Logger;
-	
+	import starling.display.Stage;
+	import starling.events.KeyboardEvent;
 	import starling.text.TextField;
 	
 	public class UICurrentView extends UIContainer
@@ -231,7 +228,8 @@ package ui
 		 */
 		public function onStageFocus():void
 		{
-			Stage.current.keyboard.addEventListener(EventType.EVENT_KEY_PRESSED, this);
+//			Stage.current.keyboard.addEventListener(EventType.EVENT_KEY_PRESSED, this);
+			this.stage.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 		}
 	
 		/**
@@ -239,7 +237,8 @@ package ui
 		 */
 		public function onStageBlur():void
 		{
-			Stage.current.keyboard.removeEventListener(EventType.EVENT_KEY_PRESSED, this);
+//			Stage.current.keyboard.removeEventListener(EventType.EVENT_KEY_PRESSED, this);
+			this.stage.removeEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 		}
 	
 		/**

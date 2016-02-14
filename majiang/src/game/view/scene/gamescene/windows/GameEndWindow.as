@@ -12,13 +12,13 @@ package game.view.scene.gamescene.windows
 		
 		import managers.ResManager;
 		
-		import starling.display.Button;
 		import starling.display.Image;
 		import starling.text.BitmapFont;
 		import starling.text.TextField;
 		import starling.textures.Texture;
 		import starling.textures.TextureAtlas;
 		
+		import ui.UIButton;
 		import ui.UIImageView;
 		import ui.UIObject;
 		import ui.UITextBMFont;
@@ -27,9 +27,9 @@ package game.view.scene.gamescene.windows
 		public class GameEndWindow extends UIWindow
 		{
 			
-			private var _btnHall:Button = null;
+			private var _btnHall:UIButton = null;
 			
-			private var _btnReady:Button = null;
+			private var _btnReady:UIButton = null;
 			
 			private var _gameResult:UIImageView = null;
 			
@@ -45,8 +45,8 @@ package game.view.scene.gamescene.windows
 			
 			override public function initUI():void
 			{
-				_btnHall = getChildByName("btn_hall") as Button;
-				_btnReady = getChildByName("btn_ready") as Button;
+				_btnHall = getChildByName("btn_hall") as UIButton;
+				_btnReady = getChildByName("btn_ready") as UIButton;
 				_gameResult = getChildByName("game_result") as UIImageView;
 				_scoreType = getChildByName("score_type") as UIImageView;
 				_txtMoney = getChildByName("txt_money") as UITextBMFont;

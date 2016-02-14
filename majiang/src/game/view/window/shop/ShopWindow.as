@@ -1,26 +1,26 @@
 package game.view.window.shop
 {
+	import game.constant.WindowType;
 	import game.control.WindowManager;
 	
-	import starling.display.Button;
-	
+	import ui.UIButton;
 	import ui.UIObject;
 	import ui.UIWindow;
 	
 	public class ShopWindow extends UIWindow
 	{
 		
-		private var _btnClose:Button;
+		private var _btnClose:UIButton;
 		
-		private var _btnDiamondBuy:Button;
+		private var _btnDiamondBuy:UIButton;
 		
-		private var _btnTicketBuy:Button;
+		private var _btnTicketBuy:UIButton;
 		
 		override public function initUI():void
 		{
-			_btnClose = getChildByName("btn_close") as Button;
-			_btnDiamondBuy = getChildByName("btn_diamond_shop") as Button;
-			_btnTicketBuy = getChildByName("btn_ticket_shop") as Button;
+			_btnClose = getChildByName("btn_close") as UIButton;
+			_btnDiamondBuy = getChildByName("btn_diamond_shop") as UIButton;
+			_btnTicketBuy = getChildByName("btn_ticket_shop") as UIButton;
 			
 			_btnClose.setNeighbors(null, _btnDiamondBuy, null, null);
 			_btnDiamondBuy.setNeighbors(_btnClose, null, _btnTicketBuy, _btnTicketBuy);
