@@ -1,7 +1,7 @@
 package jing.consts
 {
 /**
- * Â齫ÅƵı߿òÀàÐÍ
+ * 麻将牌的边框类型
  * 
  * @author Jing
  */
@@ -9,12 +9,12 @@ public class MahjongBoardType
 {
 
 	/**
-	 * ÎÞ
+	 * 无
 	 */
 	static public const NONE:int= 0;
 
 	/**
-	 * ´ò³öºóÓнÐ
+	 * 打出后有叫
 	 */
 	static public const FOR_JIAO:int= 1;
 }
