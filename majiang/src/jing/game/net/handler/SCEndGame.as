@@ -111,7 +111,7 @@ package jing.game.net.handler
 				var getVO:GameEndTypeVO= new GameEndTypeVO();
 				getVO.type = shd.type;
 				getVO.fan = shd.fan;
-				getVO.id = gs.getPlayerBySeat(asi.seatIndex).name();
+				getVO.id = gs.getPlayerBySeat(asi.seatIndex).name;
 				vec.push(getVO);
 			}
 		}

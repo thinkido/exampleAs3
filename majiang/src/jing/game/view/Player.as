@@ -320,7 +320,7 @@ package jing.game.view
 				_needRelayout = false;
 				refreshLayout();
 			}
-			super.enterFrame(time);
+//			super.enterFrame(time);
 		}
 		
 		private function refreshLayout():void{
@@ -385,8 +385,8 @@ package jing.game.view
 				var warp:int= i / vo.warpCount;
 				if(warp > 0)
 				{
-					warpX = vo.warp.x() * warp;
-					warpY = vo.warp.y() * warp;
+					warpX = vo.warp.x * warp;
+					warpY = vo.warp.y * warp;
 				}
 				
 				var offX:int= 0;
@@ -420,7 +420,7 @@ package jing.game.view
 		}
 		
 		private function sortDeep():void{
-			for(var i:int= 0; i < this.numChildren(); i++)
+			for(var i:int= 0; i < this.numChildren; i++)
 			{
 				var obj:DisplayObject= this.getChildAt(i);
 				var y:int= obj.y;

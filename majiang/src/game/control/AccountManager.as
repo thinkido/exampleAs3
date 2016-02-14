@@ -348,7 +348,7 @@ package game.control
 				Global.userDataVO = new UserDataVO(msg);
 				PlaceDataManager.getInstance().init(msg.placeInfos);
 				SceneManager.getInstance().switchScene(SceneType.SCENE_HALL);
-				return false;
+//				return false;
 			}
 			else if(name == "sc_force_continue_game")
 			{
@@ -356,7 +356,7 @@ package game.control
 				var msg1:sc_force_continue_game = new sc_force_continue_game() ;
 				msg1.mergeFrom(content) ;
 				SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg1.host, msg1.port), true));
-				return false;
+//				return false;
 			}
 			
 		}

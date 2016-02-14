@@ -1,8 +1,8 @@
 package game.view.scene.gamescene
 {
+	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
 	import com.thinkido.framework.manager.keyBoard.KeyEvent;
 	
-	import framework.consts.EventType;
 	import framework.consts.KeyType;
 	
 	import game.constant.SceneType;
@@ -23,9 +23,6 @@ package game.view.scene.gamescene
 	import jing.game.view.Player;
 	import jing.pai.vo.ChuVO;
 	import jing.pai.vo.JiaoVO;
-	
-	import starling.display.Stage;
-	import starling.events.EventDispatcher;
 	
 	import ui.UIObject;
 	import ui.UIScene;
@@ -120,7 +117,8 @@ package game.view.scene.gamescene
 		override public function onStageFocus():void
 		{
 			trace("gamescene 监听键盘事件");
-			Stage.current.keyboard.addEventListener(EventType.EVENT_KEY_PRESSED, this);
+//			Stage.current.keyboard.addEventListener(EventType.EVENT_KEY_PRESSED, this);
+			KeyBoardManager.instance.removeEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 			
 			
 		}
@@ -131,8 +129,8 @@ package game.view.scene.gamescene
 		override public function onStageBlur():void
 		{
 			trace("gamescene 释放键盘事件");
-			Stage.current.keyboard.removeEventListener(EventType.EVENT_KEY_PRESSED, this);
-//			this.stage.removeEventListener(KeyEvent.KEY_DOWN, this.
+//			Stage.current.keyboard.removeEventListener(EventType.EVENT_KEY_PRESSED, this);
+			KeyBoardManager.instance.removeEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 		}
 		
 		override public function onEnter():void
@@ -250,12 +248,15 @@ package game.view.scene.gamescene
 			return GameDir.DOWN;
 		}
 		
-		override public function onReciveEvent( type:int,  dispatcher:EventDispatcher, data:Object):void
+//		override public function onReciveEvent( type:int,  dispatcher:EventDispatcher, data:Object):void
+		private function onKeyDownHandler(event:KeyEvent):void
 		{
 //			if(type == EventType.EVENT_KEY_PRESSED)
+			var type:String = event.type;
 			if(type == KeyEvent.KEY_DOWN)
 			{
-				var keyCode:int = int(data);
+//				var keyCode:int = int(data);
+				var keyCode:int = event.keyEvent.keyCode;
 				
 				if(keyCode == KeyType.BACK)
 				{

@@ -4,11 +4,8 @@ package ui
 	import com.thinkido.framework.manager.keyBoard.KeyCode;
 	import com.thinkido.framework.manager.keyBoard.KeyEvent;
 	
-	import framework.consts.EventType;
 	import framework.consts.KeyType;
 	
-	import starling.display.Stage;
-	import starling.events.KeyboardEvent;
 	import starling.text.TextField;
 	
 	public class UICurrentView extends UIContainer
@@ -229,7 +226,7 @@ package ui
 		public function onStageFocus():void
 		{
 //			Stage.current.keyboard.addEventListener(EventType.EVENT_KEY_PRESSED, this);
-			this.stage.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 		}
 	
 		/**
@@ -238,7 +235,7 @@ package ui
 		public function onStageBlur():void
 		{
 //			Stage.current.keyboard.removeEventListener(EventType.EVENT_KEY_PRESSED, this);
-			this.stage.removeEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
+			KeyBoardManager.instance.removeEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 		}
 	
 		/**

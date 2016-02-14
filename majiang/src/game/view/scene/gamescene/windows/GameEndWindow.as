@@ -76,20 +76,20 @@ package game.view.scene.gamescene.windows
 			{
 				if(0 == _vo.state)
 				{
-					_gameResult.setTexture("gameend_draw_png");
+					_gameResult.setTexture_2("gameend_draw_png");
 //					_scoreType.setVisible(false);
 					_scoreType.visible = false;
 				}
 				else if(1 == _vo.state)
 				{
-					_gameResult.setTexture("gameend_win_png");
-					_scoreType.setTexture("win_type_png");
+					_gameResult.setTexture_2("gameend_win_png");
+					_scoreType.setTexture_2("win_type_png");
 					showTypes();
 				}
 				else if(2 == _vo.state)
 				{
-					_gameResult.setTexture("gameend_lose_png");
-					_scoreType.setTexture("lose_type_png");
+					_gameResult.setTexture_2("gameend_lose_png");
+					_scoreType.setTexture_2("lose_type_png");
 					showTypes();
 				}
 				

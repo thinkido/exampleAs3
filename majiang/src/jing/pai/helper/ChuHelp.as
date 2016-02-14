@@ -75,9 +75,10 @@ public class ChuHelp
 	 */
 	private function sortJiaos(vo:ChuVO):void{
 		var vec:Vector= new Vector();
+		var temp:JiaoVO;
 		for(var i:int= 0; i < vo.jiaos.length; i++)
 		{
-			var temp:JiaoVO= vo.jiaos[i];
+			temp = vo.jiaos[i];
 			var j:int= 0;
 			for(j = 0; j < vec.size(); j++)
 			{
@@ -97,9 +98,9 @@ public class ChuHelp
 			}
 		}
 
-		for(var i:int= 0; i < vec.size(); i++)
+		for(i = 0; i < vec.size(); i++)
 		{
-			var temp:JiaoVO= JiaoVO(vec.elementAt(i));
+			temp = JiaoVO(vec.elementAt(i));
 			vo.jiaos[i] = temp;
 		}
 	}

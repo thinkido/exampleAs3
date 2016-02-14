@@ -56,7 +56,7 @@ package jing.game.view
 				
 				if(jiaos[i].hu != null)
 				{
-					txt = new TextField();
+					txt = new TextField(100,22,'');
 					txt.text = jiaos[i].hu.all_fan + "·¬" ;
 					txt.x = mjx ;
 					txt.y = mjy + mj.height ;
@@ -64,7 +64,7 @@ package jing.game.view
 					this.addChild(txt);
 				}
 				
-				txt = new TextField();
+				txt = new TextField(100,22,'');
 				txt.text = 111 + "·¬" ;
 				txt.x = mjx ;
 				txt.y = mjy + mj.height ;
@@ -89,7 +89,7 @@ package jing.game.view
 			}
 		}
 	
-		public function dispose():void{
+		override public function dispose():void{
 			ResManager.release("jiao_preview_bg_png");
 		}
 	

@@ -111,7 +111,7 @@ package game.view.scene.gamescene.elements
 			var p:Point = null;
 			img = stateImgs[dir] as UIImageView;
 			p = new Point(img.x + img.width / 2, img.y + img.height / 2);
-			img.setAnchor(AnchorType.ANCHOR_CENTER);
+//			img.setAnchor(AnchorType.ANCHOR_CENTER);
 //			img.setPosition(p.x(), p.y());
 			img.x = p.x;
 			img.y = p.y;
@@ -179,7 +179,7 @@ package game.view.scene.gamescene.elements
 			var img:UIImageView = stateImgs[dir] as UIImageView;
 			if(isReady)
 			{
-				img.setTexture("player_ready_png");
+				img.setTexture_2("player_ready_png");
 			}
 			else
 			{
@@ -192,7 +192,7 @@ package game.view.scene.gamescene.elements
 			if(isHu)
 			{
 				var img:UIImageView = stateImgs[dir] as UIImageView;
-				img.setTexture("game_hu_png");
+				img.setTexture_2("game_hu_png");
 			}
 		}
 	
@@ -209,7 +209,7 @@ package game.view.scene.gamescene.elements
 		 */
 		public function setTurnDir( dir:String):void
 		{
-			nowAction.setTexture("now_action_" + dir + "_png");
+			nowAction.setTexture_2("now_action_" + dir + "_png");
 		}
 	
 		/**
@@ -220,7 +220,8 @@ package game.view.scene.gamescene.elements
 		public function setCountdown( cd:int):void
 		{
 			_cd = cd;
-			onTick(null);
+//			onTick(null);
+			this.onTick();
 		}
 	
 		/**
@@ -235,7 +236,7 @@ package game.view.scene.gamescene.elements
 			trace(dir + " 获得花牌：" + card)
 	
 			var img:UIImageView = new UIImageView();
-			img.setTexture("hua_" + card + "_1_png");
+			img.setTexture_2("hua_" + card + "_1_png");
 			var p:Point = huaStartPoint[dir] as Point;
 			var vec:Array = huas[dir] as Array;
 	
@@ -264,7 +265,7 @@ package game.view.scene.gamescene.elements
 			var img:UIImageView = stateImgs[dir] as UIImageView;
 			if(true == v)
 			{
-				img.setTexture("player_auto_png");
+				img.setTexture_2("player_auto_png");
 			}
 			else
 			{
@@ -293,29 +294,29 @@ package game.view.scene.gamescene.elements
 			var cx:int = Global.SCREEN_WIDTH >> 1;
 			var cy:int = Global.SCREEN_HEIGHT >> 1;
 	
-			var txt:TextField = null;
+			var txt:UIText = null;
 			txt = txtNames[GameDir.UP] as UIText;
-			txt.setAnchor(ANCHOR_CENTER);
+//			txt.setAnchor(ANCHOR_CENTER);
 			txt.x = cx ;
 			txt.y = 10 ;
-			txt.text = "等待加入";
+			txt.setText("等待加入");
 			txt = txtNames[GameDir.DOWN] as UIText;
-			txt.setAnchor(ANCHOR_CENTER);
+//			txt.setAnchor(ANCHOR_CENTER);
 			txt.x = cx ;
 			txt.y = 520 ;
-			txt.text = "等待加入";
+			txt.setText("等待加入");
 			txt = txtNames[GameDir.LEFT] as UIText;
-			txt.setAnchor(ANCHOR_CENTER);
+//			txt.setAnchor(ANCHOR_CENTER);
 			txt.rotation = TransType.ROT270 ;
 			txt.x = 10 ;
 			txt.y = cy ;
-			txt.text = "等待加入";
+			txt.setText("等待加入");
 			txt = txtNames[GameDir.RIGHT] as UIText;
-			txt.setAnchor(ANCHOR_CENTER);
+//			txt.setAnchor(ANCHOR_CENTER);
 			txt.rotation = TransType.ROT90 ;
 			txt.x = 630 ;
 			txt.y = cy ;
-			txt.text = "等待加入";
+			txt.setText("等待加入");
 		}
 	
 		private function initHuaStartPoints():void

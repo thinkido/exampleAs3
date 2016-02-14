@@ -1,5 +1,10 @@
 package game.view.inline
 {
+	import framework.resources.Res;
+	
+	import managers.LayerManager;
+	import managers.ResManager;
+	
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.text.TextField;
@@ -15,7 +20,9 @@ package game.view.inline
 	
 		static public function show(content:String):void {
 			_nb.add(content);
-			_nb.setPosition(0, 50);
+//			_nb.setPosition(0, 50);
+			_nb.x = 0;
+			_nb.y = 50;
 		}
 	
 		private var _bg:Image;
@@ -32,10 +39,11 @@ package game.view.inline
 			_bg = new Image( ResManager.getFile(filename , Res.TYPE_TEXTURE ) );
 			ResManager.release(filename);
 			this.addChild(_bg);
-			_tf = new TextField();
-			_tf.setBold(true);
-			_tf.setColor(0xFFFFFF);
-			_tf.setSize(Font.SIZE_LARGE);
+			_tf = new TextField(100,22,'');
+			_tf.bold = true;
+			_tf.color = 0xFFFFFF;
+			_tf.fontSize = 16;
+//			_tf.setSize(Font.SIZE_LARGE);
 			this.addChild(_tf);
 	
 		}
@@ -55,7 +63,7 @@ package game.view.inline
 		protected function enterFrame(time:Number):void
 		{
 			if (this.parent != null) {
-				super.enterFrame(time);
+//				super.enterFrame(time);
 //				_tf.setPosition(_tf.getX() - 2, _tf.getY());
 				_tf.x -= - 2;
 				if (_tf.x < -320) {
@@ -74,8 +82,9 @@ package game.view.inline
 				_tf.text = content;
 //				_tf.setPosition(640, 5);
 				_tf.x = 640;
-				_tf.y = t;
-				Stage.current.getRoot().addChild(_nb);
+				_tf.y = 5;
+//				Stage.current.getRoot().addChild(_nb);
+				LayerManager.msgTipLayer.addChild(_nb);
 			} else {
 				if (this.parent != null) {
 //					((Sprite) this.getParent()).removeChild(this);
@@ -84,3 +93,4 @@ package game.view.inline
 			}
 		}
 	}
+}

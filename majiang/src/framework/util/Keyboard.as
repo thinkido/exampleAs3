@@ -1,5 +1,6 @@
 package framework.util
 {
+	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
 	import com.thinkido.framework.manager.keyBoard.KeyEvent;
 	
 	import framework.consts.EventType;
@@ -22,7 +23,8 @@ package framework.util
 		{
 			_map[keyCode] = true;
 //			this.dispatchEvent(EventType.EVENT_KEY_PRESSED,  keyCode);
-			this.dispatchEvent(KeyEvent.KEY_DOWN, keyCode);
+//			this.dispatchEvent(KeyEvent.KEY_DOWN, keyCode);
+			KeyBoardManager.instance.dispatchEvent(KeyEvent.KEY_DOWN);
 		}
 		
 		/**
@@ -33,7 +35,8 @@ package framework.util
 		public function released(keyCode:int):void
 		{
 			_map[keyCode] = false;
-			this.dispatchEvent(EventType.EVENT_KEY_RELEASEED, keyCode);
+//			this.dispatchEvent(EventType.EVENT_KEY_RELEASEED, keyCode);
+			KeyBoardManager.instance.dispatchEvent(KeyEvent.KEY_UP);
 		}
 		
 		/**

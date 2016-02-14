@@ -115,9 +115,9 @@ package jing.game.net
 			}
 			else if(name == "sc_game_debug")
 			{
-				var pb:sc_game_debug= new sc_game_debug() ;
-					pb.mergeFrom(content) ;
-				trace(pb.getInfo());
+				var gameDebug:sc_game_debug= new sc_game_debug() ;
+				gameDebug.mergeFrom(content) ;
+				trace(gameDebug.getInfo());
 			}
 			else if(name == "sc_enter_game")
 			{

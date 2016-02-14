@@ -27,33 +27,34 @@ package jing.game.net.handler
 	
 			var inHandCards:Array= [] ;
 			var cardIndex:int= 0;
+			var card_value:int = 0;
 			for(var index:int= 0; index < vecWan.length; ++index)
 			{
-				var card_value:int= int(vecWan[index]);
+				card_value = int(vecWan[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecTong.length; ++index)
+			for(index = 0; index < vecTong.length; ++index)
 			{
-				var card_value:int= int(vecTong[index]);
+				card_value = int(vecTong[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecTiao.length; ++index)
+			for(index = 0; index < vecTiao.length; ++index)
 			{
-				var card_value:int= int(vecTiao[index]);
+				card_value = int(vecTiao[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecLack.length; ++index)
+			for(index = 0; index < vecLack.length; ++index)
 			{
 				var card_value:int= int(vecLack[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecZi.length; ++index)
+			for(index = 0; index < vecZi.length; ++index)
 			{
-				var card_value:int= int(vecZi[index]);
+				card_value = int(vecZi[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
 	
-			for(var index:int= 0; index < vecHua.length; ++index)
+			for(index = 0; index < vecHua.length; ++index)
 			{
 				gs.info.addHua(gs.pDown.dir(), int(vecHua[index]));
 			}
