@@ -1,9 +1,7 @@
 package game.util
 {
 	import game.constant.WindowType;
-	import game.control.ActionManager;
 	import game.control.WindowManager;
-	import game.model.action.ActionWaitTo;
 	import game.model.vo.PopupVO;
 	
 	public class CommonUtil

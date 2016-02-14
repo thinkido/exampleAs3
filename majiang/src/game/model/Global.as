@@ -25,9 +25,9 @@ package game.model
 		
 		public static const CARDHOUSE_URL:String = "http://182.140.237.62/cardhouse/iptv/";
 		
-		public static const SCREEN_WIDTH:int = 640;
+		public static var SCREEN_WIDTH:int = 640;
 		
-		public static const SCREEN_HEIGHT:int = 530;
+		public static var SCREEN_HEIGHT:int = 530;
 		
 		/**
 		 * 游戏牌局布局

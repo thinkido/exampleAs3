@@ -1,7 +1,7 @@
 package jing.game.model
 {
-public class PlayerModel
-{
-	
-}
+	public class PlayerModel
+	{
+		
+	}
 }

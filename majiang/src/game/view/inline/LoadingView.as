@@ -1,12 +1,9 @@
 
 package game.view.inline
 {
-	import org.json.me.JSONObject;
-	
 	import starling.text.TextField;
 	
 	import ui.UIContainer;
-	import ui.UIText;
 	
 	public class LoadingView extends UIContainer
 	{

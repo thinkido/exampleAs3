@@ -1,123 +1,123 @@
 package jing.game.net.handler
 {
-import game.view.scene.gamescene.GameScene;
-
-import jing.game.view.Player;
-import jing.game.vo.CombinVO;
-
-import protocol.gameserver.sc_continue_game;
-import protocol.gameserver.sccomplex_tile;
-import protocol.gameserver.sccontinue_seat_info;
-import protocol.gameserver.stplayer_info;
-
-/**
- * ¼ÌÐøÓÎϷ
- * 
- * @author Jing
- */
-public class SCContinueGame
-{
-
-	public function SCContinueGame(pb:sc_continue_game)
+	import game.view.scene.gamescene.GameScene;
+	
+	import jing.game.view.Player;
+	import jing.game.vo.CombinVO;
+	
+	import protocol.gameserver.sc_continue_game;
+	import protocol.gameserver.sccomplex_tile;
+	import protocol.gameserver.sccontinue_seat_info;
+	import protocol.gameserver.stplayer_info;
+	
+	/**
+	 * ¼ÌÐøÓÎϷ
+	 * 
+	 * @author Jing
+	 */
+	public class SCContinueGame
 	{
-		var gs:GameScene= GameScene.cur;
-
-		GameScene.cur.pDown.setSeat(pb.seatIndex);
-		
-		var len:int = pb.seatInfoes.length;
-		for(var i:int = 0; i < len; i++)
+	
+		public function SCContinueGame(pb:sc_continue_game)
 		{
-			var info:sccontinue_seat_info= pb.seatInfoes[i];
-			var player:Player= gs.getPlayerBySeat(info.seatIndex);
-
-			var seat_info:stplayer_info= stplayer_info(info.playerInfo);
-			player.updateInfo(info.seatIndex, seat_info.name, seat_info.gold.toNumber(), seat_info.portrait, seat_info.sex);
-			player.setLack(info.lack);
-
-			if(info.isHu)
+			var gs:GameScene= GameScene.cur;
+	
+			GameScene.cur.pDown.setSeat(pb.seatIndex);
+			
+			var len:int = pb.seatInfoes.length;
+			for(var i:int = 0; i < len; i++)
 			{
-				gs.info.setHu(player.dir(), true);
-			}
-			var inHandCards:Array= null;
-			if(info.seatIndex == gs.pDown.seat())
-			{
-				var vecWan:Array= info.handSeq.wan;
-				var vecTong:Array= info.handSeq.tong;
-				var vecTiao:Array= info.handSeq.tiao;
-				var vecLack:Array= info.handSeq.lack;
-				var vecZi:Array= info.handSeq.zi;
-
-				inHandCards = [] ;
-				var cardIndex:int= 0;
-				for(var index:int= 0; index < vecWan.length; ++index)
+				var info:sccontinue_seat_info= pb.seatInfoes[i];
+				var player:Player= gs.getPlayerBySeat(info.seatIndex);
+	
+				var seat_info:stplayer_info= stplayer_info(info.playerInfo);
+				player.updateInfo(info.seatIndex, seat_info.name, seat_info.gold.toNumber(), seat_info.portrait, seat_info.sex);
+				player.setLack(info.lack);
+	
+				if(info.isHu)
 				{
-					var card_value:int= int(vecWan[index]);
-					inHandCards[cardIndex++] = card_value;
+					gs.info.setHu(player.dir(), true);
 				}
-				for(var index:int= 0; index < vecTong.length; ++index)
+				var inHandCards:Array= null;
+				if(info.seatIndex == gs.pDown.seat())
 				{
-					var card_value:int= int(vecTong[index]);
-					inHandCards[cardIndex++] = card_value;
+					var vecWan:Array= info.handSeq.wan;
+					var vecTong:Array= info.handSeq.tong;
+					var vecTiao:Array= info.handSeq.tiao;
+					var vecLack:Array= info.handSeq.lack;
+					var vecZi:Array= info.handSeq.zi;
+	
+					inHandCards = [] ;
+					var cardIndex:int= 0;
+					for(var index:int= 0; index < vecWan.length; ++index)
+					{
+						var card_value:int= int(vecWan[index]);
+						inHandCards[cardIndex++] = card_value;
+					}
+					for(var index:int= 0; index < vecTong.length; ++index)
+					{
+						var card_value:int= int(vecTong[index]);
+						inHandCards[cardIndex++] = card_value;
+					}
+					for(var index:int= 0; index < vecTiao.length; ++index)
+					{
+						var card_value:int= int(vecTiao[index]);
+						inHandCards[cardIndex++] = card_value;
+					}
+					for(var index:int= 0; index < vecLack.length; ++index)
+					{
+						var card_value:int= int(vecLack[index]);
+						inHandCards[cardIndex++] = card_value;
+					}
+					for(var index:int= 0; index < vecZi.length; ++index)
+					{
+						var card_value:int= int(vecZi[index]);
+						inHandCards[cardIndex++] = card_value;
+					}
 				}
-				for(var index:int= 0; index < vecTiao.length; ++index)
+				else
 				{
-					var card_value:int= int(vecTiao[index]);
-					inHandCards[cardIndex++] = card_value;
+					inHandCards = [] ;
+	
+					if(info.moCount != 0)
+					{
+						player.setNewInHand(-1);
+					}
 				}
-				for(var index:int= 0; index < vecLack.length; ++index)
+	
+				var vecHua:Array= info.handSeq.hua;
+				for(var index:int= 0; index < vecHua.length; ++index)
 				{
-					var card_value:int= int(vecLack[index]);
-					inHandCards[cardIndex++] = card_value;
+					gs.info.addHua(player.dir(), int(vecHua[index]));
 				}
-				for(var index:int= 0; index < vecZi.length; ++index)
+	
+				var vecComplex:Array= info.complexSeq;
+				var cbs:Array= new CombinVO[vecComplex.length];
+				for(var index:int= 0; index < vecComplex.length; index++)
 				{
-					var card_value:int= int(vecZi[index]);
-					inHandCards[cardIndex++] = card_value;
+					var tile:sccomplex_tile= sccomplex_tile(vecComplex[index]);
+					cbs[index] = new CombinVO(tile.type, tile.id);
 				}
-			}
-			else
-			{
-				inHandCards = [] ;
-
-				if(info.moCount != 0)
+	
+				var onTableCards:Array= new int[info.chuedSeq.length];
+				for(var index:int= 0; index < info.chuedSeq.length; index++)
 				{
-					player.setNewInHand(-1);
+					var card:int= int(info.chuedSeq[index]);
+					onTableCards[index] = card;
 				}
+	
+				player.setInHand(inHandCards);
+				player.setInHandTable(cbs);
+				player.setOnTable(onTableCards);
+	
+				player.needRefresh();
+	
+				GameScene.cur.info.setName(player.dir(), player.name());
 			}
-
-			var vecHua:Array= info.handSeq.hua;
-			for(var index:int= 0; index < vecHua.length; ++index)
-			{
-				gs.info.addHua(player.dir(), int(vecHua[index]));
-			}
-
-			var vecComplex:Array= info.complexSeq;
-			var cbs:Array= new CombinVO[vecComplex.length];
-			for(var index:int= 0; index < vecComplex.length; index++)
-			{
-				var tile:sccomplex_tile= sccomplex_tile(vecComplex[index]);
-				cbs[index] = new CombinVO(tile.type, tile.id);
-			}
-
-			var onTableCards:Array= new int[info.chuedSeq.length];
-			for(var index:int= 0; index < info.chuedSeq.length; index++)
-			{
-				var card:int= int(info.chuedSeq[index]);
-				onTableCards[index] = card;
-			}
-
-			player.setInHand(inHandCards);
-			player.setInHandTable(cbs);
-			player.setOnTable(onTableCards);
-
-			player.needRefresh();
-
-			GameScene.cur.info.setName(player.dir(), player.name());
+	
+			GameScene.cur.model.updateRoomInfo(pb.roomid, pb.roomBase, pb.roomLevel);
+			GameScene.cur.info.setRoomBase(GameScene.cur.model.roomBase());
+			GameScene.cur.info.setRemainTiles(pb.tilesRemain);
 		}
-
-		GameScene.cur.model.updateRoomInfo(pb.roomid, pb.roomBase, pb.roomLevel);
-		GameScene.cur.info.setRoomBase(GameScene.cur.model.roomBase());
-		GameScene.cur.info.setRemainTiles(pb.tilesRemain);
 	}
-}
 }

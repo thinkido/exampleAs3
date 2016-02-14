@@ -84,17 +84,30 @@ package
 			initEvt();
 		}
 		
-		private var preloader:BulkLoader = LoaderManager.creatNewLoader("preloader" , preloaded ) ; 
 		public function startGame(e:GameEvent=null):void
 		{
 			var arr:Array = [] ;
-			var ld:LoadData = new LoadData( );
+			var ld:LoadData ;
 			arr = [ "img_dark_bg_png" , ResManager.getSheetUrl("head_json"), ResManager.getSheetUrl("title_json") ] ;
+			var la:Array = [] ;
+			var preloaded:Function = function (evt:Event):void{
+				init();
+			}
+			for (var i:int = 0 ; i < arr.length ; i++ ) 
+			{
+				
+				if( i == arr.length -1 ){	//最后一个;
+					ld = new LoadData( arr[i] ,preloaded );
+				}	else{
+					ld = new LoadData( arr[i] );
+				}			
+				la.push(ld ) ;	
+			}		
 			
-			LoaderManager.load( arr, this.preloader ,true ) ;
 			
+			LoaderManager.load( la , ResManager.resLoader ,true ) ;
 		}	
-		private function preloaded():void{
+		private function preloadComplated():void{
 //			ResManager.assetsManager.addTextureAtlas(ResManager.YLXD_NAME, new TextureAtlas(Texture.fromBitmap(ResManager.resLoader.getContent(ResManager.YLXD)),ResManager.resLoader.getContent(ResManager.YLXDXML)));
 //			ResManager.assetsManager.addTextureAtlas(ResManager.YLXD_NAME2, new TextureAtlas(Texture.fromBitmap(ResManager.resLoader.getContent(ResManager.YLXD2)),ResManager.resLoader.getContent(ResManager.YLXDXML2)));
 			init();
@@ -127,7 +140,6 @@ package
 		}
 		private function initEvt():void
 		{
-			com.thinkido.framework.common.Global.instance.initStage( this.stage ) ; // 原引擎代码中 键盘事件监听 旧代码;
 			KeyBoardManager.instance.start();	
 			SoundManager.init();	
 			LayerManager.init() ;

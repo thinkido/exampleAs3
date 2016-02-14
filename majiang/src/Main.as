@@ -4,6 +4,7 @@ package
 	import br.com.stimuli.loading.BulkProgressEvent;
 	
 	import com.mike.utils.ResolutionUtil;
+	import com.thinkido.framework.common.Global;
 	
 	import configs.GameInstance;
 	
@@ -79,6 +80,7 @@ package
 			Multitouch.inputMode = MultitouchInputMode.TOUCH_POINT;
 			//						Starling.multitouchEnabled = false;
 			
+			com.thinkido.framework.common.Global.instance.initStage( stage ) ; // 原引擎代码中 键盘事件监听 旧代码;
 			
 			ResolutionUtil.instance.init(new Point(1280,720));
 			
@@ -107,16 +109,16 @@ package
 			stage.addEventListener(Event.ENTER_FRAME, onenterframe);
 		}
 		private function initBaseData():void{
-			if(Global.account == null)
+			if(game.model.Global.account == null)
 			{
-				Global.account = "zhidaGame";
-				Global.adAccount = Global.account;
+				game.model.Global.account = "zhidaGame";
+				game.model.Global.adAccount = game.model.Global.account;
 			}
-			Global.resUrl = "http://182.140.237.55/res_i";
+			game.model.Global.resUrl = "http://182.140.237.55/res_i";
 			ResManager.loadInitConfig("/res.json");
 			
-			Global.cfg = new Config("config_json");
-			Global.cl = new CardLayout();
+			game.model.Global.cfg = new Config("config_json");
+			game.model.Global.cl = new CardLayout();
 		}
 		
 		protected function onenterframe(event:Event):void

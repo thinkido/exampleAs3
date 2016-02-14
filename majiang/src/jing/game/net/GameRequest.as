@@ -78,8 +78,8 @@ package jing.game.net
 		/**
 		 * 玩家动作
 		 * 
-		 * @param action ²Ù×÷ID
-		 * @param cardTypeOrId ÅƵÄID»òÀàÐÍ
+		 * @param action 操作ID
+		 * @param cardTypeOrId 牌的ID或类型
 		 */
 		public function gameAction(action:int, cardTypeOrId:int):void{
 			var msg:cs_game_action = new cs_game_action();

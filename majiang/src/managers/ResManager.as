@@ -48,7 +48,7 @@ package managers
 		
 		public static var assetsManager:AssetManager;
 		
-		public static var resLoader:BulkLoader;
+		public static var resLoader:BulkLoader = new BulkLoader("resLoader") ;
 		
 		public static var YLXD_NAME:String = "collectcandy";
 		public static var YLXD_NAME2:String = "collectcandy2";
