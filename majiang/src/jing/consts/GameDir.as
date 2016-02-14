@@ -11,21 +11,21 @@ public class GameDir
 	/**
 	 * 向上扩散布局
 	 */
-	static const public var UP:String= "up";
+	public static const  UP:String= "up";
 
 	/**
 	 * 向左扩散布局
 	 */
-	static const public var LEFT:String= "left";
+	public static const  LEFT:String= "left";
 
 	/**
 	 * 向下扩散布局
 	 */
-	static const public var DOWN:String= "down";
+	public static const  DOWN:String= "down";
 
 	/**
 	 * 向右扩散布局
 	 */
-	static const public var RIGHT:String= "right";
+	public static const  RIGHT:String= "right";
 }
 }
