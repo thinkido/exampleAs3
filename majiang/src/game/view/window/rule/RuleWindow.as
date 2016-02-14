@@ -23,7 +23,7 @@ package game.view.window.rule
 		
 		private var _curTab:int;
 		
-//		private int[] _curIndexList = new int[TAB_LENGTH];
+//		private int[] _curIndexList = [] ;
 		private var _curIndexList:Vector.<int> = new Vector.<int>;
 		
 		private var _btnTabList:Vector.<Button> = new Vector.<Button>;

@@ -11,7 +11,7 @@ package jing.pai.vo
 		public var len:int;
 	
 		public function HuVO() {
-			types = [] ; // new int[100];
+			types = [] ; // [] ;
 		}
 		/**
 		 * 胡的总番数

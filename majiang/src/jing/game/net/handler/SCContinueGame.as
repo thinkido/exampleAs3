@@ -99,7 +99,7 @@ package jing.game.net.handler
 					cbs[index] = new CombinVO(tile.type, tile.id);
 				}
 	
-				var onTableCards:Array= new int[info.chuedSeq.length];
+				var onTableCards:Array= [] ;
 				for(var index:int= 0; index < info.chuedSeq.length; index++)
 				{
 					var card:int= int(info.chuedSeq[index]);

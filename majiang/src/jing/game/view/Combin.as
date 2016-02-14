@@ -1,6 +1,7 @@
 package jing.game.view
 {
-	import jing.GDC;
+	import game.model.Global;
+	
 	import jing.consts.CombinType;
 	import jing.consts.GameDir;
 	import jing.vo.CardLayoutVO;
@@ -105,7 +106,8 @@ package jing.game.view
 			
 			if(_type == CombinType.AN_GANG || _type == CombinType.GANG)
 			{
-				_mjs[3].setPosition(_mjs[1].getX(), _mjs[1].getY() + vo.combinGangOffY);
+				_mjs[3].x = _mjs[1].x ;
+				_mjs[3].y = _mjs[1].y + vo.combinGangOffY ;
 			}
 			
 			if(_type == CombinType.AN_GANG && _dir == GameDir.DOWN)
@@ -113,8 +115,8 @@ package jing.game.view
 				_mjs[3].setBack(false);
 			}
 			
-			w = _mjs[0].getWidth() * 3;
-			h = _mjs[0].getHeight();
+			w = _mjs[0].getW() * 3;
+			h = _mjs[0].getH();
 			this.width = w;
 			this.height = h;
 		}

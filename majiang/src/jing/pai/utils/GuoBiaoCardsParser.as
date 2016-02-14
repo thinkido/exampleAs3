@@ -59,12 +59,12 @@ package jing.pai.utils
 		 * 
 		 * @param cards
 		 */
-		public function parse(int pai[], remain:int, jiang:int):void{
+		public function parse(pai:Array, remain:int, jiang:int):void{
 			if (hu(pai, remain, jiang)) {
 				is_hu = true;
 			}
 		}
-		public static function hu(int pai[], remain:int, jiang:int):Boolean{
+		public static function hu(pai:Array, remain:int, jiang:int):Boolean{
 		    if (remain == 0) return true; //退出条件，没有剩牌，胡牌退出
 	
 		    var result:Boolean= false;
@@ -116,7 +116,7 @@ package jing.pai.utils
 		}
 		
 	
-		public static function hu_result(int pai[], remain:int, jiang:int, gamehu:Array, huType:GameHu, pos:int):int{
+		public static function hu_result(pai:Array, remain:int, jiang:int, gamehu:Array, huType:GameHu, pos:int):int{
 		    var curhu:GameHu= huType;
 		    var start:int= pos;
 		    var end:int= 0;

@@ -82,7 +82,7 @@ public class HuHelp
 	    
 	    var com_hu:Array;
 	    var com_len:int= 0;
-	    var mul_hu:Array= new int[35];
+	    var mul_hu:Array= [] ;
 
 	    //牌型分析
 	    for (var i:int= 0; i < gamehu_len; i++)

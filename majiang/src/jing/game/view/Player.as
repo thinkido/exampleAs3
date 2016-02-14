@@ -1,8 +1,8 @@
 package jing.game.view
 {	
+	import game.model.Global;
 	import game.view.scene.gamescene.GameScene;
 	
-	import jing.GDC;
 	import jing.consts.CardPlace;
 	import jing.consts.CombinType;
 	import jing.consts.GameDir;
@@ -254,7 +254,7 @@ package jing.game.view
 			var cards:Array= [card];
 			if(-1== card)
 			{
-				cards = new int[0];
+				cards = [] ;
 			}
 			
 			setCards(cards, CardPlace.NEW_IN_HAND);
@@ -608,7 +608,7 @@ package jing.game.view
 			if(null != ct)
 			{
 				var cards:Array= ct.getPlayCards();
-				GDC.trace("³öÅÆÌáʾ£º" + ct.toString());
+				trace("³öÅÆÌáʾ£º" + ct.toString());
 				// ¸øËùÓдò³öºó¿ÉÒÔÏ½еÄÊÖÅƼÓÉϱ߿ò
 				var vecInHand:Vector= Vector(_mjT.get(CardPlace.IN_HAND));
 				var mj:Mahjong;

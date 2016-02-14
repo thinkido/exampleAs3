@@ -25,7 +25,7 @@ package jing.game.net.handler
 			var vecZi:Array= pb.youSeqInfo.handSeq.zi;
 			var vecHua:Array= pb.youSeqInfo.handSeq.hua;
 	
-			var inHandCards:Array= new int[vecWan.length + vecTong.length + vecTiao.length + vecLack.length + vecZi.length];
+			var inHandCards:Array= [] ;
 			var cardIndex:int= 0;
 			for(var index:int= 0; index < vecWan.length; ++index)
 			{
