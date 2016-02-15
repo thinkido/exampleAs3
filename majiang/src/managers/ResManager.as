@@ -242,6 +242,12 @@ package managers
 		public static function release(name:String):void{
 			resLoader.remove(name);
 		}
+		public static function getFileUrl(name:String):String{
+			if( name.indexOf(":") == -1 ){
+				name = "app:" + name ;
+			}
+			return name ;
+		}
 		
 	}
 }

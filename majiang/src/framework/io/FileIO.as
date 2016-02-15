@@ -4,6 +4,8 @@ package framework.io
 	import com.thinkido.framework.air.FileUtils;
 	
 	import flash.utils.ByteArray;
+	
+	import managers.ResManager;
 
 	public class FileIO
 	{
@@ -18,11 +20,13 @@ package framework.io
 		 */
 		static public function getFile(path:String):ByteArray
 		{
+			path = ResManager.getFileUrl( path) ;
 			return FileUtils.getContentByFileName(path) ;
 		}
 		
 		public static function getJson(path:String):Object
 		{
+			path = ResManager.getFileUrl( path) ;
 			var by:ByteArray = FileUtils.getContentByFileName(path) ;
 			var str:String = by.readUTFBytes( by.length ) ; 
 			var obj:Object = com.adobe.serialization.json.JSON.decode( str ) ;
