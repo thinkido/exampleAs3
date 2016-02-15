@@ -244,10 +244,12 @@ package game.view.scene.gamescene.elements
 			{
 //				img.setPosition(p.x() + vec.size() * img.getWidth(), p.y());
 				img.x = p.x + vec.length * img.width;
+				img.y = p.y ;
 			}
 			else if(dir == GameDir.LEFT || dir == GameDir.RIGHT)
 			{
 //				img.setPosition(p.x(), p.y() + vec.size() * img.getHeight());
+				img.x = p.x ;
 				img.y = p.y + vec.length * img.height;
 			}
 			this.addChild(img);

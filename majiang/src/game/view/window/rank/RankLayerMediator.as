@@ -25,13 +25,13 @@ package game.view.window.rank
 		private var _lastPageOffset:int;
 	
 //		private UITextBMFont[][] _bfValueList;
-		private var _bfValueList:Vector.<Vector>;
+		private var _bfValueList:Array ; // Vector.<Vector>;
 	
-		private var _imgHead:Vector.<UIImageView>;
+		private var _imgHead:Array ; //Vector.<UIImageView>;
 	
 		private var _dataList:Vector.<RankItemVO>;
 	
-		private var _imgTopThree:Vector.<UIImageView>;
+		private var _imgTopThree:Array ; //Vector.<UIImageView>;
 	
 		private var _ssSmallHead:TextureAtlas ;
 	
@@ -39,9 +39,9 @@ package game.view.window.rank
 		{
 			_layer = layer;
 			_ssSmallHead = ssSmallHead;
-			_bfValueList = new UITextBMFont[3][ITEM_LENGTH];
-			_imgHead = new UIImageView[ITEM_LENGTH];
-			_imgTopThree = new UIImageView[3];
+			_bfValueList = [[],[],[]] ; // new UITextBMFont[3][ITEM_LENGTH];
+			_imgHead = [] ; // new UIImageView[ITEM_LENGTH];
+			_imgTopThree = [] ; // new UIImageView[3];
 			for(var i:int = 0; i < 3; i++)
 			{
 				_imgTopThree[i] = _layer.getChildByName("img_top_" + (i + 1)) as UIImageView;

@@ -62,24 +62,28 @@ package jing.game.view
 		private function refresh():void{
 			this.removeAllChildren();
 			var vo:CardLayoutVO= Global.cl.getLayout(_dir, _place);
+			var _mjsLen:int = 0 ;
 			switch(_type)
 			{
 				case CombinType.AN_GANG:
 				case CombinType.GANG:
-					_mjs = new Mahjong[4];
+					_mjs = [] ; // new Mahjong[4];
+					_mjsLen = 4 ;
 					break;
 				case CombinType.CHI_LEFT:
 				case CombinType.CHI_MIDDLE:
 				case CombinType.CHI_RIGHT:
 				case CombinType.PENG:
-					_mjs = new Mahjong[3];
+					_mjs = [] ; // new Mahjong[3];
+					_mjsLen = 3 ;
 					break;
 			}
+			
 			
 			var offX:int= 0;
 			var w:int= 0;
 			var h:int= 0;
-			for(var i:int= 0; i < _mjs.length; i++)
+			for(var i:int= 0; i < _mjsLen ; i++)
 			{
 				var card:int= _card;
 				if(_type == CombinType.CHI_LEFT || _type == CombinType.CHI_MIDDLE || _type == CombinType.CHI_RIGHT)

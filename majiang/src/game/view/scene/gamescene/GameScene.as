@@ -1,8 +1,10 @@
 package game.view.scene.gamescene
 {
 	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
+	import com.thinkido.framework.manager.keyBoard.KeyCode;
 	import com.thinkido.framework.manager.keyBoard.KeyEvent;
 	
+	import framework.consts.EventType;
 	import framework.consts.KeyType;
 	
 	import game.constant.SceneType;
@@ -23,6 +25,9 @@ package game.view.scene.gamescene
 	import jing.game.view.Player;
 	import jing.pai.vo.ChuVO;
 	import jing.pai.vo.JiaoVO;
+	
+	import starling.display.Stage;
+	import starling.text.TextField;
 	
 	import ui.UIObject;
 	import ui.UIScene;
@@ -118,9 +123,9 @@ package game.view.scene.gamescene
 		{
 			trace("gamescene 监听键盘事件");
 //			Stage.current.keyboard.addEventListener(EventType.EVENT_KEY_PRESSED, this);
-			KeyBoardManager.instance.removeEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
 			
-			
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
 		}
 		
 		/**
@@ -130,7 +135,10 @@ package game.view.scene.gamescene
 		{
 			trace("gamescene 释放键盘事件");
 //			Stage.current.keyboard.removeEventListener(EventType.EVENT_KEY_PRESSED, this);
+			
 			KeyBoardManager.instance.removeEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
+			KeyBoardManager.instance.removeEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
+//			this.stage.removeEventListener(KeyEvent.KEY_DOWN, this.
 		}
 		
 		override public function onEnter():void
@@ -248,15 +256,28 @@ package game.view.scene.gamescene
 			return GameDir.DOWN;
 		}
 		
-//		override public function onReciveEvent( type:int,  dispatcher:EventDispatcher, data:Object):void
+		
+		private function onKeyUpHandler(event:KeyEvent):void
+		{
+			if(event.keyEvent.target is TextField )
+			{				
+				return;
+			}			
+			var keycode:int = event.keyEvent.keyCode;
+			switch(keycode)
+			{
+				case KeyCode.Num1:
+					
+					break;
+			}
+		}
+		
 		private function onKeyDownHandler(event:KeyEvent):void
 		{
+			var keyCode:int = event.keyEvent.keyCode;
 //			if(type == EventType.EVENT_KEY_PRESSED)
-			var type:String = event.type;
-			if(type == KeyEvent.KEY_DOWN)
+			if(event.type == KeyEvent.KEY_DOWN)
 			{
-//				var keyCode:int = int(data);
-				var keyCode:int = event.keyEvent.keyCode;
 				
 				if(keyCode == KeyType.BACK)
 				{

@@ -31,7 +31,7 @@ package game.view.window.rank
 	import ui.UITextBMFont;
 	import ui.UIWindow;
 	
-	public class RankWindow extends UIWindow implements YiuNetworkListener
+	public class RankWindow extends UIWindow
 	{
 	
 		private var TAB_LENGTH:int = 3;
@@ -185,7 +185,7 @@ package game.view.window.rank
 					for(var i:int = 0; i < len; i++)
 					{
 						goldData[i] = new RankItemVO(datalist[i] as t_rank_data);
-						goldData[i].value = CommonUtil.formatGold(goldData[i].value);
+						goldData[i].value = CommonUtil.formatGold( Number(goldData[i].value) );
 					}
 					_mediatorList[0].initData(goldData);
 					datalist = msg.expData ;

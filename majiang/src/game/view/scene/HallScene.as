@@ -17,7 +17,8 @@ package game.view.scene
 	import game.model.vo.IpAddressVO;
 	import game.model.vo.PlaceData;
 	import game.util.CommonUtil;
-	import game.view.inline.NoticeBoard;
+	
+	import managers.ResManager;
 	
 	import network.YiuNetworkListener;
 	
@@ -33,7 +34,6 @@ package game.view.scene
 	
 	import starling.display.Button;
 	
-	import ui.UIButton;
 	import ui.UIImageView;
 	import ui.UIObject;
 	import ui.UIScene;
@@ -187,7 +187,7 @@ package game.view.scene
 			btnQuickStart = getChildByName("btn_quickstart") as Button;
 			imgHead = getChildByName("img_head") as UIImageView;
 			
-			btnStageList = new UIButton[4];
+			btnStageList = [] ; // new UIButton[4];
 			for(var i:int = 0; i < 4; i++)
 			{
 				btnStageList[i] = getChildByName("btn_stage_" + (i + 1)) as Button;
@@ -248,14 +248,15 @@ package game.view.scene
 				{
 					var msg:sc_broadcast_msg = new sc_broadcast_msg() ;
 					msg.mergeFrom(content) ;
-					NoticeBoard.show(msg.getMsg());
+					trace( "NoticeBoard msg:" + msg.msg );
+//					NoticeBoard.show(msg.getMsg());
 					return false;
 				}
 				else if(name == "sc_hall_debug")
 				{
 					var msg1:sc_hall_debug = new sc_hall_debug() ;
 					msg1.mergeFrom(content) ;
-					trace("debug:" + msg1.getInfo());
+					trace("debug:" + msg1.info );
 					return false;
 				}
 				else if(name == "sc_enter_place")

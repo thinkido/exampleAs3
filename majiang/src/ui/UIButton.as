@@ -18,13 +18,11 @@ package ui
 		 */
 		protected var _isAddFocusSign:Boolean = false;
 		
-		public function UIButton()
+		public function UIButton(normal:String="", focus:String="", disable:String=""):void
 		{
-			
-		}
-		
-		public function UIButton_2(normal:String, focus:String, disable:String):void
-		{
+			if( normal.length == 0 ){
+				return ;
+			}
 			_srcBitmapArr[0] = new Image(getTexture(normal));
 			_srcBitmapArr[1] = new Image(getTexture(focus));
 			_srcBitmapArr[2] = new Image(getTexture(disable));

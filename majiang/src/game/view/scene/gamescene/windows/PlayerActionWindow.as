@@ -148,6 +148,7 @@ package game.view.scene.gamescene.windows
 					gap = 60;
 //					btn.setPosition(btnChiX - btn.width, y);
 					btn.x = btnChiX - btn.width;
+					btn.y = y ;
 					btnChiX -= (gap + btn.width);
 					
 					var card:int = int(act.getTile_seq().elementAt(0));
@@ -163,6 +164,7 @@ package game.view.scene.gamescene.windows
 					gap = 20;
 //					btn.setPosition(btnNormalX - btn.getWidth(), y);
 					btn.x = btnNormalX - btn.width;
+					btn.y = y ;
 					btnNormalX -= gap + btn.width;
 				}
 			}

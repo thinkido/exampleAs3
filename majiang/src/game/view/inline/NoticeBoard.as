@@ -21,9 +21,8 @@ package game.view.inline
 		static public function show(content:String):void {
 			_nb.add(content);
 //			_nb.setPosition(0, 50);
-			_nb.x = 0;
-			_nb.y = 50;
-		}
+			_nb.x = 0 ;
+			_nb.y = 50 ;		}
 	
 		private var _bg:Image;
 	
@@ -83,8 +82,8 @@ package game.view.inline
 //				_tf.setPosition(640, 5);
 				_tf.x = 640;
 				_tf.y = 5;
-//				Stage.current.getRoot().addChild(_nb);
-				LayerManager.msgTipLayer.addChild(_nb);
+				LayerManager.msgTipLayer.addChild(_nb);  // Stage.current.getRoot().addChild(_nb);
+				
 			} else {
 				if (this.parent != null) {
 //					((Sprite) this.getParent()).removeChild(this);
