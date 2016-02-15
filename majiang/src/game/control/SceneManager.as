@@ -2,11 +2,14 @@ package game.control
 {
 	import com.greensock.TweenMax;
 	
+	import framework.resources.Res;
+	
 	import game.constant.SceneType;
 	import game.model.Global;
 	import game.view.inline.LoadingView;
 	
 	import managers.LayerManager;
+	import managers.ResManager;
 	
 	import starling.display.Image;
 	
@@ -68,7 +71,7 @@ package game.control
 					}
 					if(null != _curView)
 					{
-						_curSceneCache = Global.root() ; // CommonUtil.getSnapShot();
+						_curSceneCache = ResManager.getFile("game_scene_bg_png" , Res.TYPE_IMAGE ) ; //   Global.root() ; // CommonUtil.getSnapShot();
 						_curView.onStageBlur();
 						_curView.onLeave();
 						LayerManager.sceneLayer.removeChild(_curView);

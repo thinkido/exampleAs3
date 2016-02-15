@@ -1,6 +1,8 @@
 package game.view.window.user
 {
 	import com.thinkido.framework.common.observer.Notification;
+	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
+	import com.thinkido.framework.manager.keyBoard.KeyCode;
 	import com.thinkido.framework.manager.keyBoard.KeyEvent;
 	
 	import flash.utils.ByteArray;
@@ -19,14 +21,12 @@ package game.view.window.user
 	
 	import managers.ResManager;
 	
-	import network.YiuNetworkListener;
-	
 	import protocol.hallserver.cs_friend_profile;
 	import protocol.hallserver.cs_update_profile;
 	import protocol.hallserver.sc_friend_profile;
 	import protocol.hallserver.t_friend_data;
 	
-	import starling.events.EventDispatcher;
+	import starling.text.TextField;
 	
 	import ui.UIButton;
 	import ui.UICheckBox;
@@ -36,7 +36,7 @@ package game.view.window.user
 	import ui.UITextBMFont;
 	import ui.UIWindow;
 	
-	public class UserWindow extends UIWindow implements YiuNetworkListener
+	public class UserWindow extends UIWindow
 	{
 		
 		private var _btnClose:UIButton;
@@ -144,6 +144,8 @@ package game.view.window.user
 			{
 				trace("发送协议失败", "LogManager.LEVEL_ERROR");
 			}
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
+			KeyBoardManager.instance.addEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
 		}
 		
 		private function updatePortrait():void
@@ -154,6 +156,8 @@ package game.view.window.user
 		override public function onLeave():void
 		{
 			disposePro();
+			KeyBoardManager.instance.removeEventListener(KeyEvent.KEY_DOWN, this.onKeyDownHandler);
+			KeyBoardManager.instance.removeEventListener(KeyEvent.KEY_UP, this.onKeyUpHandler);
 		}
 		
 		override public function onConfirm(target:UIObject):void
@@ -228,22 +232,36 @@ package game.view.window.user
 			}
 			catch( ex:Error)
 			{
-				ex.printStackTrace();
+				trace( ex.getStackTrace() ); //ex.printStackTrace();
 			}
 //			return false;
 		}
 		
-		public function onReciveEvent( type:int, dispatcher:EventDispatcher, data:Object):void
+		private function onKeyUpHandler(event:KeyEvent):void
 		{
+			if(event.keyEvent.target is TextField )
+			{				
+				return;
+			}			
+			var keycode:int = event.keyEvent.keyCode;
+			switch(keycode)
+			{
+				case KeyCode.Num1:
+					
+					break;
+			}
+		}
+		
+		private function onKeyDownHandler(event:KeyEvent):void
+		{
+			var keyCode:int = event.keyEvent.keyCode;
+			var type:String = event.type ;
 //			if(type == EventType.EVENT_KEY_PRESSED && _mediator.getVisible())
 			if(type == KeyEvent.KEY_DOWN && _mediator.getVisible())
 			{
-				var keyCode:int = int(data);
 				if(keyCode >= KeyType.NUM_0 && keyCode <= KeyType.NUM_9)
 					choosePortrait(keyCode - KeyType.NUM_0);
 			}
-			else
-				super.onReciveEvent(type, dispatcher, data);
 		}
 		
 		private function showHeadPanel():void

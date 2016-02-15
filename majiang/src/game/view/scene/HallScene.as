@@ -39,7 +39,7 @@ package game.view.scene
 	import ui.UIScene;
 	import ui.UITextBMFont;
 	
-	public class HallScene extends UIScene implements YiuNetworkListener
+	public class HallScene extends UIScene
 	{
 		
 		// 场次key列表
@@ -68,7 +68,7 @@ package game.view.scene
 		private var btnQuickStart:Button;
 		
 		// 场次
-		private var btnStageList:Vector.<Button>;
+		private var btnStageList:Array ; //Vector.<Button>;
 		
 		// 头像图片
 		private var imgHead:UIImageView;
@@ -238,7 +238,7 @@ package game.view.scene
 			"sc_get_item",
 			"sc_update_places",
 			"sc_enter_place_failed"];
-		public function onNetworkEvent(e:Notification):void
+		public function onNetworkEvent(e:Notification):Boolean
 		{
 			var name:String = e.name ;
 			var content:ByteArray = e.body as ByteArray ;
@@ -309,9 +309,10 @@ package game.view.scene
 			}
 			catch( ex:Error)
 			{
-				ex.printStackTrace();
+				trace( ex.getStackTrace() ); //ex.printStackTrace();
 				return false;
 			}
+			return true;
 		}
 		
 		/** 快速游戏 */
@@ -323,10 +324,13 @@ package game.view.scene
 			}
 			else
 			{
-				Global.socketHall.reconnect() ;
+				Global.socketHall.close() ;
+				Global.socketHall.connect( Global.cfg.hallAddressVO().ip , Global.cfg.hallAddressVO().port );
+//				Global.socketHall.reconnect() ;
 				var userId:String = AccountManager.getInstance().getId();
 				var userType:String = AccountManager.getInstance().getType();
-				Global.socketHall.send(JSON.stringify(["enter_hall",userId,userType,1]));
+//				Global.socketHall.send(JSON.stringify(["enter_hall",userId,userType,1]));
+				NetManager.sendStr( Global.socketHall , JSON.stringify(["enter_hall",userId,userType,1]));
 			}
 		}
 		
@@ -348,7 +352,7 @@ package game.view.scene
 			// null, new String[]{"对应场次尚未开放."}));
 			// return;
 			// }
-			var reqGold:Number = place.reqPlayerGold();
+			var reqGold:int = place.reqPlayerGold ;
 			var curGold:Number = Global.userDataVO.gold;
 			if(reqGold > curGold)
 			{

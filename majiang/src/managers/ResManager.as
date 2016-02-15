@@ -13,6 +13,7 @@ package managers
 	
 	import game.model.Global;
 	
+	import starling.display.Image;
 	import starling.display.MovieClip;
 	import starling.text.BitmapFont;
 	import starling.textures.Texture;
@@ -139,7 +140,9 @@ package managers
 						obj = FileIO.getJson(url);
 						break ;
 					case Res.TYPE_IMAGE :
-						obj = resLoader.getBitmap(url) ;
+						bmd = resLoader.getBitmapData(url) ;
+						texture = Texture.fromBitmapData( bmd ) ;
+						obj = new Image( texture ) ;
 						break ;
 					case Res.TYPE_TEXTURE :
 						bmd = resLoader.getBitmapData( url ) ;

@@ -215,7 +215,7 @@ package game.view.window.rank
 			}
 			catch( ex:Error)
 			{
-				ex.printStackTrace();
+				trace( ex.getStackTrace() ); //ex.printStackTrace();
 			}
 //			return false;
 		}
