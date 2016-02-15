@@ -170,7 +170,7 @@ package jing.game.net.handler
 	
 			var onTableCards:Array= [];
 	
-			for(var index:int= 0; index < pb.actChuedSeq.length; index++)
+			for(index = 0; index < pb.actChuedSeq.length; index++)
 			{
 				var card:int= int(pb.actChuedSeq[index]);
 				onTableCards.push(card);

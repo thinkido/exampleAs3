@@ -301,7 +301,7 @@ package game.control
 			return;
 		}
 		
-		public function registerMsg(proName:String, $handle:Function, $name) : void
+		public function registerMsg(proName:String, $handle:Function, $name:*) : void
 		{
 			var _observer:Observer = new Observer($handle, $name);
 			_msgObserverThread.registerObserver(proName, _observer);
@@ -312,7 +312,7 @@ package game.control
 			_msgObserverThread.removeObserver(proName, $name);
 			return;
 		}
-		public function registerMsgs(proNames:Array, $handle:Function, $name) : void
+		public function registerMsgs(proNames:Array, $handle:Function, $name:*) : void
 		{
 			var item:* = undefined;
 			for each (item in proNames)

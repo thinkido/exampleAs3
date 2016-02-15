@@ -57,10 +57,11 @@ package game.view.scene.gamescene.windows
 		private function show():void
 		{
 			var actions:Array = _args as Array;
+			var btn:UIButton = null;
+			var card:int ;
 			for(var index:int = 0; index < actions.length; ++index)
 			{
 				var act:scgame_show_actions = actions[index] as scgame_show_actions;
-				var btn:UIButton = null;
 				if(act.id == PlayerAction.AN_GANG || act.id == PlayerAction.MING_GANG)
 				{
 					btn = createBtnGang();
@@ -108,7 +109,7 @@ package game.view.scene.gamescene.windows
 				}
 				else if(act.id == PlayerAction.CHI_LEFT || act.id == PlayerAction.CHI_MIDDLE || act.id == PlayerAction.CHI_RIGHT)
 				{
-					var card:int = int(act.tileSeq[0]);
+					card = int(act.tileSeq[0]);
 					btn = createBtnChi(act.id, card);
 					_btns.addElement(btn);
 					_btn2Act[btn] = act;
@@ -124,7 +125,7 @@ package game.view.scene.gamescene.windows
 			var btnNormalX:int = 587;
 			for(var i:int = 0; i < _btns.length; i++)
 			{
-				var btn:UIButton = _btns[i] as UIButton;
+				btn = _btns[i] as UIButton;
 				this.addChild(btn);
 				var pre:UIButton = null;
 				var next:UIButton = null;
@@ -139,7 +140,7 @@ package game.view.scene.gamescene.windows
 				
 				btn.setNeighbors(null, null, next, pre);
 				
-				var act:scgame_show_actions = _btn2Act[btn] as scgame_show_actions;
+				act = _btn2Act[btn] as scgame_show_actions;
 				var y:int;
 				var gap:int;
 				if(act.id == PlayerAction.CHI_LEFT || act.id == PlayerAction.CHI_MIDDLE || act.id == PlayerAction.CHI_RIGHT)
@@ -151,7 +152,7 @@ package game.view.scene.gamescene.windows
 					btn.y = y ;
 					btnChiX -= (gap + btn.width);
 					
-					var card:int = int(act.getTile_seq().elementAt(0));
+					card = int(act.tileSeq[0] );
 					var cp:ChiPreviewUI = new ChiPreviewUI(card, act.id);
 //					cp.setPosition(btn.getX() + 75, btn.getY() + 35);
 					cp.x = btn.x + 75;

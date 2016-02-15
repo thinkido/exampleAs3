@@ -107,7 +107,7 @@ package game.view.window.rank
 				_imgHead[i].setTexture(_ssSmallHead.getTexture("head_" + data.portrait));
 			}
 			var isFirstPage:Boolean = _curPage == 0;
-			for(var i:int = 0; i < 3; i++)
+			for( i = 0; i < 3; i++)
 			{
 //				_imgTopThree[i].setVisible(isFirstPage);
 //				_bfValueList[0][i].setVisible(!isFirstPage);

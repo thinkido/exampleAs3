@@ -70,7 +70,7 @@ package game.constant
 			{
 				trace( e.getStackTrace() );   //e.printStackTrace();
 				newInstance = null;
-				trace(e.getMessage(), "LogManager.LEVEL_ERROR");
+				trace(e.getStackTrace(), "LogManager.LEVEL_ERROR");
 			}
 			return newInstance;
 		}

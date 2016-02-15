@@ -151,7 +151,8 @@ package jing.game.net.handler
 	
 			var vecComplex:Array= pb.actComplexSeq;
 			var cbs:Array= new CombinVO[vecComplex.length];
-			for(var index:int= 0; index < vecComplex.length; ++index)
+			var index:int ;
+			for(index = 0; index < vecComplex.length; ++index)
 			{
 				var tile:sccomplex_tile= vecComplex[index] as sccomplex_tile;
 				cbs[index] = new CombinVO(tile.type, tile.id);
@@ -165,30 +166,31 @@ package jing.game.net.handler
 			// Vector vecHua = pb.actHandSeq.getHua();
 	
 			var inHandCards:Array= [] ;
-			var cardIndex:int= 0;
-			for(var index:int= 0; index < vecWan.length; ++index)
+			var cardIndex:int= 0 ;
+			var card_value:int ;
+			for(index = 0; index < vecWan.length; ++index)
 			{
-				var card_value:int= int(vecWan[index]);
+				card_value = int(vecWan[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecTong.length; ++index)
+			for(index = 0; index < vecTong.length; ++index)
 			{
-				var card_value:int= int(vecTong[index]);
+				card_value = int(vecTong[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecTiao.length; ++index)
+			for(index = 0; index < vecTiao.length; ++index)
 			{
-				var card_value:int= int(vecTiao[index]);
+				card_value = int(vecTiao[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecLack.length; ++index)
+			for(index = 0; index < vecLack.length; ++index)
 			{
-				var card_value:int= int(vecLack[index]);
+				card_value = int(vecLack[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecZi.length; ++index)
+			for(index = 0; index < vecZi.length; ++index)
 			{
-				var card_value:int= int(vecZi[index]);
+				card_value = int(vecZi[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
 	
@@ -207,7 +209,7 @@ package jing.game.net.handler
 	
 			var onTableCards:Array= [];
 	
-			for(var index:int= 0; index < pb.actChuedSeq.length; index++)
+			for(index = 0; index < pb.actChuedSeq.length; index++)
 			{
 				var card:int= int(pb.actChuedSeq[index]);
 				onTableCards.push( card );

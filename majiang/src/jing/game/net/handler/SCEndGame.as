@@ -119,22 +119,23 @@ package jing.game.net.handler
 		private function getCards(asi:all_seq_info):Array
 		{
 			var cards:CardVector= new CardVector();
+			var card:int ;
 			for(var i:int= 0; i < asi.complexSeq.length; i++)
 			{
 				var st:sccomplex_tile= asi.complexSeq[i] as sccomplex_tile;
 				if(st.type == CombinType.AN_GANG || st.type == CombinType.GANG)
 				{
-					var card:int= st.id;
+					card = st.id;
 					cards.add_2([card, card, card, card]);
 				}
 				else if(st.type == CombinType.PENG)
 				{
-					var card:int= st.id;
+					card = st.id;
 					cards.add_2([card, card, card]);
 				}
 				else if(st.type == CombinType.CHI_LEFT || st.type == CombinType.CHI_MIDDLE || st.type == CombinType.CHI_RIGHT)
 				{
-					var card:int= st.id;
+					card = st.id;
 					cards.add_2([card, card + 1, card + 2]);
 				}
 			}
@@ -143,25 +144,25 @@ package jing.game.net.handler
 			var vecTong:Array= asi.handSeq.tong;
 			var vecTiao:Array= asi.handSeq.tiao;
 			var vecZi:Array= asi.handSeq.zi;
-	
-			for(var index:int= 0; index < vecWan.length; ++index)
+			var index:int ;
+			for(index = 0; index < vecWan.length; ++index)
 			{
-				var card:int= int(vecWan[index]);
+				card = int(vecWan[index]);
 				cards.add(card);
 			}
-			for(var index:int= 0; index < vecTong.length; ++index)
+			for(index = 0; index < vecTong.length; ++index)
 			{
-				var card:int= int(vecTong[index]);
+				card = int(vecTong[index]);
 				cards.add(card);
 			}
-			for(var index:int= 0; index < vecTiao.length; ++index)
+			for(index = 0; index < vecTiao.length; ++index)
 			{
-				var card:int= int(vecTiao[index]);
+				card = int(vecTiao[index]);
 				cards.add(card);
 			}
-			for(var index:int= 0; index < vecZi.length; ++index)
+			for(index = 0; index < vecZi.length; ++index)
 			{
-				var card:int= int(vecZi[index]);
+				card = int(vecZi[index]);
 				cards.add(card);
 			}
 	
@@ -186,29 +187,30 @@ package jing.game.net.handler
 	
 			var inHandCards:Array= [] ;
 			var cardIndex:int= 0;
-			for(var index:int= 0; index < vecWan.length; ++index)
+			var card_value:int ,index:int = 0 ;
+			for(index = 0; index < vecWan.length; ++index)
 			{
-				var card_value:int= int(vecWan[index]);
+				card_value= int(vecWan[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecTong.length; ++index)
+			for(index = 0; index < vecTong.length; ++index)
 			{
-				var card_value:int= int(vecTong[index]);
+				card_value = int(vecTong[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecTiao.length; ++index)
+			for(index = 0; index < vecTiao.length; ++index)
 			{
-				var card_value:int= int(vecTiao[index]);
+				card_value = int(vecTiao[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecLack.length; ++index)
+			for(index = 0; index < vecLack.length; ++index)
 			{
-				var card_value:int= int(vecLack[index]);
+				card_value = int(vecLack[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
-			for(var index:int= 0; index < vecZi.length; ++index)
+			for(index = 0; index < vecZi.length; ++index)
 			{
-				var card_value:int= int(vecZi[index]);
+				card_value = int(vecZi[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
 	

@@ -39,6 +39,7 @@ package jing.game.net.handler
 					gs.info.setHu(player.dir(), true);
 				}
 				var inHandCards:Array= null;
+				var index:int = 0 ;
 				if(info.seatIndex == gs.pDown.seat())
 				{
 					var vecWan:Array= info.handSeq.wan;
@@ -49,29 +50,30 @@ package jing.game.net.handler
 	
 					inHandCards = [] ;
 					var cardIndex:int= 0;
-					for(var index:int= 0; index < vecWan.length; ++index)
+					var card_value:int ;
+					for(index = 0; index < vecWan.length; ++index)
 					{
-						var card_value:int= int(vecWan[index]);
+						card_value = int(vecWan[index]);
 						inHandCards[cardIndex++] = card_value;
 					}
-					for(var index:int= 0; index < vecTong.length; ++index)
+					for(index = 0; index < vecTong.length; ++index)
 					{
-						var card_value:int= int(vecTong[index]);
+						card_value = int(vecTong[index]);
 						inHandCards[cardIndex++] = card_value;
 					}
-					for(var index:int= 0; index < vecTiao.length; ++index)
+					for(index = 0; index < vecTiao.length; ++index)
 					{
-						var card_value:int= int(vecTiao[index]);
+						card_value = int(vecTiao[index]);
 						inHandCards[cardIndex++] = card_value;
 					}
-					for(var index:int= 0; index < vecLack.length; ++index)
+					for(index = 0; index < vecLack.length; ++index)
 					{
-						var card_value:int= int(vecLack[index]);
+						card_value = int(vecLack[index]);
 						inHandCards[cardIndex++] = card_value;
 					}
-					for(var index:int= 0; index < vecZi.length; ++index)
+					for(index = 0; index < vecZi.length; ++index)
 					{
-						var card_value:int= int(vecZi[index]);
+						card_value = int(vecZi[index]);
 						inHandCards[cardIndex++] = card_value;
 					}
 				}
@@ -86,21 +88,21 @@ package jing.game.net.handler
 				}
 	
 				var vecHua:Array= info.handSeq.hua;
-				for(var index:int= 0; index < vecHua.length; ++index)
+				for(index = 0; index < vecHua.length; ++index)
 				{
 					gs.info.addHua(player.dir(), int(vecHua[index]));
 				}
 	
 				var vecComplex:Array= info.complexSeq;
 				var cbs:Array= new CombinVO[vecComplex.length];
-				for(var index:int= 0; index < vecComplex.length; index++)
+				for(index = 0; index < vecComplex.length; index++)
 				{
 					var tile:sccomplex_tile= sccomplex_tile(vecComplex[index]);
 					cbs[index] = new CombinVO(tile.type, tile.id);
 				}
 	
 				var onTableCards:Array= [] ;
-				for(var index:int= 0; index < info.chuedSeq.length; index++)
+				for(index = 0; index < info.chuedSeq.length; index++)
 				{
 					var card:int= int(info.chuedSeq[index]);
 					onTableCards[index] = card;

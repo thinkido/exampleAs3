@@ -179,7 +179,7 @@ package jing.game.net
 			}
 			else if(name == "sc_game_hide_actions")
 			{
-				var sgha = new sc_game_hide_actions() ;
+				var sgha:sc_game_hide_actions = new sc_game_hide_actions() ;
 				sgha.mergeFrom(content) ; 
 				new SCGameHideActions(sgha );
 			}

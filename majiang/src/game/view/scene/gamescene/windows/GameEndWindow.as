@@ -130,15 +130,15 @@ package game.view.scene.gamescene.windows
 				var x:int = 160;
 				var y:int = 175;
 				var gap:int = 5;
+				var vo:GameEndTypeVO ;
 				if(_vo.state == 2)
 				{
-					var vo:GameEndTypeVO = _vo.huTypeVec.elementAt(0) as GameEndTypeVO;
+					vo = _vo.huTypeVec.elementAt(0) as GameEndTypeVO;
 					y = y + createBitmapFont("TO:" + vo.id.toUpperCase(), x, y) + gap;
 				}
-				
 				for(var i:int = 0; i < _vo.huTypeVec.size(); i++)
 				{
-					var vo:GameEndTypeVO = _vo.huTypeVec.elementAt(i) as GameEndTypeVO;
+					vo = _vo.huTypeVec.elementAt(i) as GameEndTypeVO;
 					
 					var t:Texture= _huTypes.getTexture("" + vo.type);
 					

@@ -132,8 +132,9 @@ package game.view.scene
 			super.onDispose();
 		}
 		
-		override public function onConfirm( target:UIObject):void
+		override public function onConfirm( temp:UIObject ):void
 		{
+			var target:Button = temp as Button ;
 			if(target == btnUser)
 			{
 				WindowManager.getInstance().openWindow(WindowType.WINDOW_USER);
@@ -196,16 +197,16 @@ package game.view.scene
 			
 			bfName = getChildByName("bf_name") as UITextBMFont;
 			bfGold = getChildByName("bf_gold") as UITextBMFont; 
-			bfName.setAnchor(ANCHOR_BOTTOM_LEFT);
-			bfGold.setAnchor(ANCHOR_BOTTOM_LEFT);
-			
-			btnUser.setNeighbors(null, btnStageList[0], btnMatch, btnShop);
-			btnShop.setNeighbors(null, btnStageList[0], btnUser, btnRank);
-			btnRank.setNeighbors(null, btnStageList[0], btnShop, btnActivity);
-			btnActivity.setNeighbors(null, btnStageList[0], btnRank, btnRule);
-			btnRule.setNeighbors(null, btnStageList[0], btnActivity, btnMatch);
-			btnMatch.setNeighbors(null, btnStageList[0], btnRule, btnUser);
-			for(var i:int = 0; i < 4; i++)
+//			bfName.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			bfGold.setAnchor(ANCHOR_BOTTOM_LEFT);
+//			
+//			btnUser.setNeighbors(null, btnStageList[0], btnMatch, btnShop);
+//			btnShop.setNeighbors(null, btnStageList[0], btnUser, btnRank);
+//			btnRank.setNeighbors(null, btnStageList[0], btnShop, btnActivity);
+//			btnActivity.setNeighbors(null, btnStageList[0], btnRank, btnRule);
+//			btnRule.setNeighbors(null, btnStageList[0], btnActivity, btnMatch);
+//			btnMatch.setNeighbors(null, btnStageList[0], btnRule, btnUser);
+			for( i = 0; i < 4; i++)
 			{
 				var leftIndex:int = i - 1;
 				if(leftIndex < 0)
@@ -216,7 +217,7 @@ package game.view.scene
 				btnStageList[i].setNeighbors(btnUser, btnQuickStart, btnStageList[leftIndex], btnStageList[rightIndex]);
 			}
 			
-			btnQuickStart.setNeighbors(btnStageList[0], null, null, null);
+//			btnQuickStart.setNeighbors(btnStageList[0], null, null, null);
 			
 			switchFocus(btnStageList[0]);
 		}

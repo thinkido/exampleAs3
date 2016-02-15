@@ -45,7 +45,7 @@ package jing.game.net.handler
 			}
 			for(index = 0; index < vecLack.length; ++index)
 			{
-				var card_value:int= int(vecLack[index]);
+				card_value = int(vecLack[index]);
 				inHandCards[cardIndex++] = card_value;
 			}
 			for(index = 0; index < vecZi.length; ++index)
