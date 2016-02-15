@@ -1,12 +1,8 @@
 package game.view.scene.gamescene.elements
 {
-	import com.as3game.spritesheet.SpriteSheet;
 	import com.thinkido.framework.manager.loader.LoaderManager;
 	import com.thinkido.framework.manager.loader.vo.LoadData;
 	
-	import configs.AnchorType;
-	
-	import flash.events.Event;
 	import flash.geom.Point;
 	import flash.utils.clearInterval;
 	import flash.utils.setInterval;
@@ -23,7 +19,7 @@ package game.view.scene.gamescene.elements
 	
 	import starling.display.DisplayObject;
 	import starling.display.MovieClip;
-	import starling.display.Stage;
+	import starling.events.Event;
 	import starling.text.TextField;
 	
 	import ui.UIContainer;

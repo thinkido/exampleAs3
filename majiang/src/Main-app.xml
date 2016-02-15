@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<application xmlns="http://ns.adobe.com/air/application/3.5">
+<application xmlns="http://ns.adobe.com/air/application/3.1">
 
 <!-- Adobe AIR Application Descriptor File Template.
 
 	Specifies parameters for identifying, installing, and launching AIR applications.
 
-	xmlns - The Adobe AIR namespace: http://ns.adobe.com/air/application/3.5
+	xmlns - The Adobe AIR namespace: http://ns.adobe.com/air/application/3.1
 			The last segment of the namespace specifies the version 
 			of the AIR runtime required for this application to run.
 			
@@ -13,7 +13,7 @@
 			the application. Optional.
 -->
 
-	<!-- A universally unique application identifier. Must be unique across all AIR applications.
+	<!-- A universally unique application identiier. Must be unique across all AIR applications.
 	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
 	<id>majiang</id>
 
@@ -101,7 +101,7 @@
 
         <!-- The render mode for the app (either auto, cpu, gpu, or direct). Optional. Default auto -->
 
-        <!-- <renderMode></renderMode> -->
+        <renderMode>direct</renderMode>
 
         <!-- Whether the default direct mode rendering context allocates storage for depth and stencil buffers.  Optional.  Default false. -->
         <!-- <depthAndStencil></depthAndStencil> -->

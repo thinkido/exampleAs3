@@ -23,7 +23,7 @@ package jing.configs
 	
 		public function CardLayout()
 		{
-			init("card_layout.json");
+			init("config/card_layout.json");
 		}
 	
 		/**

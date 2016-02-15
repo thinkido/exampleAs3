@@ -1,8 +1,6 @@
 package
 {
 	
-	import br.com.stimuli.loading.BulkLoader;
-	
 	import com.mike.utils.ResolutionUtil;
 	import com.thinkido.framework.manager.keyBoard.KeyBoardManager;
 	import com.thinkido.framework.manager.loader.LoaderManager;
@@ -11,8 +9,6 @@ package
 	import configs.GameInstance;
 	
 	import events.GameEvent;
-	
-	import flash.events.Event;
 	
 	import framework.resources.Res;
 	
@@ -32,6 +28,7 @@ package
 	
 	import starling.display.Image;
 	import starling.display.Sprite;
+	import starling.events.Event;
 	import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
 	

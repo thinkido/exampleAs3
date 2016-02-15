@@ -114,7 +114,7 @@ package managers
 				
 				_resTable[item.name()] = item;
 			}
-			trace("Total local resource:" + _resTable.size());
+//			trace("Total local resource:" + _resTable.size());
 		}
 		
 //		返回json 对应的png 地址
