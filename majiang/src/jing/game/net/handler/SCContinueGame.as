@@ -112,7 +112,7 @@ package jing.game.net.handler
 	
 				player.needRefresh();
 	
-				GameScene.cur.info.setName(player.dir(), player.name());
+				GameScene.cur.info.setName(player.dir(), player.name );
 			}
 	
 			GameScene.cur.model.updateRoomInfo(pb.roomid, pb.roomBase, pb.roomLevel);

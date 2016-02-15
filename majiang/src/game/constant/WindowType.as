@@ -48,7 +48,7 @@ package game.constant
 		
 		private var _isShowDarkBg:Boolean;
 		
-		public function WindowType( cls:Class, confName:String, isShowDarkBg:String):void
+		public function WindowType( cls:Class, confName:String, isShowDarkBg:Boolean):void
 		{
 			_cls = cls;
 			_confName = confName;

@@ -56,7 +56,7 @@ package jing.game.model
 	
 		public function init():void{
 			// 连接服务器
-			Global.socketGame.connect();
+			Global.socketGame.connect( Global.cfg.gateAddressVO().ip , Global.cfg.gateAddressVO().port );
 			_sl = new GamePlaySL();
 			_sl.init();
 			GameRequest.ins().enterGame();

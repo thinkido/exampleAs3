@@ -24,7 +24,7 @@ package jing.game.net.handler
 				var player:Player= GameScene.cur.getPlayerBySeat(seat_info.seatIndex);
 				player.updateInfo(seat_info.seatIndex, player_info.name, player_info.gold.toNumber(), player_info.portrait, player_info.sex);
 	
-				GameScene.cur.info.setName(player.dir(), player.name());
+				GameScene.cur.info.setName(player.dir(), player.name );
 				GameScene.cur.info.setReady(player.dir(), player.isReady());
 			}
 	

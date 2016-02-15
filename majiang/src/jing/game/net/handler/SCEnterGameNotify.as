@@ -22,7 +22,7 @@ package jing.game.net.handler
 			player.updateInfo(seat_info.seatIndex, player_info.name, player_info.gold.toNumber(), player_info.portrait, player_info.sex);
 	
 			
-			GameScene.cur.info.setName(player.dir(), player.name());
+			GameScene.cur.info.setName(player.dir(), player.name );
 			GameScene.cur.info.setReady(player.dir(), false);
 			
 		}

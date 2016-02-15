@@ -58,7 +58,7 @@ package jing.game.net
 	 * 
 	 * @author Jing
 	 */
-	public class GamePlaySL implements YiuNetworkListener
+	public class GamePlaySL
 	{
 		private var proList:Array = ["sc_hall_debug",
 			"sc_game_debug",
@@ -121,11 +121,15 @@ package jing.game.net
 			}
 			else if(name == "sc_enter_game")
 			{
-				new SCEnterGame(new sc_enter_game().mergeFrom(content));
+				var sng:sc_enter_game = new sc_enter_game() ;
+				sng.mergeFrom(content) ;
+				new SCEnterGame( sng );
 			}
 			else if(name == "sc_enter_game_notify")
 			{
-				new SCEnterGameNotify(new sc_enter_game_notify().mergeFrom(content));
+				var sngn:sc_enter_game_notify = new sc_enter_game_notify() ;
+				sngn.mergeFrom(content) ;
+				new SCEnterGameNotify( sngn );
 			}
 			else if(name == "sc_ready_game")
 			{
@@ -133,51 +137,75 @@ package jing.game.net
 			}
 			else if(name == "sc_ready_game_notify")
 			{
-				new SCReadyGameNotify(new sc_ready_game_notify().mergeFrom(content));
+				var srgn:sc_ready_game_notify = new sc_ready_game_notify() ; 
+				srgn.mergeFrom(content)
+				new SCReadyGameNotify(srgn);
 			}
 			else if(name == "sc_start_game")
 			{
-				new SCStartGame(new sc_start_game().mergeFrom(content));
+				var ssg:sc_start_game = new sc_start_game() ;
+				ssg.mergeFrom(content) ;
+				new SCStartGame( ssg );
 			}
 			else if(name == "sc_sure_lack")
 			{
-				new SCSureLack(new sc_sure_lack().mergeFrom(content));
+				var ssl:sc_sure_lack = new sc_sure_lack() ;
+				ssl.mergeFrom(content) ;
+				new SCSureLack( ssl ) ;
 			}
 			else if(name == "sc_lack_infos")
 			{
-				new SCLackInfos(new sc_lack_infos().mergeFrom(content));
+				var sli:sc_lack_infos = new sc_lack_infos() ;
+				sli.mergeFrom(content) ;
+				new SCLackInfos( sli );
 			}
 			else if(name == "sc_game_action")
 			{
-				new SCGameAction(new sc_game_action().mergeFrom(content));
+				var sga:sc_game_action = new sc_game_action() ;
+				sga.mergeFrom(content) ;
+				new SCGameAction( sga );
 			}
 			else if(name == "sc_game_action_notify")
 			{
-				new SCGameActionNotify(new sc_game_action_notify().mergeFrom(content));
+				var sgan:sc_game_action_notify = new sc_game_action_notify() ;
+				sgan.mergeFrom(content)
+				new SCGameActionNotify( sgan);
 			}
 			else if(name == "sc_game_action_failed")
 			{
-				new SCGameActionFailed(new sc_game_action_failed().mergeFrom(content));
+				var sgaf:sc_game_action_failed =  new sc_game_action_failed() ;
+				sgaf.mergeFrom(content) ;
+				new SCGameActionFailed( sgaf );
 			}
 			else if(name == "sc_game_hide_actions")
 			{
-				new SCGameHideActions(new sc_game_hide_actions().mergeFrom(content));
+				var sgha = new sc_game_hide_actions() ;
+				sgha.mergeFrom(content) ; 
+				new SCGameHideActions(sgha );
 			}
 			else if(name == "sc_game_turn")
 			{
-				new SCGameTurn(new sc_game_turn().mergeFrom(content));
+				var sgt:sc_game_turn = new sc_game_turn() ;
+				sgt.mergeFrom(content) ;
+				new SCGameTurn( sgt );
 			}
 			else if(name == "sc_game_turn_notify")
 			{
-				new SCGameTurnNotify(new sc_game_turn_notify().mergeFrom(content));
+				var sgtn:sc_game_turn_notify = new sc_game_turn_notify() ;
+				sgtn.mergeFrom(content) ;
+				new SCGameTurnNotify( sgtn );
 			}
 			else if(name == "sc_leave_game")
 			{
-				new SCLeaveGame(new sc_leave_game().mergeFrom(content));
+				var slg:sc_leave_game = new sc_leave_game() ;
+				slg.mergeFrom(content) ;
+				new SCLeaveGame( slg ) ;
 			}
 			else if(name == "sc_leave_game_notify")
 			{
-				new SCLeaveGameNotify(new sc_leave_game_notify().mergeFrom(content));
+				var slgn:sc_leave_game_notify = new sc_leave_game_notify() ;
+				slgn.mergeFrom(content) ;
+				new SCLeaveGameNotify( slgn );
 			}
 			else if(name == "sc_leave_game_failed")
 			{
@@ -189,15 +217,21 @@ package jing.game.net
 			}
 			else if(name == "sc_continue_game")
 			{
-				new SCContinueGame(new sc_continue_game().mergeFrom(content));
+				var scg:sc_continue_game = new sc_continue_game() ;
+				scg.mergeFrom(content) ;
+				new SCContinueGame( scg );
 			}
 			else if(name == "sc_game_show_actions")
 			{
-				new SCShowActions(new sc_game_show_actions().mergeFrom(content));
+				var sgsa:sc_game_show_actions = new sc_game_show_actions() ;
+				sgsa.mergeFrom(content) ;
+				new SCShowActions( sgsa );
 			}
 			else if(name == "sc_end_game")
 			{
-				new SCEndGame(new sc_end_game().mergeFrom(content));
+				var seg:sc_end_game = new sc_end_game() ;
+				seg.mergeFrom(content) ;
+				new SCEndGame( seg );
 			}
 			else if(name == "cs_game_auto")
 			{
@@ -209,11 +243,15 @@ package jing.game.net
 			}
 			else if(name == "sc_gold_reset")
 			{
-				new SCGoldReset(new sc_gold_reset().mergeFrom(content));
+				var sgr:sc_gold_reset = new sc_gold_reset() ;
+				sgr.mergeFrom(content) ;
+				new SCGoldReset( sgr );
 			}
 			else if(name == "sc_enter_hall")
 			{
-				new SCEnterHall(new sc_enter_hall().mergeFrom(content));
+				var seh:sc_enter_hall = new sc_enter_hall() ;
+				seh.mergeFrom(content) ;
+				new SCEnterHall( seh );
 			}
 			
 		}

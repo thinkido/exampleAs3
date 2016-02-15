@@ -2,15 +2,8 @@ package game.control
 {
 	import com.greensock.TweenMax;
 	
-	import flash.utils.setTimeout;
-	
 	import game.constant.SceneType;
 	import game.model.Global;
-	import game.model.action.Action;
-	import game.model.action.ActionImmediately;
-	import game.model.action.ActionMoveBy;
-	import game.model.action.ActionSequence;
-	import game.util.CommonUtil;
 	import game.view.inline.LoadingView;
 	
 	import managers.LayerManager;

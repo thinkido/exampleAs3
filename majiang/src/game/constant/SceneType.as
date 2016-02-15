@@ -24,7 +24,7 @@ package game.constant
 			var newInstance:UIScene;
 			try
 			{
-				newInstance = _cls.newInstance() as UIScene;
+				newInstance = Object(_cls).newInstance() as UIScene;
 				newInstance.buildUI(_confName);
 			}
 			catch(e:*)

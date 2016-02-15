@@ -119,11 +119,11 @@ package game.control
 		{
 			if (Global.socketHall != null && Global.socketHall.connected)
 			{
-				Global.socketHall.send("heartbeat", _heartbeatBytes);
+				NetManager.sendProtobuf( Global.socketGame , "heartbeat", _heartbeatBytes ) ;
 			}
-			if (Global.socketHall != null && Global.socketHall.connected)
+			if (Global.socketGame != null && Global.socketHall.connected)
 			{				
-				Global.socketHall.send("heartbeat", _heartbeatBytes);
+				NetManager.sendProtobuf( Global.socketGame , "heartbeat", _heartbeatBytes ) ;
 			}
 			return;
 		}
@@ -163,7 +163,7 @@ package game.control
 		
 		public function connect():void
 		{
-			Global.socketHall.connect();
+			Global.socketHall.connect( Global.cfg.hallAddressVO().ip , Global.cfg.hallAddressVO().port );
 			Global.socketHall.addEventListener( TSocketEvent.LOGIN_SUCCESS , connHander );
 			Global.socketHall.addEventListener( TSocketEvent.LOGIN_FAILURE , connHander );
 			Global.socketHall.addEventListener( TSocketEvent.CLOSE , connHander );
@@ -211,7 +211,7 @@ package game.control
 			var fetched:Boolean = json["logingold_fetched"] ;
 			Global.giftVO = new GiftVO(day, gold, fetched);
 			trace("登陆成功");
-			YiuNetworkHandlerMgr.subscribe(this);
+//			YiuNetworkHandlerMgr.subscribe(this);
 			reqEnterHall();
 		}
 			
@@ -264,7 +264,8 @@ package game.control
 			var noti:Notification ;
 			
 			var pro:protocol = new protocol();
-			var pbObject:protocol = pro.mergeFrom( np );
+			pro.mergeFrom( np );
+			var pbObject:protocol = pro ;
 			var node:ProtocolNode = ProtocolList.getNode(pbObject.id );
 			
 			if (node == null) return;
@@ -332,7 +333,8 @@ package game.control
 		
 		public function reqEnterHall():void
 		{
-			Global.socketHall.send(JSON.stringify(["enter_hall",_id,_type,0]) );
+//			Global.socketHall.send(JSON.stringify(["enter_hall",_id,_type,0]) );
+			NetManager.sendStr( Global.socketHall , JSON.stringify(["enter_hall",_id,_type,0]) );
 		}
 		
 		public function onNetworkEvent(e:Notification):void
@@ -342,7 +344,8 @@ package game.control
 			
 			if(name == "sc_enter_hall")
 			{
-				YiuNetworkHandlerMgr.unSubscribe(this);
+//				YiuNetworkHandlerMgr.unSubscribe(this);
+				disposePro();
 				var msg:sc_enter_hall = new sc_enter_hall() ;
 				msg.mergeFrom(content) ;
 				Global.userDataVO = new UserDataVO(msg);
@@ -352,7 +355,8 @@ package game.control
 			}
 			else if(name == "sc_force_continue_game")
 			{
-				YiuNetworkHandlerMgr.unSubscribe(this);
+//				YiuNetworkHandlerMgr.unSubscribe(this);
+				disposePro();
 				var msg1:sc_force_continue_game = new sc_force_continue_game() ;
 				msg1.mergeFrom(content) ;
 				SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg1.host, msg1.port), true));
