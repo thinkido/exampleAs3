@@ -98,6 +98,7 @@ package managers
 		public static function loadInitConfig(path:String):void{
 			var jsonObj:Object= FileIO.getJson(path);
 			var resList:Array= jsonObj["resources"];
+			var resSize:int = 0 ;
 			for(var i:int= 0; i < resList.length; i++)
 			{
 				var resItem:Object= resList[i];
@@ -113,7 +114,9 @@ package managers
 				}
 				
 				_resTable[item.name()] = item;
+				resSize ++ ;
 			}
+			trace("Total local resource:" + resSize );
 //			trace("Total local resource:" + _resTable.size());
 		}
 		
