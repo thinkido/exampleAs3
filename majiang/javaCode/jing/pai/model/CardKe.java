@@ -2,24 +2,24 @@
 package jing.pai.model;
 
 /**
- * ¿Ì
+ * åˆ»
  * 
  * @author Jing
  */
 public class CardKe
 {
 	/**
-	 * ¿ÌµÄÀàĞÍ
+	 * åˆ»çš„ç±»å‹
 	 */
 	public int type = 0;
 	
 	/**
-	 * ¿ÌµÄÀàĞÍ2
+	 * åˆ»çš„ç±»å‹2
 	 */
 	public int type2 = 0;
 
 	/**
-	 * Èç¹ûÊÇÁ¬×Ö£¬ÔòcardÎªÁ¬×ÖµÚÒ»¸ö£¬ºóÃæÎªcard + 1, card + 2
+	 * å¦‚æœæ˜¯è¿å­—ï¼Œåˆ™cardä¸ºè¿å­—ç¬¬ä¸€ä¸ªï¼Œåé¢ä¸ºcard + 1, card + 2
 	 */
 	public int id = 0;
 
@@ -31,6 +31,9 @@ public class CardKe
 	}
 	
 	public String toStrong() {
+		return "CardKe: type = "+type+", type2 = "+type2+", id = "+id+";";
+	}
+	public String toDesc() {
 		return "CardKe: type = "+type+", type2 = "+type2+", id = "+id+";";
 	}
 }

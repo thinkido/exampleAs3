@@ -11,22 +11,26 @@ public class JiaoVO
 	}
 
 	/**
-	 * ½ĞµÄÅÆ
+	 * å«çš„ç‰Œ
 	 */
 	public int jiaoCard = -1;
 
 	/**
-	 * ºúµÄÅÆĞÍ
+	 * èƒ¡çš„ç‰Œå‹
 	 */
 	public HuVO hu = null;
 	
 	public String toString()
 	{
+		String out = "JiaoCard [" + this.jiaoCard + "] ";
 		if(hu == null)
 		{
-			return "none hu";
+			out += "none hu";
 		}
-		String out = "JiaoCard [" + this.jiaoCard + "] " + "Hu " + hu.toString();		
+		else
+		{
+			out += "Hu " + hu.toString();
+		}	
 		return out;
 	}
 }

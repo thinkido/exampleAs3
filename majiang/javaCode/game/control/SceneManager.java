@@ -29,7 +29,7 @@ public class SceneManager
 	private Object _args;
 
 	private Bitmap _curSceneCache;
-
+	
 	private SceneManager()
 	{
 	}
@@ -103,13 +103,13 @@ public class SceneManager
 		}
 		else
 		{
-			LogManager.getInstance().log("ÕıÔÚ¼ÓÔØÆäËû³¡¾°£¬ÇëÉÔºóÖØÊÔ", LogManager.LEVEL_WARNING);
+			LogManager.getInstance().log("æ­£åœ¨åŠ è½½å…¶ä»–åœºæ™¯ï¼Œè¯·ç¨åé‡è¯•", LogManager.LEVEL_WARNING);
 		}
 	}
 
 	protected void startSwitch()
 	{
-		LoadingManager.getInstance().showLoading(true, "³¡¾°¼ÓÔØÖĞ£¬ÇëÄÍĞÄµÈ´ı", new ICallback()
+		LoadingManager.getInstance().showLoading(true, "åœºæ™¯åŠ è½½ä¸­ï¼Œè¯·è€å¿ƒç­‰å¾…", new ICallback()
 		{
 
 			public void run()
@@ -126,7 +126,7 @@ public class SceneManager
 		_curView.updateData(_args);
 		_args = null;
 		Global.sceneLayer.addChild(_curView);
-		LoadingManager.getInstance().showLoading(true, "³¡¾°¼ÓÔØÍê±Ï£¬¼´½«³ÊÏÖ", new ICallback()
+		LoadingManager.getInstance().showLoading(true, "åœºæ™¯åŠ è½½å®Œæ¯•ï¼Œå³å°†å‘ˆç°", new ICallback()
 		{
 
 			public void run()

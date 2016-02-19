@@ -18,13 +18,38 @@ import ui.UIObject;
 import ui.UIWindow;
 
 /**
- * 游戏动作
+ * 娓告垙鍔ㄤ綔
  * 
  * @author Jing
  */
 public class PlayerActionWindow extends UIWindow
 {
-
+	static private String[] RES_NAMES = {
+		"action_guo_normal_png", "action_guo_selected_png", "action_guo_normal_png"
+		,"action_gang_normal_png", "action_gang_selected_png", "action_gang_normal_png"
+		,"action_hu_normal_png", "action_hu_selected_png", "action_hu_normal_png"
+		,"action_peng_normal_png", "action_peng_selected_png", "action_peng_normal_png"
+		,"action_chi_normal_png", "action_chi_selected_png", "action_chi_normal_png"};
+	
+	static public void prepareAllRes()
+	{
+		for(int i = 0; i < RES_NAMES.length; i++)
+		{
+			String RES_NAME = RES_NAMES[i];
+			Res.actively.getTexture(RES_NAME);
+		}		
+	}
+	
+	static public void releaseAllRes()
+	{
+		for(int i = 0; i < RES_NAMES.length; i++)
+		{
+			String RES_NAME = RES_NAMES[i];
+			Res.actively.release(RES_NAME);
+		}
+	}
+	
+	
 	static private PlayerActionWindow _ins = null;
 
 	static public void show(Vector actions)
@@ -186,8 +211,12 @@ public class PlayerActionWindow extends UIWindow
 		}
 	}
 
+
+	
 	private UIButton createBtnGuo()
 	{
+		
+		
 		return new UIButton("action_guo_normal_png", "action_guo_selected_png", "action_guo_normal_png");
 	}
 
@@ -223,14 +252,14 @@ public class PlayerActionWindow extends UIWindow
 
 	public void onLeave()
 	{
-		Res.actively.release("action_guo_normal_png");
+		//Res.actively.release("action_guo_normal_png");
 	}
 
 	public void onConfirm(UIObject target)
 	{
 		scgame_show_actions action = (scgame_show_actions)_btn2Act.get(target);
 		int id = action.getId();
-		System.out.println("玩家选择了操作：" + id);
+		System.out.println("鐜╁閫夋嫨浜嗘搷浣滐細" + id);
 		int typeOrId = 0;
 		if(id == PlayerAction.MING_GANG || id == PlayerAction.AN_GANG)
 		{

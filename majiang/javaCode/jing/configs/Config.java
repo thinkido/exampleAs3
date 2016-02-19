@@ -9,7 +9,7 @@ import org.json.me.JSONException;
 import org.json.me.JSONObject;
 
 /**
- * 配置工具
+ * 閰嶇疆宸ュ叿
  * 
  * @author Jing
  */
@@ -19,9 +19,24 @@ public class Config
 	private IpAddressVO _gateAddressVO = null;
 
 	private IpAddressVO _hallAddressVO = null;
+	
+	private int _leftNameOff = 0;
+	
+	public int leftNameOff()
+	{
+		return _leftNameOff;
+	}
+	
+	private int _rightNameOff = 0;
+	
+	public int rightNameOff()
+	{
+		return _rightNameOff;
+	}
+	
 
 	/**
-	 * 网关地址
+	 * 缃戝叧鍦板潃
 	 * 
 	 * @return
 	 */
@@ -31,7 +46,7 @@ public class Config
 	}
 
 	/**
-	 * 大厅地址
+	 * 澶у巺鍦板潃
 	 * 
 	 * @return
 	 */
@@ -53,11 +68,13 @@ public class Config
 		{
 			_gateAddressVO = new IpAddressVO(obj.getString("gate_address"), obj.getInt("gate_port"));
 			_hallAddressVO = new IpAddressVO(obj.getString("hall_address"), obj.getInt("hall_port"));
+			_leftNameOff = obj.getInt("left_name_off");
+			_rightNameOff = obj.getInt("right_name_off");
 			LogManager.getInstance().log("config loaded" + obj.toString());
 		}
 		catch(JSONException e)
 		{
-			LogManager.getInstance().log("加载配置文件出错", LogManager.LEVEL_ERROR);
+			LogManager.getInstance().log("鍔犺浇閰嶇疆鏂囦欢鍑洪敊", LogManager.LEVEL_ERROR);
 		}
 
 		Res.actively.release(file);

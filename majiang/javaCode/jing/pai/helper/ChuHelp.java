@@ -11,17 +11,18 @@ import jing.pai.vo.JiaoVO;
 import java.util.Vector;
 
 /**
- * ³öÅÆ°ïÖú
+ * å‡ºç‰Œå¸®åŠ©
  * 
  * @author Jing
  */
 public class ChuHelp
 {
+
 	public ChuTip check(int[] cards, CardKe[] kes)
 	{
 		ChuTip tip = new ChuTip();
-		
-		// ·Ö±ğÈ¥µôÒ»ÕÅÅÆ£¬È»ºó¼ÆËãÊ£ÏÂµÄÅÆÊÇ·ñ×é³É½Ğ
+
+		// åˆ†åˆ«å»æ‰ä¸€å¼ ç‰Œï¼Œç„¶åè®¡ç®—å‰©ä¸‹çš„ç‰Œæ˜¯å¦ç»„æˆå«
 		for(int playCardIndex = 0; playCardIndex < cards.length; playCardIndex++)
 		{
 			int playCard = cards[playCardIndex];
@@ -29,7 +30,7 @@ public class ChuHelp
 			{
 				continue;
 			}
-			
+
 			CardVector tempCards = new CardVector();
 			for(int i = 0; i < cards.length; i++)
 			{
@@ -39,27 +40,27 @@ public class ChuHelp
 				}
 			}
 
-			// ½«Õâ¸öÁÙÊ±ÅÆĞÍÓÃÀ´¼ì²éÊÇ·ñÓĞ½Ğ
+			// å°†è¿™ä¸ªä¸´æ—¶ç‰Œå‹ç”¨æ¥æ£€æŸ¥æ˜¯å¦æœ‰å«
 			int[] jiaoCards = new JiaoHelp().getJiao(tempCards);
 			if(jiaoCards != null && jiaoCards.length > 0)
 			{
-				
+
 				ChuVO chuVO = new ChuVO(playCard, jiaoCards.length);
 				tip.put(playCard, chuVO);
-				// ÓĞ½Ğ,Ëã³ö¸÷ÖÖ½ĞµÄÇé¿öÏÂ¶ÔÓ¦µÄºúµÄÅÆĞÍ
+				// æœ‰å«,ç®—å‡ºå„ç§å«çš„æƒ…å†µä¸‹å¯¹åº”çš„èƒ¡çš„ç‰Œå‹
 				for(int i = 0; i < jiaoCards.length; i++)
 				{
 					int jiaoCard = jiaoCards[i];
 					CardVector temp = tempCards.clone();
-					//temp.add(jiaoCard);
-					//HuVO hu = new HuVO(); 
+					// temp.add(jiaoCard);
+					//HuVO hu = null;
 
 					HuVO hu = null;
 					//hu = new HuHelp().getHu(temp, kes, jiaoCard);
 
 					chuVO.jiaos[i] = new JiaoVO(jiaoCard, hu);
 				}
-				
+
 				sortJiaos(chuVO);
 			}
 			else
@@ -72,7 +73,7 @@ public class ChuHelp
 	}
 
 	/**
-	 * ½«³öÅÆºó½ĞµÄÅÆ½øĞĞÒ»´ÎÅÅĞò
+	 * å°†å‡ºç‰Œåå«çš„ç‰Œè¿›è¡Œä¸€æ¬¡æ’åº
 	 * 
 	 * @param vo
 	 */
@@ -97,7 +98,7 @@ public class ChuHelp
 			}
 			else
 			{
-				vec.insertElementAt(temp, j);				
+				vec.insertElementAt(temp, j);
 			}
 		}
 

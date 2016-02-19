@@ -29,17 +29,17 @@ public class Player extends Sprite
 {
 
 	/**
-	 * ĞèÒªÖØĞÂ²¼¾Ö
+	 * éœ€è¦é‡æ–°å¸ƒå±€
 	 */
 	private boolean _needRelayout = true;
 
 	/**
-	 * Íæ¼ÒÏà¹ØµÄÂé½«µÄ±í
+	 * ç©å®¶ç›¸å…³çš„éº»å°†çš„è¡¨
 	 */
 	Hashtable _mjT;
 
 	/**
-	 * ×ùÎ»ºÅ
+	 * åº§ä½å·
 	 */
 	private int _seat = -1;
 
@@ -112,7 +112,7 @@ public class Player extends Sprite
 	private boolean _inTurn = false;
 
 	/**
-	 * ÊÇ·ñÔÚ×Ô¼º»ØºÏÖĞ
+	 * æ˜¯å¦åœ¨è‡ªå·±å›åˆä¸­
 	 */
 	public boolean inTurn()
 	{
@@ -120,7 +120,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * Ñ¡ÖĞµÄÊÖÅÆË÷Òı£¬Èç¹ûË÷ÒıµÈÓÚÊÖÅÆ³¤¶È£¬Ôò±íÊ¾Ñ¡ÖĞµÄÃşµ½µÄÅÆ
+	 * é€‰ä¸­çš„æ‰‹ç‰Œç´¢å¼•ï¼Œå¦‚æœç´¢å¼•ç­‰äºæ‰‹ç‰Œé•¿åº¦ï¼Œåˆ™è¡¨ç¤ºé€‰ä¸­çš„æ‘¸åˆ°çš„ç‰Œ
 	 */
 	private int _selected = -1;
 
@@ -144,7 +144,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÊÇ·ñÍĞ¹ÜÖĞ
+	 * æ˜¯å¦æ‰˜ç®¡ä¸­
 	 */
 	public boolean isAuto()
 	{
@@ -188,7 +188,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÒÆ³ıÅÆ×ÀÉÏ×îºóÒ»ÕÅÅÆ
+	 * ç§»é™¤ç‰Œæ¡Œä¸Šæœ€åä¸€å¼ ç‰Œ
 	 */
 	public void removeLastOnTable()
 	{
@@ -197,7 +197,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ¿¨ÅÆÊıÁ¿
+	 * å¡ç‰Œæ•°é‡
 	 * 
 	 * @param place
 	 * @return
@@ -324,7 +324,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ĞèÒªË¢ĞÂ²¼¾Ö
+	 * éœ€è¦åˆ·æ–°å¸ƒå±€
 	 */
 	public void needRefresh()
 	{
@@ -332,7 +332,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÓÎÏ·½øÈëĞÂÒ»Ö¡
+	 * æ¸¸æˆè¿›å…¥æ–°ä¸€å¸§
 	 */
 	protected void enterFrame(long time)
 	{
@@ -491,7 +491,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÉèÖÃÍæ¼ÒÊÇ·ñÔÚ×Ô¼º»ØºÏ
+	 * è®¾ç½®ç©å®¶æ˜¯å¦åœ¨è‡ªå·±å›åˆ
 	 * 
 	 * @param b
 	 */
@@ -501,7 +501,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÉèÖÃÑ¡ÖĞµÄÅÆ
+	 * è®¾ç½®é€‰ä¸­çš„ç‰Œ
 	 * 
 	 * @param place
 	 * @param index
@@ -523,7 +523,7 @@ public class Player extends Sprite
 		if(null != mj)
 		{
 			mj.setState(MahjongState.SELECTED);
-			// ¸ù¾İÑ¡ÖĞµÄÅÆ£¬ÉèÖÃ×ÀÃæÉÏËùÓĞÏàÍ¬µÄÅÆÎª¸ßÁÁÌáÊ¾
+			// æ ¹æ®é€‰ä¸­çš„ç‰Œï¼Œè®¾ç½®æ¡Œé¢ä¸Šæ‰€æœ‰ç›¸åŒçš„ç‰Œä¸ºé«˜äº®æç¤º
 			GameScene.cur.glowSameCardOnTable(mj.card());
 
 			if(null != _chuTip)
@@ -542,7 +542,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÏòÖ¸¶¨·½ÏòÇĞ»»Ñ¡ÔñµÄÅÆ
+	 * å‘æŒ‡å®šæ–¹å‘åˆ‡æ¢é€‰æ‹©çš„ç‰Œ
 	 * 
 	 * @param moveDir
 	 */
@@ -624,19 +624,21 @@ public class Player extends Sprite
 
 	public void updateChuTip()
 	{
+		clearJiaoTip();
 		ChuHelp ch = new ChuHelp();
-		// ½«ÊÖÉÏµÄÅÆºÍ¿Ì×Ö·ÅÈë½øĞĞ¼ÆËã
+		// å°†æ‰‹ä¸Šçš„ç‰Œå’Œåˆ»å­—æ”¾å…¥è¿›è¡Œè®¡ç®—
 		ChuTip ct = ch.check(getInHandCards(), getOnTableKes());
 		if(ct != null)
 		{
 			System.out.println(ct.toString());
 		}
 		_chuTip = ct;
+
 		if(null != ct)
 		{
 			int[] cards = ct.getPlayCards();
-			GDC.trace("³öÅÆÌáÊ¾£º" + ct.toString());
-			// ¸øËùÓĞ´ò³öºó¿ÉÒÔÏÂ½ĞµÄÊÖÅÆ¼ÓÉÏ±ß¿ò
+			GDC.trace("å‡ºç‰Œæç¤ºï¼š" + ct.toString());
+			// ç»™æ‰€æœ‰æ‰“å‡ºåå¯ä»¥ä¸‹å«çš„æ‰‹ç‰ŒåŠ ä¸Šè¾¹æ¡†
 			Vector vecInHand = (Vector)_mjT.get(CardPlace.IN_HAND);
 			for(int i = 0; i < vecInHand.size(); i++)
 			{
@@ -647,14 +649,14 @@ public class Player extends Sprite
 					{
 						mj.setBoard(MahjongBoardType.FOR_JIAO);
 					}
-					else
-					{
-						mj.setBoard(MahjongBoardType.NONE);
-					}
+//					else
+//					{
+//						mj.setBoard(MahjongBoardType.NONE);
+//					}
 				}
 			}
 
-			// Ãşµ½µÄÅÆ
+			// æ‘¸åˆ°çš„ç‰Œ
 			Mahjong mj = getCard(CardPlace.NEW_IN_HAND, 0);
 			if(mj != null)
 			{
@@ -664,14 +666,14 @@ public class Player extends Sprite
 					{
 						mj.setBoard(MahjongBoardType.FOR_JIAO);
 					}
-					else
-					{
-						mj.setBoard(MahjongBoardType.NONE);
-					}
+//					else
+//					{
+//						mj.setBoard(MahjongBoardType.NONE);
+//					}
 				}
 			}
 
-			// ÅĞ¶ÏÑ¡ÖĞµÄÅÆ£¬Èç¹û´ò³öºó¿ÉÒÔÏÂ½Ğ£¬ÔòÏÔÊ¾´ò³öºó½ĞµÄÅÆÒÔ¼°¶ÔÓ¦µÄºúÅÆ·¬ĞÍ
+			// åˆ¤æ–­é€‰ä¸­çš„ç‰Œï¼Œå¦‚æœæ‰“å‡ºåå¯ä»¥ä¸‹å«ï¼Œåˆ™æ˜¾ç¤ºæ‰“å‡ºåå«çš„ç‰Œä»¥åŠå¯¹åº”çš„èƒ¡ç‰Œç•ªå‹
 			ChuVO chuVO = ct.get(_selected);
 			if(null != chuVO)
 			{
@@ -681,7 +683,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * µÃµ½ÊÖÅÆÖĞËùÓĞ¿¨ÅÆµÄÖµµÄÊı×é
+	 * å¾—åˆ°æ‰‹ç‰Œä¸­æ‰€æœ‰å¡ç‰Œçš„å€¼çš„æ•°ç»„
 	 * 
 	 * @return
 	 */
@@ -705,7 +707,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * µÃµ½×ÀÃæÉÏËùÓĞµÄ¿ÌµÄÊı×é
+	 * å¾—åˆ°æ¡Œé¢ä¸Šæ‰€æœ‰çš„åˆ»çš„æ•°ç»„
 	 * 
 	 * @return
 	 */
@@ -759,7 +761,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ½«Ö¸¶¨×´Ì¬µÄ¿¨ÅÆ¸ü»»ÎªĞÂµÄ×´Ì¬
+	 * å°†æŒ‡å®šçŠ¶æ€çš„å¡ç‰Œæ›´æ¢ä¸ºæ–°çš„çŠ¶æ€
 	 * 
 	 * @param place
 	 * @param card
@@ -780,7 +782,7 @@ public class Player extends Sprite
 	}
 
 	/**
-	 * ÖØÖÃ¿¨ÅÆµÄ×´Ì¬ÎªNormal
+	 * é‡ç½®å¡ç‰Œçš„çŠ¶æ€ä¸ºNormal
 	 * 
 	 * @param place
 	 */

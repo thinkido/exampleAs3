@@ -18,10 +18,10 @@ public class HuTypeParser {
 	}
 	
 
-	/*´óËÄÏ²*/
+	/*å¤§å››å–œ*/
 	public static boolean is_da_si_xi(int pai[], CardKe complex[], int len) {
 	    int handfeng = 0;
-	    /*¶«Î÷ÄÏ±±·ç*/
+	    /*ä¸œè¥¿å—åŒ—é£*/
 	    for (int i = CardCode.HAND_ZIS; i <= CardCode.HAND_ZIS + 3; i++){
 	        if (pai[i] == 3) {
 	            handfeng++;
@@ -36,10 +36,10 @@ public class HuTypeParser {
 	    return (handfeng == 4);
 	}
 
-	/*´óÈıÔª*/
+	/*å¤§ä¸‰å…ƒ*/
 	public static boolean is_da_san_yuan(int pai[], CardKe complex[], int len) {
 	    int handjian = 0;
-	    /*ÖĞ·¢°×*/
+	    /*ä¸­å‘ç™½*/
 	    for (int i = 4; i < 7; i++){
 	        if (pai[i + CardCode.HAND_ZIS] == 3) {
 	            handjian++;
@@ -69,7 +69,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*ÂÌÒ»É«*/
+	/*ç»¿ä¸€è‰²*/
 	public static boolean is_lv_yi_se(CardKe comhu[], int comhu_len) {
 	    for (int j = 0; j < comhu_len; j++){
 	        int type = comhu[j].type;
@@ -85,14 +85,14 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*¾ÅÁ«±¦µÆ*/
+	/*ä¹è²å®ç¯*/
 	public static boolean is_jiu_lian_bao_deng(int pai[], CardKe complex[], int len, int hu) {
 	    int check_value[] = {3,1,1,1,1,1,1,1,3};
 	    boolean result = false;
 	    int start = 0;
 
 	    pai[hu] -= 1;
-	    //³ÔÅÆÔò²»ÄÜºú¾ÅÕÅ£¬ËùÒÔË³×ÓÒ»¶¨ÔÚÊÖÅÆÉÏ
+	    //åƒç‰Œåˆ™ä¸èƒ½èƒ¡ä¹å¼ ï¼Œæ‰€ä»¥é¡ºå­ä¸€å®šåœ¨æ‰‹ç‰Œä¸Š
 	    for (int i = CardCode.HAND_SEQS; i < CardCode.HAND_SEQE; i += 10) {
 	        if (pai[i] > 0){
 	            start = i; 
@@ -115,7 +115,7 @@ public class HuTypeParser {
 	    return result;
 	}
 
-	/*ËÄ¸Ü*/
+	/*å››æ */
 	public static boolean is_si_gang(CardKe complex[], int len) {
 	    if (len < 4) return false;
 
@@ -129,7 +129,7 @@ public class HuTypeParser {
 	}
 
 
-	/*Á¬Æß¶Ô£¬ÌØÊâÅÆĞÍ*/
+	/*è¿ä¸ƒå¯¹ï¼Œç‰¹æ®Šç‰Œå‹*/
 	public static boolean is_lian_qi_dui(int pai[]) {
 	    int i = CardCode.HAND_SEQS;
 	    int start = 0;
@@ -156,7 +156,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*Ê®ÈıçÛ£¬ÌØÊâÅÆĞÍ*/
+	/*åä¸‰å¹ºï¼Œç‰¹æ®Šç‰Œå‹*/
 	public static boolean is_shi_san_yao(int pai[]) {
 	    int yao_seq_index[] = { CardCode.HAND_SEQS, CardCode.HAND_SEQS + 8, CardCode.HAND_SEQS + 10, CardCode.HAND_SEQS + 18, CardCode.HAND_SEQS + 20, CardCode.HAND_SEQS + 28,
 	        CardCode.HAND_ZIS, CardCode.HAND_ZIS + 1, CardCode.HAND_ZIS + 2, CardCode.HAND_ZIS + 3, CardCode.HAND_ZIS + 4, CardCode.HAND_ZIS + 5, CardCode.HAND_ZIS + 6 };
@@ -174,12 +174,12 @@ public class HuTypeParser {
 	    return (cnt == 12 && eye);
 	}
 
-	/*ÇåçÛ¾Å*/
+	/*æ¸…å¹ºä¹*/
 	public static boolean is_qing_yao_jiu(CardKe comhu[], int comhu_len) {
 	    for (int j = 0; j < comhu_len; j++){
 	        int type = comhu[j].type;
 	        int id = comhu[j].id;
-	        //½«ÅÆ²»×öÒªÇó
+	        //å°†ç‰Œä¸åšè¦æ±‚
 	        if (type == CardCode.COM_JIANG) continue;
 	        if (id % 10 != 1 && id % 10 != 9) return false;
 	        if (type != CardCode.COM_PENG && type != CardCode.COM_GANG) {
@@ -189,11 +189,11 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*Ğ¡ËÄÏ²*/
+	/*å°å››å–œ*/
 	public static boolean is_xiao_si_xi(int pai[], CardKe complex[], int len) {
 	    int handfeng = 0;
 	    int jiang = 0;
-	    /*¶«Î÷ÄÏ±±·ç*/
+	    /*ä¸œè¥¿å—åŒ—é£*/
 	    for (int i = CardCode.HAND_ZIS; i < CardCode.HAND_ZIS + 4; i++){
 	        if (pai[i] == 3) {
 	            handfeng++;
@@ -211,11 +211,11 @@ public class HuTypeParser {
 	    return (handfeng == 3 && jiang == 1);
 	}
 
-	/*Ğ¡ÈıÔª*/
+	/*å°ä¸‰å…ƒ*/
 	public static boolean is_xiao_san_yuan(int pai[], CardKe complex[], int len) {
 	    int handjian = 0;
 	    int jiang = 0;
-	    /*ÖĞ·¢°×*/
+	    /*ä¸­å‘ç™½*/
 	    for (int i = 4; i < 7; i++){
 	        if (pai[i + CardCode.HAND_ZIS] == 3) {
 	            handjian++;
@@ -233,11 +233,11 @@ public class HuTypeParser {
 	    return (handjian == 2 && jiang == 1);
 	}
 
-	/*×ÖÒ»É«*/
+	/*å­—ä¸€è‰²*/
 	public static boolean is_zi_yi_se(int pai[], CardKe complex[], int len) {
 	    int handzi = 0;
 	    int jiang = 0;
-	    /*ÖĞ·¢°×*/
+	    /*ä¸­å‘ç™½*/
 	    for (int i = 0; i < 7; i++){
 	        if (pai[i + CardCode.HAND_ZIS] == 3) {
 	            handzi++;
@@ -255,12 +255,12 @@ public class HuTypeParser {
 	    return (handzi == 4 && jiang == 1);
 	}
 
-	/*ËÄ°µ¿Ì */
+	/*å››æš—åˆ» */
 	public static boolean is_si_an_ke(int pai[], CardKe complex[], int len) {
 	    int handke = 0;
-	    /*ÖĞ·¢°×*/
+	    /*ä¸­å‘ç™½*/
 	    for (int i = CardCode.HAND_SEQS; i < CardCode.HAND_LEN; i++){
-	        //ËÄ°µ¿Ì²»»á³öÏÖÊÖÅÆÖĞ¶àÓÚÈı¸öµÄ
+	        //å››æš—åˆ»ä¸ä¼šå‡ºç°æ‰‹ç‰Œä¸­å¤šäºä¸‰ä¸ªçš„
 	        if (pai[i] == 3) {
 	            handke++;
 	        }
@@ -273,7 +273,7 @@ public class HuTypeParser {
 	    return (handke == 4);
 	}
 
-	/*Ò»É«Ë«Áú»á*/
+	/*ä¸€è‰²åŒé¾™ä¼š*/
 	public static boolean is_yi_se_shuang_long_hui(int pai[], CardKe complex[], int len) {
 	    int handshao = 0;
 	    int handlao = 0;
@@ -303,7 +303,7 @@ public class HuTypeParser {
 	    return (handshao == 2 && handlao == 2);
 	}
 
-	/*Ò»É«ËÄÍ¬Ë³*/
+	/*ä¸€è‰²å››åŒé¡º*/
 	public static boolean is_yi_se_si_tong_shun(CardKe comhu[], int comhu_len) {
 	    int seq[] = { 0, 0, 0, 0 };
 	    int len_seq = 0;
@@ -322,7 +322,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/* Ò»É«ËÄ½Ú¸ß*/
+	/* ä¸€è‰²å››èŠ‚é«˜*/
 	public static boolean is_yi_se_si_jie_gao(CardKe comhu[], int comhu_len) {
 	    int ke_seq[] = { 0, 0, 0, 0 };
 	    int len_ke = 0;
@@ -353,7 +353,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/* Ò»É«ËÄ²½¸ß*/
+	/* ä¸€è‰²å››æ­¥é«˜*/
 	public static boolean is_yi_se_si_bu_gao(CardKe comhu[], int comhu_len) {
 	    int seq[] = { 0, 0, 0, 0 };
 	    int seq_len = 0;
@@ -393,21 +393,21 @@ public class HuTypeParser {
 	    return gang;
 	}
 
-	/*Èı¸Ü*/
+	/*ä¸‰æ */
 	public static boolean is_san_gang(int pai[], CardKe complex[], int len) {
 	    int gang = get_gang(complex, len);
 
 	    return (gang == 3);
 	}
 
-	/*»ìçÛ¾Å*/
+	/*æ··å¹ºä¹*/
 	public static boolean is_hun_jiu_yao(int pai[], CardKe complex[], int len) {
 	    int jiang = 0;
 	    int ke = 0;
 	    int id, type;
 	    int seq_index[] = { CardCode.HAND_SEQS, CardCode.HAND_SEQS + 8, CardCode.HAND_SEQS + 10, CardCode.HAND_SEQS + 18, CardCode.HAND_SEQS + 20, CardCode.HAND_SEQS + 28 };
 	    for (int i = 0; i < seq_index.length; i++){
-	        //²»Í¬»¨É«ÊÇ²»Á¬ĞøµÄ£¬ËùÒÔ
+	        //ä¸åŒèŠ±è‰²æ˜¯ä¸è¿ç»­çš„ï¼Œæ‰€ä»¥
 	        if (pai[seq_index[i]] == 2){
 	            jiang++;
 	        } else if (pai[seq_index[i]] == 3){
@@ -424,7 +424,7 @@ public class HuTypeParser {
 	    return (ke == 4 && jiang == 1);
 	}
 
-	/*Æß¶Ô£¬ÌØÊâÅÆĞÍ*/
+	/*ä¸ƒå¯¹ï¼Œç‰¹æ®Šç‰Œå‹*/
 	public static boolean is_qi_dui(int pai[]) {
 	    int i = CardCode.HAND_START;
 	    int num_dui = 0;
@@ -447,7 +447,7 @@ public class HuTypeParser {
 	    while (i < cnt_seq_index.length) {
 	        int pai_index = cnt_seq_index[i];
 	        if (pai[pai_index] == 1){
-	            /*Èç¹ûÒ»ÖÖÀàĞÍÒÑ¾­ÓĞÁË£¬Ôò²»Í³¼Æ*/
+	            /*å¦‚æœä¸€ç§ç±»å‹å·²ç»æœ‰äº†ï¼Œåˆ™ä¸ç»Ÿè®¡*/
 	            int seqi = pai_index % 10 - 1;
 	            if (seq[seqi] == 0) {
 	                total++;
@@ -457,7 +457,7 @@ public class HuTypeParser {
 	                    total++;
 	                seq[seqi] = 1;
 	            }
-	            /*ÏÂÒ»¸ö»¨É«*/
+	            /*ä¸‹ä¸€ä¸ªèŠ±è‰²*/
 	            i = (i + 3) / 3 * 3;
 	            continue;
 	        }
@@ -466,7 +466,7 @@ public class HuTypeParser {
 	    return total;
 	}
 
-	/*ÆßĞÇ²»¿¿£¬ÌØÊâÅÆĞÍ*/
+	/*ä¸ƒæ˜Ÿä¸é ï¼Œç‰¹æ®Šç‰Œå‹*/
 	public static boolean is_qi_xing_bu_kao(int pai[]) {
 	    int total = bu_kao_seq_cnt(pai);
 	    
@@ -477,7 +477,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*È«Ë«¿Ì*/
+	/*å…¨åŒåˆ»*/
 	public static boolean is_quan_shuang_ke(int pai[], CardKe complex[], int len) {
 	    int id, type;
 	    int shuang = 0;
@@ -500,7 +500,7 @@ public class HuTypeParser {
 	    return (shuang == 4 && jiang == 1);
 	}
 
-	/*Ò»É«ÈıÍ¬Ë³*/
+	/*ä¸€è‰²ä¸‰åŒé¡º*/
 	public static boolean is_yi_se_san_tong_shun(CardKe comhu[], int comhu_len) {
 	    int seq[] = { 0, 0, 0, 0 };
 	    int len_seq = 0;
@@ -521,16 +521,16 @@ public class HuTypeParser {
 	            }
 	        }
 	    }
-	    //Èı¸ö
+	    //ä¸‰ä¸ª
 	    if ((seq[0] == seq[1]) && (seq[1] == seq[2]))
 	        return true;
-	    //¶àÓÚÈı¸ö
+	    //å¤šäºä¸‰ä¸ª
 	    if (len_seq > 3 && ((seq[1] == seq[2]) && (seq[2] == seq[3])))
 	        return true;
 	    return false;
 	}
 
-	/*Ò»É«Èı½Ú¸ß*/
+	/*ä¸€è‰²ä¸‰èŠ‚é«˜*/
 	public static boolean is_yi_se_san_jie_gao(CardKe comhu[], int comhu_len) {
 	    int ke_seq[] = { 0, 0, 0, 0 };
 	    int len_ke = 0;
@@ -553,7 +553,7 @@ public class HuTypeParser {
 	        }
 	    }
 
-	    //Í¬É«
+	    //åŒè‰²
 	    if ((ke_seq[0] + 1 == ke_seq[1]) && (ke_seq[1] + 1 == ke_seq[2]))
 	        return true;
 	    if (len_ke > 3 && ((ke_seq[1] + 1 == ke_seq[2]) && (ke_seq[2] + 1 == ke_seq[3])))
@@ -581,24 +581,24 @@ public class HuTypeParser {
 	    return (total == 14);
 	}
 
-	/*È«´ó*/
+	/*å…¨å¤§*/
 	public static boolean is_quan_da(int pai[], CardKe complex[], int len) {
 	    return all_in_interval(pai, complex, len, 7, 9);
 	}
 
-	/*È«ÖĞ*/
+	/*å…¨ä¸­*/
 	public static boolean is_quan_zhong(int pai[], CardKe complex[], int len) {
 	    return all_in_interval(pai, complex, len, 4, 6);
 	}
 
-	/*È«Ğ¡*/
+	/*å…¨å°*/
 	public static boolean is_quan_xiao(int pai[], CardKe complex[], int len) {
 	    return all_in_interval(pai, complex, len, 1, 3);
 	}
 
-	/*ÇåÁú*/
+	/*æ¸…é¾™*/
 	public static boolean is_qing_long(int pai[], CardKe complex[], int len) {
-	    int rest[] = new int[pai.length];//Í¬É«Ê£ÓàÅÆ
+	    int rest[] = new int[pai.length];//åŒè‰²å‰©ä½™ç‰Œ
 	    int ri = 0;
 	    boolean found = false;
 
@@ -622,13 +622,13 @@ public class HuTypeParser {
 	            int index = i + j;
 	            if (rest[index] == 0) {
 	                ri = 0;
-	                found = false;//Ã»ÕÒµ½
+	                found = false;//æ²¡æ‰¾åˆ°
 	                break;
 	            }
 	            rest[index] = rest[index] - 1;
 	            ri++;
 	        }
-	        if (found) break;//ÕÒµ½
+	        if (found) break;//æ‰¾åˆ°
 	    }
 
 	    if (!found) return false;
@@ -636,7 +636,7 @@ public class HuTypeParser {
 	    return GuoBiaoCardsParser.hu(rest, ri, 0);
 	}
 
-	/*ÈıÉ«Ë«Áú»á£¬ÌØÊâÅÆĞÍ*/
+	/*ä¸‰è‰²åŒé¾™ä¼šï¼Œç‰¹æ®Šç‰Œå‹*/
 	public static boolean is_san_se_shuang_long_hui(int pai[], CardKe complex[], int len) {
 	    int laoshao[] = new int[6];
 	    int jiang = 0;
@@ -673,7 +673,7 @@ public class HuTypeParser {
 	    return (laoshao[0] == 6);
 	}
 
-	/*Ò»É«Èı²½¸ß*/
+	/*ä¸€è‰²ä¸‰æ­¥é«˜*/
 	public static boolean is_yi_se_san_bu_gao(CardKe comhu[], int comhu_len) {
 	    int seq[] = { 0, 0, 0, 0 };
 	    int seq_len = 0;
@@ -706,7 +706,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*È«´øÎå*/
+	/*å…¨å¸¦äº”*/
 	public static boolean is_quan_dai_wu(CardKe comhu[], int comhu_len) {
 	    int seq5 = 0;
 	    int jiang5 = 0;
@@ -727,9 +727,9 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÈıÍ¬¿Ì */
+	/*ä¸‰åŒåˆ» */
 	public static boolean is_san_tong_ke(int pai[], CardKe complex[], int len) {
-	    int seq[] = new int[pai.length];//Í¬É«Ê£ÓàÅÆ
+	    int seq[] = new int[pai.length];//åŒè‰²å‰©ä½™ç‰Œ
 	    int remain = 0;
 	    boolean found = false;
 
@@ -754,10 +754,10 @@ public class HuTypeParser {
 	    return GuoBiaoCardsParser.hu(seq, remain, 0);
 	}
 
-	/* Èı°µ¿Ì */
+	/* ä¸‰æš—åˆ» */
 	public static boolean is_san_an_ke(int pai[], CardKe complex[], int len) {
 	    int handke = 0;
-	    /*ÖĞ·¢°×*/
+	    /*ä¸­å‘ç™½*/
 	    for (int i = CardCode.HAND_SEQS; i < CardCode.HAND_LEN; i++){
 	        if (pai[i] == 3) {
 	            handke++;
@@ -771,7 +771,7 @@ public class HuTypeParser {
 	    return (handke == 4);
 	}
 
-	/*È«²»¿¿£¬ÌØÊâÅÆĞÍ*/
+	/*å…¨ä¸é ï¼Œç‰¹æ®Šç‰Œå‹*/
 	public static boolean is_quan_bu_kao(int pai[]) {
 	    int total = bu_kao_seq_cnt(pai);
 
@@ -783,12 +783,12 @@ public class HuTypeParser {
 	    return (total == 14);
 	}
 
-	/*TODO:×éºÏÁú£¬ÌØÊâÅÆĞÍ*/
+	/*TODO:ç»„åˆé¾™ï¼Œç‰¹æ®Šç‰Œå‹*/
 	public static boolean is_zu_he_long(int pai[], CardKe complex[], int len) {
 	    return false;
 	}
 
-	/*´óÓÚÎå*/
+	/*å¤§äºäº”*/
 	public static boolean is_da_yu_wu(CardKe comhu[], int comhu_len) {
 	    for (int j = 0; j < comhu_len; j++){
 	        if (comhu[j].id >= CardCode.HAND_ZIS || comhu[j].id % 10 <= 5) {
@@ -798,20 +798,20 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*Ğ¡ÓÚÎå*/
+	/*å°äºäº”*/
 	public static boolean is_xiao_yu_wu(CardKe comhu[], int comhu_len) {
 	    for (int j = 0; j < comhu_len; j++){
 	        if (comhu[j].id >= CardCode.HAND_ZIS || comhu[j].id % 10 >= 5) {
 	            return false;
 	        }
-	        if (comhu[j].type == CardCode.COM_CHI && comhu[j].id > 2) {
+	        if (comhu[j].type == CardCode.COM_CHI && comhu[j].id % 10 > 2) {
 	            return false;
 	        }
 	    }
 	    return true;
 	}
 
-	/*Èı·ç¿Ì*/
+	/*ä¸‰é£åˆ»*/
 	public static boolean is_san_feng_ke(CardKe comhu[], int comhu_len) {
 	    int fengke = 0;
 	    for (int j = 0; j < comhu_len; j++){
@@ -826,10 +826,10 @@ public class HuTypeParser {
 	    return (fengke == 3);
 	}
 
-	/*»¨Áú*/
+	/*èŠ±é¾™*/
 	public static boolean is_hua_long(CardKe comhu[], int comhu_len) {
 	    int seq[][] = new int[3][3];
-
+	    
 	    for (int j = 0; j < comhu_len; j++){
 	        int id = comhu[j].id;
 	        int type = comhu[j].type;
@@ -855,7 +855,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÍÆ²»µ¹*/
+	/*æ¨ä¸å€’*/
 	public static boolean is_tui_bu_dao(int pai[], CardKe complex[], int len) {
 	    int seq[] = { 22, 24, 25, 26, 28, 29, 31, 32, 33, 34, 35, 38, 39, 47 };
 	    int total = 0;
@@ -883,7 +883,7 @@ public class HuTypeParser {
 	    return (total == 14);
 	}
 
-	/*ÈıÉ«ÈıÍ¬Ë³*/
+	/*ä¸‰è‰²ä¸‰åŒé¡º*/
 	public static boolean is_san_se_san_tong_shun(CardKe comhu[], int comhu_len) {
 	    int tile[] = new int[4];
 	    int color[] = new int[3];
@@ -901,7 +901,7 @@ public class HuTypeParser {
 	    }
 	    if (color[0] == 0 || color[1] == 0 || color[2] == 0)
 	        return false;
-	    /*ÕÒµ½Ö»ÓĞÒ»¸±Ë³×ÓµÄ»¨É«£¬È»ºóÕÒµ½Ëü¶ÔÓ¦µÄÅÆºÅ£¬È»ºóÔÙ¿´ÆäËûÁ½¸ö»¨É«ÓĞÃ»ÓĞÏàµÈµÄÅÆºÅ*/
+	    /*æ‰¾åˆ°åªæœ‰ä¸€å‰¯é¡ºå­çš„èŠ±è‰²ï¼Œç„¶åæ‰¾åˆ°å®ƒå¯¹åº”çš„ç‰Œå·ï¼Œç„¶åå†çœ‹å…¶ä»–ä¸¤ä¸ªèŠ±è‰²æœ‰æ²¡æœ‰ç›¸ç­‰çš„ç‰Œå·*/
 	    if (color[0] == 1) {
 	        single_color = 1;
 	    } else {
@@ -924,7 +924,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*ÈıÉ«Èı½Ú¸ß*/
+	/*ä¸‰è‰²ä¸‰èŠ‚é«˜*/
 	public static boolean is_san_se_san_jie_gao(CardKe comhu[], int comhu_len) {
 	    int seq[] = new int[4];
 	    int seq_len = 0;
@@ -940,7 +940,7 @@ public class HuTypeParser {
 
 	    for (int m = 0; m < seq_len - 1; m++) {
 	        for (int n = m + 1; m < seq_len; m++) {
-	            //¸ù¾İindexÅÅĞò
+	            //æ ¹æ®indexæ’åº
 	            if (seq[n] % 10 < seq[m] % 10) {
 	                swap(seq, m, n);
 	            }
@@ -959,7 +959,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÅöÅöºÍ*/
+	/*ç¢°ç¢°å’Œ*/
 	public static boolean is_peng_peng_hu(CardKe comhu[], int comhu_len) {
 	    int total = 0;
 	    for (int i = 0; i < comhu_len; i++){
@@ -971,7 +971,7 @@ public class HuTypeParser {
 	    return (total == 4);
 	}
 
-	/*»ìÒ»É«*/
+	/*æ··ä¸€è‰²*/
 	public static boolean is_hu_yi_se(CardKe comhu[], int comhu_len) {
 	    int color = 0;
 	    int zi = 0;
@@ -992,7 +992,7 @@ public class HuTypeParser {
 	    return (zi != 0) && color != 0;
 	}
 
-	/*ÈıÉ«Èı²½¸ß*/
+	/*ä¸‰è‰²ä¸‰æ­¥é«˜*/
 	public static boolean is_san_se_san_bu_gao(CardKe comhu[], int comhu_len) {
 	    int seq[] = new int[4];
 	    int seq_len = 0;
@@ -1008,7 +1008,7 @@ public class HuTypeParser {
 
 	    for (int m = 0; m < seq_len - 1; m++) {
 	        for (int n = m + 1; m < seq_len; m++) {
-	            //¸ù¾İindexÅÅĞò
+	            //æ ¹æ®indexæ’åº
 	            if (seq[n] % 10 < seq[m] % 10) {
 	                swap(seq, m, n);
 	            }
@@ -1027,7 +1027,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÎåÃÅÆë*/
+	/*äº”é—¨é½*/
 	public static boolean is_wu_men_qi(CardKe comhu[], int comhu_len) {
 	    int color[] = new int[5];
 	    for (int i = 0; i < comhu_len; i++){
@@ -1046,12 +1046,12 @@ public class HuTypeParser {
 	    return (color[0] == 5);
 	}
 
-	/*È«ÇóÈË*/
+	/*å…¨æ±‚äºº*/
 	public static boolean is_quan_qiu_ren(int pai[], CardKe complex[], int len) {
 	    return (len == 4);
 	}
 
-	/*Ë«°µ¸Ü*/
+	/*åŒæš—æ */
 	public static boolean is_shuang_an_gang(CardKe complex[], int len) {
 	    int total = 0;
 	    for (int i = 0; i < len; i++){
@@ -1062,7 +1062,7 @@ public class HuTypeParser {
 	    return (total == 2);
 	}
 
-	/*Ë«¼ı¿Ì*/
+	/*åŒç®­åˆ»*/
 	public static boolean is_shuang_jian_ke(CardKe comhu[], int comhu_len) {
 	    int total = 0;
 	    for (int i = 0; i < comhu_len; i++){
@@ -1075,7 +1075,7 @@ public class HuTypeParser {
 	    return (total == 2);
 	}
 
-	/*È«´øçÛ*/
+	/*å…¨å¸¦å¹º*/
 	public static boolean is_quan_dai_yao(CardKe comhu[], int comhu_len) {
 	    for (int i = 0; i < comhu_len; i++){
 	        int id = comhu[i].id;
@@ -1088,7 +1088,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*Ë«Ã÷¸Ü*/
+	/*åŒæ˜æ */
 	public static boolean is_shuang_ming_gang(CardKe complex[], int len) {
 	    int total = 0;
 	    for (int i = 0; i < len; i++){
@@ -1099,7 +1099,7 @@ public class HuTypeParser {
 	    return (total == 2);
 	}
 
-	/*¼ı¿Ì*/
+	/*ç®­åˆ»*/
 	public static boolean is_jian_ke(CardKe comhu[], int comhu_len) {
 	    int total = 0;
 	    for (int i = 0; i < comhu_len; i++){
@@ -1111,12 +1111,12 @@ public class HuTypeParser {
 	    }
 	    return (total == 1);
 	}
-	/*È¦·ç¿Ì£¬²»Ö§³Ö*/
+	/*åœˆé£åˆ»ï¼Œä¸æ”¯æŒ*/
 	public static boolean is_quan_feng_ke(CardKe comhu[], int comhu_len) {
 	    return false;
 	}
 
-	/*Æ½ºÍ*/
+	/*å¹³å’Œ*/
 	public static boolean is_ping_hu(CardKe comhu[], int comhu_len) {
 	    for (int i = 0; i < comhu_len; i++){
 	        if (comhu[i].id >= CardCode.HAND_ZIS){
@@ -1129,7 +1129,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*ËÄ¹éÒ»*/
+	/*å››å½’ä¸€*/
 	public static boolean is_si_gui_yi(CardKe comhu[], int comhu_len) {
 	    int pai[] = new int[CardCode.HAND_SEQE + 1];
 	    for (int i = 0; i < comhu_len; i++){
@@ -1149,7 +1149,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*Ë«Í¬¿Ì*/
+	/*åŒåŒåˆ»*/
 	public static boolean is_shuang_tong_ke(CardKe comhu[], int comhu_len) {
 	    int pai[] = new int[10];
 	    for (int i = 0; i < comhu_len; i++){
@@ -1165,7 +1165,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*Ë«°µ¿Ì*/
+	/*åŒæš—åˆ»*/
 	public static boolean is_shuang_an_ke(CardKe comhu[], int comhu_len) {
 	    int total = 0;
 	    for (int i = 0; i < comhu_len; i++){
@@ -1178,7 +1178,7 @@ public class HuTypeParser {
 	    return (total == 2);
 	}
 
-	/*°µ¸Ü*/
+	/*æš—æ */
 	public static boolean is_an_gang(CardKe complex[], int len) {
 	    int total = 0;
 
@@ -1192,7 +1192,7 @@ public class HuTypeParser {
 	    return (total == 1);
 	}
 
-	/*¶ÏçÛ*/
+	/*æ–­å¹º*/
 	public static boolean is_duan_yao(CardKe comhu[], int comhu_len) {
 	    for (int i = 0; i < comhu_len; i++){
 	        int id = comhu[i].id;
@@ -1204,7 +1204,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*Ò»°ã¸ß*/
+	/*ä¸€èˆ¬é«˜*/
 	public static boolean is_yi_ban_gao(CardKe comhu[], int comhu_len) {
 	    int seq[] = new int[4];
 	    int len = 0;
@@ -1234,18 +1234,18 @@ public class HuTypeParser {
 	    return (tong_cnt == 1);
 	}
 
-	/*²»ÇóÈË*/
+	/*ä¸æ±‚äºº*/
 	public static boolean is_bu_qiu_ren(CardKe complex[], int len) {
 	    
 	    return len == 0;
 	}
 
-	/*ÃÅÇ°Çå*/
+	/*é—¨å‰æ¸…*/
 	public static boolean is_men_qian_qing(CardKe complex[], int len) {
 	    return len == 0;
 	}
 
-	/*Ï²Ïà·ê*/
+	/*å–œç›¸é€¢*/
 	public static boolean is_xi_xiang_feng(CardKe comhu[], int comhu_len) {
 	    int seq[] = new int[4];
 	    int len = 0;
@@ -1263,7 +1263,7 @@ public class HuTypeParser {
 	    }
 	    return false;
 	}
-	/*Á¬Áù*/
+	/*è¿å…­*/
 	public static boolean is_lian_liu(CardKe comhu[], int comhu_len) {
 	    int seq[] = new int[4];
 	    int len = 0;
@@ -1282,7 +1282,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÀÏÉÙ¸±*/
+	/*è€å°‘å‰¯*/
 	public static boolean is_lao_shao_fu(CardKe comhu[], int comhu_len) {
 	    int seq[] = new int[4];
 	    int len = 0;
@@ -1303,7 +1303,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*çÛ¾Å¿Ì*/
+	/*å¹ºä¹åˆ»*/
 	public static boolean is_yao_jiu_ke(CardKe comhu[], int comhu_len) {
 	    for (int i = 0; i < comhu_len; i++){
 	        int id = comhu[i].id;
@@ -1316,7 +1316,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*Ã÷¸Ü*/
+	/*æ˜æ */
 	public static boolean is_ming_gang(CardKe complex[], int len) {
 	    for (int i = 0; i < len; i++){
 	        if (complex[i].type == CardCode.COM_GANG && complex[i].type2 == CardCode.COM_MING_GANG) {
@@ -1326,7 +1326,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*È±Ò»ÃÅ*/
+	/*ç¼ºä¸€é—¨*/
 	public static boolean is_que_yi_men(CardKe comhu[], int comhu_len) {
 	    int color[] = new int[4];
 	    for (int i = 0; i < comhu_len; i++){
@@ -1337,7 +1337,7 @@ public class HuTypeParser {
 	    return (color[1] + color[2] + color[3] < 3);
 	}
 
-	/*ÎŞ×Ö*/
+	/*æ— å­—*/
 	public static boolean is_wu_zi(CardKe comhu[], int comhu_len) {
 	    for (int i = 0; i < comhu_len; i++){
 	        if (comhu[i].id >= CardCode.HAND_ZIS){
@@ -1347,7 +1347,7 @@ public class HuTypeParser {
 	    return true;
 	}
 
-	/*±ßÕÅ*/
+	/*è¾¹å¼ */
 	public static boolean is_bian_zhang(CardKe comhu[], int comhu_len, int hu) {
 	    int index = hu % 10;
 	    int type = hu / 10;
@@ -1374,7 +1374,7 @@ public class HuTypeParser {
 	    return hu_seq > 0;
 	}
 
-	/*¿²ÕÅ*/
+	/*åå¼ */
 	public static boolean is_kan_zhang(CardKe comhu[], int comhu_len, int hu) {
 	    int index = hu % 10;
 	    int type = hu / 10;
@@ -1398,7 +1398,7 @@ public class HuTypeParser {
 	    return hu_seq > 0;
 	}
 
-	/*µ¥µö½«*/
+	/*å•é’“å°†*/
 	public static boolean is_dan_diao_jiang(CardKe comhu[], int comhu_len, int hu) {
 	    int jiang = 0;
 	    int com = 0;
@@ -1421,7 +1421,7 @@ public class HuTypeParser {
 	    return false;
 	}
 
-	/*ÇåÒ»É«*/
+	/*æ¸…ä¸€è‰²*/
 	public static boolean is_qing_yi_se(int pai[], CardKe complex[], int len) {
 
 	    int wan = 0;
@@ -1430,7 +1430,7 @@ public class HuTypeParser {
 
 	    int i = CardCode.HAND_SEQS;
 
-	    //¼ÆËãÊÖÅÆ
+	    //è®¡ç®—æ‰‹ç‰Œ
 	    for (; i <= CardCode.HAND_SEQE; i++) {
 	        if (i >= 11 && i <= 19) {
 	            wan += pai[i];
@@ -1443,7 +1443,7 @@ public class HuTypeParser {
 	        }
 	    }
 
-	    //¼ÆËã¸´ÅÆ
+	    //è®¡ç®—å¤ç‰Œ
 	    int j = 0;
 	    for (; j < len; j++) {
 	        int id = complex[j].id;

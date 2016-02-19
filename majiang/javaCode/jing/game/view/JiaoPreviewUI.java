@@ -12,7 +12,7 @@ import framework.views.BitmapFont;
 import framework.views.Sprite;
 
 /**
- * Ω–≈∆‘§¿¿
+ * Âè´ÁâåÈ¢ÑËßà
  * 
  * @author Jing
  */
@@ -50,16 +50,16 @@ public class JiaoPreviewUI extends Sprite
 			{
 				BitmapFont bf = null;
 				bf = new BitmapFont(_fnt);
-				bf.setText(jiaos[i].hu.all_fan + "∑¨");
+				bf.setText(jiaos[i].hu.all_fan + "Áï™");
 				bf.setPosition(mjx, mjy + mj.getHeight());
 				this.addChild(bf);
 			}
 			
-			BitmapFont bf = null;
-			bf = new BitmapFont(_fnt);
-			bf.setText(111 + "∑¨");
-			bf.setPosition(mjx, mjy + mj.getHeight());
-			this.addChild(bf);
+//			BitmapFont bf = null;
+//			bf = new BitmapFont(_fnt);
+//			bf.setText(111 + "Áï™");
+//			bf.setPosition(mjx, mjy + mj.getHeight());
+//			this.addChild(bf);
 		}
 
 		this.setWidth(x);

@@ -19,9 +19,10 @@ import framework.views.DisplayObject;
 import framework.views.MovieClip;
 import framework.views.Stage;
 import game.control.UserDataManager;
+import game.model.Global;
 
 /**
- * ÓÎÏ·ÐÅÏ¢²ã
+ * æ¸¸æˆä¿¡æ¯å±‚
  * 
  * @author Jing
  */
@@ -62,10 +63,10 @@ public class GameInfoUI extends UIContainer implements ITickListener
 		stateImgs.put(GameDir.RIGHT, getChildByName("state_right"));
 		stateImgs.put(GameDir.DOWN, getChildByName("state_down"));
 
-		txtNames.put(GameDir.UP, getChildByName("txt_name_up"));
-		txtNames.put(GameDir.LEFT, getChildByName("txt_name_left"));
-		txtNames.put(GameDir.RIGHT, getChildByName("txt_name_right"));
-		txtNames.put(GameDir.DOWN, getChildByName("txt_name_down"));
+		txtNames.put(GameDir.UP, ((UIText)getChildByName("txt_name_up")));
+		txtNames.put(GameDir.LEFT, ((UIText)getChildByName("txt_name_left")));
+		txtNames.put(GameDir.RIGHT, ((UIText)getChildByName("txt_name_right")));
+		txtNames.put(GameDir.DOWN, ((UIText)getChildByName("txt_name_down")));
 
 		huas.put(GameDir.UP, new Vector());
 		huas.put(GameDir.LEFT, new Vector());
@@ -91,7 +92,6 @@ public class GameInfoUI extends UIContainer implements ITickListener
 		prereadyStatePoint(GameDir.LEFT);
 		prereadyStatePoint(GameDir.DOWN);
 		prereadyStatePoint(GameDir.RIGHT);
-
 	}
 
 	private void prereadyStatePoint(String dir)
@@ -125,8 +125,7 @@ public class GameInfoUI extends UIContainer implements ITickListener
 		clearVectorImg((Vector)huas.get(GameDir.LEFT));
 		clearVectorImg((Vector)huas.get(GameDir.RIGHT));
 		clearVectorImg((Vector)huas.get(GameDir.DOWN));
-		
-		
+
 	}
 
 	private void clearVectorImg(Vector vec)
@@ -186,12 +185,20 @@ public class GameInfoUI extends UIContainer implements ITickListener
 
 	public void setName(String dir, String name)
 	{
+		//name = name.toUpperCase();
 		UIText txt = (UIText)txtNames.get(dir);
 		txt.setText(name);
+
+//		BitmapFont bf = new BitmapFont(Res.actively.getFontSheet("com_id_gold_fnt"));
+//		bf.setAnchor(ANCHOR_CENTER);
+//		bf.setText(name);
+//		bf.setTrans(txt.getTrans());
+//		bf.setPosition(txt.getX(), txt.getY());
+//		this.addChild(bf);
 	}
 
 	/**
-	 * µ±Ç°»ØºÏ·½Î»
+	 * å½“å‰å›žåˆæ–¹ä½
 	 * 
 	 * @param dir
 	 */
@@ -201,7 +208,7 @@ public class GameInfoUI extends UIContainer implements ITickListener
 	}
 
 	/**
-	 * ÉèÖÃµ¹¼ÆÊ±ÏÔÊ¾
+	 * è®¾ç½®å€’è®¡æ—¶æ˜¾ç¤º
 	 * 
 	 * @param cd
 	 */
@@ -212,14 +219,14 @@ public class GameInfoUI extends UIContainer implements ITickListener
 	}
 
 	/**
-	 * ¶ÔÓ¦µÄ·½Î»Ãþµ½»¨ÅÆ
+	 * å¯¹åº”çš„æ–¹ä½æ‘¸åˆ°èŠ±ç‰Œ
 	 * 
 	 * @param dir
 	 * @param card
 	 */
 	public void addHua(String dir, int card)
 	{
-		System.out.println(dir + " »ñµÃ»¨ÅÆ£º" + card);
+		System.out.println(dir + " èŽ·å¾—èŠ±ç‰Œï¼š" + card);
 
 		UIImageView img = new UIImageView();
 		img.setTexture("hua_" + card + "_1_png");
@@ -239,7 +246,7 @@ public class GameInfoUI extends UIContainer implements ITickListener
 	}
 
 	/**
-	 * ÉèÖÃÍæ¼ÒÊÇ·ñÍÐ¹Ü
+	 * è®¾ç½®çŽ©å®¶æ˜¯å¦æ‰˜ç®¡
 	 * 
 	 * @param dir
 	 * @param v
@@ -275,6 +282,7 @@ public class GameInfoUI extends UIContainer implements ITickListener
 
 	private void layoutNameTxts()
 	{
+		String noPeople = "ç­‰å¾…åŠ å…¥";
 		int cx = Stage.current.stageWidth() >> 1;
 		int cy = Stage.current.stageHeight() >> 1;
 
@@ -282,21 +290,21 @@ public class GameInfoUI extends UIContainer implements ITickListener
 		txt = (UIText)txtNames.get(GameDir.UP);
 		txt.setAnchor(ANCHOR_CENTER);
 		txt.setPosition(cx, 10);
-		txt.setText("µÈ´ý¼ÓÈë");
+		txt.setText(noPeople);
 		txt = (UIText)txtNames.get(GameDir.DOWN);
 		txt.setAnchor(ANCHOR_CENTER);
 		txt.setPosition(cx, 520);
-		txt.setText("µÈ´ý¼ÓÈë");
+		txt.setText(noPeople);
 		txt = (UIText)txtNames.get(GameDir.LEFT);
 		txt.setAnchor(ANCHOR_CENTER);
+		txt.setPosition(10 + Global.cfg.leftNameOff(), cy);
+		txt.setText(noPeople);
 		txt.setTrans(TransType.ROT270);
-		txt.setPosition(10, cy);
-		txt.setText("µÈ´ý¼ÓÈë");
 		txt = (UIText)txtNames.get(GameDir.RIGHT);
 		txt.setAnchor(ANCHOR_CENTER);
+		txt.setPosition(630 + Global.cfg.rightNameOff(), cy);
+		txt.setText(noPeople);
 		txt.setTrans(TransType.ROT90);
-		txt.setPosition(630, cy);
-		txt.setText("µÈ´ý¼ÓÈë");
 	}
 
 	private void initHuaStartPoints()

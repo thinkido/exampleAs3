@@ -23,12 +23,14 @@ public class GameEntry extends Sprite
 			Global.account = "test_tv";
 			Global.adAccount = Global.account;
 		}
-		Global.resUrl = "http://192.168.0.202/itv/gbmj/res";
+		//Global.resUrl = "http://192.168.0.202/itv/gbmj/res";
+		
+		Global.resUrl = "http://182.140.237.55/game/gbmj/res";
 		Res.httpRes.init("/res.json", Global.resUrl);
 		//Res.localRes.init("/res.json");		
-		Res.actively = Res.httpRes;
+		//Res.actively = Res.localRes;
 		// Res.httpRes.init("/res.json", Global.resUrl);
-		// Res.actively = Res.httpRes;
+		Res.actively = Res.httpRes;
 
 		Global.cfg = new Config("config_json");
 		GDC.cl = new CardLayout();

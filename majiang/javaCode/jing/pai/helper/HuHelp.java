@@ -10,7 +10,7 @@ import jing.pai.utils.GuoBiaoCardsParser.GameHu;
 import jing.pai.vo.HuVO;
 
 /**
- * ¸ù¾İÅÆĞÍËã³öºúÅÆ BUG: 1.½«¶ÔÓĞ´íÎó£¬Ó¦¸ÃÊÇ¶Ô¶ÔºúÎª»ù´¡
+ * æ ¹æ®ç‰Œå‹ç®—å‡ºèƒ¡ç‰Œ BUG: 1.å°†å¯¹æœ‰é”™è¯¯ï¼Œåº”è¯¥æ˜¯å¯¹å¯¹èƒ¡ä¸ºåŸºç¡€
  * 
  * @param cards
  */
@@ -30,8 +30,18 @@ public class HuHelp
 			pai[inHands.getAt(i)] += 1;
 		}
 		pai[huCard] += 1;
-		return getHu(pai, onTables.length, onTables, 0, 0);
 		
+		int compLen=0;
+		for (int i = 0; i < onTables.length && onTables[i].id != 0; i++) {
+			compLen++;
+		}
+		
+		HuVO result = getHu(pai, compLen, onTables, 0, 0);
+		//è¿‡æ»¤
+		result.sortByFan();
+		result.filt();
+		
+		return result;
 	}
 	public HuVO getHu(int pai[], int complex_length, CardKe complex[], int hu_tile, int mo)
 	{
@@ -43,41 +53,41 @@ public class HuHelp
 	    }
 	    int gamehu_len = 0;
 	    /*
-	    //    ÌØÊâ·¬ĞÍ
+	    //    ç‰¹æ®Šç•ªå‹
 	    */
-	    //Á¬Æß¶Ô
+	    //è¿ä¸ƒå¯¹
 	    if (HuTypeParser.is_lian_qi_dui(pai))
 	    {
 	    	result.add_result(GBHuType.HU_LIAN_QI_DUI, 88);
 	    }
-	    //Ê®ÈıçÛ
+	    //åä¸‰å¹º
 	    if (HuTypeParser.is_shi_san_yao(pai)) {
 	    	result.add_result(GBHuType.HU_SHI_SAN_YAO, 88);
 	    }
-	    //ÆßĞÇ²»¿¿
+	    //ä¸ƒæ˜Ÿä¸é 
 	    if (HuTypeParser.is_qi_xing_bu_kao(pai)) {
 	        result.add_result(GBHuType.HU_QI_XING_BU_KAO, 24);
 	    }
-	    //È«²»¿¿
+	    //å…¨ä¸é 
 	    if (HuTypeParser.is_quan_bu_kao(pai)){
 	        result.add_result(GBHuType.HU_QUAN_BU_KAO, 12);
 	    }
-	    //×éºÏÁú
+	    //ç»„åˆé¾™
 	    if (HuTypeParser.is_zu_he_long(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_ZU_HE_LONG, 12);
 	    }
-	    //ÆßĞ¡¶ÔÅÆ
+	    //ä¸ƒå°å¯¹ç‰Œ
 	    if (HuTypeParser.is_qi_dui(pai)) {
 	        result.add_result(GBHuType.HU_QI_DUI, 24);
 	    }
-	    //ÈıÉ«Ë«Áú»á
+	    //ä¸‰è‰²åŒé¾™ä¼š
 	    if (HuTypeParser.is_san_se_shuang_long_hui(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SAN_SE_SHUANG, 16);
 	    }
-	    //ÅĞ¶ÏÊÇ·ñºú
+	    //åˆ¤æ–­æ˜¯å¦èƒ¡
 	    flag = GuoBiaoCardsParser.hu(pai, GuoBiaoCardsParser.tileRemain(pai), 0);
 	    if (flag) {
-	        //·ÖÎöºúÅÆµÄ¸÷ÖÖÇé¿ö
+	        //åˆ†æèƒ¡ç‰Œçš„å„ç§æƒ…å†µ
 	    	GameHu huType = new GameHu();
 	    	gamehu_len = GuoBiaoCardsParser.hu_result(pai, GuoBiaoCardsParser.tileRemain(pai), 0, gamehu, huType, gamehu_len);
 	    }
@@ -89,169 +99,174 @@ public class HuHelp
 	    int com_len = 0;
 	    int[] mul_hu = new int[35];
 
-	    //ÅÆĞÍ·ÖÎö
+	    //ç‰Œå‹åˆ†æ
 	    for (int i = 0; i < gamehu_len; i++)
 	    {
 	        for (int j = 0; j < complex_length; j++) {
 	        	gamehu[i].push(complex[j].type, complex[j].type2, complex[j].id);
 	        }
 	        
+//	        for (int j = 0; j < gamehu[i].len; j++) {
+//	        	System.out.println(" ---------------- ");
+//	        	System.out.println(" gamehu "+gamehu[i].complex[j].toDesc());
+//	        }
+	        
 	        com_hu = gamehu[i].complex;
 	        com_len = gamehu[i].len;
 	        /*
-	        //    ÅĞ¶Ï·¬ĞÍ
+	        //    åˆ¤æ–­ç•ªå‹
 	        */
-	        //ÇåçÛ¾Å
+	        //æ¸…å¹ºä¹
 	        if (mul_hu[0] == 0 && HuTypeParser.is_qing_yao_jiu(com_hu, com_len)) {
 	            mul_hu[0] = 1;
 	            result.add_result(GBHuType.HU_QING_YAO_JIU, 64);
 	        }
-	        //Ò»É«ËÄÍ¬Ë³
+	        //ä¸€è‰²å››åŒé¡º
 	        if (mul_hu[1] == 0 && HuTypeParser.is_yi_se_si_tong_shun(com_hu, com_len)) {
 	            mul_hu[1] = 1;
 	            result.add_result(GBHuType.HU_YI_SHI_TONG, 48);
 	        }
-	        //Ò»É«ËÄ½Ú¸ß
+	        //ä¸€è‰²å››èŠ‚é«˜
 	        if (mul_hu[2] == 0 && HuTypeParser.is_yi_se_si_jie_gao(com_hu, com_len)) {
 	            mul_hu[2] = 1;
 	            result.add_result(GBHuType.HU_YI_SHI_JIE, 48);
 	        }
-	        //Ò»É«ËÄ²½¸ß
+	        //ä¸€è‰²å››æ­¥é«˜
 	        if (mul_hu[3] == 0 && HuTypeParser.is_yi_se_si_bu_gao(com_hu, com_len)) {
 	            mul_hu[3] = 1;
 	            result.add_result(GBHuType.HU_YI_SHI_BU, 32);
 	        }
-	        //Ò»É«ÈıÍ¬Ë³
+	        //ä¸€è‰²ä¸‰åŒé¡º
 	        if (mul_hu[4] == 0 && HuTypeParser.is_yi_se_san_tong_shun(com_hu, com_len)) {
 	            mul_hu[4] = 1;
 	            result.add_result(GBHuType.HU_YI_SE_TONG, 24);
 	        }
-	        //Ò»É«Èı½Ú¸ß
+	        //ä¸€è‰²ä¸‰èŠ‚é«˜
 	        if (mul_hu[5] == 0 && HuTypeParser.is_yi_se_san_jie_gao(com_hu, com_len)) {
 	            mul_hu[5] = 1;
 	            result.add_result(GBHuType.HU_YI_SE_JIE, 24);
 	        }
-	        //Ò»É«Èı²½¸ß
+	        //ä¸€è‰²ä¸‰æ­¥é«˜
 	        if (mul_hu[6] == 0 && HuTypeParser.is_yi_se_san_bu_gao(com_hu, com_len)) {
 	            mul_hu[6] = 1;
 	            result.add_result(GBHuType.HU_YI_SE_BU, 16);
 	        }
-	        //È«´øÎå
+	        //å…¨å¸¦äº”
 	        if (mul_hu[7] == 0 && HuTypeParser.is_quan_dai_wu(com_hu, com_len)) {
 	            mul_hu[7] = 1;
 	            result.add_result(GBHuType.HU_QUAN_DAI_WU, 16);
 	        }
-	        //´óÓÚÎå
+	        //å¤§äºäº”
 	        if (mul_hu[8] == 0 && HuTypeParser.is_da_yu_wu(com_hu, com_len)) {
 	            mul_hu[8] = 1;
 	            result.add_result(GBHuType.HU_DA_WU, 12);
 	        }
-	        //Ğ¡ÓÚÎå
+	        //å°äºäº”
 	        if (mul_hu[9] == 0 && HuTypeParser.is_xiao_yu_wu(com_hu, com_len)) {
 	            mul_hu[9] = 1;
 	            result.add_result(GBHuType.HU_XIAO_WU, 12);
 	        }
-	        //Èı·ç¿Ì
+	        //ä¸‰é£åˆ»
 	        if (mul_hu[10] == 0 && HuTypeParser.is_san_feng_ke(com_hu, com_len)) {
 	            mul_hu[10] = 1;
 	            result.add_result(GBHuType.HU_SAN_FENG_KE, 12);
 	        }
-	        //»¨Áú
+	        //èŠ±é¾™
 	        if (mul_hu[11] == 0 && HuTypeParser.is_hua_long(com_hu, com_len)) {
 	            mul_hu[11] = 1;
 	            result.add_result(GBHuType.HU_HUA_LONG, 8);
 	        }
-	        //ÈıÉ«ÈıÍ¬Ë³
+	        //ä¸‰è‰²ä¸‰åŒé¡º
 	        if (mul_hu[12] == 0 && HuTypeParser.is_san_se_san_tong_shun(com_hu, com_len)) {
 	            mul_hu[12] = 1;
 	            result.add_result(GBHuType.HU_SAN_SE_TONG, 8);
 	        }
-	        //ÈıÉ«Èı½Ú¸ß
+	        //ä¸‰è‰²ä¸‰èŠ‚é«˜
 	        if (mul_hu[13] == 0 && HuTypeParser.is_san_se_san_jie_gao(com_hu, com_len)) {
 	            mul_hu[13] = 1;
 	            result.add_result(GBHuType.HU_SAN_SE_JIE, 8);
 	        }
-	        //ÅöÅöºÍ
+	        //ç¢°ç¢°å’Œ
 	        if (mul_hu[14] == 0 && HuTypeParser.is_peng_peng_hu(com_hu, com_len)) {
 	            mul_hu[14] = 1;
 	            result.add_result(GBHuType.HU_PENG_PENG, 6);
 	        }
-	        //ÈıÉ«Èı²½¸ß
+	        //ä¸‰è‰²ä¸‰æ­¥é«˜
 	        if (mul_hu[15] == 0 && HuTypeParser.is_san_se_san_bu_gao(com_hu, com_len)) {
 	            mul_hu[15] = 1;
 	            result.add_result(GBHuType.HU_SAN_SE_BU, 6);
 	        }
-	        //Ë«¼ı¿Ì
+	        //åŒç®­åˆ»
 	        if (mul_hu[16] == 0 && HuTypeParser.is_shuang_jian_ke(com_hu, com_len)) {
 	            mul_hu[16] = 1;
 	            result.add_result(GBHuType.HU_SHUANG_JIAN_KE, 6);
 	        }
-	        //È«´øçÛ
+	        //å…¨å¸¦å¹º
 	        if (mul_hu[17] == 0 && HuTypeParser.is_quan_dai_yao(com_hu, com_len)) {
 	            mul_hu[17] = 1;
 	            result.add_result(GBHuType.HU_QUAN_DAI_YAO, 4);
 	        }
-	        //¼ı¿Ì
+	        //ç®­åˆ»
 	        if (mul_hu[18] == 0 && HuTypeParser.is_jian_ke(com_hu, com_len)) {
 	            mul_hu[18] = 1;
 	            result.add_result(GBHuType.HU_JIAN_KE, 2);
 	        }
-	        //Æ½ºÍ
+	        //å¹³å’Œ
 	        if (mul_hu[19] == 0 && HuTypeParser.is_ping_hu(com_hu, com_len)) {
 	            mul_hu[19] = 1;
 	            result.add_result(GBHuType.HU_PING_HU, 2);
 	        }
-	        //Ë«Í¬¿Ì
+	        //åŒåŒåˆ»
 	        if (mul_hu[20] == 0 && HuTypeParser.is_shuang_tong_ke(com_hu, com_len)) {
 	            mul_hu[20] = 1;
 	            result.add_result(GBHuType.HU_SHUANG_TONG_KE, 2);
 	        }
-	        //Ë«°µ¿Ì
+	        //åŒæš—åˆ»
 	        if (mul_hu[21] == 0 && HuTypeParser.is_shuang_an_ke(com_hu, com_len)) {
 	            mul_hu[21] = 1;
 	            result.add_result(GBHuType.HU_SHUANG_AN_KE, 2);
 	        }
-	        //Ò»°ã¸ß
+	        //ä¸€èˆ¬é«˜
 	        if (mul_hu[22] == 0 && HuTypeParser.is_yi_ban_gao(com_hu, com_len)) {
 	            mul_hu[22] = 1;
 	            result.add_result(GBHuType.HU_YI_BAN_GAO, 1);
 	        }
-	        //Ï²Ïà·ê
+	        //å–œç›¸é€¢
 	        if (mul_hu[23] == 0 && HuTypeParser.is_xi_xiang_feng(com_hu, com_len)) {
 	            mul_hu[23] = 1;
 	            result.add_result(GBHuType.HU_XI_XIANG_FENG, 1);
 	        }
-	        //Á¬Áù
+	        //è¿å…­
 	        if (mul_hu[24] == 0 && HuTypeParser.is_lian_liu(com_hu, com_len)) {
 	            mul_hu[24] = 1;
 	            result.add_result(GBHuType.HU_LIAN_LIU, 1);
 	        }
-	        //ÀÏÉÙ¸±
+	        //è€å°‘å‰¯
 	        if (mul_hu[25] == 0 && HuTypeParser.is_lao_shao_fu(com_hu, com_len)) {
 	            mul_hu[25] = 1;
 	            result.add_result(GBHuType.HU_LAO_SHAO_JIANG, 1);
 	        }
-	        //çÛ¾Å¿Ì
+	        //å¹ºä¹åˆ»
 	        if (mul_hu[26] == 0 && HuTypeParser.is_yao_jiu_ke(com_hu, com_len)) {
 	            mul_hu[26] = 1;
 	            result.add_result(GBHuType.HU_YAO_JIU, 1);
 	        }
-	        //±ßÕÅ
+	        //è¾¹å¼ 
 	        if (mul_hu[27] == 0 && HuTypeParser.is_bian_zhang(com_hu, com_len, hu_tile)) {
 	            mul_hu[27] = 1;
 	            result.add_result(GBHuType.HU_BIAN_ZHANG, 1);
 	        }
-	        //¿²ÕÅ
+	        //åå¼ 
 	        if (mul_hu[28] == 0 && HuTypeParser.is_kan_zhang(com_hu, com_len, hu_tile)) {
 	            mul_hu[28] = 1;
 	            result.add_result(GBHuType.HU_KAN_ZHANG, 1);
 	        }
-	        //µ¥µö½«
+	        //å•é’“å°†
 	        if (mul_hu[29] == 0 && HuTypeParser.is_dan_diao_jiang(com_hu, com_len, hu_tile)) {
 	            mul_hu[29] = 1;
 	            result.add_result(GBHuType.HU_DAN_DIAO_JIANG, 1);
 	        }
-	        //ËÄ¹éÒ»
+	        //å››å½’ä¸€
 	        if (mul_hu[30] == 0 && HuTypeParser.is_si_gui_yi(com_hu, com_len)) {
 	            mul_hu[30] = 1;
 	            result.add_result(GBHuType.HU_SHI_GUI_YI, 1);
@@ -260,114 +275,114 @@ public class HuHelp
 	    com_hu = gamehu[0].complex;
 	    com_len = gamehu[0].len;
 	    /*
-	    //    ÅĞ¶Ï·¬ĞÍ£¬ÕâĞ©ÅÆĞÍÖ»ĞèÅĞ¶ÏÒ»ÖÖÇé¿ö¼´¿É
+	    //    åˆ¤æ–­ç•ªå‹ï¼Œè¿™äº›ç‰Œå‹åªéœ€åˆ¤æ–­ä¸€ç§æƒ…å†µå³å¯
 	    */
-	    //ÂÌÒ»É«
+	    //ç»¿ä¸€è‰²
 	    if (HuTypeParser.is_lv_yi_se(com_hu, com_len)) {
 	        result.add_result(GBHuType.HU_LU_YI_SE, 88);
 	    }
 
 	    /*
-	    //    ÅĞ¶Ï·¬ĞÍ
+	    //    åˆ¤æ–­ç•ªå‹
 	    */
-	    //´óËÄÏ²
+	    //å¤§å››å–œ
 	    if (HuTypeParser.is_da_si_xi(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_DA_SHI_XI, 88);
 	    }
-	    //´óÈıÔª
+	    //å¤§ä¸‰å…ƒ
 	    if (HuTypeParser.is_da_san_yuan(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_DA_SAN_YUAN, 88);
 	    }
-	    //ËÄ°µ¿Ì
+	    //å››æš—åˆ»
 	    if (HuTypeParser.is_si_an_ke(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SI_AN_KE, 64);
 	    }
-	    //Ğ¡ËÄÏ²
+	    //å°å››å–œ
 	    if (HuTypeParser.is_xiao_si_xi(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_XIAO_SHI_XI, 64);
 	    }
-	    //Ğ¡ÈıÔª
+	    //å°ä¸‰å…ƒ
 	    if (HuTypeParser.is_xiao_san_yuan(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_XIAO_SAN_YUAN, 64);
 	    }
-	    //×ÖÒ»É«ÅÆ
+	    //å­—ä¸€è‰²ç‰Œ
 	    if (HuTypeParser.is_zi_yi_se(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_ZI_YI_SE, 64);
 	    }
-	    //Ò»É«Ë«Áú»á
+	    //ä¸€è‰²åŒé¾™ä¼š
 	    if (HuTypeParser.is_yi_se_shuang_long_hui(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_YI_SE_SHUANG, 64);
 	    }
-	    //»ìçÛ¾Å
+	    //æ··å¹ºä¹
 	    if (HuTypeParser.is_hun_jiu_yao(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_HUN_YAO, 32);
 	    }
-	    //È«Ë«¿Ì
+	    //å…¨åŒåˆ»
 	    if (HuTypeParser.is_quan_shuang_ke(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QUAN_SHUANG, 24);
 	    }
 	    
-	    //ÈıÍ¬¿Ì
+	    //ä¸‰åŒåˆ»
 	    if (HuTypeParser.is_san_tong_ke(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SAN_TONG_KE, 16);
 	    }
-	    //Èı°µ¿Ì
+	    //ä¸‰æš—åˆ»
 	    if (HuTypeParser.is_san_an_ke(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SAN_AN_KE, 16);
 	    }
-	    //ÇåÁú
+	    //æ¸…é¾™
 	    if (HuTypeParser.is_qing_long(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QING_LONG, 16);
 	    }
-	    //¾ÅÁ«±¦µÆ
+	    //ä¹è²å®ç¯
 	    if (HuTypeParser.is_jiu_lian_bao_deng(pai, complex, complex_length, hu_tile)) {
 	        result.add_result(GBHuType.HU_JIU_LIAN_DENG, 88);
 	    }
-	    //ËÄ¸Ü
+	    //å››æ 
 	    if (HuTypeParser.is_si_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SI_GANG, 88);
 	    }
-	    //Ë«°µ¸Ü
+	    //åŒæš—æ 
 	    if (HuTypeParser.is_shuang_an_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SHUANG_AN_GANG, 6);
 	    }
-	    //Ë«Ã÷¸Ü
+	    //åŒæ˜æ 
 	    if (HuTypeParser.is_shuang_ming_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SHUANG_MING_GANG, 4);
 	    }
-	    //°µ¸Ü
+	    //æš—æ 
 	    if (HuTypeParser.is_an_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_AN_GANG, 2);
 	    }
-	    //Ã÷¸Ü
+	    //æ˜æ 
 	    if (HuTypeParser.is_ming_gang(complex, complex_length)) {
 	        result.add_result(GBHuType.HU_MING_GANG, 1);
 	    }
-	    //Èı¸Ü
+	    //ä¸‰æ 
 	    if (HuTypeParser.is_san_gang(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_SAN_GANG, 32);
 	    }
-	    //È«´ó
+	    //å…¨å¤§
 	    if (HuTypeParser.is_quan_da(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QUAN_DA, 24);
 	    }
-	    //È«ÖĞ
+	    //å…¨ä¸­
 	    if (HuTypeParser.is_quan_zhong(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QUAN_ZHONG, 24);
 	    }
-	    //È«Ğ¡
+	    //å…¨å°
 	    if (HuTypeParser.is_quan_xiao(pai, complex, complex_length)) {
 	        result.add_result(GBHuType.HU_QUAN_XIAO, 24);
 	    }
 
 	    if (mo == 1) {
-	        //²»ÇóÈË
+	        //ä¸æ±‚äºº
 	        if (HuTypeParser.is_bu_qiu_ren(complex, complex_length)) {
 	            result.add_result(GBHuType.HU_BU_QIU_REN, 4);
 	        }
 	    }
 	    else {
-	        //ÃÅÇ°Çå
+	        //é—¨å‰æ¸…
 	        if (HuTypeParser.is_men_qian_qing(complex, complex_length)) {
 	            result.add_result(GBHuType.HU_MEN_QI_QING, 2);
 	        }
@@ -376,42 +391,42 @@ public class HuHelp
 	    if (gamehu_len != 0)
 	    {
 	        /*
-	        //    ÅĞ¶Ï·¬ĞÍ
+	        //    åˆ¤æ–­ç•ªå‹
 	        */
-	        //ÍÆ²»µ¹
+	        //æ¨ä¸å€’
 	        if (HuTypeParser.is_tui_bu_dao(pai, complex, complex_length)) {
 	            result.add_result(GBHuType.HU_TUI_BU_DAO, 8);
 	        }
-	        //ÇåÒ»É«ÅÆ
+	        //æ¸…ä¸€è‰²ç‰Œ
 	        if (HuTypeParser.is_qing_yi_se(pai, complex, complex_length)) {
 	            result.add_result(GBHuType.HU_QING_YI_SE, 24);
 	        }
 	        
-	        //ÎŞ×Ö
+	        //æ— å­—
 	        if (HuTypeParser.is_wu_zi(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_WU_ZI, 1);
 	        }
-	        //È±Ò»ÃÅ
+	        //ç¼ºä¸€é—¨
 	        if (HuTypeParser.is_que_yi_men(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_QUE_YI_MEN, 1);
 	        }
-	        //¶ÏçÛ
+	        //æ–­å¹º
 	        if (HuTypeParser.is_duan_yao(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_DUAN_YAO, 2);
 	        }
-	        //È«ÇóÈË
+	        //å…¨æ±‚äºº
 	        if (HuTypeParser.is_quan_qiu_ren(pai, complex, complex_length)) {
 	            result.add_result(GBHuType.HU_QUAN_QIU_REN, 6);
 	        }
-	        //ÎåÃÅÆë
+	        //äº”é—¨é½
 	        if (HuTypeParser.is_wu_men_qi(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_WU_MEN_QI, 6);
 	        }
-	        //»ìÒ»É«
+	        //æ··ä¸€è‰²
 	        if (HuTypeParser.is_hu_yi_se(com_hu, com_len)) {
 	            result.add_result(GBHuType.HU_HUN_YI_SE, 6);
 	        }
-	        //ÎŞ·¬ºÍ
+	        //æ— ç•ªå’Œ
 	        if (result.len == 0) {
 	            result.add_result(GBHuType.HU_WU_FAN, 8);
 	        }

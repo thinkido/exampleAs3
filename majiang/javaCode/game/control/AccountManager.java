@@ -20,7 +20,6 @@ import protocol.sc_force_continue_game;
 import framework.time.ITickListener;
 import framework.time.TickItem;
 import framework.views.Stage;
-import game.constant.SceneType;
 import game.model.Global;
 import game.model.vo.EnterGameVO;
 import game.model.vo.GiftVO;
@@ -70,7 +69,7 @@ public class AccountManager implements YiuNetworkListener
 
 			protected void doLost(YiuNetworkSocket socket)
 			{
-//				LogManager.getInstance().log("ÍøÂçÁ¬½ÓÒÑÖĞ¶Ï", LogManager.LEVEL_ERROR);
+//				LogManager.getInstance().log("ç½‘ç»œè¿æ¥å·²ä¸­æ–­", LogManager.LEVEL_ERROR);
 				socket.close();
 				return;
 			}
@@ -144,14 +143,14 @@ public class AccountManager implements YiuNetworkListener
 
 	public void connect()
 	{
-		// ´óÌüÌ×½Ó×Ö
+		// å¤§å…å¥—æ¥å­—
 		YiuNetworkSocket socketHall = new YiuNetworkSocket(Global.cfg.hallAddressVO());
 		Stage.current.ticker.setTimeInterval(SOCKET_INTERVAL, socketHall, null);
 		socketHall.setStatusListener(_statusListener);
 		socketHall.connect();
 		Global.socketHall = socketHall;
 
-		// ÓÎÏ··¿¼äÌ×½Ó×Ö,ÔİÊ±²»Á¬½Ó£¬µ±½øÈë·¿¼ä²ÅÁ¬½Ó
+		// æ¸¸æˆæˆ¿é—´å¥—æ¥å­—,æš‚æ—¶ä¸è¿æ¥ï¼Œå½“è¿›å…¥æˆ¿é—´æ‰è¿æ¥
 		YiuNetworkSocket socketGame = new YiuNetworkSocket();
 		Stage.current.ticker.setTimeInterval(SOCKET_INTERVAL, socketGame, null);
 		socketGame.setStatusListener(_statusListener);
@@ -159,7 +158,7 @@ public class AccountManager implements YiuNetworkListener
 		String ret = YiuHttpManager.PostOptJson(Global.cfg.gateAddressVO().toHttpAddress() + "/login", "id=" + _id + "&idtype=" + _type + "&name=" + _name + "&version=0.1");
 		if(ret == null || ret.equals("{}"))
 		{
-			LogManager.getInstance().log("µÇÂ¼Ê§°Ü", LogManager.LEVEL_ERROR);
+			LogManager.getInstance().log("ç™»å½•å¤±è´¥", LogManager.LEVEL_ERROR);
 		}
 		else
 		{
@@ -173,9 +172,9 @@ public class AccountManager implements YiuNetworkListener
 			}
 			catch(JSONException e)
 			{
-				LogManager.getInstance().log("µÇÂ¼/»ñÈ¡µÇÂ¼½±ÀøĞÅÏ¢Ê§°Ü", LogManager.LEVEL_ERROR);
+				LogManager.getInstance().log("ç™»å½•/è·å–ç™»å½•å¥–åŠ±ä¿¡æ¯å¤±è´¥", LogManager.LEVEL_ERROR);
 			}
-			LogManager.getInstance().log("µÇÂ½³É¹¦");
+			LogManager.getInstance().log("ç™»é™†æˆåŠŸ");
 			YiuNetworkHandlerMgr.subscribe(this);
 			reqEnterHall();
 		}
@@ -196,20 +195,20 @@ public class AccountManager implements YiuNetworkListener
 				sc_enter_hall msg = sc_enter_hall.parseFrom(content.toByteArray());
 				Global.userDataVO = new UserDataVO(msg);
 				PlaceDataManager.getInstance().init(msg.getPlace_infos());
-				SceneManager.getInstance().switchScene(SceneType.SCENE_HALL);
+				Global.startGame(null);
 				return false;
 			}
 			else if(name.equals("sc_force_continue_game"))
 			{
 				YiuNetworkHandlerMgr.unSubscribe(this);
 				sc_force_continue_game msg = sc_force_continue_game.parseFrom(content.toByteArray());
-				SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, new EnterGameVO(new IpAddressVO(msg.getHost(), msg.getPort()), true));
+				Global.startGame(new EnterGameVO(new IpAddressVO(msg.getHost(), msg.getPort()), true));
 				return false;
 			}
 		}
 		catch(IOException e)
 		{
-			LogManager.getInstance().log("½âÎösc_enter_hallĞ­ÒéÊ§°Ü", LogManager.LEVEL_ERROR);
+			LogManager.getInstance().log("è§£æsc_enter_hallåè®®å¤±è´¥", LogManager.LEVEL_ERROR);
 		}
 		return true;
 	}

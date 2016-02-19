@@ -6,7 +6,7 @@ import jing.pai.consts.CardCode;
 import jing.pai.model.CardKe;
 
 /**
- * ÅÆ×é½âÎöÆ÷
+ * ç‰Œç»„è§£æå™¨
  * 
  * @author Jing
  */
@@ -15,12 +15,12 @@ public class GuoBiaoCardsParser
 
 	public static class GameHu {
 		public GameHu() {
-			complex = new CardKe[100];
+			complex = new CardKe[5];
 		}
 		public CardKe[] complex;
 		public int len;
 		public void push(int type1, int type2, int id) {
-			complex[len] = new CardKe(type1, type2, id);
+			complex[len] = new CardKe(type1, id, type2);
 			len++;
 		}
 		
@@ -46,7 +46,7 @@ public class GuoBiaoCardsParser
 	}
 
 	/**
-	 * Ê£ÓàÅÆÊı
+	 * å‰©ä½™ç‰Œæ•°
 	 * 
 	 * @param cards
 	 */
@@ -58,7 +58,7 @@ public class GuoBiaoCardsParser
 	    return sum;
 	}
 	/**
-	 * ½âÎöÅÆ×é
+	 * è§£æç‰Œç»„
 	 * 
 	 * @param cards
 	 */
@@ -69,13 +69,13 @@ public class GuoBiaoCardsParser
 	}
 	public static boolean hu(int pai[], int remain, int jiang)
 	{
-	    if (remain == 0) return true; //ÍË³öÌõ¼ş£¬Ã»ÓĞÊ£ÅÆ£¬ºúÅÆÍË³ö
+	    if (remain == 0) return true; //é€€å‡ºæ¡ä»¶ï¼Œæ²¡æœ‰å‰©ç‰Œï¼Œèƒ¡ç‰Œé€€å‡º
 
 	    boolean result = false;
 	    int i = CardCode.HAND_START;
-	    for (; pai[i] == 0 && i < CardCode.HAND_LEN; i++); //ÕÒµ½ÓĞÅÆµÄµØ·½£¬iÎªµ±Ç°ÅÆ£¬PAI[i] ÊÇ¸öÊı
+	    for (; pai[i] == 0 && i < CardCode.HAND_LEN; i++); //æ‰¾åˆ°æœ‰ç‰Œçš„åœ°æ–¹ï¼Œiä¸ºå½“å‰ç‰Œï¼ŒPAI[i] æ˜¯ä¸ªæ•°
 
-	    //ÓÅÏÈÑ¡ÔñÈı¸öÒ»ÑùµÄ
+	    //ä¼˜å…ˆé€‰æ‹©ä¸‰ä¸ªä¸€æ ·çš„
 	    if (pai[i] >= 3) {
 	        pai[i] -= 3;
 	        remain -= 3;
@@ -86,7 +86,7 @@ public class GuoBiaoCardsParser
 	            return result;
 	        }
 	    }
-	    //Ñ¡Ôñ½«ÅÆ
+	    //é€‰æ‹©å°†ç‰Œ
 	    if (jiang == 0 && pai[i] >= 2) {
 	        jiang = 1;
 	        pai[i] -= 2;
@@ -100,7 +100,7 @@ public class GuoBiaoCardsParser
 	        }
 
 	    }
-	    //Ë³×Ó
+	    //é¡ºå­
 	    if (i <= CardCode.HAND_SEQE - 2 && (i % 10 != 8 && i % 10 != 9) && pai[i + 1] != 0 && pai[i + 2] != 0) {
 	        pai[i]--;
 	        pai[i + 1]--;
@@ -135,19 +135,19 @@ public class GuoBiaoCardsParser
 	        	gamehu[pos].len = curhu.len;
 	            pos++;
 	        }
-	        return pos; //ÍË³öÌõ¼ş£¬Ã»ÓĞÊ£ÅÆ£¬ºúÅÆÍË³ö
+	        return pos; //é€€å‡ºæ¡ä»¶ï¼Œæ²¡æœ‰å‰©ç‰Œï¼Œèƒ¡ç‰Œé€€å‡º
 	    }
 	    if (curhu.len >= CardCode.HU_MAX_NUM) {
 	        return pos;
 	    }
 	    int i = CardCode.HAND_START;
-	    for (; pai[i] == 0 && i < CardCode.HAND_LEN; i++); //ÕÒµ½ÓĞÅÆµÄµØ·½£¬iÎªµ±Ç°ÅÆ£¬PAI[i] ÊÇ¸öÊı
+	    for (; pai[i] == 0 && i < CardCode.HAND_LEN; i++); //æ‰¾åˆ°æœ‰ç‰Œçš„åœ°æ–¹ï¼Œiä¸ºå½“å‰ç‰Œï¼ŒPAI[i] æ˜¯ä¸ªæ•°
 
-	    //Ë³×Ó
+	    //é¡ºå­
 	    if (i <= CardCode.HAND_SEQE - 2 && (i % 10 != 8 && i % 10 != 9) && pai[i + 1] != 0 && pai[i + 2] != 0) {
 	        pai[i]--; pai[i + 1]--; pai[i + 2]--;
 	        remain -= 3;
-	        /*·ÅÈë½á¹ûÕ»*/
+	        /*æ”¾å…¥ç»“æœæ ˆ*/
 	        curhu.push(CardCode.COM_CHI, CardCode.COM_SEQ, i);
 	        pos = hu_result(pai, remain, jiang, gamehu, huType, pos);
 	        curhu.pop();
@@ -155,7 +155,7 @@ public class GuoBiaoCardsParser
 	        remain += 3;
 	    }
 	    end = pos;
-	    /*Èç¹ûÅÆĞÍÍ¬Ê±Îª½«ÅÆºÍË³×Ó£¬ÔòÓĞ¿ÉÄÜ»áÖØ¸´£¬²»ÖØ¸´¼ÆËã*/
+	    /*å¦‚æœç‰Œå‹åŒæ—¶ä¸ºå°†ç‰Œå’Œé¡ºå­ï¼Œåˆ™æœ‰å¯èƒ½ä¼šé‡å¤ï¼Œä¸é‡å¤è®¡ç®—*/
 	    for (int j = start; j < end; j++){
 	        for (int k = 0; k < gamehu[j].len; k++)
 	        {
@@ -172,7 +172,7 @@ public class GuoBiaoCardsParser
 	        }
 	        if (haspeng || hasjiang) break;
 	    }
-	    //¿Ì×Ó
+	    //åˆ»å­
 	    if (!haspeng && pai[i] >= 3) {
 	        pai[i] -= 3;
 	        remain -= 3;
@@ -182,7 +182,7 @@ public class GuoBiaoCardsParser
 	        remain += 3;
 	        pai[i] += 3;
 	    }
-	    //½«ÅÆ
+	    //å°†ç‰Œ
 	    if (!hasjiang && jiang == 0 && pai[i] >= 2) {
 	        jiang = 1;
 	        pai[i] -= 2;

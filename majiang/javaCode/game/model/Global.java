@@ -7,13 +7,17 @@ import framework.events.EventDispatcher;
 import framework.resources.Res;
 import framework.resources.SpriteSheet;
 import framework.resources.Texture;
+import framework.views.Bitmap;
 import framework.views.Sprite;
+import game.constant.SceneType;
 import game.constant.WindowType;
 import game.control.AccountManager;
 import game.control.LoadingManager;
 import game.control.PlaceDataManager;
 import game.control.SceneManager;
 import game.control.WindowManager;
+import game.model.callback.ICallback;
+import game.model.vo.EnterGameVO;
 import game.model.vo.GiftVO;
 import game.model.vo.UserDataVO;
 
@@ -22,7 +26,7 @@ public class Global
 
 	private static Sprite _root;
 
-	// ÏûÏ¢Í¨ÖªÆ÷
+	// æ¶ˆæ¯é€šçŸ¥å™¨
 	public static EventDispatcher notice = new EventDispatcher();
 
 	public static final String GAME_ID = "90E94D37-DA24-DD26-A84E-19877299B7DB";
@@ -34,51 +38,56 @@ public class Global
 	public static final int SCREEN_HEIGHT = 530;
 
 	/**
-	 * ÅäÖÃ±í
+	 * åˆå§‹åŒ–èƒŒæ™¯
+	 */
+	private static Bitmap initBg;
+
+	/**
+	 * é…ç½®è¡¨
 	 */
 	public static Config cfg;
 
 	/**
-	 * ´°¿Ú»ÒÉ«°ëÍ¸Ã÷ÕÚ¸Ç
+	 * çª—å£ç°è‰²åŠé€æ˜é®ç›–
 	 */
 	public static Texture imgDarkBg;
 
 	/**
-	 * Í·ÏñÎÆÀí¼¯
+	 * å¤´åƒçº¹ç†é›†
 	 */
 	public static SpriteSheet ssHead;
 
 	/**
-	 * ³ÆºÅÎÆÀí¼¯
+	 * ç§°å·çº¹ç†é›†
 	 */
 	public static SpriteSheet ssTitle;
 
 	/**
-	 * ×ÊÔ´µØÖ·
+	 * èµ„æºåœ°å€
 	 */
 	public static String resUrl = null;
 
 	/**
-	 * ´óÌüÌ×½Ó×Ö
+	 * å¤§å…å¥—æ¥å­—
 	 */
 	public static YiuNetworkSocket socketHall = null;
 
 	/**
-	 * ÓÎÏ··şÌ×½Ó×Ö
+	 * æ¸¸æˆæœå¥—æ¥å­—
 	 */
 	public static YiuNetworkSocket socketGame = null;
 
 	/**
-	 * ÓÃ»§Êı¾İ
+	 * ç”¨æˆ·æ•°æ®
 	 */
 	public static UserDataVO userDataVO;
 
 	/**
-	 * µÇÂ¼½±Àø
+	 * ç™»å½•å¥–åŠ±
 	 */
 	public static GiftVO giftVO;
 
-	/** ÒÔÏÂÊı¾İÀ´×ÔIPTV **/
+	/** ä»¥ä¸‹æ•°æ®æ¥è‡ªIPTV **/
 	public static String account;
 
 	public static String adAccount;
@@ -89,7 +98,7 @@ public class Global
 
 	public static int diamond;
 
-	/** ÊÓÍ¼²ã¼¶ **/
+	/** è§†å›¾å±‚çº§ **/
 	public static Sprite sceneLayer;
 
 	public static Sprite windowLayer;
@@ -141,8 +150,29 @@ public class Global
 		String ssTitleFileName = "title_json";
 		ssTitle = Res.actively.getSheet(ssTitleFileName);
 		Res.actively.release(ssTitleFileName);
+		LoadingManager.getInstance().showLoading(true, "ç™»å½•ä¸­", new ICallback()
+		{
 
-		AccountManager.getInstance().connect();
+			public void run()
+			{
+				AccountManager.getInstance().connect();
+			}
+		});
+	}
+
+	public static void startGame(EnterGameVO vo)
+	{
+		LoadingManager.getInstance().hideLoading();
+		if(null == vo)
+			SceneManager.getInstance().switchScene(SceneType.SCENE_HALL);
+		else
+			SceneManager.getInstance().switchScene(SceneType.SCENE_GAME, vo);
+	}
+
+	public static void hideInitBg()
+	{
+		loadingLayer.removeChild(initBg);
+		initBg = null;
 	}
 
 	public static Texture getMyHeadTexture()
@@ -156,7 +186,7 @@ public class Global
 			portrait += 9;
 		return ssHead.getTexture("head_" + portrait);
 	}
-	
+
 	public static Texture getMyTitleTexture()
 	{
 		return getTitleTexture(userDataVO.level);

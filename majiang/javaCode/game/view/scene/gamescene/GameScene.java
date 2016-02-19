@@ -11,6 +11,7 @@ import game.control.WindowManager;
 import game.model.Global;
 import game.model.vo.EnterGameVO;
 import game.view.scene.gamescene.elements.GameInfoUI;
+import game.view.scene.gamescene.windows.PlayerActionWindow;
 import jing.GDC;
 import jing.consts.CardPlace;
 import jing.consts.GameDir;
@@ -30,47 +31,47 @@ public class GameScene extends UIScene
 {
 
 	/**
-	 * µ±Ç°Ê¹ÓÃµÄ³¡¾°
+	 * å½“å‰ä½¿ç”¨çš„åœºæ™¯
 	 */
 	static public GameScene cur = null;
 
 	/**
-	 * ÓÎÏ·Ä£ĞÍ
+	 * æ¸¸æˆæ¨¡å‹
 	 */
 	public GamePlayModel model = null;
 
 	/**
-	 * ÉÏ·½Íæ¼Ò
+	 * ä¸Šæ–¹ç©å®¶
 	 */
 	public Player pUp = null;
 
 	/**
-	 * ×ó·½Íæ¼Ò
+	 * å·¦æ–¹ç©å®¶
 	 */
 	public Player pLeft = null;
 
 	/**
-	 * ÓÒ·½Íæ¼Ò
+	 * å³æ–¹ç©å®¶
 	 */
 	public Player pRight = null;
 
 	/**
-	 * ÏÂ·½Íæ¼Ò
+	 * ä¸‹æ–¹ç©å®¶
 	 */
 	public Player pDown = null;
 
 	/**
-	 * ÓÎÏ·ĞÅÏ¢
+	 * æ¸¸æˆä¿¡æ¯
 	 */
 	public GameInfoUI info = null;
 
 	/**
-	 * ×îºó´ò³öµÄÅÆ
+	 * æœ€åæ‰“å‡ºçš„ç‰Œ
 	 */
 	public Mahjong lastChu = null;
 
 	/**
-	 * ½ĞÅÆÔ¤ÀÀ
+	 * å«ç‰Œé¢„è§ˆ
 	 */
 	private JiaoPreviewUI jiaoPre = null;
 
@@ -108,25 +109,26 @@ public class GameScene extends UIScene
 	}
 
 	/**
-	 * »ñµÃ½¹µã
+	 * è·å¾—ç„¦ç‚¹
 	 */
 	public void onStageFocus()
 	{
-		GDC.trace("gamescene ¼àÌı¼üÅÌÊÂ¼ş");
+		GDC.trace("gamescene ç›‘å¬é”®ç›˜äº‹ä»¶");
 		Stage.current.keyboard.addEventListener(EventType.EVENT_KEY_PRESSED, this);
 	}
 
 	/**
-	 * Ê§È¥½¹µã
+	 * å¤±å»ç„¦ç‚¹
 	 */
 	public void onStageBlur()
 	{
-		GDC.trace("gamescene ÊÍ·Å¼üÅÌÊÂ¼ş");
+		GDC.trace("gamescene é‡Šæ”¾é”®ç›˜äº‹ä»¶");
 		Stage.current.keyboard.removeEventListener(EventType.EVENT_KEY_PRESSED, this);
 	}
 
 	public void onEnter()
 	{
+		PlayerActionWindow.prepareAllRes();
 		GameScene.cur = this;
 		model = new GamePlayModel((EnterGameVO)_args);
 		model.init();
@@ -139,6 +141,7 @@ public class GameScene extends UIScene
 		info.dispose();
 		model.dispose();
 		model = null;
+		PlayerActionWindow.releaseAllRes();
 	}
 
 	public void reset()
@@ -248,7 +251,7 @@ public class GameScene extends UIScene
 
 			if(keyCode.byteValue() == KeyType.BACK)
 			{
-				// TODO µã»÷ÁËÍÆ³ö°´Å¥
+				// TODO ç‚¹å‡»äº†æ¨å‡ºæŒ‰é’®
 				return;
 			}
 
@@ -289,22 +292,22 @@ public class GameScene extends UIScene
 	}
 
 	/**
-	 * ÏÔÊ¾´òÅÆÏà¹ØµÄ½ĞµÄĞÅÏ¢
+	 * æ˜¾ç¤ºæ‰“ç‰Œç›¸å…³çš„å«çš„ä¿¡æ¯
 	 */
 	public void showChuInfo(ChuVO chuVO)
 	{
 		if(null == chuVO)
 		{
-			// TODO ¹Ø±Õ½ĞÅÆĞÅÏ¢ÏÔÊ¾
+			// TODO å…³é—­å«ç‰Œä¿¡æ¯æ˜¾ç¤º
 		}
 		else
 		{
-			// TODO ´ò¿ª½ĞÅÆĞÅÏ¢ÏÔÊ¾
+			// TODO æ‰“å¼€å«ç‰Œä¿¡æ¯æ˜¾ç¤º
 		}
 	}
 
 	/**
-	 * ½«×ÀÃæÉÏÏÔÊ¾µÄËùÓĞºÍÖ¸¶¨ÅÆÏàÍ¬µÄÖµµÃÅÆ·¢¹â
+	 * å°†æ¡Œé¢ä¸Šæ˜¾ç¤ºçš„æ‰€æœ‰å’ŒæŒ‡å®šç‰Œç›¸åŒçš„å€¼å¾—ç‰Œå‘å…‰
 	 * 
 	 * @param card
 	 */
@@ -327,7 +330,7 @@ public class GameScene extends UIScene
 	}
 
 	/**
-	 * ×îºó´ò³öµÄÅÆ
+	 * æœ€åæ‰“å‡ºçš„ç‰Œ
 	 * 
 	 * @param mj
 	 */
